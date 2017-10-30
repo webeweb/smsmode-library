@@ -20,13 +20,13 @@ namespace WBW\Library\SMSMode\Exception;
  */
 final class SMSModeInvalidNumberException extends AbstractSMSModeException {
 
-    /**
-     * Constructor.
-     *
-     * @param string $number The number.
-     */
-    public function __construct($number) {
-        parent::__construct("The number \"" . $number . "\" is not valid");
-    }
+	/**
+	 * Constructor.
+	 *
+	 * @param string $number The number.
+	 */
+	public function __construct($number) {
+		parent::__construct("The number \"" . $number . "\" is not valid");
+	}
 
 }

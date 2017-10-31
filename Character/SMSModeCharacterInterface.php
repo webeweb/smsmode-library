@@ -20,9 +20,9 @@ namespace WBW\Library\SMSMode\Character;
 interface SMSModeCharacterInterface {
 
 	/**
-	 * One character.
+	 * All characters.
 	 */
-	const ONE_CHARACTER = [
+	const ALL_CHARACTERS = [
 		"\n",
 		"\r",
 		" ",
@@ -153,7 +153,7 @@ interface SMSModeCharacterInterface {
 	/**
 	 * Two characters.
 	 */
-	const TWO_CHARACTER = [
+	const TWO_CHARACTERS = [
 		"/",
 		"{",
 		"|",

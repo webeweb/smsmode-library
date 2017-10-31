@@ -24,7 +24,7 @@ use WBW\Library\SMSMode\Exception\SMSModeMaxLimitNumberReachedException;
 final class SMSModeMaxLimitNumberReachedExceptionTest extends PHPUnit_Framework_TestCase {
 
 	/**
-	 * Test the __construct() method.
+	 * Tests the __construct() method.
 	 *
 	 * @return void
 	 */

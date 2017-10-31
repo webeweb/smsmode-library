@@ -18,7 +18,7 @@ use WBW\Library\SMSMode\Exception\SMSModeInvalidNumberException;
  * sMsmode invalid number exception test.
  *
  * @author NdC/WBW <https://github.com/webeweb/>
- * @package WBW\Library\SMSMode\Exception
+ * @package WBW\Library\SMSMode\Tests\Exception
  * @final
  */
 final class SMSModeInvalidNumberExceptionTest extends PHPUnit_Framework_TestCase {
@@ -29,8 +29,11 @@ final class SMSModeInvalidNumberExceptionTest extends PHPUnit_Framework_TestCase
 	 * @return void
 	 */
 	public function testConstruct() {
-		$ex = new SMSModeInvalidNumberException("");
-		$this->assertEquals("The number \"\" is not valid", $ex->getMessage());
+
+		$ex = new SMSModeInvalidNumberException("exception");
+
+		$res = "The number \"exception\" is invalid";
+		$this->assertEquals($res, $ex->getMessage(), "The method getMessage() does not return the expected string");
 	}
 
 }

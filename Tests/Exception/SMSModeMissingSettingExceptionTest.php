@@ -25,6 +25,8 @@ final class SMSModeMissingSettingExceptionTest extends PHPUnit_Framework_TestCas
 
 	/**
 	 * Test the __construct() method.
+	 *
+	 * @return void.
 	 */
 	public function testConstruct() {
 

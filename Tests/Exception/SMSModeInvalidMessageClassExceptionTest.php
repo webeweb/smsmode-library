@@ -25,6 +25,8 @@ final class SMSModeInvalidMessageClassExceptionTest extends PHPUnit_Framework_Te
 
 	/**
 	 * Test the __construct() method.
+	 *
+	 * @return void.
 	 */
 	public function testConstruct() {
 

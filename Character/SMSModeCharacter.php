@@ -47,10 +47,15 @@ final class SMSModeCharacter implements SMSModeCharacterInterface {
 	 * Decode a message.
 	 *
 	 * @param string $message The message.
-	 * @return string Returns an decoded message.
+	 * @return string Returns a decoded message.
 	 */
 	public function decode($message) {
 
+		// Initialize the output.
+		$output = [];
+
+		// Return the output.
+		return implode("", $output);
 	}
 
 	/**
@@ -63,7 +68,7 @@ final class SMSModeCharacter implements SMSModeCharacterInterface {
 	public function encode($message) {
 
 		// Initialize the ouput.
-		$output = "";
+		$output = [];
 
 		// Define the reference.
 		$all = $this->convert(self::ALL_CHARACTERS);
@@ -83,11 +88,11 @@ final class SMSModeCharacter implements SMSModeCharacterInterface {
 			}
 
 			// Encode.
-			$output .= $all[$char];
+			$output[] = $all[$char];
 		}
 
 		// Return the ouput.
-		return $output;
+		return implode("", $output);
 	}
 
 	/**
@@ -119,12 +124,12 @@ final class SMSModeCharacter implements SMSModeCharacterInterface {
 			if (!array_key_exists($char, $all)) {
 				throw new SMSModeCharacterNotAllowedException(utf8_encode($char));
 			}
+			if (array_key_exists($char, $two)) {
+				$length++;
+			}
 
 			// Increment.
 			$length++;
-			if (in_array($char, array_keys($two))) {
-				$length++;
-			}
 		}
 
 		// Return the length.

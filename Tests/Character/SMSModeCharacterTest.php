@@ -26,6 +26,16 @@ use WBW\Library\SMSMode\Exception\SMSModeCharacterNotAllowedException;
 final class SMSModeCharacterTest extends PHPUnit_Framework_TestCase {
 
 	/**
+	 * Tests the decode() method.
+	 *
+	 * @return void
+	 */
+	public function testDecode() {
+
+		$obj = new SMSModeCharacter();
+	}
+
+	/**
 	 * Tests the encode() method.
 	 *
 	 * @return void
@@ -101,7 +111,6 @@ final class SMSModeCharacterTest extends PHPUnit_Framework_TestCase {
 		$this->assertEquals("%F8", $obj->encode("ø"), "The method encode() does not return the expected string with \"ø\"");
 		$this->assertEquals("%F9", $obj->encode("ù"), "The method encode() does not return the expected string with \"ù\"");
 		$this->assertEquals("%DC", $obj->encode("Ü"), "The method encode() does not return the expected string with \"Ü\"");
-		/* $this->assertEquals("%80", $obj->encode("€"), "The method encode() does not return the expected string with \"€\""); */
 	}
 
 	/**

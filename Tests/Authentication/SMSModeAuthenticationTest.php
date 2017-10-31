@@ -20,13 +20,13 @@ use WBW\Library\SMSMode\Exception\SMSModeMissingSettingException;
  * sMsmode authentication test.
  *
  * @author NdC/WBW <https://github.com/webeweb/>
- * @package WBW\Library\SMSMode\Tests\Exception
+ * @package WBW\Library\SMSMode\Tests\Authentication
  * @final
  */
 final class SMSModeAuthenticationTest extends PHPUnit_Framework_TestCase {
 
 	/**
-	 * Test the __construct() method.
+	 * Tests the __construct() method.
 	 *
 	 * @return void
 	 */
@@ -40,7 +40,7 @@ final class SMSModeAuthenticationTest extends PHPUnit_Framework_TestCase {
 	}
 
 	/**
-	 * Test the toArray() method.
+	 * Tests the toArray() method.
 	 *
 	 * @return void.
 	 */

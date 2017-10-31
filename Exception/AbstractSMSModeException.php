@@ -18,7 +18,7 @@ use WBW\Library\Core\Exception\AbstractWBWException;
  * Abstract sMsmode exception.
  * @author NdC/WBW <https://github.com/webeweb/>
  * @package WBW\Library\SMSMode\Exception
- * @final
+ * @abstract
  */
 abstract class AbstractSMSModeException extends AbstractWBWException {
 

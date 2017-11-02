@@ -68,7 +68,7 @@ final class SMSModeAuthenticationTest extends PHPUnit_Framework_TestCase {
 			$this->assertEquals("The setting \"password\" is missing", $ex->getMessage(), "The exception does not return the expected message with username");
 		}
 
-		$obj->setPassword('password');
+		$obj->setPassword("password");
 		$res2 = ["pseudo" => "username", "pass" => "password"];
 		$this->assertEquals($res2, $obj->toArray(), "The method toArray() does not return the expected array with username and password");
 	}

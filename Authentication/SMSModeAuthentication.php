@@ -122,20 +122,20 @@ final class SMSModeAuthentication {
 		$output = [];
 
 		if (!is_null($this->token)) {
-			$output['accessToken'] = $this->getToken();
+			$output["accessToken"] = $this->getToken();
 		} else {
 
 			// Check the required setting username.
 			if (is_null($this->username)) {
-				throw new SMSModeMissingSettingException('username');
+				throw new SMSModeMissingSettingException("username");
 			}
-			$output['pseudo'] = $this->username;
+			$output["pseudo"] = $this->username;
 
 			// Check the required setting password.
 			if (is_null($this->password)) {
-				throw new SMSModeMissingSettingException('password');
+				throw new SMSModeMissingSettingException("password");
 			}
-			$output['pass'] = $this->password;
+			$output["pass"] = $this->password;
 		}
 
 		// Return the output.

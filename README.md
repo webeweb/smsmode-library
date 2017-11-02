@@ -12,10 +12,12 @@ WBWSMSModeLibrary
 Edit `composer.json` file to add this library package:
 
 ```yml
+
 "require": {
     ...
     "webeweb/smsmode-library": "~1.0@dev"
 },
+
 ```
 
 Run `php composer.phar update webeweb/smsmode-library`
@@ -28,12 +30,17 @@ To test the package, is better to clone this repository on your computer. After,
 the following (assuming you have `composer` installed on your computer):
 
 ```bash
+
 $ composer install --no-interaction --prefer-source --dev
+
 ```
+
 Once all required libraries are installed then do:
 
 ```bash
+
 $ vendor/bin/phpunit
+
 ```
 
 ---

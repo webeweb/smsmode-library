@@ -1,16 +1,12 @@
 <?php
 
 /*
- * Disclaimer: This source code is protected by copyright law and by
- * international conventions.
+ * This file is part of the WBWSMSModeLibrary package.
  *
- * Any reproduction or partial or total distribution of the source code, by any
- * means whatsoever, is strictly forbidden.
+ * (c) 2017 NdC/WBW
  *
- * Anyone not complying with these provisions will be guilty of the offense of
- * infringement and the penal sanctions provided for by law.
- *
- * © 2017 S.A.R.L. Nectar de Code. All rights reserved.
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
  */
 
 namespace WBW\Library\SMSMode\Response;

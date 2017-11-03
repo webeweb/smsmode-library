@@ -127,29 +127,26 @@ final class SMSModeGetResponsesResponse extends AbstractSMSModeResponse implemen
 	 */
 	protected function parse($rawResponse) {
 
-		// Explode the response.
-		$parts = explode("|", $rawResponse);
-
 		// Determines the response.
 		if (preg_match("/^(32|35)\ \|/", $rawResponse)) {
 
 			// Set the code and description.
-			$this->setCode((int) trim($parts[0]));
-			$this->setDescription(trim($parts[1]));
+			parent::parse($rawResponse);
 		} else {
 
-			// Check the parts count.
-			if (count($parts) !== 6) {
+			// Explode the response.
+			$response = explode(self::RESPONSE_DELIMITER, $rawResponse);
+			if (count($response) !== 6) {
 				return;
 			}
 
 			//
-			$this->setResponseID(trim($parts[0]));
-			$this->setReceptionDate(DateTime::createFromFormat(SMSModeRequestInterface::DATE_FORMAT, trim($parts[1])));
-			$this->setFrom(trim($parts[2]));
-			$this->setText(trim($parts[3]));
-			$this->setTo(trim($parts[4]));
-			$this->setMessageID(trim($parts[5]));
+			$this->setResponseID(trim($response[0]));
+			$this->setReceptionDate(DateTime::createFromFormat(SMSModeRequestInterface::DATE_FORMAT, trim($response[1])));
+			$this->setFrom(trim($response[2]));
+			$this->setText(trim($response[3]));
+			$this->setTo(trim($response[4]));
+			$this->setMessageID(trim($response[5]));
 		}
 	}
 

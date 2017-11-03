@@ -44,16 +44,15 @@ final class SMSModeSendSMSResponse extends AbstractSMSModeResponse implements SM
 	 */
 	protected function parse($rawResponse) {
 
-		// Explode the response.
-		$parts = explode("|", $rawResponse);
-
 		// Set the code and description.
-		$this->setCode((int) trim($parts[0]));
-		$this->setDescription(trim($parts[1]));
+		parent::parse($rawResponse);
+
+		// Explode the response.
+		$response = explode(self::RESPONSE_DELIMITER, $rawResponse);
 
 		// Check the code.
-		if ($this->getCode() === self::CODE_ACCEPTED) {
-			$this->setSmsID(trim($parts[2]));
+		if ($this->getCode() === self::CODE_ACCEPTED && count($response) === 3) {
+			$this->setSmsID(trim($response[2]));
 		}
 	}
 

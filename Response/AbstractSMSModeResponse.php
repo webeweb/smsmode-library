@@ -18,7 +18,7 @@ namespace WBW\Library\SMSMode\Response;
  * @package WBW\Library\SMSMode\Response
  * @abstract
  */
-abstract class AbstractSMSModeResponse {
+abstract class AbstractSMSModeResponse implements SMSModeResponseInterface {
 
 	/**
 	 * Code.
@@ -66,7 +66,18 @@ abstract class AbstractSMSModeResponse {
 	 *
 	 * @param string $rawResponse The raw response.
 	 */
-	abstract protected function parse($rawResponse);
+	protected function parse($rawResponse) {
+
+		// Explode the response.
+		$response = explode(self::RESPONSE_DELIMITER, $rawResponse);
+		if (count($response) < 2) {
+			return;
+		}
+
+		// Set the code and description.
+		$this->setCode(intval(trim($response[0])));
+		$this->setDescription(trim($response[1]));
+	}
 
 	/**
 	 * Set the code.

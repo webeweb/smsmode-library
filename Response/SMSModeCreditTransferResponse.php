@@ -23,17 +23,4 @@ namespace WBW\Library\SMSMode\Response;
  */
 final class SMSModeCreditTransferResponse extends AbstractSMSModeResponse implements SMSModeCreditTransferResponseInterface {
 
-	/**
-	 * {@inheritdoc}
-	 */
-	protected function parse($rawResponse) {
-
-		// Explode the response.
-		$parts = explode("|", $rawResponse);
-
-		// Set the code and description.
-		$this->setCode((int) trim($parts[0]));
-		$this->setDescription(trim($parts[1]));
-	}
-
 }

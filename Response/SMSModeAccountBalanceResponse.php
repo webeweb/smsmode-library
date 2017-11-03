@@ -43,7 +43,7 @@ final class SMSModeAccountBalanceResponse extends AbstractSMSModeResponse {
 	 * {@inheritdoc}
 	 */
 	protected function parse($rawResponse) {
-		$this->setAccountBalance((float) trim($rawResponse));
+		$this->setAccountBalance(floatval(trim($rawResponse)));
 	}
 
 	/**

@@ -24,7 +24,9 @@ use WBW\Library\SMSMode\Response\SMSModeDeleteSubaccountResponse;
 final class SMSModeDeleteSubaccountResponseTest extends PHPUnit_Framework_TestCase {
 
 	/**
-	 * Test the parse() method.
+	 * Tests the parse() method.
+	 *
+	 * @return void
 	 */
 	public function testParse() {
 

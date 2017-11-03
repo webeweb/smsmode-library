@@ -18,7 +18,7 @@ use WBW\Library\SMSMode\Response\AbstractSMSModeResponse;
  * sMsmode request interface.
  *
  * @author NdC/WBW <https://github.com/webeweb/>
- * @package WBW\Library\SMSMode\Response
+ * @package WBW\Library\SMSMode\Request
  */
 interface SMSModeRequestInterface {
 

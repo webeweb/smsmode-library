@@ -14,6 +14,9 @@ namespace WBW\Library\SMSMode\Response;
 /**
  * sMsmode delete subaccount response.
  *
+ * cf. 5 Création de sous-compte
+ * 	<https://www.smsmode.com/pdf/fiche-api-http.pdf>
+ *
  * @author NdC/WBW <https://github.com/webeweb/>
  * @package WBW\Library\SMSMode\Response
  * @final

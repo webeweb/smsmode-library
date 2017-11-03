@@ -37,10 +37,10 @@ abstract class AbstractSMSModeResponse {
 	/**
 	 * Constructor.
 	 *
-	 * @param string $response The response.
+	 * @param string $rawResponse The raw response.
 	 */
-	public final function __construct($response) {
-		$this->parse($response);
+	public final function __construct($rawResponse) {
+		$this->parse($rawResponse);
 	}
 
 	/**

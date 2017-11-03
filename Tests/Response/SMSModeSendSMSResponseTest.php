@@ -12,6 +12,7 @@
 namespace WBW\Library\SMSMode\Tests\Response;
 
 use PHPUnit_Framework_TestCase;
+use WBW\Library\SMSMode\Response\SMSModeResponseInterface;
 use WBW\Library\SMSMode\Response\SMSModeSendSMSResponse;
 
 /**
@@ -30,7 +31,13 @@ final class SMSModeSendSMSResponseTest extends PHPUnit_Framework_TestCase {
 	 */
 	public function testParse() {
 
-		$impl = " | ";
+		$objEx = new SMSModeSendSMSResponse("exception");
+
+		$this->assertEquals(null, $objEx->getCode(), "The method parse() does not return the expected code");
+		$this->assertEquals(null, $objEx->getDescription(), "The method parse() does not return the expected description");
+		$this->assertEquals(null, $objEx->getSmsID(), "The method parse() does not return the expected sms id");
+
+		$impl = " " . SMSModeResponseInterface::RESPONSE_DELIMITER . " ";
 
 		$obj0 = new SMSModeSendSMSResponse(implode($impl, [SMSModeSendSMSResponse::CODE_ACCEPTED, SMSModeSendSMSResponse::DESC_ACCEPTED, "smsID"]));
 

@@ -13,6 +13,7 @@ namespace WBW\Library\SMSMode\Tests\Response;
 
 use PHPUnit_Framework_TestCase;
 use WBW\Library\SMSMode\Response\SMSModeCreateSubaccountResponse;
+use WBW\Library\SMSMode\Response\SMSModeResponseInterface;
 
 /**
  * sMsmode create subaccount response test.
@@ -30,7 +31,12 @@ final class SMSModeCreateSubaccountResponseTest extends PHPUnit_Framework_TestCa
 	 */
 	public function testParse() {
 
-		$impl = " | ";
+		$objEx = new SMSModeCreateSubaccountResponse("exception");
+
+		$this->assertEquals(null, $objEx->getCode(), "The method parse() does not return the expected code");
+		$this->assertEquals(null, $objEx->getDescription(), "The method parse() does not return the expected description");
+
+		$impl = " " . SMSModeResponseInterface::RESPONSE_DELIMITER . " ";
 
 		$obj0 = new SMSModeCreateSubaccountResponse(implode($impl, [SMSModeCreateSubaccountResponse::CODE_CREATED, SMSModeCreateSubaccountResponse::DESC_CREATED]));
 

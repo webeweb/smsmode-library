@@ -13,6 +13,7 @@ namespace WBW\Library\SMSMode\Tests\Response;
 
 use PHPUnit_Framework_TestCase;
 use WBW\Library\SMSMode\Response\SMSModeDeleteSubaccountResponse;
+use WBW\Library\SMSMode\Response\SMSModeResponseInterface;
 
 /**
  * sMsmode delete subaccount response test.
@@ -30,7 +31,12 @@ final class SMSModeDeleteSubaccountResponseTest extends PHPUnit_Framework_TestCa
 	 */
 	public function testParse() {
 
-		$impl = " | ";
+		$objEx = new SMSModeDeleteSubaccountResponse("excpetion");
+
+		$this->assertEquals(null, $objEx->getCode(), "The method parse() does not return the expected code");
+		$this->assertEquals(null, $objEx->getDescription(), "The method parse() does not return the expected description");
+
+		$impl = " " . SMSModeResponseInterface::RESPONSE_DELIMITER . " ";
 
 		$obj0 = new SMSModeDeleteSubaccountResponse(implode($impl, [SMSModeDeleteSubaccountResponse::CODE_CREATED, SMSModeDeleteSubaccountResponse::DESC_CREATED]));
 

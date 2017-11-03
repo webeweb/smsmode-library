@@ -13,6 +13,7 @@ namespace WBW\Library\SMSMode\Tests\Response;
 
 use PHPUnit_Framework_TestCase;
 use WBW\Library\SMSMode\Response\SMSModeCreditTransferResponse;
+use WBW\Library\SMSMode\Response\SMSModeResponseInterface;
 
 /**
  * sMsmode credit transfer response test.
@@ -30,7 +31,12 @@ final class SMSModeCreditTransferResponseTest extends PHPUnit_Framework_TestCase
 	 */
 	public function testParse() {
 
-		$impl = " | ";
+		$objEx = new SMSModeCreditTransferResponse("exception");
+
+		$this->assertEquals(null, $objEx->getCode(), "The method parse() does not return the expected code");
+		$this->assertEquals(null, $objEx->getDescription(), "The method parse() does not return the expected description");
+
+		$impl = " " . SMSModeResponseInterface::RESPONSE_DELIMITER . " ";
 
 		$obj0 = new SMSModeCreditTransferResponse(implode($impl, [SMSModeCreditTransferResponse::CODE_TRANSFER_CARRIED_OUT, SMSModeCreditTransferResponse::DESC_TRANSFER_CARRIED_OUT]));
 

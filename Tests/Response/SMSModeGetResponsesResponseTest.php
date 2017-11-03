@@ -14,6 +14,7 @@ namespace WBW\Library\SMSMode\Tests\Response;
 use DateTime;
 use PHPUnit_Framework_TestCase;
 use WBW\Library\SMSMode\Response\SMSModeGetResponsesResponse;
+use WBW\Library\SMSMode\Response\SMSModeResponseInterface;
 
 /**
  * sMsmode get responses response test.
@@ -31,7 +32,19 @@ final class SMSModeGetResponsesResponseTest extends PHPUnit_Framework_TestCase {
 	 */
 	public function testParse() {
 
-		$impl = " | ";
+		$objEx = new SMSModeGetResponsesResponse("exception");
+
+		$this->assertEquals(null, $objEx->getCode(), "The method parse() does not return the expected code");
+		$this->assertEquals(null, $objEx->getDescription(), "The method parse() does not return the expected description");
+
+		$this->assertEquals(null, $objEx->getResponseID(), "The method parse() does not return the expected response id");
+		$this->assertEquals(null, $objEx->getReceptionDate(), "The method parse() does not return the expected reception date");
+		$this->assertEquals(null, $objEx->getFrom(), "The method parse() does not return the expected from");
+		$this->assertEquals(null, $objEx->getText(), "The method parse() does not return the expected text");
+		$this->assertEquals(null, $objEx->getTo(), "The method parse() does not return the expected to");
+		$this->assertEquals(null, $objEx->getMessageID(), "The method parse() does not return the expected message id");
+
+		$impl = " " . SMSModeResponseInterface::RESPONSE_DELIMITER . " ";
 
 		$obj31 = new SMSModeGetResponsesResponse(implode($impl, [SMSModeGetResponsesResponse::CODE_AUTHENTICATION_ERROR, SMSModeGetResponsesResponse::DESC_AUTHENTICATION_ERROR]));
 

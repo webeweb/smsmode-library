@@ -17,7 +17,7 @@ namespace WBW\Library\SMSMode\Request;
  * @author NdC/WBW <https://github.com/webeweb/>
  * @package WBW\Library\SMSMode\Request
  */
-class SMSModeSendSMSRequestInterface {
+interface SMSModeSendSMSRequestInterface {
 
 	/**
 	 * Message class "SMS Pro".

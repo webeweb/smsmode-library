@@ -22,7 +22,7 @@ Edit `composer.json` file to add this library package:
 
 ```
 
-Run `php composer.phar update webeweb/smsmode-library`
+Run `composer update webeweb/smsmode-library`
 
 ---
 

@@ -83,6 +83,10 @@ final class SMSModeCreditTransferRequestTest extends PHPUnit_Framework_TestCase 
 		$obj->setCredit(212);
 		$res1 = ["targetPseudo" => "username", "creditAmount" => 212];
 		$this->assertEquals($res1, $obj->toArray(), "The method toArray() does not return the expected array with username, and credit");
+
+		$obj->setReference("reference");
+		$res2 = ["targetPseudo" => "username", "creditAmount" => 212, "reference" => "reference"];
+		$this->assertEquals($res2, $obj->toArray(), "The method toArray() does not return the expected array with username, credit and reference");
 	}
 
 }

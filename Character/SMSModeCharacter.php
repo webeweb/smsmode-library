@@ -44,58 +44,6 @@ final class SMSModeCharacter implements SMSModeCharacterInterface {
 	}
 
 	/**
-	 * Decode a message.
-	 *
-	 * @param string $message The message.
-	 * @return string Returns a decoded message.
-	 */
-	public function decode($message) {
-
-		// Initialize the output.
-		$output = [];
-
-		// Return the output.
-		return implode("", $output);
-	}
-
-	/**
-	 * Encode a message.
-	 *
-	 * @param string $message The message.
-	 * @return string Returns an encoded message.
-	 * @throws SMSModeCharacterNotAllowedException Throws a sMsmode character not allowed exception if a character is prohibited.
-	 */
-	public function encode($message) {
-
-		// Initialize the ouput.
-		$output = [];
-
-		// Define the reference.
-		$all = $this->convert(self::ALL_CHARACTERS);
-
-		// Decode the message.
-		$buffer = utf8_decode($message);
-
-		// Handle each character.
-		for ($i = 0; $i < strlen($buffer); ++$i) {
-
-			// Get the character.
-			$char = substr($buffer, $i, 1);
-
-			// Check the character.
-			if (!array_key_exists($char, $all)) {
-				throw new SMSModeCharacterNotAllowedException(utf8_encode($char));
-			}
-
-			// Encode.
-			$output[] = $all[$char];
-		}
-
-		// Return the ouput.
-		return implode("", $output);
-	}
-
-	/**
 	 * Length.
 	 *
 	 * @param string $message The message.

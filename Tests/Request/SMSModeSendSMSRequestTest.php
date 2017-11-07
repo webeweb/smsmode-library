@@ -145,6 +145,7 @@ final class SMSModeSendSMSRequestTest extends PHPUnit_Framework_TestCase {
 	public function testToArray() {
 
 		$obj = new SMSModeSendSMSRequest();
+		$obj->setMessageClass(SMSModeSendSMSRequest::MESSAGE_CLASS_SMS_PRO);
 
 		try {
 			$obj->toArray();

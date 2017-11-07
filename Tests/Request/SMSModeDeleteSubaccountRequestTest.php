@@ -21,7 +21,7 @@ use WBW\Library\SMSMode\Response\SMSModeDeleteSubaccountResponse;
  * sMsmode delete subaccount request test.
  *
  * @author NdC/WBW <https://github.com/webeweb/>
- * @package WBW\Library\SMSMode\Request
+ * @package WBW\Library\SMSMode\Tests\Request
  * @final
  */
 final class SMSModeDeleteSubaccountRequestTest extends PHPUnit_Framework_TestCase {

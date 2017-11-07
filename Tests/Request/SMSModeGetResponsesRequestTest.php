@@ -23,7 +23,7 @@ use WBW\Library\SMSMode\Response\SMSModeGetResponsesResponse;
  * sMsmode get responses request test.
  *
  * @author NdC/WBW <https://github.com/webeweb/>
- * @package WBW\Library\SMSMode\Request
+ * @package WBW\Library\SMSMode\Tests\Request
  * @final
  */
 final class SMSModeGetResponsesRequestTest extends PHPUnit_Framework_TestCase {

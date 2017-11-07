@@ -77,3 +77,6 @@ $ vendor/bin/phpunit
 
 WBWSMSModeLibrary is released under the LGPL License. See the bundled [LICENSE](LICENSE)
 file for details.
+
+Please note that the sMsmode API is not free for use, see their
+[product page](https://www.smsmode.com/tarifs-sms/) for details on pricing.

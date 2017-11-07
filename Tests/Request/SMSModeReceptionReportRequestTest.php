@@ -19,10 +19,11 @@ use WBW\Library\SMSMode\Request\SMSModeReceptionReportRequest;
 /**
  * sMsmode reception report request test.
  *
- * @author Camille A. <c.attia@nectardecode.com>
+ * @author NdC/WBW <https://github.com/webeweb/>
  * @package WBW\Library\SMSMode\Tests\Request
+ * @final
  */
-class SMSModeReceptionReportRequestTest extends PHPUnit_Framework_TestCase {
+final class SMSModeReceptionReportRequestTest extends PHPUnit_Framework_TestCase {
 
 	/**
 	 * Tests the toArray() method.

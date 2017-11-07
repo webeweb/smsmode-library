@@ -70,7 +70,7 @@ final class SMSModeSendSMSRequestTest extends PHPUnit_Framework_TestCase {
 		$this->assertEquals(null, $obj->getGroup(), "The method getGroup() does not return the expecetd value");
 		$this->assertEquals(5, $obj->getMaxMessageNumber(), "The method getMaxMessageNumber() does not return the expecetd value");
 		$this->assertEquals(null, $obj->getMessage(), "The method getMessage() does not return the expecetd value");
-		$this->assertEquals(SMSModeSendRequest::MESSAGE_CLASS_SMS_PRO, $obj->getMessageClass(), "The method getMessageClass() does not return the expecetd value");
+		$this->assertEquals(SMSModeSendSMSRequest::MESSAGE_CLASS_SMS_PRO, $obj->getMessageClass(), "The method getMessageClass() does not return the expecetd value");
 		$this->assertEquals(null, $obj->getNotificationURL(), "The method getNotificationURL() does not return the expecetd value");
 		$this->assertEquals([], $obj->getNumber(), "The method getNumber() does not return the expecetd value");
 		$this->assertEquals(null, $obj->getResponseNotificationURL(), "The method getResponseNotificationURL() does not return the expecetd value");

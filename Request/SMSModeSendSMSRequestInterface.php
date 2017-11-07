@@ -14,6 +14,9 @@ namespace WBW\Library\SMSMode\Request;
 /**
  * sMsmode send SMS request interface.
  *
+ * cf. 2 Envoi de SMS
+ * 	<https://www.smsmode.com/pdf/fiche-api-http.pdf>
+ *
  * @author NdC/WBW <https://github.com/webeweb/>
  * @package WBW\Library\SMSMode\Request
  */

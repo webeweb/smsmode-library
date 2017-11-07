@@ -63,7 +63,8 @@ final class SMSModeCharacter implements SMSModeCharacterInterface {
 		$buffer = utf8_decode($message);
 
 		// Handle each character.
-		for ($i = 0; $i < strlen($buffer); ++$i) {
+		$count = strlen($buffer);
+		for ($i = 0; $i < $count; ++$i) {
 
 			// Get the character.
 			$char = substr($buffer, $i, 1);

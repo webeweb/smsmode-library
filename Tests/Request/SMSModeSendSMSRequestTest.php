@@ -14,6 +14,7 @@ namespace WBW\Library\SMSMode\Tests\Request;
 use DateTime;
 use Exception;
 use PHPUnit_Framework_TestCase;
+use WBW\Library\Core\Exception\Argument\IllegalArgumentException;
 use WBW\Library\SMSMode\Exception\SMSModeInvalidNumberException;
 use WBW\Library\SMSMode\Exception\SMSModeMaxLimitNumberReachedException;
 use WBW\Library\SMSMode\Exception\SMSModeMissingSettingException;
@@ -169,6 +170,13 @@ final class SMSModeSendSMSRequestTest extends PHPUnit_Framework_TestCase {
 		$res2 = ["message" => "message", "groupe" => "group", "classe_msg" => 2, "nbr_msg" => 5];
 		$this->assertEquals($res2, $obj->toArray(), "The method toArray() does not return the expected array with message and group");
 
+		try {
+			$obj->setMessageClass("exception");
+		} catch (Exception $ex) {
+			$this->assertInstanceOf(IllegalArgumentException::class, $ex, "The method toArray() does not throw the expected exception");
+			$this->assertEquals("The message class \"exception\" is invalid", $ex->getMessage(), "The exception does not return the expected message");
+		}
+
 		$obj->setSendDate(new DateTime("2017-09-07 10:00:00"));
 		$res3 = ["message" => "message", "groupe" => "group", "classe_msg" => 2, "date_envoi" => "07092017-10:00", "nbr_msg" => 5];
 		$this->assertEquals($res3, $obj->toArray(), "The method toArray() does not return the expected array with message, group and send date");
@@ -184,19 +192,27 @@ final class SMSModeSendSMSRequestTest extends PHPUnit_Framework_TestCase {
 		$this->assertEquals($res5, $obj->toArray(), "The method toArray() does not return the expected array with message, group and sender");
 
 		$obj->setSender(null);
+		$obj->setMaxMessageNumber(1);
+		$res6 = ["message" => "message", "groupe" => "group", "classe_msg" => 2, "nbr_msg" => 1];
+		$this->assertEquals($res6, $obj->toArray(), "The method toArray() does not return the expected array with message, group");
+
 		$obj->setNotificationURL("notificationURL");
-		$res6 = ["message" => "message", "groupe" => "group", "classe_msg" => 2, "nbr_msg" => 5, "notification_url" => "notificationURL"];
-		$this->assertEquals($res6, $obj->toArray(), "The method toArray() does not return the expected array with message, group and notification URL");
+		$res7 = ["message" => "message", "groupe" => "group", "classe_msg" => 2, "nbr_msg" => 1, "notification_url" => "notificationURL"];
+		$this->assertEquals($res7, $obj->toArray(), "The method toArray() does not return the expected array with message, group and notification URL");
 
 		$obj->setNotificationURL(null);
 		$obj->setResponseNotificationURL("responseNotificationURL");
-		$res7 = ["message" => "message", "groupe" => "group", "classe_msg" => 2, "nbr_msg" => 5, "notification_url_reponse" => "responseNotificationURL"];
-		$this->assertEquals($res7, $obj->toArray(), "The method toArray() does not return the expected array with message, group and response notification URL");
+		$res8 = ["message" => "message", "groupe" => "group", "classe_msg" => 2, "nbr_msg" => 1, "notification_url_reponse" => "responseNotificationURL"];
+		$this->assertEquals($res8, $obj->toArray(), "The method toArray() does not return the expected array with message, group and response notification URL");
 
 		$obj->setResponseNotificationURL(null);
 		$obj->setStop(SMSModeSendSMSRequest::STOP_ALWAYS);
-		$res8 = ["message" => "message", "groupe" => "group", "classe_msg" => 2, "nbr_msg" => 5, "stop" => SMSModeSendSMSRequest::STOP_ALWAYS];
-		$this->assertEquals($res8, $obj->toArray(), "The method toArray() does not return the expected array with message, group and stop");
+		$res9 = ["message" => "message", "groupe" => "group", "classe_msg" => 2, "nbr_msg" => 1, "stop" => SMSModeSendSMSRequest::STOP_ALWAYS];
+		$this->assertEquals($res9, $obj->toArray(), "The method toArray() does not return the expected array with message, group and stop");
+
+		$obj->setStop(null);
+		$res10 = ["message" => "message", "groupe" => "group", "classe_msg" => 2, "nbr_msg" => 1];
+		$this->assertEquals($res10, $obj->toArray(), "The method toArray() does not return the expected array with message, group and stop");
 	}
 
 }

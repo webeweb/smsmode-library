@@ -12,7 +12,7 @@
 namespace WBW\Library\SMSMode\Request;
 
 use DateTime;
-use WBW\Library\SMSMode\Exception\SMSModeInvalidMessageClassException;
+use WBW\Library\Core\Exception\Argument\IllegalArgumentException;
 use WBW\Library\SMSMode\Exception\SMSModeInvalidNumberException;
 use WBW\Library\SMSMode\Exception\SMSModeMaxLimitNumberReachedException;
 use WBW\Library\SMSMode\Exception\SMSModeMissingSettingException;
@@ -66,11 +66,11 @@ final class SMSModeSendSMSRequest implements SMSModeRequestInterface, SMSModeSen
 	private $messageClass = self::MESSAGE_CLASS_SMS_PRO;
 
 	/**
-	 * Number.
+	 * Numbers.
 	 *
 	 * @var array
 	 */
-	private $number = [];
+	private $numbers = [];
 
 	/**
 	 * Notification URL.
@@ -123,14 +123,14 @@ final class SMSModeSendSMSRequest implements SMSModeRequestInterface, SMSModeSen
 	 * @throws SMSModeInvalidNumberException Throws a SMSMode invalid number exception if the number is not valid.
 	 */
 	public function addNumber($number) {
-		if (count($this->number) === 300) {
+		if (count($this->numbers) === 300) {
 			throw new SMSModeMaxLimitNumberReachedException(300);
 		}
 		if (!preg_match("/^0(6|7)[0-9]{8}$/", $number)) {
 			throw new SMSModeInvalidNumberException($number);
 		}
-		if (!in_array($number, $this->number)) {
-			$this->number[] = $number;
+		if (!in_array($number, $this->numbers)) {
+			$this->numbers[] = $number;
 		}
 		return $this;
 	}
@@ -219,7 +219,7 @@ final class SMSModeSendSMSRequest implements SMSModeRequestInterface, SMSModeSen
 	 * @return string Returns the number.
 	 */
 	public function getNumber() {
-		return $this->number;
+		return $this->numbers;
 	}
 
 	/**
@@ -279,9 +279,9 @@ final class SMSModeSendSMSRequest implements SMSModeRequestInterface, SMSModeSen
 	 * @return SMSModeSendSMSRequest Returns the sMsmode send SMS request.
 	 */
 	public function removeNumber($number) {
-		$pos = array_search($number, $this->number);
+		$pos = array_search($number, $this->numbers);
 		if ($pos !== false) {
-			unset($this->number[$pos]);
+			unset($this->numbers[$pos]);
 		}
 		return $this;
 	}
@@ -335,7 +335,7 @@ final class SMSModeSendSMSRequest implements SMSModeRequestInterface, SMSModeSen
 	 *
 	 * @param integer $messageClass The message class.
 	 * @return SMSModeSendSMSRequest Returns the sMsmode send SMS request.
-	 * @throws SMSModeInvalidMessageClassException Throws a SMSMod invalid message class exception if the message class is invalid.
+	 * @throws IllegalArgumentException Throws an illegal argument exception if the message class is invalid.
 	 */
 	public function setMessageClass($messageClass) {
 		switch ($messageClass) {
@@ -344,7 +344,7 @@ final class SMSModeSendSMSRequest implements SMSModeRequestInterface, SMSModeSen
 				$this->messageClass = $messageClass;
 				break;
 			default:
-				throw new SMSModeInvalidMessageClassException($messageClass);
+				throw new IllegalArgumentException("The message class \"" . $messageClass . "\" is invalid");
 		}
 		return $this;
 	}
@@ -427,14 +427,14 @@ final class SMSModeSendSMSRequest implements SMSModeRequestInterface, SMSModeSen
 		$output["message"] = $this->message;
 
 		// Check the required setting number and group.
-		if (count($this->number) < 1 && is_null($this->group)) {
+		if (count($this->numbers) < 1 && is_null($this->group)) {
 			throw new SMSModeMissingSettingException("number\" or \"group");
 		}
 
 		//
-		if (0 < count($this->number)) {
+		if (0 < count($this->numbers)) {
 			$numbers = [];
-			foreach ($this->number as $current) {
+			foreach ($this->numbers as $current) {
 				$numbers[] = $this->encodeNumber($current);
 			}
 			$output["numero"] = implode(",", $numbers);

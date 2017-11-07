@@ -19,6 +19,7 @@ namespace WBW\Library\SMSMode\Response;
  *
  * @author NdC/WBW <https://github.com/webeweb/>
  * @package WBW\Library\SMSMode\Response
+ * @final
  */
 final class SMSModeReceptionReportResponse extends AbstractSMSModeResponse implements SMSModeReceptionReportResponseInterface {
 

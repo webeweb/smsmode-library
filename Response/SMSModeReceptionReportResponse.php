@@ -50,7 +50,7 @@ final class SMSModeReceptionReportResponse extends AbstractSMSModeResponse imple
 	public function getReportDescription($number) {
 
 		// Check if the number exists.
-		if (in_array($number, array_keys($this->reports))) {
+		if (array_key_exists($number, $this->reports)) {
 
 			// Switch on the code.
 			switch ($this->reports[$number]) {

@@ -15,6 +15,7 @@ use Exception;
 use PHPUnit_Framework_TestCase;
 use WBW\Library\SMSMode\Exception\SMSModeMissingSettingException;
 use WBW\Library\SMSMode\Request\SMSModeReceptionReportRequest;
+use WBW\Library\SMSMode\Response\SMSModeReceptionReportResponse;
 
 /**
  * sMsmode reception report request test.
@@ -24,6 +25,33 @@ use WBW\Library\SMSMode\Request\SMSModeReceptionReportRequest;
  * @final
  */
 final class SMSModeReceptionReportRequestTest extends PHPUnit_Framework_TestCase {
+
+	/**
+	 * Tests the __construct() method.
+	 *
+	 * @return void
+	 */
+	public function testConstructor() {
+
+		$obj = new SMSModeReceptionReportRequest();
+
+		$this->assertEquals("compteRendu.do", $obj->getResourcePath(), "The method getResourcePath() does not return the expecetd value");
+
+		$this->assertEquals(null, $obj->getSmsID(), "The method getSmsID() does not return the expecetd value");
+	}
+
+	/**
+	 * Tests the parseResponse() method.
+	 *
+	 * @return void
+	 */
+	public function testParseResponse() {
+
+		$obj = new SMSModeReceptionReportRequest();
+
+		$res = $obj->parseResponse("exception");
+		$this->assertInstanceOf(SMSModeReceptionReportResponse::class, $res, "The method parseResponse() does not return the expected class");
+	}
 
 	/**
 	 * Tests the toArray() method.

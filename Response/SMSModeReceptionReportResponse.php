@@ -97,19 +97,19 @@ final class SMSModeReceptionReportResponse extends AbstractSMSModeResponse imple
 
 			// Set the code and description.
 			parent::parse($rawResponse);
-		} else {
+			return;
+		}
 
-			// Explode the response.
-			$parts = explode(self::RESPONSE_DELIMITER, $rawResponse);
+		// Explode the response.
+		$responses = explode(self::RESPONSE_DELIMITER, $rawResponse);
 
-			// Handle each report.
-			foreach ($parts as $current) {
-				if (trim($current) === "") {
-					continue;
-				}
-				$buffer = explode(" ", trim($current), 2);
-				$this->addReport([trim($buffer[0]), intval(trim($buffer[1]))]);
+		// Handle each report.
+		foreach ($responses as $current) {
+			$response = explode(" ", trim($current), 2);
+			if (trim($current) === "" || count($response) != 2) {
+				continue;
 			}
+			$this->addReport([trim($response[0]), intval(trim($response[1]))]);
 		}
 	}
 

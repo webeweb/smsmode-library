@@ -37,12 +37,12 @@ final class SMSModeGetResponsesRequestTest extends PHPUnit_Framework_TestCase {
 
 		$obj = new SMSModeGetResponsesRequest();
 
-		$this->assertEquals("responseList.do", $obj->getResourcePath(), "The method getResourcePath() does not return the expecetd value");
+		$this->assertEquals("responseList.do", $obj->getResourcePath(), "The method getResourcePath() does not return the expected value");
 
-		$this->assertEquals(null, $obj->getEndDate(), "The method getEndDate() does not return the expecetd value");
-		$this->assertEquals(null, $obj->getOffset(), "The method getOffset() does not return the expecetd value");
-		$this->assertEquals(null, $obj->getStart(), "The method getStart() does not return the expecetd value");
-		$this->assertEquals(null, $obj->getStartDate(), "The method getStartDate() does not return the expecetd value");
+		$this->assertEquals(null, $obj->getEndDate(), "The method getEndDate() does not return the expected value");
+		$this->assertEquals(null, $obj->getOffset(), "The method getOffset() does not return the expected value");
+		$this->assertEquals(null, $obj->getStart(), "The method getStart() does not return the expected value");
+		$this->assertEquals(null, $obj->getStartDate(), "The method getStartDate() does not return the expected value");
 	}
 
 	/**

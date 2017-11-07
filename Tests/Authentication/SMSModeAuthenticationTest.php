@@ -34,9 +34,9 @@ final class SMSModeAuthenticationTest extends PHPUnit_Framework_TestCase {
 
 		$obj = new SMSModeAuthentication();
 
-		$this->assertEquals(null, $obj->getToken(), "The method getToken() does not return the expecetd value");
-		$this->assertEquals(null, $obj->getUsername(), "The method getToken() does not return the expecetd value");
-		$this->assertEquals(null, $obj->getPassword(), "The method getToken() does not return the expecetd value");
+		$this->assertEquals(null, $obj->getPassword(), "The method getPassword() does not return the expected value");
+		$this->assertEquals(null, $obj->getToken(), "The method getToken() does not return the expected value");
+		$this->assertEquals(null, $obj->getUsername(), "The method getUsername() does not return the expected value");
 	}
 
 	/**

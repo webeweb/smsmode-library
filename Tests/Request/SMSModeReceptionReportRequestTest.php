@@ -35,9 +35,9 @@ final class SMSModeReceptionReportRequestTest extends PHPUnit_Framework_TestCase
 
 		$obj = new SMSModeReceptionReportRequest();
 
-		$this->assertEquals("compteRendu.do", $obj->getResourcePath(), "The method getResourcePath() does not return the expecetd value");
+		$this->assertEquals("compteRendu.do", $obj->getResourcePath(), "The method getResourcePath() does not return the expected value");
 
-		$this->assertEquals(null, $obj->getSmsID(), "The method getSmsID() does not return the expecetd value");
+		$this->assertEquals(null, $obj->getSmsID(), "The method getSmsID() does not return the expected value");
 	}
 
 	/**

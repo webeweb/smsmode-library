@@ -36,22 +36,22 @@ final class SMSModeCreateSubaccountRequestTest extends PHPUnit_Framework_TestCas
 
 		$obj = new SMSModeCreateSubaccountRequest();
 
-		$this->assertEquals("createSubAccount.do", $obj->getResourcePath(), "The method getResourcePath() does not return the expecetd value");
+		$this->assertEquals("createSubAccount.do", $obj->getResourcePath(), "The method getResourcePath() does not return the expected value");
 
-		$this->assertEquals(null, $obj->getAddress(), "The method getAddress() does not return the expecetd value");
-		$this->assertEquals(null, $obj->getBirthdate(), "The method getBirthdate() does not return the expecetd value");
-		$this->assertEquals(null, $obj->getCity(), "The method getCity() does not return the expecetd value");
-		$this->assertEquals(null, $obj->getCompany(), "The method getCompany() does not return the expecetd value");
-		$this->assertEquals(null, $obj->getEmail(), "The method getEmail() does not return the expecetd value");
-		$this->assertEquals(null, $obj->getFax(), "The method getFax() does not return the expecetd value");
-		$this->assertEquals(null, $obj->getFirstname(), "The method getFirstname() does not return the expecetd value");
-		$this->assertEquals(null, $obj->getLastname(), "The method getLastname() does not return the expecetd value");
-		$this->assertEquals(null, $obj->getMobilePhone(), "The method getMobilePhone() does not return the expecetd value");
-		$this->assertEquals(null, $obj->getPassword(), "The method getPassword() does not return the expecetd value");
-		$this->assertEquals(null, $obj->getPhone(), "The method getPhone() does not return the expecetd value");
-		$this->assertEquals(null, $obj->getPostalCode(), "The method getPostalCode() does not return the expecetd value");
-		$this->assertEquals(null, $obj->getReference(), "The method getReference() does not return the expecetd value");
-		$this->assertEquals(null, $obj->getUsername(), "The method getUsername() does not return the expecetd value");
+		$this->assertEquals(null, $obj->getAddress(), "The method getAddress() does not return the expected value");
+		$this->assertEquals(null, $obj->getBirthdate(), "The method getBirthdate() does not return the expected value");
+		$this->assertEquals(null, $obj->getCity(), "The method getCity() does not return the expected value");
+		$this->assertEquals(null, $obj->getCompany(), "The method getCompany() does not return the expected value");
+		$this->assertEquals(null, $obj->getEmail(), "The method getEmail() does not return the expected value");
+		$this->assertEquals(null, $obj->getFax(), "The method getFax() does not return the expected value");
+		$this->assertEquals(null, $obj->getFirstname(), "The method getFirstname() does not return the expected value");
+		$this->assertEquals(null, $obj->getLastname(), "The method getLastname() does not return the expected value");
+		$this->assertEquals(null, $obj->getMobilePhone(), "The method getMobilePhone() does not return the expected value");
+		$this->assertEquals(null, $obj->getPassword(), "The method getPassword() does not return the expected value");
+		$this->assertEquals(null, $obj->getPhone(), "The method getPhone() does not return the expected value");
+		$this->assertEquals(null, $obj->getPostalCode(), "The method getPostalCode() does not return the expected value");
+		$this->assertEquals(null, $obj->getReference(), "The method getReference() does not return the expected value");
+		$this->assertEquals(null, $obj->getUsername(), "The method getUsername() does not return the expected value");
 	}
 
 	/**

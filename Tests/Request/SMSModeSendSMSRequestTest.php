@@ -65,19 +65,19 @@ final class SMSModeSendSMSRequestTest extends PHPUnit_Framework_TestCase {
 
 		$obj = new SMSModeSendSMSRequest();
 
-		$this->assertEquals("sendSMS.do", $obj->getResourcePath(), "The method getResourcePath() does not return the expecetd value");
+		$this->assertEquals("sendSMS.do", $obj->getResourcePath(), "The method getResourcePath() does not return the expected value");
 
-		$this->assertEquals(null, $obj->getCustomerReference(), "The method getCustomerReference() does not return the expecetd value");
-		$this->assertEquals(null, $obj->getGroup(), "The method getGroup() does not return the expecetd value");
-		$this->assertEquals(5, $obj->getMaxMessageNumber(), "The method getMaxMessageNumber() does not return the expecetd value");
-		$this->assertEquals(null, $obj->getMessage(), "The method getMessage() does not return the expecetd value");
-		$this->assertEquals(SMSModeSendSMSRequest::MESSAGE_CLASS_SMS_PRO, $obj->getMessageClass(), "The method getMessageClass() does not return the expecetd value");
-		$this->assertEquals(null, $obj->getNotificationURL(), "The method getNotificationURL() does not return the expecetd value");
-		$this->assertEquals([], $obj->getNumber(), "The method getNumber() does not return the expecetd value");
-		$this->assertEquals(null, $obj->getResponseNotificationURL(), "The method getResponseNotificationURL() does not return the expecetd value");
-		$this->assertEquals(null, $obj->getSendDate(), "The method getSendDate() does not return the expecetd value");
-		$this->assertEquals(null, $obj->getSender(), "The method getSender() does not return the expecetd value");
-		$this->assertEquals(null, $obj->getStop(), "The method getStop() does not return the expecetd value");
+		$this->assertEquals(null, $obj->getCustomerReference(), "The method getCustomerReference() does not return the expected value");
+		$this->assertEquals(null, $obj->getGroup(), "The method getGroup() does not return the expected value");
+		$this->assertEquals(5, $obj->getMaxMessageNumber(), "The method getMaxMessageNumber() does not return the expected value");
+		$this->assertEquals(null, $obj->getMessage(), "The method getMessage() does not return the expected value");
+		$this->assertEquals(SMSModeSendSMSRequest::MESSAGE_CLASS_SMS_PRO, $obj->getMessageClass(), "The method getMessageClass() does not return the expected value");
+		$this->assertEquals(null, $obj->getNotificationURL(), "The method getNotificationURL() does not return the expected value");
+		$this->assertEquals([], $obj->getNumber(), "The method getNumber() does not return the expected value");
+		$this->assertEquals(null, $obj->getResponseNotificationURL(), "The method getResponseNotificationURL() does not return the expected value");
+		$this->assertEquals(null, $obj->getSendDate(), "The method getSendDate() does not return the expected value");
+		$this->assertEquals(null, $obj->getSender(), "The method getSender() does not return the expected value");
+		$this->assertEquals(null, $obj->getStop(), "The method getStop() does not return the expected value");
 	}
 
 	/**

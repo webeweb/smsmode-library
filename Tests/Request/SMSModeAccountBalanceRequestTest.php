@@ -33,7 +33,7 @@ final class SMSModeAccountBalanceRequestTest extends PHPUnit_Framework_TestCase 
 
 		$obj = new SMSModeAccountBalanceRequest();
 
-		$this->assertEquals("credit.do", $obj->getResourcePath(), "The method getResourcePath() does not return the expecetd value");
+		$this->assertEquals("credit.do", $obj->getResourcePath(), "The method getResourcePath() does not return the expected value");
 	}
 
 	/**

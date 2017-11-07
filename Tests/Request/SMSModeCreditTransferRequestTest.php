@@ -35,11 +35,11 @@ final class SMSModeCreditTransferRequestTest extends PHPUnit_Framework_TestCase 
 
 		$obj = new SMSModeCreditTransferRequest();
 
-		$this->assertEquals("creditTransfert.do", $obj->getResourcePath(), "The method getResourcePath() does not return the expecetd value");
+		$this->assertEquals("creditTransfert.do", $obj->getResourcePath(), "The method getResourcePath() does not return the expected value");
 
-		$this->assertEquals(null, $obj->getCredit(), "The method getCredit() does not return the expecetd value");
-		$this->assertEquals(null, $obj->getReference(), "The method getReference() does not return the expecetd value");
-		$this->assertEquals(null, $obj->getUsername(), "The method getUsername() does not return the expecetd value");
+		$this->assertEquals(null, $obj->getCredit(), "The method getCredit() does not return the expected value");
+		$this->assertEquals(null, $obj->getReference(), "The method getReference() does not return the expected value");
+		$this->assertEquals(null, $obj->getUsername(), "The method getUsername() does not return the expected value");
 	}
 
 	/**

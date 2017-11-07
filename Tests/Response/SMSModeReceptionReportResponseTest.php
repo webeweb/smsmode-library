@@ -57,6 +57,7 @@ final class SMSModeReceptionReportResponseTest extends PHPUnit_Framework_TestCas
 		$this->assertNull($obj->getDescription(), "The method parse() does not retrun the expected description");
 		$this->assertCount(6, $obj->getReports(), "The method parse() does not return the expected reports");
 
+		$this->assertEquals(null, $obj->getReportDescription("exception"), "The method parse() does not return the expected description with number exception");
 		$this->assertEquals(SMSModeReceptionReportResponse::DESC_SMS_SEND, $obj->getReportDescription("33612345678"), "The method parse() does not return the expected description with number 33612345678");
 		$this->assertEquals(SMSModeReceptionReportResponse::DESC_INTERNAL_ERROR_SENDING_SMS, $obj->getReportDescription("33623456789"), "The method parse() does not return the expected description with number 33623456789");
 		$this->assertEquals(SMSModeReceptionReportResponse::DESC_SMS_RECEIVED, $obj->getReportDescription("33698765432"), "The method parse() does not return the expected description with number 33698765432");

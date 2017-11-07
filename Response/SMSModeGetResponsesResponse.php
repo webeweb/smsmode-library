@@ -132,22 +132,22 @@ final class SMSModeGetResponsesResponse extends AbstractSMSModeResponse implemen
 
 			// Set the code and description.
 			parent::parse($rawResponse);
-		} else {
-
-			// Explode the response.
-			$response = explode(self::RESPONSE_DELIMITER, $rawResponse);
-			if (count($response) !== 6) {
-				return;
-			}
-
-			//
-			$this->setResponseID(trim($response[0]));
-			$this->setReceptionDate(DateTime::createFromFormat(SMSModeRequestInterface::DATE_FORMAT, trim($response[1])));
-			$this->setFrom(trim($response[2]));
-			$this->setText(trim($response[3]));
-			$this->setTo(trim($response[4]));
-			$this->setMessageID(trim($response[5]));
+			return;
 		}
+
+		// Explode the response.
+		$response = explode(self::RESPONSE_DELIMITER, $rawResponse);
+		if (count($response) !== 6) {
+			return;
+		}
+
+		//
+		$this->setResponseID(trim($response[0]));
+		$this->setReceptionDate(DateTime::createFromFormat(SMSModeRequestInterface::DATE_FORMAT, trim($response[1])));
+		$this->setFrom(trim($response[2]));
+		$this->setText(trim($response[3]));
+		$this->setTo(trim($response[4]));
+		$this->setMessageID(trim($response[5]));
 	}
 
 	/**

@@ -187,7 +187,7 @@ final class SMSModeGetResponsesRequest implements SMSModeRequestInterface {
 		if (!is_null($this->startDate) && is_null($this->endDate)) {
 			throw new SMSModeMissingSettingException("endDate");
 		}
-		if (is_null($this->getStartDate()) && !is_null($this->getEndDate())) {
+		if (is_null($this->startDate) && !is_null($this->endDate)) {
 			throw new SMSModeMissingSettingException("startDate");
 		}
 

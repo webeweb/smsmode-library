@@ -117,6 +117,15 @@ final class SMSModeGetResponsesRequestTest extends PHPUnit_Framework_TestCase {
 			$this->assertEquals("The end date must be greater than start date", $ex->getMessage(), "The exception does not return the expected message");
 		}
 
+		$obj->setStartDate(null);
+		try {
+			$obj->toArray();
+		} catch (Exception $ex) {
+			$this->assertInstanceOf(SMSModeMissingSettingException::class, $ex, "The method toArray() does not throw the expected exception");
+			$this->assertEquals("The setting \"startDate\" is missing", $ex->getMessage(), "The exception does not return the expected message");
+		}
+
+		$obj->setStartDate(new DateTime("2017-09-14 12:00:00"));
 		$obj->setEndDate(new DateTime("2017-09-14 14:00:00"));
 		$res3 = ["startDate" => "14092017-12:00", "endDate" => "14092017-14:00"];
 		$this->assertEquals($res3, $obj->toArray(), "The method toArray() does not return the expected array with message, group and send date");

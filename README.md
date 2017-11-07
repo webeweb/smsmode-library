@@ -26,6 +26,28 @@ Composer documentation.
 
 ---
 
+## Usage
+
+```php
+
+	// Create the provider.
+	$provider = new SMSModeProvider(new SMSModeAuthentication(), new SMSModeSendSMSRequest());
+
+	// Initialize the authentication.
+	$provider->getAuthentication()->setUsername("username");
+	$provider->getAuthentication()->setPassword("password");
+
+	// Initialize the request.
+	$provider->getRequest()->addNumber("0612345678");
+	$provider->getRequest()->setMessage("Hello world !");
+	$provider->getRequest()->setSender("sender");
+	$provider->getRequest()->setStop(SMSModeSendSMSRequest::STOP_ONLY);
+
+	// Call API.
+	$response = $provider->callAPI();
+
+```
+
 ## Testing
 
 To test the package, is better to clone this repository on your computer.

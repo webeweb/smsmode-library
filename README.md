@@ -1,7 +1,7 @@
-WBWSMSModeLibrary
+smsmode-library
 =================
 
-[![Build Status](https://travis-ci.org/webeweb/WBWSMSModeLibrary.svg?branch=master)](https://travis-ci.org/webeweb/WBWSMSModeLibrary) [![Coverage Status](https://coveralls.io/repos/github/webeweb/WBWSMSModeLibrary/badge.svg?branch=master)](https://coveralls.io/github/webeweb/WBWSMSModeLibrary?branch=master) [![Latest Stable Version](https://poser.pugx.org/webeweb/smsmode-library/v/stable)](https://packagist.org/packages/webeweb/smsmode-library) [![Latest Unstable Version](https://poser.pugx.org/webeweb/smsmode-library/v/unstable)](https://packagist.org/packages/webeweb/smsmode-library) [![License](https://poser.pugx.org/webeweb/smsmode-library/license)](https://packagist.org/packages/webeweb/smsmode-library) [![composer.lock](https://poser.pugx.org/webeweb/smsmode-library/composerlock)](https://packagist.org/packages/webeweb/smsmode-library) [![SensioLabsInsight](https://insight.sensiolabs.com/projects/78a746c0-f837-4f8f-94c7-32c426d21f65/mini.png)](https://insight.sensiolabs.com/projects/78a746c0-f837-4f8f-94c7-32c426d21f65)
+[![Build Status](https://travis-ci.org/webeweb/smsmode-library.svg?branch=master)](https://travis-ci.org/webeweb/smsmode-library) [![Coverage Status](https://coveralls.io/repos/github/webeweb/smsmode-library/badge.svg?branch=master)](https://coveralls.io/github/webeweb/smsmode-library?branch=master) [![Latest Stable Version](https://poser.pugx.org/webeweb/smsmode-library/v/stable)](https://packagist.org/packages/webeweb/smsmode-library) [![Latest Unstable Version](https://poser.pugx.org/webeweb/smsmode-library/v/unstable)](https://packagist.org/packages/webeweb/smsmode-library) [![License](https://poser.pugx.org/webeweb/smsmode-library/license)](https://packagist.org/packages/webeweb/smsmode-library) [![composer.lock](https://poser.pugx.org/webeweb/smsmode-library/composerlock)](https://packagist.org/packages/webeweb/smsmode-library) [![SensioLabsInsight](https://insight.sensiolabs.com/projects/78a746c0-f837-4f8f-94c7-32c426d21f65/mini.png)](https://insight.sensiolabs.com/projects/78a746c0-f837-4f8f-94c7-32c426d21f65)
 
 Integrate sMsmode API with your projects.
 
@@ -56,9 +56,9 @@ stable version of this package:
 
 ```bash
 
-$ mkdir WBWSMSModeLibrary
-$ cd WBWSMSModeLibrary
-$ git clone git@github.com:webeweb/WBWSMSModeLibrary.git .
+$ mkdir smsmode-library
+$ cd smsmode-library
+$ git clone git@github.com:webeweb/smsmode-library.git .
 $ composer install
 
 ```
@@ -75,7 +75,7 @@ $ vendor/bin/phpunit
 
 ## License
 
-WBWSMSModeLibrary is released under the LGPL License. See the bundled [LICENSE](LICENSE)
+smsmode-library is released under the LGPL License. See the bundled [LICENSE](LICENSE)
 file for details.
 
 Please note that the sMsmode API is not free for use, see their

@@ -80,3 +80,4 @@ file for details.
 
 Please note that the sMsmode API is not free for use, see their
 [product page](https://www.smsmode.com/tarifs-sms/) for details on pricing.
+

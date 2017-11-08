@@ -13,9 +13,9 @@ namespace WBW\Library\SMSMode\Request;
 
 use DateTime;
 use WBW\Library\Core\Exception\Argument\IllegalArgumentException;
+use WBW\Library\Core\Exception\Pointer\NullPointerException;
 use WBW\Library\SMSMode\Exception\SMSModeInvalidNumberException;
 use WBW\Library\SMSMode\Exception\SMSModeMaxLimitNumberReachedException;
-use WBW\Library\SMSMode\Exception\SMSModeMissingSettingException;
 use WBW\Library\SMSMode\Response\SMSModeSendSMSResponse;
 
 /**
@@ -422,13 +422,13 @@ final class SMSModeSendSMSRequest implements SMSModeRequestInterface, SMSModeSen
 
 		// Check the required setting message.
 		if (is_null($this->message)) {
-			throw new SMSModeMissingSettingException("message");
+			throw new NullPointerException("The parameter \"message\" is missing");
 		}
 		$output["message"] = $this->message;
 
 		// Check the required setting number and group.
 		if (count($this->numbers) < 1 && is_null($this->group)) {
-			throw new SMSModeMissingSettingException("number\" or \"group");
+			throw new NullPointerException("The parameter \"number\" or \"group\" is missing");
 		}
 
 		//

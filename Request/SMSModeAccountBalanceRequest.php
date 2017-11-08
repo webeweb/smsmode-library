@@ -36,7 +36,7 @@ final class SMSModeAccountBalanceRequest implements SMSModeRequestInterface {
 	 * {@inheritdoc}
 	 */
 	public function getResourcePath() {
-		return 'credit.do';
+		return "credit.do";
 	}
 
 	/**

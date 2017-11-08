@@ -14,7 +14,7 @@ namespace WBW\Library\SMSMode\Tests\Request;
 use DateTime;
 use Exception;
 use PHPUnit_Framework_TestCase;
-use WBW\Library\SMSMode\Exception\SMSModeMissingSettingException;
+use WBW\Library\Core\Exception\Pointer\NullPointerException;
 use WBW\Library\SMSMode\Request\SMSModeCreateSubaccountRequest;
 use WBW\Library\SMSMode\Response\SMSModeCreateSubaccountResponse;
 
@@ -79,16 +79,16 @@ final class SMSModeCreateSubaccountRequestTest extends PHPUnit_Framework_TestCas
 		try {
 			$obj->toArray();
 		} catch (Exception $ex) {
-			$this->assertInstanceOf(SMSModeMissingSettingException::class, $ex, "The method toArray() does not throw the expected exception");
-			$this->assertEquals("The setting \"username\" is missing", $ex->getMessage(), "The exception does not return the expected message");
+			$this->assertInstanceOf(NullPointerException::class, $ex, "The method toArray() does not throw the expected exception");
+			$this->assertEquals("The parameter \"username\" is missing", $ex->getMessage(), "The exception does not return the expected message");
 		}
 
 		$obj->setUsername("username");
 		try {
 			$obj->toArray();
 		} catch (Exception $ex) {
-			$this->assertInstanceOf(SMSModeMissingSettingException::class, $ex, "The method toArray() does not throw the expected exception");
-			$this->assertEquals("The setting \"password\" is missing", $ex->getMessage(), "The exception does not return the expected message");
+			$this->assertInstanceOf(NullPointerException::class, $ex, "The method toArray() does not throw the expected exception");
+			$this->assertEquals("The parameter \"password\" is missing", $ex->getMessage(), "The exception does not return the expected message");
 		}
 
 		$obj->setPassword("password");

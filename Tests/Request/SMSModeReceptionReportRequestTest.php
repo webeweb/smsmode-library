@@ -13,7 +13,7 @@ namespace WBW\Library\SMSMode\Tests\Request;
 
 use Exception;
 use PHPUnit_Framework_TestCase;
-use WBW\Library\SMSMode\Exception\SMSModeMissingSettingException;
+use WBW\Library\Core\Exception\Pointer\NullPointerException;
 use WBW\Library\SMSMode\Request\SMSModeReceptionReportRequest;
 use WBW\Library\SMSMode\Response\SMSModeReceptionReportResponse;
 
@@ -65,8 +65,8 @@ final class SMSModeReceptionReportRequestTest extends PHPUnit_Framework_TestCase
 		try {
 			$obj->toArray();
 		} catch (Exception $ex) {
-			$this->assertInstanceOf(SMSModeMissingSettingException::class, $ex, "The method toArray() does not throw the expected exception");
-			$this->assertEquals("The setting \"smsID\" is missing", $ex->getMessage(), "The exception does not return the expected message");
+			$this->assertInstanceOf(NullPointerException::class, $ex, "The method toArray() does not throw the expected exception");
+			$this->assertEquals("The parameter \"smsID\" is missing", $ex->getMessage(), "The exception does not return the expected message");
 		}
 
 		$obj->setSmsID("smsID");

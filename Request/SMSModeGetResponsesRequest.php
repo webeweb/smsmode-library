@@ -13,7 +13,7 @@ namespace WBW\Library\SMSMode\Request;
 
 use DateTime;
 use WBW\Library\Core\Exception\Argument\IllegalArgumentException;
-use WBW\Library\SMSMode\Exception\SMSModeMissingSettingException;
+use WBW\Library\Core\Exception\Pointer\NullPointerException;
 use WBW\Library\SMSMode\Response\SMSModeGetResponsesResponse;
 
 /**
@@ -167,10 +167,10 @@ final class SMSModeGetResponsesRequest implements SMSModeRequestInterface {
 
 		// Check the optional setting start and offset.
 		if (!is_null($this->start) && is_null($this->offset)) {
-			throw new SMSModeMissingSettingException("offset");
+			throw new NullPointerException("The parameter \"offset\" is missing");
 		}
 		if (is_null($this->start) && !is_null($this->offset)) {
-			throw new SMSModeMissingSettingException("start");
+			throw new NullPointerException("The parameter \"start\" is missing");
 		}
 
 		//
@@ -185,10 +185,10 @@ final class SMSModeGetResponsesRequest implements SMSModeRequestInterface {
 
 		// Check the optional setting start date and end date.
 		if (!is_null($this->startDate) && is_null($this->endDate)) {
-			throw new SMSModeMissingSettingException("endDate");
+			throw new NullPointerException("The parameter \"endDate\" is missing");
 		}
 		if (is_null($this->startDate) && !is_null($this->endDate)) {
-			throw new SMSModeMissingSettingException("startDate");
+			throw new NullPointerException("The parameter \"startDate\" is missing");
 		}
 
 		//

@@ -12,7 +12,7 @@
 namespace WBW\Library\SMSMode\Request;
 
 use DateTime;
-use WBW\Library\SMSMode\Exception\SMSModeMissingSettingException;
+use WBW\Library\Core\Exception\Pointer\NullPointerException;
 use WBW\Library\SMSMode\Response\SMSModeCreateSubaccountResponse;
 
 /**
@@ -253,7 +253,7 @@ final class SMSModeCreateSubaccountRequest implements SMSModeRequestInterface {
 	 * {@inheritdoc}
 	 */
 	public function getResourcePath() {
-		return 'createSubAccount.do';
+		return "createSubAccount.do";
 	}
 
 	/**
@@ -436,74 +436,74 @@ final class SMSModeCreateSubaccountRequest implements SMSModeRequestInterface {
 
 		// Check the required setting username.
 		if (is_null($this->username)) {
-			throw new SMSModeMissingSettingException('username');
+			throw new NullPointerException("The parameter \"username\" is missing");
 		}
-		$output['newPseudo'] = $this->username;
+		$output["newPseudo"] = $this->username;
 
 		// Check the required setting password.
 		if (is_null($this->password)) {
-			throw new SMSModeMissingSettingException('password');
+			throw new NullPointerException("The parameter \"password\" is missing");
 		}
-		$output['newPass'] = $this->password;
+		$output["newPass"] = $this->password;
 
 		// Check the optional setting reference.
 		if (!is_null($this->reference)) {
-			$output['reference'] = $this->reference;
+			$output["reference"] = $this->reference;
 		}
 
 		// Check the optional setting lastname.
 		if (!is_null($this->lastname)) {
-			$output['nom'] = $this->lastname;
+			$output["nom"] = $this->lastname;
 		}
 
 		// Check the optional setting firstname.
 		if (!is_null($this->firstname)) {
-			$output['prenom'] = $this->firstname;
+			$output["prenom"] = $this->firstname;
 		}
 
 		// Check the optional setting company.
 		if (!is_null($this->company)) {
-			$output['societe'] = $this->company;
+			$output["societe"] = $this->company;
 		}
 
 		// Check the optional setting address.
 		if (!is_null($this->address)) {
-			$output['adresse'] = $this->address;
+			$output["adresse"] = $this->address;
 		}
 
 		// Check the optional setting city.
 		if (!is_null($this->city)) {
-			$output['ville'] = $this->city;
+			$output["ville"] = $this->city;
 		}
 
 		// Check the optional setting postal code.
 		if (!is_null($this->postalCode)) {
-			$output['codePostal'] = $this->postalCode;
+			$output["codePostal"] = $this->postalCode;
 		}
 
 		// Check the optional setting mobile phone.
 		if (!is_null($this->mobilePhone)) {
-			$output['mobile'] = $this->mobilePhone;
+			$output["mobile"] = $this->mobilePhone;
 		}
 
 		// Check the optional setting phone.
 		if (!is_null($this->phone)) {
-			$output['telephone'] = $this->phone;
+			$output["telephone"] = $this->phone;
 		}
 
 		// Check the optional setting fax.
 		if (!is_null($this->fax)) {
-			$output['fax'] = $this->fax;
+			$output["fax"] = $this->fax;
 		}
 
 		// Check the optional setting email.
 		if (!is_null($this->email)) {
-			$output['email'] = $this->email;
+			$output["email"] = $this->email;
 		}
 
 		// Check the optional setting birthdate.
 		if (!is_null($this->birthdate)) {
-			$output['date'] = $this->birthdate->format('dmY');
+			$output["date"] = $this->birthdate->format("dmY");
 		}
 
 		// Return the output.

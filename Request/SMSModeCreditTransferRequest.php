@@ -11,7 +11,7 @@
 
 namespace WBW\Library\SMSMode\Request;
 
-use WBW\Library\SMSMode\Exception\SMSModeMissingSettingException;
+use WBW\Library\Core\Exception\Pointer\NullPointerException;
 use WBW\Library\SMSMode\Response\SMSModeCreditTransferResponse;
 
 /**
@@ -76,7 +76,7 @@ final class SMSModeCreditTransferRequest implements SMSModeRequestInterface {
 	 * {@inheritdoc}
 	 */
 	public function getResourcePath() {
-		return 'creditTransfert.do';
+		return "creditTransfert.do";
 	}
 
 	/**
@@ -138,19 +138,19 @@ final class SMSModeCreditTransferRequest implements SMSModeRequestInterface {
 
 		// Check the required setting username.
 		if (is_null($this->username)) {
-			throw new SMSModeMissingSettingException('username');
+			throw new NullPointerException("The parameter \"username\" is missing");
 		}
-		$output['targetPseudo'] = $this->username;
+		$output["targetPseudo"] = $this->username;
 
 		// Check the required setting credit.
 		if (is_null($this->credit)) {
-			throw new SMSModeMissingSettingException('credit');
+			throw new NullPointerException("The parameter \"credit\" is missing");
 		}
-		$output['creditAmount'] = $this->credit;
+		$output["creditAmount"] = $this->credit;
 
 		// Check the optional setting reference.
 		if (!is_null($this->reference)) {
-			$output['reference'] = $this->reference;
+			$output["reference"] = $this->reference;
 		}
 
 		// Return the output.

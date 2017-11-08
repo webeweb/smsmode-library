@@ -15,9 +15,9 @@ use DateTime;
 use Exception;
 use PHPUnit_Framework_TestCase;
 use WBW\Library\Core\Exception\Argument\IllegalArgumentException;
+use WBW\Library\Core\Exception\Pointer\NullPointerException;
 use WBW\Library\SMSMode\Exception\SMSModeInvalidNumberException;
 use WBW\Library\SMSMode\Exception\SMSModeMaxLimitNumberReachedException;
-use WBW\Library\SMSMode\Exception\SMSModeMissingSettingException;
 use WBW\Library\SMSMode\Request\SMSModeSendSMSRequest;
 use WBW\Library\SMSMode\Response\SMSModeSendSMSResponse;
 
@@ -150,16 +150,16 @@ final class SMSModeSendSMSRequestTest extends PHPUnit_Framework_TestCase {
 		try {
 			$obj->toArray();
 		} catch (Exception $ex) {
-			$this->assertInstanceOf(SMSModeMissingSettingException::class, $ex, "The method toArray() does not throw the expected exception");
-			$this->assertEquals("The setting \"message\" is missing", $ex->getMessage(), "The exception does not return the expected message");
+			$this->assertInstanceOf(NullPointerException::class, $ex, "The method toArray() does not throw the expected exception");
+			$this->assertEquals("The parameter \"message\" is missing", $ex->getMessage(), "The exception does not return the expected message");
 		}
 
 		$obj->setMessage("message");
 		try {
 			$obj->toArray();
 		} catch (Exception $ex) {
-			$this->assertInstanceOf(SMSModeMissingSettingException::class, $ex, "The method toArray() does not throw the expected exception");
-			$this->assertEquals("The setting \"number\" or \"group\" is missing", $ex->getMessage(), "The exception does not return the expected message");
+			$this->assertInstanceOf(NullPointerException::class, $ex, "The method toArray() does not throw the expected exception");
+			$this->assertEquals("The parameter \"number\" or \"group\" is missing", $ex->getMessage(), "The exception does not return the expected message");
 		}
 
 		$obj->addNumber("0612345678");

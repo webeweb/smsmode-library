@@ -11,7 +11,7 @@
 
 namespace WBW\Library\SMSMode\Request;
 
-use WBW\Library\SMSMode\Exception\SMSModeMissingSettingException;
+use WBW\Library\Core\Exception\Pointer\NullPointerException;
 use WBW\Library\SMSMode\Response\SMSModeDeleteSubaccountResponse;
 
 /**
@@ -44,7 +44,7 @@ final class SMSModeDeleteSubaccountRequest implements SMSModeRequestInterface {
 	 * {@inheritdoc}
 	 */
 	public function getResourcePath() {
-		return 'deleteSubAccount.do';
+		return "deleteSubAccount.do";
 	}
 
 	/**
@@ -84,9 +84,9 @@ final class SMSModeDeleteSubaccountRequest implements SMSModeRequestInterface {
 
 		// Check the required setting username.
 		if (is_null($this->username)) {
-			throw new SMSModeMissingSettingException('username');
+			throw new NullPointerException("The parameter \"username\" is missing");
 		}
-		$output['pseudoToDelete'] = $this->username;
+		$output["pseudoToDelete"] = $this->username;
 
 		// Return the output.
 		return $output;

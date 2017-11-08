@@ -15,7 +15,7 @@ use DateTime;
 use Exception;
 use PHPUnit_Framework_TestCase;
 use WBW\Library\Core\Exception\Argument\IllegalArgumentException;
-use WBW\Library\SMSMode\Exception\SMSModeMissingSettingException;
+use WBW\Library\Core\Exception\Pointer\NullPointerException;
 use WBW\Library\SMSMode\Request\SMSModeGetResponsesRequest;
 use WBW\Library\SMSMode\Response\SMSModeGetResponsesResponse;
 
@@ -74,8 +74,8 @@ final class SMSModeGetResponsesRequestTest extends PHPUnit_Framework_TestCase {
 		try {
 			$obj->toArray();
 		} catch (Exception $ex) {
-			$this->assertInstanceOf(SMSModeMissingSettingException::class, $ex, "The method toArray() does not throw the expected exception");
-			$this->assertEquals("The setting \"offset\" is missing", $ex->getMessage(), "The exception does not return the expected message");
+			$this->assertInstanceOf(NullPointerException::class, $ex, "The method toArray() does not throw the expected exception");
+			$this->assertEquals("The parameter \"offset\" is missing", $ex->getMessage(), "The exception does not return the expected message");
 		}
 
 		$obj->setStart(null);
@@ -83,8 +83,8 @@ final class SMSModeGetResponsesRequestTest extends PHPUnit_Framework_TestCase {
 		try {
 			$obj->toArray();
 		} catch (Exception $ex) {
-			$this->assertInstanceOf(SMSModeMissingSettingException::class, $ex, "The method toArray() does not throw the expected exception");
-			$this->assertEquals("The setting \"start\" is missing", $ex->getMessage(), "The exception does not return the expected message");
+			$this->assertInstanceOf(NullPointerException::class, $ex, "The method toArray() does not throw the expected exception");
+			$this->assertEquals("The parameter \"start\" is missing", $ex->getMessage(), "The exception does not return the expected message");
 		}
 
 		$obj->setStart(0);
@@ -105,8 +105,8 @@ final class SMSModeGetResponsesRequestTest extends PHPUnit_Framework_TestCase {
 		try {
 			$obj->toArray();
 		} catch (Exception $ex) {
-			$this->assertInstanceOf(SMSModeMissingSettingException::class, $ex, "The method toArray() does not throw the expected exception");
-			$this->assertEquals("The setting \"endDate\" is missing", $ex->getMessage(), "The exception does not return the expected message");
+			$this->assertInstanceOf(NullPointerException::class, $ex, "The method toArray() does not throw the expected exception");
+			$this->assertEquals("The parameter \"endDate\" is missing", $ex->getMessage(), "The exception does not return the expected message");
 		}
 
 		$obj->setEndDate(new DateTime("2017-09-14 12:00:00"));
@@ -121,8 +121,8 @@ final class SMSModeGetResponsesRequestTest extends PHPUnit_Framework_TestCase {
 		try {
 			$obj->toArray();
 		} catch (Exception $ex) {
-			$this->assertInstanceOf(SMSModeMissingSettingException::class, $ex, "The method toArray() does not throw the expected exception");
-			$this->assertEquals("The setting \"startDate\" is missing", $ex->getMessage(), "The exception does not return the expected message");
+			$this->assertInstanceOf(NullPointerException::class, $ex, "The method toArray() does not throw the expected exception");
+			$this->assertEquals("The parameter \"startDate\" is missing", $ex->getMessage(), "The exception does not return the expected message");
 		}
 
 		$obj->setStartDate(new DateTime("2017-09-14 12:00:00"));

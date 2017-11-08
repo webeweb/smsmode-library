@@ -13,7 +13,7 @@ namespace WBW\Library\SMSMode\Tests\Request;
 
 use Exception;
 use PHPUnit_Framework_TestCase;
-use WBW\Library\SMSMode\Exception\SMSModeMissingSettingException;
+use WBW\Library\Core\Exception\Pointer\NullPointerException;
 use WBW\Library\SMSMode\Request\SMSModeCreditTransferRequest;
 use WBW\Library\SMSMode\Response\SMSModeCreditTransferResponse;
 
@@ -67,8 +67,8 @@ final class SMSModeCreditTransferRequestTest extends PHPUnit_Framework_TestCase 
 		try {
 			$obj->toArray();
 		} catch (Exception $ex) {
-			$this->assertInstanceOf(SMSModeMissingSettingException::class, $ex, "The method toArray() does not throw the expected exception");
-			$this->assertEquals("The setting \"username\" is missing", $ex->getMessage(), "The exception does not return the expected message");
+			$this->assertInstanceOf(NullPointerException::class, $ex, "The method toArray() does not throw the expected exception");
+			$this->assertEquals("The parameter \"username\" is missing", $ex->getMessage(), "The exception does not return the expected message");
 		}
 
 		$obj->setUsername("username");
@@ -76,8 +76,8 @@ final class SMSModeCreditTransferRequestTest extends PHPUnit_Framework_TestCase 
 		try {
 			$obj->toArray();
 		} catch (Exception $ex) {
-			$this->assertInstanceOf(SMSModeMissingSettingException::class, $ex, "The method toArray() does not throw the expected exception");
-			$this->assertEquals("The setting \"credit\" is missing", $ex->getMessage(), "The exception does not return the expected message");
+			$this->assertInstanceOf(NullPointerException::class, $ex, "The method toArray() does not throw the expected exception");
+			$this->assertEquals("The parameter \"credit\" is missing", $ex->getMessage(), "The exception does not return the expected message");
 		}
 
 		$obj->setCredit(212);

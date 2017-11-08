@@ -11,7 +11,7 @@
 
 namespace WBW\Library\SMSMode\Request;
 
-use WBW\Library\SMSMode\Exception\SMSModeMissingSettingException;
+use WBW\Library\Core\Exception\Pointer\NullPointerException;
 use WBW\Library\SMSMode\Response\AbstractSMSModeResponse;
 
 /**
@@ -50,7 +50,7 @@ interface SMSModeRequestInterface {
 	 * Convert into an array representing this instance.
 	 *
 	 * @return array Returns an array representing this instance.
-	 * @throws SMSModeMissingSettingException Throws a sMsmode missing setting exception if a setting is missing.
+	 * @throws NullPointerException Throws a null pointer exception if a parameter is missing.
 	 */
 	public function toArray();
 }

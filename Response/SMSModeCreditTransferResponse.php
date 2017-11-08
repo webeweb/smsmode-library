@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the WBWSMSModeLibrary package.
+ * This file is part of the smsmode-library.
  *
  * (c) 2017 NdC/WBW
  *

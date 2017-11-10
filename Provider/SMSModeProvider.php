@@ -12,10 +12,10 @@
 namespace WBW\Library\SMSMode\Provider;
 
 use WBW\Library\Core\Exception\Argument\IllegalArgumentException;
+use WBW\Library\Core\Exception\Pointer\NullPointerException;
 use WBW\Library\CURL\Configuration\CURLConfiguration;
 use WBW\Library\CURL\Request\CURLGetRequest;
 use WBW\Library\SMSMode\Authentication\SMSModeAuthentication;
-use WBW\Library\SMSMode\Exception\SMSModeMissingSettingException;
 use WBW\Library\SMSMode\Request\SMSModeRequestInterface;
 use WBW\Library\SMSMode\Response\AbstractSMSModeResponse;
 
@@ -64,7 +64,7 @@ final class SMSModeProvider {
 	 * Call the API.
 	 *
 	 * @return AbstractSMSModeResponse Returns the response.
-	 * @throws SMSModeMissingSettingException Throws a sMsmode missing setting exception if a setting is missing.
+	 * @throws NullPointerException Throws a null pointer exception if a setting is missing.
 	 * @throws IllegalArgumentException Throws an illegal argument exception if a setting is invalid.
 	 */
 	public function callAPI() {

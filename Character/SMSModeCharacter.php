@@ -20,7 +20,7 @@ use WBW\Library\SMSMode\Exception\SMSModeCharacterNotAllowedException;
  * @package WBW\Library\SMSMode\Character
  * @final
  */
-final class SMSModeCharacter implements SMSModeCharacterInterface {
+final class SMSModeCharacter {
 
 	/**
 	 * Constructor.
@@ -44,6 +44,34 @@ final class SMSModeCharacter implements SMSModeCharacterInterface {
 	}
 
 	/**
+	 * Get all characters.
+	 *
+	 * @return array Returns all characters.
+	 */
+	public static function getAllCharacters() {
+		return [
+			"\n", "\r", " ",
+			"!", "\"", "#", "$", "%", "&", "'", "(", ")", "+", ",", "-", ".", "/", "{", "|", "}", "~", "[", "\\", "]", "^",
+			"0", "1", "2", "3", "4", "5", "6", "7", "8", "9",
+			":", ";", "<", "=", ">", "?", "@",
+			"A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z",
+			"_",
+			"a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z",
+			"¡", "£", "€", "¥", "§", "¿",
+			"Ä", "Å", "Æ", "Ç", "È", "É", "Ñ", "Ö", "Ø", "Ü", "ß", "à", "ä", "å", "æ", "è", "é", "ì", "ñ", "ò", "ö", "ø", "ù", "Ü",
+		];
+	}
+
+	/**
+	 * Get two characters.
+	 *
+	 * @return array Returns the two characters.
+	 */
+	public static function getTwoCharacters() {
+		return ["/", "{", "|", "}", "~", "[", "\\", "]", "^", "€"];
+	}
+
+	/**
 	 * Length.
 	 *
 	 * @param string $message The message.
@@ -56,8 +84,8 @@ final class SMSModeCharacter implements SMSModeCharacterInterface {
 		$length = 0;
 
 		// Define the reference.
-		$all = $this->convert(self::ALL_CHARACTERS);
-		$two = $this->convert(self::TWO_CHARACTERS);
+		$all = $this->convert(self::getAllCharacters());
+		$two = $this->convert(self::getTwoCharacters());
 
 		// Decode the message.
 		$buffer = utf8_decode($message);

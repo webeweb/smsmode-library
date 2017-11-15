@@ -35,9 +35,9 @@ final class SMSModeReceptionReportRequestTest extends PHPUnit_Framework_TestCase
 
 		$obj = new SMSModeReceptionReportRequest();
 
-		$this->assertEquals("compteRendu.do", $obj->getResourcePath(), "The method getResourcePath() does not return the expected value");
+		$this->assertEquals("compteRendu.do", $obj->getResourcePath());
 
-		$this->assertEquals(null, $obj->getSmsID(), "The method getSmsID() does not return the expected value");
+		$this->assertEquals(null, $obj->getSmsID());
 	}
 
 	/**
@@ -50,7 +50,7 @@ final class SMSModeReceptionReportRequestTest extends PHPUnit_Framework_TestCase
 		$obj = new SMSModeReceptionReportRequest();
 
 		$res = $obj->parseResponse("exception");
-		$this->assertInstanceOf(SMSModeReceptionReportResponse::class, $res, "The method parseResponse() does not return the expected class");
+		$this->assertInstanceOf(SMSModeReceptionReportResponse::class, $res);
 	}
 
 	/**
@@ -65,13 +65,13 @@ final class SMSModeReceptionReportRequestTest extends PHPUnit_Framework_TestCase
 		try {
 			$obj->toArray();
 		} catch (Exception $ex) {
-			$this->assertInstanceOf(NullPointerException::class, $ex, "The method toArray() does not throw the expected exception");
-			$this->assertEquals("The parameter \"smsID\" is missing", $ex->getMessage(), "The exception does not return the expected message");
+			$this->assertInstanceOf(NullPointerException::class, $ex);
+			$this->assertEquals("The parameter \"smsID\" is missing", $ex->getMessage());
 		}
 
 		$obj->setSmsID("smsID");
 		$res1 = ["smsID" => "smsID"];
-		$this->assertEquals($res1, $obj->toArray(), "The method toArray() does not return the expected array with message and number");
+		$this->assertEquals($res1, $obj->toArray());
 	}
 
 }

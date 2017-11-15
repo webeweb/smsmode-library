@@ -36,22 +36,22 @@ final class SMSModeCreateSubaccountRequestTest extends PHPUnit_Framework_TestCas
 
 		$obj = new SMSModeCreateSubaccountRequest();
 
-		$this->assertEquals("createSubAccount.do", $obj->getResourcePath(), "The method getResourcePath() does not return the expected value");
+		$this->assertEquals("createSubAccount.do", $obj->getResourcePath());
 
-		$this->assertEquals(null, $obj->getAddress(), "The method getAddress() does not return the expected value");
-		$this->assertEquals(null, $obj->getBirthdate(), "The method getBirthdate() does not return the expected value");
-		$this->assertEquals(null, $obj->getCity(), "The method getCity() does not return the expected value");
-		$this->assertEquals(null, $obj->getCompany(), "The method getCompany() does not return the expected value");
-		$this->assertEquals(null, $obj->getEmail(), "The method getEmail() does not return the expected value");
-		$this->assertEquals(null, $obj->getFax(), "The method getFax() does not return the expected value");
-		$this->assertEquals(null, $obj->getFirstname(), "The method getFirstname() does not return the expected value");
-		$this->assertEquals(null, $obj->getLastname(), "The method getLastname() does not return the expected value");
-		$this->assertEquals(null, $obj->getMobilePhone(), "The method getMobilePhone() does not return the expected value");
-		$this->assertEquals(null, $obj->getPassword(), "The method getPassword() does not return the expected value");
-		$this->assertEquals(null, $obj->getPhone(), "The method getPhone() does not return the expected value");
-		$this->assertEquals(null, $obj->getPostalCode(), "The method getPostalCode() does not return the expected value");
-		$this->assertEquals(null, $obj->getReference(), "The method getReference() does not return the expected value");
-		$this->assertEquals(null, $obj->getUsername(), "The method getUsername() does not return the expected value");
+		$this->assertEquals(null, $obj->getAddress());
+		$this->assertEquals(null, $obj->getBirthdate());
+		$this->assertEquals(null, $obj->getCity());
+		$this->assertEquals(null, $obj->getCompany());
+		$this->assertEquals(null, $obj->getEmail());
+		$this->assertEquals(null, $obj->getFax());
+		$this->assertEquals(null, $obj->getFirstname());
+		$this->assertEquals(null, $obj->getLastname());
+		$this->assertEquals(null, $obj->getMobilePhone());
+		$this->assertEquals(null, $obj->getPassword());
+		$this->assertEquals(null, $obj->getPhone());
+		$this->assertEquals(null, $obj->getPostalCode());
+		$this->assertEquals(null, $obj->getReference());
+		$this->assertEquals(null, $obj->getUsername());
 	}
 
 	/**
@@ -64,7 +64,7 @@ final class SMSModeCreateSubaccountRequestTest extends PHPUnit_Framework_TestCas
 		$obj = new SMSModeCreateSubaccountRequest();
 
 		$res = $obj->parseResponse("exception");
-		$this->assertInstanceOf(SMSModeCreateSubaccountResponse::class, $res, "The method parseResponse() does not return the expected class");
+		$this->assertInstanceOf(SMSModeCreateSubaccountResponse::class, $res);
 	}
 
 	/**
@@ -79,80 +79,80 @@ final class SMSModeCreateSubaccountRequestTest extends PHPUnit_Framework_TestCas
 		try {
 			$obj->toArray();
 		} catch (Exception $ex) {
-			$this->assertInstanceOf(NullPointerException::class, $ex, "The method toArray() does not throw the expected exception");
-			$this->assertEquals("The parameter \"username\" is missing", $ex->getMessage(), "The exception does not return the expected message");
+			$this->assertInstanceOf(NullPointerException::class, $ex);
+			$this->assertEquals("The parameter \"username\" is missing", $ex->getMessage());
 		}
 
 		$obj->setUsername("username");
 		try {
 			$obj->toArray();
 		} catch (Exception $ex) {
-			$this->assertInstanceOf(NullPointerException::class, $ex, "The method toArray() does not throw the expected exception");
-			$this->assertEquals("The parameter \"password\" is missing", $ex->getMessage(), "The exception does not return the expected message");
+			$this->assertInstanceOf(NullPointerException::class, $ex);
+			$this->assertEquals("The parameter \"password\" is missing", $ex->getMessage());
 		}
 
 		$obj->setPassword("password");
 		$res1 = ["newPseudo" => "username", "newPass" => "password"];
-		$this->assertEquals($res1, $obj->toArray(), "The method toArray() does not return the expected array with username and password");
+		$this->assertEquals($res1, $obj->toArray());
 
 		$obj->setReference("reference");
 		$res2 = ["newPseudo" => "username", "newPass" => "password", "reference" => "reference"];
-		$this->assertEquals($res2, $obj->toArray(), "The method toArray() does not return the expected array with username, password and reference");
+		$this->assertEquals($res2, $obj->toArray());
 
 		$obj->setReference(null);
 		$obj->setLastname("lastname");
 		$res3 = ["newPseudo" => "username", "newPass" => "password", "nom" => "lastname"];
-		$this->assertEquals($res3, $obj->toArray(), "The method toArray() does not return the expected array with username, password and lastname");
+		$this->assertEquals($res3, $obj->toArray());
 
 		$obj->setLastname(null);
 		$obj->setFirstname("firstname");
 		$res4 = ["newPseudo" => "username", "newPass" => "password", "prenom" => "firstname"];
-		$this->assertEquals($res4, $obj->toArray(), "The method toArray() does not return the expected array with username, password and firstname");
+		$this->assertEquals($res4, $obj->toArray());
 
 		$obj->setFirstname(null);
 		$obj->setCompany("company");
 		$res5 = ["newPseudo" => "username", "newPass" => "password", "societe" => "company"];
-		$this->assertEquals($res5, $obj->toArray(), "The method toArray() does not return the expected array with username, password and company");
+		$this->assertEquals($res5, $obj->toArray());
 
 		$obj->setCompany(null);
 		$obj->setAddress("address");
 		$res6 = ["newPseudo" => "username", "newPass" => "password", "adresse" => "address"];
-		$this->assertEquals($res6, $obj->toArray(), "The method toArray() does not return the expected array with username, password and address");
+		$this->assertEquals($res6, $obj->toArray());
 
 		$obj->setAddress(null);
 		$obj->setCity("city");
 		$res7 = ["newPseudo" => "username", "newPass" => "password", "ville" => "city"];
-		$this->assertEquals($res7, $obj->toArray(), "The method toArray() does not return the expected array with username, password and city");
+		$this->assertEquals($res7, $obj->toArray());
 
 		$obj->setCity(null);
 		$obj->setPostalCode("postalCode");
 		$res8 = ["newPseudo" => "username", "newPass" => "password", "codePostal" => "postalCode"];
-		$this->assertEquals($res8, $obj->toArray(), "The method toArray() does not return the expected array with username, password and postal code");
+		$this->assertEquals($res8, $obj->toArray());
 
 		$obj->setPostalCode(null);
 		$obj->setMobilePhone("mobilePhone");
 		$res9 = ["newPseudo" => "username", "newPass" => "password", "mobile" => "mobilePhone"];
-		$this->assertEquals($res9, $obj->toArray(), "The method toArray() does not return the expected array with username, password and mobile phone");
+		$this->assertEquals($res9, $obj->toArray());
 
 		$obj->setMobilePhone(null);
 		$obj->setPhone("phone");
 		$res10 = ["newPseudo" => "username", "newPass" => "password", "telephone" => "phone"];
-		$this->assertEquals($res10, $obj->toArray(), "The method toArray() does not return the expected array with username, password and phone");
+		$this->assertEquals($res10, $obj->toArray());
 
 		$obj->setPhone(null);
 		$obj->setFax("fax");
 		$res11 = ["newPseudo" => "username", "newPass" => "password", "fax" => "fax"];
-		$this->assertEquals($res11, $obj->toArray(), "The method toArray() does not return the expected array with username, password and fax");
+		$this->assertEquals($res11, $obj->toArray());
 
 		$obj->setFax(null);
 		$obj->setEmail("email");
 		$res12 = ["newPseudo" => "username", "newPass" => "password", "email" => "email"];
-		$this->assertEquals($res12, $obj->toArray(), "The method toArray() does not return the expected array with username, password and email");
+		$this->assertEquals($res12, $obj->toArray());
 
 		$obj->setEmail(null);
 		$obj->setBirthdate(new DateTime("2017-09-12 11:00:00"));
 		$res13 = ["newPseudo" => "username", "newPass" => "password", "date" => "12092017"];
-		$this->assertEquals($res13, $obj->toArray(), "The method toArray() does not return the expected array with username, password and birthdatelle");
+		$this->assertEquals($res13, $obj->toArray());
 	}
 
 }

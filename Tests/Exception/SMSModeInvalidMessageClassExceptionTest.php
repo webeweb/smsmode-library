@@ -33,7 +33,7 @@ final class SMSModeInvalidMessageClassExceptionTest extends PHPUnit_Framework_Te
 		$ex = new SMSModeInvalidMessageClassException("exception");
 
 		$res = "The message class \"exception\" is invalid";
-		$this->assertEquals($res, $ex->getMessage(), "The method getMessage() does not return the expected string");
+		$this->assertEquals($res, $ex->getMessage());
 	}
 
 }

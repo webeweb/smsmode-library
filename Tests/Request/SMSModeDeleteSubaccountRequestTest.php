@@ -35,9 +35,9 @@ final class SMSModeDeleteSubaccountRequestTest extends PHPUnit_Framework_TestCas
 
 		$obj = new SMSModeDeleteSubaccountRequest();
 
-		$this->assertEquals("deleteSubAccount.do", $obj->getResourcePath(), "The method getResourcePath() does not return the expected value");
+		$this->assertEquals("deleteSubAccount.do", $obj->getResourcePath());
 
-		$this->assertEquals(null, $obj->getUsername(), "The method getUsername() does not return the expected value");
+		$this->assertEquals(null, $obj->getUsername());
 	}
 
 	/**
@@ -50,7 +50,7 @@ final class SMSModeDeleteSubaccountRequestTest extends PHPUnit_Framework_TestCas
 		$obj = new SMSModeDeleteSubaccountRequest();
 
 		$res = $obj->parseResponse("exception");
-		$this->assertInstanceOf(SMSModeDeleteSubaccountResponse::class, $res, "The method parseResponse() does not return the expected class");
+		$this->assertInstanceOf(SMSModeDeleteSubaccountResponse::class, $res);
 	}
 
 	/**
@@ -65,13 +65,13 @@ final class SMSModeDeleteSubaccountRequestTest extends PHPUnit_Framework_TestCas
 		try {
 			$obj->toArray();
 		} catch (Exception $ex) {
-			$this->assertInstanceOf(NullPointerException::class, $ex, "The method toArray() does not throw the expected exception");
-			$this->assertEquals("The parameter \"username\" is missing", $ex->getMessage(), "The exception does not return the expected message");
+			$this->assertInstanceOf(NullPointerException::class, $ex);
+			$this->assertEquals("The parameter \"username\" is missing", $ex->getMessage());
 		}
 
 		$obj->setUsername("username");
 		$res1 = ["pseudoToDelete" => "username"];
-		$this->assertEquals($res1, $obj->toArray(), "The method toArray() does not return the expected array with username");
+		$this->assertEquals($res1, $obj->toArray());
 	}
 
 }

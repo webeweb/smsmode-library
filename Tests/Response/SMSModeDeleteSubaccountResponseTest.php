@@ -33,35 +33,35 @@ final class SMSModeDeleteSubaccountResponseTest extends PHPUnit_Framework_TestCa
 
 		$objEx = new SMSModeDeleteSubaccountResponse("excpetion");
 
-		$this->assertEquals(null, $objEx->getCode(), "The method parse() does not return the expected code");
-		$this->assertEquals(null, $objEx->getDescription(), "The method parse() does not return the expected description");
+		$this->assertEquals(null, $objEx->getCode());
+		$this->assertEquals(null, $objEx->getDescription());
 
 		$impl = " " . SMSModeResponseInterface::RESPONSE_DELIMITER . " ";
 
 		$obj0 = new SMSModeDeleteSubaccountResponse(implode($impl, [SMSModeDeleteSubaccountResponse::CODE_CREATED, SMSModeDeleteSubaccountResponse::DESC_CREATED]));
 
-		$this->assertEquals(SMSModeDeleteSubaccountResponse::CODE_CREATED, $obj0->getCode(), "The method parse() does not return the expected code");
-		$this->assertEquals(SMSModeDeleteSubaccountResponse::DESC_CREATED, $obj0->getDescription(), "The method parse() does not return the expected description");
+		$this->assertEquals(SMSModeDeleteSubaccountResponse::CODE_CREATED, $obj0->getCode());
+		$this->assertEquals(SMSModeDeleteSubaccountResponse::DESC_CREATED, $obj0->getDescription());
 
 		$obj31 = new SMSModeDeleteSubaccountResponse(implode($impl, [SMSModeDeleteSubaccountResponse::CODE_INTERNAL_ERROR, SMSModeDeleteSubaccountResponse::DESC_INTERNAL_ERROR]));
 
-		$this->assertEquals(SMSModeDeleteSubaccountResponse::CODE_INTERNAL_ERROR, $obj31->getCode(), "The method parse() does not return the expected code");
-		$this->assertEquals(SMSModeDeleteSubaccountResponse::DESC_INTERNAL_ERROR, $obj31->getDescription(), "The method parse() does not return the expected description");
+		$this->assertEquals(SMSModeDeleteSubaccountResponse::CODE_INTERNAL_ERROR, $obj31->getCode());
+		$this->assertEquals(SMSModeDeleteSubaccountResponse::DESC_INTERNAL_ERROR, $obj31->getDescription());
 
 		$obj32 = new SMSModeDeleteSubaccountResponse(implode($impl, [SMSModeDeleteSubaccountResponse::CODE_AUTHENTICATION_ERROR, SMSModeDeleteSubaccountResponse::DESC_AUTHENTICATION_ERROR]));
 
-		$this->assertEquals(SMSModeDeleteSubaccountResponse::CODE_AUTHENTICATION_ERROR, $obj32->getCode(), "The method parse() does not return the expected code");
-		$this->assertEquals(SMSModeDeleteSubaccountResponse::DESC_AUTHENTICATION_ERROR, $obj32->getDescription(), "The method parse() does not return the expected description");
+		$this->assertEquals(SMSModeDeleteSubaccountResponse::CODE_AUTHENTICATION_ERROR, $obj32->getCode());
+		$this->assertEquals(SMSModeDeleteSubaccountResponse::DESC_AUTHENTICATION_ERROR, $obj32->getDescription());
 
 		$obj35 = new SMSModeDeleteSubaccountResponse(implode($impl, [SMSModeDeleteSubaccountResponse::CODE_MISSING_REQUIRED_PARAMETER, SMSModeDeleteSubaccountResponse::DESC_MISSING_REQUIRED_PARAMETER]));
 
-		$this->assertEquals(SMSModeDeleteSubaccountResponse::CODE_MISSING_REQUIRED_PARAMETER, $obj35->getCode(), "The method parse() does not return the expected code");
-		$this->assertEquals(SMSModeDeleteSubaccountResponse::DESC_MISSING_REQUIRED_PARAMETER, $obj35->getDescription(), "The method parse() does not return the expected description");
+		$this->assertEquals(SMSModeDeleteSubaccountResponse::CODE_MISSING_REQUIRED_PARAMETER, $obj35->getCode());
+		$this->assertEquals(SMSModeDeleteSubaccountResponse::DESC_MISSING_REQUIRED_PARAMETER, $obj35->getDescription());
 
 		$obj41 = new SMSModeDeleteSubaccountResponse(implode($impl, [SMSModeDeleteSubaccountResponse::CODE_ID_ALREADY_EXISTS, SMSModeDeleteSubaccountResponse::DESC_ID_ALREADY_EXISTS]));
 
-		$this->assertEquals(SMSModeDeleteSubaccountResponse::CODE_ID_ALREADY_EXISTS, $obj41->getCode(), "The method parse() does not return the expected code");
-		$this->assertEquals(SMSModeDeleteSubaccountResponse::DESC_ID_ALREADY_EXISTS, $obj41->getDescription(), "The method parse() does not return the expected description");
+		$this->assertEquals(SMSModeDeleteSubaccountResponse::CODE_ID_ALREADY_EXISTS, $obj41->getCode());
+		$this->assertEquals(SMSModeDeleteSubaccountResponse::DESC_ID_ALREADY_EXISTS, $obj41->getDescription());
 	}
 
 }

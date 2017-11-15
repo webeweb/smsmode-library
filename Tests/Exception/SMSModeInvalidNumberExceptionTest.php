@@ -33,7 +33,7 @@ final class SMSModeInvalidNumberExceptionTest extends PHPUnit_Framework_TestCase
 		$ex = new SMSModeInvalidNumberException("exception");
 
 		$res = "The number \"exception\" is invalid";
-		$this->assertEquals($res, $ex->getMessage(), "The method getMessage() does not return the expected string");
+		$this->assertEquals($res, $ex->getMessage());
 	}
 
 }

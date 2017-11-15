@@ -32,15 +32,15 @@ final class SMSModeAccountBalanceResponseTest extends PHPUnit_Framework_TestCase
 
 		$objEx = new SMSModeAccountBalanceResponse("exception");
 
-		$this->assertEquals(null, $objEx->getCode(), "The method parse() does not return the expected code");
-		$this->assertEquals(null, $objEx->getDescription(), "The method parse() does not return the expected description");
-		$this->assertEquals(null, $objEx->getAccountBalance(), "The method parse() does not return the expected account balance");
+		$this->assertEquals(null, $objEx->getCode());
+		$this->assertEquals(null, $objEx->getDescription());
+		$this->assertEquals(null, $objEx->getAccountBalance());
 
 		$obj = new SMSModeAccountBalanceResponse("212.5");
 
-		$this->assertEquals(null, $obj->getCode(), "The method parse() does not return the expected code");
-		$this->assertEquals(null, $obj->getDescription(), "The method parse() does not return the expected description");
-		$this->assertEquals(212.5, $obj->getAccountBalance(), "The method parse() does not return the expected account balance");
+		$this->assertEquals(null, $obj->getCode());
+		$this->assertEquals(null, $obj->getDescription());
+		$this->assertEquals(212.5, $obj->getAccountBalance());
 	}
 
 }

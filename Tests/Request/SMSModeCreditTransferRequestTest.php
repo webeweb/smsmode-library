@@ -35,11 +35,11 @@ final class SMSModeCreditTransferRequestTest extends PHPUnit_Framework_TestCase 
 
 		$obj = new SMSModeCreditTransferRequest();
 
-		$this->assertEquals("creditTransfert.do", $obj->getResourcePath(), "The method getResourcePath() does not return the expected value");
+		$this->assertEquals("creditTransfert.do", $obj->getResourcePath());
 
-		$this->assertEquals(null, $obj->getCredit(), "The method getCredit() does not return the expected value");
-		$this->assertEquals(null, $obj->getReference(), "The method getReference() does not return the expected value");
-		$this->assertEquals(null, $obj->getUsername(), "The method getUsername() does not return the expected value");
+		$this->assertEquals(null, $obj->getCredit());
+		$this->assertEquals(null, $obj->getReference());
+		$this->assertEquals(null, $obj->getUsername());
 	}
 
 	/**
@@ -52,7 +52,7 @@ final class SMSModeCreditTransferRequestTest extends PHPUnit_Framework_TestCase 
 		$obj = new SMSModeCreditTransferRequest();
 
 		$res = $obj->parseResponse("exception");
-		$this->assertInstanceOf(SMSModeCreditTransferResponse::class, $res, "The method parseResponse() does not return the expected class");
+		$this->assertInstanceOf(SMSModeCreditTransferResponse::class, $res);
 	}
 
 	/**
@@ -67,8 +67,8 @@ final class SMSModeCreditTransferRequestTest extends PHPUnit_Framework_TestCase 
 		try {
 			$obj->toArray();
 		} catch (Exception $ex) {
-			$this->assertInstanceOf(NullPointerException::class, $ex, "The method toArray() does not throw the expected exception");
-			$this->assertEquals("The parameter \"username\" is missing", $ex->getMessage(), "The exception does not return the expected message");
+			$this->assertInstanceOf(NullPointerException::class, $ex);
+			$this->assertEquals("The parameter \"username\" is missing", $ex->getMessage());
 		}
 
 		$obj->setUsername("username");
@@ -76,17 +76,17 @@ final class SMSModeCreditTransferRequestTest extends PHPUnit_Framework_TestCase 
 		try {
 			$obj->toArray();
 		} catch (Exception $ex) {
-			$this->assertInstanceOf(NullPointerException::class, $ex, "The method toArray() does not throw the expected exception");
-			$this->assertEquals("The parameter \"credit\" is missing", $ex->getMessage(), "The exception does not return the expected message");
+			$this->assertInstanceOf(NullPointerException::class, $ex);
+			$this->assertEquals("The parameter \"credit\" is missing", $ex->getMessage());
 		}
 
 		$obj->setCredit(212);
 		$res1 = ["targetPseudo" => "username", "creditAmount" => 212];
-		$this->assertEquals($res1, $obj->toArray(), "The method toArray() does not return the expected array with username, and credit");
+		$this->assertEquals($res1, $obj->toArray());
 
 		$obj->setReference("reference");
 		$res2 = ["targetPseudo" => "username", "creditAmount" => 212, "reference" => "reference"];
-		$this->assertEquals($res2, $obj->toArray(), "The method toArray() does not return the expected array with username, credit and reference");
+		$this->assertEquals($res2, $obj->toArray());
 	}
 
 }

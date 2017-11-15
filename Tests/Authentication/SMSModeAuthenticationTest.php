@@ -34,9 +34,9 @@ final class SMSModeAuthenticationTest extends PHPUnit_Framework_TestCase {
 
 		$obj = new SMSModeAuthentication();
 
-		$this->assertEquals(null, $obj->getPassword(), "The method getPassword() does not return the expected value");
-		$this->assertEquals(null, $obj->getToken(), "The method getToken() does not return the expected value");
-		$this->assertEquals(null, $obj->getUsername(), "The method getUsername() does not return the expected value");
+		$this->assertEquals(null, $obj->getPassword());
+		$this->assertEquals(null, $obj->getToken());
+		$this->assertEquals(null, $obj->getUsername());
 	}
 
 	/**
@@ -51,26 +51,26 @@ final class SMSModeAuthenticationTest extends PHPUnit_Framework_TestCase {
 		try {
 			$obj->toArray();
 		} catch (Exception $ex) {
-			$this->assertInstanceOf(SMSModeMissingSettingException::class, $ex, "The method toArray() does not throw the expected exception");
-			$this->assertEquals("The setting \"username\" is missing", $ex->getMessage(), "The exception does not return the expected message");
+			$this->assertInstanceOf(SMSModeMissingSettingException::class, $ex);
+			$this->assertEquals("The setting \"username\" is missing", $ex->getMessage());
 		}
 
 		$obj->setToken("token");
 		$res1 = ["accessToken" => "token"];
-		$this->assertEquals($res1, $obj->toArray(), "The method toArray() does not return the expected array with token");
+		$this->assertEquals($res1, $obj->toArray());
 
 		$obj->setToken(null);
 		$obj->setUsername("username");
 		try {
 			$obj->toArray();
 		} catch (Exception $ex) {
-			$this->assertInstanceOf(SMSModeMissingSettingException::class, $ex, "The method toArray() does not throw the expected exception with username");
-			$this->assertEquals("The setting \"password\" is missing", $ex->getMessage(), "The exception does not return the expected message with username");
+			$this->assertInstanceOf(SMSModeMissingSettingException::class, $ex);
+			$this->assertEquals("The setting \"password\" is missing", $ex->getMessage());
 		}
 
 		$obj->setPassword("password");
 		$res2 = ["pseudo" => "username", "pass" => "password"];
-		$this->assertEquals($res2, $obj->toArray(), "The method toArray() does not return the expected array with username and password");
+		$this->assertEquals($res2, $obj->toArray());
 	}
 
 }

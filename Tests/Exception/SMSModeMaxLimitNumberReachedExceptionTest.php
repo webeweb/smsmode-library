@@ -33,7 +33,7 @@ final class SMSModeMaxLimitNumberReachedExceptionTest extends PHPUnit_Framework_
 		$ex = new SMSModeMaxLimitNumberReachedException(200);
 
 		$res = "The max limit of numbers reached: 200 allowed";
-		$this->assertEquals($res, $ex->getMessage(), "The method getMessage() does not return the expected string");
+		$this->assertEquals($res, $ex->getMessage());
 	}
 
 }

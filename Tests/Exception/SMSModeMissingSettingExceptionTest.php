@@ -33,7 +33,7 @@ final class SMSModeMissingSettingExceptionTest extends PHPUnit_Framework_TestCas
 		$ex = new SMSModeMissingSettingException("exception");
 
 		$res = "The setting \"exception\" is missing";
-		$this->assertEquals($res, $ex->getMessage(), "The method getMessage() does not return the expected string");
+		$this->assertEquals($res, $ex->getMessage());
 	}
 
 }

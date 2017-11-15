@@ -33,7 +33,7 @@ final class SMSModeAccountBalanceRequestTest extends PHPUnit_Framework_TestCase 
 
 		$obj = new SMSModeAccountBalanceRequest();
 
-		$this->assertEquals("credit.do", $obj->getResourcePath(), "The method getResourcePath() does not return the expected value");
+		$this->assertEquals("credit.do", $obj->getResourcePath());
 	}
 
 	/**
@@ -46,7 +46,7 @@ final class SMSModeAccountBalanceRequestTest extends PHPUnit_Framework_TestCase 
 		$obj = new SMSModeAccountBalanceRequest();
 
 		$res = $obj->parseResponse("exception");
-		$this->assertInstanceOf(SMSModeAccountBalanceResponse::class, $res, "The method parseResponse() does not return the expected class");
+		$this->assertInstanceOf(SMSModeAccountBalanceResponse::class, $res);
 	}
 
 	/**
@@ -58,7 +58,7 @@ final class SMSModeAccountBalanceRequestTest extends PHPUnit_Framework_TestCase 
 
 		$obj = new SMSModeAccountBalanceRequest();
 
-		$this->assertEquals([], $obj->toArray(), "The method toArray() does not return the expected class");
+		$this->assertEquals([], $obj->toArray());
 	}
 
 }

@@ -37,12 +37,12 @@ final class SMSModeGetResponsesRequestTest extends PHPUnit_Framework_TestCase {
 
 		$obj = new SMSModeGetResponsesRequest();
 
-		$this->assertEquals("responseList.do", $obj->getResourcePath(), "The method getResourcePath() does not return the expected value");
+		$this->assertEquals("responseList.do", $obj->getResourcePath());
 
-		$this->assertEquals(null, $obj->getEndDate(), "The method getEndDate() does not return the expected value");
-		$this->assertEquals(null, $obj->getOffset(), "The method getOffset() does not return the expected value");
-		$this->assertEquals(null, $obj->getStart(), "The method getStart() does not return the expected value");
-		$this->assertEquals(null, $obj->getStartDate(), "The method getStartDate() does not return the expected value");
+		$this->assertEquals(null, $obj->getEndDate());
+		$this->assertEquals(null, $obj->getOffset());
+		$this->assertEquals(null, $obj->getStart());
+		$this->assertEquals(null, $obj->getStartDate());
 	}
 
 	/**
@@ -55,7 +55,7 @@ final class SMSModeGetResponsesRequestTest extends PHPUnit_Framework_TestCase {
 		$obj = new SMSModeGetResponsesRequest();
 
 		$res = $obj->parseResponse("exception");
-		$this->assertInstanceOf(SMSModeGetResponsesResponse::class, $res, "The method parseResponse() does not return the expected class");
+		$this->assertInstanceOf(SMSModeGetResponsesResponse::class, $res);
 	}
 
 	/**
@@ -68,14 +68,14 @@ final class SMSModeGetResponsesRequestTest extends PHPUnit_Framework_TestCase {
 		$obj = new SMSModeGetResponsesRequest();
 
 		$res1 = [];
-		$this->assertEquals($res1, $obj->toArray(), "The method toArray() does not return the expected array");
+		$this->assertEquals($res1, $obj->toArray());
 
 		$obj->setStart(0);
 		try {
 			$obj->toArray();
 		} catch (Exception $ex) {
-			$this->assertInstanceOf(NullPointerException::class, $ex, "The method toArray() does not throw the expected exception");
-			$this->assertEquals("The parameter \"offset\" is missing", $ex->getMessage(), "The exception does not return the expected message");
+			$this->assertInstanceOf(NullPointerException::class, $ex);
+			$this->assertEquals("The parameter \"offset\" is missing", $ex->getMessage());
 		}
 
 		$obj->setStart(null);
@@ -83,21 +83,21 @@ final class SMSModeGetResponsesRequestTest extends PHPUnit_Framework_TestCase {
 		try {
 			$obj->toArray();
 		} catch (Exception $ex) {
-			$this->assertInstanceOf(NullPointerException::class, $ex, "The method toArray() does not throw the expected exception");
-			$this->assertEquals("The parameter \"start\" is missing", $ex->getMessage(), "The exception does not return the expected message");
+			$this->assertInstanceOf(NullPointerException::class, $ex);
+			$this->assertEquals("The parameter \"start\" is missing", $ex->getMessage());
 		}
 
 		$obj->setStart(0);
 		try {
 			$obj->toArray();
 		} catch (Exception $ex) {
-			$this->assertInstanceOf(IllegalArgumentException::class, $ex, "The method toArray() does not throw the expected exception");
-			$this->assertEquals("The offset must be greater than start", $ex->getMessage(), "The exception does not return the expected message");
+			$this->assertInstanceOf(IllegalArgumentException::class, $ex);
+			$this->assertEquals("The offset must be greater than start", $ex->getMessage());
 		}
 
 		$obj->setOffset(10);
 		$res2 = ["start" => 0, "offset" => 10];
-		$this->assertEquals($res2, $obj->toArray(), "The method toArray() does not return the expected array with start and offset");
+		$this->assertEquals($res2, $obj->toArray());
 
 		$obj->setStart(null);
 		$obj->setOffset(null);
@@ -105,30 +105,30 @@ final class SMSModeGetResponsesRequestTest extends PHPUnit_Framework_TestCase {
 		try {
 			$obj->toArray();
 		} catch (Exception $ex) {
-			$this->assertInstanceOf(NullPointerException::class, $ex, "The method toArray() does not throw the expected exception");
-			$this->assertEquals("The parameter \"endDate\" is missing", $ex->getMessage(), "The exception does not return the expected message");
+			$this->assertInstanceOf(NullPointerException::class, $ex);
+			$this->assertEquals("The parameter \"endDate\" is missing", $ex->getMessage());
 		}
 
 		$obj->setEndDate(new DateTime("2017-09-14 12:00:00"));
 		try {
 			$obj->toArray();
 		} catch (Exception $ex) {
-			$this->assertInstanceOf(IllegalArgumentException::class, $ex, "The method toArray() does not throw the expected exception");
-			$this->assertEquals("The end date must be greater than start date", $ex->getMessage(), "The exception does not return the expected message");
+			$this->assertInstanceOf(IllegalArgumentException::class, $ex);
+			$this->assertEquals("The end date must be greater than start date", $ex->getMessage());
 		}
 
 		$obj->setStartDate(null);
 		try {
 			$obj->toArray();
 		} catch (Exception $ex) {
-			$this->assertInstanceOf(NullPointerException::class, $ex, "The method toArray() does not throw the expected exception");
-			$this->assertEquals("The parameter \"startDate\" is missing", $ex->getMessage(), "The exception does not return the expected message");
+			$this->assertInstanceOf(NullPointerException::class, $ex);
+			$this->assertEquals("The parameter \"startDate\" is missing", $ex->getMessage());
 		}
 
 		$obj->setStartDate(new DateTime("2017-09-14 12:00:00"));
 		$obj->setEndDate(new DateTime("2017-09-14 14:00:00"));
 		$res3 = ["startDate" => "14092017-12:00", "endDate" => "14092017-14:00"];
-		$this->assertEquals($res3, $obj->toArray(), "The method toArray() does not return the expected array with message, group and send date");
+		$this->assertEquals($res3, $obj->toArray());
 	}
 
 }

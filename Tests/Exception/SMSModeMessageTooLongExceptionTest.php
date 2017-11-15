@@ -33,7 +33,7 @@ final class SMSModeMessageTooLongExceptionTest extends PHPUnit_Framework_TestCas
 		$ex = new SMSModeMessageTooLongException("exception", 8);
 
 		$res = "The message \"exception\" exceeds the limit of 8 characters";
-		$this->assertEquals($res, $ex->getMessage(), "The method getMessage() does not return the expected string");
+		$this->assertEquals($res, $ex->getMessage());
 	}
 
 }

@@ -33,7 +33,7 @@ final class SMSModeCharacterNotAllowedExceptionTest extends PHPUnit_Framework_Te
 		$ex = new SMSModeCharacterNotAllowedException("exception");
 
 		$res = "The character \"exception\" is not allowed";
-		$this->assertEquals($res, $ex->getMessage(), "The method getMessage() does not return the expected string");
+		$this->assertEquals($res, $ex->getMessage());
 	}
 
 }

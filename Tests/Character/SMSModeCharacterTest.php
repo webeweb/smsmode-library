@@ -51,25 +51,25 @@ final class SMSModeCharacterTest extends PHPUnit_Framework_TestCase {
 		try {
 			$obj->length("«");
 		} catch (Exception $ex) {
-			$this->assertInstanceOf(SMSModeCharacterNotAllowedException::class, $ex, "The method length() does not throw the expected exception");
-			$this->assertEquals("The character \"«\" is not allowed", $ex->getMessage(), "The methode getMessage() does not return the expected string");
+			$this->assertInstanceOf(SMSModeCharacterNotAllowedException::class, $ex);
+			$this->assertEquals("The character \"«\" is not allowed", $ex->getMessage());
 		}
 
-		$this->assertEquals(0, $obj->length(""), "The method length() does not return the expected length");
-		$this->assertEquals(1, $obj->length("a"), "The method length() does not return the expected length with \"a\"");
-		$this->assertEquals(2, $obj->length("/"), "The method length() does not return the expected length with \"/\"");
-		$this->assertEquals(2, $obj->length("{"), "The method length() does not return the expected length with \"{\"");
-		$this->assertEquals(2, $obj->length("|"), "The method length() does not return the expected length with \"|\"");
-		$this->assertEquals(2, $obj->length("}"), "The method length() does not return the expected length with \"}\"");
-		$this->assertEquals(2, $obj->length("~"), "The method length() does not return the expected length with \"~\"");
-		$this->assertEquals(2, $obj->length("["), "The method length() does not return the expected length with \"[\"");
-		$this->assertEquals(2, $obj->length("\\"), "The method length() does not return the expected length with \"\\\"");
-		$this->assertEquals(2, $obj->length("]"), "The method length() does not return the expected length with \"]\"");
-		$this->assertEquals(2, $obj->length("^"), "The method length() does not return the expected length with \"^\"");
-		$this->assertEquals(2, $obj->length("€"), "The method length() does not return the expected length with \"€\"");
-		$this->assertEquals(5, $obj->length("€uro"), "The method length() does not return the expected length with \"€uro\"");
-		$this->assertEquals(7, $obj->length("Welcome"), "The method length() does not return the expected length with \"Welcome\"");
-		$this->assertEquals(13, $obj->length("Hello world !"), "The method length() does not return the expected length with \"Hello world !\"");
+		$this->assertEquals(0, $obj->length(""));
+		$this->assertEquals(1, $obj->length("a"));
+		$this->assertEquals(2, $obj->length("/"));
+		$this->assertEquals(2, $obj->length("{"));
+		$this->assertEquals(2, $obj->length("|"));
+		$this->assertEquals(2, $obj->length("}"));
+		$this->assertEquals(2, $obj->length("~"));
+		$this->assertEquals(2, $obj->length("["));
+		$this->assertEquals(2, $obj->length("\\"));
+		$this->assertEquals(2, $obj->length("]"));
+		$this->assertEquals(2, $obj->length("^"));
+		$this->assertEquals(2, $obj->length("€"));
+		$this->assertEquals(5, $obj->length("€uro"));
+		$this->assertEquals(7, $obj->length("Welcome"));
+		$this->assertEquals(13, $obj->length("Hello world !"));
 	}
 
 }

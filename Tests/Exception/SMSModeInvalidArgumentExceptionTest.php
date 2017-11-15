@@ -33,7 +33,7 @@ final class SMSModeInvalidArgumentExceptionTest extends PHPUnit_Framework_TestCa
 		$ex = new SMSModeInvalidArgumentException("exception");
 
 		$res = "exception";
-		$this->assertEquals($res, $ex->getMessage(), "The method getMessage() does not return the expected string");
+		$this->assertEquals($res, $ex->getMessage());
 	}
 
 }

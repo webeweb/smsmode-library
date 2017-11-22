@@ -1,6 +1,6 @@
 <?php
 
-/*
+/**
  * This file is part of the smsmode-library package.
  *
  * (c) 2017 NdC/WBW
@@ -42,6 +42,7 @@ interface SMSModeRequestInterface {
 	/**
 	 * Parse the response.
 	 *
+	 * @param string $rawResponse The raw response.
 	 * @return AbstractSMSModeResponse Returns the response.
 	 */
 	public function parseResponse($rawResponse);

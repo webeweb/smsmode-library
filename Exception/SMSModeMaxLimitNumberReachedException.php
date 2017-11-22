@@ -1,6 +1,6 @@
 <?php
 
-/*
+/**
  * This file is part of the smsmode-library package.
  *
  * (c) 2017 NdC/WBW
@@ -23,7 +23,7 @@ final class SMSModeMaxLimitNumberReachedException extends AbstractSMSModeExcepti
 	/**
 	 * Constructor.
 	 *
-	 * @param integer $number The limit.
+	 * @param integer $limit The limit.
 	 */
 	public function __construct($limit) {
 		parent::__construct("The max limit of numbers reached: " . $limit . " allowed");

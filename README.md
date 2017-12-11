@@ -8,7 +8,9 @@ Integrate sMsmode API in your projects.
 `smsmode-library` uses a rolling release based on git master branch which is
 considered stable.
 
-/!\ This package is currently in developpment /!\
+> IMPORTANT NOTICE: This bundle is still under development. Any changes will be
+> done without prior notice to consumers of this package. Of course this code
+> will become stable at a certain point, but for now, use at your own risk.
 
 ---
 

@@ -14,6 +14,12 @@ considered stable.
 
 ---
 
+## Compatibility
+
+[![PHP ^5.6](https://img.shields.io/badge/PHP-%5E5.6-blue.svg)](http://php.net) [![PHP ^7.0](https://img.shields.io/badge/PHP-%5E7.0-blue.svg)](http://php.net)  [![PHP ^7.1](https://img.shields.io/badge/PHP-%5E7.1-blue.svg)](http://php.net)
+
+---
+
 ## Installation
 
 Open a command console, enter your project directory and execute the following

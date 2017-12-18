@@ -26,9 +26,7 @@ Open a command console, enter your project directory and execute the following
 command to download the latest stable version of this package:
 
 ```bash
-
 $ composer require webeweb/smsmode-library "~1.0@dev"
-
 ```
 
 This command requires you to have Composer installed globally, as explained
@@ -40,7 +38,6 @@ Composer documentation.
 ## Usage
 
 ```php
-
 	// Create the provider.
 	$provider = new SMSModeProvider(new SMSModeAuthentication(), new SMSModeSendSMSRequest());
 
@@ -56,7 +53,6 @@ Composer documentation.
 
 	// Call API.
 	$response = $provider->callAPI();
-
 ```
 
 ## Testing
@@ -66,20 +62,16 @@ Open a command console and execute the following commands to download the latest
 stable version of this package:
 
 ```bash
-
 $ mkdir smsmode-library
 $ cd smsmode-library
 $ git clone git@github.com:webeweb/smsmode-library package.git .
 $ composer install
-
 ```
 
 Once all required libraries are installed then do:
 
 ```bash
-
 $ vendor/bin/phpunit
-
 ```
 
 ---

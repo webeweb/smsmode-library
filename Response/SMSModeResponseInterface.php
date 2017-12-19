@@ -21,6 +21,8 @@ interface SMSModeResponseInterface {
 
 	/**
 	 * Response delimiter.
+	 *
+	 * @var string
 	 */
 	const RESPONSE_DELIMITER = "|";
 

@@ -24,26 +24,36 @@ interface SMSModeSendSMSRequestInterface {
 
 	/**
 	 * Message class "SMS Pro".
+	 *
+	 * @var integer
 	 */
 	const MESSAGE_CLASS_SMS_PRO = 2;
 
 	/**
 	 * Message class "SMS with authorized response".
+	 *
+	 * @var integer
 	 */
 	const MESSAGE_CLASS_SMS_RESPONSE = 4;
 
 	/**
 	 * Message length.
+	 *
+	 * @var integer
 	 */
 	const MESSAGE_LENGTH = 160;
 
 	/**
 	 * STOP always.
+	 *
+	 * @var integer
 	 */
 	const STOP_ALWAYS = 2;
 
 	/**
 	 * STOP only.
+	 *
+	 * @var integer
 	 */
 	const STOP_ONLY = 1;
 

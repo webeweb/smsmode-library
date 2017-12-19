@@ -24,61 +24,85 @@ interface SMSModeSendSMSResponseInterface {
 
 	/**
 	 * Code "Accepted".
+	 *
+	 * @var integer
 	 */
 	const CODE_ACCEPTED = 0;
 
 	/**
 	 * Code "Authentication error".
+	 *
+	 * @var integer
 	 */
 	const CODE_AUTHENTICATION_ERROR = 32;
 
 	/**
 	 * Code "Internal error".
+	 *
+	 * @var integer
 	 */
 	const CODE_INTERNAL_ERROR = 31;
 
 	/**
 	 * Code "Insuficient credit".
+	 *
+	 * @var integer
 	 */
 	const CODE_INSUFICIENT_CREDIT = 33;
 
 	/**
 	 * Code "Missing required parameter".
+	 *
+	 * @var integer
 	 */
 	const CODE_MISSING_REQUIRED_PARAMETER = 35;
 
 	/**
 	 * Code "Temporaly unavailable".
+	 *
+	 * @var integer
 	 */
 	const CODE_TEMPORALY_UNAVAILABLE = 50;
 
 	/**
 	 * Description "Accepted".
+	 *
+	 * @var string
 	 */
 	const DESC_ACCEPTED = "Accepté - le message a été accepté par le système et est en cours de traitement";
 
 	/**
 	 * Description "Authentication error".
+	 *
+	 * @var string
 	 */
 	const DESC_AUTHENTICATION_ERROR = "Erreur d'authentification";
 
 	/**
 	 * Description "Insuficient credit".
+	 *
+	 * @var string
 	 */
 	const DESC_INSUFICIENT_CREDIT = "Crédits insuffisants";
 
 	/**
 	 * Description "Internal error".
+	 *
+	 * @var string
 	 */
 	const DESC_INTERNAL_ERROR = "Erreur interne";
 
 	/**
 	 * Description "Missing required parameter".
+	 *
+	 * @var string
 	 */
 	const DESC_MISSING_REQUIRED_PARAMETER = "Paramètre obligatoire manquant";
 
 	/**
 	 * Description "Temporaly unavailable".
+	 *
+	 * @var string
 	 */
 	const DESC_TEMPORALY_UNAVAILABLE = "Temporairement inaccessible";
 

@@ -24,11 +24,15 @@ interface SMSModeRequestInterface {
 
 	/**
 	 * Date format
+	 *
+	 * @var string
 	 */
 	const DATE_FORMAT = "dmY-H:i";
 
 	/**
 	 * Host.
+	 *
+	 * @var string
 	 */
 	const HOST = "https://api.smsmode.com/http/1.6";
 

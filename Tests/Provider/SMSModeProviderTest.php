@@ -15,7 +15,6 @@ use PHPUnit_Framework_TestCase;
 use WBW\Library\SMSMode\Authentication\SMSModeAuthentication;
 use WBW\Library\SMSMode\Provider\SMSModeProvider;
 use WBW\Library\SMSMode\Request\SMSModeAccountBalanceRequest;
-use WBW\Library\SMSMode\Response\SMSModeAccountBalanceResponse;
 
 /**
  * sMsmode provider test.
@@ -48,11 +47,9 @@ final class SMSModeProviderTest extends PHPUnit_Framework_TestCase {
 	private $provider;
 
 	/**
-	 * Set up.
-	 *
-	 * @return void
+	 * {@inheritdoc}
 	 */
-	public function setUp() {
+	protected function setUp() {
 
 		//
 		parent::setUp();

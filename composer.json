@@ -17,7 +17,7 @@
 		"webeweb/curl-library": "~1.0@dev"
 	},
 	"require-dev": {
-		"phpunit/phpunit": "5.4.*"
+		"phpunit/phpunit": "5.7.*"
 	},
 	"support": {
 		"issues": "http://github.com/webeweb/smsmode-library/issues"

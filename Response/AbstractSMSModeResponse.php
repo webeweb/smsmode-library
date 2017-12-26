@@ -39,7 +39,7 @@ abstract class AbstractSMSModeResponse implements SMSModeResponseInterface {
 	 *
 	 * @param string $rawResponse The raw response.
 	 */
-	public final function __construct($rawResponse) {
+	final public function __construct($rawResponse) {
 		$this->parse($rawResponse);
 	}
 
@@ -48,7 +48,7 @@ abstract class AbstractSMSModeResponse implements SMSModeResponseInterface {
 	 *
 	 * @return integer Returns the code.
 	 */
-	public final function getCode() {
+	final public function getCode() {
 		return $this->code;
 	}
 
@@ -57,7 +57,7 @@ abstract class AbstractSMSModeResponse implements SMSModeResponseInterface {
 	 *
 	 * @return string Returns the description.
 	 */
-	public final function getDescription() {
+	final public function getDescription() {
 		return $this->description;
 	}
 
@@ -85,7 +85,7 @@ abstract class AbstractSMSModeResponse implements SMSModeResponseInterface {
 	 * @param integer $code Returns the code.
 	 * @return AbstractSMSModeResponse Returns the sMsmode response.
 	 */
-	protected final function setCode($code) {
+	final protected function setCode($code) {
 		$this->code = $code;
 		return $this;
 	}
@@ -96,7 +96,7 @@ abstract class AbstractSMSModeResponse implements SMSModeResponseInterface {
 	 * @param string $description The description.
 	 * @return AbstractSMSModeResponse Returns the sMsmode response.
 	 */
-	protected final function setDescription($description) {
+	final protected function setDescription($description) {
 		$this->description = $description;
 		return $this;
 	}

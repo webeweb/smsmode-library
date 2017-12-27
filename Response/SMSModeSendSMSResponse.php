@@ -51,7 +51,7 @@ final class SMSModeSendSMSResponse extends AbstractSMSModeResponse implements SM
 		$response = explode(self::RESPONSE_DELIMITER, $rawResponse);
 
 		// Check the code.
-		if ($this->getCode() === self::CODE_ACCEPTED && count($response) === 3) {
+		if (self::CODE_ACCEPTED === $this->getCode() && 3 === count($response)) {
 			$this->setSmsID(trim($response[2]));
 		}
 	}

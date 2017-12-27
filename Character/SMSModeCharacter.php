@@ -98,10 +98,10 @@ final class SMSModeCharacter {
 			$char = substr($buffer, $i, 1);
 
 			// Check the character.
-			if (!array_key_exists($char, $all)) {
+			if (false === array_key_exists($char, $all)) {
 				throw new SMSModeCharacterNotAllowedException(utf8_encode($char));
 			}
-			if (array_key_exists($char, $two)) {
+			if (true === array_key_exists($char, $two)) {
 				$length++;
 			}
 

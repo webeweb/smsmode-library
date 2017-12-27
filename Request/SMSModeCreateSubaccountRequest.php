@@ -435,74 +435,74 @@ final class SMSModeCreateSubaccountRequest implements SMSModeRequestInterface {
 		$output = [];
 
 		// Check the required setting username.
-		if (is_null($this->username)) {
+		if (null === $this->username) {
 			throw new NullPointerException("The parameter \"username\" is missing");
 		}
 		$output["newPseudo"] = $this->username;
 
 		// Check the required setting password.
-		if (is_null($this->password)) {
+		if (null === $this->password) {
 			throw new NullPointerException("The parameter \"password\" is missing");
 		}
 		$output["newPass"] = $this->password;
 
 		// Check the optional setting reference.
-		if (!is_null($this->reference)) {
+		if (null !== $this->reference) {
 			$output["reference"] = $this->reference;
 		}
 
 		// Check the optional setting lastname.
-		if (!is_null($this->lastname)) {
+		if (null !== $this->lastname) {
 			$output["nom"] = $this->lastname;
 		}
 
 		// Check the optional setting firstname.
-		if (!is_null($this->firstname)) {
+		if (null !== $this->firstname) {
 			$output["prenom"] = $this->firstname;
 		}
 
 		// Check the optional setting company.
-		if (!is_null($this->company)) {
+		if (null !== $this->company) {
 			$output["societe"] = $this->company;
 		}
 
 		// Check the optional setting address.
-		if (!is_null($this->address)) {
+		if (null !== $this->address) {
 			$output["adresse"] = $this->address;
 		}
 
 		// Check the optional setting city.
-		if (!is_null($this->city)) {
+		if (null !== $this->city) {
 			$output["ville"] = $this->city;
 		}
 
 		// Check the optional setting postal code.
-		if (!is_null($this->postalCode)) {
+		if (null !== $this->postalCode) {
 			$output["codePostal"] = $this->postalCode;
 		}
 
 		// Check the optional setting mobile phone.
-		if (!is_null($this->mobilePhone)) {
+		if (null !== $this->mobilePhone) {
 			$output["mobile"] = $this->mobilePhone;
 		}
 
 		// Check the optional setting phone.
-		if (!is_null($this->phone)) {
+		if (null !== $this->phone) {
 			$output["telephone"] = $this->phone;
 		}
 
 		// Check the optional setting fax.
-		if (!is_null($this->fax)) {
+		if (null !== $this->fax) {
 			$output["fax"] = $this->fax;
 		}
 
 		// Check the optional setting email.
-		if (!is_null($this->email)) {
+		if (null !== $this->email) {
 			$output["email"] = $this->email;
 		}
 
 		// Check the optional setting birthdate.
-		if (!is_null($this->birthdate)) {
+		if (null !== $this->birthdate) {
 			$output["date"] = $this->birthdate->format("dmY");
 		}
 

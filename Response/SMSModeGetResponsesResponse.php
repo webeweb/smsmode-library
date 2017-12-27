@@ -128,7 +128,7 @@ final class SMSModeGetResponsesResponse extends AbstractSMSModeResponse implemen
 	protected function parse($rawResponse) {
 
 		// Determines the response.
-		if (preg_match("/^(32|35)\ \|/", $rawResponse)) {
+		if (1 === preg_match("/^(32|35)\ \|/", $rawResponse)) {
 
 			// Set the code and description.
 			parent::parse($rawResponse);
@@ -137,7 +137,7 @@ final class SMSModeGetResponsesResponse extends AbstractSMSModeResponse implemen
 
 		// Explode the response.
 		$response = explode(self::RESPONSE_DELIMITER, $rawResponse);
-		if (count($response) !== 6) {
+		if (6 !== count($response)) {
 			return;
 		}
 

@@ -137,19 +137,19 @@ final class SMSModeCreditTransferRequest implements SMSModeRequestInterface {
 		$output = [];
 
 		// Check the required setting username.
-		if (is_null($this->username)) {
+		if (null === $this->username) {
 			throw new NullPointerException("The parameter \"username\" is missing");
 		}
 		$output["targetPseudo"] = $this->username;
 
 		// Check the required setting credit.
-		if (is_null($this->credit)) {
+		if (null === $this->credit) {
 			throw new NullPointerException("The parameter \"credit\" is missing");
 		}
 		$output["creditAmount"] = $this->credit;
 
 		// Check the optional setting reference.
-		if (!is_null($this->reference)) {
+		if (null !== $this->reference) {
 			$output["reference"] = $this->reference;
 		}
 

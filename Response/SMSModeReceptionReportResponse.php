@@ -50,7 +50,7 @@ final class SMSModeReceptionReportResponse extends AbstractSMSModeResponse imple
 	public function getReportDescription($number) {
 
 		// Check if the number exists.
-		if (array_key_exists($number, $this->reports)) {
+		if (true === array_key_exists($number, $this->reports)) {
 
 			// Switch on the code.
 			switch ($this->reports[$number]) {
@@ -94,7 +94,7 @@ final class SMSModeReceptionReportResponse extends AbstractSMSModeResponse imple
 	protected function parse($rawResponse) {
 
 		// Determines the response.
-		if (preg_match("/^(31|35|61)\ \|/", $rawResponse)) {
+		if (1 === preg_match("/^(31|35|61)\ \|/", $rawResponse)) {
 
 			// Set the code and description.
 			parent::parse($rawResponse);
@@ -107,7 +107,7 @@ final class SMSModeReceptionReportResponse extends AbstractSMSModeResponse imple
 		// Handle each report.
 		foreach ($responses as $current) {
 			$response = explode(" ", trim($current), 2);
-			if (trim($current) === "" || count($response) != 2) {
+			if ("" === trim($current) || 2 !== count($response)) {
 				continue;
 			}
 			$this->addReport([trim($response[0]), intval(trim($response[1]))]);

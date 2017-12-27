@@ -166,15 +166,15 @@ final class SMSModeGetResponsesRequest implements SMSModeRequestInterface {
 		$output = [];
 
 		// Check the optional setting start and offset.
-		if (!is_null($this->start) && is_null($this->offset)) {
+		if (null !== $this->start && null === $this->offset) {
 			throw new NullPointerException("The parameter \"offset\" is missing");
 		}
-		if (is_null($this->start) && !is_null($this->offset)) {
+		if (null === $this->start && null !== $this->offset) {
 			throw new NullPointerException("The parameter \"start\" is missing");
 		}
 
 		//
-		if (!is_null($this->start)) {
+		if (null !== $this->start) {
 			if ($this->offset <= $this->start) {
 				throw new IllegalArgumentException("The offset must be greater than start");
 			}
@@ -184,15 +184,15 @@ final class SMSModeGetResponsesRequest implements SMSModeRequestInterface {
 		}
 
 		// Check the optional setting start date and end date.
-		if (!is_null($this->startDate) && is_null($this->endDate)) {
+		if (null !== $this->startDate && null === $this->endDate) {
 			throw new NullPointerException("The parameter \"endDate\" is missing");
 		}
-		if (is_null($this->startDate) && !is_null($this->endDate)) {
+		if (null === $this->startDate && null !== $this->endDate) {
 			throw new NullPointerException("The parameter \"startDate\" is missing");
 		}
 
 		//
-		if (!is_null($this->startDate)) {
+		if (null !== $this->startDate) {
 			if ($this->endDate <= $this->startDate) {
 				throw new IllegalArgumentException("The end date must be greater than start date");
 			}

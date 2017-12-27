@@ -123,13 +123,13 @@ final class SMSModeSendSMSRequest implements SMSModeRequestInterface, SMSModeSen
 	 * @throws SMSModeInvalidNumberException Throws a SMSMode invalid number exception if the number is not valid.
 	 */
 	public function addNumber($number) {
-		if (count($this->numbers) === 300) {
+		if (300 === count($this->numbers)) {
 			throw new SMSModeMaxLimitNumberReachedException(300);
 		}
-		if (!preg_match("/^0(6|7)[0-9]{8}$/", $number)) {
+		if (0 === preg_match("/^0(6|7)[0-9]{8}$/", $number)) {
 			throw new SMSModeInvalidNumberException($number);
 		}
-		if (!in_array($number, $this->numbers)) {
+		if (false === in_array($number, $this->numbers)) {
 			$this->numbers[] = $number;
 		}
 		return $this;
@@ -280,7 +280,7 @@ final class SMSModeSendSMSRequest implements SMSModeRequestInterface, SMSModeSen
 	 */
 	public function removeNumber($number) {
 		$pos = array_search($number, $this->numbers);
-		if ($pos !== false) {
+		if (false !== $pos) {
 			unset($this->numbers[$pos]);
 		}
 		return $this;
@@ -421,13 +421,13 @@ final class SMSModeSendSMSRequest implements SMSModeRequestInterface, SMSModeSen
 		$output = [];
 
 		// Check the required setting message.
-		if (is_null($this->message)) {
+		if (null === $this->message) {
 			throw new NullPointerException("The parameter \"message\" is missing");
 		}
 		$output["message"] = $this->message;
 
 		// Check the required setting number and group.
-		if (count($this->numbers) < 1 && is_null($this->group)) {
+		if (count($this->numbers) < 1 && null === $this->group) {
 			throw new NullPointerException("The parameter \"number\" or \"group\" is missing");
 		}
 
@@ -443,42 +443,42 @@ final class SMSModeSendSMSRequest implements SMSModeRequestInterface, SMSModeSen
 		}
 
 		// Check the optional setting message class.
-		if (!is_null($this->messageClass)) {
+		if (null !== $this->messageClass) {
 			$output["classe_msg"] = $this->messageClass;
 		}
 
 		// Check the optional setting send date.
-		if (!is_null($this->sendDate)) {
+		if (null !== $this->sendDate) {
 			$output["date_envoi"] = $this->sendDate->format(self::DATE_FORMAT);
 		}
 
 		// Check the optional setting customer reference.
-		if (!is_null($this->customerReference)) {
+		if (null !== $this->customerReference) {
 			$output["refClient"] = $this->customerReference;
 		}
 
 		// Check the optional setting sender.
-		if (!is_null($this->sender)) {
+		if (null !== $this->sender) {
 			$output["emetteur"] = $this->sender;
 		}
 
 		// Check the optional maximum message number.
-		if (!is_null($this->maxMessageNumber)) {
+		if (null !== $this->maxMessageNumber) {
 			$output["nbr_msg"] = $this->maxMessageNumber;
 		}
 
 		// Check the optional setting notification URL.
-		if (!is_null($this->notificationURL)) {
+		if (null !== $this->notificationURL) {
 			$output["notification_url"] = $this->notificationURL;
 		}
 
 		// Check the optional setting response notification URL.
-		if (!is_null($this->responseNotificationURL)) {
+		if (null !== $this->responseNotificationURL) {
 			$output["notification_url_reponse"] = $this->responseNotificationURL;
 		}
 
 		// Check the option setting STOP.
-		if (!is_null($this->stop)) {
+		if (null !== $this->stop) {
 			$output["stop"] = $this->stop;
 		}
 

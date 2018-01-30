@@ -1,35 +1,35 @@
 {
-	"name": "webeweb/smsmode-library",
-	"type": "library",
-	"description": "Integrate sMsmode API in your projects",
-	"keywords": ["webeweb", "library", "sMsmode"],
-	"homepage": "http://github.com/webeweb/smsmode-library",
-	"license": "LGPL-3.0-only",
-	"authors": [
-		{
-			"name": "webeweb",
-			"homepage": "http://github.com/webeweb/"
-		}
-	],
-	"require": {
-		"php": "^5.6|^7.0",
-		"webeweb/core-library": "~1.0@dev",
-		"webeweb/curl-library": "~1.0@dev"
-	},
-	"require-dev": {
-		"phpunit/phpunit": "5.7.*"
-	},
-	"support": {
-		"issues": "http://github.com/webeweb/smsmode-library/issues"
-	},
-	"autoload": {
-		"psr-4": {
-			"WBW\\Library\\SMSMode\\": ""
-		}
-	},
-	"extra": {
-		"branch-alias": {
-			"dev-master": "1.x-dev"
-		}
-	}
+    "name": "webeweb/smsmode-library",
+    "type": "library",
+    "description": "Integrate sMsmode API in your projects",
+    "keywords": ["webeweb", "library", "sMsmode"],
+    "homepage": "http://github.com/webeweb/smsmode-library",
+    "license": "LGPL-3.0-only",
+    "authors": [
+        {
+            "name": "webeweb",
+            "homepage": "http://github.com/webeweb/"
+        }
+    ],
+    "require": {
+        "php": "^5.6|^7.0",
+        "webeweb/core-library": "~1.0@dev",
+        "webeweb/curl-library": "~1.0@dev"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "5.7.*"
+    },
+    "support": {
+        "issues": "http://github.com/webeweb/smsmode-library/issues"
+    },
+    "autoload": {
+        "psr-4": {
+            "WBW\\Library\\SMSMode\\": ""
+        }
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.x-dev"
+        }
+    }
 }

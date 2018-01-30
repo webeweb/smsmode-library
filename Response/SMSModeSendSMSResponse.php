@@ -23,48 +23,48 @@ namespace WBW\Library\SMSMode\Response;
  */
 final class SMSModeSendSMSResponse extends AbstractSMSModeResponse implements SMSModeSendSMSResponseInterface {
 
-	/**
-	 * SMS id.
-	 *
-	 * @var string
-	 */
-	private $smsID;
+    /**
+     * SMS id.
+     *
+     * @var string
+     */
+    private $smsID;
 
-	/**
-	 * Get the SMS id.
-	 *
-	 * @return string Returns the SMS id.
-	 */
-	public function getSmsID() {
-		return $this->smsID;
-	}
+    /**
+     * Get the SMS id.
+     *
+     * @return string Returns the SMS id.
+     */
+    public function getSmsID() {
+        return $this->smsID;
+    }
 
-	/**
-	 * {@inheritdoc}
-	 */
-	protected function parse($rawResponse) {
+    /**
+     * {@inheritdoc}
+     */
+    protected function parse($rawResponse) {
 
-		// Set the code and description.
-		parent::parse($rawResponse);
+        // Set the code and description.
+        parent::parse($rawResponse);
 
-		// Explode the response.
-		$response = explode(self::RESPONSE_DELIMITER, $rawResponse);
+        // Explode the response.
+        $response = explode(self::RESPONSE_DELIMITER, $rawResponse);
 
-		// Check the code.
-		if (self::CODE_ACCEPTED === $this->getCode() && 3 === count($response)) {
-			$this->setSmsID(trim($response[2]));
-		}
-	}
+        // Check the code.
+        if (self::CODE_ACCEPTED === $this->getCode() && 3 === count($response)) {
+            $this->setSmsID(trim($response[2]));
+        }
+    }
 
-	/**
-	 * Set the SMS id.
-	 *
-	 * @param string $smsID The SMS id.
-	 * @return SMSModeSendSMSResponse Returns the sMsmode send SMS response.
-	 */
-	public function setSmsID($smsID) {
-		$this->smsID = $smsID;
-		return $this;
-	}
+    /**
+     * Set the SMS id.
+     *
+     * @param string $smsID The SMS id.
+     * @return SMSModeSendSMSResponse Returns the sMsmode send SMS response.
+     */
+    public function setSmsID($smsID) {
+        $this->smsID = $smsID;
+        return $this;
+    }
 
 }

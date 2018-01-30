@@ -19,11 +19,11 @@ namespace WBW\Library\SMSMode\Response;
  */
 interface SMSModeResponseInterface {
 
-	/**
-	 * Response delimiter.
-	 *
-	 * @var string
-	 */
-	const RESPONSE_DELIMITER = "|";
+    /**
+     * Response delimiter.
+     *
+     * @var string
+     */
+    const RESPONSE_DELIMITER = "|";
 
 }

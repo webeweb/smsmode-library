@@ -26,135 +26,135 @@ use WBW\Library\SMSMode\Response\SMSModeCreditTransferResponse;
  */
 final class SMSModeCreditTransferRequest implements SMSModeRequestInterface {
 
-	/**
-	 * Credit.
-	 *
-	 * @var integer
-	 */
-	private $credit;
+    /**
+     * Credit.
+     *
+     * @var integer
+     */
+    private $credit;
 
-	/**
-	 * Reference.
-	 *
-	 * @var string
-	 */
-	private $reference;
+    /**
+     * Reference.
+     *
+     * @var string
+     */
+    private $reference;
 
-	/**
-	 * Username.
-	 *
-	 * @var string
-	 */
-	private $username;
+    /**
+     * Username.
+     *
+     * @var string
+     */
+    private $username;
 
-	/**
-	 * Constructor.
-	 */
-	public function __construct() {
-		// NOTHING DTO DO.
-	}
+    /**
+     * Constructor.
+     */
+    public function __construct() {
+        // NOTHING DTO DO.
+    }
 
-	/**
-	 * Get the credit.
-	 *
-	 * @return integer Returns the credit.
-	 */
-	public function getCredit() {
-		return $this->credit;
-	}
+    /**
+     * Get the credit.
+     *
+     * @return integer Returns the credit.
+     */
+    public function getCredit() {
+        return $this->credit;
+    }
 
-	/**
-	 * Get the reference.
-	 *
-	 * @return string Returns the reference.
-	 */
-	public function getReference() {
-		return $this->reference;
-	}
+    /**
+     * Get the reference.
+     *
+     * @return string Returns the reference.
+     */
+    public function getReference() {
+        return $this->reference;
+    }
 
-	/**
-	 * {@inheritdoc}
-	 */
-	public function getResourcePath() {
-		return "creditTransfert.do";
-	}
+    /**
+     * {@inheritdoc}
+     */
+    public function getResourcePath() {
+        return "creditTransfert.do";
+    }
 
-	/**
-	 * Get the username.
-	 *
-	 * @return string Returns the username.
-	 */
-	public function getUsername() {
-		return $this->username;
-	}
+    /**
+     * Get the username.
+     *
+     * @return string Returns the username.
+     */
+    public function getUsername() {
+        return $this->username;
+    }
 
-	/**
-	 * {@inheritdoc}
-	 */
-	public function parseResponse($rawResponse) {
-		return new SMSModeCreditTransferResponse($rawResponse);
-	}
+    /**
+     * {@inheritdoc}
+     */
+    public function parseResponse($rawResponse) {
+        return new SMSModeCreditTransferResponse($rawResponse);
+    }
 
-	/**
-	 * Set the credit.
-	 *
-	 * @param integer $credit The credit.
-	 * @return SMSModeCreditTransferRequest Returns the sMsmode credit transfer request.
-	 */
-	public function setCredit($credit) {
-		$this->credit = $credit;
-		return $this;
-	}
+    /**
+     * Set the credit.
+     *
+     * @param integer $credit The credit.
+     * @return SMSModeCreditTransferRequest Returns the sMsmode credit transfer request.
+     */
+    public function setCredit($credit) {
+        $this->credit = $credit;
+        return $this;
+    }
 
-	/**
-	 * Set the reference.
-	 *
-	 * @param string $reference The reference.
-	 * @return SMSModeCreditTransferRequest Returns the sMsmode credit transfer request.
-	 */
-	public function setReference($reference) {
-		$this->reference = $reference;
-		return $this;
-	}
+    /**
+     * Set the reference.
+     *
+     * @param string $reference The reference.
+     * @return SMSModeCreditTransferRequest Returns the sMsmode credit transfer request.
+     */
+    public function setReference($reference) {
+        $this->reference = $reference;
+        return $this;
+    }
 
-	/**
-	 * Set the username.
-	 *
-	 * @param string $username The username.
-	 * @return SMSModeCreditTransferRequest Returns the sMsmode credit transfer request.
-	 */
-	public function setUsername($username) {
-		$this->username = $username;
-		return $this;
-	}
+    /**
+     * Set the username.
+     *
+     * @param string $username The username.
+     * @return SMSModeCreditTransferRequest Returns the sMsmode credit transfer request.
+     */
+    public function setUsername($username) {
+        $this->username = $username;
+        return $this;
+    }
 
-	/**
-	 *  {@inhertidoc}
-	 */
-	public function toArray() {
+    /**
+     *  {@inhertidoc}
+     */
+    public function toArray() {
 
-		// Initialize the output.
-		$output = [];
+        // Initialize the output.
+        $output = [];
 
-		// Check the required setting username.
-		if (null === $this->username) {
-			throw new NullPointerException("The parameter \"username\" is missing");
-		}
-		$output["targetPseudo"] = $this->username;
+        // Check the required setting username.
+        if (null === $this->username) {
+            throw new NullPointerException("The parameter \"username\" is missing");
+        }
+        $output["targetPseudo"] = $this->username;
 
-		// Check the required setting credit.
-		if (null === $this->credit) {
-			throw new NullPointerException("The parameter \"credit\" is missing");
-		}
-		$output["creditAmount"] = $this->credit;
+        // Check the required setting credit.
+        if (null === $this->credit) {
+            throw new NullPointerException("The parameter \"credit\" is missing");
+        }
+        $output["creditAmount"] = $this->credit;
 
-		// Check the optional setting reference.
-		if (null !== $this->reference) {
-			$output["reference"] = $this->reference;
-		}
+        // Check the optional setting reference.
+        if (null !== $this->reference) {
+            $output["reference"] = $this->reference;
+        }
 
-		// Return the output.
-		return $output;
-	}
+        // Return the output.
+        return $output;
+    }
 
 }

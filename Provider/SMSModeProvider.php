@@ -28,125 +28,125 @@ use WBW\Library\SMSMode\Response\AbstractSMSModeResponse;
  */
 final class SMSModeProvider {
 
-	/**
-	 * Authentication.
-	 *
-	 * @var SMSModeAuthentication
-	 */
-	private $authentication;
+    /**
+     * Authentication.
+     *
+     * @var SMSModeAuthentication
+     */
+    private $authentication;
 
-	/**
-	 * Debug.
-	 *
-	 * @var boolean
-	 */
-	private $debug = false;
+    /**
+     * Debug.
+     *
+     * @var boolean
+     */
+    private $debug = false;
 
-	/**
-	 * Request.
-	 *
-	 * @var SMSModeRequestInterface
-	 */
-	private $request;
+    /**
+     * Request.
+     *
+     * @var SMSModeRequestInterface
+     */
+    private $request;
 
-	/**
-	 * Constructor.
-	 *
-	 * @param SMSModeAuthentication $authentication The authentication.
-	 * @param SMSModeRequestInterface $request The request.
-	 */
-	public function __construct(SMSModeAuthentication $authentication, SMSModeRequestInterface $request) {
-		$this->setAuthentication($authentication);
-		$this->setRequest($request);
-	}
+    /**
+     * Constructor.
+     *
+     * @param SMSModeAuthentication $authentication The authentication.
+     * @param SMSModeRequestInterface $request The request.
+     */
+    public function __construct(SMSModeAuthentication $authentication, SMSModeRequestInterface $request) {
+        $this->setAuthentication($authentication);
+        $this->setRequest($request);
+    }
 
-	/**
-	 * Call the API.
-	 *
-	 * @return AbstractSMSModeResponse Returns the response.
-	 * @throws NullPointerException Throws a null pointer exception if a setting is missing.
-	 * @throws IllegalArgumentException Throws an illegal argument exception if a setting is invalid.
-	 */
-	public function callAPI() {
+    /**
+     * Call the API.
+     *
+     * @return AbstractSMSModeResponse Returns the response.
+     * @throws NullPointerException Throws a null pointer exception if a setting is missing.
+     * @throws IllegalArgumentException Throws an illegal argument exception if a setting is invalid.
+     */
+    public function callAPI() {
 
-		// Prepare the CURL request.
-		$cURLRequest = new CURLGetRequest(new CURLConfiguration(), $this->request->getResourcePath());
-		$cURLRequest->getConfiguration()->setDebug($this->debug);
-		$cURLRequest->getConfiguration()->setHost(SMSModeRequestInterface::HOST);
+        // Prepare the CURL request.
+        $cURLRequest = new CURLGetRequest(new CURLConfiguration(), $this->request->getResourcePath());
+        $cURLRequest->getConfiguration()->setDebug($this->debug);
+        $cURLRequest->getConfiguration()->setHost(SMSModeRequestInterface::HOST);
 
-		// Add each query data.
-		foreach ($this->authentication->toArray() as $key => $value) {
-			$cURLRequest->addQueryData($key, $value);
-		}
-		foreach ($this->request->toArray() as $key => $value) {
-			$cURLRequest->addQueryData($key, $value);
-		}
+        // Add each query data.
+        foreach ($this->authentication->toArray() as $key => $value) {
+            $cURLRequest->addQueryData($key, $value);
+        }
+        foreach ($this->request->toArray() as $key => $value) {
+            $cURLRequest->addQueryData($key, $value);
+        }
 
-		// Call the request.
-		$cURLResponse = $cURLRequest->call();
+        // Call the request.
+        $cURLResponse = $cURLRequest->call();
 
-		// Return the parsed response.
-		return $this->request->parseResponse(utf8_encode($cURLResponse->getResponseBody()));
-	}
+        // Return the parsed response.
+        return $this->request->parseResponse(utf8_encode($cURLResponse->getResponseBody()));
+    }
 
-	/**
-	 * Get the authentication.
-	 *
-	 * @return SMSModeAuthentication Returns the authentication.
-	 */
-	public function getAuthentication() {
-		return $this->authentication;
-	}
+    /**
+     * Get the authentication.
+     *
+     * @return SMSModeAuthentication Returns the authentication.
+     */
+    public function getAuthentication() {
+        return $this->authentication;
+    }
 
-	/**
-	 * Get the debug.
-	 *
-	 * @return boolean Returns the debug.
-	 */
-	public function getDebug() {
-		return $this->debug;
-	}
+    /**
+     * Get the debug.
+     *
+     * @return boolean Returns the debug.
+     */
+    public function getDebug() {
+        return $this->debug;
+    }
 
-	/**
-	 * Get the request.
-	 *
-	 * @return SMSModeRequestInterface Returns the request.
-	 */
-	public function getRequest() {
-		return $this->request;
-	}
+    /**
+     * Get the request.
+     *
+     * @return SMSModeRequestInterface Returns the request.
+     */
+    public function getRequest() {
+        return $this->request;
+    }
 
-	/**
-	 * Set the authentication.
-	 *
-	 * @param SMSModeAuthentication $authentication The authentication.
-	 * @return SMSModeProvider Returns the sMsmode provider.
-	 */
-	protected function setAuthentication(SMSModeAuthentication $authentication) {
-		$this->authentication = $authentication;
-		return $this;
-	}
+    /**
+     * Set the authentication.
+     *
+     * @param SMSModeAuthentication $authentication The authentication.
+     * @return SMSModeProvider Returns the sMsmode provider.
+     */
+    protected function setAuthentication(SMSModeAuthentication $authentication) {
+        $this->authentication = $authentication;
+        return $this;
+    }
 
-	/**
-	 * Set the debug.
-	 *
-	 * @param boolean $debug The debug.
-	 * @return SMSModeProvider Returns the sMsmode provider.
-	 */
-	public function setDebug($debug = false) {
-		$this->debug = $debug;
-		return $this;
-	}
+    /**
+     * Set the debug.
+     *
+     * @param boolean $debug The debug.
+     * @return SMSModeProvider Returns the sMsmode provider.
+     */
+    public function setDebug($debug = false) {
+        $this->debug = $debug;
+        return $this;
+    }
 
-	/**
-	 * Set the request.
-	 *
-	 * @param SMSModeRequestInterface $request The request.
-	 * @return SMSModeProvider Returns the sMsmode provider.
-	 */
-	protected function setRequest(SMSModeRequestInterface $request) {
-		$this->request = $request;
-		return $this;
-	}
+    /**
+     * Set the request.
+     *
+     * @param SMSModeRequestInterface $request The request.
+     * @return SMSModeProvider Returns the sMsmode provider.
+     */
+    protected function setRequest(SMSModeRequestInterface $request) {
+        $this->request = $request;
+        return $this;
+    }
 
 }

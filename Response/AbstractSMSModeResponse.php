@@ -20,85 +20,85 @@ namespace WBW\Library\SMSMode\Response;
  */
 abstract class AbstractSMSModeResponse implements SMSModeResponseInterface {
 
-	/**
-	 * Code.
-	 *
-	 * @var integer
-	 */
-	private $code;
+    /**
+     * Code.
+     *
+     * @var integer
+     */
+    private $code;
 
-	/**
-	 * Description.
-	 *
-	 * @var string
-	 */
-	private $description;
+    /**
+     * Description.
+     *
+     * @var string
+     */
+    private $description;
 
-	/**
-	 * Constructor.
-	 *
-	 * @param string $rawResponse The raw response.
-	 */
-	final public function __construct($rawResponse) {
-		$this->parse($rawResponse);
-	}
+    /**
+     * Constructor.
+     *
+     * @param string $rawResponse The raw response.
+     */
+    final public function __construct($rawResponse) {
+        $this->parse($rawResponse);
+    }
 
-	/**
-	 * Get the code.
-	 *
-	 * @return integer Returns the code.
-	 */
-	final public function getCode() {
-		return $this->code;
-	}
+    /**
+     * Get the code.
+     *
+     * @return integer Returns the code.
+     */
+    final public function getCode() {
+        return $this->code;
+    }
 
-	/**
-	 * Description.
-	 *
-	 * @return string Returns the description.
-	 */
-	final public function getDescription() {
-		return $this->description;
-	}
+    /**
+     * Description.
+     *
+     * @return string Returns the description.
+     */
+    final public function getDescription() {
+        return $this->description;
+    }
 
-	/**
-	 * Parse the response.
-	 *
-	 * @param string $rawResponse The raw response.
-	 */
-	protected function parse($rawResponse) {
+    /**
+     * Parse the response.
+     *
+     * @param string $rawResponse The raw response.
+     */
+    protected function parse($rawResponse) {
 
-		// Explode the response.
-		$response = explode(self::RESPONSE_DELIMITER, $rawResponse);
-		if (count($response) < 2) {
-			return;
-		}
+        // Explode the response.
+        $response = explode(self::RESPONSE_DELIMITER, $rawResponse);
+        if (count($response) < 2) {
+            return;
+        }
 
-		// Set the code and description.
-		$this->setCode(intval(trim($response[0])));
-		$this->setDescription(trim($response[1]));
-	}
+        // Set the code and description.
+        $this->setCode(intval(trim($response[0])));
+        $this->setDescription(trim($response[1]));
+    }
 
-	/**
-	 * Set the code.
-	 *
-	 * @param integer $code Returns the code.
-	 * @return AbstractSMSModeResponse Returns the sMsmode response.
-	 */
-	final protected function setCode($code) {
-		$this->code = $code;
-		return $this;
-	}
+    /**
+     * Set the code.
+     *
+     * @param integer $code Returns the code.
+     * @return AbstractSMSModeResponse Returns the sMsmode response.
+     */
+    final protected function setCode($code) {
+        $this->code = $code;
+        return $this;
+    }
 
-	/**
-	 * Set the description.
-	 *
-	 * @param string $description The description.
-	 * @return AbstractSMSModeResponse Returns the sMsmode response.
-	 */
-	final protected function setDescription($description) {
-		$this->description = $description;
-		return $this;
-	}
+    /**
+     * Set the description.
+     *
+     * @param string $description The description.
+     * @return AbstractSMSModeResponse Returns the sMsmode response.
+     */
+    final protected function setDescription($description) {
+        $this->description = $description;
+        return $this;
+    }
 
 }

@@ -28,181 +28,181 @@ use WBW\Library\SMSMode\Response\SMSModeGetResponsesResponse;
  */
 final class SMSModeGetResponsesRequest implements SMSModeRequestInterface {
 
-	/**
-	 * End date.
-	 *
-	 * @var DateTime
-	 */
-	private $endDate;
+    /**
+     * End date.
+     *
+     * @var DateTime
+     */
+    private $endDate;
 
-	/**
-	 * Offset.
-	 *
-	 * @var integer
-	 */
-	private $offset;
+    /**
+     * Offset.
+     *
+     * @var integer
+     */
+    private $offset;
 
-	/**
-	 * Start
-	 *
-	 * @var integer
-	 */
-	private $start;
+    /**
+     * Start
+     *
+     * @var integer
+     */
+    private $start;
 
-	/**
-	 * Start date.
-	 *
-	 * @var DateTime
-	 */
-	private $startDate;
+    /**
+     * Start date.
+     *
+     * @var DateTime
+     */
+    private $startDate;
 
-	/**
-	 * Constructor.
-	 */
-	public function __construct() {
-		// NOTHING DTO DO.
-	}
+    /**
+     * Constructor.
+     */
+    public function __construct() {
+        // NOTHING DTO DO.
+    }
 
-	/**
-	 * Get the end date.
-	 *
-	 * @return DateTime Returns the end date.
-	 */
-	public function getEndDate() {
-		return $this->endDate;
-	}
+    /**
+     * Get the end date.
+     *
+     * @return DateTime Returns the end date.
+     */
+    public function getEndDate() {
+        return $this->endDate;
+    }
 
-	/**
-	 * Get the offset.
-	 *
-	 * @return integer Returns the offset.
-	 */
-	public function getOffset() {
-		return $this->offset;
-	}
+    /**
+     * Get the offset.
+     *
+     * @return integer Returns the offset.
+     */
+    public function getOffset() {
+        return $this->offset;
+    }
 
-	/**
-	 * {@inheritdoc}
-	 */
-	public function getResourcePath() {
-		return "responseList.do";
-	}
+    /**
+     * {@inheritdoc}
+     */
+    public function getResourcePath() {
+        return "responseList.do";
+    }
 
-	/**
-	 * Get the start.
-	 *
-	 * @return integer Returns the start.
-	 */
-	public function getStart() {
-		return $this->start;
-	}
+    /**
+     * Get the start.
+     *
+     * @return integer Returns the start.
+     */
+    public function getStart() {
+        return $this->start;
+    }
 
-	/**
-	 * Get the start date.
-	 *
-	 * @return DateTime Returns the start date.
-	 */
-	public function getStartDate() {
-		return $this->startDate;
-	}
+    /**
+     * Get the start date.
+     *
+     * @return DateTime Returns the start date.
+     */
+    public function getStartDate() {
+        return $this->startDate;
+    }
 
-	/**
-	 * {@inheritdoc}
-	 */
-	public function parseResponse($rawResponse) {
-		return new SMSModeGetResponsesResponse($rawResponse);
-	}
+    /**
+     * {@inheritdoc}
+     */
+    public function parseResponse($rawResponse) {
+        return new SMSModeGetResponsesResponse($rawResponse);
+    }
 
-	/**
-	 * Set the end date.
-	 *
-	 * @param DateTime $endDate	The end date.
-	 * @return SMSModeGetResponsesRequest Returns the sMsmode get responses request.
-	 */
-	public function setEndDate(DateTime $endDate = null) {
-		$this->endDate = $endDate;
-		return $this;
-	}
+    /**
+     * Set the end date.
+     *
+     * @param DateTime $endDate	The end date.
+     * @return SMSModeGetResponsesRequest Returns the sMsmode get responses request.
+     */
+    public function setEndDate(DateTime $endDate = null) {
+        $this->endDate = $endDate;
+        return $this;
+    }
 
-	/**
-	 * Set the offset.
-	 *
-	 * @param integer $offset The offset.
-	 * @return SMSModeGetResponsesRequest Returns the sMsmode get responses request.
-	 */
-	public function setOffset($offset) {
-		$this->offset = $offset;
-		return $this;
-	}
+    /**
+     * Set the offset.
+     *
+     * @param integer $offset The offset.
+     * @return SMSModeGetResponsesRequest Returns the sMsmode get responses request.
+     */
+    public function setOffset($offset) {
+        $this->offset = $offset;
+        return $this;
+    }
 
-	/**
-	 * Set the start.
-	 *
-	 * @param integer $start The start.
-	 * @return SMSModeGetResponsesRequest Returns the sMsmode get responses request.
-	 */
-	public function setStart($start) {
-		$this->start = $start;
-		return $this;
-	}
+    /**
+     * Set the start.
+     *
+     * @param integer $start The start.
+     * @return SMSModeGetResponsesRequest Returns the sMsmode get responses request.
+     */
+    public function setStart($start) {
+        $this->start = $start;
+        return $this;
+    }
 
-	/**
-	 * Set the start date.
-	 *
-	 * @param DateTime $startDate The start date.
-	 * @return SMSModeGetResponsesRequest Returns the sMsmode get responses request.
-	 */
-	public function setStartDate(DateTime $startDate = null) {
-		$this->startDate = $startDate;
-		return $this;
-	}
+    /**
+     * Set the start date.
+     *
+     * @param DateTime $startDate The start date.
+     * @return SMSModeGetResponsesRequest Returns the sMsmode get responses request.
+     */
+    public function setStartDate(DateTime $startDate = null) {
+        $this->startDate = $startDate;
+        return $this;
+    }
 
-	/**
-	 *  {@inhertidoc}
-	 */
-	public function toArray() {
+    /**
+     *  {@inhertidoc}
+     */
+    public function toArray() {
 
-		// Initialize the output.
-		$output = [];
+        // Initialize the output.
+        $output = [];
 
-		// Check the optional setting start and offset.
-		if (null !== $this->start && null === $this->offset) {
-			throw new NullPointerException("The parameter \"offset\" is missing");
-		}
-		if (null === $this->start && null !== $this->offset) {
-			throw new NullPointerException("The parameter \"start\" is missing");
-		}
+        // Check the optional setting start and offset.
+        if (null !== $this->start && null === $this->offset) {
+            throw new NullPointerException("The parameter \"offset\" is missing");
+        }
+        if (null === $this->start && null !== $this->offset) {
+            throw new NullPointerException("The parameter \"start\" is missing");
+        }
 
-		//
-		if (null !== $this->start) {
-			if ($this->offset <= $this->start) {
-				throw new IllegalArgumentException("The offset must be greater than start");
-			}
-			$output["start"]	 = $this->start;
-			$output["offset"]	 = $this->offset;
-			return $output;
-		}
+        //
+        if (null !== $this->start) {
+            if ($this->offset <= $this->start) {
+                throw new IllegalArgumentException("The offset must be greater than start");
+            }
+            $output["start"]  = $this->start;
+            $output["offset"] = $this->offset;
+            return $output;
+        }
 
-		// Check the optional setting start date and end date.
-		if (null !== $this->startDate && null === $this->endDate) {
-			throw new NullPointerException("The parameter \"endDate\" is missing");
-		}
-		if (null === $this->startDate && null !== $this->endDate) {
-			throw new NullPointerException("The parameter \"startDate\" is missing");
-		}
+        // Check the optional setting start date and end date.
+        if (null !== $this->startDate && null === $this->endDate) {
+            throw new NullPointerException("The parameter \"endDate\" is missing");
+        }
+        if (null === $this->startDate && null !== $this->endDate) {
+            throw new NullPointerException("The parameter \"startDate\" is missing");
+        }
 
-		//
-		if (null !== $this->startDate) {
-			if ($this->endDate <= $this->startDate) {
-				throw new IllegalArgumentException("The end date must be greater than start date");
-			}
-			$output["startDate"] = $this->startDate->format(self::DATE_FORMAT);
-			$output["endDate"]	 = $this->endDate->format(self::DATE_FORMAT);
-			return $output;
-		}
+        //
+        if (null !== $this->startDate) {
+            if ($this->endDate <= $this->startDate) {
+                throw new IllegalArgumentException("The end date must be greater than start date");
+            }
+            $output["startDate"] = $this->startDate->format(self::DATE_FORMAT);
+            $output["endDate"]   = $this->endDate->format(self::DATE_FORMAT);
+            return $output;
+        }
 
-		// Return the output.
-		return $output;
-	}
+        // Return the output.
+        return $output;
+    }
 
 }

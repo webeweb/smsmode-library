@@ -20,13 +20,13 @@ namespace WBW\Library\SMSMode\Exception;
  */
 final class SMSModeCharacterNotAllowedException extends AbstractSMSModeException {
 
-	/**
-	 * Constructor.
-	 *
-	 * @param string $character The character.
-	 */
-	public function __construct($character) {
-		parent::__construct("The character \"" . $character . "\" is not allowed");
-	}
+    /**
+     * Constructor.
+     *
+     * @param string $character The character.
+     */
+    public function __construct($character) {
+        parent::__construct("The character \"" . $character . "\" is not allowed");
+    }
 
 }

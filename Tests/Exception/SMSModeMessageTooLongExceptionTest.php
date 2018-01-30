@@ -23,17 +23,17 @@ use WBW\Library\SMSMode\Exception\SMSModeMessageTooLongException;
  */
 final class SMSModeMessageTooLongExceptionTest extends PHPUnit_Framework_TestCase {
 
-	/**
-	 * Tests the __construct() method.
-	 *
-	 * @return void.
-	 */
-	public function testConstruct() {
+    /**
+     * Tests the __construct() method.
+     *
+     * @return void.
+     */
+    public function testConstruct() {
 
-		$ex = new SMSModeMessageTooLongException("exception", 8);
+        $ex = new SMSModeMessageTooLongException("exception", 8);
 
-		$res = "The message \"exception\" exceeds the limit of 8 characters";
-		$this->assertEquals($res, $ex->getMessage());
-	}
+        $res = "The message \"exception\" exceeds the limit of 8 characters";
+        $this->assertEquals($res, $ex->getMessage());
+    }
 
 }

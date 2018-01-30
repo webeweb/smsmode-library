@@ -25,52 +25,52 @@ use WBW\Library\SMSMode\Exception\SMSModeMissingSettingException;
  */
 final class SMSModeAuthenticationTest extends PHPUnit_Framework_TestCase {
 
-	/**
-	 * Tests the __construct() method.
-	 *
-	 * @return void
-	 */
-	public function testConstruct() {
+    /**
+     * Tests the __construct() method.
+     *
+     * @return void
+     */
+    public function testConstruct() {
 
-		$obj = new SMSModeAuthentication();
+        $obj = new SMSModeAuthentication();
 
-		$this->assertEquals(null, $obj->getPassword());
-		$this->assertEquals(null, $obj->getToken());
-		$this->assertEquals(null, $obj->getUsername());
-	}
+        $this->assertEquals(null, $obj->getPassword());
+        $this->assertEquals(null, $obj->getToken());
+        $this->assertEquals(null, $obj->getUsername());
+    }
 
-	/**
-	 * Tests the toArray() method.
-	 *
-	 * @return void.
-	 */
-	public function testToArray() {
+    /**
+     * Tests the toArray() method.
+     *
+     * @return void.
+     */
+    public function testToArray() {
 
-		$obj = new SMSModeAuthentication();
+        $obj = new SMSModeAuthentication();
 
-		try {
-			$obj->toArray();
-		} catch (Exception $ex) {
-			$this->assertInstanceOf(SMSModeMissingSettingException::class, $ex);
-			$this->assertEquals("The setting \"username\" is missing", $ex->getMessage());
-		}
+        try {
+            $obj->toArray();
+        } catch (Exception $ex) {
+            $this->assertInstanceOf(SMSModeMissingSettingException::class, $ex);
+            $this->assertEquals("The setting \"username\" is missing", $ex->getMessage());
+        }
 
-		$obj->setToken("token");
-		$res1 = ["accessToken" => "token"];
-		$this->assertEquals($res1, $obj->toArray());
+        $obj->setToken("token");
+        $res1 = ["accessToken" => "token"];
+        $this->assertEquals($res1, $obj->toArray());
 
-		$obj->setToken(null);
-		$obj->setUsername("username");
-		try {
-			$obj->toArray();
-		} catch (Exception $ex) {
-			$this->assertInstanceOf(SMSModeMissingSettingException::class, $ex);
-			$this->assertEquals("The setting \"password\" is missing", $ex->getMessage());
-		}
+        $obj->setToken(null);
+        $obj->setUsername("username");
+        try {
+            $obj->toArray();
+        } catch (Exception $ex) {
+            $this->assertInstanceOf(SMSModeMissingSettingException::class, $ex);
+            $this->assertEquals("The setting \"password\" is missing", $ex->getMessage());
+        }
 
-		$obj->setPassword("password");
-		$res2 = ["pseudo" => "username", "pass" => "password"];
-		$this->assertEquals($res2, $obj->toArray());
-	}
+        $obj->setPassword("password");
+        $res2 = ["pseudo" => "username", "pass" => "password"];
+        $this->assertEquals($res2, $obj->toArray());
+    }
 
 }

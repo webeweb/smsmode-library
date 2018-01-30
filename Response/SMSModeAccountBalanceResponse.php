@@ -23,38 +23,38 @@ namespace WBW\Library\SMSMode\Response;
  */
 final class SMSModeAccountBalanceResponse extends AbstractSMSModeResponse {
 
-	/**
-	 * Account balance.
-	 *
-	 * @var float
-	 */
-	private $accountBalance = 0.00;
+    /**
+     * Account balance.
+     *
+     * @var float
+     */
+    private $accountBalance = 0.00;
 
-	/**
-	 * Get the account balance.
-	 *
-	 * @return float Returns the account balance.
-	 */
-	public function getAccountBalance() {
-		return $this->accountBalance;
-	}
+    /**
+     * Get the account balance.
+     *
+     * @return float Returns the account balance.
+     */
+    public function getAccountBalance() {
+        return $this->accountBalance;
+    }
 
-	/**
-	 * {@inheritdoc}
-	 */
-	protected function parse($rawResponse) {
-		$this->setAccountBalance(floatval(trim($rawResponse)));
-	}
+    /**
+     * {@inheritdoc}
+     */
+    protected function parse($rawResponse) {
+        $this->setAccountBalance(floatval(trim($rawResponse)));
+    }
 
-	/**
-	 * Set the account balance.
-	 *
-	 * @param float $accountBalance The account balance.
-	 * @return SMSModeAccountBalanceResponse Returns the sMsmode account balance response.
-	 */
-	protected function setAccountBalance($accountBalance = 0.00) {
-		$this->accountBalance = $accountBalance;
-		return $this;
-	}
+    /**
+     * Set the account balance.
+     *
+     * @param float $accountBalance The account balance.
+     * @return SMSModeAccountBalanceResponse Returns the sMsmode account balance response.
+     */
+    protected function setAccountBalance($accountBalance = 0.00) {
+        $this->accountBalance = $accountBalance;
+        return $this;
+    }
 
 }

@@ -23,17 +23,17 @@ use WBW\Library\SMSMode\Exception\SMSModeInvalidMessageClassException;
  */
 final class SMSModeInvalidMessageClassExceptionTest extends PHPUnit_Framework_TestCase {
 
-	/**
-	 * Tests the __construct() method.
-	 *
-	 * @return void.
-	 */
-	public function testConstruct() {
+    /**
+     * Tests the __construct() method.
+     *
+     * @return void.
+     */
+    public function testConstruct() {
 
-		$ex = new SMSModeInvalidMessageClassException("exception");
+        $ex = new SMSModeInvalidMessageClassException("exception");
 
-		$res = "The message class \"exception\" is invalid";
-		$this->assertEquals($res, $ex->getMessage());
-	}
+        $res = "The message class \"exception\" is invalid";
+        $this->assertEquals($res, $ex->getMessage());
+    }
 
 }

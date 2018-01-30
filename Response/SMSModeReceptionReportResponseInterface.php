@@ -22,130 +22,130 @@ namespace WBW\Library\SMSMode\Response;
  */
 interface SMSModeReceptionReportResponseInterface {
 
-	/**
-	 * Code "Internal error".
-	 *
-	 * @var integer
-	 */
-	const CODE_INTERNAL_ERROR = 31;
+    /**
+     * Code "Internal error".
+     *
+     * @var integer
+     */
+    const CODE_INTERNAL_ERROR = 31;
 
-	/**
-	 * Code "Internal error sending SMS".
-	 *
-	 * @var integer
-	 */
-	const CODE_INTERNAL_ERROR_SENDING_SMS = 2;
+    /**
+     * Code "Internal error sending SMS".
+     *
+     * @var integer
+     */
+    const CODE_INTERNAL_ERROR_SENDING_SMS = 2;
 
-	/**
-	 * Code "Missing required parameter".
-	 *
-	 * @var integer
-	 */
-	const CODE_MISSING_REQUIRED_PARAMETER = 35;
+    /**
+     * Code "Missing required parameter".
+     *
+     * @var integer
+     */
+    const CODE_MISSING_REQUIRED_PARAMETER = 35;
 
-	/**
-	 * Code "No message".
-	 *
-	 * @var integer
-	 */
-	const CODE_NO_MESSAGE = 61;
+    /**
+     * Code "No message".
+     *
+     * @var integer
+     */
+    const CODE_NO_MESSAGE = 61;
 
-	/**
-	 * Code "Operator delivered".
-	 *
-	 * @var integer
-	 */
-	const CODE_OPERATOR_DELIVERED = 13;
+    /**
+     * Code "Operator delivered".
+     *
+     * @var integer
+     */
+    const CODE_OPERATOR_DELIVERED = 13;
 
-	/**
-	 * Code "Reception error".
-	 *
-	 * @var integer
-	 */
-	const CODE_RECEPTION_ERROR = 35;
+    /**
+     * Code "Reception error".
+     *
+     * @var integer
+     */
+    const CODE_RECEPTION_ERROR = 35;
 
-	/**
-	 * Code "Routing error".
-	 *
-	 * @var integer
-	 */
-	const CODE_ROUTING_ERROR = 34;
+    /**
+     * Code "Routing error".
+     *
+     * @var integer
+     */
+    const CODE_ROUTING_ERROR = 34;
 
-	/**
-	 * Code "SMS received".
-	 *
-	 * @var integer
-	 */
-	const CODE_SMS_RECEIVED = 11;
+    /**
+     * Code "SMS received".
+     *
+     * @var integer
+     */
+    const CODE_SMS_RECEIVED = 11;
 
-	/**
-	 * Code "SMS send".
-	 *
-	 * @var integer
-	 */
-	const CODE_SMS_SEND = 0;
+    /**
+     * Code "SMS send".
+     *
+     * @var integer
+     */
+    const CODE_SMS_SEND = 0;
 
-	/**
-	 * Description "Internal error".
-	 *
-	 * @var string
-	 */
-	const DESC_INTERNAL_ERROR = "Erreur interne lors de la requête";
+    /**
+     * Description "Internal error".
+     *
+     * @var string
+     */
+    const DESC_INTERNAL_ERROR = "Erreur interne lors de la requête";
 
-	/**
-	 * Description "Internal error sending SMS".
-	 *
-	 * @var string
-	 */
-	const DESC_INTERNAL_ERROR_SENDING_SMS = "Erreur interne lors de l'envoi du SMS";
+    /**
+     * Description "Internal error sending SMS".
+     *
+     * @var string
+     */
+    const DESC_INTERNAL_ERROR_SENDING_SMS = "Erreur interne lors de l'envoi du SMS";
 
-	/**
-	 * Description "Missing required parameter".
-	 *
-	 * @var string
-	 */
-	const DESC_MISSING_REQUIRED_PARAMETER = "Paramètre obligatoire manquant";
+    /**
+     * Description "Missing required parameter".
+     *
+     * @var string
+     */
+    const DESC_MISSING_REQUIRED_PARAMETER = "Paramètre obligatoire manquant";
 
-	/**
-	 * Description "No message".
-	 *
-	 * @var string
-	 */
-	const DESC_NO_MESSAGE = "SMS n'existant pas ou plus";
+    /**
+     * Description "No message".
+     *
+     * @var string
+     */
+    const DESC_NO_MESSAGE = "SMS n'existant pas ou plus";
 
-	/**
-	 * Code "Operator delivered".
-	 *
-	 * @var string
-	 */
-	const DESC_OPERATOR_DELIVERED = "Délivré opérateur (SMS délivré à l'opérateur dont dépend votre destinataire)";
+    /**
+     * Code "Operator delivered".
+     *
+     * @var string
+     */
+    const DESC_OPERATOR_DELIVERED = "Délivré opérateur (SMS délivré à l'opérateur dont dépend votre destinataire)";
 
-	/**
-	 * Code "Reception error".
-	 *
-	 * @var string
-	 */
-	const DESC_RECEPTION_ERROR = "Erreur réception (SMS non délivré par l'opérateur sur e téléphone du destinataire)";
+    /**
+     * Code "Reception error".
+     *
+     * @var string
+     */
+    const DESC_RECEPTION_ERROR = "Erreur réception (SMS non délivré par l'opérateur sur e téléphone du destinataire)";
 
-	/**
-	 * Code "Routing error".
-	 *
-	 * @var string
-	 */
-	const DESC_ROUTING_ERROR = "Erreur routage (réseau du destinataire non reconnu)";
+    /**
+     * Code "Routing error".
+     *
+     * @var string
+     */
+    const DESC_ROUTING_ERROR = "Erreur routage (réseau du destinataire non reconnu)";
 
-	/**
-	 * Description "SMS send".
-	 *
-	 * @var string
-	 */
-	const DESC_SMS_RECEIVED = "SMS reçu par le téléphone portable";
+    /**
+     * Description "SMS send".
+     *
+     * @var string
+     */
+    const DESC_SMS_RECEIVED = "SMS reçu par le téléphone portable";
 
-	/**
-	 * Description "SMS send".
-	 *
-	 * @var string
-	 */
-	const DESC_SMS_SEND = "SMS envoyé";
+    /**
+     * Description "SMS send".
+     *
+     * @var string
+     */
+    const DESC_SMS_SEND = "SMS envoyé";
 
 }

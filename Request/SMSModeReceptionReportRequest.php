@@ -26,70 +26,70 @@ use WBW\Library\SMSMode\Response\SMSModeReceptionReportResponse;
  */
 final class SMSModeReceptionReportRequest implements SMSModeRequestInterface {
 
-	/**
-	 * SMS id.
-	 *
-	 * @var string
-	 */
-	private $smsID;
+    /**
+     * SMS id.
+     *
+     * @var string
+     */
+    private $smsID;
 
-	/**
-	 * Constructor.
-	 */
-	public function __construct() {
-		// NOTHING DTO DO.
-	}
+    /**
+     * Constructor.
+     */
+    public function __construct() {
+        // NOTHING DTO DO.
+    }
 
-	/**
-	 * {@inheritdoc}
-	 */
-	public function getResourcePath() {
-		return "compteRendu.do";
-	}
+    /**
+     * {@inheritdoc}
+     */
+    public function getResourcePath() {
+        return "compteRendu.do";
+    }
 
-	/**
-	 * Get the SMS id.
-	 *
-	 * @return string Returns the SMS id.
-	 */
-	public function getSmsID() {
-		return $this->smsID;
-	}
+    /**
+     * Get the SMS id.
+     *
+     * @return string Returns the SMS id.
+     */
+    public function getSmsID() {
+        return $this->smsID;
+    }
 
-	/**
-	 * {@inheritdoc}
-	 */
-	public function parseResponse($rawResponse) {
-		return new SMSModeReceptionReportResponse($rawResponse);
-	}
+    /**
+     * {@inheritdoc}
+     */
+    public function parseResponse($rawResponse) {
+        return new SMSModeReceptionReportResponse($rawResponse);
+    }
 
-	/**
-	 * Set the SMS id.
-	 *
-	 * @param string $smsID The SMS id.
-	 * @return SMSModeReceptionReportRequest Returns the sMsmode reception report request.
-	 */
-	public function setSmsID($smsID) {
-		$this->smsID = $smsID;
-		return $this;
-	}
+    /**
+     * Set the SMS id.
+     *
+     * @param string $smsID The SMS id.
+     * @return SMSModeReceptionReportRequest Returns the sMsmode reception report request.
+     */
+    public function setSmsID($smsID) {
+        $this->smsID = $smsID;
+        return $this;
+    }
 
-	/**
-	 *  {@inhertidoc}
-	 */
-	public function toArray() {
+    /**
+     *  {@inhertidoc}
+     */
+    public function toArray() {
 
-		// Initialize the output.
-		$output = [];
+        // Initialize the output.
+        $output = [];
 
-		// Check the required sms id.
-		if (null === $this->smsID) {
-			throw new NullPointerException("The parameter \"smsID\" is missing");
-		}
-		$output["smsID"] = $this->smsID;
+        // Check the required sms id.
+        if (null === $this->smsID) {
+            throw new NullPointerException("The parameter \"smsID\" is missing");
+        }
+        $output["smsID"] = $this->smsID;
 
-		// Return the output.
-		return $output;
-	}
+        // Return the output.
+        return $output;
+    }
 
 }

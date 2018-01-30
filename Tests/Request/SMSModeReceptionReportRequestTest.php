@@ -26,52 +26,52 @@ use WBW\Library\SMSMode\Response\SMSModeReceptionReportResponse;
  */
 final class SMSModeReceptionReportRequestTest extends PHPUnit_Framework_TestCase {
 
-	/**
-	 * Tests the __construct() method.
-	 *
-	 * @return void
-	 */
-	public function testConstructor() {
+    /**
+     * Tests the __construct() method.
+     *
+     * @return void
+     */
+    public function testConstructor() {
 
-		$obj = new SMSModeReceptionReportRequest();
+        $obj = new SMSModeReceptionReportRequest();
 
-		$this->assertEquals("compteRendu.do", $obj->getResourcePath());
+        $this->assertEquals("compteRendu.do", $obj->getResourcePath());
 
-		$this->assertEquals(null, $obj->getSmsID());
-	}
+        $this->assertEquals(null, $obj->getSmsID());
+    }
 
-	/**
-	 * Tests the parseResponse() method.
-	 *
-	 * @return void
-	 */
-	public function testParseResponse() {
+    /**
+     * Tests the parseResponse() method.
+     *
+     * @return void
+     */
+    public function testParseResponse() {
 
-		$obj = new SMSModeReceptionReportRequest();
+        $obj = new SMSModeReceptionReportRequest();
 
-		$res = $obj->parseResponse("exception");
-		$this->assertInstanceOf(SMSModeReceptionReportResponse::class, $res);
-	}
+        $res = $obj->parseResponse("exception");
+        $this->assertInstanceOf(SMSModeReceptionReportResponse::class, $res);
+    }
 
-	/**
-	 * Tests the toArray() method.
-	 *
-	 * @return void
-	 */
-	public function testToArray() {
+    /**
+     * Tests the toArray() method.
+     *
+     * @return void
+     */
+    public function testToArray() {
 
-		$obj = new SMSModeReceptionReportRequest();
+        $obj = new SMSModeReceptionReportRequest();
 
-		try {
-			$obj->toArray();
-		} catch (Exception $ex) {
-			$this->assertInstanceOf(NullPointerException::class, $ex);
-			$this->assertEquals("The parameter \"smsID\" is missing", $ex->getMessage());
-		}
+        try {
+            $obj->toArray();
+        } catch (Exception $ex) {
+            $this->assertInstanceOf(NullPointerException::class, $ex);
+            $this->assertEquals("The parameter \"smsID\" is missing", $ex->getMessage());
+        }
 
-		$obj->setSmsID("smsID");
-		$res1 = ["smsID" => "smsID"];
-		$this->assertEquals($res1, $obj->toArray());
-	}
+        $obj->setSmsID("smsID");
+        $res1 = ["smsID" => "smsID"];
+        $this->assertEquals($res1, $obj->toArray());
+    }
 
 }

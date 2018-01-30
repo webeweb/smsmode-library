@@ -20,13 +20,13 @@ namespace WBW\Library\SMSMode\Exception;
  */
 final class SMSModeMaxLimitNumberReachedException extends AbstractSMSModeException {
 
-	/**
-	 * Constructor.
-	 *
-	 * @param integer $limit The limit.
-	 */
-	public function __construct($limit) {
-		parent::__construct("The max limit of numbers reached: " . $limit . " allowed");
-	}
+    /**
+     * Constructor.
+     *
+     * @param integer $limit The limit.
+     */
+    public function __construct($limit) {
+        parent::__construct("The max limit of numbers reached: " . $limit . " allowed");
+    }
 
 }

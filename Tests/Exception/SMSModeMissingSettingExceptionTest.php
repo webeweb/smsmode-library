@@ -23,17 +23,17 @@ use WBW\Library\SMSMode\Exception\SMSModeMissingSettingException;
  */
 final class SMSModeMissingSettingExceptionTest extends PHPUnit_Framework_TestCase {
 
-	/**
-	 * Tests the __construct() method.
-	 *
-	 * @return void.
-	 */
-	public function testConstruct() {
+    /**
+     * Tests the __construct() method.
+     *
+     * @return void.
+     */
+    public function testConstruct() {
 
-		$ex = new SMSModeMissingSettingException("exception");
+        $ex = new SMSModeMissingSettingException("exception");
 
-		$res = "The setting \"exception\" is missing";
-		$this->assertEquals($res, $ex->getMessage());
-	}
+        $res = "The setting \"exception\" is missing";
+        $this->assertEquals($res, $ex->getMessage());
+    }
 
 }

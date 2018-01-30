@@ -20,13 +20,13 @@ namespace WBW\Library\SMSMode\Exception;
  */
 final class SMSModeInvalidMessageClassException extends AbstractSMSModeException {
 
-	/**
-	 * Constructor.
-	 *
-	 * @param integer $messageClass The message class.
-	 */
-	public function __construct($messageClass) {
-		parent::__construct("The message class \"" . $messageClass . "\" is invalid");
-	}
+    /**
+     * Constructor.
+     *
+     * @param integer $messageClass The message class.
+     */
+    public function __construct($messageClass) {
+        parent::__construct("The message class \"" . $messageClass . "\" is invalid");
+    }
 
 }

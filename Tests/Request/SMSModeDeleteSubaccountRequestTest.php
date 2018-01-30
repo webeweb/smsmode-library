@@ -26,52 +26,52 @@ use WBW\Library\SMSMode\Response\SMSModeDeleteSubaccountResponse;
  */
 final class SMSModeDeleteSubaccountRequestTest extends PHPUnit_Framework_TestCase {
 
-	/**
-	 * Tests the __construct() method.
-	 *
-	 * @return void
-	 */
-	public function testConstructor() {
+    /**
+     * Tests the __construct() method.
+     *
+     * @return void
+     */
+    public function testConstructor() {
 
-		$obj = new SMSModeDeleteSubaccountRequest();
+        $obj = new SMSModeDeleteSubaccountRequest();
 
-		$this->assertEquals("deleteSubAccount.do", $obj->getResourcePath());
+        $this->assertEquals("deleteSubAccount.do", $obj->getResourcePath());
 
-		$this->assertEquals(null, $obj->getUsername());
-	}
+        $this->assertEquals(null, $obj->getUsername());
+    }
 
-	/**
-	 * Tests the parseResponse() method.
-	 *
-	 * @return void
-	 */
-	public function testParseResponse() {
+    /**
+     * Tests the parseResponse() method.
+     *
+     * @return void
+     */
+    public function testParseResponse() {
 
-		$obj = new SMSModeDeleteSubaccountRequest();
+        $obj = new SMSModeDeleteSubaccountRequest();
 
-		$res = $obj->parseResponse("exception");
-		$this->assertInstanceOf(SMSModeDeleteSubaccountResponse::class, $res);
-	}
+        $res = $obj->parseResponse("exception");
+        $this->assertInstanceOf(SMSModeDeleteSubaccountResponse::class, $res);
+    }
 
-	/**
-	 * Tests the toArray() method.
-	 *
-	 * @return void
-	 */
-	public function testToArray() {
+    /**
+     * Tests the toArray() method.
+     *
+     * @return void
+     */
+    public function testToArray() {
 
-		$obj = new SMSModeDeleteSubaccountRequest();
+        $obj = new SMSModeDeleteSubaccountRequest();
 
-		try {
-			$obj->toArray();
-		} catch (Exception $ex) {
-			$this->assertInstanceOf(NullPointerException::class, $ex);
-			$this->assertEquals("The parameter \"username\" is missing", $ex->getMessage());
-		}
+        try {
+            $obj->toArray();
+        } catch (Exception $ex) {
+            $this->assertInstanceOf(NullPointerException::class, $ex);
+            $this->assertEquals("The parameter \"username\" is missing", $ex->getMessage());
+        }
 
-		$obj->setUsername("username");
-		$res1 = ["pseudoToDelete" => "username"];
-		$this->assertEquals($res1, $obj->toArray());
-	}
+        $obj->setUsername("username");
+        $res1 = ["pseudoToDelete" => "username"];
+        $this->assertEquals($res1, $obj->toArray());
+    }
 
 }

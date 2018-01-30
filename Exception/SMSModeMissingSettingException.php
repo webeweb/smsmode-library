@@ -20,13 +20,13 @@ namespace WBW\Library\SMSMode\Exception;
  */
 final class SMSModeMissingSettingException extends AbstractSMSModeException {
 
-	/**
-	 * Constructor.
-	 *
-	 * @param string $setting The setting.
-	 */
-	public function __construct($setting) {
-		parent::__construct("The setting \"" . $setting . "\" is missing");
-	}
+    /**
+     * Constructor.
+     *
+     * @param string $setting The setting.
+     */
+    public function __construct($setting) {
+        parent::__construct("The setting \"" . $setting . "\" is missing");
+    }
 
 }

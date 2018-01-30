@@ -26,70 +26,70 @@ use WBW\Library\SMSMode\Response\SMSModeDeleteSubaccountResponse;
  */
 final class SMSModeDeleteSubaccountRequest implements SMSModeRequestInterface {
 
-	/**
-	 * Username.
-	 *
-	 * @var string
-	 */
-	private $username;
+    /**
+     * Username.
+     *
+     * @var string
+     */
+    private $username;
 
-	/**
-	 * Constructor.
-	 */
-	public function __construct() {
-		// NOTHING DTO DO.
-	}
+    /**
+     * Constructor.
+     */
+    public function __construct() {
+        // NOTHING DTO DO.
+    }
 
-	/**
-	 * {@inheritdoc}
-	 */
-	public function getResourcePath() {
-		return "deleteSubAccount.do";
-	}
+    /**
+     * {@inheritdoc}
+     */
+    public function getResourcePath() {
+        return "deleteSubAccount.do";
+    }
 
-	/**
-	 * Get the username.
-	 *
-	 * @return string Returns the username.
-	 */
-	public function getUsername() {
-		return $this->username;
-	}
+    /**
+     * Get the username.
+     *
+     * @return string Returns the username.
+     */
+    public function getUsername() {
+        return $this->username;
+    }
 
-	/**
-	 * {@inheritdoc}
-	 */
-	public function parseResponse($rawResponse) {
-		return new SMSModeDeleteSubaccountResponse($rawResponse);
-	}
+    /**
+     * {@inheritdoc}
+     */
+    public function parseResponse($rawResponse) {
+        return new SMSModeDeleteSubaccountResponse($rawResponse);
+    }
 
-	/**
-	 * Set the username.
-	 *
-	 * @param string $username The username.
-	 * @return SMSModeDeleteSubaccountRequest Returns the sMsmode delete subaccount request.
-	 */
-	public function setUsername($username) {
-		$this->username = $username;
-		return $this;
-	}
+    /**
+     * Set the username.
+     *
+     * @param string $username The username.
+     * @return SMSModeDeleteSubaccountRequest Returns the sMsmode delete subaccount request.
+     */
+    public function setUsername($username) {
+        $this->username = $username;
+        return $this;
+    }
 
-	/**
-	 *  {@inhertidoc}
-	 */
-	public function toArray() {
+    /**
+     *  {@inhertidoc}
+     */
+    public function toArray() {
 
-		// Initialize the output.
-		$output = [];
+        // Initialize the output.
+        $output = [];
 
-		// Check the required setting username.
-		if (null === $this->username) {
-			throw new NullPointerException("The parameter \"username\" is missing");
-		}
-		$output["pseudoToDelete"] = $this->username;
+        // Check the required setting username.
+        if (null === $this->username) {
+            throw new NullPointerException("The parameter \"username\" is missing");
+        }
+        $output["pseudoToDelete"] = $this->username;
 
-		// Return the output.
-		return $output;
-	}
+        // Return the output.
+        return $output;
+    }
 
 }

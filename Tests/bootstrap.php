@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 if (true === file_exists($file = __DIR__ . "/autoload.php")) {
-	require_once $file;
+    require_once $file;
 } elseif (true === file_exists($file = __DIR__ . "/autoload.php.dist")) {
-	require_once $file;
+    require_once $file;
 }

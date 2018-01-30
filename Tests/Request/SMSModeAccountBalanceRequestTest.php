@@ -24,41 +24,41 @@ use WBW\Library\SMSMode\Response\SMSModeAccountBalanceResponse;
  */
 final class SMSModeAccountBalanceRequestTest extends PHPUnit_Framework_TestCase {
 
-	/**
-	 * Tests the __construct() method.
-	 *
-	 * @return void
-	 */
-	public function testConstructor() {
+    /**
+     * Tests the __construct() method.
+     *
+     * @return void
+     */
+    public function testConstructor() {
 
-		$obj = new SMSModeAccountBalanceRequest();
+        $obj = new SMSModeAccountBalanceRequest();
 
-		$this->assertEquals("credit.do", $obj->getResourcePath());
-	}
+        $this->assertEquals("credit.do", $obj->getResourcePath());
+    }
 
-	/**
-	 * Tests the parseResponse() method.
-	 *
-	 * @return void
-	 */
-	public function testParseResponse() {
+    /**
+     * Tests the parseResponse() method.
+     *
+     * @return void
+     */
+    public function testParseResponse() {
 
-		$obj = new SMSModeAccountBalanceRequest();
+        $obj = new SMSModeAccountBalanceRequest();
 
-		$res = $obj->parseResponse("exception");
-		$this->assertInstanceOf(SMSModeAccountBalanceResponse::class, $res);
-	}
+        $res = $obj->parseResponse("exception");
+        $this->assertInstanceOf(SMSModeAccountBalanceResponse::class, $res);
+    }
 
-	/**
-	 * Tests the toArray() method.
-	 *
-	 * @return void
-	 */
-	public function testToArray() {
+    /**
+     * Tests the toArray() method.
+     *
+     * @return void
+     */
+    public function testToArray() {
 
-		$obj = new SMSModeAccountBalanceRequest();
+        $obj = new SMSModeAccountBalanceRequest();
 
-		$this->assertEquals([], $obj->toArray());
-	}
+        $this->assertEquals([], $obj->toArray());
+    }
 
 }

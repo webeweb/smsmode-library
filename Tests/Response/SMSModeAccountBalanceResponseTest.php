@@ -23,24 +23,24 @@ use WBW\Library\SMSMode\Response\SMSModeAccountBalanceResponse;
  */
 final class SMSModeAccountBalanceResponseTest extends PHPUnit_Framework_TestCase {
 
-	/**
-	 * Tests the parse() method.
-	 *
-	 * @return void
-	 */
-	public function testParse() {
+    /**
+     * Tests the parse() method.
+     *
+     * @return void
+     */
+    public function testParse() {
 
-		$objEx = new SMSModeAccountBalanceResponse("exception");
+        $objEx = new SMSModeAccountBalanceResponse("exception");
 
-		$this->assertEquals(null, $objEx->getCode());
-		$this->assertEquals(null, $objEx->getDescription());
-		$this->assertEquals(null, $objEx->getAccountBalance());
+        $this->assertEquals(null, $objEx->getCode());
+        $this->assertEquals(null, $objEx->getDescription());
+        $this->assertEquals(null, $objEx->getAccountBalance());
 
-		$obj = new SMSModeAccountBalanceResponse("212.5");
+        $obj = new SMSModeAccountBalanceResponse("212.5");
 
-		$this->assertEquals(null, $obj->getCode());
-		$this->assertEquals(null, $obj->getDescription());
-		$this->assertEquals(212.5, $obj->getAccountBalance());
-	}
+        $this->assertEquals(null, $obj->getCode());
+        $this->assertEquals(null, $obj->getDescription());
+        $this->assertEquals(212.5, $obj->getAccountBalance());
+    }
 
 }

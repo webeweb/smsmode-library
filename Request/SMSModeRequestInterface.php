@@ -22,40 +22,40 @@ use WBW\Library\SMSMode\Response\AbstractSMSModeResponse;
  */
 interface SMSModeRequestInterface {
 
-	/**
-	 * Date format
-	 *
-	 * @var string
-	 */
-	const DATE_FORMAT = "dmY-H:i";
+    /**
+     * Date format
+     *
+     * @var string
+     */
+    const DATE_FORMAT = "dmY-H:i";
 
-	/**
-	 * Host.
-	 *
-	 * @var string
-	 */
-	const HOST = "https://api.smsmode.com/http/1.6";
+    /**
+     * Host.
+     *
+     * @var string
+     */
+    const HOST = "https://api.smsmode.com/http/1.6";
 
-	/**
-	 * Get the resource path.
-	 *
-	 * @return string Returns resource path.
-	 */
-	public function getResourcePath();
+    /**
+     * Get the resource path.
+     *
+     * @return string Returns resource path.
+     */
+    public function getResourcePath();
 
-	/**
-	 * Parse the response.
-	 *
-	 * @param string $rawResponse The raw response.
-	 * @return AbstractSMSModeResponse Returns the response.
-	 */
-	public function parseResponse($rawResponse);
+    /**
+     * Parse the response.
+     *
+     * @param string $rawResponse The raw response.
+     * @return AbstractSMSModeResponse Returns the response.
+     */
+    public function parseResponse($rawResponse);
 
-	/**
-	 * Convert into an array representing this instance.
-	 *
-	 * @return array Returns an array representing this instance.
-	 * @throws NullPointerException Throws a null pointer exception if a parameter is missing.
-	 */
-	public function toArray();
+    /**
+     * Convert into an array representing this instance.
+     *
+     * @return array Returns an array representing this instance.
+     * @throws NullPointerException Throws a null pointer exception if a parameter is missing.
+     */
+    public function toArray();
 }

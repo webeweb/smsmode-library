@@ -23,17 +23,17 @@ use WBW\Library\SMSMode\Exception\SMSModeMaxLimitNumberReachedException;
  */
 final class SMSModeMaxLimitNumberReachedExceptionTest extends PHPUnit_Framework_TestCase {
 
-	/**
-	 * Tests the __construct() method.
-	 *
-	 * @return void
-	 */
-	public function testConstruct() {
+    /**
+     * Tests the __construct() method.
+     *
+     * @return void
+     */
+    public function testConstruct() {
 
-		$ex = new SMSModeMaxLimitNumberReachedException(200);
+        $ex = new SMSModeMaxLimitNumberReachedException(200);
 
-		$res = "The max limit of numbers reached: 200 allowed";
-		$this->assertEquals($res, $ex->getMessage());
-	}
+        $res = "The max limit of numbers reached: 200 allowed";
+        $this->assertEquals($res, $ex->getMessage());
+    }
 
 }

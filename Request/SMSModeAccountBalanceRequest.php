@@ -25,32 +25,32 @@ use WBW\Library\SMSMode\Response\SMSModeAccountBalanceResponse;
  */
 final class SMSModeAccountBalanceRequest implements SMSModeRequestInterface {
 
-	/**
-	 * Constructor.
-	 */
-	public function __construct() {
-		// NOTHING DTO DO.
-	}
+    /**
+     * Constructor.
+     */
+    public function __construct() {
+        // NOTHING DTO DO.
+    }
 
-	/**
-	 * {@inheritdoc}
-	 */
-	public function getResourcePath() {
-		return "credit.do";
-	}
+    /**
+     * {@inheritdoc}
+     */
+    public function getResourcePath() {
+        return "credit.do";
+    }
 
-	/**
-	 * {@inheritdoc}
-	 */
-	public function parseResponse($rawResponse) {
-		return new SMSModeAccountBalanceResponse($rawResponse);
-	}
+    /**
+     * {@inheritdoc}
+     */
+    public function parseResponse($rawResponse) {
+        return new SMSModeAccountBalanceResponse($rawResponse);
+    }
 
-	/**
-	 *  {@inhertidoc}
-	 */
-	public function toArray() {
-		return [];
-	}
+    /**
+     *  {@inhertidoc}
+     */
+    public function toArray() {
+        return [];
+    }
 
 }

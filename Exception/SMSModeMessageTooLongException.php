@@ -20,14 +20,14 @@ namespace WBW\Library\SMSMode\Exception;
  */
 final class SMSModeMessageTooLongException extends AbstractSMSModeException {
 
-	/**
-	 * Constructor.
-	 *
-	 * @param $message The message.
-	 * @param $limit The limit.
-	 */
-	public function __construct($message, $limit) {
-		parent::__construct("The message \"" . $message . "\" exceeds the limit of " . $limit . " characters");
-	}
+    /**
+     * Constructor.
+     *
+     * @param $message The message.
+     * @param $limit The limit.
+     */
+    public function __construct($message, $limit) {
+        parent::__construct("The message \"" . $message . "\" exceeds the limit of " . $limit . " characters");
+    }
 
 }

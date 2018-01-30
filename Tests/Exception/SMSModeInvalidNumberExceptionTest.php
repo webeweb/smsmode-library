@@ -23,17 +23,17 @@ use WBW\Library\SMSMode\Exception\SMSModeInvalidNumberException;
  */
 final class SMSModeInvalidNumberExceptionTest extends PHPUnit_Framework_TestCase {
 
-	/**
-	 * Tests the __construct() method.
-	 *
-	 * @return void
-	 */
-	public function testConstruct() {
+    /**
+     * Tests the __construct() method.
+     *
+     * @return void
+     */
+    public function testConstruct() {
 
-		$ex = new SMSModeInvalidNumberException("exception");
+        $ex = new SMSModeInvalidNumberException("exception");
 
-		$res = "The number \"exception\" is invalid";
-		$this->assertEquals($res, $ex->getMessage());
-	}
+        $res = "The number \"exception\" is invalid";
+        $this->assertEquals($res, $ex->getMessage());
+    }
 
 }

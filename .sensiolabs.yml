@@ -1,9 +1,0 @@
-# .sensiolabs.yml
-php_version: 5
-
-rules:
-    php.duplicated_code:
-        enabled: false
-
-global_exclude_dirs:
-    - vendor

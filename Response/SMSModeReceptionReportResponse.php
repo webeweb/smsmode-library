@@ -82,7 +82,7 @@ final class SMSModeReceptionReportResponse extends AbstractSMSModeResponse imple
     /**
      * Get the reports.
      *
-     * @return arrray Returns the reports.
+     * @return array Returns the reports.
      */
     public function getReports() {
         return $this->reports;

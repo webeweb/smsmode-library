@@ -198,7 +198,7 @@ final class SMSModeSendSMSRequest implements SMSModeRequestInterface, SMSModeSen
     /**
      * Get the message class.
      *
-     * @return integer.
+     * @return integer Returns the message class.
      */
     public function getMessageClass() {
         return $this->messageClass;
@@ -214,11 +214,11 @@ final class SMSModeSendSMSRequest implements SMSModeRequestInterface, SMSModeSen
     }
 
     /**
-     * Get the number.
+     * Get the numbers.
      *
-     * @return string Returns the number.
+     * @return array Returns the numbers.
      */
-    public function getNumber() {
+    public function getNumbers() {
         return $this->numbers;
     }
 

@@ -107,7 +107,7 @@ final class SMSModeGetResponsesResponse extends AbstractSMSModeResponse implemen
     /**
      * Get the text.
      *
-     * @return string.
+     * @return string Returns the text.
      */
     public function getText() {
         return $this->text;

@@ -73,7 +73,7 @@ final class SMSModeSendSMSRequestTest extends PHPUnit_Framework_TestCase {
         $this->assertEquals(null, $obj->getMessage());
         $this->assertEquals(SMSModeSendSMSRequest::MESSAGE_CLASS_SMS_PRO, $obj->getMessageClass());
         $this->assertEquals(null, $obj->getNotificationURL());
-        $this->assertEquals([], $obj->getNumber());
+        $this->assertEquals([], $obj->getNumbers());
         $this->assertEquals(null, $obj->getResponseNotificationURL());
         $this->assertEquals(null, $obj->getSendDate());
         $this->assertEquals(null, $obj->getSender());
@@ -134,7 +134,7 @@ final class SMSModeSendSMSRequestTest extends PHPUnit_Framework_TestCase {
 
         $obj->addNumber("0612345678");
         $obj->removeNumber("0612345678");
-        $this->assertCount(0, $obj->getNumber());
+        $this->assertCount(0, $obj->getNumbers());
     }
 
     /**

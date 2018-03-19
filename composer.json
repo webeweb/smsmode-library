@@ -25,7 +25,10 @@
     "autoload": {
         "psr-4": {
             "WBW\\Library\\SMSMode\\": ""
-        }
+        },
+        "exclude-from-classmap": [
+            "/Tests/"
+        ]
     },
     "extra": {
         "branch-alias": {

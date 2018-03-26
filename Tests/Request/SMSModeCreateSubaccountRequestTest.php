@@ -38,20 +38,20 @@ final class SMSModeCreateSubaccountRequestTest extends PHPUnit_Framework_TestCas
 
         $this->assertEquals("createSubAccount.do", $obj->getResourcePath());
 
-        $this->assertEquals(null, $obj->getAddress());
-        $this->assertEquals(null, $obj->getBirthdate());
-        $this->assertEquals(null, $obj->getCity());
-        $this->assertEquals(null, $obj->getCompany());
-        $this->assertEquals(null, $obj->getEmail());
-        $this->assertEquals(null, $obj->getFax());
-        $this->assertEquals(null, $obj->getFirstname());
-        $this->assertEquals(null, $obj->getLastname());
-        $this->assertEquals(null, $obj->getMobilePhone());
-        $this->assertEquals(null, $obj->getPassword());
-        $this->assertEquals(null, $obj->getPhone());
-        $this->assertEquals(null, $obj->getPostalCode());
-        $this->assertEquals(null, $obj->getReference());
-        $this->assertEquals(null, $obj->getUsername());
+        $this->assertNull($obj->getAddress());
+        $this->assertNull($obj->getBirthdate());
+        $this->assertNull($obj->getCity());
+        $this->assertNull($obj->getCompany());
+        $this->assertNull($obj->getEmail());
+        $this->assertNull($obj->getFax());
+        $this->assertNull($obj->getFirstname());
+        $this->assertNull($obj->getLastname());
+        $this->assertNull($obj->getMobilePhone());
+        $this->assertNull($obj->getPassword());
+        $this->assertNull($obj->getPhone());
+        $this->assertNull($obj->getPostalCode());
+        $this->assertNull($obj->getReference());
+        $this->assertNull($obj->getUsername());
     }
 
     /**

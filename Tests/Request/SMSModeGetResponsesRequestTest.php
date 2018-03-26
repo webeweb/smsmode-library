@@ -39,10 +39,10 @@ final class SMSModeGetResponsesRequestTest extends PHPUnit_Framework_TestCase {
 
         $this->assertEquals("responseList.do", $obj->getResourcePath());
 
-        $this->assertEquals(null, $obj->getEndDate());
-        $this->assertEquals(null, $obj->getOffset());
-        $this->assertEquals(null, $obj->getStart());
-        $this->assertEquals(null, $obj->getStartDate());
+        $this->assertNull($obj->getEndDate());
+        $this->assertNull($obj->getOffset());
+        $this->assertNull($obj->getStart());
+        $this->assertNull($obj->getStartDate());
     }
 
     /**

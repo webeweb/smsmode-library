@@ -67,17 +67,17 @@ final class SMSModeSendSMSRequestTest extends PHPUnit_Framework_TestCase {
 
         $this->assertEquals("sendSMS.do", $obj->getResourcePath());
 
-        $this->assertEquals(null, $obj->getCustomerReference());
-        $this->assertEquals(null, $obj->getGroup());
+        $this->assertNull($obj->getCustomerReference());
+        $this->assertNull($obj->getGroup());
         $this->assertEquals(5, $obj->getMaxMessageNumber());
-        $this->assertEquals(null, $obj->getMessage());
+        $this->assertNull($obj->getMessage());
         $this->assertEquals(SMSModeSendSMSRequest::MESSAGE_CLASS_SMS_PRO, $obj->getMessageClass());
-        $this->assertEquals(null, $obj->getNotificationURL());
+        $this->assertNull($obj->getNotificationURL());
         $this->assertEquals([], $obj->getNumbers());
-        $this->assertEquals(null, $obj->getResponseNotificationURL());
-        $this->assertEquals(null, $obj->getSendDate());
-        $this->assertEquals(null, $obj->getSender());
-        $this->assertEquals(null, $obj->getStop());
+        $this->assertNull($obj->getResponseNotificationURL());
+        $this->assertNull($obj->getSendDate());
+        $this->assertNull($obj->getSender());
+        $this->assertNull($obj->getStop());
     }
 
     /**

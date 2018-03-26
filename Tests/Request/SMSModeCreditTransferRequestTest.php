@@ -37,9 +37,9 @@ final class SMSModeCreditTransferRequestTest extends PHPUnit_Framework_TestCase 
 
         $this->assertEquals("creditTransfert.do", $obj->getResourcePath());
 
-        $this->assertEquals(null, $obj->getCredit());
-        $this->assertEquals(null, $obj->getReference());
-        $this->assertEquals(null, $obj->getUsername());
+        $this->assertNull($obj->getCredit());
+        $this->assertNull($obj->getReference());
+        $this->assertNull($obj->getUsername());
     }
 
     /**

@@ -32,14 +32,14 @@ final class SMSModeAccountBalanceResponseTest extends PHPUnit_Framework_TestCase
 
         $objEx = new SMSModeAccountBalanceResponse("exception");
 
-        $this->assertEquals(null, $objEx->getCode());
-        $this->assertEquals(null, $objEx->getDescription());
-        $this->assertEquals(null, $objEx->getAccountBalance());
+        $this->assertNull($objEx->getCode());
+        $this->assertNull($objEx->getDescription());
+        $this->assertEquals(0.0, $objEx->getAccountBalance());
 
         $obj = new SMSModeAccountBalanceResponse("212.5");
 
-        $this->assertEquals(null, $obj->getCode());
-        $this->assertEquals(null, $obj->getDescription());
+        $this->assertNull($obj->getCode());
+        $this->assertNull($obj->getDescription());
         $this->assertEquals(212.5, $obj->getAccountBalance());
     }
 

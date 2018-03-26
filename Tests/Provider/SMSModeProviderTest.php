@@ -74,7 +74,7 @@ final class SMSModeProviderTest extends PHPUnit_Framework_TestCase {
 
         $this->assertEquals($this->authentication, $obj->getAuthentication());
         $this->assertEquals($this->accountBalance, $obj->getRequest());
-        $this->assertEquals(false, $obj->getDebug());
+        $this->assertFalse($obj->getDebug());
     }
 
 }

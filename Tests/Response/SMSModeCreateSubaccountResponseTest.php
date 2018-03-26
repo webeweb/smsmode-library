@@ -33,8 +33,8 @@ final class SMSModeCreateSubaccountResponseTest extends PHPUnit_Framework_TestCa
 
         $objEx = new SMSModeCreateSubaccountResponse("exception");
 
-        $this->assertEquals(null, $objEx->getCode());
-        $this->assertEquals(null, $objEx->getDescription());
+        $this->assertNull($objEx->getCode());
+        $this->assertNull($objEx->getDescription());
 
         $impl = " " . SMSModeResponseInterface::RESPONSE_DELIMITER . " ";
 

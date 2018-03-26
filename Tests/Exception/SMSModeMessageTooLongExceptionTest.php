@@ -26,7 +26,7 @@ final class SMSModeMessageTooLongExceptionTest extends PHPUnit_Framework_TestCas
     /**
      * Tests the __construct() method.
      *
-     * @return void.
+     * @return void
      */
     public function testConstruct() {
 

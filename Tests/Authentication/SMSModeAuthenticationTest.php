@@ -34,15 +34,15 @@ final class SMSModeAuthenticationTest extends PHPUnit_Framework_TestCase {
 
         $obj = new SMSModeAuthentication();
 
-        $this->assertEquals(null, $obj->getPassword());
-        $this->assertEquals(null, $obj->getToken());
-        $this->assertEquals(null, $obj->getUsername());
+        $this->assertNull($obj->getPassword());
+        $this->assertNull($obj->getToken());
+        $this->assertNull($obj->getUsername());
     }
 
     /**
      * Tests the toArray() method.
      *
-     * @return void.
+     * @return void
      */
     public function testToArray() {
 

@@ -37,7 +37,7 @@ final class SMSModeDeleteSubaccountRequestTest extends PHPUnit_Framework_TestCas
 
         $this->assertEquals("deleteSubAccount.do", $obj->getResourcePath());
 
-        $this->assertEquals(null, $obj->getUsername());
+        $this->assertNull($obj->getUsername());
     }
 
     /**

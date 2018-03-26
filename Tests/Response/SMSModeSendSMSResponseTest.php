@@ -33,9 +33,9 @@ final class SMSModeSendSMSResponseTest extends PHPUnit_Framework_TestCase {
 
         $objEx = new SMSModeSendSMSResponse("exception");
 
-        $this->assertEquals(null, $objEx->getCode());
-        $this->assertEquals(null, $objEx->getDescription());
-        $this->assertEquals(null, $objEx->getSmsID());
+        $this->assertNull($objEx->getCode());
+        $this->assertNull($objEx->getDescription());
+        $this->assertNull($objEx->getSmsID());
 
         $impl = " " . SMSModeResponseInterface::RESPONSE_DELIMITER . " ";
 

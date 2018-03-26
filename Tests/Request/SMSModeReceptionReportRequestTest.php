@@ -37,7 +37,7 @@ final class SMSModeReceptionReportRequestTest extends PHPUnit_Framework_TestCase
 
         $this->assertEquals("compteRendu.do", $obj->getResourcePath());
 
-        $this->assertEquals(null, $obj->getSmsID());
+        $this->assertNull($obj->getSmsID());
     }
 
     /**

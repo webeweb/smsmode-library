@@ -34,15 +34,15 @@ final class SMSModeGetResponsesResponseTest extends PHPUnit_Framework_TestCase {
 
         $objEx = new SMSModeGetResponsesResponse("exception");
 
-        $this->assertEquals(null, $objEx->getCode());
-        $this->assertEquals(null, $objEx->getDescription());
+        $this->assertNull($objEx->getCode());
+        $this->assertNull($objEx->getDescription());
 
-        $this->assertEquals(null, $objEx->getResponseID());
-        $this->assertEquals(null, $objEx->getReceptionDate());
-        $this->assertEquals(null, $objEx->getFrom());
-        $this->assertEquals(null, $objEx->getText());
-        $this->assertEquals(null, $objEx->getTo());
-        $this->assertEquals(null, $objEx->getMessageID());
+        $this->assertNull($objEx->getResponseID());
+        $this->assertNull($objEx->getReceptionDate());
+        $this->assertNull($objEx->getFrom());
+        $this->assertNull($objEx->getText());
+        $this->assertNull($objEx->getTo());
+        $this->assertNull($objEx->getMessageID());
 
         $impl = " " . SMSModeResponseInterface::RESPONSE_DELIMITER . " ";
 
@@ -51,29 +51,29 @@ final class SMSModeGetResponsesResponseTest extends PHPUnit_Framework_TestCase {
         $this->assertEquals(SMSModeGetResponsesResponse::CODE_AUTHENTICATION_ERROR, $obj31->getCode());
         $this->assertEquals(SMSModeGetResponsesResponse::DESC_AUTHENTICATION_ERROR, $obj31->getDescription());
 
-        $this->assertEquals(null, $obj31->getResponseID());
-        $this->assertEquals(null, $obj31->getReceptionDate());
-        $this->assertEquals(null, $obj31->getFrom());
-        $this->assertEquals(null, $obj31->getText());
-        $this->assertEquals(null, $obj31->getTo());
-        $this->assertEquals(null, $obj31->getMessageID());
+        $this->assertNull($obj31->getResponseID());
+        $this->assertNull($obj31->getReceptionDate());
+        $this->assertNull($obj31->getFrom());
+        $this->assertNull($obj31->getText());
+        $this->assertNull($obj31->getTo());
+        $this->assertNull($obj31->getMessageID());
 
         $obj35 = new SMSModeGetResponsesResponse(implode($impl, [SMSModeGetResponsesResponse::CODE_MISSING_REQUIRED_PARAMETER, SMSModeGetResponsesResponse::DESC_MISSING_REQUIRED_PARAMETER]));
 
         $this->assertEquals(SMSModeGetResponsesResponse::CODE_MISSING_REQUIRED_PARAMETER, $obj35->getCode());
         $this->assertEquals(SMSModeGetResponsesResponse::DESC_MISSING_REQUIRED_PARAMETER, $obj35->getDescription());
 
-        $this->assertEquals(null, $obj35->getResponseID());
-        $this->assertEquals(null, $obj35->getReceptionDate());
-        $this->assertEquals(null, $obj35->getFrom());
-        $this->assertEquals(null, $obj35->getText());
-        $this->assertEquals(null, $obj35->getTo());
-        $this->assertEquals(null, $obj35->getMessageID());
+        $this->assertNull($obj35->getResponseID());
+        $this->assertNull($obj35->getReceptionDate());
+        $this->assertNull($obj35->getFrom());
+        $this->assertNull($obj35->getText());
+        $this->assertNull($obj35->getTo());
+        $this->assertNull($obj35->getMessageID());
 
         $obj = new SMSModeGetResponsesResponse(implode($impl, ["responseID", "14092017-14:00", "from", "text", "to", "messageID"]));
 
-        $this->assertEquals(null, $obj->getCode());
-        $this->assertEquals(null, $obj->getDescription());
+        $this->assertNull($obj->getCode());
+        $this->assertNull($obj->getDescription());
 
         $this->assertEquals("responseID", $obj->getResponseID());
         $this->assertEquals(new DateTime("2017-09-14 14:00:00"), $obj->getReceptionDate());
@@ -84,15 +84,15 @@ final class SMSModeGetResponsesResponseTest extends PHPUnit_Framework_TestCase {
 
         $err = new SMSModeGetResponsesResponse("");
 
-        $this->assertEquals(null, $err->getCode());
-        $this->assertEquals(null, $err->getDescription());
+        $this->assertNull($err->getCode());
+        $this->assertNull($err->getDescription());
 
         $this->assertEquals("", $err->getResponseID());
-        $this->assertEquals(null, $err->getReceptionDate());
-        $this->assertEquals(null, $err->getFrom());
-        $this->assertEquals(null, $err->getText());
-        $this->assertEquals(null, $err->getTo());
-        $this->assertEquals(null, $err->getMessageID());
+        $this->assertNull($err->getReceptionDate());
+        $this->assertNull($err->getFrom());
+        $this->assertNull($err->getText());
+        $this->assertNull($err->getTo());
+        $this->assertNull($err->getMessageID());
     }
 
 }

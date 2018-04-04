@@ -11,6 +11,7 @@
 
 namespace WBW\Library\SMSMode\Request;
 
+use WBW\Library\SMSMode\API\SMSModeRequestInterface;
 use WBW\Library\SMSMode\Response\SMSModeAccountBalanceResponse;
 
 /**

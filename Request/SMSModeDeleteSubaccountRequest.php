@@ -87,6 +87,8 @@ final class SMSModeDeleteSubaccountRequest implements SMSModeRequestInterface {
         if (null === $this->username) {
             throw new NullPointerException("The attribute \"username\" is missing");
         }
+
+        // Add the required attribute.
         $output["pseudoToDelete"] = $this->username;
 
         // Return the output.

@@ -11,7 +11,7 @@
 
 namespace WBW\Library\SMSMode\Authentication;
 
-use WBW\Library\SMSMode\Exception\SMSModeMissingSettingException;
+use WBW\Library\Core\Exception\Pointer\NullPointerException;
 
 /**
  * sMsmode authentication.
@@ -114,7 +114,7 @@ final class SMSModeAuthentication {
      * Convert into an array representing this instance.
      *
      * @return array Returns an array representing this instance.
-     * @throws SMSModeMissingSettingException Throws a sMsmode missing setting exception if a setting is missing.
+     * @throws NullPointerException Throws a sMsmode missing setting exception if a setting is missing.
      */
     public function toArray() {
 
@@ -128,13 +128,13 @@ final class SMSModeAuthentication {
 
         // Check the required attribute "username".
         if (null === $this->username) {
-            throw new SMSModeMissingSettingException("username");
+            throw new NullPointerException("The attribute \"username\" is missing");
         }
         $output["pseudo"] = $this->username;
 
         // Check the required attribute "password".
         if (null === $this->password) {
-            throw new SMSModeMissingSettingException("password");
+            throw new NullPointerException("The attribute \"password\" is missing");
         }
         $output["pass"] = $this->password;
 

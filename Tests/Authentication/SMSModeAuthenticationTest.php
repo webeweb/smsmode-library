@@ -13,8 +13,8 @@ namespace WBW\Library\SMSMode\Tests\Authentication;
 
 use Exception;
 use PHPUnit_Framework_TestCase;
+use WBW\Library\Core\Exception\Pointer\NullPointerException;
 use WBW\Library\SMSMode\Authentication\SMSModeAuthentication;
-use WBW\Library\SMSMode\Exception\SMSModeMissingSettingException;
 
 /**
  * sMsmode authentication test.
@@ -51,8 +51,8 @@ final class SMSModeAuthenticationTest extends PHPUnit_Framework_TestCase {
         try {
             $obj->toArray();
         } catch (Exception $ex) {
-            $this->assertInstanceOf(SMSModeMissingSettingException::class, $ex);
-            $this->assertEquals("The setting \"username\" is missing", $ex->getMessage());
+            $this->assertInstanceOf(NullPointerException::class, $ex);
+            $this->assertEquals("The attribute \"username\" is missing", $ex->getMessage());
         }
 
         $obj->setToken("token");
@@ -64,8 +64,8 @@ final class SMSModeAuthenticationTest extends PHPUnit_Framework_TestCase {
         try {
             $obj->toArray();
         } catch (Exception $ex) {
-            $this->assertInstanceOf(SMSModeMissingSettingException::class, $ex);
-            $this->assertEquals("The setting \"password\" is missing", $ex->getMessage());
+            $this->assertInstanceOf(NullPointerException::class, $ex);
+            $this->assertEquals("The attribute \"password\" is missing", $ex->getMessage());
         }
 
         $obj->setPassword("password");

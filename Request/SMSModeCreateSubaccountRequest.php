@@ -440,15 +440,17 @@ final class SMSModeCreateSubaccountRequest implements SMSModeRequestInterface {
         if (null === $this->username) {
             throw new NullPointerException("The attribute \"username\" is missing");
         }
-        $output["newPseudo"] = $this->username;
 
         // Check the required attribute "password".
         if (null === $this->password) {
             throw new NullPointerException("The attribute \"password\" is missing");
         }
-        $output["newPass"] = $this->password;
 
-        // Check the optional attributes.
+        // Add the required attributes.
+        $output["newPseudo"] = $this->username;
+        $output["newPass"]   = $this->password;
+
+        // Check and add the optional attributes.
         ArrayUtility::set($output, "reference", $this->reference, [null]);
         ArrayUtility::set($output, "nom", $this->lastname, [null]);
         ArrayUtility::set($output, "prenom", $this->firstname, [null]);

@@ -40,7 +40,7 @@ final class SMSModeSendSMSRequestTest extends PHPUnit_Framework_TestCase {
         $obj = new SMSModeSendSMSRequest();
 
         try {
-            $obj->addNUmber("number");
+            $obj->addNumber("number");
         } catch (Exception $ex) {
             $this->assertInstanceOf(SMSModeInvalidNumberException::class, $ex);
             $this->assertEquals("The number \"number\" is invalid", $ex->getMessage());
@@ -163,7 +163,7 @@ final class SMSModeSendSMSRequestTest extends PHPUnit_Framework_TestCase {
         }
 
         $obj->addNumber("0612345678");
-        $res1 = ["message" => "message", "numero" => "33612345678", "classe_msg" => 2, "nbr_msg" => 5];
+        $res1 = ["message" => "message", "numero" => "0612345678", "classe_msg" => 2, "nbr_msg" => 5];
         $this->assertEquals($res1, $obj->toArray());
 
         $obj->removeNumber("0612345678");

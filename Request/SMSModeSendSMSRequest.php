@@ -129,7 +129,7 @@ final class SMSModeSendSMSRequest implements SMSModeRequestInterface, SMSModeMes
         if (300 === count($this->numbers)) {
             throw new SMSModeMaxLimitNumberReachedException(300);
         }
-        if (0 === preg_match("/^0(6|7)[0-9]{8}$/", $number)) {
+        if (0 === preg_match("/^[0-9]*$/", $number)) {
             throw new SMSModeInvalidNumberException($number);
         }
         if (false === in_array($number, $this->numbers)) {
@@ -430,17 +430,11 @@ final class SMSModeSendSMSRequest implements SMSModeRequestInterface, SMSModeMes
         $output["message"] = $this->message;
 
         // Check the required attribute "number" and "group".
-        if (count($this->numbers) < 1 && null === $this->group) {
+        if (0 === count($this->numbers) && null === $this->group) {
             throw new NullPointerException("The attribute \"number\" or \"group\" is missing");
         }
-
-        //
         if (0 < count($this->numbers)) {
-            $numbers = [];
-            foreach ($this->numbers as $current) {
-                $numbers[] = $this->encodeNumber($current);
-            }
-            $output["numero"] = implode(",", $numbers);
+            $output["numero"] = implode(",", $this->numbers);
         } else {
             $output["groupe"] = $this->group;
         }

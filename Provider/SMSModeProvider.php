@@ -15,9 +15,9 @@ use WBW\Library\Core\Exception\Argument\IllegalArgumentException;
 use WBW\Library\Core\Exception\Pointer\NullPointerException;
 use WBW\Library\CURL\Configuration\CURLConfiguration;
 use WBW\Library\CURL\Request\CURLGetRequest;
+use WBW\Library\SMSMode\API\SMSModeRequestInterface;
+use WBW\Library\SMSMode\API\SMSModeResponseInterface;
 use WBW\Library\SMSMode\Authentication\SMSModeAuthentication;
-use WBW\Library\SMSMode\Request\SMSModeRequestInterface;
-use WBW\Library\SMSMode\Response\AbstractSMSModeResponse;
 
 /**
  * sMsmode provider.
@@ -63,7 +63,7 @@ final class SMSModeProvider {
     /**
      * Call the API.
      *
-     * @return AbstractSMSModeResponse Returns the response.
+     * @return SMSModeResponseInterface Returns the response.
      * @throws NullPointerException Throws a null pointer exception if a setting is missing.
      * @throws IllegalArgumentException Throws an illegal argument exception if a setting is invalid.
      */

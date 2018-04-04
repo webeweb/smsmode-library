@@ -13,8 +13,8 @@ namespace WBW\Library\SMSMode\Tests\Response;
 
 use DateTime;
 use PHPUnit_Framework_TestCase;
+use WBW\Library\SMSMode\API\SMSModeResponseInterface;
 use WBW\Library\SMSMode\Response\SMSModeGetResponsesResponse;
-use WBW\Library\SMSMode\Response\SMSModeResponseInterface;
 
 /**
  * sMsmode get responses response test.
@@ -46,10 +46,10 @@ final class SMSModeGetResponsesResponseTest extends PHPUnit_Framework_TestCase {
 
         $impl = " " . SMSModeResponseInterface::RESPONSE_DELIMITER . " ";
 
-        $obj31 = new SMSModeGetResponsesResponse(implode($impl, [SMSModeGetResponsesResponse::CODE_AUTHENTICATION_ERROR, SMSModeGetResponsesResponse::DESC_AUTHENTICATION_ERROR]));
+        $obj31 = new SMSModeGetResponsesResponse(implode($impl, [SMSModeGetResponsesResponse::RESPONSE_CODE_AUTHENTICATION_ERROR, SMSModeGetResponsesResponse::RESPONSE_DESC_AUTHENTICATION_ERROR]));
 
-        $this->assertEquals(SMSModeGetResponsesResponse::CODE_AUTHENTICATION_ERROR, $obj31->getCode());
-        $this->assertEquals(SMSModeGetResponsesResponse::DESC_AUTHENTICATION_ERROR, $obj31->getDescription());
+        $this->assertEquals(SMSModeGetResponsesResponse::RESPONSE_CODE_AUTHENTICATION_ERROR, $obj31->getCode());
+        $this->assertEquals(SMSModeGetResponsesResponse::RESPONSE_DESC_AUTHENTICATION_ERROR, $obj31->getDescription());
 
         $this->assertNull($obj31->getResponseID());
         $this->assertNull($obj31->getReceptionDate());
@@ -58,10 +58,10 @@ final class SMSModeGetResponsesResponseTest extends PHPUnit_Framework_TestCase {
         $this->assertNull($obj31->getTo());
         $this->assertNull($obj31->getMessageID());
 
-        $obj35 = new SMSModeGetResponsesResponse(implode($impl, [SMSModeGetResponsesResponse::CODE_MISSING_REQUIRED_PARAMETER, SMSModeGetResponsesResponse::DESC_MISSING_REQUIRED_PARAMETER]));
+        $obj35 = new SMSModeGetResponsesResponse(implode($impl, [SMSModeGetResponsesResponse::RESPONSE_CODE_MISSING_REQUIRED_PARAMETER, SMSModeGetResponsesResponse::RESPONSE_DESC_MISSING_REQUIRED_PARAMETER]));
 
-        $this->assertEquals(SMSModeGetResponsesResponse::CODE_MISSING_REQUIRED_PARAMETER, $obj35->getCode());
-        $this->assertEquals(SMSModeGetResponsesResponse::DESC_MISSING_REQUIRED_PARAMETER, $obj35->getDescription());
+        $this->assertEquals(SMSModeGetResponsesResponse::RESPONSE_CODE_MISSING_REQUIRED_PARAMETER, $obj35->getCode());
+        $this->assertEquals(SMSModeGetResponsesResponse::RESPONSE_DESC_MISSING_REQUIRED_PARAMETER, $obj35->getDescription());
 
         $this->assertNull($obj35->getResponseID());
         $this->assertNull($obj35->getReceptionDate());

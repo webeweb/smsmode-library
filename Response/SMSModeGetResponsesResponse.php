@@ -12,7 +12,7 @@
 namespace WBW\Library\SMSMode\Response;
 
 use DateTime;
-use WBW\Library\SMSMode\Request\SMSModeRequestInterface;
+use WBW\Library\SMSMode\API\SMSModeRequestInterface;
 
 /**
  * SMSModeGetResponsesResponse
@@ -24,7 +24,7 @@ use WBW\Library\SMSMode\Request\SMSModeRequestInterface;
  * @package WBW\Library\SMSMode\Response
  * @final
  */
-final class SMSModeGetResponsesResponse extends AbstractSMSModeResponse implements SMSModeGetResponsesResponseInterface {
+final class SMSModeGetResponsesResponse extends AbstractSMSModeResponse {
 
     /**
      * From.
@@ -143,7 +143,7 @@ final class SMSModeGetResponsesResponse extends AbstractSMSModeResponse implemen
 
         //
         $this->setResponseID(trim($response[0]));
-        $this->setReceptionDate(DateTime::createFromFormat(SMSModeRequestInterface::DATE_FORMAT, trim($response[1])));
+        $this->setReceptionDate(DateTime::createFromFormat(SMSModeRequestInterface::DATETIME_FORMAT, trim($response[1])));
         $this->setFrom(trim($response[2]));
         $this->setText(trim($response[3]));
         $this->setTo(trim($response[4]));

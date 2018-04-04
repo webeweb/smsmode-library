@@ -12,6 +12,8 @@
 namespace WBW\Library\SMSMode\Request;
 
 use WBW\Library\Core\Exception\Pointer\NullPointerException;
+use WBW\Library\Core\Utility\ArrayUtility;
+use WBW\Library\SMSMode\API\SMSModeRequestInterface;
 use WBW\Library\SMSMode\Response\SMSModeCreditTransferResponse;
 
 /**
@@ -138,20 +140,18 @@ final class SMSModeCreditTransferRequest implements SMSModeRequestInterface {
 
         // Check the required setting username.
         if (null === $this->username) {
-            throw new NullPointerException("The parameter \"username\" is missing");
+            throw new NullPointerException("The attribute \"username\" is missing");
         }
         $output["targetPseudo"] = $this->username;
 
         // Check the required setting credit.
         if (null === $this->credit) {
-            throw new NullPointerException("The parameter \"credit\" is missing");
+            throw new NullPointerException("The attribute \"credit\" is missing");
         }
         $output["creditAmount"] = $this->credit;
 
-        // Check the optional setting reference.
-        if (null !== $this->reference) {
-            $output["reference"] = $this->reference;
-        }
+        // Check the optional attributes.
+        ArrayUtility::set($output, "reference", $this->reference, [null]);
 
         // Return the output.
         return $output;

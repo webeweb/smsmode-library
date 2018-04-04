@@ -166,15 +166,13 @@ final class SMSModeGetResponsesRequest implements SMSModeRequestInterface {
         // Initialize the output.
         $output = [];
 
-        // Check the optional setting start and offset.
+        // Check the optional attributes "start" and "offset".
         if (null !== $this->start && null === $this->offset) {
             throw new NullPointerException("The attribute \"offset\" is missing");
         }
         if (null === $this->start && null !== $this->offset) {
             throw new NullPointerException("The attribute \"start\" is missing");
         }
-
-        //
         if (null !== $this->start) {
             if ($this->offset <= $this->start) {
                 throw new IllegalArgumentException("The offset must be greater than start");
@@ -184,18 +182,16 @@ final class SMSModeGetResponsesRequest implements SMSModeRequestInterface {
             return $output;
         }
 
-        // Check the optional setting start date and end date.
+        // Check the optional attributes "startDate" and "endDate".
         if (null !== $this->startDate && null === $this->endDate) {
             throw new NullPointerException("The attribute \"endDate\" is missing");
         }
         if (null === $this->startDate && null !== $this->endDate) {
             throw new NullPointerException("The attribute \"startDate\" is missing");
         }
-
-        //
         if (null !== $this->startDate) {
             if ($this->endDate <= $this->startDate) {
-                throw new IllegalArgumentException("The end date must be greater than start date");
+                throw new IllegalArgumentException("The endDate must be greater than startDate");
             }
             $output["startDate"] = $this->startDate->format(self::DATETIME_FORMAT);
             $output["endDate"]   = $this->endDate->format(self::DATETIME_FORMAT);

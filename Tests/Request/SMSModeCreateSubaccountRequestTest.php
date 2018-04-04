@@ -80,7 +80,7 @@ final class SMSModeCreateSubaccountRequestTest extends PHPUnit_Framework_TestCas
             $obj->toArray();
         } catch (Exception $ex) {
             $this->assertInstanceOf(NullPointerException::class, $ex);
-            $this->assertEquals("The parameter \"username\" is missing", $ex->getMessage());
+            $this->assertEquals("The attribute \"username\" is missing", $ex->getMessage());
         }
 
         $obj->setUsername("username");
@@ -88,7 +88,7 @@ final class SMSModeCreateSubaccountRequestTest extends PHPUnit_Framework_TestCas
             $obj->toArray();
         } catch (Exception $ex) {
             $this->assertInstanceOf(NullPointerException::class, $ex);
-            $this->assertEquals("The parameter \"password\" is missing", $ex->getMessage());
+            $this->assertEquals("The attribute \"password\" is missing", $ex->getMessage());
         }
 
         $obj->setPassword("password");

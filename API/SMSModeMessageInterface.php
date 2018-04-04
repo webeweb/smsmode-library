@@ -9,18 +9,18 @@
  * file that was distributed with this source code.
  */
 
-namespace WBW\Library\SMSMode\Request;
+namespace WBW\Library\SMSMode\API;
 
 /**
- * sMsmode send SMS request interface.
+ * sMsmode message interface.
  *
  * cf. 2 Envoi de SMS
  * 	<https://www.smsmode.com/pdf/fiche-api-http.pdf>
  *
  * @author webeweb <https://github.com/webeweb/>
- * @package WBW\Library\SMSMode\Request
+ * @package WBW\Library\SMSMode\API
  */
-interface SMSModeSendSMSRequestInterface {
+interface SMSModeMessageInterface {
 
     /**
      * Message class "SMS Pro".
@@ -44,14 +44,14 @@ interface SMSModeSendSMSRequestInterface {
     const MESSAGE_LENGTH = 160;
 
     /**
-     * STOP always.
+     * Message STOP always.
      *
      * @var integer
      */
     const STOP_ALWAYS = 2;
 
     /**
-     * STOP only.
+     * Message STOP only.
      *
      * @var integer
      */

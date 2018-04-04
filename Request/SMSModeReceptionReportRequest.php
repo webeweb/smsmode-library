@@ -87,6 +87,8 @@ final class SMSModeReceptionReportRequest implements SMSModeRequestInterface {
         if (null === $this->smsID) {
             throw new NullPointerException("The attribute \"smsID\" is missing");
         }
+
+        // Add the required attribute.
         $output["smsID"] = $this->smsID;
 
         // Return the output.

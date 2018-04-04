@@ -141,9 +141,14 @@ final class SMSModeGetResponsesResponse extends AbstractSMSModeResponse {
             return;
         }
 
-        //
+        // Initialize the reception date.
+        $receptionDate = DateTime::createFromFormat(SMSModeRequestInterface::DATETIME_FORMAT, trim($response[1]));
+
+        // Set the attributes.
         $this->setResponseID(trim($response[0]));
-        $this->setReceptionDate(DateTime::createFromFormat(SMSModeRequestInterface::DATETIME_FORMAT, trim($response[1])));
+        if (false !== $receptionDate) {
+            $this->setReceptionDate($receptionDate);
+        }
         $this->setFrom(trim($response[2]));
         $this->setText(trim($response[3]));
         $this->setTo(trim($response[4]));

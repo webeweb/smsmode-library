@@ -427,19 +427,21 @@ final class SMSModeSendSMSRequest implements SMSModeRequestInterface, SMSModeMes
         if (null === $this->message) {
             throw new NullPointerException("The attribute \"message\" is missing");
         }
-        $output["message"] = $this->message;
 
-        // Check the required attribute "number" and "group".
+        // Check the required attributes "number" and "group".
         if (0 === count($this->numbers) && null === $this->group) {
             throw new NullPointerException("The attribute \"number\" or \"group\" is missing");
         }
+
+        // Add the required attributes.
+        $output["message"] = $this->message;
         if (0 < count($this->numbers)) {
             $output["numero"] = implode(",", $this->numbers);
         } else {
             $output["groupe"] = $this->group;
         }
 
-        // Check the optional attributes.
+        // Check and add the optional attributes.
         ArrayUtility::set($output, "classe_msg", $this->messageClass, [null]);
         if (null !== $this->sendDate) {
             $output["date_envoi"] = $this->sendDate->format(self::DATETIME_FORMAT);

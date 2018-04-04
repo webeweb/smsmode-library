@@ -75,7 +75,7 @@ final class SMSModeGetResponsesRequestTest extends PHPUnit_Framework_TestCase {
             $obj->toArray();
         } catch (Exception $ex) {
             $this->assertInstanceOf(NullPointerException::class, $ex);
-            $this->assertEquals("The parameter \"offset\" is missing", $ex->getMessage());
+            $this->assertEquals("The attribute \"offset\" is missing", $ex->getMessage());
         }
 
         $obj->setStart(null);
@@ -84,7 +84,7 @@ final class SMSModeGetResponsesRequestTest extends PHPUnit_Framework_TestCase {
             $obj->toArray();
         } catch (Exception $ex) {
             $this->assertInstanceOf(NullPointerException::class, $ex);
-            $this->assertEquals("The parameter \"start\" is missing", $ex->getMessage());
+            $this->assertEquals("The attribute \"start\" is missing", $ex->getMessage());
         }
 
         $obj->setStart(0);
@@ -106,7 +106,7 @@ final class SMSModeGetResponsesRequestTest extends PHPUnit_Framework_TestCase {
             $obj->toArray();
         } catch (Exception $ex) {
             $this->assertInstanceOf(NullPointerException::class, $ex);
-            $this->assertEquals("The parameter \"endDate\" is missing", $ex->getMessage());
+            $this->assertEquals("The attribute \"endDate\" is missing", $ex->getMessage());
         }
 
         $obj->setEndDate(new DateTime("2017-09-14 12:00:00"));
@@ -122,7 +122,7 @@ final class SMSModeGetResponsesRequestTest extends PHPUnit_Framework_TestCase {
             $obj->toArray();
         } catch (Exception $ex) {
             $this->assertInstanceOf(NullPointerException::class, $ex);
-            $this->assertEquals("The parameter \"startDate\" is missing", $ex->getMessage());
+            $this->assertEquals("The attribute \"startDate\" is missing", $ex->getMessage());
         }
 
         $obj->setStartDate(new DateTime("2017-09-14 12:00:00"));

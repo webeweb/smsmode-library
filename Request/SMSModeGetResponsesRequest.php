@@ -14,6 +14,7 @@ namespace WBW\Library\SMSMode\Request;
 use DateTime;
 use WBW\Library\Core\Exception\Argument\IllegalArgumentException;
 use WBW\Library\Core\Exception\Pointer\NullPointerException;
+use WBW\Library\SMSMode\API\SMSModeRequestInterface;
 use WBW\Library\SMSMode\Response\SMSModeGetResponsesResponse;
 
 /**
@@ -167,10 +168,10 @@ final class SMSModeGetResponsesRequest implements SMSModeRequestInterface {
 
         // Check the optional setting start and offset.
         if (null !== $this->start && null === $this->offset) {
-            throw new NullPointerException("The parameter \"offset\" is missing");
+            throw new NullPointerException("The attribute \"offset\" is missing");
         }
         if (null === $this->start && null !== $this->offset) {
-            throw new NullPointerException("The parameter \"start\" is missing");
+            throw new NullPointerException("The attribute \"start\" is missing");
         }
 
         //
@@ -185,10 +186,10 @@ final class SMSModeGetResponsesRequest implements SMSModeRequestInterface {
 
         // Check the optional setting start date and end date.
         if (null !== $this->startDate && null === $this->endDate) {
-            throw new NullPointerException("The parameter \"endDate\" is missing");
+            throw new NullPointerException("The attribute \"endDate\" is missing");
         }
         if (null === $this->startDate && null !== $this->endDate) {
-            throw new NullPointerException("The parameter \"startDate\" is missing");
+            throw new NullPointerException("The attribute \"startDate\" is missing");
         }
 
         //
@@ -196,8 +197,8 @@ final class SMSModeGetResponsesRequest implements SMSModeRequestInterface {
             if ($this->endDate <= $this->startDate) {
                 throw new IllegalArgumentException("The end date must be greater than start date");
             }
-            $output["startDate"] = $this->startDate->format(self::DATE_FORMAT);
-            $output["endDate"]   = $this->endDate->format(self::DATE_FORMAT);
+            $output["startDate"] = $this->startDate->format(self::DATETIME_FORMAT);
+            $output["endDate"]   = $this->endDate->format(self::DATETIME_FORMAT);
             return $output;
         }
 

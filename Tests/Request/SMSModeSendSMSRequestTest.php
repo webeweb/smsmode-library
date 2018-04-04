@@ -151,7 +151,7 @@ final class SMSModeSendSMSRequestTest extends PHPUnit_Framework_TestCase {
             $obj->toArray();
         } catch (Exception $ex) {
             $this->assertInstanceOf(NullPointerException::class, $ex);
-            $this->assertEquals("The parameter \"message\" is missing", $ex->getMessage());
+            $this->assertEquals("The attribute \"message\" is missing", $ex->getMessage());
         }
 
         $obj->setMessage("message");
@@ -159,7 +159,7 @@ final class SMSModeSendSMSRequestTest extends PHPUnit_Framework_TestCase {
             $obj->toArray();
         } catch (Exception $ex) {
             $this->assertInstanceOf(NullPointerException::class, $ex);
-            $this->assertEquals("The parameter \"number\" or \"group\" is missing", $ex->getMessage());
+            $this->assertEquals("The attribute \"number\" or \"group\" is missing", $ex->getMessage());
         }
 
         $obj->addNumber("0612345678");

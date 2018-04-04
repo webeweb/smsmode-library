@@ -21,7 +21,7 @@ namespace WBW\Library\SMSMode\Response;
  * @package WBW\Library\SMSMode\Response
  * @final
  */
-final class SMSModeReceptionReportResponse extends AbstractSMSModeResponse implements SMSModeReceptionReportResponseInterface {
+final class SMSModeReceptionReportResponse extends AbstractSMSModeResponse {
 
     /**
      * Reports.
@@ -55,23 +55,23 @@ final class SMSModeReceptionReportResponse extends AbstractSMSModeResponse imple
             // Switch on the code.
             switch ($this->reports[$number]) {
 
-                case self::CODE_SMS_SEND:
-                    return self::DESC_SMS_SEND;
+                case self::RESPONSE_CODE_SMS_SEND:
+                    return self::RESPONSE_DESC_SMS_SEND;
 
-                case self::CODE_INTERNAL_ERROR_SENDING_SMS;
-                    return self::DESC_INTERNAL_ERROR_SENDING_SMS;
+                case self::RESPONSE_CODE_INTERNAL_ERROR_SENDING_SMS;
+                    return self::RESPONSE_DESC_INTERNAL_ERROR_SENDING_SMS;
 
-                case self::CODE_SMS_RECEIVED:
-                    return self::DESC_SMS_RECEIVED;
+                case self::RESPONSE_CODE_SMS_RECEIVED:
+                    return self::RESPONSE_DESC_SMS_RECEIVED;
 
-                case self::CODE_OPERATOR_DELIVERED:
-                    return self::DESC_OPERATOR_DELIVERED;
+                case self::RESPONSE_CODE_OPERATOR_DELIVERED:
+                    return self::RESPONSE_DESC_OPERATOR_DELIVERED;
 
-                case self::CODE_ROUTING_ERROR:
-                    return self::DESC_ROUTING_ERROR;
+                case self::RESPONSE_CODE_ROUTING_ERROR:
+                    return self::RESPONSE_DESC_ROUTING_ERROR;
 
-                case self::CODE_RECEPTION_ERROR:
-                    return self::DESC_RECEPTION_ERROR;
+                case self::RESPONSE_CODE_RECEPTION_ERROR:
+                    return self::RESPONSE_DESC_RECEPTION_ERROR;
             }
         }
 

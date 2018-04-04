@@ -21,6 +21,6 @@ namespace WBW\Library\SMSMode\Response;
  * @package WBW\Library\SMSMode\Response
  * @final
  */
-final class SMSModeCreateSubaccountResponse extends AbstractSMSModeResponse implements SMSModeCreateSubaccountResponseInterface {
+final class SMSModeCreateSubaccountResponse extends AbstractSMSModeResponse {
 
 }

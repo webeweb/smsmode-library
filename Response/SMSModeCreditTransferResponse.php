@@ -21,6 +21,6 @@ namespace WBW\Library\SMSMode\Response;
  * @package WBW\Library\SMSMode\Response
  * @final
  */
-final class SMSModeCreditTransferResponse extends AbstractSMSModeResponse implements SMSModeCreditTransferResponseInterface {
+final class SMSModeCreditTransferResponse extends AbstractSMSModeResponse {
 
 }

@@ -114,7 +114,7 @@ final class SMSModeGetResponsesRequestTest extends PHPUnit_Framework_TestCase {
             $obj->toArray();
         } catch (Exception $ex) {
             $this->assertInstanceOf(IllegalArgumentException::class, $ex);
-            $this->assertEquals("The end date must be greater than start date", $ex->getMessage());
+            $this->assertEquals("The endDate must be greater than startDate", $ex->getMessage());
         }
 
         $obj->setStartDate(null);

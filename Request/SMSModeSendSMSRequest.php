@@ -14,6 +14,9 @@ namespace WBW\Library\SMSMode\Request;
 use DateTime;
 use WBW\Library\Core\Exception\Argument\IllegalArgumentException;
 use WBW\Library\Core\Exception\Pointer\NullPointerException;
+use WBW\Library\Core\Utility\ArrayUtility;
+use WBW\Library\SMSMode\API\SMSModeMessageInterface;
+use WBW\Library\SMSMode\API\SMSModeRequestInterface;
 use WBW\Library\SMSMode\Exception\SMSModeInvalidNumberException;
 use WBW\Library\SMSMode\Exception\SMSModeMaxLimitNumberReachedException;
 use WBW\Library\SMSMode\Response\SMSModeSendSMSResponse;
@@ -28,7 +31,7 @@ use WBW\Library\SMSMode\Response\SMSModeSendSMSResponse;
  * @package WBW\Library\SMSMode\Request
  * @final
  */
-final class SMSModeSendSMSRequest implements SMSModeRequestInterface, SMSModeSendSMSRequestInterface {
+final class SMSModeSendSMSRequest implements SMSModeRequestInterface, SMSModeMessageInterface {
 
     /**
      * Customer reference.
@@ -420,15 +423,15 @@ final class SMSModeSendSMSRequest implements SMSModeRequestInterface, SMSModeSen
         // Initialize the output.
         $output = [];
 
-        // Check the required setting message.
+        // Check the required attribute "message".
         if (null === $this->message) {
-            throw new NullPointerException("The parameter \"message\" is missing");
+            throw new NullPointerException("The attribute \"message\" is missing");
         }
         $output["message"] = $this->message;
 
-        // Check the required setting number and group.
+        // Check the required attribute "number" and "group".
         if (count($this->numbers) < 1 && null === $this->group) {
-            throw new NullPointerException("The parameter \"number\" or \"group\" is missing");
+            throw new NullPointerException("The attribute \"number\" or \"group\" is missing");
         }
 
         //
@@ -442,45 +445,18 @@ final class SMSModeSendSMSRequest implements SMSModeRequestInterface, SMSModeSen
             $output["groupe"] = $this->group;
         }
 
-        // Check the optional setting message class.
-        if (null !== $this->messageClass) {
-            $output["classe_msg"] = $this->messageClass;
-        }
-
-        // Check the optional setting send date.
+        // Check the optional attributes.
+        ArrayUtility::set($output, "classe_msg", $this->messageClass, [null]);
         if (null !== $this->sendDate) {
-            $output["date_envoi"] = $this->sendDate->format(self::DATE_FORMAT);
+            $output["date_envoi"] = $this->sendDate->format(self::DATETIME_FORMAT);
         }
-
-        // Check the optional setting customer reference.
-        if (null !== $this->customerReference) {
-            $output["refClient"] = $this->customerReference;
-        }
-
-        // Check the optional setting sender.
-        if (null !== $this->sender) {
-            $output["emetteur"] = $this->sender;
-        }
-
-        // Check the optional maximum message number.
-        if (null !== $this->maxMessageNumber) {
-            $output["nbr_msg"] = $this->maxMessageNumber;
-        }
-
-        // Check the optional setting notification URL.
-        if (null !== $this->notificationURL) {
-            $output["notification_url"] = $this->notificationURL;
-        }
-
-        // Check the optional setting response notification URL.
-        if (null !== $this->responseNotificationURL) {
-            $output["notification_url_reponse"] = $this->responseNotificationURL;
-        }
-
-        // Check the option setting STOP.
-        if (null !== $this->stop) {
-            $output["stop"] = $this->stop;
-        }
+        ArrayUtility::set($output, "refClient", $this->customerReference, [null]);
+        ArrayUtility::set($output, "emetteur", $this->sender, [null]);
+        ArrayUtility::set($output, "nbr_msg", $this->maxMessageNumber, [null]);
+        ArrayUtility::set($output, "notification_url", $this->notificationURL, [null]);
+        ArrayUtility::set($output, "notification_url", $this->notificationURL, [null]);
+        ArrayUtility::set($output, "notification_url_reponse", $this->responseNotificationURL, [null]);
+        ArrayUtility::set($output, "stop", $this->stop, [null]);
 
         // Return the output.
         return $output;

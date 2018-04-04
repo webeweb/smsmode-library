@@ -12,8 +12,8 @@
 namespace WBW\Library\SMSMode\Tests\Response;
 
 use PHPUnit_Framework_TestCase;
+use WBW\Library\SMSMode\API\SMSModeResponseInterface;
 use WBW\Library\SMSMode\Response\SMSModeCreditTransferResponse;
-use WBW\Library\SMSMode\Response\SMSModeResponseInterface;
 
 /**
  * sMsmode credit transfer response test.
@@ -38,35 +38,35 @@ final class SMSModeCreditTransferResponseTest extends PHPUnit_Framework_TestCase
 
         $impl = " " . SMSModeResponseInterface::RESPONSE_DELIMITER . " ";
 
-        $obj0 = new SMSModeCreditTransferResponse(implode($impl, [SMSModeCreditTransferResponse::CODE_TRANSFER_CARRIED_OUT, SMSModeCreditTransferResponse::DESC_TRANSFER_CARRIED_OUT]));
+        $obj0 = new SMSModeCreditTransferResponse(implode($impl, [SMSModeCreditTransferResponse::RESPONSE_CODE_TRANSFER_CARRIED_OUT, SMSModeCreditTransferResponse::RESPONSE_DESC_TRANSFER_CARRIED_OUT]));
 
-        $this->assertEquals(SMSModeCreditTransferResponse::CODE_TRANSFER_CARRIED_OUT, $obj0->getCode());
-        $this->assertEquals(SMSModeCreditTransferResponse::DESC_TRANSFER_CARRIED_OUT, $obj0->getDescription());
+        $this->assertEquals(SMSModeCreditTransferResponse::RESPONSE_CODE_TRANSFER_CARRIED_OUT, $obj0->getCode());
+        $this->assertEquals(SMSModeCreditTransferResponse::RESPONSE_DESC_TRANSFER_CARRIED_OUT, $obj0->getDescription());
 
-        $obj31 = new SMSModeCreditTransferResponse(implode($impl, [SMSModeCreditTransferResponse::CODE_INTERNAL_ERROR, SMSModeCreditTransferResponse::DESC_INTERNAL_ERROR]));
+        $obj31 = new SMSModeCreditTransferResponse(implode($impl, [SMSModeCreditTransferResponse::RESPONSE_CODE_INTERNAL_ERROR, SMSModeCreditTransferResponse::RESPONSE_DESC_INTERNAL_ERROR]));
 
-        $this->assertEquals(SMSModeCreditTransferResponse::CODE_INTERNAL_ERROR, $obj31->getCode());
-        $this->assertEquals(SMSModeCreditTransferResponse::DESC_INTERNAL_ERROR, $obj31->getDescription());
+        $this->assertEquals(SMSModeCreditTransferResponse::RESPONSE_CODE_INTERNAL_ERROR, $obj31->getCode());
+        $this->assertEquals(SMSModeCreditTransferResponse::RESPONSE_DESC_INTERNAL_ERROR, $obj31->getDescription());
 
-        $obj32 = new SMSModeCreditTransferResponse(implode($impl, [SMSModeCreditTransferResponse::CODE_AUTHENTICATION_ERROR, SMSModeCreditTransferResponse::DESC_AUTHENTICATION_ERROR]));
+        $obj32 = new SMSModeCreditTransferResponse(implode($impl, [SMSModeCreditTransferResponse::RESPONSE_CODE_AUTHENTICATION_ERROR, SMSModeCreditTransferResponse::RESPONSE_DESC_AUTHENTICATION_ERROR]));
 
-        $this->assertEquals(SMSModeCreditTransferResponse::CODE_AUTHENTICATION_ERROR, $obj32->getCode());
-        $this->assertEquals(SMSModeCreditTransferResponse::DESC_AUTHENTICATION_ERROR, $obj32->getDescription());
+        $this->assertEquals(SMSModeCreditTransferResponse::RESPONSE_CODE_AUTHENTICATION_ERROR, $obj32->getCode());
+        $this->assertEquals(SMSModeCreditTransferResponse::RESPONSE_DESC_AUTHENTICATION_ERROR, $obj32->getDescription());
 
-        $obj33 = new SMSModeCreditTransferResponse(implode($impl, [SMSModeCreditTransferResponse::CODE_INSUFICIENT_CREDIT, SMSModeCreditTransferResponse::DESC_INSUFICIENT_CREDIT]));
+        $obj33 = new SMSModeCreditTransferResponse(implode($impl, [SMSModeCreditTransferResponse::RESPONSE_CODE_INSUFICIENT_CREDIT, SMSModeCreditTransferResponse::RESPONSE_DESC_INSUFICIENT_CREDIT]));
 
-        $this->assertEquals(SMSModeCreditTransferResponse::CODE_INSUFICIENT_CREDIT, $obj33->getCode());
-        $this->assertEquals(SMSModeCreditTransferResponse::DESC_INSUFICIENT_CREDIT, $obj33->getDescription());
+        $this->assertEquals(SMSModeCreditTransferResponse::RESPONSE_CODE_INSUFICIENT_CREDIT, $obj33->getCode());
+        $this->assertEquals(SMSModeCreditTransferResponse::RESPONSE_DESC_INSUFICIENT_CREDIT, $obj33->getDescription());
 
-        $obj35 = new SMSModeCreditTransferResponse(implode($impl, [SMSModeCreditTransferResponse::CODE_MISSING_REQUIRED_PARAMETER, SMSModeCreditTransferResponse::DESC_MISSING_REQUIRED_PARAMETER]));
+        $obj35 = new SMSModeCreditTransferResponse(implode($impl, [SMSModeCreditTransferResponse::RESPONSE_CODE_MISSING_REQUIRED_PARAMETER, SMSModeCreditTransferResponse::RESPONSE_DESC_MISSING_REQUIRED_PARAMETER]));
 
-        $this->assertEquals(SMSModeCreditTransferResponse::CODE_MISSING_REQUIRED_PARAMETER, $obj35->getCode());
-        $this->assertEquals(SMSModeCreditTransferResponse::DESC_MISSING_REQUIRED_PARAMETER, $obj35->getDescription());
+        $this->assertEquals(SMSModeCreditTransferResponse::RESPONSE_CODE_MISSING_REQUIRED_PARAMETER, $obj35->getCode());
+        $this->assertEquals(SMSModeCreditTransferResponse::RESPONSE_DESC_MISSING_REQUIRED_PARAMETER, $obj35->getDescription());
 
-        $obj41 = new SMSModeCreditTransferResponse(implode($impl, [SMSModeCreditTransferResponse::CODE_ID_ALREADY_EXISTS, SMSModeCreditTransferResponse::DESC_ID_ALREADY_EXISTS]));
+        $obj41 = new SMSModeCreditTransferResponse(implode($impl, [SMSModeCreditTransferResponse::RESPONSE_CODE_ID_ALREADY_EXISTS, SMSModeCreditTransferResponse::RESPONSE_DESC_ID_ALREADY_EXISTS]));
 
-        $this->assertEquals(SMSModeCreditTransferResponse::CODE_ID_ALREADY_EXISTS, $obj41->getCode());
-        $this->assertEquals(SMSModeCreditTransferResponse::DESC_ID_ALREADY_EXISTS, $obj41->getDescription());
+        $this->assertEquals(SMSModeCreditTransferResponse::RESPONSE_CODE_ID_ALREADY_EXISTS, $obj41->getCode());
+        $this->assertEquals(SMSModeCreditTransferResponse::RESPONSE_DESC_ID_ALREADY_EXISTS, $obj41->getDescription());
     }
 
 }

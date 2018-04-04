@@ -13,6 +13,8 @@ namespace WBW\Library\SMSMode\Request;
 
 use DateTime;
 use WBW\Library\Core\Exception\Pointer\NullPointerException;
+use WBW\Library\Core\Utility\ArrayUtility;
+use WBW\Library\SMSMode\API\SMSModeRequestInterface;
 use WBW\Library\SMSMode\Response\SMSModeCreateSubaccountResponse;
 
 /**
@@ -436,74 +438,30 @@ final class SMSModeCreateSubaccountRequest implements SMSModeRequestInterface {
 
         // Check the required setting username.
         if (null === $this->username) {
-            throw new NullPointerException("The parameter \"username\" is missing");
+            throw new NullPointerException("The attribute \"username\" is missing");
         }
         $output["newPseudo"] = $this->username;
 
         // Check the required setting password.
         if (null === $this->password) {
-            throw new NullPointerException("The parameter \"password\" is missing");
+            throw new NullPointerException("The attribute \"password\" is missing");
         }
         $output["newPass"] = $this->password;
 
-        // Check the optional setting reference.
-        if (null !== $this->reference) {
-            $output["reference"] = $this->reference;
-        }
-
-        // Check the optional setting lastname.
-        if (null !== $this->lastname) {
-            $output["nom"] = $this->lastname;
-        }
-
-        // Check the optional setting firstname.
-        if (null !== $this->firstname) {
-            $output["prenom"] = $this->firstname;
-        }
-
-        // Check the optional setting company.
-        if (null !== $this->company) {
-            $output["societe"] = $this->company;
-        }
-
-        // Check the optional setting address.
-        if (null !== $this->address) {
-            $output["adresse"] = $this->address;
-        }
-
-        // Check the optional setting city.
-        if (null !== $this->city) {
-            $output["ville"] = $this->city;
-        }
-
-        // Check the optional setting postal code.
-        if (null !== $this->postalCode) {
-            $output["codePostal"] = $this->postalCode;
-        }
-
-        // Check the optional setting mobile phone.
-        if (null !== $this->mobilePhone) {
-            $output["mobile"] = $this->mobilePhone;
-        }
-
-        // Check the optional setting phone.
-        if (null !== $this->phone) {
-            $output["telephone"] = $this->phone;
-        }
-
-        // Check the optional setting fax.
-        if (null !== $this->fax) {
-            $output["fax"] = $this->fax;
-        }
-
-        // Check the optional setting email.
-        if (null !== $this->email) {
-            $output["email"] = $this->email;
-        }
-
-        // Check the optional setting birthdate.
+        // Check the optional attributes.
+        ArrayUtility::set($output, "reference", $this->reference, [null]);
+        ArrayUtility::set($output, "nom", $this->lastname, [null]);
+        ArrayUtility::set($output, "prenom", $this->firstname, [null]);
+        ArrayUtility::set($output, "societe", $this->company, [null]);
+        ArrayUtility::set($output, "adresse", $this->address, [null]);
+        ArrayUtility::set($output, "ville", $this->city, [null]);
+        ArrayUtility::set($output, "codePostal", $this->postalCode, [null]);
+        ArrayUtility::set($output, "mobile", $this->mobilePhone, [null]);
+        ArrayUtility::set($output, "telephone", $this->phone, [null]);
+        ArrayUtility::set($output, "fax", $this->fax, [null]);
+        ArrayUtility::set($output, "email", $this->email, [null]);
         if (null !== $this->birthdate) {
-            $output["date"] = $this->birthdate->format("dmY");
+            ArrayUtility::set($output, "date", $this->birthdate->format(self::DATE_FORMAT), [null]);
         }
 
         // Return the output.

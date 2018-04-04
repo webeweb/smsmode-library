@@ -12,6 +12,7 @@
 namespace WBW\Library\SMSMode\Request;
 
 use WBW\Library\Core\Exception\Pointer\NullPointerException;
+use WBW\Library\SMSMode\API\SMSModeRequestInterface;
 use WBW\Library\SMSMode\Response\SMSModeDeleteSubaccountResponse;
 
 /**
@@ -84,7 +85,7 @@ final class SMSModeDeleteSubaccountRequest implements SMSModeRequestInterface {
 
         // Check the required setting username.
         if (null === $this->username) {
-            throw new NullPointerException("The parameter \"username\" is missing");
+            throw new NullPointerException("The attribute \"username\" is missing");
         }
         $output["pseudoToDelete"] = $this->username;
 

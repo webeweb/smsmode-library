@@ -26,7 +26,7 @@ final class SMSModeMaxLimitNumberReachedException extends AbstractSMSModeExcepti
      * @param integer $limit The limit.
      */
     public function __construct($limit) {
-        parent::__construct("The max limit of numbers reached: " . $limit . " allowed");
+        parent::__construct(sprintf("The max limit of numbers reached: %d allowed", $limit));
     }
 
 }

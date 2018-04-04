@@ -46,7 +46,7 @@ Composer documentation.
 	$provider->getAuthentication()->setPassword("password");
 
 	// Initialize the request.
-	$provider->getRequest()->addNumber("0612345678");
+	$provider->getRequest()->addNumber("33612345678");
 	$provider->getRequest()->setMessage("Hello world !");
 	$provider->getRequest()->setSender("sender");
 	$provider->getRequest()->setStop(SMSModeSendSMSRequest::STOP_ONLY);

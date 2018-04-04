@@ -21,7 +21,7 @@ namespace WBW\Library\SMSMode\Response;
  * @package WBW\Library\SMSMode\Response
  * @final
  */
-final class SMSModeSendSMSResponse extends AbstractSMSModeResponse implements SMSModeSendSMSResponseInterface {
+final class SMSModeSendSMSResponse extends AbstractSMSModeResponse {
 
     /**
      * SMS id.
@@ -51,7 +51,7 @@ final class SMSModeSendSMSResponse extends AbstractSMSModeResponse implements SM
         $response = explode(self::RESPONSE_DELIMITER, $rawResponse);
 
         // Check the code.
-        if (self::CODE_ACCEPTED === $this->getCode() && 3 === count($response)) {
+        if (self::RESPONSE_CODE_ACCEPTED === $this->getCode() && 3 === count($response)) {
             $this->setSmsID(trim($response[2]));
         }
     }

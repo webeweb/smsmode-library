@@ -142,15 +142,17 @@ final class SMSModeCreditTransferRequest implements SMSModeRequestInterface {
         if (null === $this->username) {
             throw new NullPointerException("The attribute \"username\" is missing");
         }
-        $output["targetPseudo"] = $this->username;
 
         // Check the required attribute "credit".
         if (null === $this->credit) {
             throw new NullPointerException("The attribute \"credit\" is missing");
         }
+
+        // Add the required attributes.
+        $output["targetPseudo"] = $this->username;
         $output["creditAmount"] = $this->credit;
 
-        // Check the optional attributes.
+        // Check and add the optional attributes.
         ArrayUtility::set($output, "reference", $this->reference, [null]);
 
         // Return the output.

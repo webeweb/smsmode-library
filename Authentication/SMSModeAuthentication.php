@@ -121,22 +121,22 @@ final class SMSModeAuthentication {
         // Initialize the output.
         $output = [];
 
+        // Check the priority attribute "token".
         if (null !== $this->token) {
-            $output["accessToken"] = $this->getToken();
-        } else {
-
-            // Check the required setting username.
-            if (null === $this->username) {
-                throw new SMSModeMissingSettingException("username");
-            }
-            $output["pseudo"] = $this->username;
-
-            // Check the required setting password.
-            if (null === $this->password) {
-                throw new SMSModeMissingSettingException("password");
-            }
-            $output["pass"] = $this->password;
+            return ["accessToken" => $this->token];
         }
+
+        // Check the required attribute "username".
+        if (null === $this->username) {
+            throw new SMSModeMissingSettingException("username");
+        }
+        $output["pseudo"] = $this->username;
+
+        // Check the required attribute "password".
+        if (null === $this->password) {
+            throw new SMSModeMissingSettingException("password");
+        }
+        $output["pass"] = $this->password;
 
         // Return the output.
         return $output;

@@ -12,6 +12,7 @@
 namespace WBW\Library\SMSMode\Request;
 
 use WBW\Library\Core\Exception\Pointer\NullPointerException;
+use WBW\Library\SMSMode\API\SMSModeRequestInterface;
 use WBW\Library\SMSMode\Response\SMSModeReceptionReportResponse;
 
 /**
@@ -84,7 +85,7 @@ final class SMSModeReceptionReportRequest implements SMSModeRequestInterface {
 
         // Check the required sms id.
         if (null === $this->smsID) {
-            throw new NullPointerException("The parameter \"smsID\" is missing");
+            throw new NullPointerException("The attribute \"smsID\" is missing");
         }
         $output["smsID"] = $this->smsID;
 

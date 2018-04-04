@@ -11,6 +11,8 @@
 
 namespace WBW\Library\SMSMode\Response;
 
+use WBW\Library\SMSMode\API\SMSModeResponseInterface;
+
 /**
  * Abstract sMsmode response.
  *

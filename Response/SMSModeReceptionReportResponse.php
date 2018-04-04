@@ -50,33 +50,31 @@ final class SMSModeReceptionReportResponse extends AbstractSMSModeResponse {
     public function getReportDescription($number) {
 
         // Check if the number exists.
-        if (true === array_key_exists($number, $this->reports)) {
-
-            // Switch on the code.
-            switch ($this->reports[$number]) {
-
-                case self::RESPONSE_CODE_SMS_SEND:
-                    return self::RESPONSE_DESC_SMS_SEND;
-
-                case self::RESPONSE_CODE_INTERNAL_ERROR_SENDING_SMS;
-                    return self::RESPONSE_DESC_INTERNAL_ERROR_SENDING_SMS;
-
-                case self::RESPONSE_CODE_SMS_RECEIVED:
-                    return self::RESPONSE_DESC_SMS_RECEIVED;
-
-                case self::RESPONSE_CODE_OPERATOR_DELIVERED:
-                    return self::RESPONSE_DESC_OPERATOR_DELIVERED;
-
-                case self::RESPONSE_CODE_ROUTING_ERROR:
-                    return self::RESPONSE_DESC_ROUTING_ERROR;
-
-                case self::RESPONSE_CODE_RECEPTION_ERROR:
-                    return self::RESPONSE_DESC_RECEPTION_ERROR;
-            }
+        if (false === array_key_exists($number, $this->reports)) {
+            return null;
         }
 
-        // Return.
-        return null;
+        // Switch on the code.
+        switch ($this->reports[$number]) {
+
+            case self::RESPONSE_CODE_SMS_SEND:
+                return self::RESPONSE_DESC_SMS_SEND;
+
+            case self::RESPONSE_CODE_INTERNAL_ERROR_SENDING_SMS;
+                return self::RESPONSE_DESC_INTERNAL_ERROR_SENDING_SMS;
+
+            case self::RESPONSE_CODE_SMS_RECEIVED:
+                return self::RESPONSE_DESC_SMS_RECEIVED;
+
+            case self::RESPONSE_CODE_OPERATOR_DELIVERED:
+                return self::RESPONSE_DESC_OPERATOR_DELIVERED;
+
+            case self::RESPONSE_CODE_ROUTING_ERROR:
+                return self::RESPONSE_DESC_ROUTING_ERROR;
+
+            case self::RESPONSE_CODE_RECEPTION_ERROR:
+                return self::RESPONSE_DESC_RECEPTION_ERROR;
+        }
     }
 
     /**

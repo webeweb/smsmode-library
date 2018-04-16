@@ -13,7 +13,7 @@ namespace WBW\Library\SMSMode\Request;
 
 use DateTime;
 use WBW\Library\Core\Exception\Pointer\NullPointerException;
-use WBW\Library\Core\Utility\ArrayUtility;
+use WBW\Library\Core\Utility\Argument\ArrayUtility;
 use WBW\Library\SMSMode\API\SMSModeRequestInterface;
 use WBW\Library\SMSMode\Response\SMSModeCreateSubaccountResponse;
 

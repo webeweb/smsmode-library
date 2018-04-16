@@ -12,7 +12,7 @@
 namespace WBW\Library\SMSMode\Exception;
 
 use Exception;
-use WBW\Library\Core\Exception\AbstractWBWException;
+use WBW\Library\Core\Exception\AbstractCoreException;
 
 /**
  * Abstract sMsmode exception.
@@ -20,7 +20,7 @@ use WBW\Library\Core\Exception\AbstractWBWException;
  * @package WBW\Library\SMSMode\Exception
  * @abstract
  */
-abstract class AbstractSMSModeException extends AbstractWBWException {
+abstract class AbstractSMSModeException extends AbstractCoreException {
 
     /**
      * Constructor.

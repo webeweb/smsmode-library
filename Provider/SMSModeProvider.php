@@ -62,7 +62,7 @@ class SMSModeProvider {
     /**
      * Call the API.
      *
-     * @return SMSModeResponseInterface Returns the response.
+     * @return SMSModeResponseInterface Returns the sMsmode response.
      * @throws NullPointerException Throws a null pointer exception if a setting is missing.
      * @throws IllegalArgumentException Throws an illegal argument exception if a setting is invalid.
      */

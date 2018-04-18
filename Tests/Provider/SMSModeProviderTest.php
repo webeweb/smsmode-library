@@ -85,4 +85,17 @@ final class SMSModeProviderTest extends PHPUnit_Framework_TestCase {
         $this->assertContains("Votre authentification a échoué", $res->getDescription());
     }
 
+    /**
+     * Tests the setDebug() method.
+     *
+     * @return void
+     */
+    public function testSetDebug() {
+
+        $obj = new SMSModeProvider($this->authentication, $this->request);
+
+        $obj->setDebug(true);
+        $this->assertTrue($obj->getDebug());
+    }
+
 }

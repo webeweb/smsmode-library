@@ -27,7 +27,7 @@ class SMSModeAccountBalanceResponse extends AbstractSMSModeResponse {
      *
      * @var float
      */
-    private $accountBalance = 0.00;
+    private $accountBalance;
 
     /**
      * Get the account balance.
@@ -42,7 +42,14 @@ class SMSModeAccountBalanceResponse extends AbstractSMSModeResponse {
      * {@inheritdoc}
      */
     protected function parse($rawResponse) {
-        $this->setAccountBalance(floatval(trim($rawResponse)));
+
+        // Set the code and description.
+        parent::parse($rawResponse);
+
+        // Check the raw response.
+        if (1 === preg_match("/^[0-9]{1,}\.[0-9]{1,}$/", $rawResponse)) {
+            $this->setAccountBalance(floatval(trim($rawResponse)));
+        }
     }
 
     /**
@@ -51,7 +58,7 @@ class SMSModeAccountBalanceResponse extends AbstractSMSModeResponse {
      * @param float $accountBalance The account balance.
      * @return SMSModeAccountBalanceResponse Returns this sMsmode account balance response.
      */
-    protected function setAccountBalance($accountBalance = 0.00) {
+    protected function setAccountBalance($accountBalance) {
         $this->accountBalance = $accountBalance;
         return $this;
     }

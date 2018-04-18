@@ -113,7 +113,7 @@ class SMSModeSendSMSRequest implements SMSModeRequestInterface, SMSModeMessageIn
      * Constructor.
      */
     public function __construct() {
-        // NOTHING DTO DO.
+        // NOTHING TO DO.
     }
 
     /**
@@ -433,7 +433,7 @@ class SMSModeSendSMSRequest implements SMSModeRequestInterface, SMSModeMessageIn
         }
 
         // Add the required attributes.
-        $output["message"] = $this->message;
+        $output["message"] = utf8_decode($this->message);
         if (0 < count($this->numbers)) {
             $output["numero"] = implode(",", $this->numbers);
         } else {

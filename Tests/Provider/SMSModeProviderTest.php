@@ -15,6 +15,7 @@ use PHPUnit_Framework_TestCase;
 use WBW\Library\SMSMode\Authentication\SMSModeAuthentication;
 use WBW\Library\SMSMode\Provider\SMSModeProvider;
 use WBW\Library\SMSMode\Request\SMSModeAccountBalanceRequest;
+use WBW\Library\SMSMode\Response\SMSModeAccountBalanceResponse;
 
 /**
  * sMsmode provider test.
@@ -40,27 +41,18 @@ final class SMSModeProviderTest extends PHPUnit_Framework_TestCase {
     private $authentication;
 
     /**
-     * Provider.
-     *
-     * @var SMSModeProvider
-     */
-    private $provider;
-
-    /**
      * {@inheritdoc}
      */
     protected function setUp() {
-
-        //
         parent::setUp();
 
-        // Set the provider.
+        // Set a sMsmode authentication mock.
         $this->authentication = new SMSModeAuthentication();
+        $this->authentication->setUsername("username");
+        $this->authentication->setPassword("password");
+
+        // Set a sMsmode account balance request mock.
         $this->accountBalance = new SMSModeAccountBalanceRequest();
-        $this->provider       = new SMSModeProvider($this->authentication, $this->accountBalance);
-        $this->provider->getAuthentication()
-            ->setUsername("username")
-            ->setPassword("password");
     }
 
     /**
@@ -70,11 +62,23 @@ final class SMSModeProviderTest extends PHPUnit_Framework_TestCase {
      */
     public function testConstructor() {
 
-        $obj = $this->provider;
+        $obj = new SMSModeProvider($this->authentication, $this->accountBalance);
 
         $this->assertEquals($this->authentication, $obj->getAuthentication());
         $this->assertEquals($this->accountBalance, $obj->getRequest());
         $this->assertFalse($obj->getDebug());
+    }
+
+    /**
+     * Tests the callAPI() method.
+     *
+     * @return void
+     */
+    public function testCallAPI() {
+
+        $obj = new SMSModeProvider($this->authentication, $this->accountBalance);
+
+        $this->assertInstanceOf(SMSModeAccountBalanceResponse::class, $obj->callAPI());
     }
 
 }

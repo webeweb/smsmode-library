@@ -37,7 +37,7 @@ class SMSModeDeleteSubaccountRequest implements SMSModeRequestInterface {
      * Constructor.
      */
     public function __construct() {
-        // NOTHING DTO DO.
+        // NOTHING TO DO.
     }
 
     /**

@@ -120,7 +120,7 @@ final class SMSModeProvider {
      * Set the authentication.
      *
      * @param SMSModeAuthentication $authentication The authentication.
-     * @return SMSModeProvider Returns the sMsmode provider.
+     * @return SMSModeProvider Returns this sMsmode provider.
      */
     protected function setAuthentication(SMSModeAuthentication $authentication) {
         $this->authentication = $authentication;
@@ -131,7 +131,7 @@ final class SMSModeProvider {
      * Set the debug.
      *
      * @param boolean $debug The debug.
-     * @return SMSModeProvider Returns the sMsmode provider.
+     * @return SMSModeProvider Returns this sMsmode provider.
      */
     public function setDebug($debug = false) {
         $this->debug = $debug;
@@ -142,7 +142,7 @@ final class SMSModeProvider {
      * Set the request.
      *
      * @param SMSModeRequestInterface $request The request.
-     * @return SMSModeProvider Returns the sMsmode provider.
+     * @return SMSModeProvider Returns this sMsmode provider.
      */
     protected function setRequest(SMSModeRequestInterface $request) {
         $this->request = $request;

@@ -118,7 +118,7 @@ final class SMSModeGetResponsesRequest implements SMSModeRequestInterface {
      * Set the end date.
      *
      * @param DateTime $endDate	The end date.
-     * @return SMSModeGetResponsesRequest Returns the sMsmode get responses request.
+     * @return SMSModeGetResponsesRequest Returns this sMsmode get responses request.
      */
     public function setEndDate(DateTime $endDate = null) {
         $this->endDate = $endDate;
@@ -129,7 +129,7 @@ final class SMSModeGetResponsesRequest implements SMSModeRequestInterface {
      * Set the offset.
      *
      * @param integer $offset The offset.
-     * @return SMSModeGetResponsesRequest Returns the sMsmode get responses request.
+     * @return SMSModeGetResponsesRequest Returns this sMsmode get responses request.
      */
     public function setOffset($offset) {
         $this->offset = $offset;
@@ -140,7 +140,7 @@ final class SMSModeGetResponsesRequest implements SMSModeRequestInterface {
      * Set the start.
      *
      * @param integer $start The start.
-     * @return SMSModeGetResponsesRequest Returns the sMsmode get responses request.
+     * @return SMSModeGetResponsesRequest Returns this sMsmode get responses request.
      */
     public function setStart($start) {
         $this->start = $start;
@@ -151,7 +151,7 @@ final class SMSModeGetResponsesRequest implements SMSModeRequestInterface {
      * Set the start date.
      *
      * @param DateTime $startDate The start date.
-     * @return SMSModeGetResponsesRequest Returns the sMsmode get responses request.
+     * @return SMSModeGetResponsesRequest Returns this sMsmode get responses request.
      */
     public function setStartDate(DateTime $startDate = null) {
         $this->startDate = $startDate;

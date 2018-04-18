@@ -121,7 +121,7 @@ final class SMSModeSendSMSRequest implements SMSModeRequestInterface, SMSModeMes
      * Add a number.
      *
      * @param string $number The number.
-     * @return SMSModeSendSMSRequest Returns the sMsmode send SMS request.
+     * @return SMSModeSendSMSRequest Returns this sMsmode send SMS request.
      * @throws SMSModeMaxLimitNumberReachedException Throws a SMSMode max limit of numbers reached exception if the next add exceeds 300 numbers.
      * @throws SMSModeInvalidNumberException Throws a SMSMode invalid number exception if the number is not valid.
      */
@@ -279,7 +279,7 @@ final class SMSModeSendSMSRequest implements SMSModeRequestInterface, SMSModeMes
      * Remove a number.
      *
      * @param string $number The number.
-     * @return SMSModeSendSMSRequest Returns the sMsmode send SMS request.
+     * @return SMSModeSendSMSRequest Returns this sMsmode send SMS request.
      */
     public function removeNumber($number) {
         $pos = array_search($number, $this->numbers);
@@ -293,7 +293,7 @@ final class SMSModeSendSMSRequest implements SMSModeRequestInterface, SMSModeMes
      * Set the customer reference.
      *
      * @param string $customerReference The customer reference.
-     * @return SMSModeSendSMSRequest Returns the sMsmode send SMS request.
+     * @return SMSModeSendSMSRequest Returns this sMsmode send SMS request.
      */
     public function setCustomerReference($customerReference) {
         $this->customerReference = $customerReference;
@@ -304,7 +304,7 @@ final class SMSModeSendSMSRequest implements SMSModeRequestInterface, SMSModeMes
      * Set the group.
      *
      * @param string $group The group.
-     * @return SMSModeSendSMSRequest Returns the sMsmode send SMS request.
+     * @return SMSModeSendSMSRequest Returns this sMsmode send SMS request.
      */
     public function setGroup($group) {
         $this->group = $group;
@@ -315,7 +315,7 @@ final class SMSModeSendSMSRequest implements SMSModeRequestInterface, SMSModeMes
      * Set the maximum message number.
      *
      * @param integer $maxMessageNumber The maximum message number.
-     * @return SMSModeSendSMSRequest Returns the sMsmode send SMS request.
+     * @return SMSModeSendSMSRequest Returns this sMsmode send SMS request.
      */
     public function setMaxMessageNumber($maxMessageNumber) {
         $this->maxMessageNumber = $maxMessageNumber;
@@ -326,7 +326,7 @@ final class SMSModeSendSMSRequest implements SMSModeRequestInterface, SMSModeMes
      * Set the message.
      *
      * @param string $message The message.
-     * @return SMSModeSendSMSRequest Returns the sMsmode send SMS request.
+     * @return SMSModeSendSMSRequest Returns this sMsmode send SMS request.
      */
     public function setMessage($message) {
         $this->message = $message;
@@ -337,7 +337,7 @@ final class SMSModeSendSMSRequest implements SMSModeRequestInterface, SMSModeMes
      * Set the message class.
      *
      * @param integer $messageClass The message class.
-     * @return SMSModeSendSMSRequest Returns the sMsmode send SMS request.
+     * @return SMSModeSendSMSRequest Returns this sMsmode send SMS request.
      * @throws IllegalArgumentException Throws an illegal argument exception if the message class is invalid.
      */
     public function setMessageClass($messageClass) {
@@ -356,7 +356,7 @@ final class SMSModeSendSMSRequest implements SMSModeRequestInterface, SMSModeMes
      * Set the notification URL.
      *
      * @param string $notificationURL The notification URL.
-     * @return SMSModeSendSMSRequest Returns the sMsmode send SMS request.
+     * @return SMSModeSendSMSRequest Returns this sMsmode send SMS request.
      */
     public function setNotificationURL($notificationURL) {
         $this->notificationURL = $notificationURL;
@@ -367,7 +367,7 @@ final class SMSModeSendSMSRequest implements SMSModeRequestInterface, SMSModeMes
      * Set the response notification URL.
      *
      * @param string $responseNotificationURL The response notification URL.
-     * @return SMSModeSendSMSRequest Returns the sMsmode send SMS request.
+     * @return SMSModeSendSMSRequest Returns this sMsmode send SMS request.
      */
     public function setResponseNotificationURL($responseNotificationURL) {
         $this->responseNotificationURL = $responseNotificationURL;
@@ -378,7 +378,7 @@ final class SMSModeSendSMSRequest implements SMSModeRequestInterface, SMSModeMes
      * Set the send date.
      *
      * @param DateTime $sendDate The send date.
-     * @return SMSModeSendSMSRequest Returns the sMsmode send SMS request.
+     * @return SMSModeSendSMSRequest Returns this sMsmode send SMS request.
      */
     public function setSendDate(DateTime $sendDate = null) {
         $this->sendDate = $sendDate;
@@ -389,7 +389,7 @@ final class SMSModeSendSMSRequest implements SMSModeRequestInterface, SMSModeMes
      * Set the sender.
      *
      * @param string $sender The sender.
-     * @return SMSModeSendSMSRequest Returns the sMsmode send SMS request.
+     * @return SMSModeSendSMSRequest Returns this sMsmode send SMS request.
      */
     public function setSender($sender) {
         $this->sender = $sender;
@@ -400,7 +400,7 @@ final class SMSModeSendSMSRequest implements SMSModeRequestInterface, SMSModeMes
      * Set the STOP.
      *
      * @param integer|null $stop The STOP.
-     * @return SMSModeSendSMSRequest Returns the sMsmode send SMS request.
+     * @return SMSModeSendSMSRequest Returns this sMsmode send SMS request.
      */
     public function setStop($stop) {
         switch ($stop) {

@@ -68,7 +68,7 @@ final class SMSModeReceptionReportRequest implements SMSModeRequestInterface {
      * Set the SMS id.
      *
      * @param string $smsID The SMS id.
-     * @return SMSModeReceptionReportRequest Returns the sMsmode reception report request.
+     * @return SMSModeReceptionReportRequest Returns this sMsmode reception report request.
      */
     public function setSmsID($smsID) {
         $this->smsID = $smsID;

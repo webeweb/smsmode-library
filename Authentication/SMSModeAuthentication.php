@@ -18,9 +18,8 @@ use WBW\Library\Core\Exception\Pointer\NullPointerException;
  *
  * @author webeweb <https://github.com/webeweb/>
  * @package WBW\Library\SMSMode\Authentication
- * @final
  */
-final class SMSModeAuthentication {
+class SMSModeAuthentication {
 
     /**
      * Password.
@@ -81,7 +80,7 @@ final class SMSModeAuthentication {
      * Set the password.
      *
      * @param string $password The password.
-     * @return SMSModeAuthentication Returns the sMsmode authentication.
+     * @return SMSModeAuthentication Returns this sMsmode authentication.
      */
     public function setPassword($password) {
         $this->password = $password;
@@ -92,7 +91,7 @@ final class SMSModeAuthentication {
      * Set the token.
      *
      * @param string $token The token.
-     * @return SMSModeAuthentication Returns the sMsmode authentication.
+     * @return SMSModeAuthentication Returns this sMsmode authentication.
      */
     public function setToken($token) {
         $this->token = $token;
@@ -103,7 +102,7 @@ final class SMSModeAuthentication {
      * Set the username.
      *
      * @param string $username The username.
-     * @return SMSModeAuthentication Returns the sMsmode authentication.
+     * @return SMSModeAuthentication Returns this sMsmode authentication.
      */
     public function setUsername($username) {
         $this->username = $username;

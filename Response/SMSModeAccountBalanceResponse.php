@@ -50,7 +50,7 @@ final class SMSModeAccountBalanceResponse extends AbstractSMSModeResponse {
      * Set the account balance.
      *
      * @param float $accountBalance The account balance.
-     * @return SMSModeAccountBalanceResponse Returns the sMsmode account balance response.
+     * @return SMSModeAccountBalanceResponse Returns this sMsmode account balance response.
      */
     protected function setAccountBalance($accountBalance = 0.00) {
         $this->accountBalance = $accountBalance;

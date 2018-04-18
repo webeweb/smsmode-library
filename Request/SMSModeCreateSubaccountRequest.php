@@ -278,7 +278,7 @@ final class SMSModeCreateSubaccountRequest implements SMSModeRequestInterface {
      * Set the address.
      *
      * @param string $address The address.
-     * @return SMSModeCreateSubaccountRequest Returns the sMsmode create subaccount request.
+     * @return SMSModeCreateSubaccountRequest Returns this sMsmode create subaccount request.
      */
     public function setAddress($address) {
         $this->address = $address;
@@ -289,7 +289,7 @@ final class SMSModeCreateSubaccountRequest implements SMSModeRequestInterface {
      * Set the birthdate.
      *
      * @param DateTime $birthdate The birthdate.
-     * @return SMSModeCreateSubaccountRequest Returns the sMsmode create subaccount request.
+     * @return SMSModeCreateSubaccountRequest Returns this sMsmode create subaccount request.
      */
     public function setBirthdate(DateTime $birthdate = null) {
         $this->birthdate = $birthdate;
@@ -300,7 +300,7 @@ final class SMSModeCreateSubaccountRequest implements SMSModeRequestInterface {
      * Set the city.
      *
      * @param string $city The city.
-     * @return SMSModeCreateSubaccountRequest Returns the sMsmode create subaccount request.
+     * @return SMSModeCreateSubaccountRequest Returns this sMsmode create subaccount request.
      */
     public function setCity($city) {
         $this->city = $city;
@@ -311,7 +311,7 @@ final class SMSModeCreateSubaccountRequest implements SMSModeRequestInterface {
      * Set the company.
      *
      * @param string $company The company.
-     * @return SMSModeCreateSubaccountRequest Returns the sMsmode create subaccount request.
+     * @return SMSModeCreateSubaccountRequest Returns this sMsmode create subaccount request.
      */
     public function setCompany($company) {
         $this->company = $company;
@@ -322,7 +322,7 @@ final class SMSModeCreateSubaccountRequest implements SMSModeRequestInterface {
      * Set the email.
      *
      * @param string $email The email.
-     * @return SMSModeCreateSubaccountRequest Returns the sMsmode create subaccount request.
+     * @return SMSModeCreateSubaccountRequest Returns this sMsmode create subaccount request.
      */
     public function setEmail($email) {
         $this->email = $email;
@@ -333,7 +333,7 @@ final class SMSModeCreateSubaccountRequest implements SMSModeRequestInterface {
      * Set the fax.
      *
      * @param string $fax The fax.
-     * @return SMSModeCreateSubaccountRequest Returns the sMsmode create subaccount request.
+     * @return SMSModeCreateSubaccountRequest Returns this sMsmode create subaccount request.
      */
     public function setFax($fax) {
         $this->fax = $fax;
@@ -344,7 +344,7 @@ final class SMSModeCreateSubaccountRequest implements SMSModeRequestInterface {
      * Set the firstname.
      *
      * @param string $firstname The firstname.
-     * @return SMSModeCreateSubaccountRequest Returns the sMsmode create subaccount request.
+     * @return SMSModeCreateSubaccountRequest Returns this sMsmode create subaccount request.
      */
     public function setFirstname($firstname) {
         $this->firstname = $firstname;
@@ -355,7 +355,7 @@ final class SMSModeCreateSubaccountRequest implements SMSModeRequestInterface {
      * Set the lastname.
      *
      * @param string $lastname The lastname.
-     * @return SMSModeCreateSubaccountRequest Returns the sMsmode create subaccount request.
+     * @return SMSModeCreateSubaccountRequest Returns this sMsmode create subaccount request.
      */
     public function setLastname($lastname) {
         $this->lastname = $lastname;
@@ -366,7 +366,7 @@ final class SMSModeCreateSubaccountRequest implements SMSModeRequestInterface {
      * Set the mobile phone.
      *
      * @param string $mobilePhone The mobile phone.
-     * @return SMSModeCreateSubaccountRequest Returns the sMsmode create subaccount request.
+     * @return SMSModeCreateSubaccountRequest Returns this sMsmode create subaccount request.
      */
     public function setMobilePhone($mobilePhone) {
         $this->mobilePhone = $mobilePhone;
@@ -377,7 +377,7 @@ final class SMSModeCreateSubaccountRequest implements SMSModeRequestInterface {
      * Set the password.
      *
      * @param string $password The password.
-     * @return SMSModeCreateSubaccountRequest Returns the sMsmode create subaccount request.
+     * @return SMSModeCreateSubaccountRequest Returns this sMsmode create subaccount request.
      */
     public function setPassword($password) {
         $this->password = $password;
@@ -388,7 +388,7 @@ final class SMSModeCreateSubaccountRequest implements SMSModeRequestInterface {
      * Set the phone.
      *
      * @param string $phone The phone.
-     * @return SMSModeCreateSubaccountRequest Returns the sMsmode create subaccount request.
+     * @return SMSModeCreateSubaccountRequest Returns this sMsmode create subaccount request.
      */
     public function setPhone($phone) {
         $this->phone = $phone;
@@ -399,7 +399,7 @@ final class SMSModeCreateSubaccountRequest implements SMSModeRequestInterface {
      * Set the postal code.
      *
      * @param string $postalCode The postal code.
-     * @return SMSModeCreateSubaccountRequest Returns the sMsmode create subaccount request.
+     * @return SMSModeCreateSubaccountRequest Returns this sMsmode create subaccount request.
      */
     public function setPostalCode($postalCode) {
         $this->postalCode = $postalCode;
@@ -410,7 +410,7 @@ final class SMSModeCreateSubaccountRequest implements SMSModeRequestInterface {
      * Set the reference.
      *
      * @param string $reference The reference.
-     * @return SMSModeCreateSubaccountRequest Returns the sMsmode create subaccount request.
+     * @return SMSModeCreateSubaccountRequest Returns this sMsmode create subaccount request.
      */
     public function setReference($reference) {
         $this->reference = $reference;
@@ -421,7 +421,7 @@ final class SMSModeCreateSubaccountRequest implements SMSModeRequestInterface {
      * Set the username.
      *
      * @param string $username The username.
-     * @return SMSModeCreateSubaccountRequest Returns the sMsmode create subaccount request.
+     * @return SMSModeCreateSubaccountRequest Returns this sMsmode create subaccount request.
      */
     public function setUsername($username) {
         $this->username = $username;

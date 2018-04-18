@@ -78,7 +78,10 @@ final class SMSModeProviderTest extends PHPUnit_Framework_TestCase {
 
         $obj = new SMSModeProvider($this->authentication, $this->accountBalance);
 
-        $this->assertInstanceOf(SMSModeAccountBalanceResponse::class, $obj->callAPI());
+        $res = $obj->callAPI();
+        $this->assertInstanceOf(SMSModeAccountBalanceResponse::class, $res);
+        $this->assertEquals(SMSModeAccountBalanceResponse::RESPONSE_CODE_AUTHENTICATION_ERROR, $res->getCode());
+        $this->assertContains("Votre authentification a échoué", $res->getDescription());
     }
 
 }

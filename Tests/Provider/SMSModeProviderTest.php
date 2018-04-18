@@ -14,8 +14,8 @@ namespace WBW\Library\SMSMode\Tests\Provider;
 use PHPUnit_Framework_TestCase;
 use WBW\Library\SMSMode\Authentication\SMSModeAuthentication;
 use WBW\Library\SMSMode\Provider\SMSModeProvider;
-use WBW\Library\SMSMode\Request\SMSModeAccountBalanceRequest;
-use WBW\Library\SMSMode\Response\SMSModeAccountBalanceResponse;
+use WBW\Library\SMSMode\Request\SMSModeDeleteSubaccountRequest;
+use WBW\Library\SMSMode\Response\SMSModeDeleteSubaccountResponse;
 
 /**
  * sMsmode provider test.
@@ -27,11 +27,11 @@ use WBW\Library\SMSMode\Response\SMSModeAccountBalanceResponse;
 final class SMSModeProviderTest extends PHPUnit_Framework_TestCase {
 
     /**
-     * Account balance.
+     * Request.
      *
-     * @var SMSModeAaccountBalanceRequest
+     * @var SMSModeDeleteSubaccountRequest
      */
-    private $accountBalance;
+    private $request;
 
     /**
      * Authentication.
@@ -51,8 +51,9 @@ final class SMSModeProviderTest extends PHPUnit_Framework_TestCase {
         $this->authentication->setUsername("username");
         $this->authentication->setPassword("password");
 
-        // Set a sMsmode account balance request mock.
-        $this->accountBalance = new SMSModeAccountBalanceRequest();
+        // Set a sMsmode delete subaccount request mock.
+        $this->request = new SMSModeDeleteSubaccountRequest();
+        $this->request->setUsername("username");
     }
 
     /**
@@ -62,10 +63,10 @@ final class SMSModeProviderTest extends PHPUnit_Framework_TestCase {
      */
     public function testConstructor() {
 
-        $obj = new SMSModeProvider($this->authentication, $this->accountBalance);
+        $obj = new SMSModeProvider($this->authentication, $this->request);
 
         $this->assertEquals($this->authentication, $obj->getAuthentication());
-        $this->assertEquals($this->accountBalance, $obj->getRequest());
+        $this->assertEquals($this->request, $obj->getRequest());
         $this->assertFalse($obj->getDebug());
     }
 
@@ -76,11 +77,11 @@ final class SMSModeProviderTest extends PHPUnit_Framework_TestCase {
      */
     public function testCallAPI() {
 
-        $obj = new SMSModeProvider($this->authentication, $this->accountBalance);
+        $obj = new SMSModeProvider($this->authentication, $this->request);
 
         $res = $obj->callAPI();
-        $this->assertInstanceOf(SMSModeAccountBalanceResponse::class, $res);
-        $this->assertEquals(SMSModeAccountBalanceResponse::RESPONSE_CODE_AUTHENTICATION_ERROR, $res->getCode());
+        $this->assertInstanceOf(SMSModeDeleteSubaccountResponse::class, $res);
+        $this->assertEquals(SMSModeDeleteSubaccountResponse::RESPONSE_CODE_AUTHENTICATION_ERROR, $res->getCode());
         $this->assertContains("Votre authentification a échoué", $res->getDescription());
     }
 

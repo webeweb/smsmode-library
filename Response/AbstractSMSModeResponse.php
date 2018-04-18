@@ -46,18 +46,14 @@ abstract class AbstractSMSModeResponse implements SMSModeResponseInterface {
     }
 
     /**
-     * Get the code.
-     *
-     * @return integer Returns the code.
+     * {@inheritdoc}
      */
     final public function getCode() {
         return $this->code;
     }
 
     /**
-     * Description.
-     *
-     * @return string Returns the description.
+     * {@inheritdoc}.
      */
     final public function getDescription() {
         return $this->description;

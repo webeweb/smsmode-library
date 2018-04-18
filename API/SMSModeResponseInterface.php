@@ -250,4 +250,17 @@ interface SMSModeResponseInterface {
      */
     const RESPONSE_DESC_TRANSFER_CARRIED_OUT = "Transfert effectué";
 
+    /**
+     * Get the code.
+     *
+     * @return integer Returns the code.
+     */
+    public function getCode();
+
+    /**
+     * Get the description.
+     *
+     * @return string Returns the description.
+     */
+    public function getDescription();
 }

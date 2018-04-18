@@ -23,9 +23,8 @@ use WBW\Library\SMSMode\Response\SMSModeReceptionReportResponse;
  *
  * @author webeweb <https://github.com/webeweb/>
  * @package WBW\Library\SMSMode\Request
- * @final
  */
-final class SMSModeReceptionReportRequest implements SMSModeRequestInterface {
+class SMSModeReceptionReportRequest implements SMSModeRequestInterface {
 
     /**
      * SMS id.

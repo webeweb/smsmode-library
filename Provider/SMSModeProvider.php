@@ -24,9 +24,8 @@ use WBW\Library\SMSMode\Authentication\SMSModeAuthentication;
  *
  * @author webeweb <https://github.com/webeweb/>
  * @package WBW\Library\SMSMode\Provider
- * @final
  */
-final class SMSModeProvider {
+class SMSModeProvider {
 
     /**
      * Authentication.

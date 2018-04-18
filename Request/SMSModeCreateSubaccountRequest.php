@@ -25,9 +25,8 @@ use WBW\Library\SMSMode\Response\SMSModeCreateSubaccountResponse;
  *
  * @author webeweb <https://github.com/webeweb/>
  * @package WBW\Library\SMSMode\Request
- * @final
  */
-final class SMSModeCreateSubaccountRequest implements SMSModeRequestInterface {
+class SMSModeCreateSubaccountRequest implements SMSModeRequestInterface {
 
     /**
      * Address.

@@ -23,9 +23,8 @@ use WBW\Library\SMSMode\Response\SMSModeDeleteSubaccountResponse;
  *
  * @author webeweb <https://github.com/webeweb/>
  * @package WBW\Library\SMSMode\Request
- * @final
  */
-final class SMSModeDeleteSubaccountRequest implements SMSModeRequestInterface {
+class SMSModeDeleteSubaccountRequest implements SMSModeRequestInterface {
 
     /**
      * Username.

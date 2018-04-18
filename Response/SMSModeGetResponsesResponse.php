@@ -15,16 +15,15 @@ use DateTime;
 use WBW\Library\SMSMode\API\SMSModeRequestInterface;
 
 /**
- * SMSModeGetResponsesResponse
+ * sMsmode get responses response.
  *
  * cf. 13 Récupération des SMS réponses
  * 	<https://www.smsmode.com/pdf/fiche-api-http.pdf>
  *
  * @author webeweb <https://github.com/webeweb/>
  * @package WBW\Library\SMSMode\Response
- * @final
  */
-final class SMSModeGetResponsesResponse extends AbstractSMSModeResponse {
+class SMSModeGetResponsesResponse extends AbstractSMSModeResponse {
 
     /**
      * From.

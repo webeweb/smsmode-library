@@ -24,9 +24,8 @@ use WBW\Library\SMSMode\Response\SMSModeCreditTransferResponse;
  *
  * @author webeweb <https://github.com/webeweb/>
  * @package WBW\Library\SMSMode\Request
- * @final
  */
-final class SMSModeCreditTransferRequest implements SMSModeRequestInterface {
+class SMSModeCreditTransferRequest implements SMSModeRequestInterface {
 
     /**
      * Credit.

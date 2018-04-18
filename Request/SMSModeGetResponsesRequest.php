@@ -25,9 +25,8 @@ use WBW\Library\SMSMode\Response\SMSModeGetResponsesResponse;
  *
  * @author webeweb <https://github.com/webeweb/>
  * @package WBW\Library\SMSMode\Request
- * @final
  */
-final class SMSModeGetResponsesRequest implements SMSModeRequestInterface {
+class SMSModeGetResponsesRequest implements SMSModeRequestInterface {
 
     /**
      * End date.

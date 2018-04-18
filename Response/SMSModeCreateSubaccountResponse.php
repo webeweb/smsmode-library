@@ -19,8 +19,7 @@ namespace WBW\Library\SMSMode\Response;
  *
  * @author webeweb <https://github.com/webeweb/>
  * @package WBW\Library\SMSMode\Response
- * @final
  */
-final class SMSModeCreateSubaccountResponse extends AbstractSMSModeResponse {
+class SMSModeCreateSubaccountResponse extends AbstractSMSModeResponse {
 
 }

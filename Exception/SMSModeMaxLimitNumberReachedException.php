@@ -16,9 +16,8 @@ namespace WBW\Library\SMSMode\Exception;
  *
  * @author webeweb <https://github.com/webeweb/>
  * @package WBW\Library\SMSMode\Exception
- * @final
  */
-final class SMSModeMaxLimitNumberReachedException extends AbstractSMSModeException {
+class SMSModeMaxLimitNumberReachedException extends AbstractSMSModeException {
 
     /**
      * Constructor.

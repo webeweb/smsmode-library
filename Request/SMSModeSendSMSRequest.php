@@ -29,9 +29,8 @@ use WBW\Library\SMSMode\Response\SMSModeSendSMSResponse;
  *
  * @author webeweb <https://github.com/webeweb/>
  * @package WBW\Library\SMSMode\Request
- * @final
  */
-final class SMSModeSendSMSRequest implements SMSModeRequestInterface, SMSModeMessageInterface {
+class SMSModeSendSMSRequest implements SMSModeRequestInterface, SMSModeMessageInterface {
 
     /**
      * Customer reference.

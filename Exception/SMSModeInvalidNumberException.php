@@ -16,9 +16,8 @@ namespace WBW\Library\SMSMode\Exception;
  *
  * @author webeweb <https://github.com/webeweb/>
  * @package WBW\Library\SMSMode\Exception
- * @final
  */
-final class SMSModeInvalidNumberException extends AbstractSMSModeException {
+class SMSModeInvalidNumberException extends AbstractSMSModeException {
 
     /**
      * Constructor.

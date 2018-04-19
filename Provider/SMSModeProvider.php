@@ -72,6 +72,7 @@ class SMSModeProvider {
         $cURLRequest = new CURLGetRequest(new CURLConfiguration(), $this->request->getResourcePath());
         $cURLRequest->getConfiguration()->setDebug($this->debug);
         $cURLRequest->getConfiguration()->setHost(SMSModeRequestInterface::HOST);
+        $cURLRequest->getConfiguration()->setUserAgent("webeweb/smsmode-library");
 
         // Add each query data.
         foreach ($this->authentication->toArray() as $key => $value) {

@@ -65,8 +65,8 @@ final class SMSModeProviderTest extends PHPUnit_Framework_TestCase {
 
         $obj = new SMSModeProvider($this->authentication, $this->request);
 
-        $this->assertEquals($this->authentication, $obj->getAuthentication());
-        $this->assertEquals($this->request, $obj->getRequest());
+        $this->assertSame($this->authentication, $obj->getAuthentication());
+        $this->assertSame($this->request, $obj->getRequest());
         $this->assertFalse($obj->getDebug());
     }
 

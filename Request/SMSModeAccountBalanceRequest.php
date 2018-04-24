@@ -23,7 +23,7 @@ use WBW\Library\SMSMode\Response\SMSModeAccountBalanceResponse;
  * @author webeweb <https://github.com/webeweb/>
  * @package WBW\Library\SMSMode\Request
  */
-final class SMSModeAccountBalanceRequest implements SMSModeRequestInterface {
+class SMSModeAccountBalanceRequest implements SMSModeRequestInterface {
 
     /**
      * Constructor.

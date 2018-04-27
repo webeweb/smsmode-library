@@ -38,21 +38,21 @@ Composer documentation.
 ## Usage
 
 ```php
-	// Create the provider.
-	$provider = new SMSModeProvider(new SMSModeAuthentication(), new SMSModeSendSMSRequest());
+    // Create the provider.
+    $provider = new SMSModeProvider(new SMSModeAuthentication(), new SMSModeSendSMSRequest());
 
-	// Initialize the authentication.
-	$provider->getAuthentication()->setUsername("username");
-	$provider->getAuthentication()->setPassword("password");
+    // Initialize the authentication.
+    $provider->getAuthentication()->setUsername("username");
+    $provider->getAuthentication()->setPassword("password");
 
-	// Initialize the request.
-	$provider->getRequest()->addNumber("33612345678");
-	$provider->getRequest()->setMessage("Hello world !");
-	$provider->getRequest()->setSender("sender");
-	$provider->getRequest()->setStop(SMSModeSendSMSRequest::STOP_ONLY);
+    // Initialize the request.
+    $provider->getRequest()->addNumber("33612345678");
+    $provider->getRequest()->setMessage("Hello world !");
+    $provider->getRequest()->setSender("sender");
+    $provider->getRequest()->setStop(SMSModeSendSMSRequest::STOP_ONLY);
 
-	// Call API.
-	$response = $provider->callAPI();
+    // Call API.
+    $response = $provider->callAPI();
 ```
 
 ## Testing

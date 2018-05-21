@@ -16,14 +16,15 @@
         <whitelist>
             <directory>./</directory>
             <exclude>
+                <directory>Resources</directory>
                 <directory>Tests</directory>
                 <directory>vendor</directory>
             </exclude>
         </whitelist>
     </filter>
-	<testsuites>
-		<testsuite name="webeweb/smsmode-library">
-			<directory>./Tests</directory>
-		</testsuite>
-	</testsuites>
+    <testsuites>
+        <testsuite name="webeweb/smsmode-library">
+            <directory>./Tests</directory>
+        </testsuite>
+    </testsuites>
 </phpunit>

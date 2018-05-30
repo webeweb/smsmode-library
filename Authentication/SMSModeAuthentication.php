@@ -12,6 +12,7 @@
 namespace WBW\Library\SMSMode\Authentication;
 
 use WBW\Library\Core\Exception\Pointer\NullPointerException;
+use WBW\Library\Core\Security\PasswordAuthentication;
 
 /**
  * sMsmode authentication.
@@ -19,14 +20,7 @@ use WBW\Library\Core\Exception\Pointer\NullPointerException;
  * @author webeweb <https://github.com/webeweb/>
  * @package WBW\Library\SMSMode\Authentication
  */
-class SMSModeAuthentication {
-
-    /**
-     * Password.
-     *
-     * @var string
-     */
-    private $password;
+class SMSModeAuthentication extends PasswordAuthentication {
 
     /**
      * Token.
@@ -36,26 +30,10 @@ class SMSModeAuthentication {
     private $token;
 
     /**
-     * Username.
-     *
-     * @var string
-     */
-    private $username;
-
-    /**
      * Constructor.
      */
     public function __construct() {
-        // NOTHING TO DO.
-    }
-
-    /**
-     * Get the password.
-     *
-     * @return string Returns the password.
-     */
-    public function getPassword() {
-        return $this->password;
+        parent::__construct(null, null);
     }
 
     /**
@@ -68,26 +46,6 @@ class SMSModeAuthentication {
     }
 
     /**
-     * Get the username.
-     *
-     * @return string Returns the username.
-     */
-    public function getUsername() {
-        return $this->username;
-    }
-
-    /**
-     * Set the password.
-     *
-     * @param string $password The password.
-     * @return SMSModeAuthentication Returns this sMsmode authentication.
-     */
-    public function setPassword($password) {
-        $this->password = $password;
-        return $this;
-    }
-
-    /**
      * Set the token.
      *
      * @param string $token The token.
@@ -95,17 +53,6 @@ class SMSModeAuthentication {
      */
     public function setToken($token) {
         $this->token = $token;
-        return $this;
-    }
-
-    /**
-     * Set the username.
-     *
-     * @param string $username The username.
-     * @return SMSModeAuthentication Returns this sMsmode authentication.
-     */
-    public function setUsername($username) {
-        $this->username = $username;
         return $this;
     }
 
@@ -126,16 +73,16 @@ class SMSModeAuthentication {
         }
 
         // Check the required attribute "username".
-        if (null === $this->username) {
+        if (null === $this->getUsername()) {
             throw new NullPointerException("The attribute \"username\" is missing");
         }
-        $output["pseudo"] = $this->username;
+        $output["pseudo"] = $this->getUsername();
 
         // Check the required attribute "password".
-        if (null === $this->password) {
+        if (null === $this->getPassword()) {
             throw new NullPointerException("The attribute \"password\" is missing");
         }
-        $output["pass"] = $this->password;
+        $output["pass"] = $this->getPassword();
 
         // Return the output.
         return $output;

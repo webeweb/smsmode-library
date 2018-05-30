@@ -82,7 +82,7 @@ $ vendor/bin/phpunit
 
 - ~~[2 Authentication](https://www.smsmode.com/pdf/fiche-api-http.pdf)~~
 - ~~[3 Send SMS](https://www.smsmode.com/pdf/fiche-api-http.pdf)~~
-- ~~[4 Send report](https://www.smsmode.com/pdf/fiche-api-http.pdf)~~
+- ~~[4 Reception report](https://www.smsmode.com/pdf/fiche-api-http.pdf)~~
 - ~~[5 Account balance](https://www.smsmode.com/pdf/fiche-api-http.pdf)~~
 - ~~[6 Create subaccount](https://www.smsmode.com/pdf/fiche-api-http.pdf)~~
 - ~~[7 Credit transfer](https://www.smsmode.com/pdf/fiche-api-http.pdf)~~

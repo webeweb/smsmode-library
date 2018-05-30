@@ -55,6 +55,8 @@ Composer documentation.
     $response = $provider->callAPI();
 ```
 
+---
+
 ## Testing
 
 To test the package, is better to clone this repository on your computer.
@@ -76,7 +78,7 @@ $ vendor/bin/phpunit
 
 ---
 
-## TODO
+## Todo
 
 - ~~[2 Authentication](https://www.smsmode.com/pdf/fiche-api-http.pdf)~~
 - ~~[3 Send SMS](https://www.smsmode.com/pdf/fiche-api-http.pdf)~~

@@ -76,6 +76,27 @@ $ vendor/bin/phpunit
 
 ---
 
+## TODO
+
+- ~~[2 Authentication](https://www.smsmode.com/pdf/fiche-api-http.pdf)~~
+- ~~[3 Send SMS](https://www.smsmode.com/pdf/fiche-api-http.pdf)~~
+- ~~[4 Send report](https://www.smsmode.com/pdf/fiche-api-http.pdf)~~
+- ~~[5 Account balance](https://www.smsmode.com/pdf/fiche-api-http.pdf)~~
+- ~~[6 Create subaccount](https://www.smsmode.com/pdf/fiche-api-http.pdf)~~
+- ~~[7 Credit transfer](https://www.smsmode.com/pdf/fiche-api-http.pdf)~~
+- [8 Add contact](https://www.smsmode.com/pdf/fiche-api-http.pdf)
+- [9 Delete SMS](https://www.smsmode.com/pdf/fiche-api-http.pdf)
+- [10 Sended SMS list](https://www.smsmode.com/pdf/fiche-api-http.pdf)
+- [11 Get SMS status](https://www.smsmode.com/pdf/fiche-api-http.pdf)
+- [12 Report notification automatic](https://www.smsmode.com/pdf/fiche-api-http.pdf)
+- [13 Send SMS with response allowed and notification](https://www.smsmode.com/pdf/fiche-api-http.pdf)
+- [14 Get SMS responses](https://www.smsmode.com/pdf/fiche-api-http.pdf)
+- [15 Send vocal SMS](https://www.smsmode.com/pdf/fiche-api-http.pdf)
+- [16 Send unicode SMS](https://www.smsmode.com/pdf/fiche-api-http.pdf)
+- [17 Send SMS in batch mode](https://www.smsmode.com/pdf/fiche-api-http.pdf)
+
+---
+
 ## License
 
 smsmode-library is released under the LGPL License. See the bundled [LICENSE](LICENSE)

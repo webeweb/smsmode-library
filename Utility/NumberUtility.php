@@ -27,9 +27,9 @@ final class NumberUtility {
      * @return string Returns the decoded number.
      */
     public static function decodeNumber($number) {
-        $result = preg_replace("/^336/", "06", $number, 1);
-        $output = preg_replace("/^337/", "07", $result, 1);
-        return $output;
+        $output = preg_replace("/^336/", "06", $number, 1);
+        $result = preg_replace("/^337/", "07", $output, 1);
+        return $result;
     }
 
     /**
@@ -39,9 +39,9 @@ final class NumberUtility {
      * @return string Returns the encoded number.
      */
     public static function encodeNumber($number) {
-        $result = preg_replace("/^06/", "336", $number, 1);
-        $output = preg_replace("/^07/", "337", $result, 1);
-        return $output;
+        $output = preg_replace("/^06/", "336", $number, 1);
+        $result = preg_replace("/^07/", "337", $output, 1);
+        return $result;
     }
 
 }

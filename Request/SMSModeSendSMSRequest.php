@@ -54,7 +54,7 @@ class SMSModeSendSMSRequest implements SMSModeRequestInterface, SMSModeMessageIn
     private $message;
 
     /**
-     * Maximum messgae number.
+     * Maximum message number.
      *
      * @var integer
      */

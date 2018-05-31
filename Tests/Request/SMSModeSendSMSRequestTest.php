@@ -81,36 +81,6 @@ final class SMSModeSendSMSRequestTest extends PHPUnit_Framework_TestCase {
     }
 
     /**
-     * Tests the decodeNumber() method.
-     *
-     * @return void
-     */
-    public function testDecodeNumber() {
-
-        $obj = new SMSModeSendSMSRequest();
-
-        $this->assertEquals("0612345678", $obj->decodeNumber("33612345678"));
-        $this->assertEquals("0712345678", $obj->decodeNumber("33712345678"));
-        $this->assertEquals("0612345678", $obj->decodeNumber("0612345678"));
-        $this->assertEquals("0712345678", $obj->decodeNumber("0712345678"));
-    }
-
-    /**
-     * Tests the encodeNumber() method.
-     *
-     * @return void
-     */
-    public function testEncodeNumber() {
-
-        $obj = new SMSModeSendSMSRequest();
-
-        $this->assertEquals("33612345678", $obj->encodeNumber("0612345678"));
-        $this->assertEquals("33712345678", $obj->encodeNumber("0712345678"));
-        $this->assertEquals("33612345678", $obj->encodeNumber("33612345678"));
-        $this->assertEquals("33712345678", $obj->encodeNumber("33712345678"));
-    }
-
-    /**
      * Tests the parseResponse() method.
      *
      * @return void

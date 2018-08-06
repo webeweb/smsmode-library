@@ -16,32 +16,6 @@ namespace WBW\Library\SMSMode\Utility;
  *
  * @author webeweb <https://github.com/webeweb/>
  * @package WBW\Library\SMSMode\Utility
- * @final
+ * @deprecated
  */
-final class NumberUtility {
-
-    /**
-     * Decode a number.
-     *
-     * @param string $number The number.
-     * @return string Returns the decoded number.
-     */
-    public static function decodeNumber($number) {
-        $output = preg_replace("/^336/", "06", $number, 1);
-        $result = preg_replace("/^337/", "07", $output, 1);
-        return $result;
-    }
-
-    /**
-     * Encode a number.
-     *
-     * @param string $number The number.
-     * @return string Returns the encoded number.
-     */
-    public static function encodeNumber($number) {
-        $output = preg_replace("/^06/", "336", $number, 1);
-        $result = preg_replace("/^07/", "337", $output, 1);
-        return $result;
-    }
-
-}
+class_alias("WBW\Library\SMSMode\Helper\NumberHelper", "WBW\Library\SMSMode\Utility\NumberUtility");

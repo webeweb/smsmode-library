@@ -14,7 +14,7 @@ namespace WBW\Library\SMSMode\Request;
 use DateTime;
 use WBW\Library\Core\Exception\Argument\IllegalArgumentException;
 use WBW\Library\Core\Exception\Pointer\NullPointerException;
-use WBW\Library\Core\Utility\Argument\ArrayUtility;
+use WBW\Library\Core\Helper\Argument\ArrayHelper;
 use WBW\Library\SMSMode\API\SMSModeMessageInterface;
 use WBW\Library\SMSMode\API\SMSModeRequestInterface;
 use WBW\Library\SMSMode\Exception\SMSModeInvalidNumberException;
@@ -417,17 +417,17 @@ class SMSModeSendSMSRequest implements SMSModeRequestInterface, SMSModeMessageIn
         }
 
         // Check and add the optional attributes.
-        ArrayUtility::set($output, "classe_msg", $this->messageClass, [null]);
+        ArrayHelper::set($output, "classe_msg", $this->messageClass, [null]);
         if (null !== $this->sendDate) {
             $output["date_envoi"] = $this->sendDate->format(self::DATETIME_FORMAT);
         }
-        ArrayUtility::set($output, "refClient", $this->customerReference, [null]);
-        ArrayUtility::set($output, "emetteur", $this->sender, [null]);
-        ArrayUtility::set($output, "nbr_msg", $this->maxMessageNumber, [null]);
-        ArrayUtility::set($output, "notification_url", $this->notificationURL, [null]);
-        ArrayUtility::set($output, "notification_url", $this->notificationURL, [null]);
-        ArrayUtility::set($output, "notification_url_reponse", $this->responseNotificationURL, [null]);
-        ArrayUtility::set($output, "stop", $this->stop, [null]);
+        ArrayHelper::set($output, "refClient", $this->customerReference, [null]);
+        ArrayHelper::set($output, "emetteur", $this->sender, [null]);
+        ArrayHelper::set($output, "nbr_msg", $this->maxMessageNumber, [null]);
+        ArrayHelper::set($output, "notification_url", $this->notificationURL, [null]);
+        ArrayHelper::set($output, "notification_url", $this->notificationURL, [null]);
+        ArrayHelper::set($output, "notification_url_reponse", $this->responseNotificationURL, [null]);
+        ArrayHelper::set($output, "stop", $this->stop, [null]);
 
         // Return the output.
         return $output;

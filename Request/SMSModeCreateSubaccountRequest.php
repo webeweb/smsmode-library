@@ -13,7 +13,7 @@ namespace WBW\Library\SMSMode\Request;
 
 use DateTime;
 use WBW\Library\Core\Exception\Pointer\NullPointerException;
-use WBW\Library\Core\Utility\Argument\ArrayUtility;
+use WBW\Library\Core\Helper\Argument\ArrayHelper;
 use WBW\Library\SMSMode\API\SMSModeRequestInterface;
 use WBW\Library\SMSMode\Response\SMSModeCreateSubaccountResponse;
 
@@ -450,19 +450,19 @@ class SMSModeCreateSubaccountRequest implements SMSModeRequestInterface {
         $output["newPass"]   = $this->password;
 
         // Check and add the optional attributes.
-        ArrayUtility::set($output, "reference", $this->reference, [null]);
-        ArrayUtility::set($output, "nom", $this->lastname, [null]);
-        ArrayUtility::set($output, "prenom", $this->firstname, [null]);
-        ArrayUtility::set($output, "societe", $this->company, [null]);
-        ArrayUtility::set($output, "adresse", $this->address, [null]);
-        ArrayUtility::set($output, "ville", $this->city, [null]);
-        ArrayUtility::set($output, "codePostal", $this->postalCode, [null]);
-        ArrayUtility::set($output, "mobile", $this->mobilePhone, [null]);
-        ArrayUtility::set($output, "telephone", $this->phone, [null]);
-        ArrayUtility::set($output, "fax", $this->fax, [null]);
-        ArrayUtility::set($output, "email", $this->email, [null]);
+        ArrayHelper::set($output, "reference", $this->reference, [null]);
+        ArrayHelper::set($output, "nom", $this->lastname, [null]);
+        ArrayHelper::set($output, "prenom", $this->firstname, [null]);
+        ArrayHelper::set($output, "societe", $this->company, [null]);
+        ArrayHelper::set($output, "adresse", $this->address, [null]);
+        ArrayHelper::set($output, "ville", $this->city, [null]);
+        ArrayHelper::set($output, "codePostal", $this->postalCode, [null]);
+        ArrayHelper::set($output, "mobile", $this->mobilePhone, [null]);
+        ArrayHelper::set($output, "telephone", $this->phone, [null]);
+        ArrayHelper::set($output, "fax", $this->fax, [null]);
+        ArrayHelper::set($output, "email", $this->email, [null]);
         if (null !== $this->birthdate) {
-            ArrayUtility::set($output, "date", $this->birthdate->format(self::DATE_FORMAT), [null]);
+            ArrayHelper::set($output, "date", $this->birthdate->format(self::DATE_FORMAT), [null]);
         }
 
         // Return the output.

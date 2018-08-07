@@ -12,7 +12,7 @@
 namespace WBW\Library\SMSMode\Request;
 
 use WBW\Library\Core\Exception\Pointer\NullPointerException;
-use WBW\Library\Core\Utility\Argument\ArrayUtility;
+use WBW\Library\Core\Helper\Argument\ArrayHelper;
 use WBW\Library\SMSMode\API\SMSModeRequestInterface;
 use WBW\Library\SMSMode\Response\SMSModeCreditTransferResponse;
 
@@ -152,7 +152,7 @@ class SMSModeCreditTransferRequest implements SMSModeRequestInterface {
         $output["creditAmount"] = $this->credit;
 
         // Check and add the optional attributes.
-        ArrayUtility::set($output, "reference", $this->reference, [null]);
+        ArrayHelper::set($output, "reference", $this->reference, [null]);
 
         // Return the output.
         return $output;

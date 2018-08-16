@@ -6,14 +6,14 @@ checks:
 
 filter:
     excluded_paths:
-        - Tests/*
-        - vendor/*
+        - "Tests/*"
+        - "vendor/*"
 
 tools:
-    php_analyzer: true
-    php_code_sniffer: true
-    php_cpd: true
-    php_cs_fixer: true
-    php_loc: true
+    php_analyzer:      true
+    php_code_sniffer:  true
+    php_cpd:           true
+    php_cs_fixer:      true
+    php_loc:           true
     php_mess_detector: true
-    php_pdepend: true
+    php_pdepend:       true

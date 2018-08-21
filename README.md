@@ -5,9 +5,6 @@ smsmode-library
 
 Integrate sMsmode API with your projects.
 
-`smsmode-library` uses a rolling release based on git master branch which is
-considered stable.
-
 ---
 
 ## Compatibility

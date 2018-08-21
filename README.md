@@ -3,7 +3,7 @@ smsmode-library
 
 [![Build Status](https://travis-ci.org/webeweb/smsmode-library.svg?branch=master)](https://travis-ci.org/webeweb/smsmode-library) [![Coverage Status](https://coveralls.io/repos/github/webeweb/smsmode-library/badge.svg?branch=master)](https://coveralls.io/github/webeweb/smsmode-library?branch=master) [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/webeweb/smsmode-library/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/webeweb/smsmode-library/?branch=master) [![Latest Stable Version](https://poser.pugx.org/webeweb/smsmode-library/v/stable)](https://packagist.org/packages/webeweb/smsmode-library) [![Latest Unstable Version](https://poser.pugx.org/webeweb/smsmode-library/v/unstable)](https://packagist.org/packages/webeweb/smsmode-library) [![License](https://poser.pugx.org/webeweb/smsmode-library/license)](https://packagist.org/packages/webeweb/smsmode-library) [![composer.lock](https://poser.pugx.org/webeweb/smsmode-library/composerlock)](https://packagist.org/packages/webeweb/smsmode-library)
 
-Integrate sMsmode API in your projects.
+Integrate sMsmode API with your projects.
 
 `smsmode-library` uses a rolling release based on git master branch which is
 considered stable.

@@ -133,7 +133,7 @@ class SMSModeProvider {
      * @param boolean $debug The debug.
      * @return SMSModeProvider Returns this sMsmode provider.
      */
-    public function setDebug($debug = false) {
+    public function setDebug($debug) {
         $this->debug = $debug;
         return $this;
     }

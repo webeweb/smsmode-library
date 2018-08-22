@@ -13,7 +13,7 @@
     ],
     "require": {
         "php": "^5.6|^7.0",
-        "webeweb/core-library": "^3.0",
+        "webeweb/core-library": "^4.0",
         "webeweb/curl-library": "^1.0"
     },
     "require-dev": {

@@ -12,7 +12,7 @@
 namespace WBW\Library\SMSMode\Request;
 
 use WBW\Library\Core\Exception\Pointer\NullPointerException;
-use WBW\Library\Core\Helper\Argument\ArrayHelper;
+use WBW\Library\Core\Argument\ArrayHelper;
 use WBW\Library\SMSMode\API\SMSModeRequestInterface;
 use WBW\Library\SMSMode\Response\SMSModeCreditTransferResponse;
 

@@ -62,7 +62,7 @@ class SMSModeProvider {
     /**
      * Call the API.
      *
-     * @return SMSModeResponseInterface Returns the sMsmode response.
+     * @return SMSModeResponseInterface Returns the response.
      * @throws NullPointerException Throws a null pointer exception if a setting is missing.
      * @throws IllegalArgumentException Throws an illegal argument exception if a setting is invalid.
      */
@@ -120,7 +120,7 @@ class SMSModeProvider {
      * Set the authentication.
      *
      * @param SMSModeAuthentication $authentication The authentication.
-     * @return SMSModeProvider Returns this sMsmode provider.
+     * @return SMSModeProvider Returns this provider.
      */
     protected function setAuthentication(SMSModeAuthentication $authentication) {
         $this->authentication = $authentication;
@@ -131,7 +131,7 @@ class SMSModeProvider {
      * Set the debug.
      *
      * @param boolean $debug The debug.
-     * @return SMSModeProvider Returns this sMsmode provider.
+     * @return SMSModeProvider Returns this provider.
      */
     public function setDebug($debug) {
         $this->debug = $debug;
@@ -142,7 +142,7 @@ class SMSModeProvider {
      * Set the request.
      *
      * @param SMSModeRequestInterface $request The request.
-     * @return SMSModeProvider Returns this sMsmode provider.
+     * @return SMSModeProvider Returns this provider.
      */
     protected function setRequest(SMSModeRequestInterface $request) {
         $this->request = $request;

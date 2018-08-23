@@ -100,7 +100,7 @@ class SMSModeCreditTransferRequest implements SMSModeRequestInterface {
      * Set the credit.
      *
      * @param integer $credit The credit.
-     * @return SMSModeCreditTransferRequest Returns this sMsmode credit transfer request.
+     * @return SMSModeCreditTransferRequest Returns this credit transfer request.
      */
     public function setCredit($credit) {
         $this->credit = $credit;
@@ -111,7 +111,7 @@ class SMSModeCreditTransferRequest implements SMSModeRequestInterface {
      * Set the reference.
      *
      * @param string $reference The reference.
-     * @return SMSModeCreditTransferRequest Returns this sMsmode credit transfer request.
+     * @return SMSModeCreditTransferRequest Returns this credit transfer request.
      */
     public function setReference($reference) {
         $this->reference = $reference;
@@ -122,7 +122,7 @@ class SMSModeCreditTransferRequest implements SMSModeRequestInterface {
      * Set the username.
      *
      * @param string $username The username.
-     * @return SMSModeCreditTransferRequest Returns this sMsmode credit transfer request.
+     * @return SMSModeCreditTransferRequest Returns this credit transfer request.
      */
     public function setUsername($username) {
         $this->username = $username;

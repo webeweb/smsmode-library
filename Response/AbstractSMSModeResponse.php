@@ -81,7 +81,7 @@ abstract class AbstractSMSModeResponse implements SMSModeResponseInterface {
      * Set the code.
      *
      * @param integer $code Returns the code.
-     * @return AbstractSMSModeResponse Returns this sMsmode response.
+     * @return AbstractSMSModeResponse Returns this response.
      */
     final protected function setCode($code) {
         $this->code = $code;
@@ -92,7 +92,7 @@ abstract class AbstractSMSModeResponse implements SMSModeResponseInterface {
      * Set the description.
      *
      * @param string $description The description.
-     * @return AbstractSMSModeResponse Returns this sMsmode response.
+     * @return AbstractSMSModeResponse Returns this response.
      */
     final protected function setDescription($description) {
         $this->description = $description;

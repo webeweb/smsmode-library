@@ -49,7 +49,7 @@ class SMSModeAuthentication extends PasswordAuthentication {
      * Set the token.
      *
      * @param string $token The token.
-     * @return SMSModeAuthentication Returns this sMsmode authentication.
+     * @return SMSModeAuthentication Returns this authentication.
      */
     public function setToken($token) {
         $this->token = $token;
@@ -60,7 +60,7 @@ class SMSModeAuthentication extends PasswordAuthentication {
      * Convert into an array representing this instance.
      *
      * @return array Returns an array representing this instance.
-     * @throws NullPointerException Throws a sMsmode missing setting exception if a setting is missing.
+     * @throws NullPointerException Throws a missing setting exception if a setting is missing.
      */
     public function toArray() {
 

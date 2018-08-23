@@ -67,7 +67,7 @@ class SMSModeDeleteSubaccountRequest implements SMSModeRequestInterface {
      * Set the username.
      *
      * @param string $username The username.
-     * @return SMSModeDeleteSubaccountRequest Returns this sMsmode delete subaccount request.
+     * @return SMSModeDeleteSubaccountRequest Returns this delete subaccount request.
      */
     public function setUsername($username) {
         $this->username = $username;

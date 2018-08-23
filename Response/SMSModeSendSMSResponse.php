@@ -59,7 +59,7 @@ class SMSModeSendSMSResponse extends AbstractSMSModeResponse {
      * Set the SMS id.
      *
      * @param string $smsID The SMS id.
-     * @return SMSModeSendSMSResponse Returns this sMsmode send SMS response.
+     * @return SMSModeSendSMSResponse Returns this send SMS response.
      */
     public function setSmsID($smsID) {
         $this->smsID = $smsID;

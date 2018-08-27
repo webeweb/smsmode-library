@@ -39,7 +39,7 @@ final class SMSModeSendSMSRequestTest extends PHPUnit_Framework_TestCase {
 
         $obj = new SMSModeSendSMSRequest();
 
-        //
+        // ===
         try {
 
             $obj->addNumber("number");
@@ -49,7 +49,7 @@ final class SMSModeSendSMSRequestTest extends PHPUnit_Framework_TestCase {
             $this->assertEquals("The number \"number\" is invalid", $ex->getMessage());
         }
 
-        //
+        // ===
         try {
 
             for ($i = 0; $i < 302; ++$i) {
@@ -123,7 +123,7 @@ final class SMSModeSendSMSRequestTest extends PHPUnit_Framework_TestCase {
         $obj = new SMSModeSendSMSRequest();
         $obj->setMessageClass(SMSModeSendSMSRequest::MESSAGE_CLASS_SMS_PRO);
 
-        //
+        // ===
         try {
 
             $obj->toArray();
@@ -133,7 +133,7 @@ final class SMSModeSendSMSRequestTest extends PHPUnit_Framework_TestCase {
             $this->assertEquals("The attribute \"message\" is missing", $ex->getMessage());
         }
 
-        //
+        // ===
         try {
 
             $obj->setMessage("message");
@@ -144,18 +144,18 @@ final class SMSModeSendSMSRequestTest extends PHPUnit_Framework_TestCase {
             $this->assertEquals("The attribute \"number\" or \"group\" is missing", $ex->getMessage());
         }
 
-        //
+        // ===
         $obj->addNumber("0612345678");
         $res01 = ["message" => "message", "numero" => "0612345678", "classe_msg" => 2, "nbr_msg" => 5];
         $this->assertEquals($res01, $obj->toArray());
 
-        //
+        // ===
         $obj->removeNumber("0612345678");
         $obj->setGroup("group");
         $res02 = ["message" => "message", "groupe" => "group", "classe_msg" => 2, "nbr_msg" => 5];
         $this->assertEquals($res02, $obj->toArray());
 
-        //
+        // ===
         try {
 
             $obj->setMessageClass("exception");
@@ -165,47 +165,47 @@ final class SMSModeSendSMSRequestTest extends PHPUnit_Framework_TestCase {
             $this->assertEquals("The message class \"exception\" is invalid", $ex->getMessage());
         }
 
-        //
+        // ===
         $obj->setSendDate(new DateTime("2017-09-07 10:00:00"));
         $res03 = ["message" => "message", "groupe" => "group", "classe_msg" => 2, "date_envoi" => "07092017-10:00", "nbr_msg" => 5];
         $this->assertEquals($res03, $obj->toArray());
 
-        //
+        // ===
         $obj->setSendDate(null);
         $obj->setCustomerReference("customerReference");
         $res04 = ["message" => "message", "groupe" => "group", "classe_msg" => 2, "refClient" => "customerReference", "nbr_msg" => 5];
         $this->assertEquals($res04, $obj->toArray());
 
-        //
+        // ===
         $obj->setCustomerReference(null);
         $obj->setSender("sender");
         $res05 = ["message" => "message", "groupe" => "group", "classe_msg" => 2, "emetteur" => "sender", "nbr_msg" => 5];
         $this->assertEquals($res05, $obj->toArray());
 
-        //
+        // ===
         $obj->setSender(null);
         $obj->setMaxMessageNumber(1);
         $res06 = ["message" => "message", "groupe" => "group", "classe_msg" => 2, "nbr_msg" => 1];
         $this->assertEquals($res06, $obj->toArray());
 
-        //
+        // ===
         $obj->setNotificationURL("notificationURL");
         $res07 = ["message" => "message", "groupe" => "group", "classe_msg" => 2, "nbr_msg" => 1, "notification_url" => "notificationURL"];
         $this->assertEquals($res07, $obj->toArray());
 
-        //
+        // ===
         $obj->setNotificationURL(null);
         $obj->setResponseNotificationURL("responseNotificationURL");
         $res08 = ["message" => "message", "groupe" => "group", "classe_msg" => 2, "nbr_msg" => 1, "notification_url_reponse" => "responseNotificationURL"];
         $this->assertEquals($res08, $obj->toArray());
 
-        //
+        // ===
         $obj->setResponseNotificationURL(null);
         $obj->setStop(SMSModeSendSMSRequest::STOP_ALWAYS);
         $res09 = ["message" => "message", "groupe" => "group", "classe_msg" => 2, "nbr_msg" => 1, "stop" => SMSModeSendSMSRequest::STOP_ALWAYS];
         $this->assertEquals($res09, $obj->toArray());
 
-        //
+        // ===
         $obj->setStop(null);
         $res10 = ["message" => "message", "groupe" => "group", "classe_msg" => 2, "nbr_msg" => 1];
         $this->assertEquals($res10, $obj->toArray());

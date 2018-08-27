@@ -64,7 +64,7 @@ final class SMSModeCreditTransferRequestTest extends PHPUnit_Framework_TestCase 
 
         $obj = new SMSModeCreditTransferRequest();
 
-        //
+        // ===
         try {
 
             $obj->toArray();
@@ -75,7 +75,7 @@ final class SMSModeCreditTransferRequestTest extends PHPUnit_Framework_TestCase 
         }
 
 
-        //
+        // ===
         try {
 
             $obj->setUsername("username");
@@ -86,12 +86,12 @@ final class SMSModeCreditTransferRequestTest extends PHPUnit_Framework_TestCase 
             $this->assertEquals("The attribute \"credit\" is missing", $ex->getMessage());
         }
 
-        //
+        // ===
         $obj->setCredit(212);
         $res1 = ["targetPseudo" => "username", "creditAmount" => 212];
         $this->assertEquals($res1, $obj->toArray());
 
-        //
+        // ===
         $obj->setReference("reference");
         $res2 = ["targetPseudo" => "username", "creditAmount" => 212, "reference" => "reference"];
         $this->assertEquals($res2, $obj->toArray());

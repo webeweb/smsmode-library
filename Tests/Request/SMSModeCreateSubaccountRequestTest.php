@@ -99,55 +99,55 @@ final class SMSModeCreateSubaccountRequestTest extends PHPUnit_Framework_TestCas
 
         //
         $obj->setPassword("password");
-        $res1 = ["newPseudo" => "username", "newPass" => "password"];
-        $this->assertEquals($res1, $obj->toArray());
+        $res01 = ["newPseudo" => "username", "newPass" => "password"];
+        $this->assertEquals($res01, $obj->toArray());
 
         //
         $obj->setReference("reference");
-        $res2 = ["newPseudo" => "username", "newPass" => "password", "reference" => "reference"];
-        $this->assertEquals($res2, $obj->toArray());
+        $res02 = ["newPseudo" => "username", "newPass" => "password", "reference" => "reference"];
+        $this->assertEquals($res02, $obj->toArray());
 
         //
         $obj->setReference(null);
         $obj->setLastname("lastname");
-        $res3 = ["newPseudo" => "username", "newPass" => "password", "nom" => "lastname"];
-        $this->assertEquals($res3, $obj->toArray());
+        $res03 = ["newPseudo" => "username", "newPass" => "password", "nom" => "lastname"];
+        $this->assertEquals($res03, $obj->toArray());
 
         //
         $obj->setLastname(null);
         $obj->setFirstname("firstname");
-        $res4 = ["newPseudo" => "username", "newPass" => "password", "prenom" => "firstname"];
-        $this->assertEquals($res4, $obj->toArray());
+        $res04 = ["newPseudo" => "username", "newPass" => "password", "prenom" => "firstname"];
+        $this->assertEquals($res04, $obj->toArray());
 
         //
         $obj->setFirstname(null);
         $obj->setCompany("company");
-        $res5 = ["newPseudo" => "username", "newPass" => "password", "societe" => "company"];
-        $this->assertEquals($res5, $obj->toArray());
+        $res05 = ["newPseudo" => "username", "newPass" => "password", "societe" => "company"];
+        $this->assertEquals($res05, $obj->toArray());
 
         //
         $obj->setCompany(null);
         $obj->setAddress("address");
-        $res6 = ["newPseudo" => "username", "newPass" => "password", "adresse" => "address"];
-        $this->assertEquals($res6, $obj->toArray());
+        $res06 = ["newPseudo" => "username", "newPass" => "password", "adresse" => "address"];
+        $this->assertEquals($res06, $obj->toArray());
 
         //
         $obj->setAddress(null);
         $obj->setCity("city");
-        $res7 = ["newPseudo" => "username", "newPass" => "password", "ville" => "city"];
-        $this->assertEquals($res7, $obj->toArray());
+        $res07 = ["newPseudo" => "username", "newPass" => "password", "ville" => "city"];
+        $this->assertEquals($res07, $obj->toArray());
 
         //
         $obj->setCity(null);
         $obj->setPostalCode("postalCode");
-        $res8 = ["newPseudo" => "username", "newPass" => "password", "codePostal" => "postalCode"];
-        $this->assertEquals($res8, $obj->toArray());
+        $res08 = ["newPseudo" => "username", "newPass" => "password", "codePostal" => "postalCode"];
+        $this->assertEquals($res08, $obj->toArray());
 
         //
         $obj->setPostalCode(null);
         $obj->setMobilePhone("mobilePhone");
-        $res9 = ["newPseudo" => "username", "newPass" => "password", "mobile" => "mobilePhone"];
-        $this->assertEquals($res9, $obj->toArray());
+        $res09 = ["newPseudo" => "username", "newPass" => "password", "mobile" => "mobilePhone"];
+        $this->assertEquals($res09, $obj->toArray());
 
         //
         $obj->setMobilePhone(null);

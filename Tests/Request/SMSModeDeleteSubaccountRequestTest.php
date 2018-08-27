@@ -62,13 +62,17 @@ final class SMSModeDeleteSubaccountRequestTest extends PHPUnit_Framework_TestCas
 
         $obj = new SMSModeDeleteSubaccountRequest();
 
+        //
         try {
+
             $obj->toArray();
         } catch (Exception $ex) {
+
             $this->assertInstanceOf(NullPointerException::class, $ex);
             $this->assertEquals("The attribute \"username\" is missing", $ex->getMessage());
         }
 
+        //
         $obj->setUsername("username");
         $res1 = ["pseudoToDelete" => "username"];
         $this->assertEquals($res1, $obj->toArray());

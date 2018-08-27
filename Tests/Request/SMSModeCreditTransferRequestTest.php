@@ -64,26 +64,34 @@ final class SMSModeCreditTransferRequestTest extends PHPUnit_Framework_TestCase 
 
         $obj = new SMSModeCreditTransferRequest();
 
+        //
         try {
+
             $obj->toArray();
         } catch (Exception $ex) {
+
             $this->assertInstanceOf(NullPointerException::class, $ex);
             $this->assertEquals("The attribute \"username\" is missing", $ex->getMessage());
         }
 
-        $obj->setUsername("username");
 
+        //
         try {
+
+            $obj->setUsername("username");
             $obj->toArray();
         } catch (Exception $ex) {
+
             $this->assertInstanceOf(NullPointerException::class, $ex);
             $this->assertEquals("The attribute \"credit\" is missing", $ex->getMessage());
         }
 
+        //
         $obj->setCredit(212);
         $res1 = ["targetPseudo" => "username", "creditAmount" => 212];
         $this->assertEquals($res1, $obj->toArray());
 
+        //
         $obj->setReference("reference");
         $res2 = ["targetPseudo" => "username", "creditAmount" => 212, "reference" => "reference"];
         $this->assertEquals($res2, $obj->toArray());

@@ -67,64 +67,84 @@ final class SMSModeGetResponsesRequestTest extends PHPUnit_Framework_TestCase {
 
         $obj = new SMSModeGetResponsesRequest();
 
+        //
         $res1 = [];
         $this->assertEquals($res1, $obj->toArray());
 
-        $obj->setStart(0);
+        //
         try {
+
+            $obj->setStart(0);
             $obj->toArray();
         } catch (Exception $ex) {
+
             $this->assertInstanceOf(NullPointerException::class, $ex);
             $this->assertEquals("The attribute \"offset\" is missing", $ex->getMessage());
         }
 
-        $obj->setStart(null);
-        $obj->setOffset(0);
+        //
         try {
+
+            $obj->setStart(null);
+            $obj->setOffset(0);
             $obj->toArray();
         } catch (Exception $ex) {
+
             $this->assertInstanceOf(NullPointerException::class, $ex);
             $this->assertEquals("The attribute \"start\" is missing", $ex->getMessage());
         }
 
-        $obj->setStart(0);
+        //
         try {
+
+            $obj->setStart(0);
             $obj->toArray();
         } catch (Exception $ex) {
+
             $this->assertInstanceOf(IllegalArgumentException::class, $ex);
             $this->assertEquals("The offset must be greater than start", $ex->getMessage());
         }
+        //
 
         $obj->setOffset(10);
         $res2 = ["start" => 0, "offset" => 10];
         $this->assertEquals($res2, $obj->toArray());
 
-        $obj->setStart(null);
-        $obj->setOffset(null);
-        $obj->setStartDate(new DateTime("2017-09-14 12:00:00"));
+        //
         try {
+
+            $obj->setStart(null);
+            $obj->setOffset(null);
+            $obj->setStartDate(new DateTime("2017-09-14 12:00:00"));
             $obj->toArray();
         } catch (Exception $ex) {
             $this->assertInstanceOf(NullPointerException::class, $ex);
             $this->assertEquals("The attribute \"endDate\" is missing", $ex->getMessage());
         }
 
-        $obj->setEndDate(new DateTime("2017-09-14 12:00:00"));
+        //
         try {
+
+            $obj->setEndDate(new DateTime("2017-09-14 12:00:00"));
             $obj->toArray();
         } catch (Exception $ex) {
+
             $this->assertInstanceOf(IllegalArgumentException::class, $ex);
             $this->assertEquals("The endDate must be greater than startDate", $ex->getMessage());
         }
 
-        $obj->setStartDate(null);
+        //
         try {
+
+            $obj->setStartDate(null);
             $obj->toArray();
         } catch (Exception $ex) {
+
             $this->assertInstanceOf(NullPointerException::class, $ex);
             $this->assertEquals("The attribute \"startDate\" is missing", $ex->getMessage());
         }
 
+        //
         $obj->setStartDate(new DateTime("2017-09-14 12:00:00"));
         $obj->setEndDate(new DateTime("2017-09-14 14:00:00"));
         $res3 = ["startDate" => "14092017-12:00", "endDate" => "14092017-14:00"];

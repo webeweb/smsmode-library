@@ -62,13 +62,17 @@ final class SMSModeReceptionReportRequestTest extends PHPUnit_Framework_TestCase
 
         $obj = new SMSModeReceptionReportRequest();
 
+        //
         try {
+
             $obj->toArray();
         } catch (Exception $ex) {
+
             $this->assertInstanceOf(NullPointerException::class, $ex);
             $this->assertEquals("The attribute \"smsID\" is missing", $ex->getMessage());
         }
 
+        //
         $obj->setSmsID("smsID");
         $res1 = ["smsID" => "smsID"];
         $this->assertEquals($res1, $obj->toArray());

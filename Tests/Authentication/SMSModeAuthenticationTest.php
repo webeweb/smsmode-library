@@ -48,6 +48,7 @@ final class SMSModeAuthenticationTest extends PHPUnit_Framework_TestCase {
 
         $obj = new SMSModeAuthentication();
 
+        //
         try {
             $obj->toArray();
         } catch (Exception $ex) {
@@ -55,19 +56,24 @@ final class SMSModeAuthenticationTest extends PHPUnit_Framework_TestCase {
             $this->assertEquals("The attribute \"username\" is missing", $ex->getMessage());
         }
 
+        //
         $obj->setToken("token");
         $res1 = ["accessToken" => "token"];
         $this->assertEquals($res1, $obj->toArray());
 
-        $obj->setToken(null);
-        $obj->setUsername("username");
+        //
         try {
+
+            $obj->setToken(null);
+            $obj->setUsername("username");
             $obj->toArray();
         } catch (Exception $ex) {
+
             $this->assertInstanceOf(NullPointerException::class, $ex);
             $this->assertEquals("The attribute \"password\" is missing", $ex->getMessage());
         }
 
+        //
         $obj->setPassword("password");
         $res2 = ["pseudo" => "username", "pass" => "password"];
         $this->assertEquals($res2, $obj->toArray());

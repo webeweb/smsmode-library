@@ -4,7 +4,7 @@
          xsi:noNamespaceSchemaLocation="http://schema.phpunit.de/5.7/phpunit.xsd"
          backupGlobals="false"
          backupStaticAttributes="false"
-         bootstrap="Tests/bootstrap.php"
+         bootstrap="tests/bootstrap.php"
          colors="true"
          convertErrorsToExceptions="true"
          convertNoticesToExceptions="true"
@@ -14,17 +14,16 @@
          syntaxCheck="false">
     <filter>
         <whitelist>
-            <directory>./</directory>
+            <directory>./src</directory>
             <exclude>
                 <directory>Resources</directory>
-                <directory>Tests</directory>
                 <directory>vendor</directory>
             </exclude>
         </whitelist>
     </filter>
     <testsuites>
         <testsuite name="webeweb/smsmode-library">
-            <directory>./Tests</directory>
+            <directory>./tests</directory>
         </testsuite>
     </testsuites>
 </phpunit>

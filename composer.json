@@ -24,7 +24,7 @@
     },
     "autoload": {
         "psr-4": {
-            "WBW\\Library\\SMSMode\\": ""
+            "WBW\\Library\\SMSMode\\": "src/"
         },
         "exclude-from-classmap": [
             "/Tests/"
@@ -32,7 +32,7 @@
     },
     "autoload-dev": {
         "psr-4": {
-            "WBW\\Library\\SMSMode\\Tests\\": "Tests/"
+            "WBW\\Library\\SMSMode\\Tests\\": "tests/"
         }
     },
     "config": {

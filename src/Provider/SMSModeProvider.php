@@ -13,8 +13,8 @@ namespace WBW\Library\SMSMode\Provider;
 
 use WBW\Library\Core\Exception\Argument\IllegalArgumentException;
 use WBW\Library\Core\Exception\Pointer\NullPointerException;
-use WBW\Library\CURL\Configuration\CURLConfiguration;
-use WBW\Library\CURL\Request\CURLGetRequest;
+use WBW\Library\Core\Network\CURL\Configuration\CURLConfiguration;
+use WBW\Library\Core\Network\CURL\Request\CURLGetRequest;
 use WBW\Library\SMSMode\API\SMSModeRequestInterface;
 use WBW\Library\SMSMode\API\SMSModeResponseInterface;
 use WBW\Library\SMSMode\Authentication\SMSModeAuthentication;

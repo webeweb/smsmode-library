@@ -12,10 +12,10 @@
 namespace WBW\Library\SMSMode\Tests\Request;
 
 use Exception;
-use PHPUnit_Framework_TestCase;
 use WBW\Library\Core\Exception\Pointer\NullPointerException;
 use WBW\Library\SMSMode\Request\SMSModeDeleteSubaccountRequest;
 use WBW\Library\SMSMode\Response\SMSModeDeleteSubaccountResponse;
+use WBW\Library\SMSMode\Tests\Cases\AbstractSMSModeFrameworkTestCase;
 
 /**
  * sMsmode delete subaccount request test.
@@ -24,7 +24,7 @@ use WBW\Library\SMSMode\Response\SMSModeDeleteSubaccountResponse;
  * @package WBW\Library\SMSMode\Tests\Request
  * @final
  */
-final class SMSModeDeleteSubaccountRequestTest extends PHPUnit_Framework_TestCase {
+final class SMSModeDeleteSubaccountRequestTest extends AbstractSMSModeFrameworkTestCase {
 
     /**
      * Tests the __construct() method.

@@ -12,10 +12,10 @@
 namespace WBW\Library\SMSMode\Tests\Request;
 
 use Exception;
-use PHPUnit_Framework_TestCase;
 use WBW\Library\Core\Exception\Pointer\NullPointerException;
 use WBW\Library\SMSMode\Request\SMSModeReceptionReportRequest;
 use WBW\Library\SMSMode\Response\SMSModeReceptionReportResponse;
+use WBW\Library\SMSMode\Tests\Cases\AbstractSMSModeFrameworkTestCase;
 
 /**
  * sMsmode reception report request test.
@@ -24,7 +24,7 @@ use WBW\Library\SMSMode\Response\SMSModeReceptionReportResponse;
  * @package WBW\Library\SMSMode\Tests\Request
  * @final
  */
-final class SMSModeReceptionReportRequestTest extends PHPUnit_Framework_TestCase {
+final class SMSModeReceptionReportRequestTest extends AbstractSMSModeFrameworkTestCase {
 
     /**
      * Tests the __construct() method.

@@ -13,13 +13,13 @@ namespace WBW\Library\SMSMode\Tests\Request;
 
 use DateTime;
 use Exception;
-use PHPUnit_Framework_TestCase;
 use WBW\Library\Core\Exception\Argument\IllegalArgumentException;
 use WBW\Library\Core\Exception\Pointer\NullPointerException;
 use WBW\Library\SMSMode\Exception\SMSModeInvalidNumberException;
 use WBW\Library\SMSMode\Exception\SMSModeMaxLimitNumberReachedException;
 use WBW\Library\SMSMode\Request\SMSModeSendSMSRequest;
 use WBW\Library\SMSMode\Response\SMSModeSendSMSResponse;
+use WBW\Library\SMSMode\Tests\Cases\AbstractSMSModeFrameworkTestCase;
 
 /**
  * sMsmode send SMS request test.
@@ -28,7 +28,7 @@ use WBW\Library\SMSMode\Response\SMSModeSendSMSResponse;
  * @package WBW\Library\SMSMode\Tests\Request
  * @final
  */
-final class SMSModeSendSMSRequestTest extends PHPUnit_Framework_TestCase {
+final class SMSModeSendSMSRequestTest extends AbstractSMSModeFrameworkTestCase {
 
     /**
      * Tests the addNumber() method.

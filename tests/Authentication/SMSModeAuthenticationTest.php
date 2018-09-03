@@ -12,9 +12,9 @@
 namespace WBW\Library\SMSMode\Tests\Authentication;
 
 use Exception;
-use PHPUnit_Framework_TestCase;
 use WBW\Library\Core\Exception\Pointer\NullPointerException;
 use WBW\Library\SMSMode\Authentication\SMSModeAuthentication;
+use WBW\Library\SMSMode\Tests\Cases\AbstractSMSModeFrameworkTestCase;
 
 /**
  * sMsmode authentication test.
@@ -23,7 +23,7 @@ use WBW\Library\SMSMode\Authentication\SMSModeAuthentication;
  * @package WBW\Library\SMSMode\Tests\Authentication
  * @final
  */
-final class SMSModeAuthenticationTest extends PHPUnit_Framework_TestCase {
+final class SMSModeAuthenticationTest extends AbstractSMSModeFrameworkTestCase {
 
     /**
      * Tests the __construct() method.

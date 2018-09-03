@@ -11,11 +11,11 @@
 
 namespace WBW\Library\SMSMode\Tests\Provider;
 
-use PHPUnit_Framework_TestCase;
 use WBW\Library\SMSMode\Authentication\SMSModeAuthentication;
 use WBW\Library\SMSMode\Provider\SMSModeProvider;
 use WBW\Library\SMSMode\Request\SMSModeDeleteSubaccountRequest;
 use WBW\Library\SMSMode\Response\SMSModeDeleteSubaccountResponse;
+use WBW\Library\SMSMode\Tests\Cases\AbstractSMSModeFrameworkTestCase;
 
 /**
  * sMsmode provider test.
@@ -24,7 +24,7 @@ use WBW\Library\SMSMode\Response\SMSModeDeleteSubaccountResponse;
  * @package WBW\Library\SMSMode\Tests\Provider
  * @final
  */
-final class SMSModeProviderTest extends PHPUnit_Framework_TestCase {
+final class SMSModeProviderTest extends AbstractSMSModeFrameworkTestCase {
 
     /**
      * Request.

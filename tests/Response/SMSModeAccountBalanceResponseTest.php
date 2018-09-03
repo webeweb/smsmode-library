@@ -11,8 +11,8 @@
 
 namespace WBW\Library\SMSMode\Tests\Response;
 
-use PHPUnit_Framework_TestCase;
 use WBW\Library\SMSMode\Response\SMSModeAccountBalanceResponse;
+use WBW\Library\SMSMode\Tests\Cases\AbstractSMSModeFrameworkTestCase;
 
 /**
  * sMsmode account balance response test.
@@ -21,7 +21,7 @@ use WBW\Library\SMSMode\Response\SMSModeAccountBalanceResponse;
  * @package WBW\Library\SMSMode\Tests\Response
  * @final
  */
-final class SMSModeAccountBalanceResponseTest extends PHPUnit_Framework_TestCase {
+final class SMSModeAccountBalanceResponseTest extends AbstractSMSModeFrameworkTestCase {
 
     /**
      * Tests the parse() method.

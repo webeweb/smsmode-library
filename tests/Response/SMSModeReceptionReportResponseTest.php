@@ -11,9 +11,9 @@
 
 namespace WBW\Library\SMSMode\Tests\Response;
 
-use PHPUnit_Framework_TestCase;
 use WBW\Library\SMSMode\API\SMSModeResponseInterface;
 use WBW\Library\SMSMode\Response\SMSModeReceptionReportResponse;
+use WBW\Library\SMSMode\Tests\Cases\AbstractSMSModeFrameworkTestCase;
 
 /**
  * sMsmode reception report response test.
@@ -22,7 +22,7 @@ use WBW\Library\SMSMode\Response\SMSModeReceptionReportResponse;
  * @package WBW\Library\SMSMode\Tests\Response
  * @final
  */
-final class SMSModeReceptionReportResponseTest extends PHPUnit_Framework_TestCase {
+final class SMSModeReceptionReportResponseTest extends AbstractSMSModeFrameworkTestCase {
 
     /**
      * Tests the parse() method.

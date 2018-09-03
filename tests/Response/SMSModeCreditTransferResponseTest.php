@@ -11,9 +11,9 @@
 
 namespace WBW\Library\SMSMode\Tests\Response;
 
-use PHPUnit_Framework_TestCase;
 use WBW\Library\SMSMode\API\SMSModeResponseInterface;
 use WBW\Library\SMSMode\Response\SMSModeCreditTransferResponse;
+use WBW\Library\SMSMode\Tests\Cases\AbstractSMSModeFrameworkTestCase;
 
 /**
  * sMsmode credit transfer response test.
@@ -22,7 +22,7 @@ use WBW\Library\SMSMode\Response\SMSModeCreditTransferResponse;
  * @package WBW\Library\SMSMode\Tests\Response
  * @final
  */
-final class SMSModeCreditTransferResponseTest extends PHPUnit_Framework_TestCase {
+final class SMSModeCreditTransferResponseTest extends AbstractSMSModeFrameworkTestCase {
 
     /**
      * Tests the parse() method.

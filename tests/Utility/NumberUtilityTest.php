@@ -11,7 +11,7 @@
 
 namespace WBW\Library\SMSMode\Tests\Utility;
 
-use PHPUnit_Framework_TestCase;
+use WBW\Library\SMSMode\Tests\Cases\AbstractSMSModeFrameworkTestCase;
 use WBW\Library\SMSMode\Utility\NumberUtility;
 
 /**
@@ -21,7 +21,7 @@ use WBW\Library\SMSMode\Utility\NumberUtility;
  * @package WBW\Library\SMSMode\Utility
  * @final
  */
-final class NumberUtilityTest extends PHPUnit_Framework_TestCase {
+final class NumberUtilityTest extends AbstractSMSModeFrameworkTestCase {
 
     /**
      * Tests the decodeNumber() method.

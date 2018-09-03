@@ -11,9 +11,9 @@
 
 namespace WBW\Library\SMSMode\Tests\Response;
 
-use PHPUnit_Framework_TestCase;
 use WBW\Library\SMSMode\API\SMSModeResponseInterface;
 use WBW\Library\SMSMode\Response\SMSModeCreateSubaccountResponse;
+use WBW\Library\SMSMode\Tests\Cases\AbstractSMSModeFrameworkTestCase;
 
 /**
  * sMsmode create subaccount response test.
@@ -22,7 +22,7 @@ use WBW\Library\SMSMode\Response\SMSModeCreateSubaccountResponse;
  * @package WBW\Library\SMSMode\Tests\Response
  * @final
  */
-final class SMSModeCreateSubaccountResponseTest extends PHPUnit_Framework_TestCase {
+final class SMSModeCreateSubaccountResponseTest extends AbstractSMSModeFrameworkTestCase {
 
     /**
      * Tests the parse() method.

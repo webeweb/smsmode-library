@@ -11,8 +11,8 @@
 
 namespace WBW\Library\SMSMode\Tests\Exception;
 
-use PHPUnit_Framework_TestCase;
 use WBW\Library\SMSMode\Exception\SMSModeMessageTooLongException;
+use WBW\Library\SMSMode\Tests\Cases\AbstractSMSModeFrameworkTestCase;
 
 /**
  * sMsmode message too long exception test.
@@ -21,7 +21,7 @@ use WBW\Library\SMSMode\Exception\SMSModeMessageTooLongException;
  * @package WBW\Library\SMSMode\Tests\Exception
  * @final
  */
-final class SMSModeMessageTooLongExceptionTest extends PHPUnit_Framework_TestCase {
+final class SMSModeMessageTooLongExceptionTest extends AbstractSMSModeFrameworkTestCase {
 
     /**
      * Tests the __construct() method.

@@ -11,8 +11,8 @@
 
 namespace WBW\Library\SMSMode\Tests\Exception;
 
-use PHPUnit_Framework_TestCase;
 use WBW\Library\SMSMode\Exception\SMSModeInvalidNumberException;
+use WBW\Library\SMSMode\Tests\Cases\AbstractSMSModeFrameworkTestCase;
 
 /**
  * sMsmode invalid number exception test.
@@ -21,7 +21,7 @@ use WBW\Library\SMSMode\Exception\SMSModeInvalidNumberException;
  * @package WBW\Library\SMSMode\Tests\Exception
  * @final
  */
-final class SMSModeInvalidNumberExceptionTest extends PHPUnit_Framework_TestCase {
+final class SMSModeInvalidNumberExceptionTest extends AbstractSMSModeFrameworkTestCase {
 
     /**
      * Tests the __construct() method.

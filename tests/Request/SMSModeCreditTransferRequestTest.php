@@ -12,10 +12,10 @@
 namespace WBW\Library\SMSMode\Tests\Request;
 
 use Exception;
-use PHPUnit_Framework_TestCase;
 use WBW\Library\Core\Exception\Pointer\NullPointerException;
 use WBW\Library\SMSMode\Request\SMSModeCreditTransferRequest;
 use WBW\Library\SMSMode\Response\SMSModeCreditTransferResponse;
+use WBW\Library\SMSMode\Tests\Cases\AbstractSMSModeFrameworkTestCase;
 
 /**
  * sMsmode credit transfer request test.
@@ -24,7 +24,7 @@ use WBW\Library\SMSMode\Response\SMSModeCreditTransferResponse;
  * @package WBW\Library\SMSMode\Tests\Request
  * @final
  */
-final class SMSModeCreditTransferRequestTest extends PHPUnit_Framework_TestCase {
+final class SMSModeCreditTransferRequestTest extends AbstractSMSModeFrameworkTestCase {
 
     /**
      * Tests the __construct() method.

@@ -13,11 +13,11 @@ namespace WBW\Library\SMSMode\Tests\Request;
 
 use DateTime;
 use Exception;
-use PHPUnit_Framework_TestCase;
 use WBW\Library\Core\Exception\Argument\IllegalArgumentException;
 use WBW\Library\Core\Exception\Pointer\NullPointerException;
 use WBW\Library\SMSMode\Request\SMSModeGetResponsesRequest;
 use WBW\Library\SMSMode\Response\SMSModeGetResponsesResponse;
+use WBW\Library\SMSMode\Tests\Cases\AbstractSMSModeFrameworkTestCase;
 
 /**
  * sMsmode get responses request test.
@@ -26,7 +26,7 @@ use WBW\Library\SMSMode\Response\SMSModeGetResponsesResponse;
  * @package WBW\Library\SMSMode\Tests\Request
  * @final
  */
-final class SMSModeGetResponsesRequestTest extends PHPUnit_Framework_TestCase {
+final class SMSModeGetResponsesRequestTest extends AbstractSMSModeFrameworkTestCase {
 
     /**
      * Tests the __construct() method.

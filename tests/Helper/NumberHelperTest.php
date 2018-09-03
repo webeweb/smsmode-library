@@ -11,8 +11,8 @@
 
 namespace WBW\Library\SMSMode\Tests\Helper;
 
-use PHPUnit_Framework_TestCase;
 use WBW\Library\SMSMode\Helper\NumberHelper;
+use WBW\Library\SMSMode\Tests\Cases\AbstractSMSModeFrameworkTestCase;
 
 /**
  * Number helper test.
@@ -21,7 +21,7 @@ use WBW\Library\SMSMode\Helper\NumberHelper;
  * @package WBW\Library\SMSMode\Helper
  * @final
  */
-final class NumberHelperTest extends PHPUnit_Framework_TestCase {
+final class NumberHelperTest extends AbstractSMSModeFrameworkTestCase {
 
     /**
      * Tests the decodeNumber() method.

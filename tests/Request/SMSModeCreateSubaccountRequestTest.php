@@ -13,10 +13,10 @@ namespace WBW\Library\SMSMode\Tests\Request;
 
 use DateTime;
 use Exception;
-use PHPUnit_Framework_TestCase;
 use WBW\Library\Core\Exception\Pointer\NullPointerException;
 use WBW\Library\SMSMode\Request\SMSModeCreateSubaccountRequest;
 use WBW\Library\SMSMode\Response\SMSModeCreateSubaccountResponse;
+use WBW\Library\SMSMode\Tests\Cases\AbstractSMSModeFrameworkTestCase;
 
 /**
  * sMsmode create subaccount request test.
@@ -25,7 +25,7 @@ use WBW\Library\SMSMode\Response\SMSModeCreateSubaccountResponse;
  * @package WBW\Library\SMSMode\Tests\Request
  * @final
  */
-final class SMSModeCreateSubaccountRequestTest extends PHPUnit_Framework_TestCase {
+final class SMSModeCreateSubaccountRequestTest extends AbstractSMSModeFrameworkTestCase {
 
     /**
      * Tests the __construct() method.

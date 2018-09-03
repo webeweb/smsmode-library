@@ -11,9 +11,9 @@
 
 namespace WBW\Library\SMSMode\Tests\Request;
 
-use PHPUnit_Framework_TestCase;
 use WBW\Library\SMSMode\Request\SMSModeAccountBalanceRequest;
 use WBW\Library\SMSMode\Response\SMSModeAccountBalanceResponse;
+use WBW\Library\SMSMode\Tests\Cases\AbstractSMSModeFrameworkTestCase;
 
 /**
  * sMsmode account balance request test.
@@ -22,7 +22,7 @@ use WBW\Library\SMSMode\Response\SMSModeAccountBalanceResponse;
  * @package WBW\Library\SMSMode\Tests\Request
  * @final
  */
-final class SMSModeAccountBalanceRequestTest extends PHPUnit_Framework_TestCase {
+final class SMSModeAccountBalanceRequestTest extends AbstractSMSModeFrameworkTestCase {
 
     /**
      * Tests the __construct() method.

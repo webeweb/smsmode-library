@@ -11,7 +11,7 @@
 
 namespace WBW\Library\SMSMode\Tests\Cases;
 
-use PHPUnit_Framework_TestCase;
+use PHPUnit\Framework\TestCase;
 
 /**
  * Abstract sMsmode framework test case.
@@ -20,6 +20,6 @@ use PHPUnit_Framework_TestCase;
  * @package WBW\Library\SMSMode\Tests\Cases
  * @abstract
  */
-abstract class AbstractSMSModeFrameworkTestCase extends PHPUnit_Framework_TestCase {
+abstract class AbstractSMSModeFrameworkTestCase extends TestCase {
 
 }

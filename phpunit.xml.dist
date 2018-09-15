@@ -10,13 +10,13 @@
          convertNoticesToExceptions="true"
          convertWarningsToExceptions="true"
          processIsolation="false"
-         stopOnFailure="false"
-         syntaxCheck="false">
+         stopOnFailure="false">
     <filter>
         <whitelist>
-            <directory>./src</directory>
+            <directory>./</directory>
             <exclude>
-                <directory>Resources</directory>
+                <directory>src/Resources</directory>
+                <directory>tests</directory>
                 <directory>vendor</directory>
             </exclude>
         </whitelist>

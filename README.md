@@ -16,7 +16,6 @@ Integrate sMsmode API with your projects.
 ## Compatibility
 
 [![PHP](https://img.shields.io/badge/PHP-%5E5.6%7C%5E7.0-blue.svg)](http://php.net)
-[![HHVM](https://img.shields.io/badge/HHVM-ready-orange.svg)](https://hhvm.com/)
 
 ---
 

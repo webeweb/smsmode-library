@@ -31,38 +31,6 @@ use WBW\Library\SMSMode\Tests\AbstractSMSModeFrameworkTestCase;
 final class SMSModeSendSMSRequestTest extends AbstractSMSModeFrameworkTestCase {
 
     /**
-     * Tests the addNumber() method.
-     *
-     * @return void
-     */
-    public function testAddNumber() {
-
-        $obj = new SMSModeSendSMSRequest();
-
-        // ===
-        try {
-
-            $obj->addNumber("number");
-        } catch (Exception $ex) {
-
-            $this->assertInstanceOf(SMSModeInvalidNumberException::class, $ex);
-            $this->assertEquals("The number \"number\" is invalid", $ex->getMessage());
-        }
-
-        // ===
-        try {
-
-            for ($i = 0; $i < 302; ++$i) {
-                $obj->addNumber("06" . sprintf("%'.08d", $i));
-            }
-        } catch (Exception $ex) {
-
-            $this->assertInstanceOf(SMSModeMaxLimitNumberReachedException::class, $ex);
-            $this->assertEquals("The max limit of numbers reached: 300 allowed", $ex->getMessage());
-        }
-    }
-
-    /**
      * Tests the __construct() method.
      *
      * @return void
@@ -87,6 +55,46 @@ final class SMSModeSendSMSRequestTest extends AbstractSMSModeFrameworkTestCase {
     }
 
     /**
+     * Tests the addNumber() method.
+     *
+     * @return void
+     */
+    public function testAddNumberWithSMSModeInvalidNumberException() {
+
+        $obj = new SMSModeSendSMSRequest();
+
+        try {
+
+            $obj->addNumber("number");
+        } catch (Exception $ex) {
+
+            $this->assertInstanceOf(SMSModeInvalidNumberException::class, $ex);
+            $this->assertEquals("The number \"number\" is invalid", $ex->getMessage());
+        }
+    }
+
+    /**
+     * Tests the addNumber() method.
+     *
+     * @return void
+     */
+    public function testAddNumberWithSMSModeMaxLimitNumberReachedException() {
+
+        $obj = new SMSModeSendSMSRequest();
+
+        try {
+
+            for ($i = 0; $i < 302; ++$i) {
+                $obj->addNumber("06" . sprintf("%'.08d", $i));
+            }
+        } catch (Exception $ex) {
+
+            $this->assertInstanceOf(SMSModeMaxLimitNumberReachedException::class, $ex);
+            $this->assertEquals("The max limit of numbers reached: 300 allowed", $ex->getMessage());
+        }
+    }
+
+    /**
      * Tests the parseResponse() method.
      *
      * @return void
@@ -108,8 +116,8 @@ final class SMSModeSendSMSRequestTest extends AbstractSMSModeFrameworkTestCase {
 
         $obj = new SMSModeSendSMSRequest();
 
-        $obj->addNumber("0612345678");
-        $obj->removeNumber("0612345678");
+        $this->assertSame($obj, $obj->addNumber("0612345678"));
+        $this->assertSame($obj, $obj->removeNumber("0612345678"));
         $this->assertCount(0, $obj->getNumbers());
     }
 

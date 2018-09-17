@@ -17,7 +17,7 @@ use PHPUnit\Framework\TestCase;
  * Abstract sMsmode framework test case.
  *
  * @author webeweb <https://github.com/webeweb/>
- * @package WBW\Library\SMSMode\Tests\Cases
+ * @package WBW\Library\SMSMode\Tests
  * @abstract
  */
 abstract class AbstractSMSModeFrameworkTestCase extends TestCase {

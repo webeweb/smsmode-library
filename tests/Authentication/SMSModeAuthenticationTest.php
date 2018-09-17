@@ -14,7 +14,7 @@ namespace WBW\Library\SMSMode\Tests\Authentication;
 use Exception;
 use WBW\Library\Core\Exception\Pointer\NullPointerException;
 use WBW\Library\SMSMode\Authentication\SMSModeAuthentication;
-use WBW\Library\SMSMode\Tests\Cases\AbstractSMSModeFrameworkTestCase;
+use WBW\Library\SMSMode\Tests\AbstractSMSModeFrameworkTestCase;
 
 /**
  * sMsmode authentication test.

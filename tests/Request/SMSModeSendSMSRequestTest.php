@@ -85,7 +85,7 @@ final class SMSModeSendSMSRequestTest extends AbstractSMSModeFrameworkTestCase {
         try {
 
             for ($i = 0; $i < 302; ++$i) {
-                $obj->addNumber("06" . sprintf("%'.08d", $i));
+                $this->assertSame($obj, $obj->addNumber("06" . sprintf("%'.08d", $i)));
             }
         } catch (Exception $ex) {
 

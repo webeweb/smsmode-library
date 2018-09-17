@@ -12,7 +12,7 @@
 namespace WBW\Library\SMSMode\Tests\Helper;
 
 use WBW\Library\SMSMode\Helper\NumberHelper;
-use WBW\Library\SMSMode\Tests\Cases\AbstractSMSModeFrameworkTestCase;
+use WBW\Library\SMSMode\Tests\AbstractSMSModeFrameworkTestCase;
 
 /**
  * Number helper test.

@@ -12,7 +12,7 @@
 namespace WBW\Library\SMSMode\Tests\Response;
 
 use WBW\Library\SMSMode\Response\SMSModeAccountBalanceResponse;
-use WBW\Library\SMSMode\Tests\Cases\AbstractSMSModeFrameworkTestCase;
+use WBW\Library\SMSMode\Tests\AbstractSMSModeFrameworkTestCase;
 
 /**
  * sMsmode account balance response test.

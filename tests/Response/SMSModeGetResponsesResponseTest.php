@@ -14,7 +14,7 @@ namespace WBW\Library\SMSMode\Tests\Response;
 use DateTime;
 use WBW\Library\SMSMode\API\SMSModeResponseInterface;
 use WBW\Library\SMSMode\Response\SMSModeGetResponsesResponse;
-use WBW\Library\SMSMode\Tests\Cases\AbstractSMSModeFrameworkTestCase;
+use WBW\Library\SMSMode\Tests\AbstractSMSModeFrameworkTestCase;
 
 /**
  * sMsmode get responses response test.

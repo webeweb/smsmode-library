@@ -13,7 +13,7 @@ namespace WBW\Library\SMSMode\Tests\Response;
 
 use WBW\Library\SMSMode\API\SMSModeResponseInterface;
 use WBW\Library\SMSMode\Response\SMSModeReceptionReportResponse;
-use WBW\Library\SMSMode\Tests\Cases\AbstractSMSModeFrameworkTestCase;
+use WBW\Library\SMSMode\Tests\AbstractSMSModeFrameworkTestCase;
 
 /**
  * sMsmode reception report response test.

@@ -12,7 +12,7 @@
 namespace WBW\Library\SMSMode\Tests\Exception;
 
 use WBW\Library\SMSMode\Exception\SMSModeMessageTooLongException;
-use WBW\Library\SMSMode\Tests\Cases\AbstractSMSModeFrameworkTestCase;
+use WBW\Library\SMSMode\Tests\AbstractSMSModeFrameworkTestCase;
 
 /**
  * sMsmode message too long exception test.

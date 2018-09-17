@@ -12,7 +12,7 @@
 namespace WBW\Library\SMSMode\Tests\Exception;
 
 use WBW\Library\SMSMode\Exception\SMSModeMaxLimitNumberReachedException;
-use WBW\Library\SMSMode\Tests\Cases\AbstractSMSModeFrameworkTestCase;
+use WBW\Library\SMSMode\Tests\AbstractSMSModeFrameworkTestCase;
 
 /**
  * sMsmode max limit number reached exception test.

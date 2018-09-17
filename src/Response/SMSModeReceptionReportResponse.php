@@ -35,7 +35,7 @@ class SMSModeReceptionReportResponse extends AbstractSMSModeResponse {
      * @param array $report The report.
      * @return SMSModeReceptionReportResponse Returns this reception report response.
      */
-    protected function addReport($report) {
+    protected function addReport(array $report) {
         $this->reports[$report[0]] = $report[1];
         return $this;
     }

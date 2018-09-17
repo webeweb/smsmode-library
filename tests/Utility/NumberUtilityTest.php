@@ -11,7 +11,7 @@
 
 namespace WBW\Library\SMSMode\Tests\Utility;
 
-use WBW\Library\SMSMode\Tests\Cases\AbstractSMSModeFrameworkTestCase;
+use WBW\Library\SMSMode\Tests\AbstractSMSModeFrameworkTestCase;
 use WBW\Library\SMSMode\Utility\NumberUtility;
 
 /**

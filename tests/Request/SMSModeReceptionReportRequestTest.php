@@ -15,7 +15,7 @@ use Exception;
 use WBW\Library\Core\Exception\Pointer\NullPointerException;
 use WBW\Library\SMSMode\Request\SMSModeReceptionReportRequest;
 use WBW\Library\SMSMode\Response\SMSModeReceptionReportResponse;
-use WBW\Library\SMSMode\Tests\Cases\AbstractSMSModeFrameworkTestCase;
+use WBW\Library\SMSMode\Tests\AbstractSMSModeFrameworkTestCase;
 
 /**
  * sMsmode reception report request test.

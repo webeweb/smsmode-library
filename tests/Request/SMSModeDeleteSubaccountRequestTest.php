@@ -15,7 +15,7 @@ use Exception;
 use WBW\Library\Core\Exception\Pointer\NullPointerException;
 use WBW\Library\SMSMode\Request\SMSModeDeleteSubaccountRequest;
 use WBW\Library\SMSMode\Response\SMSModeDeleteSubaccountResponse;
-use WBW\Library\SMSMode\Tests\Cases\AbstractSMSModeFrameworkTestCase;
+use WBW\Library\SMSMode\Tests\AbstractSMSModeFrameworkTestCase;
 
 /**
  * sMsmode delete subaccount request test.

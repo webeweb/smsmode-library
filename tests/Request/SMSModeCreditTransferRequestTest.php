@@ -15,7 +15,7 @@ use Exception;
 use WBW\Library\Core\Exception\Pointer\NullPointerException;
 use WBW\Library\SMSMode\Request\SMSModeCreditTransferRequest;
 use WBW\Library\SMSMode\Response\SMSModeCreditTransferResponse;
-use WBW\Library\SMSMode\Tests\Cases\AbstractSMSModeFrameworkTestCase;
+use WBW\Library\SMSMode\Tests\AbstractSMSModeFrameworkTestCase;
 
 /**
  * sMsmode credit transfer request test.

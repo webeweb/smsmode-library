@@ -19,7 +19,7 @@ use WBW\Library\SMSMode\Exception\SMSModeInvalidNumberException;
 use WBW\Library\SMSMode\Exception\SMSModeMaxLimitNumberReachedException;
 use WBW\Library\SMSMode\Request\SMSModeSendSMSRequest;
 use WBW\Library\SMSMode\Response\SMSModeSendSMSResponse;
-use WBW\Library\SMSMode\Tests\Cases\AbstractSMSModeFrameworkTestCase;
+use WBW\Library\SMSMode\Tests\AbstractSMSModeFrameworkTestCase;
 
 /**
  * sMsmode send SMS request test.

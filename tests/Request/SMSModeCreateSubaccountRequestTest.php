@@ -16,7 +16,7 @@ use Exception;
 use WBW\Library\Core\Exception\Pointer\NullPointerException;
 use WBW\Library\SMSMode\Request\SMSModeCreateSubaccountRequest;
 use WBW\Library\SMSMode\Response\SMSModeCreateSubaccountResponse;
-use WBW\Library\SMSMode\Tests\Cases\AbstractSMSModeFrameworkTestCase;
+use WBW\Library\SMSMode\Tests\AbstractSMSModeFrameworkTestCase;
 
 /**
  * sMsmode create subaccount request test.

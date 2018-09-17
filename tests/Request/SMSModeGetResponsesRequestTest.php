@@ -17,7 +17,7 @@ use WBW\Library\Core\Exception\Argument\IllegalArgumentException;
 use WBW\Library\Core\Exception\Pointer\NullPointerException;
 use WBW\Library\SMSMode\Request\SMSModeGetResponsesRequest;
 use WBW\Library\SMSMode\Response\SMSModeGetResponsesResponse;
-use WBW\Library\SMSMode\Tests\Cases\AbstractSMSModeFrameworkTestCase;
+use WBW\Library\SMSMode\Tests\AbstractSMSModeFrameworkTestCase;
 
 /**
  * sMsmode get responses request test.

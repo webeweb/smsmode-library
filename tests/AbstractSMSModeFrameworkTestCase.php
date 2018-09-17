@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace WBW\Library\SMSMode\Tests\Cases;
+namespace WBW\Library\SMSMode\Tests;
 
 use PHPUnit\Framework\TestCase;
 

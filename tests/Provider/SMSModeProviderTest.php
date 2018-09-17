@@ -15,7 +15,7 @@ use WBW\Library\SMSMode\Authentication\SMSModeAuthentication;
 use WBW\Library\SMSMode\Provider\SMSModeProvider;
 use WBW\Library\SMSMode\Request\SMSModeDeleteSubaccountRequest;
 use WBW\Library\SMSMode\Response\SMSModeDeleteSubaccountResponse;
-use WBW\Library\SMSMode\Tests\Cases\AbstractSMSModeFrameworkTestCase;
+use WBW\Library\SMSMode\Tests\AbstractSMSModeFrameworkTestCase;
 
 /**
  * sMsmode provider test.

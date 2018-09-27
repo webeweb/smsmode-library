@@ -17,7 +17,7 @@ use WBW\Library\Core\Exception\Argument\IllegalArgumentException;
 use WBW\Library\Core\Exception\Pointer\NullPointerException;
 use WBW\Library\SMSMode\Request\SMSModeGetResponsesRequest;
 use WBW\Library\SMSMode\Response\SMSModeGetResponsesResponse;
-use WBW\Library\SMSMode\Tests\AbstractSMSModeFrameworkTestCase;
+use WBW\Library\SMSMode\Tests\AbstractFrameworkTestCase;
 
 /**
  * sMsmode get responses request test.
@@ -26,7 +26,7 @@ use WBW\Library\SMSMode\Tests\AbstractSMSModeFrameworkTestCase;
  * @package WBW\Library\SMSMode\Tests\Request
  * @final
  */
-final class SMSModeGetResponsesRequestTest extends AbstractSMSModeFrameworkTestCase {
+final class SMSModeGetResponsesRequestTest extends AbstractFrameworkTestCase {
 
     /**
      * Tests the __construct() method.

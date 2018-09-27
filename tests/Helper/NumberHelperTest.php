@@ -12,7 +12,7 @@
 namespace WBW\Library\SMSMode\Tests\Helper;
 
 use WBW\Library\SMSMode\Helper\NumberHelper;
-use WBW\Library\SMSMode\Tests\AbstractSMSModeFrameworkTestCase;
+use WBW\Library\SMSMode\Tests\AbstractFrameworkTestCase;
 
 /**
  * Number helper test.
@@ -21,7 +21,7 @@ use WBW\Library\SMSMode\Tests\AbstractSMSModeFrameworkTestCase;
  * @package WBW\Library\SMSMode\Helper
  * @final
  */
-final class NumberHelperTest extends AbstractSMSModeFrameworkTestCase {
+final class NumberHelperTest extends AbstractFrameworkTestCase {
 
     /**
      * Tests the decodeNumber() method.

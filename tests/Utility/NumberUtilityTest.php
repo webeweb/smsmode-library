@@ -11,7 +11,7 @@
 
 namespace WBW\Library\SMSMode\Tests\Utility;
 
-use WBW\Library\SMSMode\Tests\AbstractSMSModeFrameworkTestCase;
+use WBW\Library\SMSMode\Tests\AbstractFrameworkTestCase;
 use WBW\Library\SMSMode\Utility\NumberUtility;
 
 /**
@@ -21,7 +21,7 @@ use WBW\Library\SMSMode\Utility\NumberUtility;
  * @package WBW\Library\SMSMode\Utility
  * @final
  */
-final class NumberUtilityTest extends AbstractSMSModeFrameworkTestCase {
+final class NumberUtilityTest extends AbstractFrameworkTestCase {
 
     /**
      * Tests the decodeNumber() method.

@@ -14,7 +14,7 @@ namespace WBW\Library\SMSMode\Tests\Response;
 use DateTime;
 use WBW\Library\SMSMode\API\SMSModeResponseInterface;
 use WBW\Library\SMSMode\Response\SMSModeGetResponsesResponse;
-use WBW\Library\SMSMode\Tests\AbstractSMSModeFrameworkTestCase;
+use WBW\Library\SMSMode\Tests\AbstractFrameworkTestCase;
 
 /**
  * sMsmode get responses response test.
@@ -23,7 +23,7 @@ use WBW\Library\SMSMode\Tests\AbstractSMSModeFrameworkTestCase;
  * @package WBW\Library\SMSMode\Tests\Response
  * @final
  */
-final class SMSModeGetResponsesResponseTest extends AbstractSMSModeFrameworkTestCase {
+final class SMSModeGetResponsesResponseTest extends AbstractFrameworkTestCase {
 
     /**
      * Tests the parse() method.

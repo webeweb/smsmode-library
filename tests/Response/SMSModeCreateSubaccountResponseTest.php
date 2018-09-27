@@ -13,7 +13,7 @@ namespace WBW\Library\SMSMode\Tests\Response;
 
 use WBW\Library\SMSMode\API\SMSModeResponseInterface;
 use WBW\Library\SMSMode\Response\SMSModeCreateSubaccountResponse;
-use WBW\Library\SMSMode\Tests\AbstractSMSModeFrameworkTestCase;
+use WBW\Library\SMSMode\Tests\AbstractFrameworkTestCase;
 
 /**
  * sMsmode create subaccount response test.
@@ -22,7 +22,7 @@ use WBW\Library\SMSMode\Tests\AbstractSMSModeFrameworkTestCase;
  * @package WBW\Library\SMSMode\Tests\Response
  * @final
  */
-final class SMSModeCreateSubaccountResponseTest extends AbstractSMSModeFrameworkTestCase {
+final class SMSModeCreateSubaccountResponseTest extends AbstractFrameworkTestCase {
 
     /**
      * Tests the parse() method.

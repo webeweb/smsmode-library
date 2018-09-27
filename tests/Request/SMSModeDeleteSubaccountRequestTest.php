@@ -15,7 +15,7 @@ use Exception;
 use WBW\Library\Core\Exception\Pointer\NullPointerException;
 use WBW\Library\SMSMode\Request\SMSModeDeleteSubaccountRequest;
 use WBW\Library\SMSMode\Response\SMSModeDeleteSubaccountResponse;
-use WBW\Library\SMSMode\Tests\AbstractSMSModeFrameworkTestCase;
+use WBW\Library\SMSMode\Tests\AbstractFrameworkTestCase;
 
 /**
  * sMsmode delete subaccount request test.
@@ -24,7 +24,7 @@ use WBW\Library\SMSMode\Tests\AbstractSMSModeFrameworkTestCase;
  * @package WBW\Library\SMSMode\Tests\Request
  * @final
  */
-final class SMSModeDeleteSubaccountRequestTest extends AbstractSMSModeFrameworkTestCase {
+final class SMSModeDeleteSubaccountRequestTest extends AbstractFrameworkTestCase {
 
     /**
      * Tests the __construct() method.

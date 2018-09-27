@@ -15,7 +15,7 @@ use Exception;
 use WBW\Library\Core\Exception\Pointer\NullPointerException;
 use WBW\Library\SMSMode\Request\SMSModeReceptionReportRequest;
 use WBW\Library\SMSMode\Response\SMSModeReceptionReportResponse;
-use WBW\Library\SMSMode\Tests\AbstractSMSModeFrameworkTestCase;
+use WBW\Library\SMSMode\Tests\AbstractFrameworkTestCase;
 
 /**
  * sMsmode reception report request test.
@@ -24,7 +24,7 @@ use WBW\Library\SMSMode\Tests\AbstractSMSModeFrameworkTestCase;
  * @package WBW\Library\SMSMode\Tests\Request
  * @final
  */
-final class SMSModeReceptionReportRequestTest extends AbstractSMSModeFrameworkTestCase {
+final class SMSModeReceptionReportRequestTest extends AbstractFrameworkTestCase {
 
     /**
      * Tests the __construct() method.

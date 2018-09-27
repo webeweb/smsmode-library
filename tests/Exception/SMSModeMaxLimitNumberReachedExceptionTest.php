@@ -12,7 +12,7 @@
 namespace WBW\Library\SMSMode\Tests\Exception;
 
 use WBW\Library\SMSMode\Exception\SMSModeMaxLimitNumberReachedException;
-use WBW\Library\SMSMode\Tests\AbstractSMSModeFrameworkTestCase;
+use WBW\Library\SMSMode\Tests\AbstractFrameworkTestCase;
 
 /**
  * sMsmode max limit number reached exception test.
@@ -21,7 +21,7 @@ use WBW\Library\SMSMode\Tests\AbstractSMSModeFrameworkTestCase;
  * @package WBW\Library\SMSMode\Tests\Exception
  * @final
  */
-final class SMSModeMaxLimitNumberReachedExceptionTest extends AbstractSMSModeFrameworkTestCase {
+final class SMSModeMaxLimitNumberReachedExceptionTest extends AbstractFrameworkTestCase {
 
     /**
      * Tests the __construct() method.

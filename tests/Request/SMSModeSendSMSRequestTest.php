@@ -19,7 +19,7 @@ use WBW\Library\SMSMode\Exception\SMSModeInvalidNumberException;
 use WBW\Library\SMSMode\Exception\SMSModeMaxLimitNumberReachedException;
 use WBW\Library\SMSMode\Request\SMSModeSendSMSRequest;
 use WBW\Library\SMSMode\Response\SMSModeSendSMSResponse;
-use WBW\Library\SMSMode\Tests\AbstractSMSModeFrameworkTestCase;
+use WBW\Library\SMSMode\Tests\AbstractFrameworkTestCase;
 
 /**
  * sMsmode send SMS request test.
@@ -28,7 +28,7 @@ use WBW\Library\SMSMode\Tests\AbstractSMSModeFrameworkTestCase;
  * @package WBW\Library\SMSMode\Tests\Request
  * @final
  */
-final class SMSModeSendSMSRequestTest extends AbstractSMSModeFrameworkTestCase {
+final class SMSModeSendSMSRequestTest extends AbstractFrameworkTestCase {
 
     /**
      * Tests the __construct() method.

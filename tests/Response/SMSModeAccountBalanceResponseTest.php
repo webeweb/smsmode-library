@@ -12,7 +12,7 @@
 namespace WBW\Library\SMSMode\Tests\Response;
 
 use WBW\Library\SMSMode\Response\SMSModeAccountBalanceResponse;
-use WBW\Library\SMSMode\Tests\AbstractSMSModeFrameworkTestCase;
+use WBW\Library\SMSMode\Tests\AbstractFrameworkTestCase;
 
 /**
  * sMsmode account balance response test.
@@ -21,7 +21,7 @@ use WBW\Library\SMSMode\Tests\AbstractSMSModeFrameworkTestCase;
  * @package WBW\Library\SMSMode\Tests\Response
  * @final
  */
-final class SMSModeAccountBalanceResponseTest extends AbstractSMSModeFrameworkTestCase {
+final class SMSModeAccountBalanceResponseTest extends AbstractFrameworkTestCase {
 
     /**
      * Tests the parse() method.

@@ -14,7 +14,7 @@ namespace WBW\Library\SMSMode\Tests\Authentication;
 use Exception;
 use WBW\Library\Core\Exception\Pointer\NullPointerException;
 use WBW\Library\SMSMode\Authentication\SMSModeAuthentication;
-use WBW\Library\SMSMode\Tests\AbstractSMSModeFrameworkTestCase;
+use WBW\Library\SMSMode\Tests\AbstractFrameworkTestCase;
 
 /**
  * sMsmode authentication test.
@@ -23,7 +23,7 @@ use WBW\Library\SMSMode\Tests\AbstractSMSModeFrameworkTestCase;
  * @package WBW\Library\SMSMode\Tests\Authentication
  * @final
  */
-final class SMSModeAuthenticationTest extends AbstractSMSModeFrameworkTestCase {
+final class SMSModeAuthenticationTest extends AbstractFrameworkTestCase {
 
     /**
      * Tests the __construct() method.

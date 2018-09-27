@@ -13,7 +13,7 @@ namespace WBW\Library\SMSMode\Tests\Request;
 
 use WBW\Library\SMSMode\Request\SMSModeAccountBalanceRequest;
 use WBW\Library\SMSMode\Response\SMSModeAccountBalanceResponse;
-use WBW\Library\SMSMode\Tests\AbstractSMSModeFrameworkTestCase;
+use WBW\Library\SMSMode\Tests\AbstractFrameworkTestCase;
 
 /**
  * sMsmode account balance request test.
@@ -22,7 +22,7 @@ use WBW\Library\SMSMode\Tests\AbstractSMSModeFrameworkTestCase;
  * @package WBW\Library\SMSMode\Tests\Request
  * @final
  */
-final class SMSModeAccountBalanceRequestTest extends AbstractSMSModeFrameworkTestCase {
+final class SMSModeAccountBalanceRequestTest extends AbstractFrameworkTestCase {
 
     /**
      * Tests the __construct() method.

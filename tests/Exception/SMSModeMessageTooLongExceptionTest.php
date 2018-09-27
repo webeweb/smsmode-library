@@ -12,7 +12,7 @@
 namespace WBW\Library\SMSMode\Tests\Exception;
 
 use WBW\Library\SMSMode\Exception\SMSModeMessageTooLongException;
-use WBW\Library\SMSMode\Tests\AbstractSMSModeFrameworkTestCase;
+use WBW\Library\SMSMode\Tests\AbstractFrameworkTestCase;
 
 /**
  * sMsmode message too long exception test.
@@ -21,7 +21,7 @@ use WBW\Library\SMSMode\Tests\AbstractSMSModeFrameworkTestCase;
  * @package WBW\Library\SMSMode\Tests\Exception
  * @final
  */
-final class SMSModeMessageTooLongExceptionTest extends AbstractSMSModeFrameworkTestCase {
+final class SMSModeMessageTooLongExceptionTest extends AbstractFrameworkTestCase {
 
     /**
      * Tests the __construct() method.

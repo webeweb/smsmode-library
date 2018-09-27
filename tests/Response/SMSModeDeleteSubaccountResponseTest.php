@@ -13,7 +13,7 @@ namespace WBW\Library\SMSMode\Tests\Response;
 
 use WBW\Library\SMSMode\API\SMSModeResponseInterface;
 use WBW\Library\SMSMode\Response\SMSModeDeleteSubaccountResponse;
-use WBW\Library\SMSMode\Tests\AbstractSMSModeFrameworkTestCase;
+use WBW\Library\SMSMode\Tests\AbstractFrameworkTestCase;
 
 /**
  * sMsmode delete subaccount response test.
@@ -22,7 +22,7 @@ use WBW\Library\SMSMode\Tests\AbstractSMSModeFrameworkTestCase;
  * @package WBW\Library\SMSMode\Tests\Response
  * @final
  */
-final class SMSModeDeleteSubaccountResponseTest extends AbstractSMSModeFrameworkTestCase {
+final class SMSModeDeleteSubaccountResponseTest extends AbstractFrameworkTestCase {
 
     /**
      * Tests the parse() method.

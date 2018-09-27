@@ -15,7 +15,7 @@ use Exception;
 use WBW\Library\Core\Exception\Pointer\NullPointerException;
 use WBW\Library\SMSMode\Request\SMSModeCreditTransferRequest;
 use WBW\Library\SMSMode\Response\SMSModeCreditTransferResponse;
-use WBW\Library\SMSMode\Tests\AbstractSMSModeFrameworkTestCase;
+use WBW\Library\SMSMode\Tests\AbstractFrameworkTestCase;
 
 /**
  * sMsmode credit transfer request test.
@@ -24,7 +24,7 @@ use WBW\Library\SMSMode\Tests\AbstractSMSModeFrameworkTestCase;
  * @package WBW\Library\SMSMode\Tests\Request
  * @final
  */
-final class SMSModeCreditTransferRequestTest extends AbstractSMSModeFrameworkTestCase {
+final class SMSModeCreditTransferRequestTest extends AbstractFrameworkTestCase {
 
     /**
      * Tests the __construct() method.

@@ -13,7 +13,7 @@ namespace WBW\Library\SMSMode\Tests\Response;
 
 use WBW\Library\SMSMode\API\SMSModeResponseInterface;
 use WBW\Library\SMSMode\Response\SMSModeSendSMSResponse;
-use WBW\Library\SMSMode\Tests\AbstractSMSModeFrameworkTestCase;
+use WBW\Library\SMSMode\Tests\AbstractFrameworkTestCase;
 
 /**
  * sMsmode send SMS response test.
@@ -22,7 +22,7 @@ use WBW\Library\SMSMode\Tests\AbstractSMSModeFrameworkTestCase;
  * @package WBW\Library\SMSMode\Tests\Response
  * @final
  */
-final class SMSModeSendSMSResponseTest extends AbstractSMSModeFrameworkTestCase {
+final class SMSModeSendSMSResponseTest extends AbstractFrameworkTestCase {
 
     /**
      * Tests the parse() method.

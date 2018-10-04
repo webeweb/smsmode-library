@@ -25,7 +25,7 @@ abstract class AbstractSMSModeResponse implements SMSModeResponseInterface {
     /**
      * Code.
      *
-     * @var integer
+     * @var int
      */
     private $code;
 
@@ -80,7 +80,7 @@ abstract class AbstractSMSModeResponse implements SMSModeResponseInterface {
     /**
      * Set the code.
      *
-     * @param integer $code Returns the code.
+     * @param int $code Returns the code.
      * @return AbstractSMSModeResponse Returns this response.
      */
     final protected function setCode($code) {

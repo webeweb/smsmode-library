@@ -56,14 +56,14 @@ class SMSModeSendSMSRequest implements SMSModeRequestInterface, SMSModeMessageIn
     /**
      * Maximum message number.
      *
-     * @var integer
+     * @var int
      */
     private $maxMessageNumber = 5;
 
     /**
      * Message class.
      *
-     * @var integer
+     * @var int
      */
     private $messageClass = self::MESSAGE_CLASS_SMS_PRO;
 
@@ -105,7 +105,7 @@ class SMSModeSendSMSRequest implements SMSModeRequestInterface, SMSModeMessageIn
     /**
      * STOP.
      *
-     * @var integer
+     * @var int
      */
     private $stop;
 
@@ -149,7 +149,7 @@ class SMSModeSendSMSRequest implements SMSModeRequestInterface, SMSModeMessageIn
     /**
      * Get the maximum message number.
      *
-     * @return integer Returns the maxuimum message number.
+     * @return int Returns the maxuimum message number.
      */
     public function getMaxMessageNumber() {
         return $this->maxMessageNumber;
@@ -176,7 +176,7 @@ class SMSModeSendSMSRequest implements SMSModeRequestInterface, SMSModeMessageIn
     /**
      * Get the message class.
      *
-     * @return integer Returns the message class.
+     * @return int Returns the message class.
      */
     public function getMessageClass() {
         return $this->messageClass;
@@ -237,7 +237,7 @@ class SMSModeSendSMSRequest implements SMSModeRequestInterface, SMSModeMessageIn
     /**
      * Get the STOP.
      *
-     * @return integer Returns the STOP.
+     * @return int Returns the STOP.
      */
     public function getStop() {
         return $this->stop;
@@ -289,7 +289,7 @@ class SMSModeSendSMSRequest implements SMSModeRequestInterface, SMSModeMessageIn
     /**
      * Set the maximum message number.
      *
-     * @param integer $maxMessageNumber The maximum message number.
+     * @param int $maxMessageNumber The maximum message number.
      * @return SMSModeSendSMSRequest Returns this send SMS request.
      */
     public function setMaxMessageNumber($maxMessageNumber) {
@@ -311,7 +311,7 @@ class SMSModeSendSMSRequest implements SMSModeRequestInterface, SMSModeMessageIn
     /**
      * Set the message class.
      *
-     * @param integer $messageClass The message class.
+     * @param int $messageClass The message class.
      * @return SMSModeSendSMSRequest Returns this send SMS request.
      * @throws IllegalArgumentException Throws an illegal argument exception if the message class is invalid.
      */

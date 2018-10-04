@@ -38,14 +38,14 @@ class SMSModeGetResponsesRequest implements SMSModeRequestInterface {
     /**
      * Offset.
      *
-     * @var integer
+     * @var int
      */
     private $offset;
 
     /**
      * Start
      *
-     * @var integer
+     * @var int
      */
     private $start;
 
@@ -75,7 +75,7 @@ class SMSModeGetResponsesRequest implements SMSModeRequestInterface {
     /**
      * Get the offset.
      *
-     * @return integer Returns the offset.
+     * @return int Returns the offset.
      */
     public function getOffset() {
         return $this->offset;
@@ -91,7 +91,7 @@ class SMSModeGetResponsesRequest implements SMSModeRequestInterface {
     /**
      * Get the start.
      *
-     * @return integer Returns the start.
+     * @return int Returns the start.
      */
     public function getStart() {
         return $this->start;
@@ -127,7 +127,7 @@ class SMSModeGetResponsesRequest implements SMSModeRequestInterface {
     /**
      * Set the offset.
      *
-     * @param integer $offset The offset.
+     * @param int $offset The offset.
      * @return SMSModeGetResponsesRequest Returns this get responses request.
      */
     public function setOffset($offset) {
@@ -138,7 +138,7 @@ class SMSModeGetResponsesRequest implements SMSModeRequestInterface {
     /**
      * Set the start.
      *
-     * @param integer $start The start.
+     * @param int $start The start.
      * @return SMSModeGetResponsesRequest Returns this get responses request.
      */
     public function setStart($start) {

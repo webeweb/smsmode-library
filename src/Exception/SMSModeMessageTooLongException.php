@@ -23,7 +23,7 @@ class SMSModeMessageTooLongException extends AbstractSMSModeException {
      * Constructor.
      *
      * @param string $message The message.
-     * @param integer $limit The limit.
+     * @param int $limit The limit.
      */
     public function __construct($message, $limit) {
         parent::__construct(sprintf("The message \"%s\" exceeds the limit of %d characters", $message, $limit));

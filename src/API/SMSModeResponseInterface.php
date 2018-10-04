@@ -22,112 +22,112 @@ interface SMSModeResponseInterface {
     /**
      * Response Code "Accepted".
      *
-     * @var integer
+     * @var int
      */
     const RESPONSE_CODE_ACCEPTED = 0;
 
     /**
      * Response Code "Authentication error".
      *
-     * @var integer
+     * @var int
      */
     const RESPONSE_CODE_AUTHENTICATION_ERROR = 32;
 
     /**
      * Response Code "Created".
      *
-     * @var integer
+     * @var int
      */
     const RESPONSE_CODE_CREATED = 0;
 
     /**
      * Response Code "ID already exists".
      *
-     * @var integer
+     * @var int
      */
     const RESPONSE_CODE_ID_ALREADY_EXISTS = 41;
 
     /**
      * Response Code "Insuficient credit".
      *
-     * @var integer
+     * @var int
      */
     const RESPONSE_CODE_INSUFICIENT_CREDIT = 33;
 
     /**
      * Response Code "Internal error".
      *
-     * @var integer
+     * @var int
      */
     const RESPONSE_CODE_INTERNAL_ERROR = 31;
 
     /**
      * Response Code "Internal error sending SMS".
      *
-     * @var integer
+     * @var int
      */
     const RESPONSE_CODE_INTERNAL_ERROR_SENDING_SMS = 2;
 
     /**
      * Response Code "Missing required parameter".
      *
-     * @var integer
+     * @var int
      */
     const RESPONSE_CODE_MISSING_REQUIRED_PARAMETER = 35;
 
     /**
      * Response Code "No message".
      *
-     * @var integer
+     * @var int
      */
     const RESPONSE_CODE_NO_MESSAGE = 61;
 
     /**
      * Response Code "Operator delivered".
      *
-     * @var integer
+     * @var int
      */
     const RESPONSE_CODE_OPERATOR_DELIVERED = 13;
 
     /**
      * Response Code "Reception error".
      *
-     * @var integer
+     * @var int
      */
     const RESPONSE_CODE_RECEPTION_ERROR = 35;
 
     /**
      * Response Code "Routing error".
      *
-     * @var integer
+     * @var int
      */
     const RESPONSE_CODE_ROUTING_ERROR = 34;
 
     /**
      * Response Code "SMS received".
      *
-     * @var integer
+     * @var int
      */
     const RESPONSE_CODE_SMS_RECEIVED = 11;
 
     /**
      * Response Code "SMS send".
      *
-     * @var integer
+     * @var int
      */
     const RESPONSE_CODE_SMS_SEND = 0;
 
     /**
      * Response Code "Temporaly unavailable".
      *
-     * @var integer
+     * @var int
      */
     const RESPONSE_CODE_TEMPORALY_UNAVAILABLE = 50;
 
     /**
      * Response Code "Transfer carried out".
      *
-     * @var integer
+     * @var int
      */
     const RESPONSE_CODE_TRANSFER_CARRIED_OUT = 0;
 
@@ -253,7 +253,7 @@ interface SMSModeResponseInterface {
     /**
      * Get the code.
      *
-     * @return integer Returns the code.
+     * @return int Returns the code.
      */
     public function getCode();
 

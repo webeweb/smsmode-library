@@ -25,35 +25,35 @@ interface SMSModeMessageInterface {
     /**
      * Message class "SMS Pro".
      *
-     * @var integer
+     * @var int
      */
     const MESSAGE_CLASS_SMS_PRO = 2;
 
     /**
      * Message class "SMS with authorized response".
      *
-     * @var integer
+     * @var int
      */
     const MESSAGE_CLASS_SMS_RESPONSE = 4;
 
     /**
      * Message length.
      *
-     * @var integer
+     * @var int
      */
     const MESSAGE_LENGTH = 160;
 
     /**
      * Message STOP always.
      *
-     * @var integer
+     * @var int
      */
     const STOP_ALWAYS = 2;
 
     /**
      * Message STOP only.
      *
-     * @var integer
+     * @var int
      */
     const STOP_ONLY = 1;
 

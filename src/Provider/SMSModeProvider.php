@@ -37,7 +37,7 @@ class SMSModeProvider {
     /**
      * Debug.
      *
-     * @var boolean
+     * @var bool
      */
     private $debug = false;
 
@@ -101,7 +101,7 @@ class SMSModeProvider {
     /**
      * Get the debug.
      *
-     * @return boolean Returns the debug.
+     * @return bool Returns the debug.
      */
     public function getDebug() {
         return $this->debug;
@@ -130,7 +130,7 @@ class SMSModeProvider {
     /**
      * Set the debug.
      *
-     * @param boolean $debug The debug.
+     * @param bool $debug The debug.
      * @return SMSModeProvider Returns this provider.
      */
     public function setDebug($debug) {

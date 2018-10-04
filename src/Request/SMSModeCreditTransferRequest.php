@@ -30,7 +30,7 @@ class SMSModeCreditTransferRequest implements SMSModeRequestInterface {
     /**
      * Credit.
      *
-     * @var integer
+     * @var int
      */
     private $credit;
 
@@ -58,7 +58,7 @@ class SMSModeCreditTransferRequest implements SMSModeRequestInterface {
     /**
      * Get the credit.
      *
-     * @return integer Returns the credit.
+     * @return int Returns the credit.
      */
     public function getCredit() {
         return $this->credit;
@@ -99,7 +99,7 @@ class SMSModeCreditTransferRequest implements SMSModeRequestInterface {
     /**
      * Set the credit.
      *
-     * @param integer $credit The credit.
+     * @param int $credit The credit.
      * @return SMSModeCreditTransferRequest Returns this credit transfer request.
      */
     public function setCredit($credit) {

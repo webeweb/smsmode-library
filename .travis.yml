@@ -7,19 +7,17 @@ php:
     - "7.1"
     - "7.2"
     - "nightly"
-    - "hhvm"
 
 matrix:
     allow_failures:
         - php: "nightly"
-        - php: "hhvm"
 
 before_install:
-    - if [ "$TRAVIS_PHP_VERSION" != "hhvm" ]; then echo "memory_limit=3072M" >> ~/.phpenv/versions/$(phpenv version-name)/etc/conf.d/travis.ini; fi;
+    - if [ "$TRAVIS_PHP_VERSION" != "hhvm" ]; then echo "memory_limit=4096M" >> ~/.phpenv/versions/$(phpenv version-name)/etc/conf.d/travis.ini; fi;
 
 install:
     - "composer update"
-    - "wget -c -nc --retry-connrefused --tries=0 https://github.com/php-coveralls/php-coveralls/releases/download/v2.0.0/php-coveralls.phar -O coveralls.phar"
+    - "wget -c -nc --retry-connrefused --tries=0 https://github.com/php-coveralls/php-coveralls/releases/download/v2.1.0/php-coveralls.phar -O coveralls.phar"
     - "chmod +x coveralls.phar"
     - "php coveralls.phar --version"
 

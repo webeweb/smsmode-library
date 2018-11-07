@@ -19,9 +19,8 @@ use WBW\Library\SMSMode\Tests\AbstractFrameworkTestCase;
  *
  * @author webeweb <https://github.com/webeweb/>
  * @package WBW\Library\SMSMode\Helper
- * @final
  */
-final class NumberHelperTest extends AbstractFrameworkTestCase {
+class NumberHelperTest extends AbstractFrameworkTestCase {
 
     /**
      * Tests the decodeNumber() method.

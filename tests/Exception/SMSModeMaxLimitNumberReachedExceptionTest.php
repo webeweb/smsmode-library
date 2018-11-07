@@ -19,9 +19,8 @@ use WBW\Library\SMSMode\Tests\AbstractFrameworkTestCase;
  *
  * @author webeweb <https://github.com/webeweb/>
  * @package WBW\Library\SMSMode\Tests\Exception
- * @final
  */
-final class SMSModeMaxLimitNumberReachedExceptionTest extends AbstractFrameworkTestCase {
+class SMSModeMaxLimitNumberReachedExceptionTest extends AbstractFrameworkTestCase {
 
     /**
      * Tests the __construct() method.

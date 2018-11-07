@@ -19,9 +19,8 @@ use WBW\Library\SMSMode\Tests\AbstractFrameworkTestCase;
  *
  * @author webeweb <https://github.com/webeweb/>
  * @package WBW\Library\SMSMode\Tests\Exception
- * @final
  */
-final class SMSModeInvalidNumberExceptionTest extends AbstractFrameworkTestCase {
+class SMSModeInvalidNumberExceptionTest extends AbstractFrameworkTestCase {
 
     /**
      * Tests the __construct() method.

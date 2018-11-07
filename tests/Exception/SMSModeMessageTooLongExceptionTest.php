@@ -19,9 +19,8 @@ use WBW\Library\SMSMode\Tests\AbstractFrameworkTestCase;
  *
  * @author webeweb <https://github.com/webeweb/>
  * @package WBW\Library\SMSMode\Tests\Exception
- * @final
  */
-final class SMSModeMessageTooLongExceptionTest extends AbstractFrameworkTestCase {
+class SMSModeMessageTooLongExceptionTest extends AbstractFrameworkTestCase {
 
     /**
      * Tests the __construct() method.

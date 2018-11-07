@@ -19,9 +19,8 @@ use WBW\Library\SMSMode\Utility\NumberUtility;
  *
  * @author webeweb <https://github.com/webeweb/>
  * @package WBW\Library\SMSMode\Utility
- * @final
  */
-final class NumberUtilityTest extends AbstractFrameworkTestCase {
+class NumberUtilityTest extends AbstractFrameworkTestCase {
 
     /**
      * Tests the decodeNumber() method.

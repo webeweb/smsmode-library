@@ -19,9 +19,8 @@ use WBW\Library\SMSMode\Tests\AbstractFrameworkTestCase;
  *
  * @author webeweb <https://github.com/webeweb/>
  * @package WBW\Library\SMSMode\Tests\Response
- * @final
  */
-final class SMSModeAccountBalanceResponseTest extends AbstractFrameworkTestCase {
+class SMSModeAccountBalanceResponseTest extends AbstractFrameworkTestCase {
 
     /**
      * Tests the parse() method.

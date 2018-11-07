@@ -20,9 +20,8 @@ use WBW\Library\SMSMode\Tests\AbstractFrameworkTestCase;
  *
  * @author webeweb <https://github.com/webeweb/>
  * @package WBW\Library\SMSMode\Tests\Response
- * @final
  */
-final class SMSModeSendSMSResponseTest extends AbstractFrameworkTestCase {
+class SMSModeSendSMSResponseTest extends AbstractFrameworkTestCase {
 
     /**
      * Tests the parse() method.

@@ -20,9 +20,8 @@ use WBW\Library\SMSMode\Tests\AbstractFrameworkTestCase;
  *
  * @author webeweb <https://github.com/webeweb/>
  * @package WBW\Library\SMSMode\Tests\Response
- * @final
  */
-final class SMSModeDeleteSubaccountResponseTest extends AbstractFrameworkTestCase {
+class SMSModeDeleteSubaccountResponseTest extends AbstractFrameworkTestCase {
 
     /**
      * Tests the parse() method.

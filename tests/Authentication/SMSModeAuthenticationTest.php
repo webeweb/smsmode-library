@@ -21,9 +21,8 @@ use WBW\Library\SMSMode\Tests\AbstractFrameworkTestCase;
  *
  * @author webeweb <https://github.com/webeweb/>
  * @package WBW\Library\SMSMode\Tests\Authentication
- * @final
  */
-final class SMSModeAuthenticationTest extends AbstractFrameworkTestCase {
+class SMSModeAuthenticationTest extends AbstractFrameworkTestCase {
 
     /**
      * Tests the __construct() method.

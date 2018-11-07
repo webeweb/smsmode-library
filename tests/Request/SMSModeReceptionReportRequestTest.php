@@ -22,9 +22,8 @@ use WBW\Library\SMSMode\Tests\AbstractFrameworkTestCase;
  *
  * @author webeweb <https://github.com/webeweb/>
  * @package WBW\Library\SMSMode\Tests\Request
- * @final
  */
-final class SMSModeReceptionReportRequestTest extends AbstractFrameworkTestCase {
+class SMSModeReceptionReportRequestTest extends AbstractFrameworkTestCase {
 
     /**
      * Tests the __construct() method.

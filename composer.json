@@ -3,12 +3,12 @@
     "type": "library",
     "description": "Integrate sMsmode API with your projects",
     "keywords": ["webeweb", "library", "sMsmode", "API", "SMS"],
-    "homepage": "http://github.com/webeweb/smsmode-library",
+    "homepage": "https://github.com/webeweb/smsmode-library",
     "license": "LGPL-3.0-only",
     "authors": [
         {
             "name": "webeweb",
-            "homepage": "http://github.com/webeweb/"
+            "homepage": "https://github.com/webeweb/"
         }
     ],
     "require": {
@@ -19,7 +19,7 @@
         "phpunit/phpunit": "5.7.*|^7.0"
     },
     "support": {
-        "issues": "http://github.com/webeweb/smsmode-library/issues"
+        "issues": "https://github.com/webeweb/smsmode-library/issues"
     },
     "autoload": {
         "psr-4": {

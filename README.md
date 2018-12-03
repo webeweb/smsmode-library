@@ -65,7 +65,7 @@ stable version of this package:
 ```bash
 $ mkdir smsmode-library
 $ cd smsmode-library
-$ git clone git@github.com:webeweb/smsmode-library package.git .
+$ git clone https://github.com/webeweb/smsmode-library package.git .
 $ composer install
 ```
 

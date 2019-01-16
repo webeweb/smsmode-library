@@ -62,5 +62,4 @@ class SMSModeAccountBalanceResponse extends AbstractSMSModeResponse {
         $this->accountBalance = $accountBalance;
         return $this;
     }
-
 }

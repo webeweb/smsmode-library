@@ -31,5 +31,4 @@ abstract class AbstractSMSModeException extends AbstractCoreException {
     public function __construct($message, Exception $previous = null) {
         parent::__construct($message, 500, $previous);
     }
-
 }

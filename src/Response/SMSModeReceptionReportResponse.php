@@ -110,5 +110,4 @@ class SMSModeReceptionReportResponse extends AbstractSMSModeResponse {
             $this->addReport([trim($response[0]), intval(trim($response[1]))]);
         }
     }
-
 }

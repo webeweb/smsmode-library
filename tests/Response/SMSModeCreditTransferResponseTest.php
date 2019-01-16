@@ -67,5 +67,4 @@ class SMSModeCreditTransferResponseTest extends AbstractFrameworkTestCase {
         $this->assertEquals(SMSModeCreditTransferResponse::RESPONSE_CODE_ID_ALREADY_EXISTS, $obj41->getCode());
         $this->assertEquals(SMSModeCreditTransferResponse::RESPONSE_DESC_ID_ALREADY_EXISTS, $obj41->getDescription());
     }
-
 }

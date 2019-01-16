@@ -59,5 +59,4 @@ class SMSModeAccountBalanceRequestTest extends AbstractFrameworkTestCase {
 
         $this->assertEquals([], $obj->toArray());
     }
-
 }

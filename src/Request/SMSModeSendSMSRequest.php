@@ -432,5 +432,4 @@ class SMSModeSendSMSRequest implements SMSModeRequestInterface, SMSModeMessageIn
         // Return the output.
         return $output;
     }
-
 }

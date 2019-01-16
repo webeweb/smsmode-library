@@ -149,5 +149,4 @@ class SMSModeGetResponsesRequestTest extends AbstractFrameworkTestCase {
         $res3 = ["startDate" => "14092017-12:00", "endDate" => "14092017-14:00"];
         $this->assertEquals($res3, $obj->toArray());
     }
-
 }

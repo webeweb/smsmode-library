@@ -200,5 +200,4 @@ class SMSModeGetResponsesRequest implements SMSModeRequestInterface {
         // Return the output.
         return $output;
     }
-
 }

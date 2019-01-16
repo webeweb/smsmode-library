@@ -34,5 +34,4 @@ class SMSModeMaxLimitNumberReachedExceptionTest extends AbstractFrameworkTestCas
         $res = "The max limit of numbers reached: 200 allowed";
         $this->assertEquals($res, $ex->getMessage());
     }
-
 }

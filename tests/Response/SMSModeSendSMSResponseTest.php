@@ -74,5 +74,4 @@ class SMSModeSendSMSResponseTest extends AbstractFrameworkTestCase {
         $this->assertEquals(SMSModeSendSMSResponse::RESPONSE_DESC_TEMPORALY_UNAVAILABLE, $obj50->getDescription());
         $this->assertNull($obj50->getSmsID(), "The method parse() does not return the expected sms id");
     }
-
 }

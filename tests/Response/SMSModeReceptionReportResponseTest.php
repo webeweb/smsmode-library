@@ -72,5 +72,4 @@ class SMSModeReceptionReportResponseTest extends AbstractFrameworkTestCase {
 
         $this->assertEquals(SMSModeReceptionReportResponse::RESPONSE_DESC_SMS_SEND, $err->getReportDescription("33612345678"));
     }
-
 }

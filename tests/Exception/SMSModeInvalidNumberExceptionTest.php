@@ -34,5 +34,4 @@ class SMSModeInvalidNumberExceptionTest extends AbstractFrameworkTestCase {
         $res = "The number \"exception\" is invalid";
         $this->assertEquals($res, $ex->getMessage());
     }
-
 }

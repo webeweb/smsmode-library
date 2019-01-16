@@ -172,5 +172,4 @@ class SMSModeCreateSubaccountRequestTest extends AbstractFrameworkTestCase {
         $res13 = ["newPseudo" => "username", "newPass" => "password", "date" => "12092017"];
         $this->assertEquals($res13, $obj->toArray());
     }
-
 }

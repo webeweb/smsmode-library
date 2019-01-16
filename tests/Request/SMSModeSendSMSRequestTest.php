@@ -217,5 +217,4 @@ class SMSModeSendSMSRequestTest extends AbstractFrameworkTestCase {
         $res10 = ["message" => "message", "groupe" => "group", "classe_msg" => 2, "nbr_msg" => 1];
         $this->assertEquals($res10, $obj->toArray());
     }
-
 }

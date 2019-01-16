@@ -96,5 +96,4 @@ class SMSModeProviderTest extends AbstractFrameworkTestCase {
         $obj->setDebug(true);
         $this->assertTrue($obj->getDebug());
     }
-
 }

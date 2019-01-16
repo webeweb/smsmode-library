@@ -76,5 +76,4 @@ class SMSModeDeleteSubaccountRequestTest extends AbstractFrameworkTestCase {
         $res1 = ["pseudoToDelete" => "username"];
         $this->assertEquals($res1, $obj->toArray());
     }
-
 }

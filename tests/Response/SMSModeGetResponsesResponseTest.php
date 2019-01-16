@@ -93,5 +93,4 @@ class SMSModeGetResponsesResponseTest extends AbstractFrameworkTestCase {
         $this->assertNull($err->getTo());
         $this->assertNull($err->getMessageID());
     }
-
 }

@@ -62,5 +62,4 @@ class SMSModeCreateSubaccountResponseTest extends AbstractFrameworkTestCase {
         $this->assertEquals(SMSModeCreateSubaccountResponse::RESPONSE_CODE_ID_ALREADY_EXISTS, $obj41->getCode());
         $this->assertEquals(SMSModeCreateSubaccountResponse::RESPONSE_DESC_ID_ALREADY_EXISTS, $obj41->getDescription());
     }
-
 }

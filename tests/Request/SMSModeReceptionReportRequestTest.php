@@ -76,5 +76,4 @@ class SMSModeReceptionReportRequestTest extends AbstractFrameworkTestCase {
         $res1 = ["smsID" => "smsID"];
         $this->assertEquals($res1, $obj->toArray());
     }
-
 }

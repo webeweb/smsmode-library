@@ -27,5 +27,4 @@ class SMSModeInvalidNumberException extends AbstractSMSModeException {
     public function __construct($number) {
         parent::__construct(sprintf("The number \"%s\" is invalid", $number));
     }
-
 }

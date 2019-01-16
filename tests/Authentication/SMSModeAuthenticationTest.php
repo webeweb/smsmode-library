@@ -77,5 +77,4 @@ class SMSModeAuthenticationTest extends AbstractFrameworkTestCase {
         $res2 = ["pseudo" => "username", "pass" => "password"];
         $this->assertEquals($res2, $obj->toArray());
     }
-
 }

@@ -93,5 +93,4 @@ class SMSModeReceptionReportRequest implements SMSModeRequestInterface {
         // Return the output.
         return $output;
     }
-
 }

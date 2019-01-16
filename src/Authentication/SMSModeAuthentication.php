@@ -87,5 +87,4 @@ class SMSModeAuthentication extends PasswordAuthentication {
         // Return the output.
         return $output;
     }
-
 }

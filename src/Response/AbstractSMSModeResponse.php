@@ -98,5 +98,4 @@ abstract class AbstractSMSModeResponse implements SMSModeResponseInterface {
         $this->description = $description;
         return $this;
     }
-
 }

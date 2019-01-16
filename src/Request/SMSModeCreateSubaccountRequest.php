@@ -36,7 +36,7 @@ class SMSModeCreateSubaccountRequest implements SMSModeRequestInterface {
     private $address;
 
     /**
-     * Birthdate.
+     * Birth date.
      *
      * @var DateTime
      */
@@ -468,5 +468,4 @@ class SMSModeCreateSubaccountRequest implements SMSModeRequestInterface {
         // Return the output.
         return $output;
     }
-
 }

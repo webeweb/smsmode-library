@@ -65,5 +65,4 @@ class SMSModeSendSMSResponse extends AbstractSMSModeResponse {
         $this->smsID = $smsID;
         return $this;
     }
-
 }

@@ -34,5 +34,4 @@ class SMSModeMessageTooLongExceptionTest extends AbstractFrameworkTestCase {
         $res = "The message \"exception\" exceeds the limit of 8 characters";
         $this->assertEquals($res, $ex->getMessage());
     }
-
 }

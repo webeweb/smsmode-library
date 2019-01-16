@@ -148,5 +148,4 @@ class SMSModeProvider {
         $this->request = $request;
         return $this;
     }
-
 }

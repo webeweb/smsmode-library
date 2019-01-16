@@ -52,5 +52,4 @@ class SMSModeAccountBalanceRequest implements SMSModeRequestInterface {
     public function toArray() {
         return [];
     }
-
 }

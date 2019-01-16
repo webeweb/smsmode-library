@@ -41,5 +41,4 @@ class SMSModeAccountBalanceResponseTest extends AbstractFrameworkTestCase {
         $this->assertNull($obj->getDescription());
         $this->assertEquals(212.5, $obj->getAccountBalance());
     }
-
 }

@@ -47,5 +47,4 @@ class NumberHelperTest extends AbstractFrameworkTestCase {
         $this->assertEquals("33612345678", NumberHelper::encodeNumber("33612345678"));
         $this->assertEquals("33712345678", NumberHelper::encodeNumber("33712345678"));
     }
-
 }

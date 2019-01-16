@@ -49,5 +49,4 @@ class NumberHelper {
         $result = preg_replace("/^07/", "337", $output, 1);
         return $result;
     }
-
 }

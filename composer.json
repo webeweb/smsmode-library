@@ -2,7 +2,13 @@
     "name": "webeweb/smsmode-library",
     "type": "library",
     "description": "Integrate sMsmode API with your projects",
-    "keywords": ["webeweb", "library", "sMsmode", "API", "SMS"],
+    "keywords": [
+        "API",
+        "library",
+        "sMsmode",
+        "SMS",
+        "webeweb"
+    ],
     "homepage": "https://github.com/webeweb/smsmode-library",
     "license": "LGPL-3.0-only",
     "authors": [
@@ -36,7 +42,7 @@
     },
     "extra": {
         "branch-alias": {
-            "dev-master": "1.x-dev"
+            "dev-master": "2.x-dev"
         }
     }
 }

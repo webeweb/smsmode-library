@@ -157,5 +157,4 @@ class SMSModeCreditTransferRequest implements SMSModeRequestInterface {
         // Return the output.
         return $output;
     }
-
 }

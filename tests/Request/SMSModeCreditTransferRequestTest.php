@@ -95,5 +95,4 @@ class SMSModeCreditTransferRequestTest extends AbstractFrameworkTestCase {
         $res2 = ["targetPseudo" => "username", "creditAmount" => 212, "reference" => "reference"];
         $this->assertEquals($res2, $obj->toArray());
     }
-
 }

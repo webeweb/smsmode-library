@@ -47,5 +47,4 @@ class NumberUtilityTest extends AbstractFrameworkTestCase {
         $this->assertEquals("33612345678", NumberUtility::encodeNumber("33612345678"));
         $this->assertEquals("33712345678", NumberUtility::encodeNumber("33712345678"));
     }
-
 }

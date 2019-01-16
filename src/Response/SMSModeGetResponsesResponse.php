@@ -219,5 +219,4 @@ class SMSModeGetResponsesResponse extends AbstractSMSModeResponse {
         $this->to = $to;
         return $this;
     }
-
 }

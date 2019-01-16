@@ -30,5 +30,8 @@ class RequestInterfaceTest extends AbstractTestCase {
     public function testConstruct() {
 
         $this->assertEquals("https://api.smsmode.com/http", RequestInterface::REQUEST_ENDPOINT);
+
+        $this->assertEquals("dmY", RequestInterface::REQUEST_DATE_FORMAT);
+        $this->assertEquals("dmY-H:i", RequestInterface::REQUEST_DATETIME_FORMAT);
     }
 }

@@ -15,12 +15,12 @@ use Exception;
 use WBW\Library\Core\Exception\AbstractCoreException;
 
 /**
- * Abstract sMsmode exception.
+ * Abstract exception.
  * @author webeweb <https://github.com/webeweb/>
  * @package WBW\Library\SMSMode\Exception
  * @abstract
  */
-abstract class AbstractSMSModeException extends AbstractCoreException {
+abstract class AbstractException extends AbstractCoreException {
 
     /**
      * Constructor.

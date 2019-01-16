@@ -15,7 +15,6 @@
         <whitelist>
             <directory>./</directory>
             <exclude>
-                <directory>src/Resources</directory>
                 <directory>tests</directory>
                 <directory>vendor</directory>
             </exclude>
@@ -24,6 +23,27 @@
     <testsuites>
         <testsuite name="webeweb/smsmode-library">
             <directory suffix="Test.php">./tests</directory>
+            <exclude>tests/Authentication/SMSModeAuthenticationTest.php</exclude>
+            <exclude>tests/Exception/SMSModeInvalidNumberExceptionTest.php</exclude>
+            <exclude>tests/Exception/SMSModeMaxLimitNumberReachedExceptionTest.php</exclude>
+            <exclude>tests/Exception/SMSModeMessageTooLongExceptionTest.php</exclude>
+            <exclude>tests/Helper/NumberHelperTest.php</exclude>
+            <exclude>tests/Provider/SMSModeProviderTest.php</exclude>
+            <exclude>tests/Request/SMSModeAccountBalanceRequestTest.php</exclude>
+            <exclude>tests/Request/SMSModeCreateSubaccountRequestTest.php</exclude>
+            <exclude>tests/Request/SMSModeCreditTransferRequestTest.php</exclude>
+            <exclude>tests/Request/SMSModeDeleteSubaccountRequestTest.php</exclude>
+            <exclude>tests/Request/SMSModeGetResponsesRequestTest.php</exclude>
+            <exclude>tests/Request/SMSModeReceptionReportRequestTest.php</exclude>
+            <exclude>tests/Request/SMSModeSendSMSRequestTest.php</exclude>
+            <exclude>tests/Response/SMSModeAccountBalanceResponseTest.php</exclude>
+            <exclude>tests/Response/SMSModeCreateSubaccountResponseTest.php</exclude>
+            <exclude>tests/Response/SMSModeCreditTransferResponseTest.php</exclude>
+            <exclude>tests/Response/SMSModeDeleteSubaccountResponseTest.php</exclude>
+            <exclude>tests/Response/SMSModeGetResponsesResponseTest.php</exclude>
+            <exclude>tests/Response/SMSModeReceptionReportResponseTest.php</exclude>
+            <exclude>tests/Response/SMSModeSendSMSResponseTest.php</exclude>
+            <exclude>tests/Utility/NumberUtilityTest.php</exclude>
         </testsuite>
     </testsuites>
 </phpunit>

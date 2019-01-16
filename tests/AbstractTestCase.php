@@ -20,6 +20,6 @@ use PHPUnit\Framework\TestCase;
  * @package WBW\Library\SMSMode\Tests
  * @abstract
  */
-abstract class AbstractFrameworkTestCase extends TestCase {
+abstract class AbstractTestCase extends TestCase {
 
 }

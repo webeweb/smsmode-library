@@ -25,4 +25,11 @@ interface RequestInterface {
      * @var string
      */
     const REQUEST_ENDPOINT = "https://api.smsmode.com/http";
+
+    /**
+     * Get the resource path.
+     *
+     * @return string Returns the resource path.
+     */
+    public function getResourcePath();
 }

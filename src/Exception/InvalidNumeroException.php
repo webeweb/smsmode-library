@@ -12,19 +12,19 @@
 namespace WBW\Library\SMSMode\Exception;
 
 /**
- * sMsmode invalid number exception.
+ * Invalid numero exception.
  *
  * @author webeweb <https://github.com/webeweb/>
  * @package WBW\Library\SMSMode\Exception
  */
-class SMSModeInvalidNumberException extends AbstractSMSModeException {
+class InvalidNumeroException extends AbstractException {
 
     /**
      * Constructor.
      *
-     * @param string $number The number.
+     * @param string $numero The numero.
      */
-    public function __construct($number) {
-        parent::__construct(sprintf("The number \"%s\" is invalid", $number));
+    public function __construct($numero) {
+        parent::__construct(sprintf("The numero \"%s\" is invalid", $numero));
     }
 }

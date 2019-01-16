@@ -11,16 +11,16 @@
 
 namespace WBW\Library\SMSMode\Tests\Exception;
 
-use WBW\Library\SMSMode\Exception\SMSModeInvalidNumberException;
-use WBW\Library\SMSMode\Tests\AbstractFrameworkTestCase;
+use WBW\Library\SMSMode\Exception\InvalidNumeroException;
+use WBW\Library\SMSMode\Tests\AbstractTestCase;
 
 /**
- * sMsmode invalid number exception test.
+ * Invalid numero exception test.
  *
  * @author webeweb <https://github.com/webeweb/>
  * @package WBW\Library\SMSMode\Tests\Exception
  */
-class SMSModeInvalidNumberExceptionTest extends AbstractFrameworkTestCase {
+class InvalidNumeroExceptionTest extends AbstractTestCase {
 
     /**
      * Tests the __construct() method.
@@ -29,9 +29,9 @@ class SMSModeInvalidNumberExceptionTest extends AbstractFrameworkTestCase {
      */
     public function testConstruct() {
 
-        $ex = new SMSModeInvalidNumberException("exception");
+        $obj = new InvalidNumeroException("exception");
 
-        $res = "The number \"exception\" is invalid";
-        $this->assertEquals($res, $ex->getMessage());
+        $res = "The numero \"exception\" is invalid";
+        $this->assertEquals($res, $obj->getMessage());
     }
 }

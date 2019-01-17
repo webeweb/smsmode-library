@@ -12,45 +12,32 @@
 namespace WBW\Library\SMSMode\Request;
 
 use WBW\Library\Core\Exception\Pointer\NullPointerException;
-use WBW\Library\SMSMode\API\SMSModeRequestInterface;
-use WBW\Library\SMSMode\Response\SMSModeReceptionReportResponse;
+use WBW\Library\SMSMode\API\Request\DeliveryReportRequestInterface;
 
 /**
- * sMsmode reception report request.
- *
- * cf. 3 Compte-rendu de réception
- * 	<https://www.smsmode.com/pdf/fiche-api-http.pdf>
+ * Delivery report request.
  *
  * @author webeweb <https://github.com/webeweb/>
  * @package WBW\Library\SMSMode\Request
  */
-class SMSModeReceptionReportRequest implements SMSModeRequestInterface {
+class DeliveryReportRequest extends AbstractRequest implements DeliveryReportRequestInterface {
 
     /**
-     * SMS id.
+     * SMS ID.
      *
      * @var string
      */
     private $smsID;
 
     /**
-     * Constructor.
+     * {@inheritdoc}
      */
-    public function __construct() {
-        // NOTHING TO DO.
+    public function getResourcePath() {
+        return self::DELIVERY_REPORT_RESOURCE_PATH;
     }
 
     /**
      * {@inheritdoc}
-     */
-    public function getResourcePath() {
-        return "compteRendu.do";
-    }
-
-    /**
-     * Get the SMS id.
-     *
-     * @return string Returns the SMS id.
      */
     public function getSmsID() {
         return $this->smsID;
@@ -58,16 +45,6 @@ class SMSModeReceptionReportRequest implements SMSModeRequestInterface {
 
     /**
      * {@inheritdoc}
-     */
-    public function parseResponse($rawResponse) {
-        return new SMSModeReceptionReportResponse($rawResponse);
-    }
-
-    /**
-     * Set the SMS id.
-     *
-     * @param string $smsID The SMS id.
-     * @return SMSModeReceptionReportRequest Returns this reception report request.
      */
     public function setSmsID($smsID) {
         $this->smsID = $smsID;
@@ -82,12 +59,12 @@ class SMSModeReceptionReportRequest implements SMSModeRequestInterface {
         // Initialize the output.
         $output = [];
 
-        // Check the required attribute "smsID".
+        // Check the mandatory parameter "smsID".
         if (null === $this->smsID) {
-            throw new NullPointerException("The attribute \"smsID\" is missing");
+            throw new NullPointerException("The mandatory parameter \"smsID\" is missing");
         }
 
-        // Add the required attribute.
+        // Add the mandatory parameter.
         $output["smsID"] = $this->smsID;
 
         // Return the output.

@@ -29,13 +29,6 @@
             <exclude>tests/Exception/SMSModeMessageTooLongExceptionTest.php</exclude>
             <exclude>tests/Helper/NumberHelperTest.php</exclude>
             <exclude>tests/Provider/SMSModeProviderTest.php</exclude>
-            <exclude>tests/Request/SMSModeAccountBalanceRequestTest.php</exclude>
-            <exclude>tests/Request/SMSModeCreateSubaccountRequestTest.php</exclude>
-            <exclude>tests/Request/SMSModeCreditTransferRequestTest.php</exclude>
-            <exclude>tests/Request/SMSModeDeleteSubaccountRequestTest.php</exclude>
-            <exclude>tests/Request/SMSModeGetResponsesRequestTest.php</exclude>
-            <exclude>tests/Request/SMSModeReceptionReportRequestTest.php</exclude>
-            <exclude>tests/Request/SMSModeSendSMSRequestTest.php</exclude>
             <exclude>tests/Response/SMSModeAccountBalanceResponseTest.php</exclude>
             <exclude>tests/Response/SMSModeCreateSubaccountResponseTest.php</exclude>
             <exclude>tests/Response/SMSModeCreditTransferResponseTest.php</exclude>

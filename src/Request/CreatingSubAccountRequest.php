@@ -102,7 +102,7 @@ class CreatingSubAccountRequest extends AbstractRequest implements CreatingSubAc
     private $reference;
 
     /**
-     * Company.
+     * Societe.
      *
      * @var string
      */

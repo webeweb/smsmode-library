@@ -57,208 +57,44 @@ class CreatingSubAccountRequestTest extends AbstractTestCase {
      * Tests the toArray() method.
      *
      * @return void
+     * @throws NullPointerException Throws a null pointer exception.
      */
     public function testToArray() {
 
         $obj = new CreatingSubAccountRequest();
+
         $obj->setNewPseudo("newPseudo");
         $obj->setNewPass("newPass");
 
-        $obj->setNewPass("newPass");
-        $res = ["newPseudo" => "newPseudo", "newPass" => "newPass"];
-        $this->assertEquals($res, $obj->toArray());
-    }
-
-    /**
-     * Tests the toArray() method.
-     *
-     * @return void
-     */
-    public function testToArrayWithAdresse() {
-
-        $obj = new CreatingSubAccountRequest();
-        $obj->setNewPseudo("newPseudo");
-        $obj->setNewPass("newPass");
-
-        $obj->setAdresse("adresse");
-        $res = ["newPseudo" => "newPseudo", "newPass" => "newPass", "adresse" => "adresse"];
-        $this->assertEquals($res, $obj->toArray());
-    }
-
-    /**
-     * Tests the toArray() method.
-     *
-     * @return void
-     */
-    public function testToArrayWithCodePostal() {
-
-        $obj = new CreatingSubAccountRequest();
-        $obj->setNewPseudo("newPseudo");
-        $obj->setNewPass("newPass");
-
-        $obj->setCodePostal("codePostal");
-        $res = ["newPseudo" => "newPseudo", "newPass" => "newPass", "codePostal" => "codePostal"];
-        $this->assertEquals($res, $obj->toArray());
-    }
-
-    /**
-     * Tests the toArray() method.
-     *
-     * @return void
-     */
-    public function testToArrayWithDate() {
-
-        $obj = new CreatingSubAccountRequest();
-        $obj->setNewPseudo("newPseudo");
-        $obj->setNewPass("newPass");
-
-        $obj->setDate(new DateTime("2017-09-12 11:00:00"));
-        $res = ["newPseudo" => "newPseudo", "newPass" => "newPass", "date" => "12092017"];
-        $this->assertEquals($res, $obj->toArray());
-    }
-
-    /**
-     * Tests the toArray() method.
-     *
-     * @return void
-     */
-    public function testToArrayWithEmail() {
-
-        $obj = new CreatingSubAccountRequest();
-        $obj->setNewPseudo("newPseudo");
-        $obj->setNewPass("newPass");
-
-        $obj->setEmail("email");
-        $res = ["newPseudo" => "newPseudo", "newPass" => "newPass", "email" => "email"];
-        $this->assertEquals($res, $obj->toArray());
-    }
-
-    /**
-     * Tests the toArray() method.
-     *
-     * @return void
-     */
-    public function testToArrayWithFax() {
-
-        $obj = new CreatingSubAccountRequest();
-        $obj->setNewPseudo("newPseudo");
-        $obj->setNewPass("newPass");
-
-        $obj->setFax("fax");
-        $res = ["newPseudo" => "newPseudo", "newPass" => "newPass", "fax" => "fax"];
-        $this->assertEquals($res, $obj->toArray());
-    }
-
-    /**
-     * Tests the toArray() method.
-     *
-     * @return void
-     */
-    public function testToArrayWithMobile() {
-
-        $obj = new CreatingSubAccountRequest();
-        $obj->setNewPseudo("newPseudo");
-        $obj->setNewPass("newPass");
-
-        $obj->setMobile("mobile");
-        $res = ["newPseudo" => "newPseudo", "newPass" => "newPass", "mobile" => "mobile"];
-        $this->assertEquals($res, $obj->toArray());
-    }
-
-    /**
-     * Tests the toArray() method.
-     *
-     * @return void
-     */
-    public function testToArrayWithNom() {
-
-        $obj = new CreatingSubAccountRequest();
-        $obj->setNewPseudo("newPseudo");
-        $obj->setNewPass("newPass");
-
-        $obj->setNom("nom");
-        $res = ["newPseudo" => "newPseudo", "newPass" => "newPass", "nom" => "nom"];
-        $this->assertEquals($res, $obj->toArray());
-    }
-
-    /**
-     * Tests the toArray() method.
-     *
-     * @return void
-     */
-    public function testToArrayWithPrenom() {
-
-        $obj = new CreatingSubAccountRequest();
-        $obj->setNewPseudo("newPseudo");
-        $obj->setNewPass("newPass");
-
-        $obj->setPrenom("prenom");
-        $res = ["newPseudo" => "newPseudo", "newPass" => "newPass", "prenom" => "prenom"];
-        $this->assertEquals($res, $obj->toArray());
-    }
-
-    /**
-     * Tests the toArray() method.
-     *
-     * @return void
-     */
-    public function testToArrayWithReference() {
-
-        $obj = new CreatingSubAccountRequest();
-        $obj->setNewPseudo("newPseudo");
-        $obj->setNewPass("newPass");
-
-        // ===
         $obj->setReference("reference");
-        $res = ["newPseudo" => "newPseudo", "newPass" => "newPass", "reference" => "reference"];
-        $this->assertEquals($res, $obj->toArray());
-    }
-
-    /**
-     * Tests the toArray() method.
-     *
-     * @return void
-     */
-    public function testToArrayWithSociete() {
-
-        $obj = new CreatingSubAccountRequest();
-        $obj->setNewPseudo("newPseudo");
-        $obj->setNewPass("newPass");
-
+        $obj->setNom("nom");
+        $obj->setPrenom("prenom");
         $obj->setSociete("societe");
-        $res = ["newPseudo" => "newPseudo", "newPass" => "newPass", "societe" => "societe"];
-        $this->assertEquals($res, $obj->toArray());
-    }
-
-    /**
-     * Tests the toArray() method.
-     *
-     * @return void
-     */
-    public function testToArrayWithTelephone() {
-
-        $obj = new CreatingSubAccountRequest();
-        $obj->setNewPseudo("newPseudo");
-        $obj->setNewPass("newPass");
-
-        $obj->setTelephone("telephone");
-        $res = ["newPseudo" => "newPseudo", "newPass" => "newPass", "telephone" => "telephone"];
-        $this->assertEquals($res, $obj->toArray());
-    }
-
-    /**
-     * Tests the toArray() method.
-     *
-     * @return void
-     */
-    public function testToArrayWithVille() {
-
-        $obj = new CreatingSubAccountRequest();
-        $obj->setNewPseudo("newPseudo");
-        $obj->setNewPass("newPass");
-
+        $obj->setAdresse("adresse");
         $obj->setVille("ville");
-        $res = ["newPseudo" => "newPseudo", "newPass" => "newPass", "ville" => "ville"];
+        $obj->setCodePostal("codePostal");
+        $obj->setMobile("mobile");
+        $obj->setTelephone("telephone");
+        $obj->setFax("fax");
+        $obj->setEmail("email");
+        $obj->setDate(new DateTime("2017-09-12 11:00:00"));
+
+        $res = [
+            "newPseudo"  => "newPseudo",
+            "newPass"    => "newPass",
+            "reference"  => "reference",
+            "nom"        => "nom",
+            "prenom"     => "prenom",
+            "societe"    => "societe",
+            "adresse"    => "adresse",
+            "ville"      => "ville",
+            "codePostal" => "codePostal",
+            "mobile"     => "mobile",
+            "telephone"  => "telephone",
+            "fax"        => "fax",
+            "email"      => "email",
+            "date"       => "12092017",
+        ];
         $this->assertEquals($res, $obj->toArray());
     }
 
@@ -267,27 +103,7 @@ class CreatingSubAccountRequestTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testToArrayWithoutNewPass() {
-
-        $obj = new CreatingSubAccountRequest();
-
-        try {
-
-            $obj->setNewPseudo("newPseudo");
-            $obj->toArray();
-        } catch (Exception $ex) {
-
-            $this->assertInstanceOf(NullPointerException::class, $ex);
-            $this->assertEquals("The mandatory parameter \"newPass\" is missing", $ex->getMessage());
-        }
-    }
-
-    /**
-     * Tests the toArray() method.
-     *
-     * @return void
-     */
-    public function testToArrayWithoutNewPseudo() {
+    public function testToArrayWithoutArguments() {
 
         $obj = new CreatingSubAccountRequest();
 
@@ -298,6 +114,16 @@ class CreatingSubAccountRequestTest extends AbstractTestCase {
 
             $this->assertInstanceOf(NullPointerException::class, $ex);
             $this->assertEquals("The mandatory parameter \"newPseudo\" is missing", $ex->getMessage());
+        }
+
+        try {
+
+            $obj->setNewPseudo("newPseudo");
+            $obj->toArray();
+        } catch (Exception $ex) {
+
+            $this->assertInstanceOf(NullPointerException::class, $ex);
+            $this->assertEquals("The mandatory parameter \"newPass\" is missing", $ex->getMessage());
         }
     }
 }

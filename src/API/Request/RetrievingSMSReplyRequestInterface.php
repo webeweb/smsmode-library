@@ -11,6 +11,7 @@
 
 namespace WBW\Library\SMSMode\API\Request;
 
+use DateTime;
 use WBW\Library\SMSMode\API\RequestInterface;
 
 /**

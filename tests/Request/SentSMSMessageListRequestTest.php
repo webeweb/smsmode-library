@@ -33,6 +33,8 @@ class SentSMSMessageListRequestTest  extends AbstractTestCase {
         $obj = new SentSMSMessageListRequest();
 
         $this->assertEquals(SentSMSMessageListRequestInterface::SENT_SMS_MESSAGE_LIST_RESOURCE_PATH, $obj->getResourcePath());
+
+        $this->assertNull($obj->getOffset());
     }
     /**
      * Tests the toArray() method.

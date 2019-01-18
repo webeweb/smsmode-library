@@ -34,4 +34,18 @@ class AccountBalanceRequestTest extends AbstractTestCase {
 
         $this->assertEquals(AccountBalanceRequestInterface::ACCOUNT_BALANCE_RESOURCE_PATH, $obj->getResourcePath());
     }
+
+    /**
+     * Tests the toArray() method.
+     *
+     * @return void
+     * @throws NullPointerException Throws a null pointer exception.
+     */
+    public function testToArray() {
+
+        $obj = new AccountBalanceRequest();
+
+        $res = [];
+        $this->assertEquals($res, $obj->toArray());
+    }
 }

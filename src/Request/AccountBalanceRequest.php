@@ -27,4 +27,11 @@ class AccountBalanceRequest extends AbstractRequest implements AccountBalanceReq
     public function getResourcePath() {
         return self::ACCOUNT_BALANCE_RESOURCE_PATH;
     }
+
+    /**
+     *  {@inhertidoc}
+     */
+    public function toArray() {
+        return [];
+    }
 }

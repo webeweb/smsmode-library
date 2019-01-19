@@ -13,6 +13,7 @@ namespace WBW\Library\SMSMode\Tests\Factory;
 
 use WBW\Library\SMSMode\API\Request\AccountBalanceRequestInterface;
 use WBW\Library\SMSMode\API\Request\AddingContactRequestInterface;
+use WBW\Library\SMSMode\API\Request\AuthenticationRequestInterface;
 use WBW\Library\SMSMode\API\Request\CheckingSMSMessageStatusRequestInterface;
 use WBW\Library\SMSMode\API\Request\CreatingSubAccountRequestInterface;
 use WBW\Library\SMSMode\API\Request\DeletingSMSRequestInterface;
@@ -54,6 +55,17 @@ class RequestFactoryTest extends AbstractTestCase {
 
         $obj = RequestFactory::newAddingContactRequest();
         $this->assertInstanceOf(AddingContactRequestInterface::class, $obj);
+    }
+
+    /**
+     * Tests the newAuthenticationRequest() method.
+     *
+     * @return void
+     */
+    public function testNewAuthenticationRequest() {
+
+        $obj = RequestFactory::newAuthenticationRequest();
+        $this->assertInstanceOf(AuthenticationRequestInterface::class, $obj);
     }
 
     /**

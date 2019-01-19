@@ -13,6 +13,7 @@ namespace WBW\Library\SMSMode\Factory;
 
 use WBW\Library\SMSMode\API\Request\AccountBalanceRequestInterface;
 use WBW\Library\SMSMode\API\Request\AddingContactRequestInterface;
+use WBW\Library\SMSMode\API\Request\AuthenticationRequestInterface;
 use WBW\Library\SMSMode\API\Request\CheckingSMSMessageStatusRequestInterface;
 use WBW\Library\SMSMode\API\Request\CreatingSubAccountRequestInterface;
 use WBW\Library\SMSMode\API\Request\DeletingSMSRequestInterface;
@@ -25,6 +26,7 @@ use WBW\Library\SMSMode\API\Request\SentSMSMessageListRequestInterface;
 use WBW\Library\SMSMode\API\Request\TransferringCreditsRequestInterface;
 use WBW\Library\SMSMode\Request\AccountBalanceRequest;
 use WBW\Library\SMSMode\Request\AddingContactRequest;
+use WBW\Library\SMSMode\Request\AuthenticationRequest;
 use WBW\Library\SMSMode\Request\CheckingSMSMessageStatusRequest;
 use WBW\Library\SMSMode\Request\CreatingSubAccountRequest;
 use WBW\Library\SMSMode\Request\DeletingSMSRequest;
@@ -60,6 +62,15 @@ class RequestFactory {
      */
     public static function newAddingContactRequest() {
         return new AddingContactRequest();
+    }
+
+    /**
+     * Creates a authentication request.
+     *
+     * @return AuthenticationRequestInterface Returns a authentication request.
+     */
+    public static function newAuthenticationRequest() {
+        return new AuthenticationRequest();
     }
 
     /**

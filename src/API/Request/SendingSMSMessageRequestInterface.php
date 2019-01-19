@@ -146,7 +146,7 @@ interface SendingSMSMessageRequestInterface extends RequestInterface {
      * Set the date envoi.
      *
      * @param DateTime|null $dateEnvoi The date envoi.
-     * @return SMSModeSendSMSRequestInterface Returns this sending SMS message request.
+     * @return SendingSMSMessageRequestInterface Returns this sending SMS message request.
      */
     public function setDateEnvoi(DateTime $dateEnvoi = null);
 

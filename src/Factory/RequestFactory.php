@@ -49,7 +49,7 @@ class RequestFactory {
     /**
      * Creates an account balance request.
      *
-     * @return AccountBalanceRequestInterface Returns a AccountBalanceRequest.
+     * @return AccountBalanceRequestInterface Returns an account balance request.
      */
     public static function newAccountBalanceRequest() {
         return new AccountBalanceRequest();
@@ -67,7 +67,7 @@ class RequestFactory {
     /**
      * Creates a authentication request.
      *
-     * @return AuthenticationRequestInterface Returns a authentication request.
+     * @return AuthenticationRequestInterface Returns an authentication request.
      */
     public static function newAuthenticationRequest() {
         return new AuthenticationRequest();

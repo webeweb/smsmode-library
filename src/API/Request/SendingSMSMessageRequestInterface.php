@@ -123,7 +123,7 @@ interface SendingSMSMessageRequestInterface extends RequestInterface {
     /**
      * Get the ref client.
      *
-     * @return int Returns the ref client.
+     * @return string Returns the ref client.
      */
     public function getRefClient();
 

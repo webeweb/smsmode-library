@@ -88,5 +88,4 @@ interface RetrievingSMSReplyRequestInterface extends RequestInterface {
      * @return AddingContactRequestInterface Returns this adding contact request.
      */
     public function setStartDate(DateTime $startDate = null);
-
 }

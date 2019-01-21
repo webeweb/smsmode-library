@@ -11,15 +11,14 @@
 
 namespace WBW\Library\SMSMode\Response;
 
+use WBW\Library\SMSMode\API\Response\DeletingSubAccountResponseInterface;
+
 /**
  * sMsmode delete subaccount response.
- *
- * cf. 5 Création de sous-compte
- * 	<https://www.smsmode.com/pdf/fiche-api-http.pdf>
  *
  * @author webeweb <https://github.com/webeweb/>
  * @package WBW\Library\SMSMode\Response
  */
-class SMSModeDeleteSubaccountResponse extends AbstractSMSModeResponse {
+class DeletingSubAccountResponse extends AbstractResponse implements DeletingSubAccountResponseInterface {
 
 }

@@ -11,15 +11,14 @@
 
 namespace WBW\Library\SMSMode\Response;
 
+use WBW\Library\SMSMode\API\Response\TransferringCreditsResponseInterface;
+
 /**
- * sMsmode credit transfer response interface.
- *
- * cf. 6 Transfert de crédit de compte à compte
- * 	<https://www.smsmode.com/pdf/fiche-api-http.pdf>
+ * Transferring credits response interface.
  *
  * @author webeweb <https://github.com/webeweb/>
  * @package WBW\Library\SMSMode\Response
  */
-class SMSModeCreditTransferResponse extends AbstractSMSModeResponse {
+class TransferringCreditsResponse extends AbstractResponse implements TransferringCreditsResponseInterface {
 
 }

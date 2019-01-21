@@ -20,6 +20,20 @@ namespace WBW\Library\SMSMode\API;
 interface ResponseInterface {
 
     /**
+     * Response date format
+     *
+     * @var string
+     */
+    const RESPONSE_DATE_FORMAT = RequestInterface::REQUEST_DATE_FORMAT;
+
+    /**
+     * Response delimiter.
+     *
+     * @var string
+     */
+    const RESPONSE_DELIMITER = "|";
+
+    /**
      * Get the code.
      *
      * @return int Returns the code.

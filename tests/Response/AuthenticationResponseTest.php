@@ -11,6 +11,7 @@
 
 namespace WBW\Library\SMSMode\Tests\Response;
 
+use DateTime;
 use WBW\Library\SMSMode\Response\AuthenticationResponse;
 use WBW\Library\SMSMode\Tests\AbstractTestCase;
 
@@ -38,6 +39,91 @@ class AuthenticationResponseTest extends AbstractTestCase {
         $this->assertNull($obj->getAccount());
         $this->assertNull($obj->getCreationDate());
         $this->assertNull($obj->getExpiration());
+        $this->assertNull($obj->getId());
         $this->assertNull($obj->getState());
+    }
+
+    /**
+     * Tests the setAccessToken() method.
+     *
+     * @return void
+     */
+    public function testSetAccessToken() {
+
+        $obj = new AuthenticationResponse();
+
+        $obj->setAccessToken("accessToken");
+        $this->assertEquals("accessToken", $obj->getAccessToken());
+    }
+
+    /**
+     * Tests the setAccount() method.
+     *
+     * @return void
+     */
+    public function testSetAccount() {
+
+        $obj = new AuthenticationResponse();
+
+        $obj->setAccount("account");
+        $this->assertEquals("account", $obj->getAccount());
+    }
+
+    /**
+     * Tests the setCreationDate() method.
+     *
+     * @return void
+     */
+    public function testSetCreationDate() {
+
+        // Set a Date/time mock.
+        $creationDate = new DateTime();
+
+        $obj = new AuthenticationResponse();
+
+        $obj->setCreationDate($creationDate);
+        $this->assertSame($creationDate, $obj->getCreationDate());
+    }
+
+    /**
+     * Tests the setExpiration() method.
+     *
+     * @return void
+     */
+    public function testSetExpiration() {
+
+        // Set a Date/time mock.
+        $expiration = new DateTime();
+
+        $obj = new AuthenticationResponse();
+
+        $obj->setExpiration($expiration);
+        $this->assertSame($expiration, $obj->getExpiration());
+    }
+
+    /**
+     * Tests the setId() method.
+     *
+     * @return void
+     */
+    public function testSetId() {
+
+        $obj = new AuthenticationResponse();
+
+        $obj->setId("id");
+        $this->assertEquals("id", $obj->getId());
+    }
+
+    /**
+     * Tests the setState() method.
+     *
+     * @return void
+     */
+    public function testSetState() {
+
+        $obj = new AuthenticationResponse();
+
+        $obj->setState("state");
+        $this->assertEquals("state", $obj->getState());
     }
 }

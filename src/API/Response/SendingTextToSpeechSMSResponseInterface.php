@@ -21,4 +21,18 @@ use WBW\Library\SMSMode\API\ResponseInterface;
  */
 interface SendingTextToSpeechSMSResponseInterface extends ResponseInterface {
 
+    /**
+     * Get the SMS ID.
+     *
+     * @return string Returns the SMS ID.
+     */
+    public function getSmsID();
+
+    /**
+     * Set the SMS ID.
+     *
+     * @param string $smsID The SMS ID.
+     * @return SendingSMSMessageResponseInterface Returns this sending SMS message response.
+     */
+    public function setSmsID($smsID);
 }

@@ -131,7 +131,7 @@ interface CreatingSubAccountRequestInterface extends RequestInterface {
      * Set the adresse.
      *
      * @param string $adresse The adresse.
-     * @return SMSModeCreateSubaccountRequest Returns this creating sub-account request.
+     * @return CreatingSubAccountRequestInterface Returns this creating sub-account request.
      */
     public function setAdresse($adresse);
 
@@ -139,7 +139,7 @@ interface CreatingSubAccountRequestInterface extends RequestInterface {
      * Set the code postal.
      *
      * @param string $codePostal The code postal.
-     * @return SMSModeCreateSubaccountRequest Returns this creating sub-account request.
+     * @return CreatingSubAccountRequestInterface Returns this creating sub-account request.
      */
     public function setCodePostal($codePostal);
 
@@ -147,7 +147,7 @@ interface CreatingSubAccountRequestInterface extends RequestInterface {
      * Set the date.
      *
      * @param DateTime|null $date The date.
-     * @return SMSModeCreateSubaccountRequest Returns this creating sub-account request.
+     * @return CreatingSubAccountRequestInterface Returns this creating sub-account request.
      */
     public function setDate(DateTime $date = null);
 
@@ -155,7 +155,7 @@ interface CreatingSubAccountRequestInterface extends RequestInterface {
      * Set the email.
      *
      * @param string $email The email.
-     * @return SMSModeCreateSubaccountRequest Returns this creating sub-account request.
+     * @return CreatingSubAccountRequestInterface Returns this creating sub-account request.
      */
     public function setEmail($email);
 
@@ -163,7 +163,7 @@ interface CreatingSubAccountRequestInterface extends RequestInterface {
      * Set the fax.
      *
      * @param string $fax The fax.
-     * @return SMSModeCreateSubaccountRequest Returns this creating sub-account request.
+     * @return CreatingSubAccountRequestInterface Returns this creating sub-account request.
      */
     public function setFax($fax);
 
@@ -171,7 +171,7 @@ interface CreatingSubAccountRequestInterface extends RequestInterface {
      * Set the mobile.
      *
      * @param string $mobile The mobile.
-     * @return SMSModeCreateSubaccountRequest Returns this creating sub-account request.
+     * @return CreatingSubAccountRequestInterface Returns this creating sub-account request.
      */
     public function setMobile($mobile);
 
@@ -179,7 +179,7 @@ interface CreatingSubAccountRequestInterface extends RequestInterface {
      * Set the new pass.
      *
      * @param string $newPass The new pass.
-     * @return SMSModeCreateSubaccountRequest Returns this creating sub-account request.
+     * @return CreatingSubAccountRequestInterface Returns this creating sub-account request.
      */
     public function setNewPass($newPass);
 
@@ -187,7 +187,7 @@ interface CreatingSubAccountRequestInterface extends RequestInterface {
      * Set the new pseudo.
      *
      * @param string $newPseudo The new pseudo.
-     * @return SMSModeCreateSubaccountRequest Returns this creating sub-account request.
+     * @return CreatingSubAccountRequestInterface Returns this creating sub-account request.
      */
     public function setNewPseudo($newPseudo);
 
@@ -195,7 +195,7 @@ interface CreatingSubAccountRequestInterface extends RequestInterface {
      * Set the nom.
      *
      * @param string $nom The nom.
-     * @return SMSModeCreateSubaccountRequest Returns this creating sub-account request.
+     * @return CreatingSubAccountRequestInterface Returns this creating sub-account request.
      */
     public function setNom($nom);
 
@@ -203,7 +203,7 @@ interface CreatingSubAccountRequestInterface extends RequestInterface {
      * Set the prenom.
      *
      * @param string $prenom The prenom.
-     * @return SMSModeCreateSubaccountRequest Returns this creating sub-account request.
+     * @return CreatingSubAccountRequestInterface Returns this creating sub-account request.
      */
     public function setPrenom($prenom);
 
@@ -211,7 +211,7 @@ interface CreatingSubAccountRequestInterface extends RequestInterface {
      * Set the reference.
      *
      * @param string $reference The reference.
-     * @return SMSModeCreateSubaccountRequest Returns this creating sub-account request.
+     * @return CreatingSubAccountRequestInterface Returns this creating sub-account request.
      */
     public function setReference($reference);
 
@@ -219,7 +219,7 @@ interface CreatingSubAccountRequestInterface extends RequestInterface {
      * Set the societe.
      *
      * @param string $societe The societe.
-     * @return SMSModeCreateSubaccountRequest Returns this creating sub-account request.
+     * @return CreatingSubAccountRequestInterface Returns this creating sub-account request.
      */
     public function setSociete($societe);
 
@@ -227,7 +227,7 @@ interface CreatingSubAccountRequestInterface extends RequestInterface {
      * Set the telephone.
      *
      * @param string $telephone The telephone.
-     * @return SMSModeCreateSubaccountRequest Returns this creating sub-account request.
+     * @return CreatingSubAccountRequestInterface Returns this creating sub-account request.
      */
     public function setTelephone($telephone);
 
@@ -235,7 +235,7 @@ interface CreatingSubAccountRequestInterface extends RequestInterface {
      * Set the ville.
      *
      * @param string $ville The ville.
-     * @return SMSModeCreateSubaccountRequest Returns this creating sub-account request.
+     * @return CreatingSubAccountRequestInterface Returns this creating sub-account request.
      */
     public function setVille($ville);
 }

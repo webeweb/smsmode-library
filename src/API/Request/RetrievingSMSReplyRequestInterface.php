@@ -85,7 +85,7 @@ interface RetrievingSMSReplyRequestInterface extends RequestInterface {
      * Set the start date.
      *
      * @param DateTime|null $startDate The start date.
-     * @return AddingContactRequestInterface Returns this adding contact request.
+     * @return RetrievingSMSReplyRequestInterface Returns this retrieving SMS reply request.
      */
     public function setStartDate(DateTime $startDate = null);
 }

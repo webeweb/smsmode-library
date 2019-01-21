@@ -14,6 +14,12 @@ namespace WBW\Library\SMSMode\API\Response;
 use DateTime;
 use WBW\Library\SMSMode\API\ResponseInterface;
 
+/**
+ * Authentication response interface.
+ *
+ * @author webeweb <https://github.com/webeweb/>
+ * @package WBW\Library\SMSMode\API\Response
+ */
 interface AuthenticationResponseInterface extends ResponseInterface {
 
     /**

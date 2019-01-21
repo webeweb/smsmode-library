@@ -14,7 +14,7 @@ namespace WBW\Library\SMSMode\API\Response;
 use WBW\Library\SMSMode\API\ResponseInterface;
 
 /**
- * Checking SMS message status request interface.
+ * Checking SMS message status response interface.
  *
  * @author webeweb <https://github.com/webeweb/>
  * @package WBW\Library\SMSMode\API\Response

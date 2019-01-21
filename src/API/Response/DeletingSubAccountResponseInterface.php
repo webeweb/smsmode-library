@@ -14,7 +14,7 @@ namespace WBW\Library\SMSMode\API\Response;
 use WBW\Library\SMSMode\API\ResponseInterface;
 
 /**
- * Deleting sub-account request interface.
+ * Deleting sub-account response interface.
  *
  * @author webeweb <https://github.com/webeweb/>
  * @package WBW\Library\SMSMode\API\Response

@@ -14,7 +14,7 @@ namespace WBW\Library\SMSMode\API\Response;
 use WBW\Library\SMSMode\API\ResponseInterface;
 
 /**
- * Deleting SMS request interface.
+ * Deleting SMS response interface.
  *
  * @author webeweb <https://github.com/webeweb/>
  * @package WBW\Library\SMSMode\API\Response

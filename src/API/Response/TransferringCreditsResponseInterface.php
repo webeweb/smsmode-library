@@ -14,7 +14,7 @@ namespace WBW\Library\SMSMode\API\Response;
 use WBW\Library\SMSMode\API\ResponseInterface;
 
 /**
- * Transferring credits request interface.
+ * Transferring credits response interface.
  *
  * @author webeweb <https://github.com/webeweb/>
  * @package WBW\Library\SMSMode\API\Response

@@ -36,4 +36,17 @@ class SendingTextToSpeechSMSResponseTest extends AbstractTestCase {
 
         $this->assertNull($obj->getSmsID());
     }
+
+    /**
+     * Tests the setSmsID() method.
+     *
+     * @return void
+     */
+    public function testSetSmsID() {
+
+        $obj = new SendingTextToSpeechSMSResponse();
+
+        $obj->setSmsID("smsID");
+        $this->assertEquals("smsID", $obj->getSmsID());
+    }
 }

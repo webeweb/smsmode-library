@@ -21,4 +21,18 @@ use WBW\Library\SMSMode\API\ResponseInterface;
  */
 interface AccountBalanceResponseInterface extends ResponseInterface {
 
+    /**
+     * Get the account balance.
+     *
+     * @return float Returns the account balance.
+     */
+    public function getAccountBalance();
+
+    /**
+     * Set the account balance.
+     *
+     * @param float $accountBalance The account balance.
+     * @return AccountBalanceResponseInterface Returns this account balance response.
+     */
+    public function setAccountBalance($accountBalance);
 }

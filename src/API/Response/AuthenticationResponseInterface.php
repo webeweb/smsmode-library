@@ -40,7 +40,7 @@ interface AuthenticationResponseInterface extends ResponseInterface {
     /**
      * Get the expiration.
      *
-     * @return string Returns the expiration.
+     * @return DateTime Returns the expiration.
      */
     public function getExpiration();
 

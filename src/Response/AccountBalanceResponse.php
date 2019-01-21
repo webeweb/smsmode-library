@@ -11,16 +11,15 @@
 
 namespace WBW\Library\SMSMode\Response;
 
+use WBW\Library\SMSMode\API\Response\AccountBalanceResponseInterface;
+
 /**
- * sMsmode account balance response.
- *
- * cf. 4 Solde du compte
- * 	<https://www.smsmode.com/pdf/fiche-api-http.pdf>
+ * Account balance response.
  *
  * @author webeweb <https://github.com/webeweb/>
  * @package WBW\Library\SMSMode\Response
  */
-class SMSModeAccountBalanceResponse extends AbstractSMSModeResponse {
+class AccountBalanceResponse extends AbstractResponse implements AccountBalanceResponseInterface {
 
     /**
      * Account balance.
@@ -39,26 +38,12 @@ class SMSModeAccountBalanceResponse extends AbstractSMSModeResponse {
     }
 
     /**
-     * {@inheritdoc}
-     */
-    protected function parse($rawResponse) {
-
-        // Set the code and description.
-        parent::parse($rawResponse);
-
-        // Check the raw response.
-        if (1 === preg_match("/^[0-9]{1,}\.[0-9]{1,}$/", $rawResponse)) {
-            $this->setAccountBalance(floatval(trim($rawResponse)));
-        }
-    }
-
-    /**
      * Set the account balance.
      *
      * @param float $accountBalance The account balance.
-     * @return SMSModeAccountBalanceResponse Returns this account balance response.
+     * @return AccountBalanceResponse Returns this account balance response.
      */
-    protected function setAccountBalance($accountBalance) {
+    public function setAccountBalance($accountBalance) {
         $this->accountBalance = $accountBalance;
         return $this;
     }

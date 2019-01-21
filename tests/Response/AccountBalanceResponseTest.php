@@ -23,6 +23,19 @@ use WBW\Library\SMSMode\Tests\AbstractTestCase;
 class AccountBalanceResponseTest extends AbstractTestCase {
 
     /**
+     * Tests the setAccoutnBalance() method.
+     *
+     * @return void
+     */
+    public function setAccountBalance() {
+
+        $obj = new AccountBalanceResponse();
+
+        $obj->setAccountBalance(212.5);
+        $this->assertEquals(212.5, $obj->getAccountBalance());
+    }
+
+    /**
      * Tests the __construct() method.
      *
      * @return void
@@ -33,5 +46,7 @@ class AccountBalanceResponseTest extends AbstractTestCase {
 
         $this->assertNull($obj->getCode());
         $this->assertNull($obj->getDescription());
+
+        $this->assertNull($obj->getAccountBalance());
     }
 }

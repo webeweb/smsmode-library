@@ -11,15 +11,14 @@
 
 namespace WBW\Library\SMSMode\Response;
 
+use WBW\Library\SMSMode\API\Response\CreatingSubAccountResponseInterface;
+
 /**
- * SMSMode create subaccount response.
- *
- * cf. 5 Création de sous-compte
- * 	<https://www.smsmode.com/pdf/fiche-api-http.pdf>
+ * Creating sub-account response.
  *
  * @author webeweb <https://github.com/webeweb/>
  * @package WBW\Library\SMSMode\Response
  */
-class SMSModeCreateSubaccountResponse extends AbstractSMSModeResponse {
+class CreatingSubAccountResponse extends AbstractResponse implements CreatingSubAccountResponseInterface {
 
 }

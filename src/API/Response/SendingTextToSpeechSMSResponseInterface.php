@@ -14,7 +14,7 @@ namespace WBW\Library\SMSMode\API\Response;
 use WBW\Library\SMSMode\API\ResponseInterface;
 
 /**
- * Sending text-to-speech SMS request interface.
+ * Sending text-to-speech SMS response interface.
  *
  * @author webeweb <https://github.com/webeweb/>
  * @package WBW\Library\SMSMode\API\Response
@@ -32,7 +32,7 @@ interface SendingTextToSpeechSMSResponseInterface extends ResponseInterface {
      * Set the SMS ID.
      *
      * @param string $smsID The SMS ID.
-     * @return SendingSMSMessageResponseInterface Returns this sending SMS message response.
+     * @return SendingTextToSpeechSMSResponseInterface Returns this sending text-to-speech SMS response.
      */
     public function setSmsID($smsID);
 }

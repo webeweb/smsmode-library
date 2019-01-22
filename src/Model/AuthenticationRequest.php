@@ -9,37 +9,40 @@
  * file that was distributed with this source code.
  */
 
-namespace WBW\Library\SMSMode\API\Request;
-
-use WBW\Library\SMSMode\API\RequestInterface;
+namespace WBW\Library\SMSMode\Model;
 
 /**
- * Authentication request interface.
+ * Authentication request.
  *
  * @author webeweb <https://github.com/webeweb/>
- * @package WBW\Library\SMSMode\API\Request
+ * @package WBW\Library\SMSMode\Model
  */
-interface AuthenticationRequestInterface extends RequestInterface {
+class AuthenticationRequest extends AbstractRequest {
 
     /**
-     * Authentication resource path.
+     * Access token.
      *
      * @var string
      */
-    const AUTHENTICATION_RESOURCE_PATH = "/2.0/createAuthorisation.do";
+    private $accessToken;
 
     /**
      * Get the access token.
      *
      * @return string Returns the access token.
      */
-    public function getAccessToken();
+    public function getAccessToken() {
+        return $this->accessToken;
+    }
 
     /**
      * Set the access token.
      *
      * @param string $accessToken The access token.
-     * @return AuthenticationRequestInterface Returns this authentication request.
+     * @return AuthenticationRequest Returns this authentication request.
      */
-    public function setAccessToken($accessToken);
+    public function setAccessToken($accessToken) {
+        $this->accessToken = $accessToken;
+        return $this;
+    }
 }

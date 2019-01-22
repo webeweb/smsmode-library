@@ -9,18 +9,17 @@
  * file that was distributed with this source code.
  */
 
-namespace WBW\Library\SMSMode\Response;
+namespace WBW\Library\SMSMode\Model;
 
 use DateTime;
-use WBW\Library\SMSMode\API\Response\AuthenticationResponseInterface;
 
 /**
  * Authentication response.
  *
  * @author webeweb <https://github.com/webeweb/>
- * @package WBW\Library\SMSMode\Response
+ * @package WBW\Library\SMSMode\Model
  */
-class AuthenticationResponse extends AbstractResponse implements AuthenticationResponseInterface {
+class AuthenticationResponse extends AbstractResponse {
 
     /**
      * Access token.
@@ -65,49 +64,64 @@ class AuthenticationResponse extends AbstractResponse implements AuthenticationR
     private $state;
 
     /**
-     * {@inheritdoc}
+     * Get the access token.
+     *
+     * @return string Returns the access token.
      */
     public function getAccessToken() {
         return $this->accessToken;
     }
 
     /**
-     * {@inheritdoc}
+     * Get the account.
+     *
+     * @return string Returns the account.
      */
     public function getAccount() {
         return $this->account;
     }
 
     /**
-     * {@inheritdoc}
+     * Get the creation date.
+     *
+     * @return DateTime Returns the creation date.
      */
     public function getCreationDate() {
         return $this->creationDate;
     }
 
     /**
-     * {@inheritdoc}
+     * Get the expiration.
+     *
+     * @return DateTime Returns the expiration.
      */
     public function getExpiration() {
         return $this->expiration;
     }
 
     /**
-     * {@inheritdoc}
+     * Get the id.
+     *
+     * @return string Returns the id.
      */
     public function getId() {
         return $this->id;
     }
 
     /**
-     * {@inheritdoc}
+     * Get the state.
+     *
+     * @return string Returns the state.
      */
     public function getState() {
         return $this->state;
     }
 
     /**
-     * {@inheritdoc}
+     * Set the access token.
+     *
+     * @param string $accessToken The access token.
+     * @return AuthenticationResponse Returns this authentication response.
      */
     public function setAccessToken($accessToken) {
         $this->accessToken = $accessToken;
@@ -115,7 +129,10 @@ class AuthenticationResponse extends AbstractResponse implements AuthenticationR
     }
 
     /**
-     * {@inheritdoc}
+     * Set the account.
+     *
+     * @param string $account The account.
+     * @return AuthenticationResponse Returns this authentication response.
      */
     public function setAccount($account) {
         $this->account = $account;
@@ -123,7 +140,10 @@ class AuthenticationResponse extends AbstractResponse implements AuthenticationR
     }
 
     /**
-     * {@inheritdoc}
+     * Set the creation date.
+     *
+     * @param DateTime|null $creationDate The creation date.
+     * @return AuthenticationResponse Returns this authentication response.
      */
     public function setCreationDate(DateTime $creationDate = null) {
         $this->creationDate = $creationDate;
@@ -131,7 +151,10 @@ class AuthenticationResponse extends AbstractResponse implements AuthenticationR
     }
 
     /**
-     * {@inheritdoc}
+     * Set the expiration.
+     *
+     * @param DateTime|null $expiration The expiration.
+     * @return AuthenticationResponse Returns this authentication response.
      */
     public function setExpiration(DateTime $expiration = null) {
         $this->expiration = $expiration;
@@ -139,7 +162,10 @@ class AuthenticationResponse extends AbstractResponse implements AuthenticationR
     }
 
     /**
-     * {@inheritdoc}
+     * Set the id.
+     *
+     * @param string $id The id.
+     * @return AuthenticationResponse Returns this authentication response.
      */
     public function setId($id) {
         $this->id = $id;
@@ -147,7 +173,10 @@ class AuthenticationResponse extends AbstractResponse implements AuthenticationR
     }
 
     /**
-     * {@inheritdoc}
+     * Set the state.
+     *
+     * @param string $state The state.
+     * @return AuthenticationResponse Returns this authentication response.
      */
     public function setState($state) {
         $this->state = $state;

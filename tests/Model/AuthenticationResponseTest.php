@@ -9,17 +9,17 @@
  * file that was distributed with this source code.
  */
 
-namespace WBW\Library\SMSMode\Tests\Response;
+namespace WBW\Library\SMSMode\Tests\Model;
 
 use DateTime;
-use WBW\Library\SMSMode\Response\AuthenticationResponse;
+use WBW\Library\SMSMode\Model\AuthenticationResponse;
 use WBW\Library\SMSMode\Tests\AbstractTestCase;
 
 /**
  * Authentication response test.
  *
  * @author webeweb <https://github.com/webeweb/>
- * @package WBW\Library\SMSMode\Tests\Response
+ * @package WBW\Library\SMSMode\Tests\Model
  */
 class AuthenticationResponseTest extends AbstractTestCase {
 

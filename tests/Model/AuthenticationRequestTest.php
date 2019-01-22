@@ -9,18 +9,20 @@
  * file that was distributed with this source code.
  */
 
-namespace WBW\Library\SMSMode\Tests\API\Request;
+namespace WBW\Library\SMSMode\Tests\Model;
 
-use WBW\Library\SMSMode\API\Request\AuthenticationRequestInterface;
+use Exception;
+use WBW\Library\Core\Exception\Pointer\NullPointerException;
+use WBW\Library\SMSMode\Model\AuthenticationRequest;
 use WBW\Library\SMSMode\Tests\AbstractTestCase;
 
 /**
- * Authentication request interface test.
+ * Authentication request test.
  *
  * @author webeweb <https://github.com/webeweb/>
- * @package WBW\Library\SMSMode\Tests\API\Request
+ * @package WBW\Library\SMSMode\Tests\Model
  */
-class AuthenticationRequestInterfaceTest extends AbstractTestCase {
+class AuthenticationRequestTest extends AbstractTestCase {
 
     /**
      * Tests the __construct() method.
@@ -29,6 +31,8 @@ class AuthenticationRequestInterfaceTest extends AbstractTestCase {
      */
     public function testConstruct() {
 
-        $this->assertEquals("/2.0/createAuthorisation.do", AuthenticationRequestInterface::AUTHENTICATION_RESOURCE_PATH);
+        $obj = new AuthenticationRequest();
+
+        $this->assertNull($obj->getAccessToken());
     }
 }

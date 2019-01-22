@@ -9,19 +9,18 @@
  * file that was distributed with this source code.
  */
 
-namespace WBW\Library\SMSMode\Request;
+namespace WBW\Library\SMSMode\Model;
 
 use WBW\Library\Core\Argument\ArrayHelper;
 use WBW\Library\Core\Exception\Pointer\NullPointerException;
-use WBW\Library\SMSMode\API\Request\TransferringCreditsRequestInterface;
 
 /**
  * Transferring credits request.
  *
  * @author webeweb <https://github.com/webeweb/>
- * @package WBW\Library\SMSMode\Request
+ * @package WBW\Library\SMSMode\Model
  */
-class TransferringCreditsRequest implements TransferringCreditsRequestInterface {
+class TransferringCreditsRequest extends AbstractRequest {
 
     /**
      * Credit amount.
@@ -45,35 +44,37 @@ class TransferringCreditsRequest implements TransferringCreditsRequestInterface 
     private $targetPseudo;
 
     /**
-     * {@inheritdoc}
+     * Get the credit amount.
+     *
+     * @return string Returns the credit amount.
      */
     public function getCreditAmount() {
         return $this->creditAmount;
     }
 
     /**
-     * {@inheritdoc}
+     * Get the reference.
+     *
+     * @return string Returns the reference.
      */
     public function getReference() {
         return $this->reference;
     }
 
     /**
-     * {@inheritdoc}
-     */
-    public function getResourcePath() {
-        return self::TRANSFERRING_CREDITS_RESOURCE_PATH;
-    }
-
-    /**
-     * {@inheritdoc}
+     * Get the target pseudo.
+     *
+     * @return string Returns the target pseudo.
      */
     public function getTargetPseudo() {
         return $this->targetPseudo;
     }
 
     /**
-     * {@inheritdoc}
+     * Set the credit amount.
+     *
+     * @param string $creditAmount The credit amount.
+     * @return TransferringCreditsRequest Returns this transferring credits request.
      */
     public function setCreditAmount($creditAmount) {
         $this->creditAmount = $creditAmount;
@@ -81,7 +82,10 @@ class TransferringCreditsRequest implements TransferringCreditsRequestInterface 
     }
 
     /**
-     * {@inheritdoc}
+     * Set the reference.
+     *
+     * @param string $reference The reference.
+     * @return TransferringCreditsRequest Returns this transferring credits request.
      */
     public function setReference($reference) {
         $this->reference = $reference;
@@ -89,7 +93,10 @@ class TransferringCreditsRequest implements TransferringCreditsRequestInterface 
     }
 
     /**
-     * {@inheritdoc}
+     * Set the target pseudo.
+     *
+     * @param string $targetPseudo The target pseudo.
+     * @return TransferringCreditsRequest Returns this transferring credits request.
      */
     public function setTargetPseudo($targetPseudo) {
         $this->targetPseudo = $targetPseudo;

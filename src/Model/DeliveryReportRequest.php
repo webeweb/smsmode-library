@@ -9,18 +9,17 @@
  * file that was distributed with this source code.
  */
 
-namespace WBW\Library\SMSMode\Request;
+namespace WBW\Library\SMSMode\Model;
 
 use WBW\Library\Core\Exception\Pointer\NullPointerException;
-use WBW\Library\SMSMode\API\Request\DeliveryReportRequestInterface;
 
 /**
  * Delivery report request.
  *
  * @author webeweb <https://github.com/webeweb/>
- * @package WBW\Library\SMSMode\Request
+ * @package WBW\Library\SMSMode\Model
  */
-class DeliveryReportRequest extends AbstractRequest implements DeliveryReportRequestInterface {
+class DeliveryReportRequest extends AbstractRequest {
 
     /**
      * SMS ID.
@@ -30,21 +29,19 @@ class DeliveryReportRequest extends AbstractRequest implements DeliveryReportReq
     private $smsID;
 
     /**
-     * {@inheritdoc}
-     */
-    public function getResourcePath() {
-        return self::DELIVERY_REPORT_RESOURCE_PATH;
-    }
-
-    /**
-     * {@inheritdoc}
+     * Get the sms ID.
+     *
+     * @return string Returns the sms ID.
      */
     public function getSmsID() {
         return $this->smsID;
     }
 
     /**
-     * {@inheritdoc}
+     * Set the sms ID.
+     *
+     * @param string $smsID The sms ID.
+     * @return DeliveryReportRequest Returns this delivery report request.
      */
     public function setSmsID($smsID) {
         $this->smsID = $smsID;

@@ -9,16 +9,14 @@
  * file that was distributed with this source code.
  */
 
-namespace WBW\Library\SMSMode\Response;
-
-use WBW\Library\SMSMode\API\Response\DeliveryReportResponseInterface;
+namespace WBW\Library\SMSMode\Model;
 
 /**
  * Delivery report response.
  *
  * @author webeweb <https://github.com/webeweb/>
- * @package WBW\Library\SMSMode\Response
+ * @package WBW\Library\SMSMode\Model
  */
-class DeliveryReportResponse extends AbstractResponse implements DeliveryReportResponseInterface {
+class DeliveryReportResponse extends AbstractResponse {
 
 }

@@ -9,16 +9,16 @@
  * file that was distributed with this source code.
  */
 
-namespace WBW\Library\SMSMode\Tests\Response;
+namespace WBW\Library\SMSMode\Tests\Model;
 
-use WBW\Library\SMSMode\Response\DeliveryReportResponse;
+use WBW\Library\SMSMode\Model\DeliveryReportResponse;
 use WBW\Library\SMSMode\Tests\AbstractTestCase;
 
 /**
  * Delivery report response test.
  *
  * @author webeweb <https://github.com/webeweb/>
- * @package WBW\Library\SMSMode\Tests\Response
+ * @package WBW\Library\SMSMode\Tests\Model
  */
 class DeliveryReportResponseTest extends AbstractTestCase {
 

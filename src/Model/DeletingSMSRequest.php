@@ -9,18 +9,17 @@
  * file that was distributed with this source code.
  */
 
-namespace WBW\Library\SMSMode\Request;
+namespace WBW\Library\SMSMode\Model;
 
 use WBW\Library\Core\Exception\Pointer\NullPointerException;
-use WBW\Library\SMSMode\API\Request\DeletingSMSRequestInterface;
 
 /**
  * Deleting SMS request.
  *
  * @author webeweb <https://github.com/webeweb/>
- * @package WBW\Library\SMSMode\Request
+ * @package WBW\Library\SMSMode\Model
  */
-class DeletingSMSRequest extends AbstractRequest implements DeletingSMSRequestInterface {
+class DeletingSMSRequest extends AbstractRequest {
 
     /**
      * Numero.
@@ -37,28 +36,28 @@ class DeletingSMSRequest extends AbstractRequest implements DeletingSMSRequestIn
     private $smsID;
 
     /**
-     * {@inheritdoc}
+     * Get the numero.
+     *
+     * @return string Returns the numero.
      */
     public function getNumero() {
         return $this->numero;
     }
 
     /**
-     * {@inheritdoc}
-     */
-    public function getResourcePath() {
-        return self::DELETING_SMS_RESOURCE_PATH;
-    }
-
-    /**
-     * {@inheritdoc}
+     * Get the sms ID.
+     *
+     * @return string Returns the sms ID.
      */
     public function getSmsID() {
         return $this->smsID;
     }
 
     /**
-     * {@inheritdoc}
+     * Set the numero.
+     *
+     * @param string $numero The numero.
+     * @return DeletingSMSRequest Returns this deleting SMS request.
      */
     public function setNumero($numero) {
         $this->numero = $numero;
@@ -66,7 +65,10 @@ class DeletingSMSRequest extends AbstractRequest implements DeletingSMSRequestIn
     }
 
     /**
-     * {@inheritdoc}
+     * Set the sms ID.
+     *
+     * @param string $smsID The sms ID.
+     * @return DeletingSMSRequest Returns this deleting SMS request.
      */
     public function setSmsID($smsID) {
         $this->smsID = $smsID;

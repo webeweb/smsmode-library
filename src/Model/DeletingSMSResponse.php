@@ -9,16 +9,14 @@
  * file that was distributed with this source code.
  */
 
-namespace WBW\Library\SMSMode\Response;
-
-use WBW\Library\SMSMode\API\Response\DeletingSMSResponseInterface;
+namespace WBW\Library\SMSMode\Model;
 
 /**
  * Deleting SMS response.
  *
  * @author webeweb <https://github.com/webeweb/>
- * @package WBW\Library\SMSMode\Response
+ * @package WBW\Library\SMSMode\Model
  */
-class DeletingSMSResponse extends AbstractResponse implements DeletingSMSResponseInterface {
+class DeletingSMSResponse extends AbstractResponse {
 
 }

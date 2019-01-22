@@ -9,16 +9,16 @@
  * file that was distributed with this source code.
  */
 
-namespace WBW\Library\SMSMode\Tests\Response;
+namespace WBW\Library\SMSMode\Tests\Model;
 
-use WBW\Library\SMSMode\Response\DeletingSMSResponse;
+use WBW\Library\SMSMode\Model\DeletingSMSResponse;
 use WBW\Library\SMSMode\Tests\AbstractTestCase;
 
 /**
  * Deleting SMS response test.
  *
  * @author webeweb <https://github.com/webeweb/>
- * @package WBW\Library\SMSMode\Tests\Response
+ * @package WBW\Library\SMSMode\Tests\Model
  */
 class DeletingSMSResponseTest extends AbstractTestCase {
 

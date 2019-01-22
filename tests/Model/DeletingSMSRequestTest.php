@@ -9,18 +9,20 @@
  * file that was distributed with this source code.
  */
 
-namespace WBW\Library\SMSMode\Tests\API\Request;
+namespace WBW\Library\SMSMode\Tests\Model;
 
-use WBW\Library\SMSMode\API\Request\TransferringCreditsRequestInterface;
+use Exception;
+use WBW\Library\Core\Exception\Pointer\NullPointerException;
+use WBW\Library\SMSMode\Model\DeletingSMSRequest;
 use WBW\Library\SMSMode\Tests\AbstractTestCase;
 
 /**
- * Transferring credits request interface test.
+ * Deleting SMS request test.
  *
  * @author webeweb <https://github.com/webeweb/>
- * @package WBW\Library\SMSMode\Tests\API\Request
+ * @package WBW\Library\SMSMode\Tests\Model
  */
-class TransferringCreditsRequestInterfaceTest extends AbstractTestCase {
+class DeletingSMSRequestTest extends AbstractTestCase {
 
     /**
      * Tests the __construct() method.
@@ -29,6 +31,9 @@ class TransferringCreditsRequestInterfaceTest extends AbstractTestCase {
      */
     public function testConstruct() {
 
-        $this->assertEquals("/1.6/creditTransfert.do", TransferringCreditsRequestInterface::TRANSFERRING_CREDITS_RESOURCE_PATH);
+        $obj = new DeletingSMSRequest();
+
+        $this->assertNull($obj->getNumero());
+        $this->assertNull($obj->getSmsID());
     }
 }

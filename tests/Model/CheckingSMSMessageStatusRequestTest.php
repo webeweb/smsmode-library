@@ -9,18 +9,20 @@
  * file that was distributed with this source code.
  */
 
-namespace WBW\Library\SMSMode\Tests\API\Request;
+namespace WBW\Library\SMSMode\Tests\Model;
 
-use WBW\Library\SMSMode\API\Request\DeletingSubAccountRequestInterface;
+use Exception;
+use WBW\Library\Core\Exception\Pointer\NullPointerException;
+use WBW\Library\SMSMode\Model\CheckingSMSMessageStatusRequest;
 use WBW\Library\SMSMode\Tests\AbstractTestCase;
 
 /**
- * Deleting sub-account request interface test.
+ * Checking SMS message status request test.
  *
  * @author webeweb <https://github.com/webeweb/>
- * @package WBW\Library\SMSMode\Tests\API\Request
+ * @package WBW\Library\SMSMode\Tests\Model
  */
-class DeletingSubAccountRequestInterfaceTest extends AbstractTestCase {
+class CheckingSMSMessageStatusRequestTest extends AbstractTestCase {
 
     /**
      * Tests the __construct() method.
@@ -29,6 +31,8 @@ class DeletingSubAccountRequestInterfaceTest extends AbstractTestCase {
      */
     public function testConstruct() {
 
-        $this->assertEquals("/1.6/deleteSubAccount.do", DeletingSubAccountRequestInterface::DELETING_SUB_ACCOUNT_RESOURCE_PATH);
+        $obj = new CheckingSMSMessageStatusRequest();
+
+        $this->assertNull($obj->getSmsID());
     }
 }

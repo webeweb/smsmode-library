@@ -9,20 +9,19 @@
  * file that was distributed with this source code.
  */
 
-namespace WBW\Library\SMSMode\Request;
+namespace WBW\Library\SMSMode\Model;
 
 use DateTime;
 use WBW\Library\Core\Argument\ArrayHelper;
 use WBW\Library\Core\Exception\Pointer\NullPointerException;
-use WBW\Library\SMSMode\API\Request\SendingTextToSpeechSMSRequestInterface;
 
 /**
  * Sending text-to-speech SMS request.
  *
  * @author webeweb <https://github.com/webeweb/>
- * @package WBW\Library\SMSMode\Request
+ * @package WBW\Library\SMSMode\Model
  */
-class SendingTextToSpeechSMSRequest extends AbstractRequest implements SendingTextToSpeechSMSRequestInterface {
+class SendingTextToSpeechSMSRequest extends AbstractRequest {
 
     /**
      * Date envoi.
@@ -68,49 +67,55 @@ class SendingTextToSpeechSMSRequest extends AbstractRequest implements SendingTe
     }
 
     /**
-     * {@inheritdoc}
+     * Get the date envoi.
+     *
+     * @return DateTime Returns the date envoi.
      */
     public function getDateEnvoi() {
         return $this->dateEnvoi;
     }
 
     /**
-     * {@inheritdoc}
+     * Get the language.
+     *
+     * @return string Returns the language.
      */
     public function getLanguage() {
         return $this->language;
     }
 
     /**
-     * {@inheritdoc}
+     * Get the message.
+     *
+     * @return string Returns the message.
      */
     public function getMessage() {
         return $this->message;
     }
 
     /**
-     * {@inheritdoc}
+     * Get the numero.
+     *
+     * @return string[] Returns the numero.
      */
     public function getNumero() {
         return $this->numero;
     }
 
     /**
-     * {@inheritdoc}
-     */
-    public function getResourcePath() {
-        return self::SENDING_TEXT_TO_SPEECH_SMS_RESOURCE_PATH;
-    }
-
-    /**
-     * {@inheritdoc}
+     * Get the title.
+     *
+     * @return string Returns the title.
      */
     public function getTitle() {
         return $this->title;
     }
 
     /**
-     * {@inheritdoc}
+     * Set the date envoi.
+     *
+     * @param DateTime|null $dateEnvoi The date envoi.
+     * @return SendingTextToSpeechSMSRequest Returns this sending text-to-speech request.
      */
     public function setDateEnvoi(DateTime $dateEnvoi = null) {
         $this->dateEnvoi = $dateEnvoi;
@@ -118,7 +123,10 @@ class SendingTextToSpeechSMSRequest extends AbstractRequest implements SendingTe
     }
 
     /**
-     * {@inheritdoc}
+     * Set the language.
+     *
+     * @param string $language The language.
+     * @return SendingTextToSpeechSMSRequest Returns this sending text-to-speech request.
      */
     public function setLanguage($language) {
         $this->language = $language;
@@ -126,7 +134,10 @@ class SendingTextToSpeechSMSRequest extends AbstractRequest implements SendingTe
     }
 
     /**
-     * {@inheritdoc}
+     * Set the message.
+     *
+     * @param string $message The message.
+     * @return SendingTextToSpeechSMSRequest Returns this sending text-to-speech request.
      */
     public function setMessage($message) {
         $this->message = $message;
@@ -134,7 +145,10 @@ class SendingTextToSpeechSMSRequest extends AbstractRequest implements SendingTe
     }
 
     /**
-     * {@inheritdoc}
+     * Set the numero.
+     *
+     * @param string[] $numero The numero.
+     * @return SendingTextToSpeechSMSRequest Returns this sending text-to-speech request.
      */
     public function setNumero(array $numero) {
         $this->numero = $numero;
@@ -142,7 +156,10 @@ class SendingTextToSpeechSMSRequest extends AbstractRequest implements SendingTe
     }
 
     /**
-     * {@inheritdoc}
+     * Set the title.
+     *
+     * @param string $title The title.
+     * @return SendingTextToSpeechSMSRequest Returns this sending text-to-speech request.
      */
     public function setTitle($title) {
         $this->title = $title;

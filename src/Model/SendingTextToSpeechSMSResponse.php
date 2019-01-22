@@ -9,17 +9,15 @@
  * file that was distributed with this source code.
  */
 
-namespace WBW\Library\SMSMode\Response;
-
-use WBW\Library\SMSMode\API\Response\SendingTextToSpeechSMSResponseInterface;
+namespace WBW\Library\SMSMode\Model;
 
 /**
  * Sending text-to-speech SMS response.
  *
  * @author webeweb <https://github.com/webeweb/>
- * @package WBW\Library\SMSMode\Response
+ * @package WBW\Library\SMSMode\Model
  */
-class SendingTextToSpeechSMSResponse extends AbstractResponse implements SendingTextToSpeechSMSResponseInterface {
+class SendingTextToSpeechSMSResponse extends AbstractResponse {
 
     /**
      * SMS id.
@@ -29,14 +27,19 @@ class SendingTextToSpeechSMSResponse extends AbstractResponse implements Sending
     private $smsID;
 
     /**
-     * {@inheritdoc}
+     * Get the SMS ID.
+     *
+     * @return string Returns the SMS ID.
      */
     public function getSmsID() {
         return $this->smsID;
     }
 
     /**
-     * {@inheritdoc}
+     * Set the SMS ID.
+     *
+     * @param string $smsID The SMS ID.
+     * @return SendingTextToSpeechSMSResponseReturns this sending text-to-speech SMS response.
      */
     public function setSmsID($smsID) {
         $this->smsID = $smsID;

@@ -9,9 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace WBW\Library\SMSMode\Request;
-
-use WBW\Library\SMSMode\API\RequestInterface;
+namespace WBW\Library\SMSMode\Model;
 
 /**
  * Abstract request.
@@ -19,7 +17,7 @@ use WBW\Library\SMSMode\API\RequestInterface;
  * @author webeweb <https://github.com/webeweb/>
  * @package WBW\Library\SMSMode\Request
  */
-abstract class AbstractRequest implements RequestInterface {
+abstract class AbstractRequest {
 
     /**
      * Constructor.

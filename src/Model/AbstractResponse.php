@@ -9,18 +9,16 @@
  * file that was distributed with this source code.
  */
 
-namespace WBW\Library\SMSMode\Response;
-
-use WBW\Library\SMSMode\API\ResponseInterface;
+namespace WBW\Library\SMSMode\Model;
 
 /**
  * Abstract response.
  *
  * @author webeweb <https://github.com/webeweb/>
- * @package WBW\Library\SMSMode\Response
+ * @package WBW\Library\SMSMode\Model
  * @abstract
  */
-abstract class AbstractResponse implements ResponseInterface {
+abstract class AbstractResponse {
 
     /**
      * Code.
@@ -44,21 +42,28 @@ abstract class AbstractResponse implements ResponseInterface {
     }
 
     /**
-     * {@inheritdoc}
+     * Get the code.
+     *
+     * @return int Returns the code.
      */
     public function getCode() {
         return $this->code;
     }
 
     /**
-     * {@inheritdoc}
+     * Get the description.
+     *
+     * @return string Returns the description.
      */
     public function getDescription() {
         return $this->description;
     }
 
     /**
-     * {@inheritdoc}
+     * Set the code.
+     *
+     * @param int $code The code.
+     * @return AbstractResponse Returns this response.
      */
     public function setCode($code) {
         $this->code = $code;
@@ -66,7 +71,10 @@ abstract class AbstractResponse implements ResponseInterface {
     }
 
     /**
-     * {@inheritdoc}
+     * Set the description.
+     *
+     * @param string $description The description.
+     * @return AbstractResponse Returns this response.
      */
     public function setDescription($description) {
         $this->description = $description;

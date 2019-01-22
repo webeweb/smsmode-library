@@ -9,17 +9,15 @@
  * file that was distributed with this source code.
  */
 
-namespace WBW\Library\SMSMode\Response;
-
-use WBW\Library\SMSMode\API\Response\AccountBalanceResponseInterface;
+namespace WBW\Library\SMSMode\Model;
 
 /**
  * Account balance response.
  *
  * @author webeweb <https://github.com/webeweb/>
- * @package WBW\Library\SMSMode\Response
+ * @package WBW\Library\SMSMode\Model
  */
-class AccountBalanceResponse extends AbstractResponse implements AccountBalanceResponseInterface {
+class AccountBalanceResponse extends AbstractResponse {
 
     /**
      * Account balance.

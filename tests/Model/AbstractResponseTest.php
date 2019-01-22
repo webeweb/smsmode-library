@@ -12,7 +12,7 @@
 namespace Response;
 
 use WBW\Library\SMSMode\Tests\AbstractTestCase;
-use WBW\Library\SMSMode\Tests\Fixtures\Response\TestResponse;
+use WBW\Library\SMSMode\Tests\Fixtures\Model\TestResponse;
 
 /**
  * Abstract response test.

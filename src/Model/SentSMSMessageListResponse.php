@@ -9,16 +9,14 @@
  * file that was distributed with this source code.
  */
 
-namespace WBW\Library\SMSMode\API\Response;
-
-use WBW\Library\SMSMode\API\ResponseInterface;
+namespace WBW\Library\SMSMode\Model;
 
 /**
- * Sent SMS message list response interface.
+ * Sent SMS message list response.
  *
  * @author webeweb <https://github.com/webeweb/>
- * @package WBW\Library\SMSMode\API\Response
+ * @package WBW\Library\SMSMode\Model
  */
-interface SentSMSMessageListResponseInterface extends ResponseInterface {
+class SentSMSMessageListResponse extends AbstractResponse {
 
 }

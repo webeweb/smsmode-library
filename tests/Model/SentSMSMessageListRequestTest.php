@@ -9,18 +9,18 @@
  * file that was distributed with this source code.
  */
 
-namespace WBW\Library\SMSMode\Tests\API\Request;
+namespace WBW\Library\SMSMode\Tests\Model;
 
-use WBW\Library\SMSMode\API\Request\SendingSMSMessageRequestInterface;
+use WBW\Library\SMSMode\Model\SentSMSMessageListRequest;
 use WBW\Library\SMSMode\Tests\AbstractTestCase;
 
 /**
- * Sent SMS message list request interface test.
+ * Sent SMS message list request test.
  *
  * @author webeweb <https://github.com/webeweb/>
- * @package WBW\Library\SMSMode\Tests\API\Request
+ * @package WBW\Library\SMSMode\Tests\Model
  */
-class SentSMSMessageListRequestInterfaceTest extends AbstractTestCase {
+class SentSMSMessageListRequestTest  extends AbstractTestCase {
 
     /**
      * Tests the __construct() method.
@@ -29,6 +29,8 @@ class SentSMSMessageListRequestInterfaceTest extends AbstractTestCase {
      */
     public function testConstruct() {
 
-        $this->assertEquals("/1.6/sendSMS.do", SendingSMSMessageRequestInterface::SENDING_SMS_MESSAGE_RESOURCE_PATH);
+        $obj = new SentSMSMessageListRequest();
+
+        $this->assertNull($obj->getOffset());
     }
 }

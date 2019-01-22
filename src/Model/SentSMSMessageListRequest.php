@@ -9,18 +9,17 @@
  * file that was distributed with this source code.
  */
 
-namespace WBW\Library\SMSMode\Request;
+namespace WBW\Library\SMSMode\Model;
 
 use WBW\Library\Core\Argument\ArrayHelper;
-use WBW\Library\SMSMode\API\Request\SentSMSMessageListRequestInterface;
 
 /**
  * Sent SMS message list request.
  *
  * @author webeweb <https://github.com/webeweb/>
- * @package WBW\Library\SMSMode\Request
+ * @package WBW\Library\SMSMode\Model
  */
-class SentSMSMessageListRequest extends AbstractRequest implements SentSMSMessageListRequestInterface {
+class SentSMSMessageListRequest extends AbstractRequest {
 
     /**
      * Offset.
@@ -30,21 +29,19 @@ class SentSMSMessageListRequest extends AbstractRequest implements SentSMSMessag
     private $offset;
 
     /**
-     * {@inheritdoc}
+     * Get the offset.
+     *
+     * @return int Returns the offset.
      */
     public function getOffset() {
         return $this->offset;
     }
 
     /**
-     * {@inheritdoc}
-     */
-    public function getResourcePath() {
-        return self::SENT_SMS_MESSAGE_LIST_RESOURCE_PATH;
-    }
-
-    /**
-     * {@inheritdoc}
+     * Set the offset.
+     *
+     * @param int $offset The offset.
+     * @return SentSMSMessageListRequest Returns this sent SMS message list request.
      */
     public function setOffset($offset) {
         $this->offset = $offset;

@@ -9,18 +9,17 @@
  * file that was distributed with this source code.
  */
 
-namespace WBW\Library\SMSMode\Request;
+namespace WBW\Library\SMSMode\Model;
 
 use WBW\Library\Core\Exception\Pointer\NullPointerException;
-use WBW\Library\SMSMode\API\Request\DeletingSubAccountRequestInterface;
 
 /**
  * Deleting sub-account request.
  *
  * @author webeweb <https://github.com/webeweb/>
- * @package WBW\Library\SMSMode\Request
+ * @package WBW\Library\SMSMode\Model
  */
-class DeletingSubAccountRequest extends AbstractRequest implements DeletingSubAccountRequestInterface {
+class DeletingSubAccountRequest extends AbstractRequest {
 
     /**
      * Pseudo to delete.
@@ -30,21 +29,19 @@ class DeletingSubAccountRequest extends AbstractRequest implements DeletingSubAc
     private $pseudoToDelete;
 
     /**
-     * {@inheritdoc}
+     * Get the pseudo to delete.
+     *
+     * @return string Returns the pseudo to delete.
      */
     public function getPseudoToDelete() {
         return $this->pseudoToDelete;
     }
 
     /**
-     * {@inheritdoc}
-     */
-    public function getResourcePath() {
-        return self::DELETING_SUB_ACCOUNT_RESOURCE_PATH;
-    }
-
-    /**
-     * {@inheritdoc}
+     * Set the pseudo to delete.
+     *
+     * @param string $pseudoToDelete The pseudo to delete.
+     * @return DeletingSubAccountRequest Returns this deleting sub-account request.
      */
     public function setPseudoToDelete($pseudoToDelete) {
         $this->pseudoToDelete = $pseudoToDelete;

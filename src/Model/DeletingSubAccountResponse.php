@@ -9,16 +9,14 @@
  * file that was distributed with this source code.
  */
 
-namespace WBW\Library\SMSMode\Response;
-
-use WBW\Library\SMSMode\API\Response\DeletingSubAccountResponseInterface;
+namespace WBW\Library\SMSMode\Model;
 
 /**
  * Deleting sub-account response.
  *
  * @author webeweb <https://github.com/webeweb/>
- * @package WBW\Library\SMSMode\Response
+ * @package WBW\Library\SMSMode\Model
  */
-class DeletingSubAccountResponse extends AbstractResponse implements DeletingSubAccountResponseInterface {
+class DeletingSubAccountResponse extends AbstractResponse {
 
 }

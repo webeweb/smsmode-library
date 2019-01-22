@@ -11,8 +11,6 @@
 
 namespace WBW\Library\SMSMode\Tests\Model;
 
-use Exception;
-use WBW\Library\Core\Exception\Pointer\NullPointerException;
 use WBW\Library\SMSMode\Model\DeletingSubAccountRequest;
 use WBW\Library\SMSMode\Tests\AbstractTestCase;
 

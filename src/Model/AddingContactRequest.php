@@ -9,20 +9,17 @@
  * file that was distributed with this source code.
  */
 
-namespace WBW\Library\SMSMode\Request;
+namespace WBW\Library\SMSMode\Model;
 
 use DateTime;
-use WBW\Library\Core\Argument\ArrayHelper;
-use WBW\Library\Core\Exception\Pointer\NullPointerException;
-use WBW\Library\SMSMode\API\Request\AddingContactRequestInterface;
 
 /**
  * Adding contact request.
  *
  * @author webeweb <https://github.com/webeweb/>
- * @package WBW\Library\SMSMode\Request
+ * @package WBW\Library\SMSMode\Model
  */
-class AddingContactRequest extends AbstractRequest implements AddingContactRequestInterface {
+class AddingContactRequest extends AbstractRequest {
 
     /**
      * Date.
@@ -82,63 +79,73 @@ class AddingContactRequest extends AbstractRequest implements AddingContactReque
     }
 
     /**
-     * {@inheritdoc}
+     * Get the date.
+     *
+     * @return DateTime Returns the date.
      */
     public function getDate() {
         return $this->date;
     }
 
     /**
-     * {@inheritdoc}
+     * Get the groupes.
+     *
+     * @return string[] Returns the groupes.
      */
     public function getGroupes() {
         return $this->groupes;
     }
 
     /**
-     * {@inheritdoc}
+     * Get the mobile.
+     *
+     * @return string Returns the mobile.
      */
     public function getMobile() {
         return $this->mobile;
     }
 
     /**
-     * {@inheritdoc}
+     * Get the nom.
+     *
+     * @return string Returns the nom.
      */
     public function getNom() {
         return $this->nom;
     }
 
     /**
-     * {@inheritdoc}
+     * Get the other.
+     *
+     * @return string Returns the other.
      */
     public function getOther() {
         return $this->other;
     }
 
     /**
-     * {@inheritdoc}
+     * Get the prenom.
+     *
+     * @return string Returns the prenom.
      */
     public function getPrenom() {
         return $this->prenom;
     }
 
     /**
-     * {@inheritdoc}
-     */
-    public function getResourcePath() {
-        return self::ADDING_CONTACT_RESOURCE_PATH;
-    }
-
-    /**
-     * {@inheritdoc}
+     * Get the societe.
+     *
+     * @return string Returns the societe.
      */
     public function getSociete() {
         return $this->societe;
     }
 
     /**
-     * {@inheritdoc}
+     * Set the date.
+     *
+     * @param DateTime|null $date The date.
+     * @return AddingContactRequest Returns this adding contact request.
      */
     public function setDate(DateTime $date = null) {
         $this->date = $date;
@@ -146,7 +153,10 @@ class AddingContactRequest extends AbstractRequest implements AddingContactReque
     }
 
     /**
-     * {@inheritdoc}
+     * Set the groupes.
+     *
+     * @param string[] $groupes The groupes.
+     * @return AddingContactRequest Returns this adding contact request.
      */
     public function setGroupes(array $groupes) {
         $this->groupes = $groupes;
@@ -154,7 +164,10 @@ class AddingContactRequest extends AbstractRequest implements AddingContactReque
     }
 
     /**
-     * {@inheritdoc}
+     * Set the mobile.
+     *
+     * @param string $mobile The mobile.
+     * @return AddingContactRequest Returns this adding contact request.
      */
     public function setMobile($mobile) {
         $this->mobile = $mobile;
@@ -162,7 +175,10 @@ class AddingContactRequest extends AbstractRequest implements AddingContactReque
     }
 
     /**
-     * {@inheritdoc}
+     * Set the nom.
+     *
+     * @param string $nom The nom.
+     * @return AddingContactRequest Returns this adding contact request.
      */
     public function setNom($nom) {
         $this->nom = $nom;
@@ -170,7 +186,10 @@ class AddingContactRequest extends AbstractRequest implements AddingContactReque
     }
 
     /**
-     * {@inheritdoc}
+     * Set the other.
+     *
+     * @param string $other The other.
+     * @return AddingContactRequest Returns this adding contact request.
      */
     public function setOther($other) {
         $this->other = $other;
@@ -178,7 +197,10 @@ class AddingContactRequest extends AbstractRequest implements AddingContactReque
     }
 
     /**
-     * {@inheritdoc}
+     * Set the prenom.
+     *
+     * @param string $prenom The prenom.
+     * @return AddingContactRequest Returns this adding contact request.
      */
     public function setPrenom($prenom) {
         $this->prenom = $prenom;
@@ -186,45 +208,13 @@ class AddingContactRequest extends AbstractRequest implements AddingContactReque
     }
 
     /**
-     * {@inheritdoc}
+     * Set the societe.
+     *
+     * @param string $societe The societe.
+     * @return AddingContactRequest Returns this adding contact request.
      */
     public function setSociete($societe) {
         $this->societe = $societe;
         return $this;
-    }
-
-    /**
-     *  {@inhertidoc}
-     */
-    public function toArray() {
-
-        // Initialize the output.
-        $output = [];
-
-        // Check the mandatory parameters.
-        if (null === $this->nom) {
-            throw new NullPointerException("The mandatory parameter \"nom\" is missing");
-        }
-        if (null === $this->mobile) {
-            throw new NullPointerException("The mandatory parameter \"mobile\" is missing");
-        }
-
-        // Add the mandatory parameters.
-        $output["nom"]    = $this->nom;
-        $output["mobile"] = $this->mobile;
-
-        // Check and add the optional parameters.
-        ArrayHelper::set($output, "prenom", $this->prenom, [null]);
-        if (0 < count($this->groupes)) {
-            $output["groupes"] = implode(",", $this->groupes);
-        }
-        ArrayHelper::set($output, "societe", $this->societe, [null]);
-        ArrayHelper::set($output, "other", $this->other, [null]);
-        if (null !== $this->date) {
-            ArrayHelper::set($output, "date", $this->date->format(self::REQUEST_DATE_FORMAT), [null]);
-        }
-
-        // Return the output.
-        return $output;
     }
 }

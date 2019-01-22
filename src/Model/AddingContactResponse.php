@@ -9,16 +9,14 @@
  * file that was distributed with this source code.
  */
 
-namespace WBW\Library\SMSMode\API\Response;
-
-use WBW\Library\SMSMode\API\ResponseInterface;
+namespace WBW\Library\SMSMode\Model;
 
 /**
- * Adding contact response interface.
+ * Adding contact response.
  *
  * @author webeweb <https://github.com/webeweb/>
- * @package WBW\Library\SMSMode\API\Response
+ * @package WBW\Library\SMSMode\Model
  */
-interface AddingContactResponseInterface extends ResponseInterface {
+class AddingContactResponse extends AbstractResponse {
 
 }

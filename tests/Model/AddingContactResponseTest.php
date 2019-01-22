@@ -9,16 +9,16 @@
  * file that was distributed with this source code.
  */
 
-namespace WBW\Library\SMSMode\Tests\Response;
+namespace WBW\Library\SMSMode\Tests\Model;
 
-use WBW\Library\SMSMode\Response\AddingContactResponse;
+use WBW\Library\SMSMode\Model\AddingContactResponse;
 use WBW\Library\SMSMode\Tests\AbstractTestCase;
 
 /**
  * Adding contact response test.
  *
  * @author webeweb <https://github.com/webeweb/>
- * @package WBW\Library\SMSMode\Tests\Response
+ * @package WBW\Library\SMSMode\Tests\Model
  */
 class AddingContactResponseTest extends AbstractTestCase {
 

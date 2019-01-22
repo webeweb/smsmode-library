@@ -9,16 +9,14 @@
  * file that was distributed with this source code.
  */
 
-namespace WBW\Library\SMSMode\Response;
-
-use WBW\Library\SMSMode\API\Response\CheckingSMSMessageStatusResponseInterface;
+namespace WBW\Library\SMSMode\Model;
 
 /**
  * Checking SMS message status response.
  *
  * @author webeweb <https://github.com/webeweb/>
- * @package WBW\Library\SMSMode\Response
+ * @package WBW\Library\SMSMode\Model
  */
-class CheckingSMSMessageStatusResponse extends AbstractResponse implements CheckingSMSMessageStatusResponseInterface {
+class CheckingSMSMessageStatusResponse extends AbstractResponse {
 
 }

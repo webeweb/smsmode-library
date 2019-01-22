@@ -9,17 +9,15 @@
  * file that was distributed with this source code.
  */
 
-namespace WBW\Library\SMSMode\Response;
-
-use WBW\Library\SMSMode\API\Response\SendingSMSMessageResponseInterface;
+namespace WBW\Library\SMSMode\Model;
 
 /**
  * Sending SMS message response.
  *
  * @author webeweb <https://github.com/webeweb/>
- * @package WBW\Library\SMSMode\Response
+ * @package WBW\Library\SMSMode\Model
  */
-class SendingSMSMessageResponse extends AbstractResponse implements SendingSMSMessageResponseInterface {
+class SendingSMSMessageResponse extends AbstractResponse {
 
     /**
      * SMS id.
@@ -29,14 +27,19 @@ class SendingSMSMessageResponse extends AbstractResponse implements SendingSMSMe
     private $smsID;
 
     /**
-     * {@inheritdoc}
+     * Get the SMS ID.
+     *
+     * @return string Returns the SMS ID.
      */
     public function getSmsID() {
         return $this->smsID;
     }
 
     /**
-     * {@inheritdoc}
+     * Set the SMS ID.
+     *
+     * @param string $smsID The SMS ID.
+     * @return SendingSMSMessageResponseReturns this sending SMS message response.
      */
     public function setSmsID($smsID) {
         $this->smsID = $smsID;

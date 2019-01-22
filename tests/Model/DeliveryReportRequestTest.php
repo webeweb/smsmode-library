@@ -11,8 +11,6 @@
 
 namespace WBW\Library\SMSMode\Tests\Model;
 
-use Exception;
-use WBW\Library\Core\Exception\Pointer\NullPointerException;
 use WBW\Library\SMSMode\Model\DeliveryReportRequest;
 use WBW\Library\SMSMode\Tests\AbstractTestCase;
 
@@ -22,7 +20,7 @@ use WBW\Library\SMSMode\Tests\AbstractTestCase;
  * @author webeweb <https://github.com/webeweb/>
  * @package WBW\Library\SMSMode\Tests\Model
  */
-class DeliveryReportRequestRequestTest extends AbstractTestCase {
+class DeliveryReportRequestTest extends AbstractTestCase {
 
     /**
      * Tests the __construct() method.

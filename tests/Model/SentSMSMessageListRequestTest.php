@@ -20,7 +20,7 @@ use WBW\Library\SMSMode\Tests\AbstractTestCase;
  * @author webeweb <https://github.com/webeweb/>
  * @package WBW\Library\SMSMode\Tests\Model
  */
-class SentSMSMessageListRequestTest  extends AbstractTestCase {
+class SentSMSMessageListRequestTest extends AbstractTestCase {
 
     /**
      * Tests the __construct() method.

@@ -9,16 +9,16 @@
  * file that was distributed with this source code.
  */
 
-namespace WBW\Library\SMSMode\Tests\Response;
+namespace WBW\Library\SMSMode\Tests\Model;
 
-use WBW\Library\SMSMode\Response\RetrievingSMSReplyResponse;
+use WBW\Library\SMSMode\Model\RetrievingSMSReplyResponse;
 use WBW\Library\SMSMode\Tests\AbstractTestCase;
 
 /**
  * Retrieving SMS reply response test.
  *
  * @author webeweb <https://github.com/webeweb/>
- * @package WBW\Library\SMSMode\Tests\Response
+ * @package WBW\Library\SMSMode\Tests\Model
  */
 class RetrievingSMSReplyResponseTest extends AbstractTestCase {
 

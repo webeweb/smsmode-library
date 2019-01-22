@@ -9,20 +9,19 @@
  * file that was distributed with this source code.
  */
 
-namespace WBW\Library\SMSMode\Request;
+namespace WBW\Library\SMSMode\Model;
 
 use DateTime;
 use WBW\Library\Core\Exception\Argument\IllegalArgumentException;
 use WBW\Library\Core\Exception\Pointer\NullPointerException;
-use WBW\Library\SMSMode\API\Request\RetrievingSMSReplyRequestInterface;
 
 /**
  * Retrieving SMS reply request.
  *
  * @author webeweb <https://github.com/webeweb/>
- * @package WBW\Library\SMSMode\Request
+ * @package WBW\Library\SMSMode\Model
  */
-class RetrievingSMSReplyRequest extends AbstractRequest implements RetrievingSMSReplyRequestInterface {
+class RetrievingSMSReplyRequest extends AbstractRequest {
 
     /**
      * End date.
@@ -53,42 +52,46 @@ class RetrievingSMSReplyRequest extends AbstractRequest implements RetrievingSMS
     private $startDate;
 
     /**
-     * {@inheritdoc}
+     * Get the end date.
+     *
+     * @return DateTime Returns the end date.
      */
     public function getEndDate() {
         return $this->endDate;
     }
 
     /**
-     * {@inheritdoc}
+     * Get the offset.
+     *
+     * @return int Returns the offset.
      */
     public function getOffset() {
         return $this->offset;
     }
 
     /**
-     * {@inheritdoc}
-     */
-    public function getResourcePath() {
-        return self::RETRIEVING_SMS_REPLY_RESOURCE_PATH;
-    }
-
-    /**
-     * {@inheritdoc}
+     * Get the start.
+     *
+     * @return int Returns the start.
      */
     public function getStart() {
         return $this->start;
     }
 
     /**
-     * {@inheritdoc}
+     * Get the start date.
+     *
+     * @return DateTime Returns the start date.
      */
     public function getStartDate() {
         return $this->startDate;
     }
 
     /**
-     * {@inheritdoc}
+     * Set the end date.
+     *
+     * @param DateTime|null $endDate The end date.
+     * @return RetrievingSMSReplyRequest Returns this retrieving SMS reply request.
      */
     public function setEndDate(DateTime $endDate = null) {
         $this->endDate = $endDate;
@@ -96,7 +99,10 @@ class RetrievingSMSReplyRequest extends AbstractRequest implements RetrievingSMS
     }
 
     /**
-     * {@inheritdoc}
+     * Set the offset.
+     *
+     * @param int $offset The offset.
+     * @return RetrievingSMSReplyRequest Returns this retrieving SMS reply request.
      */
     public function setOffset($offset) {
         $this->offset = $offset;
@@ -104,7 +110,10 @@ class RetrievingSMSReplyRequest extends AbstractRequest implements RetrievingSMS
     }
 
     /**
-     * {@inheritdoc}
+     * Set the start.
+     *
+     * @param int $start The start.
+     * @return RetrievingSMSReplyRequest Returns this retrieving SMS reply request.
      */
     public function setStart($start) {
         $this->start = $start;
@@ -112,7 +121,10 @@ class RetrievingSMSReplyRequest extends AbstractRequest implements RetrievingSMS
     }
 
     /**
-     * {@inheritdoc}
+     * Set the start date.
+     *
+     * @param DateTime|null $startDate The start date.
+     * @return RetrievingSMSReplyRequest Returns this retrieving SMS reply request.
      */
     public function setStartDate(DateTime $startDate = null) {
         $this->startDate = $startDate;

@@ -11,8 +11,6 @@
 
 namespace WBW\Library\SMSMode\Tests\Model;
 
-use Exception;
-use WBW\Library\Core\Exception\Pointer\NullPointerException;
 use WBW\Library\SMSMode\Model\DeletingSMSRequest;
 use WBW\Library\SMSMode\Tests\AbstractTestCase;
 
@@ -35,5 +33,31 @@ class DeletingSMSRequestTest extends AbstractTestCase {
 
         $this->assertNull($obj->getNumero());
         $this->assertNull($obj->getSmsID());
+    }
+
+    /**
+     * Tests the setNumero() method.
+     *
+     * @return void
+     */
+    public function testSetNumero() {
+
+        $obj = new DeletingSMSRequest();
+
+        $obj->setNumero("numero");
+        $this->assertEquals("numero", $obj->getNumero());
+    }
+
+    /**
+     * Tests the setSmsID() method.
+     *
+     * @return void
+     */
+    public function testSetSmsID() {
+
+        $obj = new DeletingSMSRequest();
+
+        $obj->setSmsID("smsID");
+        $this->assertEquals("smsID", $obj->getSmsID());
     }
 }

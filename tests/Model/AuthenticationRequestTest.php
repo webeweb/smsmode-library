@@ -11,8 +11,6 @@
 
 namespace WBW\Library\SMSMode\Tests\Model;
 
-use Exception;
-use WBW\Library\Core\Exception\Pointer\NullPointerException;
 use WBW\Library\SMSMode\Model\AuthenticationRequest;
 use WBW\Library\SMSMode\Tests\AbstractTestCase;
 
@@ -34,5 +32,18 @@ class AuthenticationRequestTest extends AbstractTestCase {
         $obj = new AuthenticationRequest();
 
         $this->assertNull($obj->getAccessToken());
+    }
+
+    /**
+     * Tests the setAccessToken() method.
+     *
+     * @return void
+     */
+    public function testSetAccessToken() {
+
+        $obj = new AuthenticationRequest();
+
+        $obj->setAccessToken("accessToken");
+        $this->assertEquals("accessToken", $obj->getAccessToken());
     }
 }

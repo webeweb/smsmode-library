@@ -11,8 +11,6 @@
 
 namespace WBW\Library\SMSMode\Tests\Model;
 
-use Exception;
-use WBW\Library\Core\Exception\Pointer\NullPointerException;
 use WBW\Library\SMSMode\Model\CheckingSMSMessageStatusRequest;
 use WBW\Library\SMSMode\Tests\AbstractTestCase;
 
@@ -34,5 +32,18 @@ class CheckingSMSMessageStatusRequestTest extends AbstractTestCase {
         $obj = new CheckingSMSMessageStatusRequest();
 
         $this->assertNull($obj->getSmsID());
+    }
+
+    /**
+     * Tests the setSmsID() method.
+     *
+     * @return void
+     */
+    public function testSetSmsID() {
+
+        $obj = new CheckingSMSMessageStatusRequest();
+
+        $obj->setSmsID("smsID");
+        $this->assertEquals("smsID", $obj->getSmsID());
     }
 }

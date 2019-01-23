@@ -19,4 +19,39 @@ namespace WBW\Library\SMSMode\Model;
  */
 class SentSMSMessageListResponse extends AbstractResponse {
 
+    /**
+     * Sent SMS messages.
+     *
+     * @var SentSMSMessage[]
+     */
+    private $sentSMSMessages;
+
+    /**
+     * Constructor.
+     */
+    public function __construct() {
+        parent::__construct();
+        $this->setSentSMSMessages([]);
+    }
+
+    /**
+     * Get the sent SMS messages.
+     *
+     * @return SentSMSMessage[] Returns the sent SMS messages.
+     */
+    public function getSentSMSMessages() {
+        return $this->sentSMSMessages;
+    }
+
+    /**
+     * Set the sent SMS messages.
+     *
+     * @param SentSMSMessage[] $sentSMSMessages The sent SMS messages.
+     * @return SentSMSMessageListResponse Returns this sent SMS message list response.
+     */
+    public function setSentSMSMessages($sentSMSMessages) {
+        $this->sentSMSMessages = $sentSMSMessages;
+        return $this;
+    }
+
 }

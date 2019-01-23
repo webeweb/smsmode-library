@@ -11,6 +11,7 @@
 
 namespace WBW\Library\SMSMode\Tests\Model;
 
+use WBW\Library\SMSMode\Model\DeliveryReport;
 use WBW\Library\SMSMode\Model\DeliveryReportResponse;
 use WBW\Library\SMSMode\Tests\AbstractTestCase;
 
@@ -33,5 +34,23 @@ class DeliveryReportResponseTest extends AbstractTestCase {
 
         $this->assertNull($obj->getCode());
         $this->assertNull($obj->getDescription());
+
+        $this->assertEquals([], $obj->getDeliveryReports());
+    }
+
+    /**
+     * Tests the setDeliveryReports() method.
+     *
+     * @return void
+     */
+    public function testSetDeliveryReports() {
+
+        // Set a Delivery report mock.
+        $deliveryReport = new DeliveryReport();
+
+        $obj = new DeliveryReportResponse();
+
+        $obj->setDeliveryReports([$deliveryReport]);
+        $this->assertEquals([$deliveryReport], $obj->getDeliveryReports());
     }
 }

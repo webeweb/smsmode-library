@@ -9,21 +9,17 @@
  * file that was distributed with this source code.
  */
 
-namespace WBW\Library\SMSMode\Response;
+namespace WBW\Library\SMSMode\Model;
 
 use DateTime;
-use WBW\Library\SMSMode\API\SMSModeRequestInterface;
 
 /**
- * sMsmode get responses response.
- *
- * cf. 13 Récupération des SMS réponses
- * 	<https://www.smsmode.com/pdf/fiche-api-http.pdf>
+ * SMS reply.
  *
  * @author webeweb <https://github.com/webeweb/>
- * @package WBW\Library\SMSMode\Response
+ * @package WBW\Library\SMSMode\Model
  */
-class SMSModeGetResponsesResponse extends AbstractSMSModeResponse {
+class SMSReply extends AbstractResponse {
 
     /**
      * From.
@@ -122,45 +118,12 @@ class SMSModeGetResponsesResponse extends AbstractSMSModeResponse {
     }
 
     /**
-     * {@inheritdoc}
-     */
-    protected function parse($rawResponse) {
-
-        // Determines the response.
-        if (1 === preg_match("/^(32|35)\ \|/", $rawResponse)) {
-
-            // Set the code and description.
-            parent::parse($rawResponse);
-            return;
-        }
-
-        // Explode the response.
-        $response = explode(self::RESPONSE_DELIMITER, $rawResponse);
-        if (6 !== count($response)) {
-            return;
-        }
-
-        // Initialize the reception date.
-        $receptionDate = DateTime::createFromFormat(SMSModeRequestInterface::DATETIME_FORMAT, trim($response[1]));
-
-        // Set the attributes.
-        $this->setResponseID(trim($response[0]));
-        if (false !== $receptionDate) {
-            $this->setReceptionDate($receptionDate);
-        }
-        $this->setFrom(trim($response[2]));
-        $this->setText(trim($response[3]));
-        $this->setTo(trim($response[4]));
-        $this->setMessageID(trim($response[5]));
-    }
-
-    /**
      * Set the from.
      *
      * @param string $from The from.
-     * @return SMSModeGetResponsesResponse Returns this get responses.
+     * @return SMSReply Returns this retrieving SMS reply.
      */
-    protected function setFrom($from) {
+    public function setFrom($from) {
         $this->from = $from;
         return $this;
     }
@@ -169,9 +132,9 @@ class SMSModeGetResponsesResponse extends AbstractSMSModeResponse {
      * Set the message id.
      *
      * @param string $messageID The message id.
-     * @return SMSModeGetResponsesResponse Returns this get responses.
+     * @return SMSReply Returns this retrieving SMS reply.
      */
-    protected function setMessageID($messageID) {
+    public function setMessageID($messageID) {
         $this->messageID = $messageID;
         return $this;
     }
@@ -180,9 +143,9 @@ class SMSModeGetResponsesResponse extends AbstractSMSModeResponse {
      * Set the reception date.
      *
      * @param DateTime $receptionDate The reception date.
-     * @return SMSModeGetResponsesResponse Returns this get responses.
+     * @return SMSReply Returns this retrieving SMS reply.
      */
-    protected function setReceptionDate(DateTime $receptionDate) {
+    public function setReceptionDate(DateTime $receptionDate) {
         $this->receptionDate = $receptionDate;
         return $this;
     }
@@ -191,9 +154,9 @@ class SMSModeGetResponsesResponse extends AbstractSMSModeResponse {
      * Set the response id.
      *
      * @param string $responseID The response id.
-     * @return SMSModeGetResponsesResponse Returns this get responses.
+     * @return SMSReply Returns this retrieving SMS reply.
      */
-    protected function setResponseID($responseID) {
+    public function setResponseID($responseID) {
         $this->responseID = $responseID;
         return $this;
     }
@@ -202,9 +165,9 @@ class SMSModeGetResponsesResponse extends AbstractSMSModeResponse {
      * Set the text.
      *
      * @param string $text The text.
-     * @return SMSModeGetResponsesResponse Returns this get responses.
+     * @return SMSReply Returns this retrieving SMS reply.
      */
-    protected function setText($text) {
+    public function setText($text) {
         $this->text = $text;
         return $this;
     }
@@ -213,9 +176,9 @@ class SMSModeGetResponsesResponse extends AbstractSMSModeResponse {
      * Set the to.
      *
      * @param string $to The to.
-     * @return SMSModeGetResponsesResponse Returns this get responses.
+     * @return SMSReply Returns this retrieving SMS reply.
      */
-    protected function setTo($to) {
+    public function setTo($to) {
         $this->to = $to;
         return $this;
     }

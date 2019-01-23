@@ -33,4 +33,17 @@ class SentSMSMessageListRequestTest extends AbstractTestCase {
 
         $this->assertNull($obj->getOffset());
     }
+
+    /**
+     * Tests the setOffset() method.
+     *
+     * @return void
+     */
+    public function testSetOffset() {
+
+        $obj = new SentSMSMessageListRequest();
+
+        $obj->setOffset(0);
+        $this->assertEquals(0, $obj->getOffset());
+    }
 }

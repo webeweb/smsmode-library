@@ -11,8 +11,6 @@
 
 namespace WBW\Library\SMSMode\Model;
 
-use WBW\Library\Core\Argument\ArrayHelper;
-
 /**
  * Sent SMS message list request.
  *
@@ -46,20 +44,5 @@ class SentSMSMessageListRequest extends AbstractRequest {
     public function setOffset($offset) {
         $this->offset = $offset;
         return $this;
-    }
-
-    /**
-     *  {@inhertidoc}
-     */
-    public function toArray() {
-
-        // Initialize the output.
-        $output = [];
-
-        // Check and add the optional parameters.
-        ArrayHelper::set($output, "offset", $this->offset, [null]);
-
-        // Return the output.
-        return $output;
     }
 }

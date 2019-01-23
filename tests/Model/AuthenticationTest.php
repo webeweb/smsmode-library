@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace WBW\Library\SMSMode\Tests\Authentication;
+namespace WBW\Library\SMSMode\Tests\Model;
 
 use WBW\Library\SMSMode\Model\Authentication;
 use WBW\Library\SMSMode\Tests\AbstractTestCase;
@@ -18,7 +18,7 @@ use WBW\Library\SMSMode\Tests\AbstractTestCase;
  * Authentication test.
  *
  * @author webeweb <https://github.com/webeweb/>
- * @package WBW\Library\SMSMode\Tests\Authentication
+ * @package WBW\Library\SMSMode\Tests\Model
  */
 class AuthenticationTest extends AbstractTestCase {
 

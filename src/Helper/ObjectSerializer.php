@@ -97,7 +97,7 @@ class ObjectSerializer {
      * @param string $rawResponse The response.
      * @return AccountBalanceResponse Returns the account balance response.
      */
-    public function deserializeAccountBalanceResponse($rawResponse) {
+    public static function deserializeAccountBalanceResponse($rawResponse) {
 
         $model = new AccountBalanceResponse();
         if (1 === preg_match("/^[0-9]{1,}\.[0-9]{1,}$/", trim($rawResponse))) {

@@ -11,6 +11,7 @@
 
 namespace WBW\Library\SMSMode\Tests\Model;
 
+use DateTime;
 use WBW\Library\SMSMode\Model\RetrievingSMSReplyRequest;
 use WBW\Library\SMSMode\Tests\AbstractTestCase;
 
@@ -35,5 +36,63 @@ class RetrievingSMSReplyRequestTest extends AbstractTestCase {
         $this->assertNull($obj->getOffset());
         $this->assertNull($obj->getStart());
         $this->assertNull($obj->getStartDate());
+    }
+
+    /**
+     * Tests the setEndDate() method.
+     *
+     * @return void
+     */
+    public function testSetEndDate() {
+
+        // Set a End date mock.
+        $endDate = new DateTime();
+
+        $obj = new RetrievingSMSReplyRequest();
+
+        $obj->setEndDate($endDate);
+        $this->assertSame($endDate, $obj->getEndDate());
+    }
+
+    /**
+     * Tests the setOffset() method.
+     *
+     * @return void
+     */
+    public function testSetOffset() {
+
+        $obj = new RetrievingSMSReplyRequest();
+
+        $obj->setOffset(0);
+        $this->assertEquals(0, $obj->getOffset());
+    }
+
+    /**
+     * Tests the setStart() method.
+     *
+     * @return void
+     */
+    public function testSetStart() {
+
+        $obj = new RetrievingSMSReplyRequest();
+
+        $obj->setStart(0);
+        $this->assertEquals(0, $obj->getStart());
+    }
+
+    /**
+     * Tests the setStartDate() method.
+     *
+     * @return void
+     */
+    public function testSetStartDate() {
+
+        // Set a Start date mock.
+        $startDate = new DateTime();
+
+        $obj = new RetrievingSMSReplyRequest();
+
+        $obj->setStartDate($startDate);
+        $this->assertSame($startDate, $obj->getStartDate());
     }
 }

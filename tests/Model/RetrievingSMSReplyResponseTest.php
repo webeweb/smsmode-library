@@ -11,6 +11,7 @@
 
 namespace WBW\Library\SMSMode\Tests\Model;
 
+use WBW\Library\SMSMode\Model\SMSReply;
 use WBW\Library\SMSMode\Model\RetrievingSMSReplyResponse;
 use WBW\Library\SMSMode\Tests\AbstractTestCase;
 
@@ -33,5 +34,23 @@ class RetrievingSMSReplyResponseTest extends AbstractTestCase {
 
         $this->assertNull($obj->getCode());
         $this->assertNull($obj->getDescription());
+
+        $this->assertEquals([], $obj->getSMSReplies());
+    }
+
+    /**
+     * Tests the setSMSReplies() method.
+     *
+     * @return void
+     */
+    public function testSetSMSReplies() {
+
+        // Set a SMS reply mock.
+        $smsReply = new SMSReply();
+
+        $obj = new RetrievingSMSReplyResponse();
+
+        $obj->setSMSReplies([$smsReply]);
+        $this->assertEquals([$smsReply], $obj->getSMSReplies());
     }
 }

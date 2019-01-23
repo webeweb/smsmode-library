@@ -12,9 +12,7 @@
 namespace WBW\Library\SMSMode\Model;
 
 use DateTime;
-use WBW\Library\Core\Argument\ArrayHelper;
 use WBW\Library\Core\Exception\Argument\IllegalArgumentException;
-use WBW\Library\Core\Exception\Pointer\NullPointerException;
 
 /**
  * Sending SMS message request.
@@ -243,10 +241,11 @@ class SendingSMSMessageRequest extends AbstractRequest {
      *
      * @param int $classeMsg The classe msg.
      * @return SendingSMSMessageRequest Returns this sending SMS message request.
+     * @throws IllegalArgumentException Throws an illegal argument exception if the classe msg is invalid.
      */
     public function setClasseMsg($classeMsg) {
         if (false === in_array($classeMsg, [self::CLASSE_MSG_SMS, self::CLASSE_MSG_SMS_PRO])) {
-            throw new IllegalArgumentException("The class msg \"" . $classeMsg . "\" is invalid");
+            throw new IllegalArgumentException(sprintf("The classe msg \"%s\" is invalid", $classeMsg));
         }
         $this->classeMsg = $classeMsg;
         return $this;
@@ -356,55 +355,13 @@ class SendingSMSMessageRequest extends AbstractRequest {
      *
      * @param int|null $stop The stop.
      * @return SendingSMSMessageRequest Returns this sending SMS message request.
+     * @throws IllegalArgumentException Throws an illegal argument exception if the classe msg is invalid.
      */
     public function setStop($stop) {
         if (false === in_array($stop, [self::STOP_ALWAYS, self::STOP_ONLY])) {
-            $stop = null;
+            throw new IllegalArgumentException(sprintf("The stop \"%s\" is invalid", $stop));
         }
         $this->stop = $stop;
         return $this;
-    }
-
-    /**
-     *  {@inhertidoc}
-     */
-    public function toArray() {
-
-        // Initialize the output.
-        $output = [];
-
-        // Check the mandatory parameter "message".
-        if (null === $this->message) {
-            throw new NullPointerException("The mandatory parameter \"message\" is missing");
-        }
-
-        // Check the mandatory parameters "number" and "group".
-        if (0 === count($this->numero) && null === $this->groupe) {
-            throw new NullPointerException("The mandatory parameter \"number\" or \"group\" is missing");
-        }
-
-        // Add the mandatory parameters.
-        $output["message"] = utf8_decode($this->message);
-        if (0 < count($this->numero)) {
-            $output["numero"] = implode(",", $this->numero);
-        } else {
-            $output["groupe"] = $this->groupe;
-        }
-
-        // Check and add the optional parameters.
-        ArrayHelper::set($output, "classe_msg", $this->classeMsg, [null]);
-        if (null !== $this->dateEnvoi) {
-            $output["date_envoi"] = $this->dateEnvoi->format(self::REQUEST_DATETIME_FORMAT);
-        }
-        ArrayHelper::set($output, "refClient", $this->refClient, [null]);
-        ArrayHelper::set($output, "emetteur", $this->emetteur, [null]);
-        ArrayHelper::set($output, "nbr_msg", $this->nbrMsg, [null]);
-        ArrayHelper::set($output, "notification_url", $this->notificationURL, [null]);
-        ArrayHelper::set($output, "notification_url", $this->notificationURL, [null]);
-        ArrayHelper::set($output, "notification_url_reponse", $this->notificationURLReponse, [null]);
-        ArrayHelper::set($output, "stop", $this->stop, [null]);
-
-        // Return the output.
-        return $output;
     }
 }

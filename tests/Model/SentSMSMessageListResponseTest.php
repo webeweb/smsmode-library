@@ -37,6 +37,7 @@ class SentSMSMessageListResponseTest extends AbstractTestCase {
 
         $this->assertEquals([], $obj->getSentSMSMessages());
     }
+
     /**
      * Tests the setSMSReplies() method.
      *

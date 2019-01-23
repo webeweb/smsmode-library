@@ -11,8 +11,6 @@
 
 namespace WBW\Library\SMSMode\Model;
 
-use WBW\Library\Core\Exception\Pointer\NullPointerException;
-
 /**
  * Deleting sub-account request.
  *
@@ -46,25 +44,5 @@ class DeletingSubAccountRequest extends AbstractRequest {
     public function setPseudoToDelete($pseudoToDelete) {
         $this->pseudoToDelete = $pseudoToDelete;
         return $this;
-    }
-
-    /**
-     *  {@inhertidoc}
-     */
-    public function toArray() {
-
-        // Initialize the output.
-        $output = [];
-
-        // Check the mandatory parameter "username".
-        if (null === $this->pseudoToDelete) {
-            throw new NullPointerException("The mandatory parameter \"pseudoToDelete\" is missing");
-        }
-
-        // Add the required attribute.
-        $output["pseudoToDelete"] = $this->pseudoToDelete;
-
-        // Return the output.
-        return $output;
     }
 }

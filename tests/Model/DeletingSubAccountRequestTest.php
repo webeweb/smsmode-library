@@ -33,4 +33,17 @@ class DeletingSubAccountRequestTest extends AbstractTestCase {
 
         $this->assertNull($obj->getPseudoToDelete());
     }
+
+    /**
+     * Tests the setPseudoToDelete() method.
+     *
+     * @return void
+     */
+    public function testSetPseudoToDelete() {
+
+        $obj = new DeletingSubAccountRequest();
+
+        $obj->setPseudoToDelete("pseudoToDelete");
+        $this->assertEquals("pseudoToDelete", $obj->getPseudoToDelete());
+    }
 }

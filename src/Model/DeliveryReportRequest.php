@@ -11,8 +11,6 @@
 
 namespace WBW\Library\SMSMode\Model;
 
-use WBW\Library\Core\Exception\Pointer\NullPointerException;
-
 /**
  * Delivery report request.
  *
@@ -46,25 +44,5 @@ class DeliveryReportRequest extends AbstractRequest {
     public function setSmsID($smsID) {
         $this->smsID = $smsID;
         return $this;
-    }
-
-    /**
-     *  {@inhertidoc}
-     */
-    public function toArray() {
-
-        // Initialize the output.
-        $output = [];
-
-        // Check the mandatory parameter "smsID".
-        if (null === $this->smsID) {
-            throw new NullPointerException("The mandatory parameter \"smsID\" is missing");
-        }
-
-        // Add the mandatory parameter.
-        $output["smsID"] = $this->smsID;
-
-        // Return the output.
-        return $output;
     }
 }

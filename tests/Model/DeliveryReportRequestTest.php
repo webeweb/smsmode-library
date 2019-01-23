@@ -33,4 +33,17 @@ class DeliveryReportRequestTest extends AbstractTestCase {
 
         $this->assertNull($obj->getSmsID());
     }
+
+    /**
+     * Tests the setSmsID() method.
+     *
+     * @return void
+     */
+    public function testSetSmsID() {
+
+        $obj = new DeliveryReportRequest();
+
+        $obj->setSmsID("smsID");
+        $this->assertEquals("smsID", $obj->getSmsID());
+    }
 }

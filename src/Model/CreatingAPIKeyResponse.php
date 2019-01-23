@@ -14,12 +14,12 @@ namespace WBW\Library\SMSMode\Model;
 use DateTime;
 
 /**
- * Authentication response.
+ * Creating API key response.
  *
  * @author webeweb <https://github.com/webeweb/>
  * @package WBW\Library\SMSMode\Model
  */
-class AuthenticationResponse extends AbstractResponse {
+class CreatingAPIKeyResponse extends AbstractResponse {
 
     /**
      * Access token.
@@ -121,7 +121,7 @@ class AuthenticationResponse extends AbstractResponse {
      * Set the access token.
      *
      * @param string $accessToken The access token.
-     * @return AuthenticationResponse Returns this authentication response.
+     * @return CreatingAPIKeyResponse Returns this creating API key response.
      */
     public function setAccessToken($accessToken) {
         $this->accessToken = $accessToken;
@@ -132,7 +132,7 @@ class AuthenticationResponse extends AbstractResponse {
      * Set the account.
      *
      * @param string $account The account.
-     * @return AuthenticationResponse Returns this authentication response.
+     * @return CreatingAPIKeyResponse Returns this creating API key response.
      */
     public function setAccount($account) {
         $this->account = $account;
@@ -143,7 +143,7 @@ class AuthenticationResponse extends AbstractResponse {
      * Set the creation date.
      *
      * @param DateTime|null $creationDate The creation date.
-     * @return AuthenticationResponse Returns this authentication response.
+     * @return CreatingAPIKeyResponse Returns this creating API key response.
      */
     public function setCreationDate(DateTime $creationDate = null) {
         $this->creationDate = $creationDate;
@@ -154,7 +154,7 @@ class AuthenticationResponse extends AbstractResponse {
      * Set the expiration.
      *
      * @param DateTime|null $expiration The expiration.
-     * @return AuthenticationResponse Returns this authentication response.
+     * @return CreatingAPIKeyResponse Returns this creating API key response.
      */
     public function setExpiration(DateTime $expiration = null) {
         $this->expiration = $expiration;
@@ -165,7 +165,7 @@ class AuthenticationResponse extends AbstractResponse {
      * Set the id.
      *
      * @param string $id The id.
-     * @return AuthenticationResponse Returns this authentication response.
+     * @return CreatingAPIKeyResponse Returns this creating API key response.
      */
     public function setId($id) {
         $this->id = $id;
@@ -176,7 +176,7 @@ class AuthenticationResponse extends AbstractResponse {
      * Set the state.
      *
      * @param string $state The state.
-     * @return AuthenticationResponse Returns this authentication response.
+     * @return CreatingAPIKeyResponse Returns this creating API key response.
      */
     public function setState($state) {
         $this->state = $state;

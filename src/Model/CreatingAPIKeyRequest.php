@@ -12,12 +12,12 @@
 namespace WBW\Library\SMSMode\Model;
 
 /**
- * Authentication request.
+ * Creating API key request.
  *
  * @author webeweb <https://github.com/webeweb/>
  * @package WBW\Library\SMSMode\Model
  */
-class AuthenticationRequest extends AbstractRequest {
+class CreatingAPIKeyRequest extends AbstractRequest {
 
     /**
      * Access token.
@@ -39,7 +39,7 @@ class AuthenticationRequest extends AbstractRequest {
      * Set the access token.
      *
      * @param string $accessToken The access token.
-     * @return AuthenticationRequest Returns this authentication request.
+     * @return CreatingAPIKeyRequest Returns this creating API key request.
      */
     public function setAccessToken($accessToken) {
         $this->accessToken = $accessToken;

@@ -11,16 +11,16 @@
 
 namespace WBW\Library\SMSMode\Tests\Model;
 
-use WBW\Library\SMSMode\Model\AuthenticationRequest;
+use WBW\Library\SMSMode\Model\CreatingAPIKeyRequest;
 use WBW\Library\SMSMode\Tests\AbstractTestCase;
 
 /**
- * Authentication request test.
+ * Creating API key request test.
  *
  * @author webeweb <https://github.com/webeweb/>
  * @package WBW\Library\SMSMode\Tests\Model
  */
-class AuthenticationRequestTest extends AbstractTestCase {
+class CreatingAPIKeyRequestTest extends AbstractTestCase {
 
     /**
      * Tests the __construct() method.
@@ -29,7 +29,7 @@ class AuthenticationRequestTest extends AbstractTestCase {
      */
     public function testConstruct() {
 
-        $obj = new AuthenticationRequest();
+        $obj = new CreatingAPIKeyRequest();
 
         $this->assertNull($obj->getAccessToken());
     }
@@ -41,7 +41,7 @@ class AuthenticationRequestTest extends AbstractTestCase {
      */
     public function testSetAccessToken() {
 
-        $obj = new AuthenticationRequest();
+        $obj = new CreatingAPIKeyRequest();
 
         $obj->setAccessToken("accessToken");
         $this->assertEquals("accessToken", $obj->getAccessToken());

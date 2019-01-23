@@ -12,16 +12,16 @@
 namespace WBW\Library\SMSMode\Tests\Model;
 
 use DateTime;
-use WBW\Library\SMSMode\Model\AuthenticationResponse;
+use WBW\Library\SMSMode\Model\CreatingAPIKeyResponse;
 use WBW\Library\SMSMode\Tests\AbstractTestCase;
 
 /**
- * Authentication response test.
+ * Creating API key response test.
  *
  * @author webeweb <https://github.com/webeweb/>
  * @package WBW\Library\SMSMode\Tests\Model
  */
-class AuthenticationResponseTest extends AbstractTestCase {
+class CreatingAPIKeyResponseTest extends AbstractTestCase {
 
     /**
      * Tests the __construct() method.
@@ -30,7 +30,7 @@ class AuthenticationResponseTest extends AbstractTestCase {
      */
     public function testConstruct() {
 
-        $obj = new AuthenticationResponse();
+        $obj = new CreatingAPIKeyResponse();
 
         $this->assertNull($obj->getCode());
         $this->assertNull($obj->getDescription());
@@ -50,7 +50,7 @@ class AuthenticationResponseTest extends AbstractTestCase {
      */
     public function testSetAccessToken() {
 
-        $obj = new AuthenticationResponse();
+        $obj = new CreatingAPIKeyResponse();
 
         $obj->setAccessToken("accessToken");
         $this->assertEquals("accessToken", $obj->getAccessToken());
@@ -63,7 +63,7 @@ class AuthenticationResponseTest extends AbstractTestCase {
      */
     public function testSetAccount() {
 
-        $obj = new AuthenticationResponse();
+        $obj = new CreatingAPIKeyResponse();
 
         $obj->setAccount("account");
         $this->assertEquals("account", $obj->getAccount());
@@ -79,7 +79,7 @@ class AuthenticationResponseTest extends AbstractTestCase {
         // Set a Date/time mock.
         $creationDate = new DateTime();
 
-        $obj = new AuthenticationResponse();
+        $obj = new CreatingAPIKeyResponse();
 
         $obj->setCreationDate($creationDate);
         $this->assertSame($creationDate, $obj->getCreationDate());
@@ -95,7 +95,7 @@ class AuthenticationResponseTest extends AbstractTestCase {
         // Set a Date/time mock.
         $expiration = new DateTime();
 
-        $obj = new AuthenticationResponse();
+        $obj = new CreatingAPIKeyResponse();
 
         $obj->setExpiration($expiration);
         $this->assertSame($expiration, $obj->getExpiration());
@@ -108,7 +108,7 @@ class AuthenticationResponseTest extends AbstractTestCase {
      */
     public function testSetId() {
 
-        $obj = new AuthenticationResponse();
+        $obj = new CreatingAPIKeyResponse();
 
         $obj->setId("id");
         $this->assertEquals("id", $obj->getId());
@@ -121,7 +121,7 @@ class AuthenticationResponseTest extends AbstractTestCase {
      */
     public function testSetState() {
 
-        $obj = new AuthenticationResponse();
+        $obj = new CreatingAPIKeyResponse();
 
         $obj->setState("state");
         $this->assertEquals("state", $obj->getState());

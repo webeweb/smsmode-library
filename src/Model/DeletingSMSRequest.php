@@ -11,8 +11,6 @@
 
 namespace WBW\Library\SMSMode\Model;
 
-use WBW\Library\Core\Exception\Pointer\NullPointerException;
-
 /**
  * Deleting SMS request.
  *
@@ -73,29 +71,5 @@ class DeletingSMSRequest extends AbstractRequest {
     public function setSmsID($smsID) {
         $this->smsID = $smsID;
         return $this;
-    }
-
-    /**
-     *  {@inhertidoc}
-     */
-    public function toArray() {
-
-        // Initialize the output.
-        $output = [];
-
-        // Check the mandatory parameters "smsID" and "numero".
-        if (null === $this->smsID && null === $this->numero) {
-            throw new NullPointerException("The mandatory parameter \"smsID\" or \"numero\" is missing");
-        }
-
-        // Add the mandatory parameter.
-        if (null !== $this->smsID) {
-            $output["smsID"] = $this->smsID;
-        } else {
-            $output["numero"] = $this->numero;
-        }
-
-        // Return the output.
-        return $output;
     }
 }

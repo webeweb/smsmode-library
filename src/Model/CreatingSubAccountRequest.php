@@ -12,8 +12,6 @@
 namespace WBW\Library\SMSMode\Model;
 
 use DateTime;
-use WBW\Library\Core\Argument\ArrayHelper;
-use WBW\Library\Core\Exception\Pointer\NullPointerException;
 
 /**
  * Creating sub-account request.
@@ -399,45 +397,5 @@ class CreatingSubAccountRequest extends AbstractRequest {
     public function setVille($ville) {
         $this->ville = $ville;
         return $this;
-    }
-
-    /**
-     *  {@inhertidoc}
-     */
-    public function toArray() {
-
-        // Initialize the output.
-        $output = [];
-
-        // Check the mandatory parameters.
-        if (null === $this->newPseudo) {
-            throw new NullPointerException("The mandatory parameter \"newPseudo\" is missing");
-        }
-        if (null === $this->newPass) {
-            throw new NullPointerException("The mandatory parameter \"newPass\" is missing");
-        }
-
-        // Add the mandatory parameters.
-        $output["newPseudo"] = $this->newPseudo;
-        $output["newPass"]   = $this->newPass;
-
-        // Check and add the optional parameters.
-        ArrayHelper::set($output, "reference", $this->reference, [null]);
-        ArrayHelper::set($output, "nom", $this->nom, [null]);
-        ArrayHelper::set($output, "prenom", $this->prenom, [null]);
-        ArrayHelper::set($output, "societe", $this->societe, [null]);
-        ArrayHelper::set($output, "adresse", $this->adresse, [null]);
-        ArrayHelper::set($output, "ville", $this->ville, [null]);
-        ArrayHelper::set($output, "codePostal", $this->codePostal, [null]);
-        ArrayHelper::set($output, "mobile", $this->mobile, [null]);
-        ArrayHelper::set($output, "telephone", $this->telephone, [null]);
-        ArrayHelper::set($output, "fax", $this->fax, [null]);
-        ArrayHelper::set($output, "email", $this->email, [null]);
-        if (null !== $this->date) {
-            ArrayHelper::set($output, "date", $this->date->format(self::REQUEST_DATE_FORMAT), [null]);
-        }
-
-        // Return the output.
-        return $output;
     }
 }

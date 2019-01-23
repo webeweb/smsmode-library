@@ -39,7 +39,7 @@ class SendingTextToSpeechSMSResponse extends AbstractResponse {
      * Set the SMS ID.
      *
      * @param string $smsID The SMS ID.
-     * @return SendingTextToSpeechSMSResponseReturns this sending text-to-speech SMS response.
+     * @return SendingTextToSpeechSMSResponse Returns this sending text-to-speech SMS response.
      */
     public function setSmsID($smsID) {
         $this->smsID = $smsID;

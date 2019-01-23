@@ -28,7 +28,7 @@
             <exclude>tests/API/Provider/*</exclude>
             <exclude>tests/Authentication/*</exclude>
             <exclude>tests/Exception/*</exclude>
-            <exclude>tests/Helper/NumberHelperTest</exclude>
+            <exclude>tests/Helper/NumberHelperTest.php</exclude>
             <exclude>tests/Provider/*</exclude>
             <exclude>tests/Response/*</exclude>
             <exclude>tests/Exception/SMSModeInvalidNumberExceptionTest.php</exclude>

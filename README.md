@@ -11,6 +11,20 @@ smsmode-library
 
 Integrate sMsmode API with your projects.
 
+`sMsmode` provides an API that enables you to easily and automatically send SMS
+messages from your applications. This API provides the following functions:
+
+- sending immediate or scheduled SMS messages
+- managing SMS replies
+- SMS history
+- deleting SMS message
+- account balance
+- creating sub-account
+- transferring credits from one account to another one
+- adding contact
+- getting delivery report
+- callback on delivery report update
+
 ---
 
 ## Compatibility

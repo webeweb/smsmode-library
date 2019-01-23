@@ -54,6 +54,4 @@ class DeliveryReportResponse extends AbstractResponse {
         return $this;
     }
 
-
-
 }

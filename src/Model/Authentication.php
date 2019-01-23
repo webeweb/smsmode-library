@@ -20,6 +20,13 @@ namespace WBW\Library\SMSMode\Model;
 class Authentication extends AbstractRequest {
 
     /**
+     * Access token.
+     *
+     * @var string
+     */
+    private $accessToken;
+
+    /**
      * Pass.
      *
      * @var string
@@ -34,13 +41,6 @@ class Authentication extends AbstractRequest {
     private $pseudo;
 
     /**
-     * Token.
-     *
-     * @var string
-     */
-    private $token;
-
-    /**
      * Constructor.
      *
      * @param string $pseudo The pseudo.
@@ -49,6 +49,15 @@ class Authentication extends AbstractRequest {
     public function __construct($pseudo = null, $pass = null) {
         $this->setPass($pass);
         $this->setPseudo($pseudo);
+    }
+
+    /**
+     * Get the token.
+     *
+     * @return string Returns the token.
+     */
+    public function getAccessToken() {
+        return $this->accessToken;
     }
 
     /**
@@ -70,12 +79,14 @@ class Authentication extends AbstractRequest {
     }
 
     /**
-     * Get the token.
+     * Set the token.
      *
-     * @return string Returns the token.
+     * @param string $accessToken The token.
+     * @return Authentication Returns this authentication.
      */
-    public function getToken() {
-        return $this->token;
+    public function setAccessToken($accessToken) {
+        $this->accessToken = $accessToken;
+        return $this;
     }
 
     /**
@@ -97,17 +108,6 @@ class Authentication extends AbstractRequest {
      */
     public function setPseudo($pseudo) {
         $this->pseudo = $pseudo;
-        return $this;
-    }
-
-    /**
-     * Set the token.
-     *
-     * @param string $token The token.
-     * @return Authentication Returns this authentication.
-     */
-    public function setToken($token) {
-        $this->token = $token;
         return $this;
     }
 }

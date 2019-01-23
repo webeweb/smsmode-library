@@ -33,7 +33,7 @@ class AuthenticationTest extends AbstractTestCase {
 
         $this->assertNull($obj->getPass());
         $this->assertNull($obj->getPseudo());
-        $this->assertNull($obj->getToken());
+        $this->assertNull($obj->getAccessToken());
     }
 
     /**
@@ -71,7 +71,7 @@ class AuthenticationTest extends AbstractTestCase {
 
         $obj = new Authentication();
 
-        $obj->setToken("token");
-        $this->assertEquals("token", $obj->getToken());
+        $obj->setAccessToken("token");
+        $this->assertEquals("token", $obj->getAccessToken());
     }
 }

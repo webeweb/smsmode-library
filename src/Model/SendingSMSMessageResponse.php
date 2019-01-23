@@ -39,7 +39,7 @@ class SendingSMSMessageResponse extends AbstractResponse {
      * Set the SMS ID.
      *
      * @param string $smsID The SMS ID.
-     * @return SendingSMSMessageResponseReturns this sending SMS message response.
+     * @return SendingSMSMessageResponse Returns this sending SMS message response.
      */
     public function setSmsID($smsID) {
         $this->smsID = $smsID;

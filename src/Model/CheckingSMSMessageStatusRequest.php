@@ -11,8 +11,6 @@
 
 namespace WBW\Library\SMSMode\Model;
 
-use WBW\Library\Core\Exception\Pointer\NullPointerException;
-
 /**
  * Checking SMS message status request.
  *

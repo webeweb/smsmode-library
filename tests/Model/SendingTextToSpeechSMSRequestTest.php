@@ -11,6 +11,7 @@
 
 namespace WBW\Library\SMSMode\Tests\Model;
 
+use DateTime;
 use WBW\Library\SMSMode\Model\SendingTextToSpeechSMSRequest;
 use WBW\Library\SMSMode\Tests\AbstractTestCase;
 
@@ -36,5 +37,60 @@ class SendingTextToSpeechSMSRequestTest extends AbstractTestCase {
         $this->assertNull($obj->getMessage());
         $this->assertEquals([], $obj->getNumero());
         $this->assertNull($obj->getTitle());
+    }
+
+    /**
+     * Tests the setDateEnvoi() method.
+     *
+     * @return void
+     */
+    public function testSetDateEnvoi() {
+
+        // Set a End date mock.
+        $endDate = new DateTime();
+
+        $obj = new SendingTextToSpeechSMSRequest();
+
+        $obj->setDateEnvoi($endDate);
+        $this->assertSame($endDate, $obj->getDateEnvoi());
+    }
+
+    /**
+     * Tests the setLanguage() method.
+     *
+     * @return void
+     */
+    public function testSetLanguage() {
+
+        $obj = new SendingTextToSpeechSMSRequest();
+
+        $obj->setLanguage("language");
+        $this->assertEquals("language", $obj->getLanguage());
+    }
+
+    /**
+     * Tests the setMessage() method.
+     *
+     * @return void
+     */
+    public function testSetMessage() {
+
+        $obj = new SendingTextToSpeechSMSRequest();
+
+        $obj->setMessage("message");
+        $this->assertEquals("message", $obj->getMessage());
+    }
+
+    /**
+     * Tests the setTitle() method.
+     *
+     * @return void
+     */
+    public function testSetTitle() {
+
+        $obj = new SendingTextToSpeechSMSRequest();
+
+        $obj->setTitle("title");
+        $this->assertEquals("title", $obj->getTitle());
     }
 }

@@ -12,8 +12,6 @@
 namespace WBW\Library\SMSMode\Model;
 
 use DateTime;
-use WBW\Library\Core\Argument\ArrayHelper;
-use WBW\Library\Core\Exception\Pointer\NullPointerException;
 
 /**
  * Sending text-to-speech SMS request.
@@ -164,38 +162,5 @@ class SendingTextToSpeechSMSRequest extends AbstractRequest {
     public function setTitle($title) {
         $this->title = $title;
         return $this;
-    }
-
-    /**
-     *  {@inhertidoc}
-     */
-    public function toArray() {
-
-        // Initialize the output.
-        $output = [];
-
-        // Check the mandatory parameter "message".
-        if (null === $this->message) {
-            throw new NullPointerException("The mandatory parameter \"message\" is missing");
-        }
-
-        // Check the mandatory parameter "number".
-        if (0 === count($this->numero)) {
-            throw new NullPointerException("The mandatory parameter \"numero\" is missing");
-        }
-
-        // Add the rmandatory parameters.
-        $output["message"] = utf8_decode($this->message);
-        $output["numero"]  = implode(",", $this->numero);
-
-        // Check and add the optional parameters.
-        ArrayHelper::set($output, "title", $this->title, [null]);
-        if (null !== $this->dateEnvoi) {
-            $output["date_envoi"] = $this->dateEnvoi->format(self::REQUEST_DATETIME_FORMAT);
-        }
-        ArrayHelper::set($output, "language", $this->language, [null]);
-
-        // Return the output.
-        return $output;
     }
 }

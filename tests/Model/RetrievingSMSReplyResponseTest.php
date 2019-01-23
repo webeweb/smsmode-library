@@ -11,8 +11,8 @@
 
 namespace WBW\Library\SMSMode\Tests\Model;
 
-use WBW\Library\SMSMode\Model\SMSReply;
 use WBW\Library\SMSMode\Model\RetrievingSMSReplyResponse;
+use WBW\Library\SMSMode\Model\SMSReply;
 use WBW\Library\SMSMode\Tests\AbstractTestCase;
 
 /**

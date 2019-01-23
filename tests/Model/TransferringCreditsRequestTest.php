@@ -11,7 +11,6 @@
 
 namespace WBW\Library\SMSMode\Tests\Model;
 
-use WBW\Library\Core\Exception\Pointer\NullPointerException;
 use WBW\Library\SMSMode\Model\TransferringCreditsRequest;
 use WBW\Library\SMSMode\Tests\AbstractTestCase;
 
@@ -22,29 +21,6 @@ use WBW\Library\SMSMode\Tests\AbstractTestCase;
  * @package WBW\Library\SMSMode\Tests\Model
  */
 class TransferringCreditsRequestTest extends AbstractTestCase {
-
-    /**
-     * Test the toArray() method.
-     *
-     * @return void
-     * @throws NullPointerException Throws a null pointer exception.
-     */
-    public function estToArray() {
-
-        $obj = new TransferringCreditsRequest();
-
-        $obj->setTargetPseudo("targetPseudo");
-        $obj->setCreditAmount(212);
-
-        $obj->setReference("reference");
-
-        $res = [
-            "targetPseudo" => "targetPseudo",
-            "creditAmount" => 212,
-            "reference"    => "reference",
-        ];
-        $this->assertEquals($res, $obj->toArray());
-    }
 
     /**
      * Tests the __construct() method.
@@ -58,5 +34,44 @@ class TransferringCreditsRequestTest extends AbstractTestCase {
         $this->assertNull($obj->getCreditAmount());
         $this->assertNull($obj->getReference());
         $this->assertNull($obj->getTargetPseudo());
+    }
+
+    /**
+     * Tests the setCreditAmount() method.
+     *
+     * @return void
+     */
+    public function testSetCreditAmount() {
+
+        $obj = new TransferringCreditsRequest();
+
+        $obj->setCreditAmount(0);
+        $this->assertEquals(0, $obj->getCreditAmount());
+    }
+
+    /**
+     * Tests the setReference() method.
+     *
+     * @return void
+     */
+    public function testSetReference() {
+
+        $obj = new TransferringCreditsRequest();
+
+        $obj->setReference("reference");
+        $this->assertEquals("reference", $obj->getReference());
+    }
+
+    /**
+     * Tests the setTargetPseudo() method.
+     *
+     * @return void
+     */
+    public function testSetTargetPseudo() {
+
+        $obj = new TransferringCreditsRequest();
+
+        $obj->setTargetPseudo("targetPseudo");
+        $this->assertEquals("targetPseudo", $obj->getTargetPseudo());
     }
 }

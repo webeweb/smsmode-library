@@ -11,9 +11,6 @@
 
 namespace WBW\Library\SMSMode\Model;
 
-use WBW\Library\Core\Argument\ArrayHelper;
-use WBW\Library\Core\Exception\Pointer\NullPointerException;
-
 /**
  * Transferring credits request.
  *
@@ -46,7 +43,7 @@ class TransferringCreditsRequest extends AbstractRequest {
     /**
      * Get the credit amount.
      *
-     * @return string Returns the credit amount.
+     * @return int Returns the credit amount.
      */
     public function getCreditAmount() {
         return $this->creditAmount;
@@ -73,7 +70,7 @@ class TransferringCreditsRequest extends AbstractRequest {
     /**
      * Set the credit amount.
      *
-     * @param string $creditAmount The credit amount.
+     * @param int $creditAmount The credit amount.
      * @return TransferringCreditsRequest Returns this transferring credits request.
      */
     public function setCreditAmount($creditAmount) {
@@ -101,34 +98,5 @@ class TransferringCreditsRequest extends AbstractRequest {
     public function setTargetPseudo($targetPseudo) {
         $this->targetPseudo = $targetPseudo;
         return $this;
-    }
-
-    /**
-     *  {@inhertidoc}
-     */
-    public function toArray() {
-
-        // Initialize the output.
-        $output = [];
-
-        // Check the mandatory parameters "username".
-        if (null === $this->targetPseudo) {
-            throw new NullPointerException("The mandatory parameter \"targetPseudo\" is missing");
-        }
-
-        // Check the required attribute "credit".
-        if (null === $this->creditAmount) {
-            throw new NullPointerException("The mandatory parameter \"creditAmount\" is missing");
-        }
-
-        // Add the mandatory parameters.
-        $output["targetPseudo"] = $this->targetPseudo;
-        $output["creditAmount"] = $this->creditAmount;
-
-        // Check and add the optional parameters.
-        ArrayHelper::set($output, "reference", $this->reference, [null]);
-
-        // Return the output.
-        return $output;
     }
 }

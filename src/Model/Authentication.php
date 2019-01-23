@@ -46,7 +46,7 @@ class Authentication extends AbstractRequest {
      * @param string $pseudo The pseudo.
      * @param string $pass The pass.
      */
-    public function __construct($pseudo, $pass) {
+    public function __construct($pseudo = null, $pass = null) {
         $this->setPass($pass);
         $this->setPseudo($pseudo);
     }

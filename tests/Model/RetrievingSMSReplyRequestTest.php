@@ -12,6 +12,8 @@
 namespace WBW\Library\SMSMode\Tests\Model;
 
 use DateTime;
+use Exception;
+use WBW\Library\Core\Exception\Argument\IllegalArgumentException;
 use WBW\Library\SMSMode\Model\RetrievingSMSReplyRequest;
 use WBW\Library\SMSMode\Tests\AbstractTestCase;
 
@@ -42,6 +44,7 @@ class RetrievingSMSReplyRequestTest extends AbstractTestCase {
      * Tests the setEndDate() method.
      *
      * @return void
+     * @throws Exception Throws an exception.
      */
     public function testSetEndDate() {
 
@@ -58,13 +61,33 @@ class RetrievingSMSReplyRequestTest extends AbstractTestCase {
      * Tests the setOffset() method.
      *
      * @return void
+     * @throws IllegalArgumentException Throws an illegal argument exception.
      */
     public function testSetOffset() {
 
         $obj = new RetrievingSMSReplyRequest();
 
-        $obj->setOffset(0);
-        $this->assertEquals(0, $obj->getOffset());
+        $obj->setOffset(1);
+        $this->assertEquals(1, $obj->getOffset());
+    }
+
+    /**
+     * Tests the setOffset() method.
+     *
+     * @return void
+     */
+    public function testSetOffsetWithIllegalArgumentException() {
+
+        $obj = new RetrievingSMSReplyRequest();
+
+        try {
+
+            $obj->setOffset(0);
+        } catch (Exception $ex) {
+
+            $this->assertInstanceOf(IllegalArgumentException::class, $ex);
+            $this->assertEquals("The \"offset\" must be greater than 0", $ex->getMessage());
+        }
     }
 
     /**
@@ -84,6 +107,7 @@ class RetrievingSMSReplyRequestTest extends AbstractTestCase {
      * Tests the setStartDate() method.
      *
      * @return void
+     * @throws Exception Throws an exception.
      */
     public function testSetStartDate() {
 

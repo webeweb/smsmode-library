@@ -12,6 +12,7 @@
 namespace WBW\Library\SMSMode\Model;
 
 use DateTime;
+use WBW\Library\Core\Exception\Argument\IllegalArgumentException;
 
 /**
  * Retrieving SMS reply request.
@@ -101,8 +102,12 @@ class RetrievingSMSReplyRequest extends AbstractRequest {
      *
      * @param int $offset The offset.
      * @return RetrievingSMSReplyRequest Returns this retrieving SMS reply request.
+     * @throws IllegalArgumentException Throws an illegal argument exception if the offset is less than 1.
      */
     public function setOffset($offset) {
+        if (null !== $offset && $offset <= 0) {
+            throw new IllegalArgumentException("The \"offset\" must be greater than 0");
+        }
         $this->offset = $offset;
         return $this;
     }

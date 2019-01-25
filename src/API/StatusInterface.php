@@ -550,34 +550,4 @@ interface StatusInterface {
      * @var string
      */
     const STATUS_DESCRIPTION_999 = "Undefined";
-
-    /**
-     * Get the code.
-     *
-     * @return int Returns the code.
-     */
-    public function getCode();
-
-    /**
-     * Get the description.
-     *
-     * @return string Returns the description.
-     */
-    public function getDescription();
-
-    /**
-     * Set the code.
-     *
-     * @param int $code The code.
-     * @return StatusInterface Returns this status.
-     */
-    public function setCode($code);
-
-    /**
-     * Set the description.
-     *
-     * @param string $description The description.
-     * @return StatusInterface Returns this status.
-     */
-    public function setDescription($description);
 }

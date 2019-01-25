@@ -76,13 +76,6 @@ class ObjectSerializer {
     const SERIALIZE_DATE_FORMAT = "dmY";
 
     /**
-     * Configuration.
-     *
-     * @var array
-     */
-    private $configuration;
-
-    /**
      * Deserialize an account balance response.
      *
      * @param string $rawResponse The response.

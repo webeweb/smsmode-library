@@ -14,6 +14,7 @@ namespace WBW\Library\SMSMode\Helper;
 use DateTime;
 use ReflectionException;
 use Symfony\Component\Yaml\Yaml;
+use WBW\Library\Core\Argument\ArrayHelper;
 use WBW\Library\Core\Argument\ObjectHelper;
 use WBW\Library\Core\Exception\Pointer\NullPointerException;
 
@@ -140,7 +141,7 @@ class ObjectNormalizer {
             return $value;
         }
 
-        return $this->$formatter($object);
+        return $this->$formatter($value);
     }
 
     /**

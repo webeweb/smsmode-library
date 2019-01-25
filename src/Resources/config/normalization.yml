@@ -1,0 +1,207 @@
+# src/Resources/config/normalization.yml
+WBW\Library\SMSMode\Model\AddingContactRequest:
+    nom:
+        method:    "getNom"
+        mandatory: true
+    mobile:
+        method:    "getMobile"
+        mandatory: true
+    prenom:
+        method:    "getPrenom"
+        mandatory: false
+    groupes:
+        method:    "getGroupes"
+        mandatory: false
+        formatter: "formatArray"
+    societe:
+        method:    "getSociete"
+        mandatory: false
+    other:
+        method:    "getOther"
+        mandatory: false
+    date:
+        method:     "getDate"
+        mandatory:  false
+        formatter:  "formatDate"
+
+WBW\Library\SMSMode\Model\Authentication:
+    accessToken:
+        method:    "getAccessToken"
+        mandatory: false
+        continue:  false
+    pseudo:
+        method:    "getPseudo"
+        mandatory: true
+    pass:
+        method:    "getPass"
+        mandatory: true
+
+WBW\Library\SMSMode\Model\CheckingSMSMessageStatusRequest:
+    smsID:
+        method:    "getSmsID"
+        mandatory: true
+
+WBW\Library\SMSMode\Model\CreatingAPIKeyRequest:
+    accessToken:
+        method:    "getAccessToken"
+        mandatory: true
+
+WBW\Library\SMSMode\Model\CreatingSubAccountRequest:
+    newPseudo:
+        method:    "getNewPseudo"
+        mandatory: true
+    newPass:
+        method:    "getNewPass"
+        mandatory: true
+    reference:
+        method:    "getReference"
+        mandatory: false
+    nom:
+        method:    "getNom"
+        mandatory: false
+    prenom:
+        method:    "getPrenom"
+        mandatory: false
+    societe:
+        method:    "getSociete"
+        mandatory: false
+    adresse:
+        method:    "getAdresse"
+        mandatory: false
+    ville:
+        method:    "getVille"
+        mandatory: false
+    codePostal:
+        method:    "getCodePostal"
+        mandatory: false
+    mobile:
+        method:    "getMobile"
+        mandatory: false
+    telephone:
+        method:    "getTelephone"
+        mandatory: false
+    fax:
+        method:    "getFax"
+        mandatory: false
+    email:
+        method:    "getEmail"
+        mandatory: false
+    date:
+        method:    "getDate"
+        mandatory: false
+        formatter: "formatDate"
+
+WBW\Library\SMSMode\Model\DeletingSMSRequest:
+    smsID:
+        method:           "getSmsID"
+        mandatory:        true
+        excludeIf:        "numero"
+        continue:         false
+    numero:
+        method:           "getNumero"
+        mandatory:        true
+        excludeIf:        "smsID"
+
+WBW\Library\SMSMode\Model\DeletingSubAccountRequest:
+    pseudoToDelete:
+        method:    "getPseudoToDelete"
+        mandatory: true
+
+WBW\Library\SMSMode\Model\DeliveryReportRequest:
+    smsID:
+        method:    "getSmsID"
+        mandatory: true
+
+WBW\Library\SMSMode\Model\RetrievingSMSReplyRequest:
+    start:
+        method:     "getStart"
+        mandatory:  false
+        complement: "offset"
+    offset:
+        method:     "getOffset"
+        mandatory:  false
+        complement: "start"
+    startDate:
+        method:     "getStartDate"
+        mandatory:  false
+        formatter:  "formatDateTime"
+        complement: "endDate"
+    endDate:
+        method:     "getEndDate"
+        mandatory:  false
+        formatter:  "formatDateTime"
+        complement: "startDate"
+
+WBW\Library\SMSMode\Model\SendingSMSMessageRequest:
+    message:
+        method:    "getMessage"
+        mandatory: true
+    numero:
+        method:    "getNumero"
+        mandatory: true
+        formatter: "formatArray"
+        excludeIf: "groupe"
+    groupe:
+        method:    "getGroupe"
+        mandatory: true
+        excludeIf: "numero"
+    classe_msg:
+        method:    "getClasseMsg"
+        mandatory: false
+    date_envoi:
+        method:    "getDateEnvoi"
+        mandatory: false
+        formatter: "formatDateTime"
+    refClient:
+        method:    "getRefClient"
+        mandatory: false
+    emetteur:
+        method:    "getEmetteur"
+        mandatory: false
+    nbr_msg:
+        method:    "getNbrMsg"
+        mandatory: false
+    notification_url:
+        method:    "getNotificationURL"
+        mandatory: false
+    notification_url_reponse:
+        method:    "getNotificationURLReponse"
+        mandatory: false
+    stop:
+        method:    "getStop"
+        mandatory: false
+
+WBW\Library\SMSMode\Model\SendingTextToSpeechSMSRequest:
+    message:
+        method:    "getMessage"
+        mandatory: true
+    numero:
+        method:    "getNumero"
+        mandatory: true
+        formatter: "formatArray"
+    title:
+        method:    "getTitle"
+        mandatory: false
+    date_envoi:
+        method:     "getDateEnvoi"
+        mandatory:  false
+        formatter:  "formatDate"
+    language:
+        method:    "getLanguage"
+        mandatory: false
+
+WBW\Library\SMSMode\Model\SentSMSMessageListRequest:
+    offset:
+        method:    "getOffset"
+        mandatory: false
+
+WBW\Library\SMSMode\Model\TransferringCreditsRequest:
+    targetPseudo:
+        method:    "getTargetPseudo"
+        mandatory: true
+    creditAmount:
+        method:    "getCreditAmount"
+        mandatory: true
+    reference:
+        method:    "getReference"
+        mandatory: true

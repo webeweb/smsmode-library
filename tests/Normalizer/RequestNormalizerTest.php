@@ -9,13 +9,12 @@
  * file that was distributed with this source code.
  */
 
-namespace WBW\Library\SMSMode\Tests\Helper;
+namespace WBW\Library\SMSMode\Tests\Normalizer;
 
 use DateTime;
 use Exception;
 use ReflectionException;
 use WBW\Library\Core\Exception\Pointer\NullPointerException;
-use WBW\Library\SMSMode\Helper\ObjectNormalizer;
 use WBW\Library\SMSMode\Model\AccountBalanceRequest;
 use WBW\Library\SMSMode\Model\AddingContactRequest;
 use WBW\Library\SMSMode\Model\Authentication;
@@ -30,15 +29,27 @@ use WBW\Library\SMSMode\Model\SendingSMSMessageRequest;
 use WBW\Library\SMSMode\Model\SendingTextToSpeechSMSRequest;
 use WBW\Library\SMSMode\Model\SentSMSMessageListRequest;
 use WBW\Library\SMSMode\Model\TransferringCreditsRequest;
+use WBW\Library\SMSMode\Normalizer\RequestNormalizer;
 use WBW\Library\SMSMode\Tests\AbstractTestCase;
 
 /**
  * Object normalizer test.
  *
  * @author webeweb <https://github.com/webeweb/>
- * @package WBW\Library\SMSMode\Tests\Helper
+ * @package WBW\Library\SMSMode\Tests\Normalizer
  */
-class ObjectNormalizerTest extends AbstractTestCase {
+class RequestNormalizerTest extends AbstractTestCase {
+
+    /**
+     * Tests the __construct() method.
+     *
+     * @return void
+     */
+    public function testConstruct() {
+
+        $this->assertEquals("dmY", RequestNormalizer::NORMALIZE_DATE_FORMAT);
+        $this->assertEquals("dmY-H:i", RequestNormalizer::NORMALIZE_DATETIME_FORMAT);
+    }
 
     /**
      * Tests the normalize() method.
@@ -52,7 +63,7 @@ class ObjectNormalizerTest extends AbstractTestCase {
         // Set an account balance request mock.
         $arg = new AccountBalanceRequest();
 
-        $obj = new ObjectNormalizer();
+        $obj = new RequestNormalizer();
 
         $res = [];
         $this->assertEquals($res, $obj->normalize($arg));
@@ -79,7 +90,7 @@ class ObjectNormalizerTest extends AbstractTestCase {
         $arg->setOther("other");
         $arg->setDate(new DateTime("2017-09-12 11:00:00"));
 
-        $obj = new ObjectNormalizer();
+        $obj = new RequestNormalizer();
 
         $res = [
             "nom"     => "nom",
@@ -103,7 +114,7 @@ class ObjectNormalizerTest extends AbstractTestCase {
         // Set an Adding contact request mock.
         $arg = new AddingContactRequest();
 
-        $obj = new ObjectNormalizer();
+        $obj = new RequestNormalizer();
 
         try {
 
@@ -140,7 +151,7 @@ class ObjectNormalizerTest extends AbstractTestCase {
         $arg->setPseudo("pseudo");
         $arg->setPass("pass");
 
-        $obj = new ObjectNormalizer();
+        $obj = new RequestNormalizer();
 
         $res = [
             "pseudo" => "pseudo",
@@ -166,7 +177,7 @@ class ObjectNormalizerTest extends AbstractTestCase {
         $arg->setPseudo("pseudo");
         $arg->setPass("pass");
 
-        $obj = new ObjectNormalizer();
+        $obj = new RequestNormalizer();
 
         $res = [
             "accessToken" => "accessToken",
@@ -184,7 +195,7 @@ class ObjectNormalizerTest extends AbstractTestCase {
         // Set a Authentication mock.
         $arg = new Authentication();
 
-        $obj = new ObjectNormalizer();
+        $obj = new RequestNormalizer();
 
         try {
 
@@ -219,7 +230,7 @@ class ObjectNormalizerTest extends AbstractTestCase {
         $arg = new CheckingSMSMessageStatusRequest();
         $arg->setSmsID("smsID");
 
-        $obj = new ObjectNormalizer();
+        $obj = new RequestNormalizer();
 
         $res = [
             "smsID" => "smsID",
@@ -237,7 +248,7 @@ class ObjectNormalizerTest extends AbstractTestCase {
         // Set a Checking SMS message status mock.
         $arg = new CheckingSMSMessageStatusRequest();
 
-        $obj = new ObjectNormalizer();
+        $obj = new RequestNormalizer();
 
         try {
 
@@ -262,7 +273,7 @@ class ObjectNormalizerTest extends AbstractTestCase {
         $arg = new CreatingAPIKeyRequest();
         $arg->setAccessToken("accessToken");
 
-        $obj = new ObjectNormalizer();
+        $obj = new RequestNormalizer();
 
         $res = [
             "accessToken" => "accessToken",
@@ -280,7 +291,7 @@ class ObjectNormalizerTest extends AbstractTestCase {
         // Set an Creating API key request mock.
         $arg = new CreatingAPIKeyRequest();
 
-        $obj = new ObjectNormalizer();
+        $obj = new RequestNormalizer();
 
         try {
 
@@ -318,7 +329,7 @@ class ObjectNormalizerTest extends AbstractTestCase {
         $arg->setEmail("email");
         $arg->setDate(new DateTime("2017-09-12 11:00:00"));
 
-        $obj = new ObjectNormalizer();
+        $obj = new RequestNormalizer();
 
         $res = [
             "newPseudo"  => "newPseudo",
@@ -349,7 +360,7 @@ class ObjectNormalizerTest extends AbstractTestCase {
         // Set a Creating sub-account request mock.
         $arg = new CreatingSubAccountRequest();
 
-        $obj = new ObjectNormalizer();
+        $obj = new RequestNormalizer();
 
         try {
 
@@ -384,7 +395,7 @@ class ObjectNormalizerTest extends AbstractTestCase {
         $arg = new DeletingSMSRequest();
         $arg->setSmsID("smsID");
 
-        $obj = new ObjectNormalizer();
+        $obj = new RequestNormalizer();
 
         $res1 = [
             "smsID" => "smsID",
@@ -410,7 +421,7 @@ class ObjectNormalizerTest extends AbstractTestCase {
         // Set a Delete SMS request mock.
         $arg = new DeletingSMSRequest();
 
-        $obj = new ObjectNormalizer();
+        $obj = new RequestNormalizer();
 
         try {
 
@@ -435,7 +446,7 @@ class ObjectNormalizerTest extends AbstractTestCase {
         $arg = new DeletingSubAccountRequest();
         $arg->setPseudoToDelete("pseudoToDelete");
 
-        $obj = new ObjectNormalizer();
+        $obj = new RequestNormalizer();
 
         $res = [
             "pseudoToDelete" => "pseudoToDelete",
@@ -453,7 +464,7 @@ class ObjectNormalizerTest extends AbstractTestCase {
         // Set a Deleting sub-account request mock.
         $arg = new DeletingSubAccountRequest();
 
-        $obj = new ObjectNormalizer();
+        $obj = new RequestNormalizer();
 
         try {
 
@@ -479,7 +490,7 @@ class ObjectNormalizerTest extends AbstractTestCase {
         $arg = new DeliveryReportRequest();
         $arg->setSmsID("smsID");
 
-        $obj = new ObjectNormalizer();
+        $obj = new RequestNormalizer();
 
         $res = [
             "smsID" => "smsID",
@@ -497,7 +508,7 @@ class ObjectNormalizerTest extends AbstractTestCase {
         // Set a Delivery report request mock.
         $arg = new DeliveryReportRequest();
 
-        $obj = new ObjectNormalizer();
+        $obj = new RequestNormalizer();
 
         try {
 
@@ -513,6 +524,7 @@ class ObjectNormalizerTest extends AbstractTestCase {
      * Tests the normalize() method.
      *
      * @return void
+     * @throws Exception Throws an exception.
      * @throws NullPointerException Throws a null pointer exception.
      * @throws ReflectionException Throws a reflection exception.
      */
@@ -521,7 +533,7 @@ class ObjectNormalizerTest extends AbstractTestCase {
         // Set a Retrieving SMS reply request mock.
         $arg = new RetrievingSMSReplyRequest();
 
-        $obj = new ObjectNormalizer();
+        $obj = new RequestNormalizer();
 
         try {
 
@@ -567,7 +579,7 @@ class ObjectNormalizerTest extends AbstractTestCase {
         // Set a Retrieving SMS reply request mock.
         $arg = new RetrievingSMSReplyRequest();
 
-        $obj = new ObjectNormalizer();
+        $obj = new RequestNormalizer();
 
         try {
 
@@ -622,7 +634,7 @@ class ObjectNormalizerTest extends AbstractTestCase {
         // Set a Retrieving SMS reply request mock.
         $arg = new RetrievingSMSReplyRequest();
 
-        $obj = new ObjectNormalizer();
+        $obj = new RequestNormalizer();
 
         $res = [];
         $this->assertEquals($res, $obj->normalize($arg));
@@ -651,7 +663,7 @@ class ObjectNormalizerTest extends AbstractTestCase {
         $arg->setNotificationURLReponse("notificationURLReponse");
         $arg->setStop(SendingSMSMessageRequest::STOP_ALWAYS);
 
-        $obj = new ObjectNormalizer();
+        $obj = new RequestNormalizer();
 
         $res = [
             "message"                  => "message",
@@ -672,6 +684,7 @@ class ObjectNormalizerTest extends AbstractTestCase {
      * Tests the normalize() method.
      *
      * @return void
+     * @throws Exception Throws an exception.
      * @throws NullPointerException Throws a null pointer exception.
      * @throws ReflectionException Throws a reflection exception.
      */
@@ -691,7 +704,7 @@ class ObjectNormalizerTest extends AbstractTestCase {
         $arg->setNotificationURL("notificationURL");
         $arg->setNotificationURLReponse("notificationURLReponse");
 
-        $obj = new ObjectNormalizer();
+        $obj = new RequestNormalizer();
 
         $res = [
             "message"                  => "message",
@@ -717,7 +730,7 @@ class ObjectNormalizerTest extends AbstractTestCase {
         // Set a Sending SMS message request mock.
         $arg = new SendingSMSMessageRequest();
 
-        $obj = new ObjectNormalizer();
+        $obj = new RequestNormalizer();
 
         try {
 
@@ -758,7 +771,7 @@ class ObjectNormalizerTest extends AbstractTestCase {
         $arg->setDateEnvoi(new DateTime("2019-01-17"));
         $arg->setLanguage("language");
 
-        $obj = new ObjectNormalizer();
+        $obj = new RequestNormalizer();
 
         $res = [
             "message"    => "message",
@@ -780,7 +793,7 @@ class ObjectNormalizerTest extends AbstractTestCase {
         // Set a Sending text-to-speech request mock.
         $arg = new SendingTextToSpeechSMSRequest();
 
-        $obj = new ObjectNormalizer();
+        $obj = new RequestNormalizer();
 
         try {
 
@@ -816,7 +829,7 @@ class ObjectNormalizerTest extends AbstractTestCase {
 
         $arg->setOffset(10);
 
-        $obj = new ObjectNormalizer();
+        $obj = new RequestNormalizer();
 
         $res = [
             "offset" => 10,
@@ -836,7 +849,7 @@ class ObjectNormalizerTest extends AbstractTestCase {
         // Set a Deleting sub-account request mock.
         $arg = new SentSMSMessageListRequest();
 
-        $obj = new ObjectNormalizer();
+        $obj = new RequestNormalizer();
 
         $res = [];
         $this->assertEquals($res, $obj->normalize($arg));
@@ -859,7 +872,7 @@ class ObjectNormalizerTest extends AbstractTestCase {
 
         $arg->setReference("reference");
 
-        $obj = new ObjectNormalizer();
+        $obj = new RequestNormalizer();
 
         $res = [
             "targetPseudo" => "targetPseudo",
@@ -881,7 +894,7 @@ class ObjectNormalizerTest extends AbstractTestCase {
         // Set a Transferring credits request mock.
         $arg = new TransferringCreditsRequest();
 
-        $obj = new ObjectNormalizer();
+        $obj = new RequestNormalizer();
 
         try {
 

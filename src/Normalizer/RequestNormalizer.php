@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace WBW\Library\SMSMode\Helper;
+namespace WBW\Library\SMSMode\Normalizer;
 
 use DateTime;
 use ReflectionException;
@@ -19,12 +19,12 @@ use WBW\Library\Core\Argument\ObjectHelper;
 use WBW\Library\Core\Exception\Pointer\NullPointerException;
 
 /**
- * Object normalizer.
+ * Request normalizer.
  *
  * @author webeweb <https://github.com/webeweb/>
- * @package WBW\Library\SMSMode\Helper
+ * @package WBW\Library\SMSMode\Normalizer
  */
-class ObjectNormalizer {
+class RequestNormalizer {
 
     /**
      * Normalize date/time format.
@@ -53,7 +53,7 @@ class ObjectNormalizer {
     public function __construct() {
 
         $directory = ObjectHelper::getDirectory($this);
-        $filename  = $directory . "/../Resources/config/normalization.yml";
+        $filename  = $directory . "/../Resources/config/request-normalizer.yml";
 
         $this->setConfiguration(Yaml::parseFile(realpath($filename)));
     }
@@ -270,7 +270,7 @@ class ObjectNormalizer {
      * Set the configuration.
      *
      * @param array $configuration The configuration.
-     * @return ObjectNormalizer Returns this object normalizer.
+     * @return RequestNormalizer Returns this object normalizer.
      */
     protected function setConfiguration(array $configuration) {
         $this->configuration = $configuration;

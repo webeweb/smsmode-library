@@ -16,6 +16,7 @@ use WBW\Library\Core\Exception\AbstractCoreException;
 
 /**
  * Abstract exception.
+ *
  * @author webeweb <https://github.com/webeweb/>
  * @package WBW\Library\SMSMode\Exception
  * @abstract

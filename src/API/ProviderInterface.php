@@ -25,54 +25,63 @@ interface ProviderInterface {
      * @var string
      */
     const ACCOUNT_BALANCE_RESOURCE_PATH = "/1.6/credit.do";
+
     /**
      * Adding contact resource path.
      *
      * @var string
      */
     const ADDING_CONTACT_RESOURCE_PATH = "/1.6/addContact.do";
+
     /**
      * Authentication resource path.
      *
      * @var string
      */
     const AUTHENTICATION_RESOURCE_PATH = "/2.0/createAuthorisation.do";
+
     /**
      * Checking SMS message status resource path.
      *
      * @var string
      */
     const CHECKING_SMS_MESSAGE_STATUS_RESOURCE_PATH = "/1.6/smsStatus.do";
+
     /**
      * Creating sub-account resource path.
      *
      * @avr string
      */
     const CREATING_SUB_ACCOUNT_RESOURCE_PATH = "/1.6/createSubAccount.do";
+
     /**
      * Deleting SMS resource path.
      *
      * @var string
      */
     const DELETING_SMS_RESOURCE_PATH = "/1.6/deleteSMS.do";
+
     /**
      * Deleting sub-account resource path.
      *
      * @var string
      */
     const DELETING_SUB_ACCOUNT_RESOURCE_PATH = "/1.6/deleteSubAccount.do";
+
     /**
      * Delivery report resource path.
      *
      * @var string
      */
     const DELIVERY_REPORT_RESOURCE_PATH = "/1.6/compteRendu.do";
+
     /**
      * Endpoint path.
      *
      * @var string
      */
     const ENDPOINT_PATH = "https://api.smsmode.com/http";
+
     /**
      * Retrieving SMS reply resource path.
      *

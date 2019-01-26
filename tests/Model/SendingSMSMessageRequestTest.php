@@ -32,11 +32,6 @@ class SendingSMSMessageRequestTest extends AbstractTestCase {
      */
     public function testConstruct() {
 
-        $this->assertEquals(4, SendingSMSMessageRequest::CLASSE_MSG_SMS);
-        $this->assertEquals(2, SendingSMSMessageRequest::CLASSE_MSG_SMS_PRO);
-        $this->assertEquals(2, SendingSMSMessageRequest::STOP_ALWAYS);
-        $this->assertEquals(1, SendingSMSMessageRequest::STOP_ONLY);
-
         $obj = new SendingSMSMessageRequest();
 
         $this->assertEquals(SendingSMSMessageRequest::CLASSE_MSG_SMS_PRO, $obj->getClasseMsg());

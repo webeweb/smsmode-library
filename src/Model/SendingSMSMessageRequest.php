@@ -13,6 +13,7 @@ namespace WBW\Library\SMSMode\Model;
 
 use DateTime;
 use WBW\Library\Core\Exception\Argument\IllegalArgumentException;
+use WBW\Library\SMSMode\API\SendingSMSMessageInterface;
 
 /**
  * Sending SMS message request.
@@ -20,35 +21,7 @@ use WBW\Library\Core\Exception\Argument\IllegalArgumentException;
  * @author webeweb <https://github.com/webeweb/>
  * @package WBW\Library\SMSMode\Model
  */
-class SendingSMSMessageRequest extends AbstractRequest {
-
-    /**
-     * Classe msg "SMS".
-     *
-     * @var int
-     */
-    const CLASSE_MSG_SMS = 4;
-
-    /**
-     * Classe msg "SMS Pro".
-     *
-     * @var int
-     */
-    const CLASSE_MSG_SMS_PRO = 2;
-
-    /**
-     * STOP "always".
-     *
-     * @var int
-     */
-    const STOP_ALWAYS = 2;
-
-    /**
-     * STOP "only".
-     *
-     * @var int
-     */
-    const STOP_ONLY = 1;
+class SendingSMSMessageRequest extends AbstractRequest implements SendingSMSMessageInterface {
 
     /**
      * Classe msg.

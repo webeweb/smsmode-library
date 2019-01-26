@@ -9,15 +9,15 @@
  * file that was distributed with this source code.
  */
 
-namespace WBW\Library\SMSMode\Helper;
+namespace WBW\Library\SMSMode\Normalizer;
 
 /**
- * Number helper.
+ * Numro normalizer.
  *
  * @author webeweb <https://github.com/webeweb/>
- * @package WBW\Library\SMSMode\Helper
+ * @package WBW\Library\SMSMode\Normalizer
  */
-class NumberHelper {
+class NumeroNormalizer {
 
     /**
      * Constructor.
@@ -27,25 +27,25 @@ class NumberHelper {
     }
 
     /**
-     * Decode a number.
+     * Denormalize a numero.
      *
-     * @param string $number The number.
-     * @return string Returns the decoded number.
+     * @param string $numero The numero.
+     * @return string Returns the denormalized numero.
      */
-    public static function decodeNumber($number) {
-        $output = preg_replace("/^336/", "06", $number, 1);
+    public static function denormalizeNumero($numero) {
+        $output = preg_replace("/^336/", "06", $numero, 1);
         $result = preg_replace("/^337/", "07", $output, 1);
         return $result;
     }
 
     /**
-     * Encode a number.
+     * Normalize a numero.
      *
-     * @param string $number The number.
-     * @return string Returns the encoded number.
+     * @param string $numero The numero.
+     * @return string Returns the normalized numero.
      */
-    public static function encodeNumber($number) {
-        $output = preg_replace("/^06/", "336", $number, 1);
+    public static function normalizeNumero($numero) {
+        $output = preg_replace("/^06/", "336", $numero, 1);
         $result = preg_replace("/^07/", "337", $output, 1);
         return $result;
     }

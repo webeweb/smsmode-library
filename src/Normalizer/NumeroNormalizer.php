@@ -12,7 +12,7 @@
 namespace WBW\Library\SMSMode\Normalizer;
 
 /**
- * Numro normalizer.
+ * Numero normalizer.
  *
  * @author webeweb <https://github.com/webeweb/>
  * @package WBW\Library\SMSMode\Normalizer

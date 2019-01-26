@@ -23,11 +23,6 @@
     <testsuites>
         <testsuite name="webeweb/smsmode-library">
             <directory suffix="Test.php">./tests</directory>
-            <exclude>tests/Exception/*</exclude>
-            <exclude>tests/Provider/SMSModeProviderTest.php</exclude>
-            <exclude>tests/Exception/SMSModeInvalidNumberExceptionTest.php</exclude>
-            <exclude>tests/Exception/SMSModeMaxLimitNumberReachedExceptionTest.php</exclude>
-            <exclude>tests/Exception/SMSModeMessageTooLongExceptionTest.php</exclude>
             <exclude>tests/Provider/SMSModeProviderTest.php</exclude>
         </testsuite>
     </testsuites>

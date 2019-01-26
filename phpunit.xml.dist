@@ -25,7 +25,6 @@
             <directory suffix="Test.php">./tests</directory>
             <exclude>tests/API/Provider/*</exclude>
             <exclude>tests/Exception/*</exclude>
-            <exclude>tests/Helper/NumberHelperTest.php</exclude>
             <exclude>tests/Provider/*</exclude>
             <exclude>tests/Exception/SMSModeInvalidNumberExceptionTest.php</exclude>
             <exclude>tests/Exception/SMSModeMaxLimitNumberReachedExceptionTest.php</exclude>

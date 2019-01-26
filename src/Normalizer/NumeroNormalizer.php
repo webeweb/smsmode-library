@@ -20,13 +20,6 @@ namespace WBW\Library\SMSMode\Normalizer;
 class NumeroNormalizer {
 
     /**
-     * Constructor.
-     */
-    private function __construct() {
-        // NOTHING TO DO.
-    }
-
-    /**
      * Denormalize a numero.
      *
      * @param string $numero The numero.

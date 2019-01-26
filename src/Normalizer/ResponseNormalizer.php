@@ -61,7 +61,6 @@ class ResponseNormalizer {
      */
     const DENORMALIZE_DELIMITER = "|";
 
-
     /**
      * Denormalize an account balance response.
      *

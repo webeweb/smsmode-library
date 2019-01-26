@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace WBW\Library\SMSMode\Helper;
+namespace WBW\Library\SMSMode\Normalizer;
 
 use DateTime;
 use WBW\Library\Core\Argument\ArrayHelper;
@@ -33,55 +33,42 @@ use WBW\Library\SMSMode\Model\SMSReply;
 use WBW\Library\SMSMode\Model\TransferringCreditsResponse;
 
 /**
- * Object serializer.
+ * Response normalizer.
  *
  * @author webeweb <https://github.com/webeweb/>
- * @package WBW\Library\SMSMode\Helper
+ * @package WBW\Library\SMSMode\Normalizer
  */
-class ObjectSerializer {
+class ResponseNormalizer {
 
     /**
-     * Deserialize date/time format.
+     * Denormalize date/time format.
      *
      * @var string
      */
-    const DESERIALIZE_DATETIME_FORMAT = self::SERIALIZE_DATETIME_FORMAT;
+    const DENORMALIZE_DATETIME_FORMAT = RequestNormalizer::NORMALIZE_DATETIME_FORMAT;
 
     /**
-     * Deserialize date format.
+     * Denormalize date format.
      *
      * @var string
      */
-    const DESERIALIZE_DATE_FORMAT = self::SERIALIZE_DATE_FORMAT;
+    const DENORMALIZE_DATE_FORMAT = RequestNormalizer::NORMALIZE_DATE_FORMAT;
 
     /**
-     * Deserialize delimiter.
+     * Denormalize delimiter.
      *
      * @var string
      */
-    const DESERIALIZE_DELIMITER = "|";
+    const DENORMALIZE_DELIMITER = "|";
+
 
     /**
-     * Serialize date/time format.
-     *
-     * @var string
-     */
-    const SERIALIZE_DATETIME_FORMAT = "dmY-H:i";
-
-    /**
-     * Serialize date format.
-     *
-     * @var string
-     */
-    const SERIALIZE_DATE_FORMAT = "dmY";
-
-    /**
-     * Deserialize an account balance response.
+     * Denormalize an account balance response.
      *
      * @param string $rawResponse The response.
      * @return AccountBalanceResponse Returns the account balance response.
      */
-    public static function deserializeAccountBalanceResponse($rawResponse) {
+    public static function denormalizeAccountBalanceResponse($rawResponse) {
 
         $model = new AccountBalanceResponse();
         if (1 === preg_match("/^[0-9]{1,}\.[0-9]{1,}$/", trim($rawResponse))) {
@@ -92,45 +79,45 @@ class ObjectSerializer {
     }
 
     /**
-     * Deserialize an adding contact response.
+     * Denormalize an adding contact response.
      *
      * @param string $rawResponse The raw response.
      * @return AddingContactResponse Returns the adding contact response.
      */
-    public static function deserializeAddingContactResponse($rawResponse) {
+    public static function denormalizeAddingContactResponse($rawResponse) {
 
         $model = new AddingContactResponse();
-        static::deserializeResponse($model, $rawResponse);
+        static::denormalizeResponse($model, $rawResponse);
 
         return $model;
     }
 
     /**
-     * Deserialize a checking SMS message status response.
+     * Denormalize a checking SMS message status response.
      *
      * @param string $rawResponse The raw response.
      * @return CheckingSMSMessageStatusResponse Returns the checking SMS message status response.
      */
-    public static function deserializeCheckingSMSMessageStatusResponse($rawResponse) {
+    public static function denormalizeCheckingSMSMessageStatusResponse($rawResponse) {
 
         $model = new CheckingSMSMessageStatusResponse();
-        static::deserializeResponse($model, $rawResponse);
+        static::denormalizeResponse($model, $rawResponse);
 
         return $model;
     }
 
     /**
-     * Deserialize a creating API key response.
+     * Denormalize a creating API key response.
      *
      * @param string $rawResponse The raw response.
      * @return CreatingAPIKeyResponse Returns the creating API key response.
      */
-    public static function deserializeCreatingAPIKeyResponse($rawResponse) {
+    public static function denormalizeCreatingAPIKeyResponse($rawResponse) {
 
         $decodedResponse = json_decode(trim($rawResponse), true);
 
-        $creationDate = DateTime::createFromFormat(self::DESERIALIZE_DATE_FORMAT, ArrayHelper::get($decodedResponse, "creationDate"));
-        $expiration   = DateTime::createFromFormat(self::DESERIALIZE_DATE_FORMAT, ArrayHelper::get($decodedResponse, "expiration"));
+        $creationDate = DateTime::createFromFormat(self::DENORMALIZE_DATE_FORMAT, ArrayHelper::get($decodedResponse, "creationDate"));
+        $expiration   = DateTime::createFromFormat(self::DENORMALIZE_DATE_FORMAT, ArrayHelper::get($decodedResponse, "expiration"));
 
         $model = new CreatingAPIKeyResponse();
         $model->setId(ArrayHelper::get($decodedResponse, "id"));
@@ -145,54 +132,54 @@ class ObjectSerializer {
     }
 
     /**
-     * Deserialize a creating sub-account response.
+     * Denormalize a creating sub-account response.
      *
      * @param string $rawResponse The raw response.
      * @return CreatingSubAccountResponse Returns the creating sub-account response.
      */
-    public static function deserializeCreatingSubAccountResponse($rawResponse) {
+    public static function denormalizeCreatingSubAccountResponse($rawResponse) {
 
         $model = new CreatingSubAccountResponse();
-        static::deserializeResponse($model, $rawResponse);
+        static::denormalizeResponse($model, $rawResponse);
 
         return $model;
     }
 
     /**
-     * Deserialize a deleting SMS response.
+     * Denormalize a deleting SMS response.
      *
      * @param string $rawResponse The raw response.
      * @return DeletingSMSResponse Returns the deleting SMS response.
      */
-    public static function deserializeDeletingSMSResponse($rawResponse) {
+    public static function denormalizeDeletingSMSResponse($rawResponse) {
 
         $model = new DeletingSMSResponse();
-        static::deserializeResponse($model, $rawResponse);
+        static::denormalizeResponse($model, $rawResponse);
 
         return $model;
     }
 
     /**
-     * Deserialize a deleting su-account response.
+     * Denormalize a deleting su-account response.
      *
      * @param string $rawResponse The raw response.
      * @return DeletingSubAccountResponse Returns the deleting sub-account response.
      */
-    public static function deserializeDeletingSubAccountResponse($rawResponse) {
+    public static function denormalizeDeletingSubAccountResponse($rawResponse) {
 
         $model = new DeletingSubAccountResponse();
-        static::deserializeResponse($model, $rawResponse);
+        static::denormalizeResponse($model, $rawResponse);
 
         return $model;
     }
 
     /**
-     * Deserialize a delivery report.
+     * Denormalize a delivery report.
      *
      * @param string $rawResponse The raw response.
      * @return DeliveryReport Returns the delivery report.
      */
-    protected static function deserializeDeliveryReport($rawResponse) {
+    protected static function denormalizeDeliveryReport($rawResponse) {
 
         $model = new DeliveryReport();
 
@@ -208,24 +195,24 @@ class ObjectSerializer {
     }
 
     /**
-     * Deserialize a delivery report response.
+     * Denormalize a delivery report response.
      *
      * @param string $rawResponse The raw response.
      * @return DeliveryReportResponse Returns the delivery report response.
      */
-    public static function deserializeDeliveryReportResponse($rawResponse) {
+    public static function denormalizeDeliveryReportResponse($rawResponse) {
 
         $model = new DeliveryReportResponse();
         if (1 === preg_match("/^(31|35|61)\ \|/", trim($rawResponse))) {
-            static::deserializeResponse($model, $rawResponse);
+            static::denormalizeResponse($model, $rawResponse);
             return $model;
         }
 
         $models = [];
 
-        $responses = explode(self::DESERIALIZE_DELIMITER, trim($rawResponse));
+        $responses = explode(self::DENORMALIZE_DELIMITER, trim($rawResponse));
         foreach ($responses as $current) {
-            $models[] = static::deserializeDeliveryReport($current);
+            $models[] = static::denormalizeDeliveryReport($current);
         }
 
         $model->setDeliveryReports($models);
@@ -234,15 +221,15 @@ class ObjectSerializer {
     }
 
     /**
-     * Deserialize a response.
+     * Denormalize a response.
      *
      * @param AbstractResponse $model The response.
      * @param string $rawResponse The raw response.
      * @return void
      */
-    protected static function deserializeResponse(AbstractResponse $model, $rawResponse) {
+    protected static function denormalizeResponse(AbstractResponse $model, $rawResponse) {
 
-        $responses = explode(self::DESERIALIZE_DELIMITER, trim($rawResponse));
+        $responses = explode(self::DENORMALIZE_DELIMITER, trim($rawResponse));
         if (count($responses) < 2) {
             return;
         }
@@ -252,16 +239,16 @@ class ObjectSerializer {
     }
 
     /**
-     * Deserialize a retrieving SMS reply response.
+     * Denormalize a retrieving SMS reply response.
      *
      * @param string $rawResponse The raw response.
      * @return RetrievingSMSReplyResponse Returns the retrieving SMS reply response.
      */
-    public static function deserializeRetrievingSMSReplyResponse($rawResponse) {
+    public static function denormalizeRetrievingSMSReplyResponse($rawResponse) {
 
         $model = new RetrievingSMSReplyResponse();
         if (1 === preg_match("/^(32|35)\ \|/", trim($rawResponse))) {
-            static::deserializeResponse($model, $rawResponse);
+            static::denormalizeResponse($model, $rawResponse);
             return $model;
         }
 
@@ -269,7 +256,7 @@ class ObjectSerializer {
 
         $responses = explode("\n", trim($rawResponse));
         foreach ($responses as $current) {
-            $models[] = static::deserializeSMSReply($current);
+            $models[] = static::denormalizeSMSReply($current);
         }
 
         $model->setSMSReplies($models);
@@ -278,21 +265,21 @@ class ObjectSerializer {
     }
 
     /**
-     * Deserialize a SMS reply.
+     * Denormalize a SMS reply.
      *
      * @param string $rawResponse The raw response.
      * @return SMSReply Returns the SMS reply.
      */
-    protected static function deserializeSMSReply($rawResponse) {
+    protected static function denormalizeSMSReply($rawResponse) {
 
         $model = new SMSReply();
 
-        $responses = explode(self::DESERIALIZE_DELIMITER, trim($rawResponse));
+        $responses = explode(self::DENORMALIZE_DELIMITER, trim($rawResponse));
         if (count($responses) < 6) {
             return $model;
         }
 
-        $receptionDate = DateTime::createFromFormat(self::DESERIALIZE_DATETIME_FORMAT, trim($responses[1]));
+        $receptionDate = DateTime::createFromFormat(self::DENORMALIZE_DATETIME_FORMAT, trim($responses[1]));
 
         $model->setResponseID(trim($responses[0]));
         if (false !== $receptionDate) {
@@ -307,17 +294,17 @@ class ObjectSerializer {
     }
 
     /**
-     * Deserialize a sending SMS message response.
+     * Denormalize a sending SMS message response.
      *
      * @param string $rawResponse The raw response.
      * @return SendingSMSMessageResponse Returns the sending SMS message response.
      */
-    public static function deserializeSendingSMSMessageResponse($rawResponse) {
+    public static function denormalizeSendingSMSMessageResponse($rawResponse) {
 
         $model = new SendingSMSMessageResponse();
-        static::deserializeResponse($model, $rawResponse);
+        static::denormalizeResponse($model, $rawResponse);
 
-        $responses = explode(self::DESERIALIZE_DELIMITER, trim($rawResponse));
+        $responses = explode(self::DENORMALIZE_DELIMITER, trim($rawResponse));
         if (StatusInterface::STATUS_CODE_0 === $model->getCode() && 3 === count($responses)) {
             $model->setSmsID(trim($responses[2]));
         }
@@ -326,17 +313,17 @@ class ObjectSerializer {
     }
 
     /**
-     * Deserialize a sending text-to-speech SMS response.
+     * Denormalize a sending text-to-speech SMS response.
      *
      * @param string $rawResponse The raw response.
      * @return SendingTextToSpeechSMSResponse Returns the sending text-to-speech SMS response.
      */
-    public static function deserializeSendingTextToSpeechSMSResponse($rawResponse) {
+    public static function denormalizeSendingTextToSpeechSMSResponse($rawResponse) {
 
         $model = new SendingTextToSpeechSMSResponse();
-        static::deserializeResponse($model, $rawResponse);
+        static::denormalizeResponse($model, $rawResponse);
 
-        $responses = explode(self::DESERIALIZE_DELIMITER, trim($rawResponse));
+        $responses = explode(self::DENORMALIZE_DELIMITER, trim($rawResponse));
         if (StatusInterface::STATUS_CODE_0 === $model->getCode() && 3 === count($responses)) {
             $model->setSmsID(trim($responses[2]));
         }
@@ -345,21 +332,21 @@ class ObjectSerializer {
     }
 
     /**
-     * Deserialize a sent SMS message.
+     * Denormalize a sent SMS message.
      *
      * @param string $rawResponse The raw response.
      * @return SentSMSMessage Returns the sent SMS message.
      */
-    protected static function deserializeSentSMSMessage($rawResponse) {
+    protected static function denormalizeSentSMSMessage($rawResponse) {
 
         $model = new SentSMSMessage();
 
-        $responses = explode(self::DESERIALIZE_DELIMITER, trim($rawResponse));
+        $responses = explode(self::DENORMALIZE_DELIMITER, trim($rawResponse));
         if (count($responses) < 6) {
             return $model;
         }
 
-        $sendDate = DateTime::createFromFormat(self::DESERIALIZE_DATETIME_FORMAT, trim($responses[1]));
+        $sendDate = DateTime::createFromFormat(self::DENORMALIZE_DATETIME_FORMAT, trim($responses[1]));
 
         $model->setSmsID(trim($responses[0]));
         if (false !== $sendDate) {
@@ -374,16 +361,16 @@ class ObjectSerializer {
     }
 
     /**
-     * Deserialize a sent SMS message list response.
+     * Denormalize a sent SMS message list response.
      *
      * @param string $rawResponse The raw response.
      * @return SentSMSMessageListResponse Returns the sent SMS message list response.
      */
-    public static function deserializeSentSMSMessageListResponse($rawResponse) {
+    public static function denormalizeSentSMSMessageListResponse($rawResponse) {
 
         $model = new SentSMSMessageListResponse();
         if (1 === preg_match("/^(31|32|35)\ \|/", trim($rawResponse))) {
-            static::deserializeResponse($model, $rawResponse);
+            static::denormalizeResponse($model, $rawResponse);
             return $model;
         }
 
@@ -391,7 +378,7 @@ class ObjectSerializer {
 
         $responses = explode("\n", trim($rawResponse));
         foreach ($responses as $current) {
-            $models[] = static::deserializeSentSMSMessage($current);
+            $models[] = static::denormalizeSentSMSMessage($current);
         }
 
         $model->setSentSMSMessages($models);
@@ -400,15 +387,15 @@ class ObjectSerializer {
     }
 
     /**
-     * Deserialize a transferring credits response.
+     * Denormalize a transferring credits response.
      *
      * @param string $rawResponse The raw response.
      * @return TransferringCreditsResponse Returns the transferring credits response.
      */
-    public static function deserializeTransferringCreditsResponse($rawResponse) {
+    public static function denormalizeTransferringCreditsResponse($rawResponse) {
 
         $model = new TransferringCreditsResponse();
-        static::deserializeResponse($model, $rawResponse);
+        static::denormalizeResponse($model, $rawResponse);
 
         return $model;
     }

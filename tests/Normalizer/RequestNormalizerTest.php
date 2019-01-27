@@ -271,36 +271,11 @@ class RequestNormalizerTest extends AbstractTestCase {
 
         // Set an Creating API key request mock.
         $arg = new CreatingAPIKeyRequest();
-        $arg->setAccessToken("accessToken");
 
         $obj = new RequestNormalizer();
 
-        $res = [
-            "accessToken" => "accessToken",
-        ];
+        $res = [];
         $this->assertEquals($res, $obj->normalize($arg));
-    }
-
-    /**
-     * Tests the normalize() method.
-     *
-     * @return void
-     */
-    public function testNormalizeCreatingAPIKeyRequestWithoutArguments() {
-
-        // Set an Creating API key request mock.
-        $arg = new CreatingAPIKeyRequest();
-
-        $obj = new RequestNormalizer();
-
-        try {
-
-            $obj->normalize($arg);
-        } catch (Exception $ex) {
-
-            $this->assertInstanceOf(NullPointerException::class, $ex);
-            $this->assertEquals("The mandatory parameter \"accessToken\" is missing", $ex->getMessage());
-        }
     }
 
     /**

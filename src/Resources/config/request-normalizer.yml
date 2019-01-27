@@ -41,11 +41,6 @@ WBW\Library\SMSMode\Model\CheckingSMSMessageStatusRequest:
         method:    "getSmsID"
         mandatory: true
 
-WBW\Library\SMSMode\Model\CreatingAPIKeyRequest:
-    accessToken:
-        method:    "getAccessToken"
-        mandatory: true
-
 WBW\Library\SMSMode\Model\CreatingSubAccountRequest:
     newPseudo:
         method:    "getNewPseudo"

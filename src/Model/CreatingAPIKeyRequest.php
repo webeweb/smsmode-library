@@ -19,30 +19,4 @@ namespace WBW\Library\SMSMode\Model;
  */
 class CreatingAPIKeyRequest extends AbstractRequest {
 
-    /**
-     * Access token.
-     *
-     * @var string
-     */
-    private $accessToken;
-
-    /**
-     * Get the access token.
-     *
-     * @return string Returns the access token.
-     */
-    public function getAccessToken() {
-        return $this->accessToken;
-    }
-
-    /**
-     * Set the access token.
-     *
-     * @param string $accessToken The access token.
-     * @return CreatingAPIKeyRequest Returns this creating API key request.
-     */
-    public function setAccessToken($accessToken) {
-        $this->accessToken = $accessToken;
-        return $this;
-    }
 }

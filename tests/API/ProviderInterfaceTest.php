@@ -33,8 +33,8 @@ class ProviderInterfaceTest extends AbstractTestCase {
 
         $this->assertEquals("/1.6/credit.do", ProviderInterface::ACCOUNT_BALANCE_RESOURCE_PATH);
         $this->assertEquals("/1.6/addContact.do", ProviderInterface::ADDING_CONTACT_RESOURCE_PATH);
-        $this->assertEquals("/2.0/createAuthorisation.do", ProviderInterface::AUTHENTICATION_RESOURCE_PATH);
         $this->assertEquals("/1.6/smsStatus.do", ProviderInterface::CHECKING_SMS_MESSAGE_STATUS_RESOURCE_PATH);
+        $this->assertEquals("/2.0/createAuthorisation.do", ProviderInterface::CREATING_API_KEY_RESOURCE_PATH);
         $this->assertEquals("/1.6/createSubAccount.do", ProviderInterface::CREATING_SUB_ACCOUNT_RESOURCE_PATH);
         $this->assertEquals("/1.6/deleteSMS.do", ProviderInterface::DELETING_SMS_RESOURCE_PATH);
         $this->assertEquals("/1.6/deleteSubAccount.do", ProviderInterface::DELETING_SUB_ACCOUNT_RESOURCE_PATH);

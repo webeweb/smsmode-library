@@ -34,18 +34,18 @@ interface ProviderInterface {
     const ADDING_CONTACT_RESOURCE_PATH = "/1.6/addContact.do";
 
     /**
-     * Authentication resource path.
-     *
-     * @var string
-     */
-    const AUTHENTICATION_RESOURCE_PATH = "/2.0/createAuthorisation.do";
-
-    /**
      * Checking SMS message status resource path.
      *
      * @var string
      */
     const CHECKING_SMS_MESSAGE_STATUS_RESOURCE_PATH = "/1.6/smsStatus.do";
+
+    /**
+     * Creating API key resource path.
+     *
+     * @var string
+     */
+    const CREATING_API_KEY_RESOURCE_PATH = "/2.0/createAuthorisation.do";
 
     /**
      * Creating sub-account resource path.

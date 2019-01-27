@@ -12,6 +12,7 @@
 namespace WBW\Library\SMSMode\Tests\Model;
 
 use DateTime;
+use Exception;
 use WBW\Library\SMSMode\Model\SMSReply;
 use WBW\Library\SMSMode\Tests\AbstractTestCase;
 
@@ -73,6 +74,7 @@ class SMSReplyTest extends AbstractTestCase {
      * Tests the setReceptionDate() method.
      *
      * @return void
+     * @throws Exception Throws an exception if an error occurs.
      */
     public function testSetReceptionDate() {
 

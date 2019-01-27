@@ -43,6 +43,7 @@ class SendingTextToSpeechSMSRequestTest extends AbstractTestCase {
      * Tests the setDateEnvoi() method.
      *
      * @return void
+     * @throws Exception Throws an exception if an error occurs.
      */
     public function testSetDateEnvoi() {
 

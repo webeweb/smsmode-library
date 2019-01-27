@@ -61,7 +61,7 @@ class RetrievingSMSReplyRequestTest extends AbstractTestCase {
      * Tests the setOffset() method.
      *
      * @return void
-     * @throws IllegalArgumentException Throws an illegal argument exception.
+     * @throws Exception Throws an exception.
      */
     public function testSetOffset() {
 

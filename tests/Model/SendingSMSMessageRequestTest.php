@@ -51,6 +51,7 @@ class SendingSMSMessageRequestTest extends AbstractTestCase {
      * Tests the setClasseMsg() method.
      *
      * @return void
+     * @throws Exception Throws an exception if an error occurs.
      */
     public function testSetClasseMsg() {
 
@@ -83,6 +84,7 @@ class SendingSMSMessageRequestTest extends AbstractTestCase {
      * Tests the setDateEnvoi() method.
      *
      * @return void
+     * @throws Exception Throws an exception if an error occurs.
      */
     public function testSetDateEnvoi() {
 
@@ -190,6 +192,7 @@ class SendingSMSMessageRequestTest extends AbstractTestCase {
      * Tests the setStop() method.
      *
      * @return void
+     * @throws Exception Throws an exception if an error occurs.
      */
     public function testSetStop() {
 

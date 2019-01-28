@@ -12,11 +12,11 @@
 namespace WBW\Library\SMSMode\Normalizer;
 
 use DateTime;
+use InvalidArgumentException;
 use ReflectionException;
 use Symfony\Component\Yaml\Yaml;
 use WBW\Library\Core\Argument\ArrayHelper;
 use WBW\Library\Core\Argument\ObjectHelper;
-use WBW\Library\Core\Exception\Pointer\NullPointerException;
 
 /**
  * Request normalizer.
@@ -65,14 +65,14 @@ class RequestNormalizer {
      * @param array $configuration The configuration.
      * @param string $attribute The attribute.
      * @return void
-     * @throws NullPointerException Throws a null pointer exception if the complement value is missing.
+     * @throws InvalidArgumentException Throws an invalid argument exception if the complement value is missing.
      */
     protected function checkComplementValue($object, array $configuration, $attribute) {
 
         $complement = ArrayHelper::get($configuration[$attribute], "complement");
 
         if (null !== $complement && true === $this->nullObjectValue($object, $configuration[$complement]["method"])) {
-            throw new NullPointerException(sprintf("The optional parameter \"%s\" is required when \"%s\" is provided", $complement, $attribute));
+            throw new InvalidArgumentException(sprintf("The optional parameter \"%s\" is required when \"%s\" is provided", $complement, $attribute));
         }
     }
 
@@ -83,7 +83,7 @@ class RequestNormalizer {
      * @param array $configuration The configuration.
      * @param string $attribute The attribute.
      * @return void
-     * @throws NullPointerException Throws a null pointer exception if the mandatory parameter is missing.
+     * @throws InvalidArgumentException Throws an invalid argument exception if the mandatory parameter is missing.
      */
     protected function checkMandatoryValue($object, array $configuration, $attribute) {
 
@@ -91,7 +91,7 @@ class RequestNormalizer {
         $value     = $this->getObjectValue($object, $configuration["method"]);
 
         if (true === $mandatory && $this->isNullValue($value)) {
-            throw new NullPointerException(sprintf("The mandatory parameter \"%s\" is missing", $attribute));
+            throw new InvalidArgumentException(sprintf("The mandatory parameter \"%s\" is missing", $attribute));
         }
     }
 
@@ -123,6 +123,16 @@ class RequestNormalizer {
      */
     protected function formatDateTime(DateTime $value) {
         return $value->format(self::NORMALIZE_DATETIME_FORMAT);
+    }
+
+    /**
+     * Format into ISO-8859-1.
+     *
+     * @param string $value The value.
+     * @return string Returns the formatted value.
+     */
+    protected function formatISO8859($value) {
+        return utf8_decode($value);
     }
 
     /**
@@ -215,7 +225,7 @@ class RequestNormalizer {
      *
      * @param object $object The object.
      * @return array Returns the normalized parameters.
-     * @throws NullPointerException Throws a null pointer exception if a mandatory parameter is missing.
+     * @throws InvalidArgumentException Throws an invalid argument exception if a mandatory parameter is missing.
      * @throws ReflectionException Throws a reflection exception.
      */
     public function normalize($object) {

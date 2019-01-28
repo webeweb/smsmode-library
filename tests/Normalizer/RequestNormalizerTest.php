@@ -13,8 +13,7 @@ namespace WBW\Library\SMSMode\Tests\Normalizer;
 
 use DateTime;
 use Exception;
-use ReflectionException;
-use WBW\Library\Core\Exception\Pointer\NullPointerException;
+use InvalidArgumentException;
 use WBW\Library\SMSMode\Model\AccountBalanceRequest;
 use WBW\Library\SMSMode\Model\AddingContactRequest;
 use WBW\Library\SMSMode\Model\Authentication;
@@ -55,8 +54,7 @@ class RequestNormalizerTest extends AbstractTestCase {
      * Tests the normalize() method.
      *
      * @return void
-     * @throws NullPointerException Throws a null pointer exception.
-     * @throws ReflectionException Throws a reflection exception.
+     * @throws Exception Throws an exception if an error occurs.
      */
     public function testNormalizeAccountBalance() {
 
@@ -73,8 +71,7 @@ class RequestNormalizerTest extends AbstractTestCase {
      * Tests the normalize() method.
      *
      * @return void
-     * @throws NullPointerException Throws a null pointer exception.
-     * @throws ReflectionException Throws a reflection exception.
+     * @throws Exception Throws an exception if an error occurs.
      */
     public function testNormalizeAddingContactRequest() {
 
@@ -121,7 +118,7 @@ class RequestNormalizerTest extends AbstractTestCase {
             $obj->normalize($arg);
         } catch (Exception $ex) {
 
-            $this->assertInstanceOf(NullPointerException::class, $ex);
+            $this->assertInstanceOf(InvalidArgumentException::class, $ex);
             $this->assertEquals("The mandatory parameter \"nom\" is missing", $ex->getMessage());
         }
 
@@ -131,7 +128,7 @@ class RequestNormalizerTest extends AbstractTestCase {
             $obj->normalize($arg);
         } catch (Exception $ex) {
 
-            $this->assertInstanceOf(NullPointerException::class, $ex);
+            $this->assertInstanceOf(InvalidArgumentException::class, $ex);
             $this->assertEquals("The mandatory parameter \"mobile\" is missing", $ex->getMessage());
         }
     }
@@ -140,8 +137,7 @@ class RequestNormalizerTest extends AbstractTestCase {
      * Tests the normalize() method.
      *
      * @return void
-     * @throws NullPointerException Throws a null pointer exception.
-     * @throws ReflectionException Throws a reflection exception.
+     * @throws Exception Throws an exception if an error occurs.
      */
     public function testNormalizeAuthentication() {
 
@@ -164,8 +160,7 @@ class RequestNormalizerTest extends AbstractTestCase {
      * Tests the normalize() method.
      *
      * @return void
-     * @throws NullPointerException Throws a null pointer exception.
-     * @throws ReflectionException Throws a reflection exception.
+     * @throws Exception Throws an exception if an error occurs.
      */
     public function testNormalizeAuthenticationWithToken() {
 
@@ -202,7 +197,7 @@ class RequestNormalizerTest extends AbstractTestCase {
             $obj->normalize($arg);
         } catch (Exception $ex) {
 
-            $this->assertInstanceOf(NullPointerException::class, $ex);
+            $this->assertInstanceOf(InvalidArgumentException::class, $ex);
             $this->assertEquals("The mandatory parameter \"pseudo\" is missing", $ex->getMessage());
         }
 
@@ -212,7 +207,7 @@ class RequestNormalizerTest extends AbstractTestCase {
             $obj->normalize($arg);
         } catch (Exception $ex) {
 
-            $this->assertInstanceOf(NullPointerException::class, $ex);
+            $this->assertInstanceOf(InvalidArgumentException::class, $ex);
             $this->assertEquals("The mandatory parameter \"pass\" is missing", $ex->getMessage());
         }
     }
@@ -221,8 +216,7 @@ class RequestNormalizerTest extends AbstractTestCase {
      * Tests the normalize() method.
      *
      * @return void
-     * @throws NullPointerException Throws a null pointer exception.
-     * @throws ReflectionException Throws a reflection exception.
+     * @throws Exception Throws an exception if an error occurs.
      */
     public function testNormalizeCheckingSMSMessageStatusRequest() {
 
@@ -255,7 +249,7 @@ class RequestNormalizerTest extends AbstractTestCase {
             $obj->normalize($arg);
         } catch (Exception $ex) {
 
-            $this->assertInstanceOf(NullPointerException::class, $ex);
+            $this->assertInstanceOf(InvalidArgumentException::class, $ex);
             $this->assertEquals("The mandatory parameter \"smsID\" is missing", $ex->getMessage());
         }
     }
@@ -264,8 +258,7 @@ class RequestNormalizerTest extends AbstractTestCase {
      * Tests the normalize() method.
      *
      * @return void
-     * @throws NullPointerException Throws a null pointer exception.
-     * @throws ReflectionException Throws a reflection exception.
+     * @throws Exception Throws an exception if an error occurs.
      */
     public function testNormalizeCreatingAPIKeyRequest() {
 
@@ -282,8 +275,7 @@ class RequestNormalizerTest extends AbstractTestCase {
      * Tests the normalize() method.
      *
      * @return void
-     * @throws NullPointerException Throws a null pointer exception.
-     * @throws ReflectionException Throws a reflection exception.
+     * @throws Exception Throws an exception if an error occurs.
      */
     public function testNormalizeCreatingSubAccount() {
 
@@ -342,7 +334,7 @@ class RequestNormalizerTest extends AbstractTestCase {
             $obj->normalize($arg);
         } catch (Exception $ex) {
 
-            $this->assertInstanceOf(NullPointerException::class, $ex);
+            $this->assertInstanceOf(InvalidArgumentException::class, $ex);
             $this->assertEquals("The mandatory parameter \"newPseudo\" is missing", $ex->getMessage());
         }
 
@@ -352,7 +344,7 @@ class RequestNormalizerTest extends AbstractTestCase {
             $obj->normalize($arg);
         } catch (Exception $ex) {
 
-            $this->assertInstanceOf(NullPointerException::class, $ex);
+            $this->assertInstanceOf(InvalidArgumentException::class, $ex);
             $this->assertEquals("The mandatory parameter \"newPass\" is missing", $ex->getMessage());
         }
     }
@@ -361,8 +353,7 @@ class RequestNormalizerTest extends AbstractTestCase {
      * Tests the normalize() method.
      *
      * @return void
-     * @throws NullPointerException Throws a null pointer exception.
-     * @throws ReflectionException Throws a reflection exception.
+     * @throws Exception Throws an exception if an error occurs.
      */
     public function testNormalizeDeletingSMSRequest() {
 
@@ -403,7 +394,7 @@ class RequestNormalizerTest extends AbstractTestCase {
             $obj->normalize($arg);
         } catch (Exception $ex) {
 
-            $this->assertInstanceOf(NullPointerException::class, $ex);
+            $this->assertInstanceOf(InvalidArgumentException::class, $ex);
             $this->assertEquals("The mandatory parameter \"smsID\" is missing", $ex->getMessage());
         }
     }
@@ -412,8 +403,7 @@ class RequestNormalizerTest extends AbstractTestCase {
      * Tests the normalize() method.
      *
      * @return void
-     * @throws NullPointerException Throws a null pointer exception.
-     * @throws ReflectionException Throws a reflection exception.
+     * @throws Exception Throws an exception if an error occurs.
      */
     public function testNormalizeDeletingSubAccountRequest() {
 
@@ -446,7 +436,7 @@ class RequestNormalizerTest extends AbstractTestCase {
             $obj->normalize($arg);
         } catch (Exception $ex) {
 
-            $this->assertInstanceOf(NullPointerException::class, $ex);
+            $this->assertInstanceOf(InvalidArgumentException::class, $ex);
             $this->assertEquals("The mandatory parameter \"pseudoToDelete\" is missing", $ex->getMessage());
         }
     }
@@ -455,9 +445,7 @@ class RequestNormalizerTest extends AbstractTestCase {
      * Tests the normalize() method.
      *
      * @return void
-     * @throws NullPointerException Throws a null pointer exception.
-     * @throws NullPointerException Throws a null pointer exception.
-     * @throws ReflectionException Throws a reflection exception.
+     * @throws Exception Throws an exception if an error occurs.
      */
     public function testNormalizeDeliveryReportRequest() {
 
@@ -490,7 +478,7 @@ class RequestNormalizerTest extends AbstractTestCase {
             $obj->normalize($arg);
         } catch (Exception $ex) {
 
-            $this->assertInstanceOf(NullPointerException::class, $ex);
+            $this->assertInstanceOf(InvalidArgumentException::class, $ex);
             $this->assertEquals("The mandatory parameter \"smsID\" is missing", $ex->getMessage());
         }
     }
@@ -499,9 +487,7 @@ class RequestNormalizerTest extends AbstractTestCase {
      * Tests the normalize() method.
      *
      * @return void
-     * @throws Exception Throws an exception.
-     * @throws NullPointerException Throws a null pointer exception.
-     * @throws ReflectionException Throws a reflection exception.
+     * @throws Exception Throws an exception if an error occurs.
      */
     public function testNormalizeRetrievingSMSReplyRequest() {
 
@@ -517,7 +503,7 @@ class RequestNormalizerTest extends AbstractTestCase {
             $obj->normalize($arg);
         } catch (Exception $ex) {
 
-            $this->assertInstanceOf(NullPointerException::class, $ex);
+            $this->assertInstanceOf(InvalidArgumentException::class, $ex);
             $this->assertEquals("The optional parameter \"offset\" is required when \"start\" is provided", $ex->getMessage());
         }
 
@@ -528,7 +514,7 @@ class RequestNormalizerTest extends AbstractTestCase {
             $obj->normalize($arg);
         } catch (Exception $ex) {
 
-            $this->assertInstanceOf(NullPointerException::class, $ex);
+            $this->assertInstanceOf(InvalidArgumentException::class, $ex);
             $this->assertEquals("The optional parameter \"start\" is required when \"offset\" is provided", $ex->getMessage());
         }
 
@@ -546,8 +532,7 @@ class RequestNormalizerTest extends AbstractTestCase {
      * Tests the normalize() method.
      *
      * @return void
-     * @throws NullPointerException Throws a null pointer exception.
-     * @throws ReflectionException Throws a reflection exception.
+     * @throws Exception Throws an exception if an error occurs.
      */
     public function testNormalizeRetrievingSMSReplyRequestWithStartAndEndDate() {
 
@@ -561,7 +546,7 @@ class RequestNormalizerTest extends AbstractTestCase {
             $arg->setStartDate(new DateTime("2017-09-14 12:00:00"));
             $obj->normalize($arg);
         } catch (Exception $ex) {
-            $this->assertInstanceOf(NullPointerException::class, $ex);
+            $this->assertInstanceOf(InvalidArgumentException::class, $ex);
             $this->assertEquals("The optional parameter \"endDate\" is required when \"startDate\" is provided", $ex->getMessage());
         }
 
@@ -572,7 +557,7 @@ class RequestNormalizerTest extends AbstractTestCase {
             $obj->normalize($arg);
         } catch (Exception $ex) {
 
-            $this->assertInstanceOf(NullPointerException::class, $ex);
+            $this->assertInstanceOf(InvalidArgumentException::class, $ex);
             $this->assertEquals("The optional parameter \"startDate\" is required when \"endDate\" is provided", $ex->getMessage());
         }
 
@@ -601,8 +586,7 @@ class RequestNormalizerTest extends AbstractTestCase {
      * Tests the normalize() method.
      *
      * @return void
-     * @throws NullPointerException Throws a null pointer exception.
-     * @throws ReflectionException Throws a reflection exception.
+     * @throws Exception Throws an exception if an error occurs.
      */
     public function testNormalizeRetrievingSMSReplyRequestWithoutArguments() {
 
@@ -620,8 +604,6 @@ class RequestNormalizerTest extends AbstractTestCase {
      *
      * @return void
      * @throws Exception Throws an exception if an error occurs.
-     * @throws NullPointerException Throws a null pointer exception.
-     * @throws ReflectionException Throws a reflection exception.
      */
     public function testNormalizeSendingSMSMessageRequest() {
 
@@ -659,9 +641,7 @@ class RequestNormalizerTest extends AbstractTestCase {
      * Tests the normalize() method.
      *
      * @return void
-     * @throws Exception Throws an exception.
-     * @throws NullPointerException Throws a null pointer exception.
-     * @throws ReflectionException Throws a reflection exception.
+     * @throws Exception Throws an exception if an error occurs.
      */
     public function testNormalizeSendingSMSMessageRequestWithGroupe() {
 
@@ -712,7 +692,7 @@ class RequestNormalizerTest extends AbstractTestCase {
             $obj->normalize($arg);
         } catch (Exception $ex) {
 
-            $this->assertInstanceOf(NullPointerException::class, $ex);
+            $this->assertInstanceOf(InvalidArgumentException::class, $ex);
             $this->assertEquals("The mandatory parameter \"message\" is missing", $ex->getMessage());
         }
 
@@ -722,7 +702,7 @@ class RequestNormalizerTest extends AbstractTestCase {
             $obj->normalize($arg);
         } catch (Exception $ex) {
 
-            $this->assertInstanceOf(NullPointerException::class, $ex);
+            $this->assertInstanceOf(InvalidArgumentException::class, $ex);
             $this->assertEquals("The mandatory parameter \"numero\" is missing", $ex->getMessage());
         }
     }
@@ -731,8 +711,7 @@ class RequestNormalizerTest extends AbstractTestCase {
      * Tests the normalize() method.
      *
      * @return void
-     * @throws NullPointerException Throws a null pointer exception.
-     * @throws ReflectionException Throws a reflection exception.
+     * @throws Exception Throws an exception if an error occurs.
      */
     public function testNormalizeSendingTextToSpeechRequest() {
 
@@ -744,7 +723,7 @@ class RequestNormalizerTest extends AbstractTestCase {
 
         $arg->setTitle("title");
         $arg->setDateEnvoi(new DateTime("2019-01-17"));
-        $arg->setLanguage("language");
+        $arg->setLanguage("fr-FR");
 
         $obj = new RequestNormalizer();
 
@@ -753,7 +732,7 @@ class RequestNormalizerTest extends AbstractTestCase {
             "numero"     => "numero1,numero2",
             "title"      => "title",
             "date_envoi" => "17012019",
-            "language"   => "language",
+            "language"   => "fr-FR",
         ];
         $this->assertEquals($res, $obj->normalize($arg));
     }
@@ -775,7 +754,7 @@ class RequestNormalizerTest extends AbstractTestCase {
             $obj->normalize($arg);
         } catch (Exception $ex) {
 
-            $this->assertInstanceOf(NullPointerException::class, $ex);
+            $this->assertInstanceOf(InvalidArgumentException::class, $ex);
             $this->assertEquals("The mandatory parameter \"message\" is missing", $ex->getMessage());
         }
 
@@ -785,7 +764,7 @@ class RequestNormalizerTest extends AbstractTestCase {
             $obj->normalize($arg);
         } catch (Exception $ex) {
 
-            $this->assertInstanceOf(NullPointerException::class, $ex);
+            $this->assertInstanceOf(InvalidArgumentException::class, $ex);
             $this->assertEquals("The mandatory parameter \"numero\" is missing", $ex->getMessage());
         }
     }
@@ -794,8 +773,7 @@ class RequestNormalizerTest extends AbstractTestCase {
      * Tests the normalize() method.
      *
      * @return void
-     * @throws NullPointerException Throws a null pointer exception.
-     * @throws ReflectionException Throws a reflection exception.
+     * @throws Exception Throws an exception if an error occurs.
      */
     public function testNormalizeSentSMSMessageRequest() {
 
@@ -816,8 +794,7 @@ class RequestNormalizerTest extends AbstractTestCase {
      * Tests the normalize() method.
      *
      * @return void
-     * @throws NullPointerException Throws a null pointer exception.
-     * @throws ReflectionException Throws a reflection exception.
+     * @throws Exception Throws an exception if an error occurs.
      */
     public function testNormalizeSentSMSMessageRequestWithoutArguments() {
 
@@ -834,8 +811,7 @@ class RequestNormalizerTest extends AbstractTestCase {
      * Test the normalize() method.
      *
      * @return void
-     * @throws NullPointerException Throws a null pointer exception.
-     * @throws ReflectionException Throws a reflection exception.
+     * @throws Exception Throws an exception if an error occurs.
      */
     public function testNormalizeTransferringCreditsRequest() {
 
@@ -861,8 +837,7 @@ class RequestNormalizerTest extends AbstractTestCase {
      * Test the normalize() method.
      *
      * @return void
-     * @throws NullPointerException Throws a null pointer exception.
-     * @throws ReflectionException Throws a reflection exception.
+     * @throws Exception Throws an exception if an error occurs.
      */
     public function testNormalizeTransferringCreditsRequestWithoutArguments() {
 
@@ -876,7 +851,7 @@ class RequestNormalizerTest extends AbstractTestCase {
             $obj->normalize($arg);
         } catch (Exception $ex) {
 
-            $this->assertInstanceOf(NullPointerException::class, $ex);
+            $this->assertInstanceOf(InvalidArgumentException::class, $ex);
             $this->assertEquals("The mandatory parameter \"targetPseudo\" is missing", $ex->getMessage());
         }
 
@@ -886,7 +861,7 @@ class RequestNormalizerTest extends AbstractTestCase {
             $obj->normalize($arg);
         } catch (Exception $ex) {
 
-            $this->assertInstanceOf(NullPointerException::class, $ex);
+            $this->assertInstanceOf(InvalidArgumentException::class, $ex);
             $this->assertEquals("The mandatory parameter \"creditAmount\" is missing", $ex->getMessage());
         }
     }

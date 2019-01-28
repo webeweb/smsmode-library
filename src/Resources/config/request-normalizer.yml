@@ -131,6 +131,7 @@ WBW\Library\SMSMode\Model\SendingSMSMessageRequest:
     message:
         method:    "getMessage"
         mandatory: true
+        formatter: "formatISO8859"
     numero:
         method:    "getNumero"
         mandatory: true
@@ -199,4 +200,4 @@ WBW\Library\SMSMode\Model\TransferringCreditsRequest:
         mandatory: true
     reference:
         method:    "getReference"
-        mandatory: true
+        mandatory: false

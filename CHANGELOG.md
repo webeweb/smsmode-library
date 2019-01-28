@@ -5,8 +5,28 @@ CHANGELOG
 
 - Add CHANGELOG
 - Add EN doc
+- Add Adding contact support
+- Add Checking SMS message status support
+- Add Creating API key support
+- Add Deleting SMS support
+- Add Delivery report callback support
+- Add Retrieving SMS reply support
+- Add Sent SMS message list support
+- Add Sending text-to-speech SMS support
+- Add Status helper
+- Extends support up to more 300 recipients
 - Improve unit tests
 - Move doc folder
+- Refactoring Account balance support
+- Refactoring API provider
+- Refactoring Authentication support
+- Refactoring Creating sub-account support
+- Refactoring Deleting sub-account support
+- Refactoring Delivery report support
+- Refactoring Sending SMS message support
+- Refactoring Transferring credits support
+- Remove Max number limit reached exception
+- Remove Message too long exception
 - Remove keyword "final" into unit tests
 
 ### 1.0.8 (2018-09-15)

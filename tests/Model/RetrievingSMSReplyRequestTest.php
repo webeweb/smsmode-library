@@ -13,7 +13,7 @@ namespace WBW\Library\SMSMode\Tests\Model;
 
 use DateTime;
 use Exception;
-use WBW\Library\Core\Exception\Argument\IllegalArgumentException;
+use UnexpectedValueException;
 use WBW\Library\SMSMode\Model\RetrievingSMSReplyRequest;
 use WBW\Library\SMSMode\Tests\AbstractTestCase;
 
@@ -76,7 +76,7 @@ class RetrievingSMSReplyRequestTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testSetOffsetWithIllegalArgumentException() {
+    public function testSetOffsetWithUnexpectedValueException() {
 
         $obj = new RetrievingSMSReplyRequest();
 
@@ -85,7 +85,7 @@ class RetrievingSMSReplyRequestTest extends AbstractTestCase {
             $obj->setOffset(0);
         } catch (Exception $ex) {
 
-            $this->assertInstanceOf(IllegalArgumentException::class, $ex);
+            $this->assertInstanceOf(UnexpectedValueException::class, $ex);
             $this->assertEquals("The \"offset\" must be greater than 0", $ex->getMessage());
         }
     }

@@ -70,6 +70,11 @@ class ResponseNormalizer {
     public static function denormalizeAccountBalanceResponse($rawResponse) {
 
         $model = new AccountBalanceResponse();
+        if (1 === preg_match("/^[0-9]{2,4}\ \|/", trim($rawResponse))) {
+            static::denormalizeResponse($model, $rawResponse);
+            return $model;
+        }
+
         if (1 === preg_match("/^[0-9]{1,}\.[0-9]{1,}$/", trim($rawResponse))) {
             $model->setAccountBalance(floatval(trim($rawResponse)));
         }
@@ -115,15 +120,18 @@ class ResponseNormalizer {
 
         $decodedResponse = json_decode(trim($rawResponse), true);
 
+        $model = new CreatingAPIKeyResponse();
+        if (false === array_key_exists("accessToken", $decodedResponse)) {
+            $model->setException($decodedResponse);
+        }
+
         $creationDate = DateTime::createFromFormat(self::DENORMALIZE_DATE_FORMAT, ArrayHelper::get($decodedResponse, "creationDate"));
         $expiration   = DateTime::createFromFormat(self::DENORMALIZE_DATE_FORMAT, ArrayHelper::get($decodedResponse, "expiration"));
 
-        $model = new CreatingAPIKeyResponse();
         $model->setId(ArrayHelper::get($decodedResponse, "id"));
         $model->setAccessToken(ArrayHelper::get($decodedResponse, "accessToken"));
         $model->setAccount(ArrayHelper::get($decodedResponse, "account"));
         $model->setCreationDate(false !== $creationDate ? $creationDate : null);
-        $model->setState(ArrayHelper::get($decodedResponse, "state"));
         $model->setExpiration(false !== $expiration ? $expiration : null);
         $model->setState(ArrayHelper::get($decodedResponse, "state"));
 
@@ -202,7 +210,7 @@ class ResponseNormalizer {
     public static function denormalizeDeliveryReportResponse($rawResponse) {
 
         $model = new DeliveryReportResponse();
-        if (1 === preg_match("/^(31|35|61)\ \|/", trim($rawResponse))) {
+        if (1 === preg_match("/^[0-9]{2,4}\ \|/", trim($rawResponse))) {
             static::denormalizeResponse($model, $rawResponse);
             return $model;
         }
@@ -246,7 +254,7 @@ class ResponseNormalizer {
     public static function denormalizeRetrievingSMSReplyResponse($rawResponse) {
 
         $model = new RetrievingSMSReplyResponse();
-        if (1 === preg_match("/^(32|35)\ \|/", trim($rawResponse))) {
+        if (1 === preg_match("/^[0-9]{2,4}\ \|/", trim($rawResponse))) {
             static::denormalizeResponse($model, $rawResponse);
             return $model;
         }
@@ -368,7 +376,7 @@ class ResponseNormalizer {
     public static function denormalizeSentSMSMessageListResponse($rawResponse) {
 
         $model = new SentSMSMessageListResponse();
-        if (1 === preg_match("/^(31|32|35)\ \|/", trim($rawResponse))) {
+        if (1 === preg_match("/^[0-9]{2,4}\ \|/", trim($rawResponse))) {
             static::denormalizeResponse($model, $rawResponse);
             return $model;
         }

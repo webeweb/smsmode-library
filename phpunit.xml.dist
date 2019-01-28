@@ -23,7 +23,6 @@
     <testsuites>
         <testsuite name="webeweb/smsmode-library">
             <directory suffix="Test.php">./tests</directory>
-            <exclude>tests/Provider/SMSModeProviderTest.php</exclude>
         </testsuite>
     </testsuites>
 </phpunit>

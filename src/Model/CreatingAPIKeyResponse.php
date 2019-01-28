@@ -43,6 +43,13 @@ class CreatingAPIKeyResponse extends AbstractResponse {
     private $creationDate;
 
     /**
+     * Exception.
+     *
+     * @var array
+     */
+    private $exception;
+
+    /**
      * Expiration.
      *
      * @var DateTime
@@ -88,6 +95,15 @@ class CreatingAPIKeyResponse extends AbstractResponse {
      */
     public function getCreationDate() {
         return $this->creationDate;
+    }
+
+    /**
+     * Get the exception.
+     *
+     * @return array Returns the exception.
+     */
+    public function getException() {
+        return $this->exception;
     }
 
     /**
@@ -147,6 +163,17 @@ class CreatingAPIKeyResponse extends AbstractResponse {
      */
     public function setCreationDate(DateTime $creationDate = null) {
         $this->creationDate = $creationDate;
+        return $this;
+    }
+
+    /**
+     * Set the exception.
+     *
+     * @param array $exception The exception.
+     * @return CreatingAPIKeyResponse Returns this creating API key.
+     */
+    public function setException(array $exception) {
+        $this->exception = $exception;
         return $this;
     }
 

@@ -12,6 +12,7 @@
 namespace WBW\Library\SMSMode\Tests\Model;
 
 use DateTime;
+use Exception;
 use WBW\Library\SMSMode\Model\CreatingAPIKeyResponse;
 use WBW\Library\SMSMode\Tests\AbstractTestCase;
 
@@ -38,6 +39,7 @@ class CreatingAPIKeyResponseTest extends AbstractTestCase {
         $this->assertNull($obj->getAccessToken());
         $this->assertNull($obj->getAccount());
         $this->assertNull($obj->getCreationDate());
+        $this->assertNull($obj->getException());
         $this->assertNull($obj->getExpiration());
         $this->assertNull($obj->getId());
         $this->assertNull($obj->getState());
@@ -73,6 +75,7 @@ class CreatingAPIKeyResponseTest extends AbstractTestCase {
      * Tests the setCreationDate() method.
      *
      * @return void
+     * @throws Exception Throws an exception if an error occurs.
      */
     public function testSetCreationDate() {
 
@@ -86,9 +89,23 @@ class CreatingAPIKeyResponseTest extends AbstractTestCase {
     }
 
     /**
+     * Tests the setException() method.
+     *
+     * @return void
+     */
+    public function testSetException() {
+
+        $obj = new CreatingAPIKeyResponse();
+
+        $obj->setException(["status" => 400]);
+        $this->assertEquals(["status" => 400], $obj->getException());
+    }
+
+    /**
      * Tests the setExpiration() method.
      *
      * @return void
+     * @throws Exception Throws an exception if an error occurs.
      */
     public function testSetExpiration() {
 

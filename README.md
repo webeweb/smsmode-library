@@ -11,6 +11,11 @@ smsmode-library
 
 Integrate sMsmode API with your projects.
 
+> IMPORTANT NOTICE: This package is still under development. Any changes will be
+> done without prior notice to consumers of this package. Of course this code
+> will become stable at a certain point, but for now, prefer this
+> [stable version](https://github.com/webeweb/smsmode-library/tree/v1.0.8).
+
 `sMsmode` provides an API that enables you to easily and automatically send SMS
 messages from your applications. This API provides the following functions:
 
@@ -52,20 +57,21 @@ Composer documentation.
 
 ```php
     // Create the provider.
-    $provider = new SMSModeProvider(new SMSModeAuthentication(), new SMSModeSendSMSRequest());
+    $provider = new APIProvider(new Authentication());
 
     // Initialize the authentication.
     $provider->getAuthentication()->setUsername("username");
     $provider->getAuthentication()->setPassword("password");
 
     // Initialize the request.
-    $provider->getRequest()->addNumber("33612345678");
-    $provider->getRequest()->setMessage("Hello world !");
-    $provider->getRequest()->setSender("sender");
-    $provider->getRequest()->setStop(SMSModeSendSMSRequest::STOP_ONLY);
+    $request = new SendingSMSMessageRequest();
+    $request->addNumber("33612345678");
+    $request->setMessage("Hello world !");
+    $request->setSender("sender");
+    $request->setStop(SMSModeSendSMSRequest::STOP_ONLY);
 
     // Call API.
-    $response = $provider->callAPI();
+    $response = $provider->sendingSMSMessage($request);
 ```
 
 ---
@@ -94,21 +100,23 @@ $ vendor/bin/phpunit
 ## Todo
 
 - ~~[2 Authentication](https://www.smsmode.com/pdf/fiche-api-http.pdf)~~
-- ~~[3 Send SMS](https://www.smsmode.com/pdf/fiche-api-http.pdf)~~
-- ~~[4 Reception report](https://www.smsmode.com/pdf/fiche-api-http.pdf)~~
+- ~~[2 Creating API key](https://www.smsmode.com/pdf/fiche-api-http.pdf)~~
+- ~~[3 Sending SMS message](https://www.smsmode.com/pdf/fiche-api-http.pdf)~~
+- ~~[4 Delivery report](https://www.smsmode.com/pdf/fiche-api-http.pdf)~~
 - ~~[5 Account balance](https://www.smsmode.com/pdf/fiche-api-http.pdf)~~
-- ~~[6 Create subaccount](https://www.smsmode.com/pdf/fiche-api-http.pdf)~~
-- ~~[7 Credit transfer](https://www.smsmode.com/pdf/fiche-api-http.pdf)~~
-- [8 Add contact](https://www.smsmode.com/pdf/fiche-api-http.pdf)
-- [9 Delete SMS](https://www.smsmode.com/pdf/fiche-api-http.pdf)
-- [10 Sended SMS list](https://www.smsmode.com/pdf/fiche-api-http.pdf)
-- [11 Get SMS status](https://www.smsmode.com/pdf/fiche-api-http.pdf)
-- [12 Report notification automatic](https://www.smsmode.com/pdf/fiche-api-http.pdf)
-- [13 Send SMS with response allowed and notification](https://www.smsmode.com/pdf/fiche-api-http.pdf)
-- [14 Get SMS responses](https://www.smsmode.com/pdf/fiche-api-http.pdf)
-- [15 Send vocal SMS](https://www.smsmode.com/pdf/fiche-api-http.pdf)
-- [16 Send unicode SMS](https://www.smsmode.com/pdf/fiche-api-http.pdf)
-- [17 Send SMS in batch mode](https://www.smsmode.com/pdf/fiche-api-http.pdf)
+- ~~[6 Creating sub-account](https://www.smsmode.com/pdf/fiche-api-http.pdf)~~
+- ~~[6 Deleting sub-account](https://www.smsmode.com/pdf/fiche-api-http.pdf)~~
+- ~~[7 Transferring credits from one account to another](https://www.smsmode.com/pdf/fiche-api-http.pdf)~~
+- ~~[8 Adding contacts](https://www.smsmode.com/pdf/fiche-api-http.pdf)~~
+- ~~[9 Deleting SMS](https://www.smsmode.com/pdf/fiche-api-http.pdf)~~
+- ~~[10 Sent SMS message list](https://www.smsmode.com/pdf/fiche-api-http.pdf)~~
+- ~~[11 Checking SMS message status](https://www.smsmode.com/pdf/fiche-api-http.pdf)~~
+- ~~[12 Delivery report callback](https://www.smsmode.com/pdf/fiche-api-http.pdf)~~
+- ~~[13 Sending SMS message with allowed reply and reply notification](https://www.smsmode.com/pdf/fiche-api-http.pdf)~~
+- ~~[14 Retrieving SMS replies](https://www.smsmode.com/pdf/fiche-api-http.pdf)~~
+- ~~[15 Sending text-to-speech SMS](https://www.smsmode.com/pdf/fiche-api-http.pdf)~~
+- [16 Sending unicode SMS](https://www.smsmode.com/pdf/fiche-api-http.pdf)
+- [17 Sending SMS in batch mode (attached file)](https://www.smsmode.com/pdf/fiche-api-http.pdf)
 
 ---
 

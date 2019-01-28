@@ -13,7 +13,7 @@ namespace WBW\Library\SMSMode\Tests\Model;
 
 use DateTime;
 use Exception;
-use WBW\Library\Core\Exception\Argument\IllegalArgumentException;
+use UnexpectedValueException;
 use WBW\Library\SMSMode\Model\SendingSMSMessageRequest;
 use WBW\Library\SMSMode\Tests\AbstractTestCase;
 
@@ -34,12 +34,12 @@ class SendingSMSMessageRequestTest extends AbstractTestCase {
 
         $obj = new SendingSMSMessageRequest();
 
-        $this->assertEquals(SendingSMSMessageRequest::CLASSE_MSG_SMS_PRO, $obj->getClasseMsg());
+        $this->assertNull($obj->getClasseMsg());
         $this->assertNull($obj->getDateEnvoi());
         $this->assertNull($obj->getEmetteur());
         $this->assertNull($obj->getGroupe());
         $this->assertNull($obj->getMessage());
-        $this->assertEquals(5, $obj->getNbrMsg());
+        $this->assertNull($obj->getNbrMsg());
         $this->assertNull($obj->getNotificationURL());
         $this->assertNull($obj->getNotificationURLReponse());
         $this->assertEquals([], $obj->getNumero());
@@ -66,7 +66,7 @@ class SendingSMSMessageRequestTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testSetClasseMsgWithIllegalArgumentExcpetion() {
+    public function testSetClasseMsgWithUnexpectedValueException() {
 
         $obj = new SendingSMSMessageRequest();
 
@@ -75,7 +75,7 @@ class SendingSMSMessageRequestTest extends AbstractTestCase {
             $obj->setClasseMsg(-1);
         } catch (Exception $ex) {
 
-            $this->assertInstanceOf(IllegalArgumentException::class, $ex);
+            $this->assertInstanceOf(UnexpectedValueException::class, $ex);
             $this->assertEquals("The classe msg \"-1\" is invalid", $ex->getMessage());
         }
     }
@@ -207,7 +207,7 @@ class SendingSMSMessageRequestTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testSetStopWithIllegalArgumentExcpetion() {
+    public function testSetStopWithUnexpectedValueException() {
 
         $obj = new SendingSMSMessageRequest();
 
@@ -216,7 +216,7 @@ class SendingSMSMessageRequestTest extends AbstractTestCase {
             $obj->setStop(-1);
         } catch (Exception $ex) {
 
-            $this->assertInstanceOf(IllegalArgumentException::class, $ex);
+            $this->assertInstanceOf(UnexpectedValueException::class, $ex);
             $this->assertEquals("The stop \"-1\" is invalid", $ex->getMessage());
         }
     }

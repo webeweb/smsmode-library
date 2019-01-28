@@ -12,7 +12,7 @@
 namespace WBW\Library\SMSMode\Model;
 
 use DateTime;
-use WBW\Library\Core\Exception\Argument\IllegalArgumentException;
+use UnexpectedValueException;
 use WBW\Library\SMSMode\API\SendingSMSMessageInterface;
 
 /**
@@ -105,8 +105,6 @@ class SendingSMSMessageRequest extends AbstractRequest implements SendingSMSMess
      */
     public function __construct() {
         parent::__construct();
-        $this->setClasseMsg(self::CLASSE_MSG_SMS_PRO);
-        $this->setNbrMsg(5);
         $this->setNumero([]);
     }
 
@@ -214,11 +212,11 @@ class SendingSMSMessageRequest extends AbstractRequest implements SendingSMSMess
      *
      * @param int $classeMsg The classe msg.
      * @return SendingSMSMessageRequest Returns this sending SMS message request.
-     * @throws IllegalArgumentException Throws an illegal argument exception if the classe msg is invalid.
+     * @throws UnexpectedValueException Throws an unexpected value exception exception if the classe msg is invalid.
      */
     public function setClasseMsg($classeMsg) {
         if (false === in_array($classeMsg, [self::CLASSE_MSG_SMS, self::CLASSE_MSG_SMS_PRO])) {
-            throw new IllegalArgumentException(sprintf("The classe msg \"%s\" is invalid", $classeMsg));
+            throw new UnexpectedValueException(sprintf("The classe msg \"%s\" is invalid", $classeMsg));
         }
         $this->classeMsg = $classeMsg;
         return $this;
@@ -328,11 +326,11 @@ class SendingSMSMessageRequest extends AbstractRequest implements SendingSMSMess
      *
      * @param int|null $stop The stop.
      * @return SendingSMSMessageRequest Returns this sending SMS message request.
-     * @throws IllegalArgumentException Throws an illegal argument exception if the classe msg is invalid.
+     * @throws \UnexpectedValueException Throws an unexpected value exception if the classe msg is invalid.
      */
     public function setStop($stop) {
         if (false === in_array($stop, [self::STOP_ALWAYS, self::STOP_ONLY])) {
-            throw new IllegalArgumentException(sprintf("The stop \"%s\" is invalid", $stop));
+            throw new UnexpectedValueException(sprintf("The stop \"%s\" is invalid", $stop));
         }
         $this->stop = $stop;
         return $this;

@@ -12,6 +12,8 @@
 namespace WBW\Library\SMSMode\Model;
 
 use DateTime;
+use UnexpectedValueException;
+use WBW\Library\SMSMode\API\SendingTextToSpeechSMSInterface;
 
 /**
  * Sending text-to-speech SMS request.
@@ -19,7 +21,7 @@ use DateTime;
  * @author webeweb <https://github.com/webeweb/>
  * @package WBW\Library\SMSMode\Model
  */
-class SendingTextToSpeechSMSRequest extends AbstractRequest {
+class SendingTextToSpeechSMSRequest extends AbstractRequest implements SendingTextToSpeechSMSInterface {
 
     /**
      * Date envoi.
@@ -125,8 +127,12 @@ class SendingTextToSpeechSMSRequest extends AbstractRequest {
      *
      * @param string $language The language.
      * @return SendingTextToSpeechSMSRequest Returns this sending text-to-speech request.
+     * @throws UnexpectedValueException Throws an unexpected value exception if the language is invalid.
      */
     public function setLanguage($language) {
+        if (false === in_array($language, [self::LANGUAGE_FR, self::LANGUAGE_EN, self::LANGUAGE_DE, self::LANGUAGE_ES])) {
+            throw new UnexpectedValueException(sprintf("The language \"%s\" is invalid", $language));
+        }
         $this->language = $language;
         return $this;
     }

@@ -12,6 +12,8 @@
 namespace WBW\Library\SMSMode\Tests\Model;
 
 use DateTime;
+use Exception;
+use UnexpectedValueException;
 use WBW\Library\SMSMode\Model\SendingTextToSpeechSMSRequest;
 use WBW\Library\SMSMode\Tests\AbstractTestCase;
 
@@ -60,13 +62,33 @@ class SendingTextToSpeechSMSRequestTest extends AbstractTestCase {
      * Tests the setLanguage() method.
      *
      * @return void
+     * @throws Exception Throws an exception if an error occurs.
      */
     public function testSetLanguage() {
 
         $obj = new SendingTextToSpeechSMSRequest();
 
-        $obj->setLanguage("language");
-        $this->assertEquals("language", $obj->getLanguage());
+        $obj->setLanguage("fr-FR");
+        $this->assertEquals("fr-FR", $obj->getLanguage());
+    }
+
+    /**
+     * Tests the setLanguage() method.
+     *
+     * @return void
+     */
+    public function testSetLanguageWithUnexpectedValueException() {
+
+        $obj = new SendingTextToSpeechSMSRequest();
+
+        try {
+
+            $obj->setLanguage("language");
+        } catch (Exception $ex) {
+
+            $this->assertInstanceOf(UnexpectedValueException::class, $ex);
+            $this->assertEquals("The language \"language\" is invalid", $ex->getMessage());
+        }
     }
 
     /**

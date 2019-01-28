@@ -12,6 +12,7 @@
 namespace WBW\Library\SMSMode\Tests\Model;
 
 use DateTime;
+use Exception;
 use WBW\Library\SMSMode\Model\AddingContactRequest;
 use WBW\Library\SMSMode\Tests\AbstractTestCase;
 
@@ -45,6 +46,7 @@ class AddingContactRequestTest extends AbstractTestCase {
      * Tests the setDate() method.
      *
      * @return void
+     * @throws Exception Throws an exception if an error occurs.
      */
     public function testSetDate() {
 

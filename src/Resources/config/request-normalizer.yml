@@ -171,6 +171,7 @@ WBW\Library\SMSMode\Model\SendingTextToSpeechSMSRequest:
     message:
         method:    "getMessage"
         mandatory: true
+        formatter: "formatISO8859"
     numero:
         method:    "getNumero"
         mandatory: true

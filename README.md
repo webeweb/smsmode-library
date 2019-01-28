@@ -99,24 +99,24 @@ $ vendor/bin/phpunit
 
 ## Todo
 
-- ~~[2 Authentication](https://www.smsmode.com/pdf/fiche-api-http.pdf)~~
-- ~~[2 Creating API key](https://www.smsmode.com/pdf/fiche-api-http.pdf)~~
-- ~~[3 Sending SMS message](https://www.smsmode.com/pdf/fiche-api-http.pdf)~~
-- ~~[4 Delivery report](https://www.smsmode.com/pdf/fiche-api-http.pdf)~~
-- ~~[5 Account balance](https://www.smsmode.com/pdf/fiche-api-http.pdf)~~
-- ~~[6 Creating sub-account](https://www.smsmode.com/pdf/fiche-api-http.pdf)~~
-- ~~[6 Deleting sub-account](https://www.smsmode.com/pdf/fiche-api-http.pdf)~~
-- ~~[7 Transferring credits from one account to another](https://www.smsmode.com/pdf/fiche-api-http.pdf)~~
-- ~~[8 Adding contacts](https://www.smsmode.com/pdf/fiche-api-http.pdf)~~
-- ~~[9 Deleting SMS](https://www.smsmode.com/pdf/fiche-api-http.pdf)~~
-- ~~[10 Sent SMS message list](https://www.smsmode.com/pdf/fiche-api-http.pdf)~~
-- ~~[11 Checking SMS message status](https://www.smsmode.com/pdf/fiche-api-http.pdf)~~
-- ~~[12 Delivery report callback](https://www.smsmode.com/pdf/fiche-api-http.pdf)~~
-- ~~[13 Sending SMS message with allowed reply and reply notification](https://www.smsmode.com/pdf/fiche-api-http.pdf)~~
-- ~~[14 Retrieving SMS replies](https://www.smsmode.com/pdf/fiche-api-http.pdf)~~
-- ~~[15 Sending text-to-speech SMS](https://www.smsmode.com/pdf/fiche-api-http.pdf)~~
-- [16 Sending unicode SMS](https://www.smsmode.com/pdf/fiche-api-http.pdf)
-- [17 Sending SMS in batch mode (attached file)](https://www.smsmode.com/pdf/fiche-api-http.pdf)
+- ~~[2 Authentication](https://www.smsmode.com/pdf/fiche-HTTP-api-EN.pdf)~~
+- ~~[2 Creating API key](https://www.smsmode.com/pdf/fiche-HTTP-api-EN.pdf)~~
+- ~~[3 Sending SMS message](https://www.smsmode.com/pdf/fiche-HTTP-api-EN.pdf)~~
+- ~~[4 Delivery report](https://www.smsmode.com/pdf/fiche-HTTP-api-EN.pdf)~~
+- ~~[5 Account balance](https://www.smsmode.com/pdf/fiche-HTTP-api-EN.pdf)~~
+- ~~[6 Creating sub-account](https://www.smsmode.com/pdf/fiche-HTTP-api-EN.pdf)~~
+- ~~[6 Deleting sub-account](https://www.smsmode.com/pdf/fiche-HTTP-api-EN.pdf)~~
+- ~~[7 Transferring credits from one account to another](https://www.smsmode.com/pdf/fiche-HTTP-api-EN.pdf)~~
+- ~~[8 Adding contacts](https://www.smsmode.com/pdf/fiche-HTTP-api-EN.pdf)~~
+- ~~[9 Deleting SMS](https://www.smsmode.com/pdf/fiche-HTTP-api-EN.pdf)~~
+- ~~[10 Sent SMS message list](https://www.smsmode.com/pdf/fiche-HTTP-api-EN.pdf)~~
+- ~~[11 Checking SMS message status](https://www.smsmode.com/pdf/fiche-HTTP-api-EN.pdf)~~
+- ~~[12 Delivery report callback](https://www.smsmode.com/pdf/fiche-HTTP-api-EN.pdf)~~
+- ~~[13 Sending SMS message with allowed reply and reply notification](https://www.smsmode.com/pdf/fiche-HTTP-api-EN.pdf)~~
+- ~~[14 Retrieving SMS replies](https://www.smsmode.com/pdf/fiche-HTTP-api-EN.pdf)~~
+- ~~[15 Sending text-to-speech SMS](https://www.smsmode.com/pdf/fiche-HTTP-api-EN.pdf)~~
+- [16 Sending unicode SMS](https://www.smsmode.com/pdf/fiche-HTTP-api-EN.pdf)
+- [17 Sending SMS in batch mode (attached file)](https://www.smsmode.com/pdf/fiche-HTTP-api-EN.pdf)
 
 ---
 

@@ -142,10 +142,10 @@ class SMSReply extends AbstractResponse {
     /**
      * Set the reception date.
      *
-     * @param DateTime $receptionDate The reception date.
+     * @param DateTime|null $receptionDate The reception date.
      * @return SMSReply Returns this retrieving SMS reply.
      */
-    public function setReceptionDate(DateTime $receptionDate) {
+    public function setReceptionDate(DateTime $receptionDate = null) {
         $this->receptionDate = $receptionDate;
         return $this;
     }

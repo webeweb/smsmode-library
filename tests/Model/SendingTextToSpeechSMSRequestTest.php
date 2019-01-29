@@ -26,6 +26,20 @@ use WBW\Library\SMSMode\Tests\AbstractTestCase;
 class SendingTextToSpeechSMSRequestTest extends AbstractTestCase {
 
     /**
+     * Tests the addNumero() method.
+     *
+     * @return void
+     * @throws Exception Throws an exception if an error occurs.
+     */
+    public function testAddNumero() {
+
+        $obj = new SendingTextToSpeechSMSRequest();
+
+        $obj->addNumero("33600000000");
+        $this->assertEquals(["33600000000"], $obj->getNumero());
+    }
+
+    /**
      * Tests the __construct() method.
      *
      * @return void

@@ -14,6 +14,7 @@ namespace WBW\Library\SMSMode\Model;
 use DateTime;
 use UnexpectedValueException;
 use WBW\Library\SMSMode\API\SendingSMSMessageInterface;
+use WBW\Library\SMSMode\Exception\InvalidNumeroException;
 
 /**
  * Sending SMS message request.
@@ -106,6 +107,19 @@ class SendingSMSMessageRequest extends AbstractRequest implements SendingSMSMess
     public function __construct() {
         parent::__construct();
         $this->setNumero([]);
+    }
+
+    /**
+     * Add a numero.
+     *
+     * @param string $numero The numero.
+     * @return SendingSMSMessageRequest Returns this sending SMS message request.
+     * @throws UnexpectedValueException Throws an unexpected value exception if the numero is invalid.
+     */
+    public function addNumero($numero) {
+        static::checkNumero($numero);
+        $this->numero[] = $numero;
+        return $this;
     }
 
     /**
@@ -305,7 +319,7 @@ class SendingSMSMessageRequest extends AbstractRequest implements SendingSMSMess
      * @param string[] $numero The numero.
      * @return SendingSMSMessageRequest Returns this sending SMS message request.
      */
-    public function setNumero(array $numero) {
+    protected function setNumero(array $numero) {
         $this->numero = $numero;
         return $this;
     }

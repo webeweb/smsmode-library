@@ -38,5 +38,4 @@ class APIExceptionTest extends AbstractTestCase {
         $this->assertEquals("message", $obj->getMessage());
         $this->assertSame($arg, $obj->getPrevious());
     }
-
 }

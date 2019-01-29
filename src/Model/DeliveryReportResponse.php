@@ -44,6 +44,15 @@ class DeliveryReportResponse extends AbstractResponse {
     }
 
     /**
+     * Determines if this delivery report response has a delivery report.
+     *
+     * @return bool Returns true in case of success, false otherwise.
+     */
+    public function hasDeliveryReport() {
+        return 0 < count($this->deliveryReports);
+    }
+
+    /**
      * Set the delivery reports.
      *
      * @param DeliveryReport[] $deliveryReports The delivery reports.

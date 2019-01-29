@@ -36,6 +36,23 @@ class DeliveryReportResponseTest extends AbstractTestCase {
         $this->assertNull($obj->getDescription());
 
         $this->assertEquals([], $obj->getDeliveryReports());
+        $this->assertFalse($obj->hasDeliveryReport());
+    }
+
+    /**
+     * Tests the hasDeliveryReport() method.
+     *
+     * @return void
+     */
+    public function testHasDeliveryReport() {
+
+        // Set a Delivery report mock.
+        $deliveryReport = new DeliveryReport();
+
+        $obj = new DeliveryReportResponse();
+
+        $obj->setDeliveryReports([$deliveryReport]);
+        $this->assertTrue($obj->hasDeliveryReport());
     }
 
     /**

@@ -25,6 +25,19 @@ use WBW\Library\SMSMode\Tests\AbstractTestCase;
 class AddingContactRequestTest extends AbstractTestCase {
 
     /**
+     * Tests the addGroupe() method.
+     *
+     * @return void
+     */
+    public function testAddGroupe() {
+
+        $obj = new AddingContactRequest();
+
+        $obj->addGroupe("groupe");
+        $this->assertEquals(["groupe"], $obj->getGroupes());
+    }
+
+    /**
      * Tests the __construct() method.
      *
      * @return void
@@ -76,13 +89,14 @@ class AddingContactRequestTest extends AbstractTestCase {
      * Tests the setMobile() method.
      *
      * @return void
+     * @throws Exception Throws an exception if an error occurs.
      */
     public function testSetMobile() {
 
         $obj = new AddingContactRequest();
 
-        $obj->setMobile("mobile");
-        $this->assertEquals("mobile", $obj->getMobile());
+        $obj->setMobile("33600000000");
+        $this->assertEquals("33600000000", $obj->getMobile());
     }
 
     /**

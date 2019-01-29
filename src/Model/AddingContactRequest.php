@@ -12,6 +12,7 @@
 namespace WBW\Library\SMSMode\Model;
 
 use DateTime;
+use UnexpectedValueException;
 
 /**
  * Adding contact request.
@@ -76,6 +77,17 @@ class AddingContactRequest extends AbstractRequest {
     public function __construct() {
         parent::__construct();
         $this->setGroupes([]);
+    }
+
+    /**
+     * Add a groupe.
+     *
+     * @param string $groupe The groupe.
+     * @return AddingContactRequest Returns this adding contact request.
+     */
+    public function addGroupe($groupe) {
+        $this->groupes[] = $groupe;
+        return $this;
     }
 
     /**
@@ -168,8 +180,10 @@ class AddingContactRequest extends AbstractRequest {
      *
      * @param string $mobile The mobile.
      * @return AddingContactRequest Returns this adding contact request.
+     * @throws UnexpectedValueException Throws an unexpected value exception if the numero is invalid.
      */
     public function setMobile($mobile) {
+        static::checkNumero($mobile);
         $this->mobile = $mobile;
         return $this;
     }

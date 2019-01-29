@@ -12,6 +12,7 @@
 namespace WBW\Library\SMSMode\Model;
 
 use DateTime;
+use UnexpectedValueException;
 
 /**
  * Creating sub-account request.
@@ -294,8 +295,10 @@ class CreatingSubAccountRequest extends AbstractRequest {
      *
      * @param string $fax The fax.
      * @return CreatingSubAccountRequest Returns this creating sub-account request.
+     * @thows UnexpectedValueException Throws an unexpected value exception if the fax is invalid.
      */
     public function setFax($fax) {
+       static::checkNumero($fax);
         $this->fax = $fax;
         return $this;
     }
@@ -305,8 +308,10 @@ class CreatingSubAccountRequest extends AbstractRequest {
      *
      * @param string $mobile The mobile.
      * @return CreatingSubAccountRequest Returns this creating sub-account request.
+     * @throws UnexpectedValueException Throws an unexpected value exception if the mobile is invalid.
      */
     public function setMobile($mobile) {
+        static::checkNumero($mobile);
         $this->mobile = $mobile;
         return $this;
     }
@@ -382,8 +387,10 @@ class CreatingSubAccountRequest extends AbstractRequest {
      *
      * @param string $telephone The telephone.
      * @return CreatingSubAccountRequest Returns this creating sub-account request.
+     * @throws UnexpectedValueException Throws an unexpected value exception if the numero is invalid.
      */
     public function setTelephone($telephone) {
+        static::checkNumero($telephone);
         $this->telephone = $telephone;
         return $this;
     }

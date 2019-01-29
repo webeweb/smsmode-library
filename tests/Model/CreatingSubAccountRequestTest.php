@@ -109,26 +109,28 @@ class CreatingSubAccountRequestTest extends AbstractTestCase {
      * Tests the setFax() method.
      *
      * @return void
+     * @throws Exception Throws an exception if an error occurs.
      */
     public function testSetFax() {
 
         $obj = new CreatingSubAccountRequest();
 
-        $obj->setFax("fax");
-        $this->assertEquals("fax", $obj->getFax());
+        $obj->setFax("33100000000");
+        $this->assertEquals("33100000000", $obj->getFax());
     }
 
     /**
      * Tests the setMobile() method.
      *
      * @return void
+     * @throws Exception Throws an exception if an error occurs.
      */
     public function testSetMobile() {
 
         $obj = new CreatingSubAccountRequest();
 
-        $obj->setMobile("mobile");
-        $this->assertEquals("mobile", $obj->getMobile());
+        $obj->setMobile("33600000000");
+        $this->assertEquals("33600000000", $obj->getMobile());
     }
 
     /**
@@ -218,8 +220,8 @@ class CreatingSubAccountRequestTest extends AbstractTestCase {
 
         $obj = new CreatingSubAccountRequest();
 
-        $obj->setTelephone("telephone");
-        $this->assertEquals("telephone", $obj->getTelephone());
+        $obj->setTelephone("33100000000");
+        $this->assertEquals("33100000000", $obj->getTelephone());
     }
 
     /**

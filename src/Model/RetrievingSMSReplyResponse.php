@@ -44,6 +44,15 @@ class RetrievingSMSReplyResponse extends AbstractResponse {
     }
 
     /**
+     * Determines if this retrieving SMS reply response has a SMS reply.
+     *
+     * @return bool Returns true in cas of success, false otherwise.
+     */
+    public function hasSMSReply() {
+        return 0 < count($this->smsReplies);
+    }
+
+    /**
      * Set the SMS replies.
      *
      * @param SMSReply[] $smsReplies The SMS replies.

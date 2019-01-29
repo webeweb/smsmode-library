@@ -36,6 +36,23 @@ class RetrievingSMSReplyResponseTest extends AbstractTestCase {
         $this->assertNull($obj->getDescription());
 
         $this->assertEquals([], $obj->getSMSReplies());
+        $this->assertFalse($obj->hasSMSReply());
+    }
+
+    /**
+     * Tests the hasSMSReply() method.
+     *
+     * @return void
+     */
+    public function testHasSMSReply() {
+
+        // Set a SMS reply mock.
+        $smsReply = new SMSReply();
+
+        $obj = new RetrievingSMSReplyResponse();
+
+        $obj->setSMSReplies([$smsReply]);
+        $this->assertTrue($obj->hasSMSReply());
     }
 
     /**

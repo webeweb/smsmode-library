@@ -44,6 +44,15 @@ class SentSMSMessageListResponse extends AbstractResponse {
     }
 
     /**
+     * Determines if this sent SMS message list has a sent SMS message.
+     *
+     * @return bool Returns true in case of success, false otherwise.
+     */
+    public function hasSentSMSMessage() {
+        return 0 < count($this->sentSMSMessages);
+    }
+
+    /**
      * Set the sent SMS messages.
      *
      * @param SentSMSMessage[] $sentSMSMessages The sent SMS messages.

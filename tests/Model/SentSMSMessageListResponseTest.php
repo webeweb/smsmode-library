@@ -36,21 +36,38 @@ class SentSMSMessageListResponseTest extends AbstractTestCase {
         $this->assertNull($obj->getDescription());
 
         $this->assertEquals([], $obj->getSentSMSMessages());
+        $this->assertFalse($obj->hasSentSMSMessage());
     }
 
     /**
-     * Tests the setSMSReplies() method.
+     * Tests the hasSentSMSMessage() method.
      *
      * @return void
      */
-    public function testSetSMSReplies() {
+    public function testHasSentSMSMessage() {
 
         // Set a Sent SMS message mock.
-        $smsReply = new SentSMSMessage();
+        $sentSMSMessage = new SentSMSMessage();
 
         $obj = new SentSMSMessageListResponse();
 
-        $obj->setSentSMSMessages([$smsReply]);
-        $this->assertEquals([$smsReply], $obj->getSentSMSMessages());
+        $obj->setSentSMSMessages([$sentSMSMessage]);
+        $this->assertTrue($obj->hasSentSMSMessage());
+    }
+
+    /**
+     * Tests the setSentSMSMessages() method.
+     *
+     * @return void
+     */
+    public function testSetSentSMSMessages() {
+
+        // Set a Sent SMS message mock.
+        $sentSMSMessage = new SentSMSMessage();
+
+        $obj = new SentSMSMessageListResponse();
+
+        $obj->setSentSMSMessages([$sentSMSMessage]);
+        $this->assertEquals([$sentSMSMessage], $obj->getSentSMSMessages());
     }
 }

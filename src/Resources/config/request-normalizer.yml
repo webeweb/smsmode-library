@@ -131,7 +131,7 @@ WBW\Library\SMSMode\Model\SendingSMSMessageRequest:
     message:
         method:    "getMessage"
         mandatory: true
-        formatter: "formatISO8859"
+        formatter: "formatMessage"
     numero:
         method:    "getNumero"
         mandatory: true
@@ -171,7 +171,7 @@ WBW\Library\SMSMode\Model\SendingTextToSpeechSMSRequest:
     message:
         method:    "getMessage"
         mandatory: true
-        formatter: "formatISO8859"
+        formatter: "formatMessage"
     numero:
         method:    "getNumero"
         mandatory: true

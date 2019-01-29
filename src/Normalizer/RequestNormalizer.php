@@ -126,13 +126,14 @@ class RequestNormalizer {
     }
 
     /**
-     * Format into ISO-8859-1.
+     * Format a message.
      *
      * @param string $value The value.
-     * @return string Returns the formatted value.
+     * @return string Returns the formatted message.
      */
-    protected function formatISO8859($value) {
-        return utf8_decode($value);
+    protected function formatMessage($value) {
+        $iconv = iconv("UTF-8", "ISO-8859-15", $value);
+        return urlencode($iconv);
     }
 
     /**

@@ -77,9 +77,8 @@ class RequestNormalizerTest extends AbstractTestCase {
 
         // Set an Adding contact request mock.
         $arg = new AddingContactRequest();
-
         $arg->setNom("nom");
-        $arg->setMobile("mobile");
+        $arg->setMobile("33600000000");
 
         $arg->setPrenom("prenom");
         $arg->setGroupes(["groupe1", "groupe2"]);
@@ -91,7 +90,7 @@ class RequestNormalizerTest extends AbstractTestCase {
 
         $res = [
             "nom"     => "nom",
-            "mobile"  => "mobile",
+            "mobile"  => "33600000000",
             "prenom"  => "prenom",
             "groupes" => "groupe1,groupe2",
             "societe" => "societe",
@@ -143,7 +142,6 @@ class RequestNormalizerTest extends AbstractTestCase {
 
         // Set a Creating sub-account request mock.
         $arg = new Authentication();
-
         $arg->setPseudo("pseudo");
         $arg->setPass("pass");
 
@@ -166,7 +164,6 @@ class RequestNormalizerTest extends AbstractTestCase {
 
         // Set a Creating sub-account request mock.
         $arg = new Authentication();
-
         $arg->setAccessToken("accessToken");
 
         $arg->setPseudo("pseudo");
@@ -283,6 +280,7 @@ class RequestNormalizerTest extends AbstractTestCase {
         $arg = new CreatingSubAccountRequest();
         $arg->setNewPseudo("newPseudo");
         $arg->setNewPass("newPass");
+
         $arg->setReference("reference");
         $arg->setNom("nom");
         $arg->setPrenom("prenom");
@@ -290,9 +288,9 @@ class RequestNormalizerTest extends AbstractTestCase {
         $arg->setAdresse("adresse");
         $arg->setVille("ville");
         $arg->setCodePostal("codePostal");
-        $arg->setMobile("mobile");
-        $arg->setTelephone("telephone");
-        $arg->setFax("fax");
+        $arg->setMobile("33600000000");
+        $arg->setTelephone("33100000000");
+        $arg->setFax("33100000000");
         $arg->setEmail("email");
         $arg->setDate(new DateTime("2017-09-12 11:00:00"));
 
@@ -308,9 +306,9 @@ class RequestNormalizerTest extends AbstractTestCase {
             "adresse"    => "adresse",
             "ville"      => "ville",
             "codePostal" => "codePostal",
-            "mobile"     => "mobile",
-            "telephone"  => "telephone",
-            "fax"        => "fax",
+            "mobile"     => "33600000000",
+            "telephone"  => "33100000000",
+            "fax"        => "33100000000",
             "email"      => "email",
             "date"       => "12092017",
         ];
@@ -369,10 +367,10 @@ class RequestNormalizerTest extends AbstractTestCase {
         $this->assertEquals($res1, $obj->normalize($arg));
 
         $arg->setSmsID(null);
-        $arg->setNumero("numero");
+        $arg->setNumero("33600000000");
 
         $res2 = [
-            "numero" => "numero",
+            "numero" => "33600000000",
         ];
         $this->assertEquals($res2, $obj->normalize($arg));
     }
@@ -610,7 +608,9 @@ class RequestNormalizerTest extends AbstractTestCase {
         // Set a Sending SMS message request mock.
         $arg = new SendingSMSMessageRequest();
         $arg->setMessage("message");
-        $arg->setNumero(["numero1", "numero2"]);
+        $arg->addNumero("33600000000");
+        $arg->addNumero("33600000001");
+
         $arg->setClasseMsg(SendingSMSMessageRequest::CLASSE_MSG_SMS);
         $arg->setDateEnvoi(new DateTime("2017-09-07 10:00:00"));
         $arg->setRefClient("refClient");
@@ -624,7 +624,7 @@ class RequestNormalizerTest extends AbstractTestCase {
 
         $res = [
             "message"                  => "message",
-            "numero"                   => "numero1,numero2",
+            "numero"                   => "33600000000,33600000001",
             "classe_msg"               => 4,
             "date_envoi"               => "07092017-10:00",
             "refClient"                => "refClient",
@@ -647,7 +647,6 @@ class RequestNormalizerTest extends AbstractTestCase {
 
         // Set a Sending SMS message request mock.
         $arg = new SendingSMSMessageRequest();
-
         $arg->setMessage("message");
         $arg->setGroupe("groupe");
 
@@ -717,9 +716,9 @@ class RequestNormalizerTest extends AbstractTestCase {
 
         // Set a Sending text-to-speech request mock.
         $arg = new SendingTextToSpeechSMSRequest();
-
         $arg->setMessage("message");
-        $arg->setNumero(["numero1", "numero2"]);
+        $arg->addNumero("33600000000");
+        $arg->addNumero("33600000001");
 
         $arg->setTitle("title");
         $arg->setDateEnvoi(new DateTime("2019-01-17"));
@@ -729,7 +728,7 @@ class RequestNormalizerTest extends AbstractTestCase {
 
         $res = [
             "message"    => "message",
-            "numero"     => "numero1,numero2",
+            "numero"     => "33600000000,33600000001",
             "title"      => "title",
             "date_envoi" => "17012019",
             "language"   => "fr-FR",
@@ -779,7 +778,6 @@ class RequestNormalizerTest extends AbstractTestCase {
 
         // Set a Deleting sub-account request mock.
         $arg = new SentSMSMessageListRequest();
-
         $arg->setOffset(10);
 
         $obj = new RequestNormalizer();
@@ -817,7 +815,6 @@ class RequestNormalizerTest extends AbstractTestCase {
 
         // Set a Transferring credits request mock.
         $arg = new TransferringCreditsRequest();
-
         $arg->setTargetPseudo("targetPseudo");
         $arg->setCreditAmount(212);
 

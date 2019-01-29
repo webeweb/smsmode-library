@@ -11,6 +11,8 @@
 
 namespace WBW\Library\SMSMode\Model;
 
+use UnexpectedValueException;
+
 /**
  * Deleting SMS request.
  *
@@ -56,8 +58,10 @@ class DeletingSMSRequest extends AbstractRequest {
      *
      * @param string $numero The numero.
      * @return DeletingSMSRequest Returns this deleting SMS request.
+     * @throws UnexpectedValueException Throws an unexpected value exception if the numero is invalid.
      */
     public function setNumero($numero) {
+        static::checkNumero($numero);
         $this->numero = $numero;
         return $this;
     }

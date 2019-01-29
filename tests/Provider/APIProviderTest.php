@@ -101,14 +101,14 @@ class APIProviderTest extends AbstractTestCase {
         $arg = new AddingContactRequest();
 
         $arg->setNom("nom");
-        $arg->setMobile("mobile");
+        $arg->setMobile("33600000000");
 
         $obj = new APIProvider($this->authentication);
 
         $res = $obj->addingContact($arg);
         $this->assertInstanceOf(AddingContactResponse::class, $res);
 
-        $this->assertEquals(35, $res->getCode());
+        $this->assertEquals(32, $res->getCode());
         $this->assertRegExp("/.*/", $res->getDescription());
     }
 
@@ -311,17 +311,17 @@ class APIProviderTest extends AbstractTestCase {
      */
     public function testSendingSMSMessage() {
 
-        // Set a Sending SMS message list request mock.
+        // Set a Sending SMS message request mock.
         $arg = new SendingSMSMessageRequest();
         $arg->setMessage("message");
-        $arg->setNumero(["numero"]);
+        $arg->addNumero("33600000000");
 
         $obj = new APIProvider($this->authentication);
 
         $res = $obj->sendingSMSMessage($arg);
         $this->assertInstanceOf(SendingSMSMessageResponse::class, $res);
 
-        $this->assertEquals(35, $res->getCode());
+        $this->assertEquals(32, $res->getCode());
         $this->assertRegExp("/.*/", $res->getDescription());
     }
 
@@ -333,10 +333,10 @@ class APIProviderTest extends AbstractTestCase {
      */
     public function testSendingTextToSpeechSMS() {
 
-        // Set a Sending SMS message list request mock.
+        // Set a Sending text-to-speech SMS request mock.
         $arg = new SendingTextToSpeechSMSRequest();
         $arg->setMessage("message");
-        $arg->setNumero(["numero"]);
+        $arg->addNumero("33600000000");
 
         $obj = new APIProvider($this->authentication);
 

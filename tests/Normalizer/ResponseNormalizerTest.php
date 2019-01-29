@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace WBW\Library\SMSMode\Tests\Helper;
+namespace WBW\Library\SMSMode\Tests\Normalizer;
 
 use WBW\Library\SMSMode\Model\AccountBalanceResponse;
 use WBW\Library\SMSMode\Model\AddingContactResponse;
@@ -32,10 +32,10 @@ use WBW\Library\SMSMode\Tests\AbstractTestCase;
 use WBW\Library\SMSMode\Tests\Fixtures\Normalizer\TestResponseNormalizer;
 
 /**
- * Object serializer test.
+ * Object normalizer test.
  *
  * @author webeweb <https://github.com/webeweb/>
- * @package WBW\Library\SMSMode\Tests\Helper
+ * @package WBW\Library\SMSMode\Tests\Normalizer
  */
 class ResponseNormalizerTest extends AbstractTestCase {
 

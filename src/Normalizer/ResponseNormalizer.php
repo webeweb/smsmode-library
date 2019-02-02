@@ -26,6 +26,7 @@ use WBW\Library\SMSMode\Model\DeliveryReportResponse;
 use WBW\Library\SMSMode\Model\RetrievingSMSReplyResponse;
 use WBW\Library\SMSMode\Model\SendingSMSMessageResponse;
 use WBW\Library\SMSMode\Model\SendingTextToSpeechSMSResponse;
+use WBW\Library\SMSMode\Model\SendingUnicodeSMSResponse;
 use WBW\Library\SMSMode\Model\SentSMSMessage;
 use WBW\Library\SMSMode\Model\SentSMSMessageListResponse;
 use WBW\Library\SMSMode\Model\SMSReply;
@@ -306,6 +307,25 @@ class ResponseNormalizer {
     public static function denormalizeSendingTextToSpeechSMSResponse($rawResponse) {
 
         $model = new SendingTextToSpeechSMSResponse();
+        static::denormalizeResponse($model, $rawResponse);
+
+        $responses = explode(AbstractResponse::RESPONSE_DELIMITER, trim($rawResponse));
+        if (AbstractResponse::RESPONSE_CODE_0 === $model->getCode() && 3 === count($responses)) {
+            $model->setSmsID(trim($responses[2]));
+        }
+
+        return $model;
+    }
+
+    /**
+     * Denormalize a sending unicode SMS response.
+     *
+     * @param string $rawResponse The raw response.
+     * @return SendingUnicodeSMSResponse Returns the sending unicode SMS response.
+     */
+    public static function denormalizeSendingUnicodeSMSResponse($rawResponse) {
+
+        $model = new SendingUnicodeSMSResponse();
         static::denormalizeResponse($model, $rawResponse);
 
         $responses = explode(AbstractResponse::RESPONSE_DELIMITER, trim($rawResponse));

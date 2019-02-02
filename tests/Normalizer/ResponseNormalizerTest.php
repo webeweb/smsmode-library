@@ -23,6 +23,7 @@ use WBW\Library\SMSMode\Model\DeliveryReportResponse;
 use WBW\Library\SMSMode\Model\RetrievingSMSReplyResponse;
 use WBW\Library\SMSMode\Model\SendingSMSMessageResponse;
 use WBW\Library\SMSMode\Model\SendingTextToSpeechSMSResponse;
+use WBW\Library\SMSMode\Model\SendingUnicodeSMSResponse;
 use WBW\Library\SMSMode\Model\SentSMSMessage;
 use WBW\Library\SMSMode\Model\SentSMSMessageListResponse;
 use WBW\Library\SMSMode\Model\SMSReply;
@@ -428,6 +429,25 @@ EOT;
 
         $obj = ResponseNormalizer::denormalizeSendingTextToSpeechSMSResponse($rawResponse);
         $this->assertInstanceOf(SendingTextToSpeechSMSResponse::class, $obj);
+
+        $this->assertEquals(0, $obj->getCode());
+        $this->assertEquals("Accepted", $obj->getDescription());
+
+        $this->assertEquals("smsID", $obj->getSmsID());
+    }
+
+    /**
+     * Tests the denormalizeSendingUnicodeSMSResponse() method.
+     *
+     * @return void
+     */
+    public function testDenormalizeSendingUnicodeSMSResponse() {
+
+        // Initialize a Raw response mock.
+        $rawResponse = "0 | Accepted | smsID";
+
+        $obj = ResponseNormalizer::denormalizeSendingUnicodeSMSResponse($rawResponse);
+        $this->assertInstanceOf(SendingUnicodeSMSResponse::class, $obj);
 
         $this->assertEquals(0, $obj->getCode());
         $this->assertEquals("Accepted", $obj->getDescription());

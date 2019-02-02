@@ -43,6 +43,8 @@ use WBW\Library\SMSMode\Model\SendingSMSMessageRequest;
 use WBW\Library\SMSMode\Model\SendingSMSMessageResponse;
 use WBW\Library\SMSMode\Model\SendingTextToSpeechSMSRequest;
 use WBW\Library\SMSMode\Model\SendingTextToSpeechSMSResponse;
+use WBW\Library\SMSMode\Model\SendingUnicodeSMSRequest;
+use WBW\Library\SMSMode\Model\SendingUnicodeSMSResponse;
 use WBW\Library\SMSMode\Model\SentSMSMessageListRequest;
 use WBW\Library\SMSMode\Model\SentSMSMessageListResponse;
 use WBW\Library\SMSMode\Model\TransferringCreditsRequest;
@@ -136,7 +138,7 @@ class APIProvider {
     /**
      * Call API.
      *
-     * @param string $resourcePath The resource path.
+     * @param AbstractRequest $request The request.
      * @param array $queryData The query data.
      * @param array $postData The post data.
      * @return string Returns the raw response.
@@ -390,6 +392,29 @@ class APIProvider {
         $rawResponse = $this->callAPI($sendingTextToSpeechSMSRequest, $queryData, $postData);
 
         return ResponseNormalizer::denormalizeSendingTextToSpeechSMSResponse($rawResponse);
+    }
+
+    /**
+     * Sending unicode SMS request.
+     *
+     * @param SendingUnicodeSMSRequest $sendingUnicodeSMSRequest The sending unicode SMS request.
+     * @return SendingUnicodeSMSResponse Returns the sending unicode response.
+     * @throws APIException Throws an API exception if an error occurs.
+     * @throws InvalidArgumentException Throws an invalid argument exception if a parameter is missing.
+     * @throws ReflectionException Throws a reflection exception.
+     */
+    public function sendingUnicodeSMS(SendingUnicodeSMSRequest $sendingUnicodeSMSRequest) {
+
+        $queryData = $this->getRequestNormalizer()->normalize($sendingUnicodeSMSRequest);
+        $postData  = [];
+        if (true === array_key_exists("numero", $queryData)) {
+            $postData["numero"] = $queryData["numero"];
+            unset($queryData["numero"]);
+        }
+
+        $rawResponse = $this->callAPI($sendingUnicodeSMSRequest, $queryData, $postData);
+
+        return ResponseNormalizer::denormalizeSendingUnicodeSMSResponse($rawResponse);
     }
 
     /**

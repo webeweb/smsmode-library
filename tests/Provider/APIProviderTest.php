@@ -35,6 +35,8 @@ use WBW\Library\SMSMode\Model\SendingSMSMessageRequest;
 use WBW\Library\SMSMode\Model\SendingSMSMessageResponse;
 use WBW\Library\SMSMode\Model\SendingTextToSpeechSMSRequest;
 use WBW\Library\SMSMode\Model\SendingTextToSpeechSMSResponse;
+use WBW\Library\SMSMode\Model\SendingUnicodeSMSRequest;
+use WBW\Library\SMSMode\Model\SendingUnicodeSMSResponse;
 use WBW\Library\SMSMode\Model\SentSMSMessageListRequest;
 use WBW\Library\SMSMode\Model\SentSMSMessageListResponse;
 use WBW\Library\SMSMode\Model\TransferringCreditsRequest;
@@ -344,6 +346,28 @@ class APIProviderTest extends AbstractTestCase {
 
         $res = $obj->sendingTextToSpeechSMS($arg);
         $this->assertInstanceOf(SendingTextToSpeechSMSResponse::class, $res);
+
+        $this->assertEquals(32, $res->getCode());
+        $this->assertRegExp("/.*/", $res->getDescription());
+    }
+
+    /**
+     * Tests the sendingUnicodeSMS() method.
+     *
+     * @return void
+     * @throws Exception Throws an exception if an error occurs.
+     */
+    public function testSendingUnicodeSMS() {
+
+        // Set a Sending unicode SMS request mock.
+        $arg = new SendingUnicodeSMSRequest();
+        $arg->setMessage("message");
+        $arg->addNumero("33600000000");
+
+        $obj = new APIProvider($this->authentication);
+
+        $res = $obj->sendingUnicodeSMS($arg);
+        $this->assertInstanceOf(SendingUnicodeSMSResponse::class, $res);
 
         $this->assertEquals(32, $res->getCode());
         $this->assertRegExp("/.*/", $res->getDescription());

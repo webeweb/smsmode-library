@@ -85,7 +85,7 @@ stable version of this package:
 ```bash
 $ mkdir smsmode-library
 $ cd smsmode-library
-$ git clone https://github.com/webeweb/smsmode-library package.git .
+$ git clone https://github.com/webeweb/smsmode-library.git .
 $ composer install
 ```
 
@@ -115,7 +115,7 @@ $ vendor/bin/phpunit
 - ~~[13 Sending SMS message with allowed reply and reply notification](https://www.smsmode.com/pdf/fiche-HTTP-api-EN.pdf)~~
 - ~~[14 Retrieving SMS replies](https://www.smsmode.com/pdf/fiche-HTTP-api-EN.pdf)~~
 - ~~[15 Sending text-to-speech SMS](https://www.smsmode.com/pdf/fiche-HTTP-api-EN.pdf)~~
-- [16 Sending unicode SMS](https://www.smsmode.com/pdf/fiche-HTTP-api-EN.pdf)
+- ~~[16 Sending unicode SMS](https://www.smsmode.com/pdf/fiche-HTTP-api-EN.pdf)~~
 - [17 Sending SMS in batch mode (attached file)](https://www.smsmode.com/pdf/fiche-HTTP-api-EN.pdf)
 
 ---

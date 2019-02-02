@@ -23,6 +23,13 @@ use UnexpectedValueException;
 class RetrievingSMSReplyRequest extends AbstractRequest {
 
     /**
+     * Retrieving SMS reply resource path.
+     *
+     * @var string
+     */
+    const RETRIEVING_SMS_REPLY_RESOURCE_PATH = "/http/1.6/responseList.do";
+
+    /**
      * End date.
      *
      * @var DateTime
@@ -66,6 +73,13 @@ class RetrievingSMSReplyRequest extends AbstractRequest {
      */
     public function getOffset() {
         return $this->offset;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getResourcePath() {
+        return self::RETRIEVING_SMS_REPLY_RESOURCE_PATH;
     }
 
     /**

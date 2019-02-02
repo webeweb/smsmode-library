@@ -32,10 +32,13 @@ class RetrievingSMSReplyRequestTest extends AbstractTestCase {
      */
     public function testConstruct() {
 
+        $this->assertEquals("/http/1.6/responseList.do", RetrievingSMSReplyRequest::RETRIEVING_SMS_REPLY_RESOURCE_PATH);
+
         $obj = new RetrievingSMSReplyRequest();
 
         $this->assertNull($obj->getEndDate());
         $this->assertNull($obj->getOffset());
+        $this->assertEquals(RetrievingSMSReplyRequest::RETRIEVING_SMS_REPLY_RESOURCE_PATH, $obj->getResourcePath());
         $this->assertNull($obj->getStart());
         $this->assertNull($obj->getStartDate());
     }

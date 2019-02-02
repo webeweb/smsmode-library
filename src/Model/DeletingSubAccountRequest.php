@@ -20,6 +20,13 @@ namespace WBW\Library\SMSMode\Model;
 class DeletingSubAccountRequest extends AbstractRequest {
 
     /**
+     * Deleting sub-account resource path.
+     *
+     * @var string
+     */
+    const DELETING_SUB_ACCOUNT_RESOURCE_PATH = "/http/1.6/deleteSubAccount.do";
+
+    /**
      * Pseudo to delete.
      *
      * @var string
@@ -33,6 +40,13 @@ class DeletingSubAccountRequest extends AbstractRequest {
      */
     public function getPseudoToDelete() {
         return $this->pseudoToDelete;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getResourcePath() {
+        return self::DELETING_SUB_ACCOUNT_RESOURCE_PATH;
     }
 
     /**

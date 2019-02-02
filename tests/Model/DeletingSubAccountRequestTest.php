@@ -29,9 +29,12 @@ class DeletingSubAccountRequestTest extends AbstractTestCase {
      */
     public function testConstruct() {
 
+        $this->assertEquals("/http/1.6/deleteSubAccount.do", DeletingSubAccountRequest::DELETING_SUB_ACCOUNT_RESOURCE_PATH);
+
         $obj = new DeletingSubAccountRequest();
 
         $this->assertNull($obj->getPseudoToDelete());
+        $this->assertEquals(DeletingSubAccountRequest::DELETING_SUB_ACCOUNT_RESOURCE_PATH, $obj->getResourcePath());
     }
 
     /**

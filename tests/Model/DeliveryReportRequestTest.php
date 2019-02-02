@@ -29,8 +29,11 @@ class DeliveryReportRequestTest extends AbstractTestCase {
      */
     public function testConstruct() {
 
+        $this->assertEquals("/http/1.6/compteRendu.do", DeliveryReportRequest::DELIVERY_REPORT_RESOURCE_PATH);
+
         $obj = new DeliveryReportRequest();
 
+        $this->assertEquals(DeliveryReportRequest::DELIVERY_REPORT_RESOURCE_PATH, $obj->getResourcePath());
         $this->assertNull($obj->getSmsID());
     }
 

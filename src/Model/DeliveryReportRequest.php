@@ -20,11 +20,25 @@ namespace WBW\Library\SMSMode\Model;
 class DeliveryReportRequest extends AbstractRequest {
 
     /**
+     * Delivery report resource path.
+     *
+     * @var string
+     */
+    const DELIVERY_REPORT_RESOURCE_PATH = "/http/1.6/compteRendu.do";
+
+    /**
      * SMS ID.
      *
      * @var string
      */
     private $smsID;
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getResourcePath() {
+        return self::DELIVERY_REPORT_RESOURCE_PATH;
+    }
 
     /**
      * Get the sms ID.

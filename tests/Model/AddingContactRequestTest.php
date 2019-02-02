@@ -44,6 +44,8 @@ class AddingContactRequestTest extends AbstractTestCase {
      */
     public function testConstruct() {
 
+        $this->assertEquals("/http/1.6/addContact.do", AddingContactRequest::ADDING_CONTACT_RESOURCE_PATH);
+
         $obj = new AddingContactRequest();
 
         $this->assertNull($obj->getDate());
@@ -52,6 +54,7 @@ class AddingContactRequestTest extends AbstractTestCase {
         $this->assertNull($obj->getNom());
         $this->assertNull($obj->getOther());
         $this->assertNull($obj->getPrenom());
+        $this->assertEquals(AddingContactRequest::ADDING_CONTACT_RESOURCE_PATH, $obj->getResourcePath());
         $this->assertNull($obj->getSociete());
     }
 

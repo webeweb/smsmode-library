@@ -23,6 +23,13 @@ use UnexpectedValueException;
 class AddingContactRequest extends AbstractRequest {
 
     /**
+     * Adding contact resource path.
+     *
+     * @var string
+     */
+    const ADDING_CONTACT_RESOURCE_PATH = "/http/1.6/addContact.do";
+
+    /**
      * Date.
      *
      * @var DateTime
@@ -142,6 +149,13 @@ class AddingContactRequest extends AbstractRequest {
      */
     public function getPrenom() {
         return $this->prenom;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getResourcePath() {
+        return self::ADDING_CONTACT_RESOURCE_PATH;
     }
 
     /**

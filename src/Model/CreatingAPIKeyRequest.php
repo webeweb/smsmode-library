@@ -19,4 +19,17 @@ namespace WBW\Library\SMSMode\Model;
  */
 class CreatingAPIKeyRequest extends AbstractRequest {
 
+    /**
+     * Creating API key resource path.
+     *
+     * @var string
+     */
+    const CREATING_API_KEY_RESOURCE_PATH = "/http/2.0/createAuthorisation.do";
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getResourcePath() {
+        return self::CREATING_API_KEY_RESOURCE_PATH;
+    }
 }

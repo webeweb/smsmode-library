@@ -30,9 +30,12 @@ class DeletingSMSRequestTest extends AbstractTestCase {
      */
     public function testConstruct() {
 
+        $this->assertEquals("/http/1.6/deleteSMS.do", DeletingSMSRequest::DELETING_SMS_RESOURCE_PATH);
+
         $obj = new DeletingSMSRequest();
 
         $this->assertNull($obj->getNumero());
+        $this->assertEquals(DeletingSMSRequest::DELETING_SMS_RESOURCE_PATH, $obj->getResourcePath());
         $this->assertNull($obj->getSmsID());
     }
 

@@ -22,6 +22,13 @@ use UnexpectedValueException;
 class DeletingSMSRequest extends AbstractRequest {
 
     /**
+     * Deleting SMS resource path.
+     *
+     * @var string
+     */
+    const DELETING_SMS_RESOURCE_PATH = "/http/1.6/deleteSMS.do";
+
+    /**
      * Numero.
      *
      * @var string
@@ -42,6 +49,13 @@ class DeletingSMSRequest extends AbstractRequest {
      */
     public function getNumero() {
         return $this->numero;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getResourcePath() {
+        return self::DELETING_SMS_RESOURCE_PATH;
     }
 
     /**

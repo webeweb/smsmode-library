@@ -29,8 +29,11 @@ class CheckingSMSMessageStatusRequestTest extends AbstractTestCase {
      */
     public function testConstruct() {
 
+        $this->assertEquals("/http/1.6/smsStatus.do", CheckingSMSMessageStatusRequest::CHECKING_SMS_MESSAGE_STATUS_RESOURCE_PATH);
+
         $obj = new CheckingSMSMessageStatusRequest();
 
+        $this->assertEquals(CheckingSMSMessageStatusRequest::CHECKING_SMS_MESSAGE_STATUS_RESOURCE_PATH, $obj->getResourcePath());
         $this->assertNull($obj->getSmsID());
     }
 

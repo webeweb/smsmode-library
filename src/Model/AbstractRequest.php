@@ -22,6 +22,20 @@ use UnexpectedValueException;
 abstract class AbstractRequest {
 
     /**
+     * Request date/time format.
+     *
+     * @var string
+     */
+    const REQUEST_DATETIME_FORMAT = "dmY-H:i";
+
+    /**
+     * Request date format.
+     *
+     * @var string
+     */
+    const REQUEST_DATE_FORMAT = "dmY";
+
+    /**
      * Constructor.
      */
     public function __construct() {
@@ -40,4 +54,11 @@ abstract class AbstractRequest {
             throw new UnexpectedValueException(sprintf("The numero \"%s\" is invalid", $numero));
         }
     }
+
+    /**
+     * Get the resource path.
+     *
+     * @return string Returns the resource path.
+     */
+    abstract public function getResourcePath();
 }

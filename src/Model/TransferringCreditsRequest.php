@@ -20,6 +20,13 @@ namespace WBW\Library\SMSMode\Model;
 class TransferringCreditsRequest extends AbstractRequest {
 
     /**
+     * Transferring credits resource path.
+     *
+     * @var string
+     */
+    const TRANSFERRING_CREDITS_RESOURCE_PATH = "/http/1.6/creditTransfert.do";
+
+    /**
      * Credit amount.
      *
      * @var int
@@ -56,6 +63,13 @@ class TransferringCreditsRequest extends AbstractRequest {
      */
     public function getReference() {
         return $this->reference;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getResourcePath() {
+        return self::TRANSFERRING_CREDITS_RESOURCE_PATH;
     }
 
     /**

@@ -29,10 +29,13 @@ class TransferringCreditsRequestTest extends AbstractTestCase {
      */
     public function testConstruct() {
 
+        $this->assertEquals("/http/1.6/creditTransfert.do", TransferringCreditsRequest::TRANSFERRING_CREDITS_RESOURCE_PATH);
+
         $obj = new TransferringCreditsRequest();
 
         $this->assertNull($obj->getCreditAmount());
         $this->assertNull($obj->getReference());
+        $this->assertEquals(TransferringCreditsRequest::TRANSFERRING_CREDITS_RESOURCE_PATH, $obj->getResourcePath());
         $this->assertNull($obj->getTargetPseudo());
     }
 

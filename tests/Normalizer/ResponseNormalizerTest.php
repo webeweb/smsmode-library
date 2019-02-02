@@ -40,18 +40,6 @@ use WBW\Library\SMSMode\Tests\Fixtures\Normalizer\TestResponseNormalizer;
 class ResponseNormalizerTest extends AbstractTestCase {
 
     /**
-     * Tests the __construct() method.
-     *
-     * @return void
-     */
-    public function testConstruct() {
-
-        $this->assertEquals("dmY", ResponseNormalizer::DENORMALIZE_DATE_FORMAT);
-        $this->assertEquals("dmY-H:i", ResponseNormalizer::DENORMALIZE_DATETIME_FORMAT);
-        $this->assertEquals("|", ResponseNormalizer::DENORMALIZE_DELIMITER);
-    }
-
-    /**
      * Tests the denormalizeAccountBalanceResponse() method.
      *
      * @return void

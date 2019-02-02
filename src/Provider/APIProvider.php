@@ -19,6 +19,7 @@ use WBW\Library\Core\Network\CURL\Factory\CURLFactory;
 use WBW\Library\Core\Network\HTTP\HTTPInterface;
 use WBW\Library\SMSMode\API\APIProviderInterface;
 use WBW\Library\SMSMode\Exception\APIException;
+use WBW\Library\SMSMode\Model\AbstractRequest;
 use WBW\Library\SMSMode\Model\AccountBalanceRequest;
 use WBW\Library\SMSMode\Model\AccountBalanceResponse;
 use WBW\Library\SMSMode\Model\AddingContactRequest;
@@ -55,7 +56,14 @@ use WBW\Library\SMSMode\Normalizer\ResponseNormalizer;
  * @author webeweb <https://github.com/webeweb/>
  * @package WBW\Library\SMSMode\Provider
  */
-class APIProvider implements APIProviderInterface {
+class APIProvider {
+
+    /**
+     * Endpoint path.
+     *
+     * @var string
+     */
+    const ENDPOINT_PATH = "https://api.smsmode.com";
 
     /**
      * Authentication.
@@ -102,7 +110,7 @@ class APIProvider implements APIProviderInterface {
 
         $queryData = $this->getRequestNormalizer()->normalize($accountBalanceRequest);
 
-        $rawResponse = $this->callAPI(self::ACCOUNT_BALANCE_RESOURCE_PATH, $queryData);
+        $rawResponse = $this->callAPI($accountBalanceRequest, $queryData);
 
         return ResponseNormalizer::denormalizeAccountBalanceResponse($rawResponse);
     }
@@ -120,7 +128,7 @@ class APIProvider implements APIProviderInterface {
 
         $queryData = $this->getRequestNormalizer()->normalize($addingContactRequest);
 
-        $rawResponse = $this->callAPI(self::ADDING_CONTACT_RESOURCE_PATH, $queryData);
+        $rawResponse = $this->callAPI($addingContactRequest, $queryData);
 
         return ResponseNormalizer::denormalizeAddingContactResponse($rawResponse);
     }
@@ -135,7 +143,7 @@ class APIProvider implements APIProviderInterface {
      * @throws APIException Throws an API exception if an error occurs.
      * @throws InvalidArgumentException Throws an invalid argument exception if a parameter is missing.
      */
-    protected function callAPI($resourcePath, array $queryData, array $postData = []) {
+    protected function callAPI(AbstractRequest $request, array $queryData, array $postData = []) {
 
         try {
 
@@ -144,7 +152,7 @@ class APIProvider implements APIProviderInterface {
             $cURLRequest->getConfiguration()->setDebug($this->getDebug());
             $cURLRequest->getConfiguration()->setHost(self::ENDPOINT_PATH);
             $cURLRequest->getConfiguration()->setUserAgent("webeweb/smsmode-library");
-            $cURLRequest->setResourcePath($resourcePath);
+            $cURLRequest->setResourcePath($request->getResourcePath());
 
             $authenticationData = $this->getRequestNormalizer()->normalize($this->getAuthentication());
 
@@ -188,7 +196,7 @@ class APIProvider implements APIProviderInterface {
 
         $queryData = $this->getRequestNormalizer()->normalize($checkingSMSMessageStatusRequest);
 
-        $rawResponse = $this->callAPI(self::CHECKING_SMS_MESSAGE_STATUS_RESOURCE_PATH, $queryData);
+        $rawResponse = $this->callAPI($checkingSMSMessageStatusRequest, $queryData);
 
         return ResponseNormalizer::denormalizeCheckingSMSMessageStatusResponse($rawResponse);
     }
@@ -207,7 +215,7 @@ class APIProvider implements APIProviderInterface {
 
         try {
 
-            $rawResponse = $this->callAPI(self::CREATING_API_KEY_RESOURCE_PATH, $queryData);
+            $rawResponse = $this->callAPI($creatingAPIKeyRequest, $queryData);
         } catch (Exception $ex) {
 
             $previous = $ex->getPrevious();
@@ -234,7 +242,7 @@ class APIProvider implements APIProviderInterface {
 
         $queryData = $this->getRequestNormalizer()->normalize($creatingSubAccountRequest);
 
-        $rawResponse = $this->callAPI(self::CREATING_SUB_ACCOUNT_RESOURCE_PATH, $queryData);
+        $rawResponse = $this->callAPI($creatingSubAccountRequest, $queryData);
 
         return ResponseNormalizer::denormalizeCreatingSubAccountResponse($rawResponse);
     }
@@ -252,7 +260,7 @@ class APIProvider implements APIProviderInterface {
 
         $queryData = $this->getRequestNormalizer()->normalize($deletingSMSRequest);
 
-        $rawResponse = $this->callAPI(self::DELETING_SMS_RESOURCE_PATH, $queryData);
+        $rawResponse = $this->callAPI($deletingSMSRequest, $queryData);
 
         return ResponseNormalizer::denormalizeDeletingSMSResponse($rawResponse);
     }
@@ -270,7 +278,7 @@ class APIProvider implements APIProviderInterface {
 
         $queryData = $this->getRequestNormalizer()->normalize($deletingSubAccountRequest);
 
-        $rawResponse = $this->callAPI(self::DELETING_SUB_ACCOUNT_RESOURCE_PATH, $queryData);
+        $rawResponse = $this->callAPI($deletingSubAccountRequest, $queryData);
 
         return ResponseNormalizer::denormalizeDeletingSubAccountResponse($rawResponse);
     }
@@ -288,7 +296,7 @@ class APIProvider implements APIProviderInterface {
 
         $queryData = $this->getRequestNormalizer()->normalize($deliveryReportRequest);
 
-        $rawResponse = $this->callAPI(self::DELIVERY_REPORT_RESOURCE_PATH, $queryData);
+        $rawResponse = $this->callAPI($deliveryReportRequest, $queryData);
 
         return ResponseNormalizer::denormalizeDeliveryReportResponse($rawResponse);
     }
@@ -333,7 +341,7 @@ class APIProvider implements APIProviderInterface {
 
         $queryData = $this->getRequestNormalizer()->normalize($retrievingSMSReplyRequest);
 
-        $rawResponse = $this->callAPI(self::RETRIEVING_SMS_REPLY_RESOURCE_PATH, $queryData);
+        $rawResponse = $this->callAPI($retrievingSMSReplyRequest, $queryData);
 
         return ResponseNormalizer::denormalizeRetrievingSMSReplyResponse($rawResponse);
     }
@@ -356,7 +364,7 @@ class APIProvider implements APIProviderInterface {
             unset($queryData["numero"]);
         }
 
-        $rawResponse = $this->callAPI(self::SENDING_SMS_MESSAGE_RESOURCE_PATH, $queryData, $postData);
+        $rawResponse = $this->callAPI($sendingSMSMessageRequest, $queryData, $postData);
 
         return ResponseNormalizer::denormalizeSendingSMSMessageResponse($rawResponse);
     }
@@ -379,7 +387,7 @@ class APIProvider implements APIProviderInterface {
             unset($queryData["numero"]);
         }
 
-        $rawResponse = $this->callAPI(self::SENDING_TEXT_TO_SPEECH_SMS_RESOURCE_PATH, $queryData, $postData);
+        $rawResponse = $this->callAPI($sendingTextToSpeechSMSRequest, $queryData, $postData);
 
         return ResponseNormalizer::denormalizeSendingTextToSpeechSMSResponse($rawResponse);
     }
@@ -397,7 +405,7 @@ class APIProvider implements APIProviderInterface {
 
         $queryData = $this->getRequestNormalizer()->normalize($sentSMSMessageListRequest);
 
-        $rawResponse = $this->callAPI(self::SENT_SMS_MESSAGE_LIST_RESOURCE_PATH, $queryData);
+        $rawResponse = $this->callAPI($sentSMSMessageListRequest, $queryData);
 
         return ResponseNormalizer::denormalizeSentSMSMessageListResponse($rawResponse);
     }
@@ -448,7 +456,7 @@ class APIProvider implements APIProviderInterface {
 
         $queryData = $this->getRequestNormalizer()->normalize($transferringCreditsRequest);
 
-        $rawResponse = $this->callAPI(self::TRANSFERRING_CREDITS_RESOURCE_PATH, $queryData);
+        $rawResponse = $this->callAPI($transferringCreditsRequest, $queryData);
 
         return ResponseNormalizer::denormalizeTransferringCreditsResponse($rawResponse);
     }

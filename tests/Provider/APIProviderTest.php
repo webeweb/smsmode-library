@@ -140,6 +140,8 @@ class APIProviderTest extends AbstractTestCase {
      */
     public function testConstruct() {
 
+        $this->assertEquals("https://api.smsmode.com", APIProvider::ENDPOINT_PATH);
+
         $obj = new APIProvider($this->authentication);
 
         $this->assertSame($this->authentication, $obj->getAuthentication());

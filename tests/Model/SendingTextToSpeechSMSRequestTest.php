@@ -46,12 +46,20 @@ class SendingTextToSpeechSMSRequestTest extends AbstractTestCase {
      */
     public function testConstruct() {
 
+        $this->assertEquals("/http/1.6/sendVoiceMessage.do", SendingTextToSpeechSMSRequest::SENDING_TEXT_TO_SPEECH_SMS_RESOURCE_PATH);
+
+        $this->assertEquals("de-DE", SendingTextToSpeechSMSRequest::LANGUAGE_DE);
+        $this->assertEquals("en-GB", SendingTextToSpeechSMSRequest::LANGUAGE_EN);
+        $this->assertEquals("es-ES", SendingTextToSpeechSMSRequest::LANGUAGE_ES);
+        $this->assertEquals("fr-FR", SendingTextToSpeechSMSRequest::LANGUAGE_FR);
+
         $obj = new SendingTextToSpeechSMSRequest();
 
         $this->assertNull($obj->getDateEnvoi());
         $this->assertNull($obj->getLanguage());
         $this->assertNull($obj->getMessage());
         $this->assertEquals([], $obj->getNumero());
+        $this->assertEquals(SendingTextToSpeechSMSRequest::SENDING_TEXT_TO_SPEECH_SMS_RESOURCE_PATH, $obj->getResourcePath());
         $this->assertNull($obj->getTitle());
     }
 

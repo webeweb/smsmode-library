@@ -13,8 +13,6 @@ namespace WBW\Library\SMSMode\Model;
 
 use DateTime;
 use UnexpectedValueException;
-use WBW\Library\SMSMode\API\SendingTextToSpeechSMSInterface;
-use WBW\Library\SMSMode\Exception\InvalidNumeroException;
 
 /**
  * Sending text-to-speech SMS request.
@@ -22,7 +20,42 @@ use WBW\Library\SMSMode\Exception\InvalidNumeroException;
  * @author webeweb <https://github.com/webeweb/>
  * @package WBW\Library\SMSMode\Model
  */
-class SendingTextToSpeechSMSRequest extends AbstractRequest implements SendingTextToSpeechSMSInterface {
+class SendingTextToSpeechSMSRequest extends AbstractRequest {
+
+    /**
+     * Language "de-DE".
+     *
+     * @var string
+     */
+    const LANGUAGE_DE = "de-DE";
+
+    /**
+     * Language "en-GB".
+     *
+     * @var string
+     */
+    const LANGUAGE_EN = "en-GB";
+
+    /**
+     * Language "es-ES".
+     *
+     * @var string
+     */
+    const LANGUAGE_ES = "es-ES";
+
+    /**
+     * Language "fr-FR".
+     *
+     * @var string
+     */
+    const LANGUAGE_FR = "fr-FR";
+
+    /**
+     * Sending text-to-speech SMS request.
+     *
+     * @var string
+     */
+    const SENDING_TEXT_TO_SPEECH_SMS_RESOURCE_PATH = "/http/1.6/sendVoiceMessage.do";
 
     /**
      * Date envoi.
@@ -114,6 +147,13 @@ class SendingTextToSpeechSMSRequest extends AbstractRequest implements SendingTe
      */
     public function getNumero() {
         return $this->numero;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getResourcePath() {
+        return self::SENDING_TEXT_TO_SPEECH_SMS_RESOURCE_PATH;
     }
 
     /**

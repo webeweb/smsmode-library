@@ -23,6 +23,13 @@ use UnexpectedValueException;
 class CreatingSubAccountRequest extends AbstractRequest {
 
     /**
+     * Creating sub-account resource path.
+     *
+     * @avr string
+     */
+    const CREATING_SUB_ACCOUNT_RESOURCE_PATH = "/http/1.6/createSubAccount.do";
+
+    /**
      * Adresse.
      *
      * @var string
@@ -220,6 +227,13 @@ class CreatingSubAccountRequest extends AbstractRequest {
     }
 
     /**
+     * {@inheritdoc}
+     */
+    public function getResourcePath() {
+        return self::CREATING_SUB_ACCOUNT_RESOURCE_PATH;
+    }
+
+    /**
      * Get the societe.
      *
      * @return string Returns the societe.
@@ -298,7 +312,7 @@ class CreatingSubAccountRequest extends AbstractRequest {
      * @thows UnexpectedValueException Throws an unexpected value exception if the fax is invalid.
      */
     public function setFax($fax) {
-       static::checkNumero($fax);
+        static::checkNumero($fax);
         $this->fax = $fax;
         return $this;
     }

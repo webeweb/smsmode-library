@@ -31,6 +31,8 @@ class CreatingSubAccountRequestTest extends AbstractTestCase {
      */
     public function testConstruct() {
 
+        $this->assertEquals("/http/1.6/createSubAccount.do", CreatingSubAccountRequest::CREATING_SUB_ACCOUNT_RESOURCE_PATH);
+
         $obj = new CreatingSubAccountRequest();
 
         $this->assertNull($obj->getAdresse());
@@ -44,6 +46,7 @@ class CreatingSubAccountRequestTest extends AbstractTestCase {
         $this->assertNull($obj->getNom());
         $this->assertNull($obj->getPrenom());
         $this->assertNull($obj->getReference());
+        $this->assertEquals(CreatingSubAccountRequest::CREATING_SUB_ACCOUNT_RESOURCE_PATH, $obj->getResourcePath());
         $this->assertNull($obj->getSociete());
         $this->assertNull($obj->getTelephone());
         $this->assertNull($obj->getVille());

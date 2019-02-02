@@ -13,7 +13,6 @@ namespace WBW\Library\SMSMode\Model;
 
 use DateTime;
 use UnexpectedValueException;
-use WBW\Library\SMSMode\API\SendingSMSMessageInterface;
 use WBW\Library\SMSMode\Exception\InvalidNumeroException;
 
 /**
@@ -22,7 +21,42 @@ use WBW\Library\SMSMode\Exception\InvalidNumeroException;
  * @author webeweb <https://github.com/webeweb/>
  * @package WBW\Library\SMSMode\Model
  */
-class SendingSMSMessageRequest extends AbstractRequest implements SendingSMSMessageInterface {
+class SendingSMSMessageRequest extends AbstractRequest {
+
+    /**
+     * Classe msg "SMS".
+     *
+     * @var int
+     */
+    const CLASSE_MSG_SMS = 4;
+
+    /**
+     * Classe msg "SMS Pro".
+     *
+     * @var int
+     */
+    const CLASSE_MSG_SMS_PRO = 2;
+
+    /**
+     * Sending SMS message resource path.
+     *
+     * @var string
+     */
+    const SENDING_SMS_MESSAGE_RESOURCE_PATH = "/http/1.6/sendSMS.do";
+
+    /**
+     * STOP "always".
+     *
+     * @var int
+     */
+    const STOP_ALWAYS = 2;
+
+    /**
+     * STOP "only".
+     *
+     * @var int
+     */
+    const STOP_ONLY = 1;
 
     /**
      * Classe msg.
@@ -210,6 +244,13 @@ class SendingSMSMessageRequest extends AbstractRequest implements SendingSMSMess
      */
     public function getRefClient() {
         return $this->refClient;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getResourcePath() {
+        return self::SENDING_SMS_MESSAGE_RESOURCE_PATH;
     }
 
     /**

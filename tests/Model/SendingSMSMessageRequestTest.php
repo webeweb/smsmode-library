@@ -46,6 +46,13 @@ class SendingSMSMessageRequestTest extends AbstractTestCase {
      */
     public function testConstruct() {
 
+        $this->assertEquals("/http/1.6/sendSMS.do", SendingSMSMessageRequest::SENDING_SMS_MESSAGE_RESOURCE_PATH);
+
+        $this->assertEquals(4, SendingSMSMessageRequest::CLASSE_MSG_SMS);
+        $this->assertEquals(2, SendingSMSMessageRequest::CLASSE_MSG_SMS_PRO);
+        $this->assertEquals(2, SendingSMSMessageRequest::STOP_ALWAYS);
+        $this->assertEquals(1, SendingSMSMessageRequest::STOP_ONLY);
+
         $obj = new SendingSMSMessageRequest();
 
         $this->assertNull($obj->getClasseMsg());
@@ -58,6 +65,7 @@ class SendingSMSMessageRequestTest extends AbstractTestCase {
         $this->assertNull($obj->getNotificationURLReponse());
         $this->assertEquals([], $obj->getNumero());
         $this->assertNull($obj->getRefClient());
+        $this->assertEquals(SendingSMSMessageRequest::SENDING_SMS_MESSAGE_RESOURCE_PATH, $obj->getResourcePath());
         $this->assertNull($obj->getStop());
     }
 

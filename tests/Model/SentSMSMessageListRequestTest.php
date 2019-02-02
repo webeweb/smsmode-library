@@ -29,9 +29,12 @@ class SentSMSMessageListRequestTest extends AbstractTestCase {
      */
     public function testConstruct() {
 
+        $this->assertEquals("/http/1.6/smsList.do", SentSMSMessageListRequest::SENT_SMS_MESSAGE_LIST_RESOURCE_PATH);
+
         $obj = new SentSMSMessageListRequest();
 
         $this->assertNull($obj->getOffset());
+        $this->assertEquals(SentSMSMessageListRequest::SENT_SMS_MESSAGE_LIST_RESOURCE_PATH, $obj->getResourcePath());
     }
 
     /**

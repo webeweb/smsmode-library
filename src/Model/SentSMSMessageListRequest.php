@@ -20,6 +20,13 @@ namespace WBW\Library\SMSMode\Model;
 class SentSMSMessageListRequest extends AbstractRequest {
 
     /**
+     * Sent SMS message list resource path.
+     *
+     * @var string
+     */
+    const SENT_SMS_MESSAGE_LIST_RESOURCE_PATH = "/http/1.6/smsList.do";
+
+    /**
      * Offset.
      *
      * @var int
@@ -33,6 +40,13 @@ class SentSMSMessageListRequest extends AbstractRequest {
      */
     public function getOffset() {
         return $this->offset;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getResourcePath() {
+        return self::SENT_SMS_MESSAGE_LIST_RESOURCE_PATH;
     }
 
     /**

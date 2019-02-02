@@ -31,6 +31,13 @@ class DeliveryReportCallbackTest extends AbstractTestCase {
      */
     public function testConstruct() {
 
+        $this->assertEquals("date_reception", DeliveryReportCallback::PARAMETER_DATE_RECEPTION);
+        $this->assertEquals("mcc_mnc", DeliveryReportCallback::PARAMETER_MCC_MNC);
+        $this->assertEquals("numero", DeliveryReportCallback::PARAMETER_NUMERO);
+        $this->assertEquals("refClient", DeliveryReportCallback::PARAMETER_REF_CLIENT);
+        $this->assertEquals("smsID", DeliveryReportCallback::PARAMETER_SMS_ID);
+        $this->assertEquals("statut", DeliveryReportCallback::PARAMETER_STATUT);
+
         $obj = new DeliveryReportCallback();
 
         $this->assertNull($obj->getCode());

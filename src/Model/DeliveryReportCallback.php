@@ -22,6 +22,48 @@ use DateTime;
 class DeliveryReportCallback extends DeliveryReport {
 
     /**
+     * Parameter "date reception".
+     *
+     * @var string
+     */
+    const PARAMETER_DATE_RECEPTION = "date_reception";
+
+    /**
+     * Parameter "MCC MNC".
+     *
+     * @var string
+     */
+    const PARAMETER_MCC_MNC = "mcc_mnc";
+
+    /**
+     * Parameter "numero".
+     *
+     * @var string
+     */
+    const PARAMETER_NUMERO = "numero";
+
+    /**
+     * Parameter "ref client".
+     *
+     * @var string
+     */
+    const PARAMETER_REF_CLIENT = "refClient";
+
+    /**
+     * Parameter "smsID".
+     *
+     * @var string
+     */
+    const PARAMETER_SMS_ID = "smsID";
+
+    /**
+     * Parameter "statut".
+     *
+     * @var string
+     */
+    const PARAMETER_STATUT = "statut";
+
+    /**
      * Date reception.
      *
      * @var DateTime
@@ -77,21 +119,21 @@ class DeliveryReportCallback extends DeliveryReport {
     }
 
     /**
-     * Get the status.
-     *
-     * @return int Returns the status.
-     */
-    public function getStatus() {
-        return parent::getCode();
-    }
-
-    /**
      * Get the sms ID.
      *
      * @return string Returns the sms ID.
      */
     public function getSmsID() {
         return $this->smsID;
+    }
+
+    /**
+     * Get the status.
+     *
+     * @return int Returns the status.
+     */
+    public function getStatus() {
+        return parent::getCode();
     }
 
     /**
@@ -128,16 +170,6 @@ class DeliveryReportCallback extends DeliveryReport {
     }
 
     /**
-     * Set the status.
-     *
-     * @param int $status The status.
-     * @return DeliveryReportCallback Returns this delivery report callback.
-     */
-    public function setStatus($status) {
-        return parent::setCode($status);
-    }
-
-    /**
      * Set the sms ID.
      *
      * @param string $smsID The sms ID.
@@ -146,5 +178,15 @@ class DeliveryReportCallback extends DeliveryReport {
     public function setSmsID($smsID) {
         $this->smsID = $smsID;
         return $this;
+    }
+
+    /**
+     * Set the status.
+     *
+     * @param int $status The status.
+     * @return DeliveryReportCallback Returns this delivery report callback.
+     */
+    public function setStatus($status) {
+        return parent::setCode($status);
     }
 }

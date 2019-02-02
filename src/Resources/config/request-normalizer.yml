@@ -131,7 +131,7 @@ WBW\Library\SMSMode\Model\SendingSMSMessageRequest:
     message:
         method:    "getMessage"
         mandatory: true
-        formatter: "formatMessage"
+        formatter: "formatMessageISO8859"
     numero:
         method:    "getNumero"
         mandatory: true
@@ -171,7 +171,7 @@ WBW\Library\SMSMode\Model\SendingTextToSpeechSMSRequest:
     message:
         method:    "getMessage"
         mandatory: true
-        formatter: "formatMessage"
+        formatter: "formatMessageISO8859"
     numero:
         method:    "getNumero"
         mandatory: true
@@ -185,6 +185,46 @@ WBW\Library\SMSMode\Model\SendingTextToSpeechSMSRequest:
         formatter:  "formatDate"
     language:
         method:    "getLanguage"
+        mandatory: false
+
+WBW\Library\SMSMode\Model\SendingUnicodeSMSRequest:
+    message:
+        method:    "getMessage"
+        mandatory: true
+        formatter: "formatMessageUnicode"
+    numero:
+        method:    "getNumero"
+        mandatory: true
+        formatter: "formatArray"
+        excludeIf: "groupe"
+    groupe:
+        method:    "getGroupe"
+        mandatory: true
+        excludeIf: "numero"
+    classe_msg:
+        method:    "getClasseMsg"
+        mandatory: false
+    date_envoi:
+        method:    "getDateEnvoi"
+        mandatory: false
+        formatter: "formatDateTime"
+    refClient:
+        method:    "getRefClient"
+        mandatory: false
+    emetteur:
+        method:    "getEmetteur"
+        mandatory: false
+    nbr_msg:
+        method:    "getNbrMsg"
+        mandatory: false
+    notification_url:
+        method:    "getNotificationURL"
+        mandatory: false
+    notification_url_reponse:
+        method:    "getNotificationURLReponse"
+        mandatory: false
+    stop:
+        method:    "getStop"
         mandatory: false
 
 WBW\Library\SMSMode\Model\SentSMSMessageListRequest:

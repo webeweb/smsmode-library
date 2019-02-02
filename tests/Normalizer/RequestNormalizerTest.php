@@ -26,6 +26,7 @@ use WBW\Library\SMSMode\Model\DeliveryReportRequest;
 use WBW\Library\SMSMode\Model\RetrievingSMSReplyRequest;
 use WBW\Library\SMSMode\Model\SendingSMSMessageRequest;
 use WBW\Library\SMSMode\Model\SendingTextToSpeechSMSRequest;
+use WBW\Library\SMSMode\Model\SendingUnicodeSMSRequest;
 use WBW\Library\SMSMode\Model\SentSMSMessageListRequest;
 use WBW\Library\SMSMode\Model\TransferringCreditsRequest;
 use WBW\Library\SMSMode\Normalizer\RequestNormalizer;
@@ -46,8 +47,9 @@ class RequestNormalizerTest extends AbstractTestCase {
      */
     public function testConstruct() {
 
-        $this->assertEquals("dmY", RequestNormalizer::NORMALIZE_DATE_FORMAT);
-        $this->assertEquals("dmY-H:i", RequestNormalizer::NORMALIZE_DATETIME_FORMAT);
+        $obj = new RequestNormalizer();
+
+        $this->assertNotEmpty($obj->getConfiguration());
     }
 
     /**
@@ -607,7 +609,7 @@ class RequestNormalizerTest extends AbstractTestCase {
 
         // Set a Sending SMS message request mock.
         $arg = new SendingSMSMessageRequest();
-        $arg->setMessage("message");
+        $arg->setMessage("Hello Mum");
         $arg->addNumero("33600000000");
         $arg->addNumero("33600000001");
 
@@ -623,7 +625,7 @@ class RequestNormalizerTest extends AbstractTestCase {
         $obj = new RequestNormalizer();
 
         $res = [
-            "message"                  => "message",
+            "message"                  => "Hello+Mum",
             "numero"                   => "33600000000,33600000001",
             "classe_msg"               => 4,
             "date_envoi"               => "07092017-10:00",
@@ -647,7 +649,7 @@ class RequestNormalizerTest extends AbstractTestCase {
 
         // Set a Sending SMS message request mock.
         $arg = new SendingSMSMessageRequest();
-        $arg->setMessage("message");
+        $arg->setMessage("Hello Mum");
         $arg->setGroupe("groupe");
 
         $arg->setClasseMsg(SendingSMSMessageRequest::CLASSE_MSG_SMS);
@@ -661,7 +663,7 @@ class RequestNormalizerTest extends AbstractTestCase {
         $obj = new RequestNormalizer();
 
         $res = [
-            "message"                  => "message",
+            "message"                  => "Hello+Mum",
             "groupe"                   => "groupe",
             "classe_msg"               => 4,
             "date_envoi"               => "07092017-10:00",
@@ -716,7 +718,7 @@ class RequestNormalizerTest extends AbstractTestCase {
 
         // Set a Sending text-to-speech request mock.
         $arg = new SendingTextToSpeechSMSRequest();
-        $arg->setMessage("message");
+        $arg->setMessage("Hello Mum");
         $arg->addNumero("33600000000");
         $arg->addNumero("33600000001");
 
@@ -727,7 +729,7 @@ class RequestNormalizerTest extends AbstractTestCase {
         $obj = new RequestNormalizer();
 
         $res = [
-            "message"    => "message",
+            "message"    => "Hello+Mum",
             "numero"     => "33600000000,33600000001",
             "title"      => "title",
             "date_envoi" => "17012019",
@@ -766,6 +768,46 @@ class RequestNormalizerTest extends AbstractTestCase {
             $this->assertInstanceOf(InvalidArgumentException::class, $ex);
             $this->assertEquals("The mandatory parameter \"numero\" is missing", $ex->getMessage());
         }
+    }
+
+    /**
+     * Tests the normalize() method.
+     *
+     * @return void
+     * @throws Exception Throws an exception if an error occurs.
+     */
+    public function testNormalizeSendingUnicodeSMSRequest() {
+
+        // Set a Sending Unicode SMS request mock.
+        $arg = new SendingUnicodeSMSRequest();
+        $arg->setMessage("☺");
+        $arg->addNumero("33600000000");
+        $arg->addNumero("33600000001");
+
+        $arg->setClasseMsg(SendingUnicodeSMSRequest::CLASSE_MSG_SMS);
+        $arg->setDateEnvoi(new DateTime("2019-02-02 11:00:00"));
+        $arg->setRefClient("refClient");
+        $arg->setEmetteur("emetteur");
+        $arg->setNbrMsg(1);
+        $arg->setNotificationURL("notificationURL");
+        $arg->setNotificationURLReponse("notificationURLReponse");
+        $arg->setStop(SendingSMSMessageRequest::STOP_ALWAYS);
+
+        $obj = new RequestNormalizer();
+
+        $res = [
+            "message"                  => "%E2%98%BA",
+            "numero"                   => "33600000000,33600000001",
+            "classe_msg"               => 4,
+            "date_envoi"               => "02022019-11:00",
+            "refClient"                => "refClient",
+            "emetteur"                 => "emetteur",
+            "nbr_msg"                  => 1,
+            "notification_url"         => "notificationURL",
+            "notification_url_reponse" => "notificationURLReponse",
+            "stop"                     => 2,
+        ];
+        $this->assertEquals($res, $obj->normalize($arg));
     }
 
     /**

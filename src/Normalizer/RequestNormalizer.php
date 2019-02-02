@@ -17,6 +17,7 @@ use ReflectionException;
 use Symfony\Component\Yaml\Yaml;
 use WBW\Library\Core\Argument\ArrayHelper;
 use WBW\Library\Core\Argument\ObjectHelper;
+use WBW\Library\SMSMode\Model\AbstractRequest;
 
 /**
  * Request normalizer.
@@ -25,20 +26,6 @@ use WBW\Library\Core\Argument\ObjectHelper;
  * @package WBW\Library\SMSMode\Normalizer
  */
 class RequestNormalizer {
-
-    /**
-     * Normalize date/time format.
-     *
-     * @var string
-     */
-    const NORMALIZE_DATETIME_FORMAT = "dmY-H:i";
-
-    /**
-     * Normalize date format.
-     *
-     * @var string
-     */
-    const NORMALIZE_DATE_FORMAT = "dmY";
 
     /**
      * Configuration.
@@ -112,7 +99,7 @@ class RequestNormalizer {
      * @return string Returns the formatted date.
      */
     protected function formatDate(DateTime $value) {
-        return $value->format(self::NORMALIZE_DATE_FORMAT);
+        return $value->format(AbstractRequest::REQUEST_DATE_FORMAT);
     }
 
     /**
@@ -122,18 +109,28 @@ class RequestNormalizer {
      * @return string Returns the formatted date/time.
      */
     protected function formatDateTime(DateTime $value) {
-        return $value->format(self::NORMALIZE_DATETIME_FORMAT);
+        return $value->format(AbstractRequest::REQUEST_DATETIME_FORMAT);
     }
 
     /**
-     * Format a message.
+     * Format an ISO 8859-15 message.
      *
      * @param string $value The value.
      * @return string Returns the formatted message.
      */
-    protected function formatMessage($value) {
+    protected function formatMessageISO8859($value) {
         $iconv = iconv("UTF-8", "ISO-8859-15", $value);
-        return urlencode($iconv);
+        return $this->formatMessageUnicode($iconv);
+    }
+
+    /**
+     * Format an unicode message.
+     *
+     * @param string $value The value.
+     * @return string Returns the formatted message.
+     */
+    protected function formatMessageUnicode($value) {
+        return urlencode($value);
     }
 
     /**

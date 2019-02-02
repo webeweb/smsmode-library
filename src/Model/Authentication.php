@@ -17,7 +17,7 @@ namespace WBW\Library\SMSMode\Model;
  * @author webeweb <https://github.com/webeweb/>
  * @package WBW\Library\SMSMode\Model
  */
-class Authentication extends AbstractRequest {
+class Authentication {
 
     /**
      * Access token.

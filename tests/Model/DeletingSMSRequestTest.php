@@ -11,7 +11,6 @@
 
 namespace WBW\Library\SMSMode\Tests\Model;
 
-use Exception;
 use WBW\Library\SMSMode\Model\DeletingSMSRequest;
 use WBW\Library\SMSMode\Tests\AbstractTestCase;
 
@@ -37,32 +36,5 @@ class DeletingSMSRequestTest extends AbstractTestCase {
         $this->assertNull($obj->getNumero());
         $this->assertEquals(DeletingSMSRequest::DELETING_SMS_RESOURCE_PATH, $obj->getResourcePath());
         $this->assertNull($obj->getSmsID());
-    }
-
-    /**
-     * Tests the setNumero() method.
-     *
-     * @return void
-     * @throws Exception Throws an exception if an error occurs.
-     */
-    public function testSetNumero() {
-
-        $obj = new DeletingSMSRequest();
-
-        $obj->setNumero("33600000000");
-        $this->assertEquals("33600000000", $obj->getNumero());
-    }
-
-    /**
-     * Tests the setSmsID() method.
-     *
-     * @return void
-     */
-    public function testSetSmsID() {
-
-        $obj = new DeletingSMSRequest();
-
-        $obj->setSmsID("smsID");
-        $this->assertEquals("smsID", $obj->getSmsID());
     }
 }

@@ -11,7 +11,9 @@
 
 namespace WBW\Library\SMSMode\Model;
 
-use DateTime;
+use WBW\Library\SMSMode\Traits\DateReceptionTrait;
+use WBW\Library\SMSMode\Traits\RefClientTrait;
+use WBW\Library\SMSMode\Traits\SmsIDTrait;
 
 /**
  * Delivery report callback.
@@ -20,6 +22,10 @@ use DateTime;
  * @package WBW\Library\SMSMode\Model
  */
 class DeliveryReportCallback extends DeliveryReport {
+
+    use DateReceptionTrait;
+    use RefClientTrait;
+    use SmsIDTrait;
 
     /**
      * Parameter "date reception".
@@ -64,41 +70,11 @@ class DeliveryReportCallback extends DeliveryReport {
     const PARAMETER_STATUT = "statut";
 
     /**
-     * Date reception.
-     *
-     * @var DateTime
-     */
-    private $dateReception;
-
-    /**
      * MCC MNC.
      *
      * @var int
      */
     private $mccMnc;
-
-    /**
-     * Ref client.
-     *
-     * @var string
-     */
-    private $refClient;
-
-    /**
-     * SMS ID.
-     *
-     * @var string
-     */
-    private $smsID;
-
-    /**
-     * Get the date reception.
-     *
-     * @return DateTime Returns the date reception.
-     */
-    public function getDateReception() {
-        return $this->dateReception;
-    }
 
     /**
      * Get the MCC MNC.
@@ -119,32 +95,12 @@ class DeliveryReportCallback extends DeliveryReport {
     }
 
     /**
-     * Get the sms ID.
-     *
-     * @return string Returns the sms ID.
-     */
-    public function getSmsID() {
-        return $this->smsID;
-    }
-
-    /**
      * Get the status.
      *
      * @return int Returns the status.
      */
     public function getStatus() {
         return parent::getCode();
-    }
-
-    /**
-     * Set the date reception.
-     *
-     * @param DateTime|null $dateReception The date reception.
-     * @return DeliveryReportCallback Returns this delivery report callback.
-     */
-    public function setDateReception(DateTime $dateReception = null) {
-        $this->dateReception = $dateReception;
-        return $this;
     }
 
     /**
@@ -155,28 +111,6 @@ class DeliveryReportCallback extends DeliveryReport {
      */
     public function setMccMnc($mccMnc) {
         $this->mccMnc = $mccMnc;
-        return $this;
-    }
-
-    /**
-     * Set the ref client.
-     *
-     * @param string $refClient The ref client.
-     * @return DeliveryReportCallback Returns this delivery report callback.
-     */
-    public function setRefClient($refClient) {
-        $this->refClient = $refClient;
-        return $this;
-    }
-
-    /**
-     * Set the sms ID.
-     *
-     * @param string $smsID The sms ID.
-     * @return DeliveryReportCallback Returns this delivery report callback.
-     */
-    public function setSmsID($smsID) {
-        $this->smsID = $smsID;
         return $this;
     }
 

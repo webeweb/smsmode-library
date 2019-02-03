@@ -11,6 +11,8 @@
 
 namespace WBW\Library\SMSMode\Model;
 
+use WBW\Library\SMSMode\Traits\SmsIDTrait;
+
 /**
  * Sending SMS message response.
  *
@@ -19,30 +21,5 @@ namespace WBW\Library\SMSMode\Model;
  */
 class SendingSMSMessageResponse extends AbstractResponse {
 
-    /**
-     * SMS id.
-     *
-     * @var string
-     */
-    private $smsID;
-
-    /**
-     * Get the SMS ID.
-     *
-     * @return string Returns the SMS ID.
-     */
-    public function getSmsID() {
-        return $this->smsID;
-    }
-
-    /**
-     * Set the SMS ID.
-     *
-     * @param string $smsID The SMS ID.
-     * @return SendingSMSMessageResponse Returns this sending SMS message response.
-     */
-    public function setSmsID($smsID) {
-        $this->smsID = $smsID;
-        return $this;
-    }
+    use SmsIDTrait;
 }

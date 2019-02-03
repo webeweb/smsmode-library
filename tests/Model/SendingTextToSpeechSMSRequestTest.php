@@ -11,7 +11,6 @@
 
 namespace WBW\Library\SMSMode\Tests\Model;
 
-use DateTime;
 use Exception;
 use UnexpectedValueException;
 use WBW\Library\SMSMode\Model\SendingTextToSpeechSMSRequest;
@@ -64,23 +63,6 @@ class SendingTextToSpeechSMSRequestTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the setDateEnvoi() method.
-     *
-     * @return void
-     * @throws Exception Throws an exception if an error occurs.
-     */
-    public function testSetDateEnvoi() {
-
-        // Set a End date mock.
-        $endDate = new DateTime();
-
-        $obj = new SendingTextToSpeechSMSRequest();
-
-        $obj->setDateEnvoi($endDate);
-        $this->assertSame($endDate, $obj->getDateEnvoi());
-    }
-
-    /**
      * Tests the setLanguage() method.
      *
      * @return void
@@ -111,19 +93,6 @@ class SendingTextToSpeechSMSRequestTest extends AbstractTestCase {
             $this->assertInstanceOf(UnexpectedValueException::class, $ex);
             $this->assertEquals("The language \"language\" is invalid", $ex->getMessage());
         }
-    }
-
-    /**
-     * Tests the setMessage() method.
-     *
-     * @return void
-     */
-    public function testSetMessage() {
-
-        $obj = new SendingTextToSpeechSMSRequest();
-
-        $obj->setMessage("message");
-        $this->assertEquals("message", $obj->getMessage());
     }
 
     /**

@@ -11,8 +11,6 @@
 
 namespace WBW\Library\SMSMode\Tests\Model;
 
-use DateTime;
-use Exception;
 use WBW\Library\SMSMode\Model\DeliveryReportCallback;
 use WBW\Library\SMSMode\Tests\AbstractTestCase;
 
@@ -51,23 +49,6 @@ class DeliveryReportCallbackTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the setDateReception() method.
-     *
-     * @return void
-     * @throws Exception Throws an exception if an error occurs.
-     */
-    public function testSetDateReception() {
-
-        // Set a Date/time mock.
-        $dateReception = new DateTime();
-
-        $obj = new DeliveryReportCallback();
-
-        $obj->setDateReception($dateReception);
-        $this->assertSame($dateReception, $obj->getDateReception());
-    }
-
-    /**
      * Tests the setMccMnc() method.
      *
      * @return void
@@ -78,32 +59,6 @@ class DeliveryReportCallbackTest extends AbstractTestCase {
 
         $obj->setMccMnc("mccMnc");
         $this->assertEquals("mccMnc", $obj->getMccMnc());
-    }
-
-    /**
-     * Tests the setRefClient() method.
-     *
-     * @return void
-     */
-    public function testSetRefClient() {
-
-        $obj = new DeliveryReportCallback();
-
-        $obj->setRefClient("refClient");
-        $this->assertEquals("refClient", $obj->getRefClient());
-    }
-
-    /**
-     * Tests the setSmsID() method.
-     *
-     * @return void
-     */
-    public function testSetSmsID() {
-
-        $obj = new DeliveryReportCallback();
-
-        $obj->setSmsID("smsID");
-        $this->assertEquals("smsID", $obj->getSmsID());
     }
 
     /**

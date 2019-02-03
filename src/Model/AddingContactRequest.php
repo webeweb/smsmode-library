@@ -11,8 +11,12 @@
 
 namespace WBW\Library\SMSMode\Model;
 
-use DateTime;
 use UnexpectedValueException;
+use WBW\Library\SMSMode\Traits\DateTrait;
+use WBW\Library\SMSMode\Traits\MobileTrait;
+use WBW\Library\SMSMode\Traits\NomTrait;
+use WBW\Library\SMSMode\Traits\PrenomTrait;
+use WBW\Library\SMSMode\Traits\SocieteTrait;
 
 /**
  * Adding contact request.
@@ -22,19 +26,18 @@ use UnexpectedValueException;
  */
 class AddingContactRequest extends AbstractRequest {
 
+    use DateTrait;
+    use MobileTrait;
+    use NomTrait;
+    use PrenomTrait;
+    use SocieteTrait;
+
     /**
      * Adding contact resource path.
      *
      * @var string
      */
     const ADDING_CONTACT_RESOURCE_PATH = "/http/1.6/addContact.do";
-
-    /**
-     * Date.
-     *
-     * @var DateTime
-     */
-    private $date;
 
     /**
      * Groupes.
@@ -44,39 +47,11 @@ class AddingContactRequest extends AbstractRequest {
     private $groupes;
 
     /**
-     * Mobile.
-     *
-     * @var string
-     */
-    private $mobile;
-
-    /**
-     * Nom.
-     *
-     * @var string
-     */
-    private $nom;
-
-    /**
      * Other.
      *
      * @var string
      */
     private $other;
-
-    /**
-     * Prenom.
-     *
-     * @var string
-     */
-    private $prenom;
-
-    /**
-     * Societe.
-     *
-     * @var string
-     */
-    private $societe;
 
     /**
      * Constructor.
@@ -98,39 +73,12 @@ class AddingContactRequest extends AbstractRequest {
     }
 
     /**
-     * Get the date.
-     *
-     * @return DateTime Returns the date.
-     */
-    public function getDate() {
-        return $this->date;
-    }
-
-    /**
      * Get the groupes.
      *
      * @return string[] Returns the groupes.
      */
     public function getGroupes() {
         return $this->groupes;
-    }
-
-    /**
-     * Get the mobile.
-     *
-     * @return string Returns the mobile.
-     */
-    public function getMobile() {
-        return $this->mobile;
-    }
-
-    /**
-     * Get the nom.
-     *
-     * @return string Returns the nom.
-     */
-    public function getNom() {
-        return $this->nom;
     }
 
     /**
@@ -143,39 +91,10 @@ class AddingContactRequest extends AbstractRequest {
     }
 
     /**
-     * Get the prenom.
-     *
-     * @return string Returns the prenom.
-     */
-    public function getPrenom() {
-        return $this->prenom;
-    }
-
-    /**
      * {@inheritdoc}
      */
     public function getResourcePath() {
         return self::ADDING_CONTACT_RESOURCE_PATH;
-    }
-
-    /**
-     * Get the societe.
-     *
-     * @return string Returns the societe.
-     */
-    public function getSociete() {
-        return $this->societe;
-    }
-
-    /**
-     * Set the date.
-     *
-     * @param DateTime|null $date The date.
-     * @return AddingContactRequest Returns this adding contact request.
-     */
-    public function setDate(DateTime $date = null) {
-        $this->date = $date;
-        return $this;
     }
 
     /**
@@ -203,17 +122,6 @@ class AddingContactRequest extends AbstractRequest {
     }
 
     /**
-     * Set the nom.
-     *
-     * @param string $nom The nom.
-     * @return AddingContactRequest Returns this adding contact request.
-     */
-    public function setNom($nom) {
-        $this->nom = $nom;
-        return $this;
-    }
-
-    /**
      * Set the other.
      *
      * @param string $other The other.
@@ -221,28 +129,6 @@ class AddingContactRequest extends AbstractRequest {
      */
     public function setOther($other) {
         $this->other = $other;
-        return $this;
-    }
-
-    /**
-     * Set the prenom.
-     *
-     * @param string $prenom The prenom.
-     * @return AddingContactRequest Returns this adding contact request.
-     */
-    public function setPrenom($prenom) {
-        $this->prenom = $prenom;
-        return $this;
-    }
-
-    /**
-     * Set the societe.
-     *
-     * @param string $societe The societe.
-     * @return AddingContactRequest Returns this adding contact request.
-     */
-    public function setSociete($societe) {
-        $this->societe = $societe;
         return $this;
     }
 }

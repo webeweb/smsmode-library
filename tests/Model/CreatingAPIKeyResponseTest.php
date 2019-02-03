@@ -46,19 +46,6 @@ class CreatingAPIKeyResponseTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the setAccessToken() method.
-     *
-     * @return void
-     */
-    public function testSetAccessToken() {
-
-        $obj = new CreatingAPIKeyResponse();
-
-        $obj->setAccessToken("accessToken");
-        $this->assertEquals("accessToken", $obj->getAccessToken());
-    }
-
-    /**
      * Tests the setAccount() method.
      *
      * @return void

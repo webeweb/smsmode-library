@@ -12,6 +12,8 @@
 namespace WBW\Library\SMSMode\Model;
 
 use UnexpectedValueException;
+use WBW\Library\SMSMode\Traits\NumeroTrait;
+use WBW\Library\SMSMode\Traits\SmsIDTrait;
 
 /**
  * Deleting SMS request.
@@ -21,6 +23,9 @@ use UnexpectedValueException;
  */
 class DeletingSMSRequest extends AbstractRequest {
 
+    use NumeroTrait;
+    use SmsIDTrait;
+
     /**
      * Deleting SMS resource path.
      *
@@ -29,42 +34,10 @@ class DeletingSMSRequest extends AbstractRequest {
     const DELETING_SMS_RESOURCE_PATH = "/http/1.6/deleteSMS.do";
 
     /**
-     * Numero.
-     *
-     * @var string
-     */
-    private $numero;
-
-    /**
-     * SMS ID.
-     *
-     * @var string
-     */
-    private $smsID;
-
-    /**
-     * Get the numero.
-     *
-     * @return string Returns the numero.
-     */
-    public function getNumero() {
-        return $this->numero;
-    }
-
-    /**
      * {@inheritdoc}
      */
     public function getResourcePath() {
         return self::DELETING_SMS_RESOURCE_PATH;
-    }
-
-    /**
-     * Get the sms ID.
-     *
-     * @return string Returns the sms ID.
-     */
-    public function getSmsID() {
-        return $this->smsID;
     }
 
     /**
@@ -77,17 +50,6 @@ class DeletingSMSRequest extends AbstractRequest {
     public function setNumero($numero) {
         static::checkNumero($numero);
         $this->numero = $numero;
-        return $this;
-    }
-
-    /**
-     * Set the sms ID.
-     *
-     * @param string $smsID The sms ID.
-     * @return DeletingSMSRequest Returns this deleting SMS request.
-     */
-    public function setSmsID($smsID) {
-        $this->smsID = $smsID;
         return $this;
     }
 }

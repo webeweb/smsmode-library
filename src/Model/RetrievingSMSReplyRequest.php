@@ -12,7 +12,7 @@
 namespace WBW\Library\SMSMode\Model;
 
 use DateTime;
-use UnexpectedValueException;
+use WBW\Library\SMSMode\Traits\OffsetTrait;
 
 /**
  * Retrieving SMS reply request.
@@ -21,6 +21,8 @@ use UnexpectedValueException;
  * @package WBW\Library\SMSMode\Model
  */
 class RetrievingSMSReplyRequest extends AbstractRequest {
+
+    use OffsetTrait;
 
     /**
      * Retrieving SMS reply resource path.
@@ -35,13 +37,6 @@ class RetrievingSMSReplyRequest extends AbstractRequest {
      * @var DateTime
      */
     private $endDate;
-
-    /**
-     * Offset.
-     *
-     * @var int
-     */
-    private $offset;
 
     /**
      * Start
@@ -64,15 +59,6 @@ class RetrievingSMSReplyRequest extends AbstractRequest {
      */
     public function getEndDate() {
         return $this->endDate;
-    }
-
-    /**
-     * Get the offset.
-     *
-     * @return int Returns the offset.
-     */
-    public function getOffset() {
-        return $this->offset;
     }
 
     /**
@@ -108,21 +94,6 @@ class RetrievingSMSReplyRequest extends AbstractRequest {
      */
     public function setEndDate(DateTime $endDate = null) {
         $this->endDate = $endDate;
-        return $this;
-    }
-
-    /**
-     * Set the offset.
-     *
-     * @param int $offset The offset.
-     * @return RetrievingSMSReplyRequest Returns this retrieving SMS reply request.
-     * @throws UnexpectedValueException Throws an illegal argument exception if the offset is less than 1.
-     */
-    public function setOffset($offset) {
-        if (null !== $offset && $offset <= 0) {
-            throw new UnexpectedValueException("The \"offset\" must be greater than 0");
-        }
-        $this->offset = $offset;
         return $this;
     }
 

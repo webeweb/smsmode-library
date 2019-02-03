@@ -12,6 +12,7 @@
 namespace WBW\Library\SMSMode\Model;
 
 use DateTime;
+use WBW\Library\SMSMode\Traits\AccessTokenTrait;
 
 /**
  * Creating API key response.
@@ -21,12 +22,7 @@ use DateTime;
  */
 class CreatingAPIKeyResponse extends AbstractResponse {
 
-    /**
-     * Access token.
-     *
-     * @var string;
-     */
-    private $accessToken;
+    use AccessTokenTrait;
 
     /**
      * Account.
@@ -69,15 +65,6 @@ class CreatingAPIKeyResponse extends AbstractResponse {
      * @var string
      */
     private $state;
-
-    /**
-     * Get the access token.
-     *
-     * @return string Returns the access token.
-     */
-    public function getAccessToken() {
-        return $this->accessToken;
-    }
 
     /**
      * Get the account.
@@ -131,17 +118,6 @@ class CreatingAPIKeyResponse extends AbstractResponse {
      */
     public function getState() {
         return $this->state;
-    }
-
-    /**
-     * Set the access token.
-     *
-     * @param string $accessToken The access token.
-     * @return CreatingAPIKeyResponse Returns this creating API key response.
-     */
-    public function setAccessToken($accessToken) {
-        $this->accessToken = $accessToken;
-        return $this;
     }
 
     /**

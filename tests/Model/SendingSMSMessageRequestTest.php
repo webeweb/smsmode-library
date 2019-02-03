@@ -11,7 +11,6 @@
 
 namespace WBW\Library\SMSMode\Tests\Model;
 
-use DateTime;
 use Exception;
 use UnexpectedValueException;
 use WBW\Library\SMSMode\Model\SendingSMSMessageRequest;
@@ -70,69 +69,6 @@ class SendingSMSMessageRequestTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the setClasseMsg() method.
-     *
-     * @return void
-     * @throws Exception Throws an exception if an error occurs.
-     */
-    public function testSetClasseMsg() {
-
-        $obj = new SendingSMSMessageRequest();
-
-        $obj->setClasseMsg(SendingSMSMessageRequest::CLASSE_MSG_SMS);
-        $this->assertEquals(SendingSMSMessageRequest::CLASSE_MSG_SMS, $obj->getClasseMsg());
-    }
-
-    /**
-     * Tests the setClasseMsg() method.
-     *
-     * @return void
-     */
-    public function testSetClasseMsgWithUnexpectedValueException() {
-
-        $obj = new SendingSMSMessageRequest();
-
-        try {
-
-            $obj->setClasseMsg(-1);
-        } catch (Exception $ex) {
-
-            $this->assertInstanceOf(UnexpectedValueException::class, $ex);
-            $this->assertEquals("The classe msg \"-1\" is invalid", $ex->getMessage());
-        }
-    }
-
-    /**
-     * Tests the setDateEnvoi() method.
-     *
-     * @return void
-     * @throws Exception Throws an exception if an error occurs.
-     */
-    public function testSetDateEnvoi() {
-
-        // Set a End date mock.
-        $endDate = new DateTime();
-
-        $obj = new SendingSMSMessageRequest();
-
-        $obj->setDateEnvoi($endDate);
-        $this->assertSame($endDate, $obj->getDateEnvoi());
-    }
-
-    /**
-     * Tests the setEmetteur() method.
-     *
-     * @return void
-     */
-    public function testSetEmetteur() {
-
-        $obj = new SendingSMSMessageRequest();
-
-        $obj->setEmetteur("emetteur");
-        $this->assertEquals("emetteur", $obj->getEmetteur());
-    }
-
-    /**
      * Tests the setGroupe() method.
      *
      * @return void
@@ -146,45 +82,6 @@ class SendingSMSMessageRequestTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the setMessage() method.
-     *
-     * @return void
-     */
-    public function testSetMessage() {
-
-        $obj = new SendingSMSMessageRequest();
-
-        $obj->setMessage("message");
-        $this->assertEquals("message", $obj->getMessage());
-    }
-
-    /**
-     * Tests the setNbrMsg() method.
-     *
-     * @return void
-     */
-    public function testSetNbrMsg() {
-
-        $obj = new SendingSMSMessageRequest();
-
-        $obj->setNbrMsg(1);
-        $this->assertEquals(1, $obj->getNbrMsg());
-    }
-
-    /**
-     * Tests the setNotificationURL() method.
-     *
-     * @return void
-     */
-    public function testSetNotificationURL() {
-
-        $obj = new SendingSMSMessageRequest();
-
-        $obj->setNotificationURL("notificationURL");
-        $this->assertEquals("notificationURL", $obj->getNotificationURL());
-    }
-
-    /**
      * Tests the setNotificationURLReponse() method.
      *
      * @return void
@@ -195,19 +92,6 @@ class SendingSMSMessageRequestTest extends AbstractTestCase {
 
         $obj->setNotificationURLReponse("notificationURLReponse");
         $this->assertEquals("notificationURLReponse", $obj->getNotificationURLReponse());
-    }
-
-    /**
-     * Tests the setRefClient() method.
-     *
-     * @return void
-     */
-    public function testSetRefClient() {
-
-        $obj = new SendingSMSMessageRequest();
-
-        $obj->setRefClient("refClient");
-        $this->assertEquals("refClient", $obj->getRefClient());
     }
 
     /**

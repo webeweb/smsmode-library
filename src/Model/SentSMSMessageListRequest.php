@@ -11,6 +11,8 @@
 
 namespace WBW\Library\SMSMode\Model;
 
+use WBW\Library\SMSMode\Traits\OffsetTrait;
+
 /**
  * Sent SMS message list request.
  *
@@ -18,6 +20,8 @@ namespace WBW\Library\SMSMode\Model;
  * @package WBW\Library\SMSMode\Model
  */
 class SentSMSMessageListRequest extends AbstractRequest {
+
+    use OffsetTrait;
 
     /**
      * Sent SMS message list resource path.
@@ -27,36 +31,9 @@ class SentSMSMessageListRequest extends AbstractRequest {
     const SENT_SMS_MESSAGE_LIST_RESOURCE_PATH = "/http/1.6/smsList.do";
 
     /**
-     * Offset.
-     *
-     * @var int
-     */
-    private $offset;
-
-    /**
-     * Get the offset.
-     *
-     * @return int Returns the offset.
-     */
-    public function getOffset() {
-        return $this->offset;
-    }
-
-    /**
      * {@inheritdoc}
      */
     public function getResourcePath() {
         return self::SENT_SMS_MESSAGE_LIST_RESOURCE_PATH;
-    }
-
-    /**
-     * Set the offset.
-     *
-     * @param int $offset The offset.
-     * @return SentSMSMessageListRequest Returns this sent SMS message list request.
-     */
-    public function setOffset($offset) {
-        $this->offset = $offset;
-        return $this;
     }
 }

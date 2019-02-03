@@ -11,7 +11,6 @@
 
 namespace WBW\Library\SMSMode\Tests\Model;
 
-use DateTime;
 use Exception;
 use WBW\Library\SMSMode\Model\CreatingSubAccountRequest;
 use WBW\Library\SMSMode\Tests\AbstractTestCase;
@@ -79,23 +78,6 @@ class CreatingSubAccountRequestTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the setDate() method.
-     *
-     * @return void
-     * @throws Exception Throws an exception if an error occurs.
-     */
-    public function testSetDate() {
-
-        // Set a Date mock.
-        $date = new DateTime();
-
-        $obj = new CreatingSubAccountRequest();
-
-        $obj->setDate($date);
-        $this->assertSame($date, $obj->getDate());
-    }
-
-    /**
      * Tests the setEmail() method.
      *
      * @return void
@@ -123,20 +105,6 @@ class CreatingSubAccountRequestTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the setMobile() method.
-     *
-     * @return void
-     * @throws Exception Throws an exception if an error occurs.
-     */
-    public function testSetMobile() {
-
-        $obj = new CreatingSubAccountRequest();
-
-        $obj->setMobile("33600000000");
-        $this->assertEquals("33600000000", $obj->getMobile());
-    }
-
-    /**
      * Tests the setNewPass() method.
      *
      * @return void
@@ -160,58 +128,6 @@ class CreatingSubAccountRequestTest extends AbstractTestCase {
 
         $obj->setNewPseudo("newPseudo");
         $this->assertEquals("newPseudo", $obj->getNewPseudo());
-    }
-
-    /**
-     * Tests the setNom() method.
-     *
-     * @return void
-     */
-    public function testSetNom() {
-
-        $obj = new CreatingSubAccountRequest();
-
-        $obj->setNom("nom");
-        $this->assertEquals("nom", $obj->getNom());
-    }
-
-    /**
-     * Tests the setPrenom() method.
-     *
-     * @return void
-     */
-    public function testSetPrenom() {
-
-        $obj = new CreatingSubAccountRequest();
-
-        $obj->setPrenom("prenom");
-        $this->assertEquals("prenom", $obj->getPrenom());
-    }
-
-    /**
-     * Tests the setReference() method.
-     *
-     * @return void
-     */
-    public function testSetReference() {
-
-        $obj = new CreatingSubAccountRequest();
-
-        $obj->setReference("reference");
-        $this->assertEquals("reference", $obj->getReference());
-    }
-
-    /**
-     * Tests the setSociete() method.
-     *
-     * @return void
-     */
-    public function testSetSociete() {
-
-        $obj = new CreatingSubAccountRequest();
-
-        $obj->setSociete("societe");
-        $this->assertEquals("societe", $obj->getSociete());
     }
 
     /**

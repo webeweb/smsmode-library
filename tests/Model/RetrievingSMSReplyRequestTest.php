@@ -13,7 +13,6 @@ namespace WBW\Library\SMSMode\Tests\Model;
 
 use DateTime;
 use Exception;
-use UnexpectedValueException;
 use WBW\Library\SMSMode\Model\RetrievingSMSReplyRequest;
 use WBW\Library\SMSMode\Tests\AbstractTestCase;
 
@@ -58,39 +57,6 @@ class RetrievingSMSReplyRequestTest extends AbstractTestCase {
 
         $obj->setEndDate($endDate);
         $this->assertSame($endDate, $obj->getEndDate());
-    }
-
-    /**
-     * Tests the setOffset() method.
-     *
-     * @return void
-     * @throws Exception Throws an exception.
-     */
-    public function testSetOffset() {
-
-        $obj = new RetrievingSMSReplyRequest();
-
-        $obj->setOffset(1);
-        $this->assertEquals(1, $obj->getOffset());
-    }
-
-    /**
-     * Tests the setOffset() method.
-     *
-     * @return void
-     */
-    public function testSetOffsetWithUnexpectedValueException() {
-
-        $obj = new RetrievingSMSReplyRequest();
-
-        try {
-
-            $obj->setOffset(0);
-        } catch (Exception $ex) {
-
-            $this->assertInstanceOf(UnexpectedValueException::class, $ex);
-            $this->assertEquals("The \"offset\" must be greater than 0", $ex->getMessage());
-        }
     }
 
     /**

@@ -61,17 +61,4 @@ class AuthenticationTest extends AbstractTestCase {
         $obj->setPseudo("pseudo");
         $this->assertEquals("pseudo", $obj->getPseudo());
     }
-
-    /**
-     * Tests the setToken() method.
-     *
-     * @return void
-     */
-    public function testSetToken() {
-
-        $obj = new Authentication();
-
-        $obj->setAccessToken("token");
-        $this->assertEquals("token", $obj->getAccessToken());
-    }
 }

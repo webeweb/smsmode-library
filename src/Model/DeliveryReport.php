@@ -11,6 +11,8 @@
 
 namespace WBW\Library\SMSMode\Model;
 
+use WBW\Library\SMSMode\Traits\NumeroTrait;
+
 /**
  * Delivery report.
  *
@@ -19,30 +21,5 @@ namespace WBW\Library\SMSMode\Model;
  */
 class DeliveryReport extends AbstractResponse {
 
-    /**
-     * Numero.
-     *
-     * @var string
-     */
-    private $numero;
-
-    /**
-     * Get the numero.
-     *
-     * @return string Returns the numero.
-     */
-    public function getNumero() {
-        return $this->numero;
-    }
-
-    /**
-     * Set the numero.
-     *
-     * @param string $numero The numero.
-     * @return DeliveryReport Returns this delivery report.
-     */
-    public function setNumero($numero) {
-        $this->numero = $numero;
-        return $this;
-    }
+    use NumeroTrait;
 }

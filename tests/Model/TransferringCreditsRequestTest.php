@@ -53,19 +53,6 @@ class TransferringCreditsRequestTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the setReference() method.
-     *
-     * @return void
-     */
-    public function testSetReference() {
-
-        $obj = new TransferringCreditsRequest();
-
-        $obj->setReference("reference");
-        $this->assertEquals("reference", $obj->getReference());
-    }
-
-    /**
      * Tests the setTargetPseudo() method.
      *
      * @return void

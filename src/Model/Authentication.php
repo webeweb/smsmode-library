@@ -11,6 +11,8 @@
 
 namespace WBW\Library\SMSMode\Model;
 
+use WBW\Library\SMSMode\Traits\AccessTokenTrait;
+
 /**
  * Authentication.
  *
@@ -19,12 +21,7 @@ namespace WBW\Library\SMSMode\Model;
  */
 class Authentication {
 
-    /**
-     * Access token.
-     *
-     * @var string
-     */
-    private $accessToken;
+    use AccessTokenTrait;
 
     /**
      * Pass.
@@ -52,15 +49,6 @@ class Authentication {
     }
 
     /**
-     * Get the token.
-     *
-     * @return string Returns the token.
-     */
-    public function getAccessToken() {
-        return $this->accessToken;
-    }
-
-    /**
      * Get the pass.
      *
      * @return string Returns the pass.
@@ -76,17 +64,6 @@ class Authentication {
      */
     public function getPseudo() {
         return $this->pseudo;
-    }
-
-    /**
-     * Set the token.
-     *
-     * @param string $accessToken The token.
-     * @return Authentication Returns this authentication.
-     */
-    public function setAccessToken($accessToken) {
-        $this->accessToken = $accessToken;
-        return $this;
     }
 
     /**

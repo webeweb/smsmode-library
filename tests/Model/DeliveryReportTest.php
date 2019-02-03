@@ -36,17 +36,4 @@ class DeliveryReportTest extends AbstractTestCase {
 
         $this->assertNull($obj->getNumero());
     }
-
-    /**
-     * Tests the setNumero() method.
-     *
-     * @return void
-     */
-    public function testSetNumero() {
-
-        $obj = new DeliveryReport();
-
-        $obj->setNumero("numero");
-        $this->assertEquals("numero", $obj->getNumero());
-    }
 }

@@ -11,8 +11,9 @@
 
 namespace WBW\Library\SMSMode\Model;
 
-use DateTime;
 use UnexpectedValueException;
+use WBW\Library\SMSMode\Traits\DateEnvoiTrait;
+use WBW\Library\SMSMode\Traits\MessageTrait;
 
 /**
  * Sending text-to-speech SMS request.
@@ -21,6 +22,9 @@ use UnexpectedValueException;
  * @package WBW\Library\SMSMode\Model
  */
 class SendingTextToSpeechSMSRequest extends AbstractRequest {
+
+    use DateEnvoiTrait;
+    use MessageTrait;
 
     /**
      * Language "de-DE".
@@ -58,25 +62,11 @@ class SendingTextToSpeechSMSRequest extends AbstractRequest {
     const SENDING_TEXT_TO_SPEECH_SMS_RESOURCE_PATH = "/http/1.6/sendVoiceMessage.do";
 
     /**
-     * Date envoi.
-     *
-     * @var DateTime
-     */
-    private $dateEnvoi;
-
-    /**
      * Lnaguage.
      *
      * @var string
      */
     private $language;
-
-    /**
-     * Message.
-     *
-     * @var string
-     */
-    private $message;
 
     /**
      * Numero.
@@ -114,30 +104,12 @@ class SendingTextToSpeechSMSRequest extends AbstractRequest {
     }
 
     /**
-     * Get the date envoi.
-     *
-     * @return DateTime Returns the date envoi.
-     */
-    public function getDateEnvoi() {
-        return $this->dateEnvoi;
-    }
-
-    /**
      * Get the language.
      *
      * @return string Returns the language.
      */
     public function getLanguage() {
         return $this->language;
-    }
-
-    /**
-     * Get the message.
-     *
-     * @return string Returns the message.
-     */
-    public function getMessage() {
-        return $this->message;
     }
 
     /**
@@ -166,17 +138,6 @@ class SendingTextToSpeechSMSRequest extends AbstractRequest {
     }
 
     /**
-     * Set the date envoi.
-     *
-     * @param DateTime|null $dateEnvoi The date envoi.
-     * @return SendingTextToSpeechSMSRequest Returns this sending text-to-speech request.
-     */
-    public function setDateEnvoi(DateTime $dateEnvoi = null) {
-        $this->dateEnvoi = $dateEnvoi;
-        return $this;
-    }
-
-    /**
      * Set the language.
      *
      * @param string $language The language.
@@ -188,17 +149,6 @@ class SendingTextToSpeechSMSRequest extends AbstractRequest {
             throw new UnexpectedValueException(sprintf("The language \"%s\" is invalid", $language));
         }
         $this->language = $language;
-        return $this;
-    }
-
-    /**
-     * Set the message.
-     *
-     * @param string $message The message.
-     * @return SendingTextToSpeechSMSRequest Returns this sending text-to-speech request.
-     */
-    public function setMessage($message) {
-        $this->message = $message;
         return $this;
     }
 

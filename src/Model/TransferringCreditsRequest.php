@@ -11,6 +11,8 @@
 
 namespace WBW\Library\SMSMode\Model;
 
+use WBW\Library\SMSMode\Traits\ReferenceTrait;
+
 /**
  * Transferring credits request.
  *
@@ -18,6 +20,8 @@ namespace WBW\Library\SMSMode\Model;
  * @package WBW\Library\SMSMode\Model
  */
 class TransferringCreditsRequest extends AbstractRequest {
+
+    use ReferenceTrait;
 
     /**
      * Transferring credits resource path.
@@ -34,13 +38,6 @@ class TransferringCreditsRequest extends AbstractRequest {
     private $creditAmount;
 
     /**
-     * Reference.
-     *
-     * @var string
-     */
-    private $reference;
-
-    /**
      * Target pseudo.
      *
      * @var string
@@ -54,15 +51,6 @@ class TransferringCreditsRequest extends AbstractRequest {
      */
     public function getCreditAmount() {
         return $this->creditAmount;
-    }
-
-    /**
-     * Get the reference.
-     *
-     * @return string Returns the reference.
-     */
-    public function getReference() {
-        return $this->reference;
     }
 
     /**
@@ -89,17 +77,6 @@ class TransferringCreditsRequest extends AbstractRequest {
      */
     public function setCreditAmount($creditAmount) {
         $this->creditAmount = $creditAmount;
-        return $this;
-    }
-
-    /**
-     * Set the reference.
-     *
-     * @param string $reference The reference.
-     * @return TransferringCreditsRequest Returns this transferring credits request.
-     */
-    public function setReference($reference) {
-        $this->reference = $reference;
         return $this;
     }
 

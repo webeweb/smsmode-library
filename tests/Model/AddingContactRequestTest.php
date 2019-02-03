@@ -11,8 +11,6 @@
 
 namespace WBW\Library\SMSMode\Tests\Model;
 
-use DateTime;
-use Exception;
 use WBW\Library\SMSMode\Model\AddingContactRequest;
 use WBW\Library\SMSMode\Tests\AbstractTestCase;
 
@@ -59,23 +57,6 @@ class AddingContactRequestTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the setDate() method.
-     *
-     * @return void
-     * @throws Exception Throws an exception if an error occurs.
-     */
-    public function testSetDate() {
-
-        // Set a Date mock.
-        $date = new DateTime();
-
-        $obj = new AddingContactRequest();
-
-        $obj->setDate($date);
-        $this->assertSame($date, $obj->getDate());
-    }
-
-    /**
      * Tests the setGroupes() method.
      *
      * @return void
@@ -89,33 +70,6 @@ class AddingContactRequestTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the setMobile() method.
-     *
-     * @return void
-     * @throws Exception Throws an exception if an error occurs.
-     */
-    public function testSetMobile() {
-
-        $obj = new AddingContactRequest();
-
-        $obj->setMobile("33600000000");
-        $this->assertEquals("33600000000", $obj->getMobile());
-    }
-
-    /**
-     * Tests the setNom() method.
-     *
-     * @return void
-     */
-    public function testSetNom() {
-
-        $obj = new AddingContactRequest();
-
-        $obj->setNom("nom");
-        $this->assertEquals("nom", $obj->getNom());
-    }
-
-    /**
      * Tests the setOther() method.
      *
      * @return void
@@ -126,31 +80,5 @@ class AddingContactRequestTest extends AbstractTestCase {
 
         $obj->setOther("other");
         $this->assertEquals("other", $obj->getOther());
-    }
-
-    /**
-     * Tests the setPrenom() method.
-     *
-     * @return void
-     */
-    public function testSetPrenom() {
-
-        $obj = new AddingContactRequest();
-
-        $obj->setPrenom("prenom");
-        $this->assertEquals("prenom", $obj->getPrenom());
-    }
-
-    /**
-     * Tests the setSociete() method.
-     *
-     * @return void
-     */
-    public function testSetSociete() {
-
-        $obj = new AddingContactRequest();
-
-        $obj->setSociete("societe");
-        $this->assertEquals("societe", $obj->getSociete());
     }
 }

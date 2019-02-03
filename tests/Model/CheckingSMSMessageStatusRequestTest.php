@@ -36,17 +36,4 @@ class CheckingSMSMessageStatusRequestTest extends AbstractTestCase {
         $this->assertEquals(CheckingSMSMessageStatusRequest::CHECKING_SMS_MESSAGE_STATUS_RESOURCE_PATH, $obj->getResourcePath());
         $this->assertNull($obj->getSmsID());
     }
-
-    /**
-     * Tests the setSmsID() method.
-     *
-     * @return void
-     */
-    public function testSetSmsID() {
-
-        $obj = new CheckingSMSMessageStatusRequest();
-
-        $obj->setSmsID("smsID");
-        $this->assertEquals("smsID", $obj->getSmsID());
-    }
 }

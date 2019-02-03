@@ -58,32 +58,6 @@ class SentSMSMessageTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the setMessage() method.
-     *
-     * @return void
-     */
-    public function testSetMessage() {
-
-        $obj = new SentSMSMessage();
-
-        $obj->setMessage("message");
-        $this->assertEquals("message", $obj->getMessage());
-    }
-
-    /**
-     * Tests the setNumero() method.
-     *
-     * @return void
-     */
-    public function testSetNumero() {
-
-        $obj = new SentSMSMessage();
-
-        $obj->setNumero("numero");
-        $this->assertEquals("numero", $obj->getNumero());
-    }
-
-    /**
      * Tests the setRecipientCount() method.
      *
      * @return void
@@ -111,18 +85,5 @@ class SentSMSMessageTest extends AbstractTestCase {
 
         $obj->setSendDate($sendDate);
         $this->assertSame($sendDate, $obj->getSendDate());
-    }
-
-    /**
-     * Tests the setSmsID() method.
-     *
-     * @return void
-     */
-    public function testSetSmsID() {
-
-        $obj = new SentSMSMessage();
-
-        $obj->setSmsID("smsID");
-        $this->assertEquals("smsID", $obj->getSmsID());
     }
 }

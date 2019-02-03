@@ -11,8 +11,13 @@
 
 namespace WBW\Library\SMSMode\Model;
 
-use DateTime;
 use UnexpectedValueException;
+use WBW\Library\SMSMode\Traits\DateTrait;
+use WBW\Library\SMSMode\Traits\MobileTrait;
+use WBW\Library\SMSMode\Traits\NomTrait;
+use WBW\Library\SMSMode\Traits\PrenomTrait;
+use WBW\Library\SMSMode\Traits\ReferenceTrait;
+use WBW\Library\SMSMode\Traits\SocieteTrait;
 
 /**
  * Creating sub-account request.
@@ -21,6 +26,13 @@ use UnexpectedValueException;
  * @package WBW\Library\SMSMode\Model
  */
 class CreatingSubAccountRequest extends AbstractRequest {
+
+    use DateTrait;
+    use MobileTrait;
+    use NomTrait;
+    use PrenomTrait;
+    use ReferenceTrait;
+    use SocieteTrait;
 
     /**
      * Creating sub-account resource path.
@@ -44,13 +56,6 @@ class CreatingSubAccountRequest extends AbstractRequest {
     private $codePostal;
 
     /**
-     * Date.
-     *
-     * @var DateTime
-     */
-    private $date;
-
-    /**
      * Email.
      *
      * @var string
@@ -65,13 +70,6 @@ class CreatingSubAccountRequest extends AbstractRequest {
     private $fax;
 
     /**
-     * Mobile.
-     *
-     * @var string
-     */
-    private $mobile;
-
-    /**
      * New pass.
      *
      * @var string
@@ -84,34 +82,6 @@ class CreatingSubAccountRequest extends AbstractRequest {
      * @var string
      */
     private $newPseudo;
-
-    /**
-     * Nom.
-     *
-     * @var string
-     */
-    private $nom;
-
-    /**
-     * Prenom.
-     *
-     * @var string
-     */
-    private $prenom;
-
-    /**
-     * Reference.
-     *
-     * @var string
-     */
-    private $reference;
-
-    /**
-     * Societe.
-     *
-     * @var string
-     */
-    private $societe;
 
     /**
      * Telephone.
@@ -146,15 +116,6 @@ class CreatingSubAccountRequest extends AbstractRequest {
     }
 
     /**
-     * Get the date.
-     *
-     * @return DateTime Returns the date.
-     */
-    public function getDate() {
-        return $this->date;
-    }
-
-    /**
      * Get the email.
      *
      * @return string Returns the email.
@@ -170,15 +131,6 @@ class CreatingSubAccountRequest extends AbstractRequest {
      */
     public function getFax() {
         return $this->fax;
-    }
-
-    /**
-     * Get the mobile.
-     *
-     * @return string Returns the mobile.
-     */
-    public function getMobile() {
-        return $this->mobile;
     }
 
     /**
@@ -200,46 +152,10 @@ class CreatingSubAccountRequest extends AbstractRequest {
     }
 
     /**
-     * Get the nom.
-     *
-     * @return string Returns the nom.
-     */
-    public function getNom() {
-        return $this->nom;
-    }
-
-    /**
-     * Get the prenom.
-     *
-     * @return string Returns the prenom.
-     */
-    public function getPrenom() {
-        return $this->prenom;
-    }
-
-    /**
-     * Get the reference.
-     *
-     * @return string Returns the reference.
-     */
-    public function getReference() {
-        return $this->reference;
-    }
-
-    /**
      * {@inheritdoc}
      */
     public function getResourcePath() {
         return self::CREATING_SUB_ACCOUNT_RESOURCE_PATH;
-    }
-
-    /**
-     * Get the societe.
-     *
-     * @return string Returns the societe.
-     */
-    public function getSociete() {
-        return $this->societe;
     }
 
     /**
@@ -279,17 +195,6 @@ class CreatingSubAccountRequest extends AbstractRequest {
      */
     public function setCodePostal($codePostal) {
         $this->codePostal = $codePostal;
-        return $this;
-    }
-
-    /**
-     * Set the date.
-     *
-     * @param DateTime|null $date The date.
-     * @return CreatingSubAccountRequest Returns this creating sub-account request.
-     */
-    public function setDate(DateTime $date = null) {
-        $this->date = $date;
         return $this;
     }
 
@@ -349,50 +254,6 @@ class CreatingSubAccountRequest extends AbstractRequest {
      */
     public function setNewPseudo($newPseudo) {
         $this->newPseudo = $newPseudo;
-        return $this;
-    }
-
-    /**
-     * Set the nom.
-     *
-     * @param string $nom The nom.
-     * @return CreatingSubAccountRequest Returns this creating sub-account request.
-     */
-    public function setNom($nom) {
-        $this->nom = $nom;
-        return $this;
-    }
-
-    /**
-     * Set the prenom.
-     *
-     * @param string $prenom The prenom.
-     * @return CreatingSubAccountRequest Returns this creating sub-account request.
-     */
-    public function setPrenom($prenom) {
-        $this->prenom = $prenom;
-        return $this;
-    }
-
-    /**
-     * Set the reference.
-     *
-     * @param string $reference The reference.
-     * @return CreatingSubAccountRequest Returns this creating sub-account request.
-     */
-    public function setReference($reference) {
-        $this->reference = $reference;
-        return $this;
-    }
-
-    /**
-     * Set the societe.
-     *
-     * @param string $societe The societe.
-     * @return CreatingSubAccountRequest Returns this creating sub-account request.
-     */
-    public function setSociete($societe) {
-        $this->societe = $societe;
         return $this;
     }
 

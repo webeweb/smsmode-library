@@ -11,6 +11,8 @@
 
 namespace WBW\Library\SMSMode\Model;
 
+use WBW\Library\SMSMode\Traits\SmsIDTrait;
+
 /**
  * Checking SMS message status request.
  *
@@ -18,6 +20,8 @@ namespace WBW\Library\SMSMode\Model;
  * @package WBW\Library\SMSMode\Model
  */
 class CheckingSMSMessageStatusRequest extends AbstractRequest {
+
+    use SmsIDTrait;
 
     /**
      * Checking SMS message status resource path.
@@ -27,36 +31,9 @@ class CheckingSMSMessageStatusRequest extends AbstractRequest {
     const CHECKING_SMS_MESSAGE_STATUS_RESOURCE_PATH = "/http/1.6/smsStatus.do";
 
     /**
-     * SMS ID.
-     *
-     * @var string
-     */
-    private $smsID;
-
-    /**
      * {@inheritdoc}
      */
     public function getResourcePath() {
         return self::CHECKING_SMS_MESSAGE_STATUS_RESOURCE_PATH;
-    }
-
-    /**
-     * Get the sms ID.
-     *
-     * @return string Returns the sms ID.
-     */
-    public function getSmsID() {
-        return $this->smsID;
-    }
-
-    /**
-     * Set the sms ID.
-     *
-     * @param string $smsID The sms ID.
-     * @return CheckingSMSMessageStatusRequest Returns this checking SMS message status request.
-     */
-    public function setSmsID($smsID) {
-        $this->smsID = $smsID;
-        return $this;
     }
 }

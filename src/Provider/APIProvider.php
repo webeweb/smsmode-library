@@ -17,7 +17,6 @@ use ReflectionException;
 use WBW\Library\Core\Exception\Network\CURLRequestCallException;
 use WBW\Library\Core\Network\CURL\Factory\CURLFactory;
 use WBW\Library\Core\Network\HTTP\HTTPInterface;
-use WBW\Library\SMSMode\API\APIProviderInterface;
 use WBW\Library\SMSMode\Exception\APIException;
 use WBW\Library\SMSMode\Model\AbstractRequest;
 use WBW\Library\SMSMode\Model\AccountBalanceRequest;

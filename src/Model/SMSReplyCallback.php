@@ -11,6 +11,7 @@
 
 namespace WBW\Library\SMSMode\Model;
 
+use WBW\Library\SMSMode\API\SMSReplyCallbackInterface;
 use WBW\Library\SMSMode\Traits\DateReceptionTrait;
 use WBW\Library\SMSMode\Traits\EmetteurTrait;
 use WBW\Library\SMSMode\Traits\MessageTrait;
@@ -24,7 +25,7 @@ use WBW\Library\SMSMode\Traits\SmsIDTrait;
  * @author webeweb <https://github.com/webeweb/>
  * @package WBW\Library\SMSMode\Model
  */
-class SMSReplyCallback extends AbstractResponse {
+class SMSReplyCallback extends AbstractResponse implements SMSReplyCallbackInterface {
 
     use DateReceptionTrait;
     use EmetteurTrait;
@@ -32,55 +33,6 @@ class SMSReplyCallback extends AbstractResponse {
     use NumeroTrait;
     use RefClientTrait;
     use SmsIDTrait;
-
-    /**
-     * Parameter "date reception".
-     *
-     * @var string
-     */
-    const PARAMETER_DATE_RECEPTION = "date_reception";
-
-    /**
-     * Parameter "emetteur".
-     *
-     * @var string
-     */
-    const PARAMETER_EMETTEUR = "emetteur";
-
-    /**
-     * Parameter "message".
-     *
-     * @var string
-     */
-    const PARAMETER_MESSAGE = "message";
-
-    /**
-     * Parameter "numero".
-     *
-     * @var string
-     */
-    const PARAMETER_NUMERO = "numero";
-
-    /**
-     * Parameter "ref client".
-     *
-     * @var string
-     */
-    const PARAMETER_REF_CLIENT = "refClient";
-
-    /**
-     * Parameter "response ID".
-     *
-     * @var string
-     */
-    const PARAMETER_RESPONSE_ID = "responseID";
-
-    /**
-     * Parameter "SMS ID".
-     *
-     * @var string
-     */
-    const PARAMETER_SMS_ID = "smsID";
 
     /**
      * Response ID.

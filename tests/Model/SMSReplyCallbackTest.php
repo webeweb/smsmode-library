@@ -23,14 +23,6 @@ class SMSReplyCallbackTest extends AbstractTestCase {
      */
     public function testConstruct() {
 
-        $this->assertEquals("date_reception", SMSReplyCallback::PARAMETER_DATE_RECEPTION);
-        $this->assertEquals("emetteur", SMSReplyCallback::PARAMETER_EMETTEUR);
-        $this->assertEquals("message", SMSReplyCallback::PARAMETER_MESSAGE);
-        $this->assertEquals("numero", SMSReplyCallback::PARAMETER_NUMERO);
-        $this->assertEquals("refClient", SMSReplyCallback::PARAMETER_REF_CLIENT);
-        $this->assertEquals("responseID", SMSReplyCallback::PARAMETER_RESPONSE_ID);
-        $this->assertEquals("smsID", SMSReplyCallback::PARAMETER_SMS_ID);
-
         $obj = new SMSReplyCallback();
 
         $this->assertNull($obj->getCode());

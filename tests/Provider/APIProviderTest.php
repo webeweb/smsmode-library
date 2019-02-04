@@ -31,6 +31,8 @@ use WBW\Library\SMSMode\Model\DeliveryReportRequest;
 use WBW\Library\SMSMode\Model\DeliveryReportResponse;
 use WBW\Library\SMSMode\Model\RetrievingSMSReplyRequest;
 use WBW\Library\SMSMode\Model\RetrievingSMSReplyResponse;
+use WBW\Library\SMSMode\Model\SendingSMSBatchRequest;
+use WBW\Library\SMSMode\Model\SendingSMSBatchResponse;
 use WBW\Library\SMSMode\Model\SendingSMSMessageRequest;
 use WBW\Library\SMSMode\Model\SendingSMSMessageResponse;
 use WBW\Library\SMSMode\Model\SendingTextToSpeechSMSRequest;
@@ -302,6 +304,30 @@ class APIProviderTest extends AbstractTestCase {
 
         $res = $obj->retrievingSMSReply($arg);
         $this->assertInstanceOf(RetrievingSMSReplyResponse::class, $res);
+
+        $this->assertEquals(32, $res->getCode());
+        $this->assertRegExp("/.*/", $res->getDescription());
+    }
+
+    /**
+     * Tests the sendingSMSBatch() method.
+     *
+     * @return void
+     * @throws Exception Throws an exception if an error occurs.
+     */
+    public function testSendingSMSBatch() {
+
+        // Set a Fichier mock.
+        $fichier = getcwd() . "/tests/Fixtures/Model/SendingSMSBatchRequest.csv";
+
+        // Set a Sending SMS message batch mock.
+        $arg = new SendingSMSBatchRequest();
+        $arg->setFichier($fichier);
+
+        $obj = new APIProvider($this->authentication);
+
+        $res = $obj->sendingSMSBatch($arg);
+        $this->assertInstanceOf(SendingSMSBatchResponse::class, $res);
 
         $this->assertEquals(32, $res->getCode());
         $this->assertRegExp("/.*/", $res->getDescription());

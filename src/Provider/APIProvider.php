@@ -38,6 +38,8 @@ use WBW\Library\SMSMode\Model\DeliveryReportRequest;
 use WBW\Library\SMSMode\Model\DeliveryReportResponse;
 use WBW\Library\SMSMode\Model\RetrievingSMSReplyRequest;
 use WBW\Library\SMSMode\Model\RetrievingSMSReplyResponse;
+use WBW\Library\SMSMode\Model\SendingSMSBatchRequest;
+use WBW\Library\SMSMode\Model\SendingSMSBatchResponse;
 use WBW\Library\SMSMode\Model\SendingSMSMessageRequest;
 use WBW\Library\SMSMode\Model\SendingSMSMessageResponse;
 use WBW\Library\SMSMode\Model\SendingTextToSpeechSMSRequest;
@@ -348,6 +350,34 @@ class APIProvider {
     }
 
     /**
+     * Sending SMS batch.
+     *
+     * @param SendingSMSBatchRequest $sendingSMSBatchRequest The sending SMS batch request.
+     * @return SendingSMSBatchResponse Returns the sending SMS message response.
+     * @throws APIException Throws an API exception if an error occurs.
+     * @throws InvalidArgumentException Throws an invalid argument exception if a parameter is missing.
+     * @throws ReflectionException Throws a reflection exception.
+     */
+    public function sendingSMSBatch(SendingSMSBatchRequest $sendingSMSBatchRequest) {
+
+        $queryData = $this->getRequestNormalizer()->normalize($sendingSMSBatchRequest);
+
+        $postData = [];
+
+        $buffer   = [];
+        $buffer[] = "@" . $queryData["fichier"];
+        $buffer[] = "filename=" . basename($queryData["fichier"]);
+        $buffer[] = "type=text/csv";
+
+        $postData["fichier"] = implode(";", $buffer);
+        unset($queryData["fichier"]);
+
+        $rawResponse = $this->callAPI($sendingSMSBatchRequest, $queryData, $postData);
+
+        return ResponseNormalizer::denormalizeSendingSMSBatchResponse($rawResponse);
+    }
+
+    /**
      * Sending SMS message.
      *
      * @param SendingSMSMessageRequest $sendingSMSMessageRequest The sending SMS message request.
@@ -359,7 +389,8 @@ class APIProvider {
     public function sendingSMSMessage(SendingSMSMessageRequest $sendingSMSMessageRequest) {
 
         $queryData = $this->getRequestNormalizer()->normalize($sendingSMSMessageRequest);
-        $postData  = [];
+
+        $postData = [];
         if (true === array_key_exists("numero", $queryData)) {
             $postData["numero"] = $queryData["numero"];
             unset($queryData["numero"]);
@@ -382,7 +413,8 @@ class APIProvider {
     public function sendingTextToSpeechSMS(SendingTextToSpeechSMSRequest $sendingTextToSpeechSMSRequest) {
 
         $queryData = $this->getRequestNormalizer()->normalize($sendingTextToSpeechSMSRequest);
-        $postData  = [];
+
+        $postData = [];
         if (true === array_key_exists("numero", $queryData)) {
             $postData["numero"] = $queryData["numero"];
             unset($queryData["numero"]);
@@ -405,7 +437,8 @@ class APIProvider {
     public function sendingUnicodeSMS(SendingUnicodeSMSRequest $sendingUnicodeSMSRequest) {
 
         $queryData = $this->getRequestNormalizer()->normalize($sendingUnicodeSMSRequest);
-        $postData  = [];
+
+        $postData = [];
         if (true === array_key_exists("numero", $queryData)) {
             $postData["numero"] = $queryData["numero"];
             unset($queryData["numero"]);

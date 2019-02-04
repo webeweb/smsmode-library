@@ -45,6 +45,7 @@ class DeliveryReportCallbackTest extends AbstractTestCase {
         $this->assertNull($obj->getDateReception());
         $this->assertNull($obj->getMccMnc());
         $this->assertNull($obj->getRefClient());
+        $this->assertNull($obj->getStatus());
         $this->assertNull($obj->getSmsID());
     }
 

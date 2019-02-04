@@ -35,6 +35,17 @@ class DeliveryReportResponse extends AbstractResponse {
     }
 
     /**
+     * Add a delivery report.
+     *
+     * @param DeliveryReport $deliveryReport The delivery report.
+     * @return DeliveryReportResponse Returns this delivery report response.
+     */
+    public function addDeliveryReport(DeliveryReport $deliveryReport) {
+        $this->deliveryReports[] = $deliveryReport;
+        return $this;
+    }
+
+    /**
      * Get the delivery reports.
      *
      * @return DeliveryReport[] Returns the delivery reports.
@@ -58,7 +69,7 @@ class DeliveryReportResponse extends AbstractResponse {
      * @param DeliveryReport[] $deliveryReports The delivery reports.
      * @return DeliveryReportResponse Returns this delivery report response.
      */
-    public function setDeliveryReports($deliveryReports) {
+    protected function setDeliveryReports($deliveryReports) {
         $this->deliveryReports = $deliveryReports;
         return $this;
     }

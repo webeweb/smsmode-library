@@ -24,6 +24,22 @@ use WBW\Library\SMSMode\Tests\AbstractTestCase;
 class DeliveryReportResponseTest extends AbstractTestCase {
 
     /**
+     * Tests the addDeliveryReport() method.
+     *
+     * @return void
+     */
+    public function testAddDeliveryReports() {
+
+        // Set a Delivery report mock.
+        $deliveryReport = new DeliveryReport();
+
+        $obj = new DeliveryReportResponse();
+
+        $obj->addDeliveryReport($deliveryReport);
+        $this->assertEquals([$deliveryReport], $obj->getDeliveryReports());
+    }
+
+    /**
      * Tests the __construct() method.
      *
      * @return void
@@ -51,23 +67,7 @@ class DeliveryReportResponseTest extends AbstractTestCase {
 
         $obj = new DeliveryReportResponse();
 
-        $obj->setDeliveryReports([$deliveryReport]);
+        $obj->addDeliveryReport($deliveryReport);
         $this->assertTrue($obj->hasDeliveryReport());
-    }
-
-    /**
-     * Tests the setDeliveryReports() method.
-     *
-     * @return void
-     */
-    public function testSetDeliveryReports() {
-
-        // Set a Delivery report mock.
-        $deliveryReport = new DeliveryReport();
-
-        $obj = new DeliveryReportResponse();
-
-        $obj->setDeliveryReports([$deliveryReport]);
-        $this->assertEquals([$deliveryReport], $obj->getDeliveryReports());
     }
 }

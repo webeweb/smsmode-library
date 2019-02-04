@@ -86,8 +86,8 @@ class SendingTextToSpeechSMSRequestTest extends AbstractTestCase {
 
         $obj = new SendingTextToSpeechSMSRequest();
 
-        $obj->setLanguage("fr-FR");
-        $this->assertEquals("fr-FR", $obj->getLanguage());
+        $obj->setLanguage(SendingTextToSpeechSMSInterface::LANGUAGE_FR);
+        $this->assertEquals(SendingTextToSpeechSMSInterface::LANGUAGE_FR, $obj->getLanguage());
     }
 
     /**

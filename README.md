@@ -116,7 +116,7 @@ $ vendor/bin/phpunit
 - ~~[14 Retrieving SMS replies](https://www.smsmode.com/pdf/fiche-HTTP-api-EN.pdf)~~
 - ~~[15 Sending text-to-speech SMS](https://www.smsmode.com/pdf/fiche-HTTP-api-EN.pdf)~~
 - ~~[16 Sending unicode SMS](https://www.smsmode.com/pdf/fiche-HTTP-api-EN.pdf)~~
-- [17 Sending SMS in batch mode (attached file)](https://www.smsmode.com/pdf/fiche-HTTP-api-EN.pdf)
+- ~~[17 Sending SMS in batch mode (attached file)](https://www.smsmode.com/pdf/fiche-HTTP-api-EN.pdf)~~
 
 ---
 
@@ -127,4 +127,3 @@ file for details.
 
 Please note that the sMsmode API is not free for use, see their
 [product page](https://www.smsmode.com/tarifs-sms/) for details on pricing.
-

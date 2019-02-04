@@ -12,6 +12,7 @@
 namespace WBW\Library\SMSMode\Traits;
 
 use UnexpectedValueException;
+use WBW\Library\SMSMode\API\SendingSMSBatchInterface;
 
 /**
  * Classe msg trait.
@@ -35,8 +36,8 @@ trait ClasseMsgTrait {
      */
     public function enumClasseMsg() {
         return [
-            ClasseMsgInterface::CLASSE_MSG_SMS,
-            ClasseMsgInterface::CLASSE_MSG_SMS_PRO,
+            SendingSMSBatchInterface::CLASSE_MSG_SMS,
+            SendingSMSBatchInterface::CLASSE_MSG_SMS_PRO,
         ];
     }
 

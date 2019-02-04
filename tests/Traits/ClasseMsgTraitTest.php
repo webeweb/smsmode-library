@@ -13,9 +13,9 @@ namespace WBW\Library\SMSMode\Tests\Traits;
 
 use Exception;
 use UnexpectedValueException;
+use WBW\Library\SMSMode\API\SendingSMSBatchInterface;
 use WBW\Library\SMSMode\Tests\AbstractTestCase;
 use WBW\Library\SMSMode\Tests\Fixtures\Traits\TestClasseMsgTrait;
-use WBW\Library\SMSMode\Traits\ClasseMsgInterface;
 
 /**
  * Classe msg trait test.
@@ -47,8 +47,8 @@ class ClasseMsgTraitTest extends AbstractTestCase {
         $obj = new TestClasseMsgTrait();
 
         $res = [
-            ClasseMsgInterface::CLASSE_MSG_SMS,
-            ClasseMsgInterface::CLASSE_MSG_SMS_PRO,
+            SendingSMSBatchInterface::CLASSE_MSG_SMS,
+            SendingSMSBatchInterface::CLASSE_MSG_SMS_PRO,
         ];
         $this->assertEquals($res, $obj->enumClasseMsg());
     }
@@ -62,8 +62,8 @@ class ClasseMsgTraitTest extends AbstractTestCase {
 
         $obj = new TestClasseMsgTrait();
 
-        $obj->setClasseMsg(1);
-        $this->assertEquals(1, $obj->getClasseMsg());
+        $obj->setClasseMsg(SendingSMSBatchInterface::CLASSE_MSG_SMS);
+        $this->assertEquals(SendingSMSBatchInterface::CLASSE_MSG_SMS, $obj->getClasseMsg());
     }
 
     /**

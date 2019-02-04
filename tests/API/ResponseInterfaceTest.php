@@ -107,8 +107,8 @@ class ResponseInterfaceTest extends AbstractTestCase {
         $this->assertEquals("Invalid recipient", ResponseInterface::RESPONSE_DESCRIPTION_3998);
         $this->assertEquals("Blacklisted recipient", ResponseInterface::RESPONSE_DESCRIPTION_3999);
 
-        $this->assertEquals("dmY", TestResponse::RESPONSE_DATE_FORMAT);
-        $this->assertEquals("dmY-H:i", TestResponse::RESPONSE_DATETIME_FORMAT);
-        $this->assertEquals("|", TestResponse::RESPONSE_DELIMITER);
+        $this->assertEquals("dmY", ResponseInterface::RESPONSE_DATE_FORMAT);
+        $this->assertEquals("dmY-H:i", ResponseInterface::RESPONSE_DATETIME_FORMAT);
+        $this->assertEquals("|", ResponseInterface::RESPONSE_DELIMITER);
     }
 }

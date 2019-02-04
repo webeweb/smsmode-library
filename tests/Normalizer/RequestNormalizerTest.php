@@ -24,6 +24,7 @@ use WBW\Library\SMSMode\Model\DeletingSMSRequest;
 use WBW\Library\SMSMode\Model\DeletingSubAccountRequest;
 use WBW\Library\SMSMode\Model\DeliveryReportRequest;
 use WBW\Library\SMSMode\Model\RetrievingSMSReplyRequest;
+use WBW\Library\SMSMode\Model\SendingSMSBatchRequest;
 use WBW\Library\SMSMode\Model\SendingSMSMessageRequest;
 use WBW\Library\SMSMode\Model\SendingTextToSpeechSMSRequest;
 use WBW\Library\SMSMode\Model\SendingUnicodeSMSRequest;
@@ -605,6 +606,64 @@ class RequestNormalizerTest extends AbstractTestCase {
      * @return void
      * @throws Exception Throws an exception if an error occurs.
      */
+    public function testNormalizeSendingSMSBatchRequest() {
+
+        // Set a Fichier mock.
+        $fichier = getcwd() . "/tests/Fixtures/Model/SendingSMSBatchRequest.csv";
+
+        // Set a Sending SMS batch request mock.
+        $arg = new SendingSMSBatchRequest();
+
+        $arg->setClasseMsg(SendingSMSBatchRequest::CLASSE_MSG_SMS);
+        $arg->setDateEnvoi(new DateTime("2019-02-04 18:00:00"));
+        $arg->setRefClient("refClient");
+        $arg->setEmetteur("emetteur");
+        $arg->setFichier($fichier);
+        $arg->setNbrMsg(1);
+        $arg->setNotificationUrl("notificationUrl");
+
+        $obj = new RequestNormalizer();
+
+        $res = [
+            "classe_msg"       => 4,
+            "date_envoi"       => "04022019-18:00",
+            "refClient"        => "refClient",
+            "emetteur"         => "emetteur",
+            "nbr_msg"          => 1,
+            "notification_url" => "notificationUrl",
+            "fichier"          => $fichier,
+        ];
+        $this->assertEquals($res, $obj->normalize($arg));
+    }
+
+    /**
+     * Tests the normalize() method.
+     *
+     * @return void
+     */
+    public function testNormalizeSendingSMSBatchRequestWithoutArguments() {
+
+        // Set a Sending SMS batch request mock.
+        $arg = new SendingSMSBatchRequest();
+
+        $obj = new RequestNormalizer();
+
+        try {
+
+            $obj->normalize($arg);
+        } catch (Exception $ex) {
+
+            $this->assertInstanceOf(InvalidArgumentException::class, $ex);
+            $this->assertEquals("The mandatory parameter \"fichier\" is missing", $ex->getMessage());
+        }
+    }
+
+    /**
+     * Tests the normalize() method.
+     *
+     * @return void
+     * @throws Exception Throws an exception if an error occurs.
+     */
     public function testNormalizeSendingSMSMessageRequest() {
 
         // Set a Sending SMS message request mock.
@@ -618,8 +677,8 @@ class RequestNormalizerTest extends AbstractTestCase {
         $arg->setRefClient("refClient");
         $arg->setEmetteur("emetteur");
         $arg->setNbrMsg(1);
-        $arg->setNotificationURL("notificationURL");
-        $arg->setNotificationURLReponse("notificationURLReponse");
+        $arg->setNotificationUrl("notificationUrl");
+        $arg->setNotificationUrlReponse("notificationUrlReponse");
         $arg->setStop(SendingSMSMessageRequest::STOP_ALWAYS);
 
         $obj = new RequestNormalizer();
@@ -632,8 +691,8 @@ class RequestNormalizerTest extends AbstractTestCase {
             "refClient"                => "refClient",
             "emetteur"                 => "emetteur",
             "nbr_msg"                  => 1,
-            "notification_url"         => "notificationURL",
-            "notification_url_reponse" => "notificationURLReponse",
+            "notification_url"         => "notificationUrl",
+            "notification_url_reponse" => "notificationUrlReponse",
             "stop"                     => 2,
         ];
         $this->assertEquals($res, $obj->normalize($arg));
@@ -657,8 +716,8 @@ class RequestNormalizerTest extends AbstractTestCase {
         $arg->setRefClient("refClient");
         $arg->setEmetteur("emetteur");
         $arg->setNbrMsg(1);
-        $arg->setNotificationURL("notificationURL");
-        $arg->setNotificationURLReponse("notificationURLReponse");
+        $arg->setNotificationUrl("notificationUrl");
+        $arg->setNotificationUrlReponse("notificationUrlReponse");
 
         $obj = new RequestNormalizer();
 
@@ -670,8 +729,8 @@ class RequestNormalizerTest extends AbstractTestCase {
             "refClient"                => "refClient",
             "emetteur"                 => "emetteur",
             "nbr_msg"                  => 1,
-            "notification_url"         => "notificationURL",
-            "notification_url_reponse" => "notificationURLReponse",
+            "notification_url"         => "notificationUrl",
+            "notification_url_reponse" => "notificationUrlReponse",
         ];
         $this->assertEquals($res, $obj->normalize($arg));
     }
@@ -789,8 +848,8 @@ class RequestNormalizerTest extends AbstractTestCase {
         $arg->setRefClient("refClient");
         $arg->setEmetteur("emetteur");
         $arg->setNbrMsg(1);
-        $arg->setNotificationURL("notificationURL");
-        $arg->setNotificationURLReponse("notificationURLReponse");
+        $arg->setNotificationUrl("notificationUrl");
+        $arg->setNotificationUrlReponse("notificationUrlReponse");
         $arg->setStop(SendingSMSMessageRequest::STOP_ALWAYS);
 
         $obj = new RequestNormalizer();
@@ -803,8 +862,8 @@ class RequestNormalizerTest extends AbstractTestCase {
             "refClient"                => "refClient",
             "emetteur"                 => "emetteur",
             "nbr_msg"                  => 1,
-            "notification_url"         => "notificationURL",
-            "notification_url_reponse" => "notificationURLReponse",
+            "notification_url"         => "notificationUrl",
+            "notification_url_reponse" => "notificationUrlReponse",
             "stop"                     => 2,
         ];
         $this->assertEquals($res, $obj->normalize($arg));

@@ -12,7 +12,7 @@
 namespace WBW\Library\SMSMode\Model;
 
 use UnexpectedValueException;
-use WBW\Library\SMSMode\Exception\InvalidNumeroException;
+use WBW\Library\SMSMode\API\SendingSMSMessageInterface;
 use WBW\Library\SMSMode\Traits\ClasseMsgTrait;
 use WBW\Library\SMSMode\Traits\DateEnvoiTrait;
 use WBW\Library\SMSMode\Traits\EmetteurTrait;
@@ -27,7 +27,7 @@ use WBW\Library\SMSMode\Traits\RefClientTrait;
  * @author webeweb <https://github.com/webeweb/>
  * @package WBW\Library\SMSMode\Model
  */
-class SendingSMSMessageRequest extends AbstractRequest {
+class SendingSMSMessageRequest extends AbstractRequest implements SendingSMSMessageInterface {
 
     use ClasseMsgTrait;
     use DateEnvoiTrait;
@@ -38,39 +38,11 @@ class SendingSMSMessageRequest extends AbstractRequest {
     use RefClientTrait;
 
     /**
-     * Classe msg "SMS".
-     *
-     * @var int
-     */
-    const CLASSE_MSG_SMS = 4;
-
-    /**
-     * Classe msg "SMS Pro".
-     *
-     * @var int
-     */
-    const CLASSE_MSG_SMS_PRO = 2;
-
-    /**
      * Sending SMS message resource path.
      *
      * @var string
      */
     const SENDING_SMS_MESSAGE_RESOURCE_PATH = "/http/1.6/sendSMS.do";
-
-    /**
-     * STOP "always".
-     *
-     * @var int
-     */
-    const STOP_ALWAYS = 2;
-
-    /**
-     * STOP "only".
-     *
-     * @var int
-     */
-    const STOP_ONLY = 1;
 
     /**
      * Groupe.
@@ -84,7 +56,7 @@ class SendingSMSMessageRequest extends AbstractRequest {
      *
      * @var string
      */
-    private $notificationURLReponse;
+    private $notificationUrlReponse;
 
     /**
      * Numero.
@@ -122,6 +94,18 @@ class SendingSMSMessageRequest extends AbstractRequest {
     }
 
     /**
+     * Enumerates the stop.
+     *
+     * @return array Returns the stop enumeration.
+     */
+    public function enumStop() {
+        return [
+            self::STOP_ALWAYS,
+            self::STOP_ONLY,
+        ];
+    }
+
+    /**
      * Get the groupe.
      *
      * @return string Returns the groupe.
@@ -135,8 +119,8 @@ class SendingSMSMessageRequest extends AbstractRequest {
      *
      * @return string Returns the notification URL reponse.
      */
-    public function getNotificationURLReponse() {
-        return $this->notificationURLReponse;
+    public function getNotificationUrlReponse() {
+        return $this->notificationUrlReponse;
     }
 
     /**
@@ -178,11 +162,11 @@ class SendingSMSMessageRequest extends AbstractRequest {
     /**
      * Set the notification URL reponse.
      *
-     * @param string $notificationURLReponse The notification URL reponse.
+     * @param string $notificationUrlReponse The notification URL reponse.
      * @return SendingSMSMessageRequest Returns this sending SMS message request.
      */
-    public function setNotificationURLReponse($notificationURLReponse) {
-        $this->notificationURLReponse = $notificationURLReponse;
+    public function setNotificationUrlReponse($notificationUrlReponse) {
+        $this->notificationUrlReponse = $notificationUrlReponse;
         return $this;
     }
 
@@ -205,7 +189,7 @@ class SendingSMSMessageRequest extends AbstractRequest {
      * @throws \UnexpectedValueException Throws an unexpected value exception if the classe msg is invalid.
      */
     public function setStop($stop) {
-        if (false === in_array($stop, [self::STOP_ALWAYS, self::STOP_ONLY])) {
+        if (false === in_array($stop, $this->enumStop())) {
             throw new UnexpectedValueException(sprintf("The stop \"%s\" is invalid", $stop));
         }
         $this->stop = $stop;

@@ -13,6 +13,7 @@ namespace WBW\Library\SMSMode\Tests\Model;
 
 use Exception;
 use UnexpectedValueException;
+use WBW\Library\SMSMode\API\SendingSMSMessageInterface;
 use WBW\Library\SMSMode\Model\SendingSMSMessageRequest;
 use WBW\Library\SMSMode\Tests\AbstractTestCase;
 
@@ -47,11 +48,6 @@ class SendingSMSMessageRequestTest extends AbstractTestCase {
 
         $this->assertEquals("/http/1.6/sendSMS.do", SendingSMSMessageRequest::SENDING_SMS_MESSAGE_RESOURCE_PATH);
 
-        $this->assertEquals(4, SendingSMSMessageRequest::CLASSE_MSG_SMS);
-        $this->assertEquals(2, SendingSMSMessageRequest::CLASSE_MSG_SMS_PRO);
-        $this->assertEquals(2, SendingSMSMessageRequest::STOP_ALWAYS);
-        $this->assertEquals(1, SendingSMSMessageRequest::STOP_ONLY);
-
         $obj = new SendingSMSMessageRequest();
 
         $this->assertNull($obj->getClasseMsg());
@@ -60,12 +56,28 @@ class SendingSMSMessageRequestTest extends AbstractTestCase {
         $this->assertNull($obj->getGroupe());
         $this->assertNull($obj->getMessage());
         $this->assertNull($obj->getNbrMsg());
-        $this->assertNull($obj->getNotificationURL());
-        $this->assertNull($obj->getNotificationURLReponse());
+        $this->assertNull($obj->getNotificationUrl());
+        $this->assertNull($obj->getNotificationUrlReponse());
         $this->assertEquals([], $obj->getNumero());
         $this->assertNull($obj->getRefClient());
         $this->assertEquals(SendingSMSMessageRequest::SENDING_SMS_MESSAGE_RESOURCE_PATH, $obj->getResourcePath());
         $this->assertNull($obj->getStop());
+    }
+
+    /**
+     * Tests the enumLanguage() method.
+     *
+     * @return void
+     */
+    public function testEnumLanguage() {
+
+        $obj = new SendingSMSMessageRequest();
+
+        $res = $obj->enumStop();
+        $this->assertCount(2, $res);
+
+        $this->assertContains(SendingSMSMessageInterface::STOP_ALWAYS, $res);
+        $this->assertContains(SendingSMSMessageInterface::STOP_ONLY, $res);
     }
 
     /**
@@ -82,16 +94,16 @@ class SendingSMSMessageRequestTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the setNotificationURLReponse() method.
+     * Tests the setNotificationUrlReponse() method.
      *
      * @return void
      */
-    public function testSetNotificationURLReponse() {
+    public function testSetNotificationUrlReponse() {
 
         $obj = new SendingSMSMessageRequest();
 
-        $obj->setNotificationURLReponse("notificationURLReponse");
-        $this->assertEquals("notificationURLReponse", $obj->getNotificationURLReponse());
+        $obj->setNotificationUrlReponse("notificationUrlReponse");
+        $this->assertEquals("notificationUrlReponse", $obj->getNotificationUrlReponse());
     }
 
     /**

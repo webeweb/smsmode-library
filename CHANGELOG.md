@@ -12,7 +12,9 @@ CHANGELOG
 - Add Delivery report callback support
 - Add Retrieving SMS reply support
 - Add Sent SMS message list support
+- Add Sending SMS batch support
 - Add Sending text-to-speech SMS support
+- Add Sending unicode SMS support
 - Add Status helper
 - Extends support up to more 300 recipients
 - Improve unit tests

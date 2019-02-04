@@ -64,7 +64,7 @@ class NbrMsgTraitTest extends AbstractTestCase {
         } catch (Exception $ex) {
 
             $this->assertInstanceOf(UnexpectedValueException::class, $ex);
-            $this->assertEquals("The \"nbrMsg\" must be greater than 0", $ex->getMessage());
+            $this->assertEquals("The \"nbr msg\" must be greater than 0", $ex->getMessage());
         }
     }
 }

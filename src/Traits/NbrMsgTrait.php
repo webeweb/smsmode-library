@@ -44,8 +44,8 @@ trait NbrMsgTrait {
      * @throws UnexpectedValueException Throws an illegal argument exception if the nbr msg is less than 1.
      */
     public function setNbrMsg($nbrMsg) {
-        if (null !== $nbrMsg && $nbrMsg <= 0) {
-            throw new UnexpectedValueException("The \"nbrMsg\" must be greater than 0");
+        if (null === $nbrMsg || $nbrMsg < 1) {
+            throw new UnexpectedValueException("The \"nbr msg\" must be greater than 0");
         }
         $this->nbrMsg = $nbrMsg;
         return $this;

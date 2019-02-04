@@ -17,7 +17,7 @@ use ReflectionException;
 use Symfony\Component\Yaml\Yaml;
 use WBW\Library\Core\Argument\ArrayHelper;
 use WBW\Library\Core\Argument\ObjectHelper;
-use WBW\Library\SMSMode\Model\AbstractRequest;
+use WBW\Library\SMSMode\API\RequestInterface;
 
 /**
  * Request normalizer.
@@ -99,7 +99,7 @@ class RequestNormalizer {
      * @return string Returns the formatted date.
      */
     protected function formatDate(DateTime $value) {
-        return $value->format(AbstractRequest::REQUEST_DATE_FORMAT);
+        return $value->format(RequestInterface::REQUEST_DATE_FORMAT);
     }
 
     /**
@@ -109,7 +109,7 @@ class RequestNormalizer {
      * @return string Returns the formatted date/time.
      */
     protected function formatDateTime(DateTime $value) {
-        return $value->format(AbstractRequest::REQUEST_DATETIME_FORMAT);
+        return $value->format(RequestInterface::REQUEST_DATETIME_FORMAT);
     }
 
     /**

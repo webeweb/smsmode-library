@@ -36,7 +36,7 @@ class AbstractRequestTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the setNumero() method.
+     * Tests the checkNumero() method.
      *
      * @return void
      * @throws Exception Throws an exception if an error occurs.

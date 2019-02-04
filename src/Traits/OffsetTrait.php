@@ -44,7 +44,7 @@ trait OffsetTrait {
      * @throws UnexpectedValueException Throws an illegal argument exception if the offset is less than 1.
      */
     public function setOffset($offset) {
-        if (null !== $offset && $offset <= 0) {
+        if (null !== $offset && $offset < 1) {
             throw new UnexpectedValueException("The \"offset\" must be greater than 0");
         }
         $this->offset = $offset;

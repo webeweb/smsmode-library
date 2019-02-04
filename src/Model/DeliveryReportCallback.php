@@ -11,6 +11,7 @@
 
 namespace WBW\Library\SMSMode\Model;
 
+use WBW\Library\SMSMode\API\DeliveryReportCallbackInterface;
 use WBW\Library\SMSMode\Traits\DateReceptionTrait;
 use WBW\Library\SMSMode\Traits\RefClientTrait;
 use WBW\Library\SMSMode\Traits\SmsIDTrait;
@@ -21,53 +22,11 @@ use WBW\Library\SMSMode\Traits\SmsIDTrait;
  * @author webeweb <https://github.com/webeweb/>
  * @package WBW\Library\SMSMode\Model
  */
-class DeliveryReportCallback extends DeliveryReport {
+class DeliveryReportCallback extends DeliveryReport implements DeliveryReportCallbackInterface {
 
     use DateReceptionTrait;
     use RefClientTrait;
     use SmsIDTrait;
-
-    /**
-     * Parameter "date reception".
-     *
-     * @var string
-     */
-    const PARAMETER_DATE_RECEPTION = "date_reception";
-
-    /**
-     * Parameter "MCC MNC".
-     *
-     * @var string
-     */
-    const PARAMETER_MCC_MNC = "mcc_mnc";
-
-    /**
-     * Parameter "numero".
-     *
-     * @var string
-     */
-    const PARAMETER_NUMERO = "numero";
-
-    /**
-     * Parameter "ref client".
-     *
-     * @var string
-     */
-    const PARAMETER_REF_CLIENT = "refClient";
-
-    /**
-     * Parameter "smsID".
-     *
-     * @var string
-     */
-    const PARAMETER_SMS_ID = "smsID";
-
-    /**
-     * Parameter "statut".
-     *
-     * @var string
-     */
-    const PARAMETER_STATUT = "statut";
 
     /**
      * MCC MNC.

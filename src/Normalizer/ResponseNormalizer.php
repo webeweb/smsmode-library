@@ -13,6 +13,7 @@ namespace WBW\Library\SMSMode\Normalizer;
 
 use DateTime;
 use WBW\Library\Core\Argument\ArrayHelper;
+use WBW\Library\SMSMode\API\ResponseInterface;
 use WBW\Library\SMSMode\Model\AbstractResponse;
 use WBW\Library\SMSMode\Model\AccountBalanceResponse;
 use WBW\Library\SMSMode\Model\AddingContactResponse;
@@ -24,6 +25,7 @@ use WBW\Library\SMSMode\Model\DeletingSubAccountResponse;
 use WBW\Library\SMSMode\Model\DeliveryReport;
 use WBW\Library\SMSMode\Model\DeliveryReportResponse;
 use WBW\Library\SMSMode\Model\RetrievingSMSReplyResponse;
+use WBW\Library\SMSMode\Model\SendingSMSBatchResponse;
 use WBW\Library\SMSMode\Model\SendingSMSMessageResponse;
 use WBW\Library\SMSMode\Model\SendingTextToSpeechSMSResponse;
 use WBW\Library\SMSMode\Model\SendingUnicodeSMSResponse;
@@ -54,6 +56,7 @@ class ResponseNormalizer {
             return $model;
         }
 
+        $model->setRawResponse($rawResponse);
         if (1 === preg_match("/^[0-9]{1,}\.[0-9]{1,}$/", trim($rawResponse))) {
             $model->setAccountBalance(floatval(trim($rawResponse)));
         }
@@ -100,12 +103,14 @@ class ResponseNormalizer {
         $decodedResponse = json_decode(trim($rawResponse), true);
 
         $model = new CreatingAPIKeyResponse();
+        $model->setRawResponse($rawResponse);
+
         if (false === array_key_exists("accessToken", $decodedResponse)) {
             $model->setException($decodedResponse);
         }
 
-        $creationDate = DateTime::createFromFormat(AbstractResponse::RESPONSE_DATE_FORMAT, ArrayHelper::get($decodedResponse, "creationDate"));
-        $expiration   = DateTime::createFromFormat(AbstractResponse::RESPONSE_DATE_FORMAT, ArrayHelper::get($decodedResponse, "expiration"));
+        $creationDate = DateTime::createFromFormat(ResponseInterface::RESPONSE_DATE_FORMAT, ArrayHelper::get($decodedResponse, "creationDate"));
+        $expiration   = DateTime::createFromFormat(ResponseInterface::RESPONSE_DATE_FORMAT, ArrayHelper::get($decodedResponse, "expiration"));
 
         $model->setId(ArrayHelper::get($decodedResponse, "id"));
         $model->setAccessToken(ArrayHelper::get($decodedResponse, "accessToken"));
@@ -168,6 +173,7 @@ class ResponseNormalizer {
     protected static function denormalizeDeliveryReport($rawResponse) {
 
         $model = new DeliveryReport();
+        $model->setRawResponse($rawResponse);
 
         $responses = explode(" ", preg_replace("/\ {1,}/", " ", trim($rawResponse)));
         if (count($responses) < 2) {
@@ -194,14 +200,12 @@ class ResponseNormalizer {
             return $model;
         }
 
-        $models = [];
+        $model->setRawResponse($rawResponse);
 
-        $responses = explode(AbstractResponse::RESPONSE_DELIMITER, trim($rawResponse));
+        $responses = explode(ResponseInterface::RESPONSE_DELIMITER, trim($rawResponse));
         foreach ($responses as $current) {
-            $models[] = static::denormalizeDeliveryReport($current);
+            $model->addDeliveryReport(static::denormalizeDeliveryReport($current));
         }
-
-        $model->setDeliveryReports($models);
 
         return $model;
     }
@@ -215,7 +219,9 @@ class ResponseNormalizer {
      */
     protected static function denormalizeResponse(AbstractResponse $model, $rawResponse) {
 
-        $responses = explode(AbstractResponse::RESPONSE_DELIMITER, trim($rawResponse));
+        $model->setRawResponse($rawResponse);
+
+        $responses = explode(ResponseInterface::RESPONSE_DELIMITER, trim($rawResponse));
         if (count($responses) < 2) {
             return;
         }
@@ -238,14 +244,12 @@ class ResponseNormalizer {
             return $model;
         }
 
-        $models = [];
+        $model->setRawResponse($rawResponse);
 
         $responses = explode("\n", trim($rawResponse));
         foreach ($responses as $current) {
-            $models[] = static::denormalizeSMSReply($current);
+            $model->addSMSReply(static::denormalizeSMSReply($current));
         }
-
-        $model->setSMSReplies($models);
 
         return $model;
     }
@@ -259,13 +263,14 @@ class ResponseNormalizer {
     protected static function denormalizeSMSReply($rawResponse) {
 
         $model = new SMSReply();
+        $model->setRawResponse($rawResponse);
 
-        $responses = explode(AbstractResponse::RESPONSE_DELIMITER, trim($rawResponse));
+        $responses = explode(ResponseInterface::RESPONSE_DELIMITER, trim($rawResponse));
         if (count($responses) < 6) {
             return $model;
         }
 
-        $receptionDate = DateTime::createFromFormat(AbstractResponse::RESPONSE_DATETIME_FORMAT, trim($responses[1]));
+        $receptionDate = DateTime::createFromFormat(ResponseInterface::RESPONSE_DATETIME_FORMAT, trim($responses[1]));
 
         $model->setResponseID(trim($responses[0]));
         if (false !== $receptionDate) {
@@ -275,6 +280,25 @@ class ResponseNormalizer {
         $model->setText(trim($responses[3]));
         $model->setTo(trim($responses[4]));
         $model->setMessageID(trim($responses[5]));
+
+        return $model;
+    }
+
+    /**
+     * Denormalize a sending SMS batch response.
+     *
+     * @param string $rawResponse The raw response.
+     * @return SendingSMSBatchResponse Returns the sending SMS batch response.
+     */
+    public static function denormalizeSendingSMSBatchResponse($rawResponse) {
+
+        $model = new SendingSMSBatchResponse();
+        static::denormalizeResponse($model, $rawResponse);
+
+        $responses = explode(ResponseInterface::RESPONSE_DELIMITER, trim($rawResponse));
+        if (ResponseInterface::RESPONSE_CODE_0 === $model->getCode() && 3 === count($responses)) {
+            $model->setCampagneID(trim($responses[2]));
+        }
 
         return $model;
     }
@@ -290,8 +314,8 @@ class ResponseNormalizer {
         $model = new SendingSMSMessageResponse();
         static::denormalizeResponse($model, $rawResponse);
 
-        $responses = explode(AbstractResponse::RESPONSE_DELIMITER, trim($rawResponse));
-        if (AbstractResponse::RESPONSE_CODE_0 === $model->getCode() && 3 === count($responses)) {
+        $responses = explode(ResponseInterface::RESPONSE_DELIMITER, trim($rawResponse));
+        if (ResponseInterface::RESPONSE_CODE_0 === $model->getCode() && 3 === count($responses)) {
             $model->setSmsID(trim($responses[2]));
         }
 
@@ -309,8 +333,8 @@ class ResponseNormalizer {
         $model = new SendingTextToSpeechSMSResponse();
         static::denormalizeResponse($model, $rawResponse);
 
-        $responses = explode(AbstractResponse::RESPONSE_DELIMITER, trim($rawResponse));
-        if (AbstractResponse::RESPONSE_CODE_0 === $model->getCode() && 3 === count($responses)) {
+        $responses = explode(ResponseInterface::RESPONSE_DELIMITER, trim($rawResponse));
+        if (ResponseInterface::RESPONSE_CODE_0 === $model->getCode() && 3 === count($responses)) {
             $model->setSmsID(trim($responses[2]));
         }
 
@@ -328,8 +352,8 @@ class ResponseNormalizer {
         $model = new SendingUnicodeSMSResponse();
         static::denormalizeResponse($model, $rawResponse);
 
-        $responses = explode(AbstractResponse::RESPONSE_DELIMITER, trim($rawResponse));
-        if (AbstractResponse::RESPONSE_CODE_0 === $model->getCode() && 3 === count($responses)) {
+        $responses = explode(ResponseInterface::RESPONSE_DELIMITER, trim($rawResponse));
+        if (ResponseInterface::RESPONSE_CODE_0 === $model->getCode() && 3 === count($responses)) {
             $model->setSmsID(trim($responses[2]));
         }
 
@@ -345,13 +369,14 @@ class ResponseNormalizer {
     protected static function denormalizeSentSMSMessage($rawResponse) {
 
         $model = new SentSMSMessage();
+        $model->setRawResponse($rawResponse);
 
-        $responses = explode(AbstractResponse::RESPONSE_DELIMITER, trim($rawResponse));
+        $responses = explode(ResponseInterface::RESPONSE_DELIMITER, trim($rawResponse));
         if (count($responses) < 6) {
             return $model;
         }
 
-        $sendDate = DateTime::createFromFormat(AbstractResponse::RESPONSE_DATETIME_FORMAT, trim($responses[1]));
+        $sendDate = DateTime::createFromFormat(ResponseInterface::RESPONSE_DATETIME_FORMAT, trim($responses[1]));
 
         $model->setSmsID(trim($responses[0]));
         if (false !== $sendDate) {
@@ -379,14 +404,12 @@ class ResponseNormalizer {
             return $model;
         }
 
-        $models = [];
+        $model->setRawResponse($rawResponse);
 
         $responses = explode("\n", trim($rawResponse));
         foreach ($responses as $current) {
-            $models[] = static::denormalizeSentSMSMessage($current);
+            $model->addSentSMSMessage(static::denormalizeSentSMSMessage($current));
         }
-
-        $model->setSentSMSMessages($models);
 
         return $model;
     }

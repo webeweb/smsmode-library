@@ -21,6 +21,7 @@ use WBW\Library\SMSMode\Model\DeletingSubAccountResponse;
 use WBW\Library\SMSMode\Model\DeliveryReport;
 use WBW\Library\SMSMode\Model\DeliveryReportResponse;
 use WBW\Library\SMSMode\Model\RetrievingSMSReplyResponse;
+use WBW\Library\SMSMode\Model\SendingSMSBatchResponse;
 use WBW\Library\SMSMode\Model\SendingSMSMessageResponse;
 use WBW\Library\SMSMode\Model\SendingTextToSpeechSMSResponse;
 use WBW\Library\SMSMode\Model\SendingUnicodeSMSResponse;
@@ -55,6 +56,7 @@ class ResponseNormalizerTest extends AbstractTestCase {
 
         $this->assertNull($obj->getCode());
         $this->assertNull($obj->getDescription());
+        $this->assertEquals($rawResponse, $obj->getRawResponse());
 
         $this->assertEquals(212.5, $obj->getAccountBalance());
     }
@@ -74,6 +76,7 @@ class ResponseNormalizerTest extends AbstractTestCase {
 
         $this->assertEquals(0, $obj->getCode());
         $this->assertEquals("Contact added", $obj->getDescription());
+        $this->assertEquals($rawResponse, $obj->getRawResponse());
     }
 
     /**
@@ -91,6 +94,7 @@ class ResponseNormalizerTest extends AbstractTestCase {
 
         $this->assertEquals(0, $obj->getCode());
         $this->assertEquals("Sent", $obj->getDescription());
+        $this->assertEquals($rawResponse, $obj->getRawResponse());
     }
 
     /**
@@ -117,6 +121,7 @@ EOT;
 
         $this->assertNull($obj->getCode());
         $this->assertNull($obj->getDescription());
+        $this->assertEquals($rawResponse, $obj->getRawResponse());
 
         $this->assertEquals("accessToken", $obj->getAccessToken());
         $this->assertEquals("account", $obj->getAccount());
@@ -141,6 +146,7 @@ EOT;
 
         $this->assertEquals(0, $obj->getCode());
         $this->assertEquals("Sub-account created", $obj->getDescription());
+        $this->assertEquals($rawResponse, $obj->getRawResponse());
     }
 
     /**
@@ -158,6 +164,7 @@ EOT;
 
         $this->assertEquals(0, $obj->getCode());
         $this->assertEquals("SMS message deleted", $obj->getDescription());
+        $this->assertEquals($rawResponse, $obj->getRawResponse());
     }
 
     /**
@@ -175,6 +182,7 @@ EOT;
 
         $this->assertEquals(0, $obj->getCode());
         $this->assertEquals("Sub-account deleted", $obj->getDescription());
+        $this->assertEquals($rawResponse, $obj->getRawResponse());
     }
 
     /**
@@ -185,16 +193,17 @@ EOT;
     public function testDenormalizeDeliveryReport() {
 
         // Initialize a Raw response mock.
-        // $rawResponse = "33612345678 0"; /* A well formed raw response */
-        $rawResponse = "   33612345678     0   "; /* A bad formed raw response */
+        // $rawResponse = "33600000000 0"; /* A well formed raw response */
+        $rawResponse = "  33600000000  0  "; /* A bad formed raw response */
 
         $obj = TestResponseNormalizer::denormalizeDeliveryReport($rawResponse);
         $this->assertInstanceOf(DeliveryReport::class, $obj);
 
         $this->assertEquals(0, $obj->getCode());
         $this->assertNull($obj->getDescription());
+        $this->assertEquals($rawResponse, $obj->getRawResponse());
 
-        $this->assertEquals("33612345678", $obj->getNumero());
+        $this->assertEquals("33600000000", $obj->getNumero());
     }
 
     /**
@@ -205,25 +214,26 @@ EOT;
     public function testDenormalizeDeliveryReportResponse() {
 
         // Initialize a Raw response mock.
-        // $rawResponse = "33612345670 0 | 33612345671 2 | 33612345672 11"; /* A well formed delivery report. */
-        $rawResponse = "  33612345670   0    |   33612345671   2   |   33612345672   11    "; /* A bad formed delivery report */
+        // $rawResponse = "33600000001 0 | 33600000002 2 | 33600000003 11"; /* A well formed delivery report. */
+        $rawResponse = "  33600000001  0  |  33600000002  2  |  33600000003  11  "; /* A bad formed delivery report */
 
         $obj = ResponseNormalizer::denormalizeDeliveryReportResponse($rawResponse);
         $this->assertInstanceOf(DeliveryReportResponse::class, $obj);
 
         $this->assertNull($obj->getCode());
         $this->assertNull($obj->getDescription());
+        $this->assertEquals($rawResponse, $obj->getRawResponse());
 
         $this->assertCount(3, $obj->getDeliveryReports());
 
         $this->assertEquals(0, $obj->getDeliveryReports()[0]->getCode());
-        $this->assertEquals("33612345670", $obj->getDeliveryReports()[0]->getNumero());
+        $this->assertEquals("33600000001", $obj->getDeliveryReports()[0]->getNumero());
 
         $this->assertEquals(2, $obj->getDeliveryReports()[1]->getCode());
-        $this->assertEquals("33612345671", $obj->getDeliveryReports()[1]->getNumero());
+        $this->assertEquals("33600000002", $obj->getDeliveryReports()[1]->getNumero());
 
         $this->assertEquals(11, $obj->getDeliveryReports()[2]->getCode());
-        $this->assertEquals("33612345672", $obj->getDeliveryReports()[2]->getNumero());
+        $this->assertEquals("33600000003", $obj->getDeliveryReports()[2]->getNumero());
     }
 
     /**
@@ -241,6 +251,7 @@ EOT;
 
         $this->assertEquals(31, $obj->getCode());
         $this->assertEquals("Internal error", $obj->getDescription());
+        $this->assertEquals($rawResponse, $obj->getRawResponse());
 
         $this->assertCount(0, $obj->getDeliveryReports());
     }
@@ -253,14 +264,15 @@ EOT;
     public function testDenormalizeDeliveryReportWithoutArguments() {
 
         // Initialize a Raw response mock.
-        // $rawResponse = "33612345678 0"; /* A well formed raw response */
-        $rawResponse = "33612345678"; /* A bad formed raw response */
+        // $rawResponse = "33600000000 0"; /* A well formed raw response */
+        $rawResponse = "33600000000"; /* A bad formed raw response */
 
         $obj = TestResponseNormalizer::denormalizeDeliveryReport($rawResponse);
         $this->assertInstanceOf(DeliveryReport::class, $obj);
 
         $this->assertNull($obj->getCode());
         $this->assertNull($obj->getDescription());
+        $this->assertEquals($rawResponse, $obj->getRawResponse());
 
         $this->assertNull($obj->getNumero());
     }
@@ -283,6 +295,7 @@ EOT;
 
         $this->assertNull($obj->getCode());
         $this->assertNull($obj->getDescription());
+        $this->assertEquals($rawResponse, $obj->getRawResponse());
     }
 
     /**
@@ -294,9 +307,9 @@ EOT;
 
         // Initialize a Raw response mock.
         $rawResponse = <<< EOT
-responseID1 | 23012019-18:00 | from1 | text1 | to1 | messageID1
-responseID2 | 23012019-19:00 | from2 | text2 | to2 | messageID2
-responseID3 | 23012019-20:00 | from3 | text3 | to3 | messageID3
+responseID1 | 23012019-18:00 | 33600000001 | text1 | to1 | messageID1
+responseID2 | 23012019-19:00 | 33600000002 | text2 | to2 | messageID2
+responseID3 | 23012019-20:00 | 33600000003 | text3 | to3 | messageID3
 EOT;
 
         $obj = ResponseNormalizer::denormalizeRetrievingSMSReplyResponse($rawResponse);
@@ -304,24 +317,25 @@ EOT;
 
         $this->assertNull($obj->getCode());
         $this->assertNull($obj->getDescription());
+        $this->assertEquals($rawResponse, $obj->getRawResponse());
 
         $this->assertCount(3, $obj->getSmsReplies());
 
-        $this->assertEquals("from1", $obj->getSmsReplies()[0]->getFrom());
+        $this->assertEquals("33600000001", $obj->getSmsReplies()[0]->getFrom());
         $this->assertEquals("messageID1", $obj->getSmsReplies()[0]->getMessageID());
         $this->assertEquals("2019-01-23 18:00", $obj->getSmsReplies()[0]->getReceptionDate()->format("Y-m-d H:i"));
         $this->assertEquals("responseID1", $obj->getSmsReplies()[0]->getResponseID());
         $this->assertEquals("text1", $obj->getSmsReplies()[0]->getText());
         $this->assertEquals("to1", $obj->getSmsReplies()[0]->getTo());
 
-        $this->assertEquals("from2", $obj->getSmsReplies()[1]->getFrom());
+        $this->assertEquals("33600000002", $obj->getSmsReplies()[1]->getFrom());
         $this->assertEquals("messageID2", $obj->getSmsReplies()[1]->getMessageID());
         $this->assertEquals("2019-01-23 19:00", $obj->getSmsReplies()[1]->getReceptionDate()->format("Y-m-d H:i"));
         $this->assertEquals("responseID2", $obj->getSmsReplies()[1]->getResponseID());
         $this->assertEquals("text2", $obj->getSmsReplies()[1]->getText());
         $this->assertEquals("to2", $obj->getSmsReplies()[1]->getTo());
 
-        $this->assertEquals("from3", $obj->getSmsReplies()[2]->getFrom());
+        $this->assertEquals("33600000003", $obj->getSmsReplies()[2]->getFrom());
         $this->assertEquals("messageID3", $obj->getSmsReplies()[2]->getMessageID());
         $this->assertEquals("2019-01-23 20:00", $obj->getSmsReplies()[2]->getReceptionDate()->format("Y-m-d H:i"));
         $this->assertEquals("responseID3", $obj->getSmsReplies()[2]->getResponseID());
@@ -344,6 +358,7 @@ EOT;
 
         $this->assertEquals(32, $obj->getCode());
         $this->assertEquals("Authentication error", $obj->getDescription());
+        $this->assertEquals($rawResponse, $obj->getRawResponse());
 
         $this->assertCount(0, $obj->getSmsReplies());
     }
@@ -356,16 +371,17 @@ EOT;
     public function testDenormalizeSMSReply() {
 
         // Initialize a Raw response mock.
-        // $rawResponse = "responseID | 23012019-18:00 | from | text | to | messageID"; /* A well formed raw response */
-        $rawResponse = "     responseID    |    23012019-18:00    |    from     | text    |    to    |     messageID    "; /* A bad formed raw response */
+        // $rawResponse = "responseID | 23012019-18:00 | 33600000000 | text | to | messageID"; /* A well formed raw response */
+        $rawResponse = "  responseID  |  23012019-18:00  |  33600000000  |  text  |  to  |  messageID  "; /* A bad formed raw response */
 
         $obj = TestResponseNormalizer::denormalizeSMSReply($rawResponse);
         $this->assertInstanceOf(SMSReply::class, $obj);
 
         $this->assertNull($obj->getCode());
         $this->assertNull($obj->getDescription());
+        $this->assertEquals($rawResponse, $obj->getRawResponse());
 
-        $this->assertEquals("from", $obj->getFrom());
+        $this->assertEquals("33600000000", $obj->getFrom());
         $this->assertEquals("messageID", $obj->getMessageID());
         $this->assertEquals("2019-01-23 18:00", $obj->getReceptionDate()->format("Y-m-d H:i"));
         $this->assertEquals("responseID", $obj->getResponseID());
@@ -381,14 +397,15 @@ EOT;
     public function testDenormalizeSMSReplyWithoutArguments() {
 
         // Initialize a Raw response mock.
-        // $rawResponse = "responseID | 23012019-18:00 | from | text | to | messageID"; /* A well formed raw response */
-        $rawResponse = "responseID | 23012019-18:00 | from | text | to"; /* A bad formed raw response */
+        // $rawResponse = "responseID | 23012019-18:00 | 33600000000 | text | to | messageID"; /* A well formed raw response */
+        $rawResponse = "responseID | 23012019-18:00 | 33600000000 | text | to"; /* A bad formed raw response */
 
         $obj = TestResponseNormalizer::denormalizeSMSReply($rawResponse);
         $this->assertInstanceOf(SMSReply::class, $obj);
 
         $this->assertNull($obj->getCode());
         $this->assertNull($obj->getDescription());
+        $this->assertEquals($rawResponse, $obj->getRawResponse());
 
         $this->assertNull($obj->getFrom());
         $this->assertNull($obj->getMessageID());
@@ -396,6 +413,26 @@ EOT;
         $this->assertNull($obj->getResponseID());
         $this->assertNull($obj->getText());
         $this->assertNull($obj->getTo());
+    }
+
+    /**
+     * Tests the denormalizeSendingSMSBatchResponse() method.
+     *
+     * @return void
+     */
+    public function testDenormalizeSendingSMSBatchResponse() {
+
+        // Initialize a Raw response mock.
+        $rawResponse = "0 | Accepted | campagneID";
+
+        $obj = ResponseNormalizer::denormalizeSendingSMSBatchResponse($rawResponse);
+        $this->assertInstanceOf(SendingSMSBatchResponse::class, $obj);
+
+        $this->assertEquals(0, $obj->getCode());
+        $this->assertEquals("Accepted", $obj->getDescription());
+        $this->assertEquals($rawResponse, $obj->getRawResponse());
+
+        $this->assertEquals("campagneID", $obj->getCampagneID());
     }
 
     /**
@@ -413,6 +450,7 @@ EOT;
 
         $this->assertEquals(0, $obj->getCode());
         $this->assertEquals("Accepted", $obj->getDescription());
+        $this->assertEquals($rawResponse, $obj->getRawResponse());
 
         $this->assertEquals("smsID", $obj->getSmsID());
     }
@@ -432,6 +470,7 @@ EOT;
 
         $this->assertEquals(0, $obj->getCode());
         $this->assertEquals("Accepted", $obj->getDescription());
+        $this->assertEquals($rawResponse, $obj->getRawResponse());
 
         $this->assertEquals("smsID", $obj->getSmsID());
     }
@@ -451,6 +490,7 @@ EOT;
 
         $this->assertEquals(0, $obj->getCode());
         $this->assertEquals("Accepted", $obj->getDescription());
+        $this->assertEquals($rawResponse, $obj->getRawResponse());
 
         $this->assertEquals("smsID", $obj->getSmsID());
     }
@@ -463,18 +503,19 @@ EOT;
     public function testDenormalizeSentSMSMessage() {
 
         // Initialize a Raw response mock.
-        // $rawResponse = "smsID | 23012019-18:00 | message | 33612345678 | 0.1 | 1"; /* A well formed raw response */
-        $rawResponse = "     smsID    |    23012019-18:00    |    message     | 33612345678    |    0.1    |     1    "; /* A bad formed raw response */
+        // $rawResponse = "smsID | 23012019-18:00 | message | 33600000000 | 0.1 | 1"; /* A well formed raw response */
+        $rawResponse = "  smsID  |  23012019-18:00  |  message  | 33600000000  |  0.1  |  1  "; /* A bad formed raw response */
 
         $obj = TestResponseNormalizer::denormalizeSentSMSMessage($rawResponse);
         $this->assertInstanceOf(SentSMSMessage::class, $obj);
 
         $this->assertNull($obj->getCode());
         $this->assertNull($obj->getDescription());
+        $this->assertEquals($rawResponse, $obj->getRawResponse());
 
         $this->assertEquals(0.1, $obj->getCostCredits());
         $this->assertEquals("message", $obj->getMessage());
-        $this->assertEquals("33612345678", $obj->getNumero());
+        $this->assertEquals("33600000000", $obj->getNumero());
         $this->assertEquals(1, $obj->getRecipientCount());
         $this->assertEquals("2019-01-23 18:00", $obj->getSendDate()->format("Y-m-d H:i"));
         $this->assertEquals("smsID", $obj->getSmsID());
@@ -489,9 +530,9 @@ EOT;
 
         // Initialize a Raw response mock.
         $rawResponse = <<< EOT
-smsID1 | 23012019-18:00 | message1 | 33612345670 | 0.1 | 1
-smsID2 | 23012019-19:00 | message2 | 33612345671 | 0.2 | 2
-smsID3 | 23012019-20:00 | message3 | 33612345672 | 0.3 | 3
+smsID1 | 23012019-18:00 | message1 | 33600000001 | 0.1 | 1
+smsID2 | 23012019-19:00 | message2 | 33600000002 | 0.2 | 2
+smsID3 | 23012019-20:00 | message3 | 33600000003 | 0.3 | 3
 EOT;
 
         $obj = ResponseNormalizer::denormalizeSentSMSMessageListResponse($rawResponse);
@@ -499,26 +540,27 @@ EOT;
 
         $this->assertNull($obj->getCode());
         $this->assertNull($obj->getDescription());
+        $this->assertEquals($rawResponse, $obj->getRawResponse());
 
         $this->assertCount(3, $obj->getSentSMSMessages());
 
         $this->assertEquals(0.1, $obj->getSentSMSMessages()[0]->getCostCredits());
         $this->assertEquals("message1", $obj->getSentSMSMessages()[0]->getMessage());
-        $this->assertEquals("33612345670", $obj->getSentSMSMessages()[0]->getNumero());
+        $this->assertEquals("33600000001", $obj->getSentSMSMessages()[0]->getNumero());
         $this->assertEquals(1, $obj->getSentSMSMessages()[0]->getRecipientCount());
         $this->assertEquals("2019-01-23 18:00", $obj->getSentSMSMessages()[0]->getSendDate()->format("Y-m-d H:i"));
         $this->assertEquals("smsID1", $obj->getSentSMSMessages()[0]->getSmsID());
 
         $this->assertEquals(0.2, $obj->getSentSMSMessages()[1]->getCostCredits());
         $this->assertEquals("message2", $obj->getSentSMSMessages()[1]->getMessage());
-        $this->assertEquals("33612345671", $obj->getSentSMSMessages()[1]->getNumero());
+        $this->assertEquals("33600000002", $obj->getSentSMSMessages()[1]->getNumero());
         $this->assertEquals(2, $obj->getSentSMSMessages()[1]->getRecipientCount());
         $this->assertEquals("2019-01-23 19:00", $obj->getSentSMSMessages()[1]->getSendDate()->format("Y-m-d H:i"));
         $this->assertEquals("smsID2", $obj->getSentSMSMessages()[1]->getSmsID());
 
         $this->assertEquals(0.3, $obj->getSentSMSMessages()[2]->getCostCredits());
         $this->assertEquals("message3", $obj->getSentSMSMessages()[2]->getMessage());
-        $this->assertEquals("33612345672", $obj->getSentSMSMessages()[2]->getNumero());
+        $this->assertEquals("33600000003", $obj->getSentSMSMessages()[2]->getNumero());
         $this->assertEquals(3, $obj->getSentSMSMessages()[2]->getRecipientCount());
         $this->assertEquals("2019-01-23 20:00", $obj->getSentSMSMessages()[2]->getSendDate()->format("Y-m-d H:i"));
         $this->assertEquals("smsID3", $obj->getSentSMSMessages()[2]->getSmsID());
@@ -539,6 +581,7 @@ EOT;
 
         $this->assertEquals(32, $obj->getCode());
         $this->assertEquals("Authentication error", $obj->getDescription());
+        $this->assertEquals($rawResponse, $obj->getRawResponse());
 
         $this->assertCount(0, $obj->getSentSMSMessages());
     }
@@ -551,14 +594,15 @@ EOT;
     public function testDenormalizeSentSMSMessageWithoutArguments() {
 
         // Initialize a Raw response mock.
-        // $rawResponse = "smsID | 23012019-18:00 | message | 33612345678 | 0.1 | 1"; /* A well formed raw response */
-        $rawResponse = "smsID | 23012019-18:00 | message | 33612345678 | 0.1"; /* A bad formed raw response */
+        // $rawResponse = "smsID | 23012019-18:00 | message | 33600000000 | 0.1 | 1"; /* A well formed raw response */
+        $rawResponse = "smsID | 23012019-18:00 | message | 33600000000 | 0.1"; /* A bad formed raw response */
 
         $obj = TestResponseNormalizer::denormalizeSentSMSMessage($rawResponse);
         $this->assertInstanceOf(SentSMSMessage::class, $obj);
 
         $this->assertNull($obj->getCode());
         $this->assertNull($obj->getDescription());
+        $this->assertEquals($rawResponse, $obj->getRawResponse());
 
         $this->assertNull($obj->getCostCredits());
         $this->assertNull($obj->getMessage());
@@ -583,5 +627,6 @@ EOT;
 
         $this->assertEquals(0, $obj->getCode());
         $this->assertEquals("Transfer done", $obj->getDescription());
+        $this->assertEquals($rawResponse, $obj->getRawResponse());
     }
 }

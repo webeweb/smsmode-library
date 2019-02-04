@@ -12,6 +12,7 @@
 namespace WBW\Library\SMSMode\Model;
 
 use UnexpectedValueException;
+use WBW\Library\SMSMode\API\SendingTextToSpeechSMSInterface;
 use WBW\Library\SMSMode\Traits\DateEnvoiTrait;
 use WBW\Library\SMSMode\Traits\MessageTrait;
 
@@ -21,38 +22,10 @@ use WBW\Library\SMSMode\Traits\MessageTrait;
  * @author webeweb <https://github.com/webeweb/>
  * @package WBW\Library\SMSMode\Model
  */
-class SendingTextToSpeechSMSRequest extends AbstractRequest {
+class SendingTextToSpeechSMSRequest extends AbstractRequest implements SendingTextToSpeechSMSInterface {
 
     use DateEnvoiTrait;
     use MessageTrait;
-
-    /**
-     * Language "de-DE".
-     *
-     * @var string
-     */
-    const LANGUAGE_DE = "de-DE";
-
-    /**
-     * Language "en-GB".
-     *
-     * @var string
-     */
-    const LANGUAGE_EN = "en-GB";
-
-    /**
-     * Language "es-ES".
-     *
-     * @var string
-     */
-    const LANGUAGE_ES = "es-ES";
-
-    /**
-     * Language "fr-FR".
-     *
-     * @var string
-     */
-    const LANGUAGE_FR = "fr-FR";
 
     /**
      * Sending text-to-speech SMS request.
@@ -104,6 +77,18 @@ class SendingTextToSpeechSMSRequest extends AbstractRequest {
     }
 
     /**
+     * Enumerates the language.
+     *
+     * @return array Returns the language enumeration.
+     */
+    public function enumLanguage() {
+        return [self::LANGUAGE_FR,
+                self::LANGUAGE_EN,
+                self::LANGUAGE_DE,
+                self::LANGUAGE_ES];
+    }
+
+    /**
      * Get the language.
      *
      * @return string Returns the language.
@@ -145,7 +130,7 @@ class SendingTextToSpeechSMSRequest extends AbstractRequest {
      * @throws UnexpectedValueException Throws an unexpected value exception if the language is invalid.
      */
     public function setLanguage($language) {
-        if (false === in_array($language, [self::LANGUAGE_FR, self::LANGUAGE_EN, self::LANGUAGE_DE, self::LANGUAGE_ES])) {
+        if (false === in_array($language, $this->enumLanguage())) {
             throw new UnexpectedValueException(sprintf("The language \"%s\" is invalid", $language));
         }
         $this->language = $language;

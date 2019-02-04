@@ -13,6 +13,7 @@ namespace WBW\Library\SMSMode\Tests\Model;
 
 use Exception;
 use UnexpectedValueException;
+use WBW\Library\SMSMode\API\SendingTextToSpeechSMSInterface;
 use WBW\Library\SMSMode\Model\SendingTextToSpeechSMSRequest;
 use WBW\Library\SMSMode\Tests\AbstractTestCase;
 
@@ -47,11 +48,6 @@ class SendingTextToSpeechSMSRequestTest extends AbstractTestCase {
 
         $this->assertEquals("/http/1.6/sendVoiceMessage.do", SendingTextToSpeechSMSRequest::SENDING_TEXT_TO_SPEECH_SMS_RESOURCE_PATH);
 
-        $this->assertEquals("de-DE", SendingTextToSpeechSMSRequest::LANGUAGE_DE);
-        $this->assertEquals("en-GB", SendingTextToSpeechSMSRequest::LANGUAGE_EN);
-        $this->assertEquals("es-ES", SendingTextToSpeechSMSRequest::LANGUAGE_ES);
-        $this->assertEquals("fr-FR", SendingTextToSpeechSMSRequest::LANGUAGE_FR);
-
         $obj = new SendingTextToSpeechSMSRequest();
 
         $this->assertNull($obj->getDateEnvoi());
@@ -60,6 +56,24 @@ class SendingTextToSpeechSMSRequestTest extends AbstractTestCase {
         $this->assertEquals([], $obj->getNumero());
         $this->assertEquals(SendingTextToSpeechSMSRequest::SENDING_TEXT_TO_SPEECH_SMS_RESOURCE_PATH, $obj->getResourcePath());
         $this->assertNull($obj->getTitle());
+    }
+
+    /**
+     * Tests the enumLanguage() method.
+     *
+     * @return void
+     */
+    public function testEnumLanguage() {
+
+        $obj = new SendingTextToSpeechSMSRequest();
+
+        $res = $obj->enumLanguage();
+        $this->assertCount(4, $res);
+
+        $this->assertContains(SendingTextToSpeechSMSInterface::LANGUAGE_DE, $res);
+        $this->assertContains(SendingTextToSpeechSMSInterface::LANGUAGE_EN, $res);
+        $this->assertContains(SendingTextToSpeechSMSInterface::LANGUAGE_ES, $res);
+        $this->assertContains(SendingTextToSpeechSMSInterface::LANGUAGE_FR, $res);
     }
 
     /**

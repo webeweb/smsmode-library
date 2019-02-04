@@ -82,10 +82,12 @@ class SendingTextToSpeechSMSRequest extends AbstractRequest implements SendingTe
      * @return array Returns the language enumeration.
      */
     public function enumLanguage() {
-        return [self::LANGUAGE_FR,
-                self::LANGUAGE_EN,
-                self::LANGUAGE_DE,
-                self::LANGUAGE_ES];
+        return [
+            self::LANGUAGE_FR,
+            self::LANGUAGE_EN,
+            self::LANGUAGE_DE,
+            self::LANGUAGE_ES,
+        ];
     }
 
     /**

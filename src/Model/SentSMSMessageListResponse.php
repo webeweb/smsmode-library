@@ -35,6 +35,17 @@ class SentSMSMessageListResponse extends AbstractResponse {
     }
 
     /**
+     * Add a sent SMS message.
+     *
+     * @param SentSMSMessage $sentSMSMessage The sent SMS message.
+     * @return SentSMSMessageListResponse Returns this sent SMS message list response.
+     */
+    public function addSentSMSMessage(SentSMSMessage $sentSMSMessage) {
+        $this->sentSMSMessages[] = $sentSMSMessage;
+        return $this;
+    }
+
+    /**
      * Get the sent SMS messages.
      *
      * @return SentSMSMessage[] Returns the sent SMS messages.
@@ -58,7 +69,7 @@ class SentSMSMessageListResponse extends AbstractResponse {
      * @param SentSMSMessage[] $sentSMSMessages The sent SMS messages.
      * @return SentSMSMessageListResponse Returns this sent SMS message list response.
      */
-    public function setSentSMSMessages($sentSMSMessages) {
+    protected function setSentSMSMessages($sentSMSMessages) {
         $this->sentSMSMessages = $sentSMSMessages;
         return $this;
     }

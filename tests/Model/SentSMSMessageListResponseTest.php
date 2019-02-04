@@ -24,6 +24,22 @@ use WBW\Library\SMSMode\Tests\AbstractTestCase;
 class SentSMSMessageListResponseTest extends AbstractTestCase {
 
     /**
+     * Tests the addSentSMSMessage() method.
+     *
+     * @return void
+     */
+    public function testAddSentSMSMessage() {
+
+        // Set a Sent SMS message mock.
+        $sentSMSMessage = new SentSMSMessage();
+
+        $obj = new SentSMSMessageListResponse();
+
+        $obj->addSentSMSMessage($sentSMSMessage);
+        $this->assertEquals([$sentSMSMessage], $obj->getSentSMSMessages());
+    }
+
+    /**
      * Tests the __construct() method.
      *
      * @return void
@@ -51,23 +67,7 @@ class SentSMSMessageListResponseTest extends AbstractTestCase {
 
         $obj = new SentSMSMessageListResponse();
 
-        $obj->setSentSMSMessages([$sentSMSMessage]);
+        $obj->addSentSMSMessage($sentSMSMessage);
         $this->assertTrue($obj->hasSentSMSMessage());
-    }
-
-    /**
-     * Tests the setSentSMSMessages() method.
-     *
-     * @return void
-     */
-    public function testSetSentSMSMessages() {
-
-        // Set a Sent SMS message mock.
-        $sentSMSMessage = new SentSMSMessage();
-
-        $obj = new SentSMSMessageListResponse();
-
-        $obj->setSentSMSMessages([$sentSMSMessage]);
-        $this->assertEquals([$sentSMSMessage], $obj->getSentSMSMessages());
     }
 }

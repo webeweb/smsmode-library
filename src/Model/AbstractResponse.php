@@ -588,6 +588,13 @@ abstract class AbstractResponse {
     private $description;
 
     /**
+     * Raw response.
+     *
+     * @var string
+     */
+    private $rawResponse;
+
+    /**
      * Constructor.
      */
     public function __construct() {
@@ -661,6 +668,15 @@ abstract class AbstractResponse {
     }
 
     /**
+     * Get the raw response.
+     *
+     * @return string Returns the raw response.
+     */
+    public function getRawResponse() {
+        return $this->rawResponse;
+    }
+
+    /**
      * Set the code.
      *
      * @param int $code The code.
@@ -679,6 +695,17 @@ abstract class AbstractResponse {
      */
     public function setDescription($description) {
         $this->description = $description;
+        return $this;
+    }
+
+    /**
+     * Set the raw response.
+     *
+     * @param string $rawResponse The raw response.
+     * @return AbstractResponse Returns this response.
+     */
+    public function setRawResponse($rawResponse) {
+        $this->rawResponse = $rawResponse;
         return $this;
     }
 }

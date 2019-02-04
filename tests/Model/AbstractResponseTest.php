@@ -116,6 +116,7 @@ class AbstractResponseTest extends AbstractTestCase {
 
         $this->assertNull($obj->getCode());
         $this->assertNull($obj->getDescription());
+        $this->assertnull($obj->getRawResponse());
     }
 
     /**
@@ -231,5 +232,18 @@ class AbstractResponseTest extends AbstractTestCase {
 
         $obj->setDescription("description");
         $this->assertEquals("description", $obj->getDescription());
+    }
+
+    /**
+     * Tests the setRawResponse() method.
+     *
+     * @return void
+     */
+    public function testSetRawResponse() {
+
+        $obj = new TestResponse();
+
+        $obj->setRawResponse("rawResponse");
+        $this->assertEquals("rawResponse", $obj->getRawResponse());
     }
 }

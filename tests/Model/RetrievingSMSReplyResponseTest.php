@@ -24,6 +24,22 @@ use WBW\Library\SMSMode\Tests\AbstractTestCase;
 class RetrievingSMSReplyResponseTest extends AbstractTestCase {
 
     /**
+     * Tests the addSMSReply() method.
+     *
+     * @return void
+     */
+    public function testAddSMSReply() {
+
+        // Set a SMS reply mock.
+        $smsReply = new SMSReply();
+
+        $obj = new RetrievingSMSReplyResponse();
+
+        $obj->addSMSReply($smsReply);
+        $this->assertEquals([$smsReply], $obj->getSMSReplies());
+    }
+
+    /**
      * Tests the __construct() method.
      *
      * @return void
@@ -51,23 +67,7 @@ class RetrievingSMSReplyResponseTest extends AbstractTestCase {
 
         $obj = new RetrievingSMSReplyResponse();
 
-        $obj->setSMSReplies([$smsReply]);
+        $obj->addSMSReply($smsReply);
         $this->assertTrue($obj->hasSMSReply());
-    }
-
-    /**
-     * Tests the setSMSReplies() method.
-     *
-     * @return void
-     */
-    public function testSetSMSReplies() {
-
-        // Set a SMS reply mock.
-        $smsReply = new SMSReply();
-
-        $obj = new RetrievingSMSReplyResponse();
-
-        $obj->setSMSReplies([$smsReply]);
-        $this->assertEquals([$smsReply], $obj->getSMSReplies());
     }
 }

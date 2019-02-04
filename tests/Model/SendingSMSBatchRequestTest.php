@@ -11,6 +11,8 @@
 
 namespace WBW\Library\SMSMode\Tests\Model;
 
+use Exception;
+use UnexpectedValueException;
 use WBW\Library\SMSMode\Model\SendingSMSBatchRequest;
 use WBW\Library\SMSMode\Tests\AbstractTestCase;
 
@@ -31,17 +33,51 @@ class SendingSMSBatchRequestTest extends AbstractTestCase {
 
         $this->assertEquals("/http/1.6/sendSMSBatch.do", SendingSMSBatchRequest::SENDING_SMS_BATCH_RESOURCE_PATH);
 
-        $this->assertEquals(4, SendingSMSBatchRequest::CLASSE_MSG_SMS);
-        $this->assertEquals(2, SendingSMSBatchRequest::CLASSE_MSG_SMS_PRO);
-
         $obj = new SendingSMSBatchRequest();
 
         $this->assertNull($obj->getClasseMsg());
         $this->assertNull($obj->getDateEnvoi());
         $this->assertNull($obj->getEmetteur());
+        $this->assertNull($obj->getFichier());
         $this->assertNull($obj->getNbrMsg());
-        $this->assertNull($obj->getNotificationURL());
+        $this->assertNull($obj->getNotificationUrl());
         $this->assertNull($obj->getRefClient());
         $this->assertEquals(SendingSMSBatchRequest::SENDING_SMS_BATCH_RESOURCE_PATH, $obj->getResourcePath());
+    }
+
+    /**
+     * Tests the setFichier() method.
+     *
+     * @return void
+     * @throws Exception Throws an exception if an error occurs.
+     */
+    public function testSetFichier() {
+
+        // Set a Fichier mock.
+        $fichier = getcwd() . "/tests/Fixtures/Model/SendingSMSBatchRequest.csv";
+
+        $obj = new SendingSMSBatchRequest();
+
+        $obj->setFichier($fichier);
+        $this->assertEquals($fichier, $obj->getFichier());
+    }
+
+    /**
+     * Tests the setFichier() method.
+     *
+     * @return void
+     */
+    public function testSetFichierWithUnexpectedValueException() {
+
+        $obj = new SendingSMSBatchRequest();
+
+        try {
+
+            $obj->setFichier("fichier");
+        } catch (Exception $ex) {
+
+            $this->assertInstanceOf(UnexpectedValueException::class, $ex);
+            $this->assertEquals("File \"fichier\" could not be found.", $ex->getMessage());
+        }
     }
 }

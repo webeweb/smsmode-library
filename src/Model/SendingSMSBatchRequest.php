@@ -11,6 +11,8 @@
 
 namespace WBW\Library\SMSMode\Model;
 
+use UnexpectedValueException;
+use WBW\Library\SMSMode\API\SendingSMSBatchInterface;
 use WBW\Library\SMSMode\Traits\ClasseMsgTrait;
 use WBW\Library\SMSMode\Traits\DateEnvoiTrait;
 use WBW\Library\SMSMode\Traits\EmetteurTrait;
@@ -24,7 +26,7 @@ use WBW\Library\SMSMode\Traits\RefClientTrait;
  * @author webeweb <https://github.com/webeweb/>
  * @package WBW\Library\SMSMode\Model
  */
-class SendingSMSBatchRequest extends AbstractRequest {
+class SendingSMSBatchRequest extends AbstractRequest implements SendingSMSBatchInterface {
 
     use ClasseMsgTrait;
     use DateEnvoiTrait;
@@ -34,20 +36,6 @@ class SendingSMSBatchRequest extends AbstractRequest {
     use RefClientTrait;
 
     /**
-     * Classe msg "SMS".
-     *
-     * @var int
-     */
-    const CLASSE_MSG_SMS = SendingSMSMessageRequest::CLASSE_MSG_SMS;
-
-    /**
-     * Classe msg "SMS Pro".
-     *
-     * @var int
-     */
-    const CLASSE_MSG_SMS_PRO = SendingSMSMessageRequest::CLASSE_MSG_SMS_PRO;
-
-    /**
      * Sending SMS batch resource path.
      *
      * @var string
@@ -55,9 +43,40 @@ class SendingSMSBatchRequest extends AbstractRequest {
     const SENDING_SMS_BATCH_RESOURCE_PATH = "/http/1.6/sendSMSBatch.do";
 
     /**
+     * Fichier.
+     *
+     * @var string
+     */
+    private $fichier;
+
+    /**
+     * Get the fichier.
+     *
+     * @return string Returns the fichier.
+     */
+    public function getFichier() {
+        return $this->fichier;
+    }
+
+    /**
      * {@inheritdoc}
      */
     public function getResourcePath() {
         return self::SENDING_SMS_BATCH_RESOURCE_PATH;
+    }
+
+    /**
+     * Set the fichier.
+     *
+     * @param string $fichier The fichier.
+     * @return SendingSMSBatchRequest Returns this sending SMS batch request.
+     * @throws UnexpectedValueException Throws an unexpected value exception if the file does not exist.
+     */
+    public function setFichier($fichier) {
+        if (false === realpath($fichier)) {
+            throw new UnexpectedValueException(sprintf("File \"%s\" could not be found.", $fichier));
+        }
+        $this->fichier = $fichier;
+        return $this;
     }
 }

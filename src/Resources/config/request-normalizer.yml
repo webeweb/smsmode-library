@@ -127,6 +127,30 @@ WBW\Library\SMSMode\Model\RetrievingSMSReplyRequest:
         formatter:  "formatDateTime"
         complement: "startDate"
 
+WBW\Library\SMSMode\Model\SendingSMSBatchRequest:
+    fichier:
+        method:    "getFichier"
+        mandatory: true
+    classe_msg:
+        method:    "getClasseMsg"
+        mandatory: false
+    date_envoi:
+        method:    "getDateEnvoi"
+        mandatory: false
+        formatter: "formatDateTime"
+    refClient:
+        method:    "getRefClient"
+        mandatory: false
+    emetteur:
+        method:    "getEmetteur"
+        mandatory: false
+    nbr_msg:
+        method:    "getNbrMsg"
+        mandatory: false
+    notification_url:
+        method:    "getNotificationUrl"
+        mandatory: false
+
 WBW\Library\SMSMode\Model\SendingSMSMessageRequest:
     message:
         method:    "getMessage"
@@ -158,10 +182,10 @@ WBW\Library\SMSMode\Model\SendingSMSMessageRequest:
         method:    "getNbrMsg"
         mandatory: false
     notification_url:
-        method:    "getNotificationURL"
+        method:    "getNotificationUrl"
         mandatory: false
     notification_url_reponse:
-        method:    "getNotificationURLReponse"
+        method:    "getNotificationUrlReponse"
         mandatory: false
     stop:
         method:    "getStop"
@@ -218,10 +242,10 @@ WBW\Library\SMSMode\Model\SendingUnicodeSMSRequest:
         method:    "getNbrMsg"
         mandatory: false
     notification_url:
-        method:    "getNotificationURL"
+        method:    "getNotificationUrl"
         mandatory: false
     notification_url_reponse:
-        method:    "getNotificationURLReponse"
+        method:    "getNotificationUrlReponse"
         mandatory: false
     stop:
         method:    "getStop"

@@ -12,6 +12,7 @@
 namespace WBW\Library\SMSMode\Model;
 
 use UnexpectedValueException;
+use WBW\Library\SMSMode\API\RequestInterface;
 
 /**
  * Abstract request.
@@ -19,21 +20,7 @@ use UnexpectedValueException;
  * @author webeweb <https://github.com/webeweb/>
  * @package WBW\Library\SMSMode\Request
  */
-abstract class AbstractRequest {
-
-    /**
-     * Request date/time format.
-     *
-     * @var string
-     */
-    const REQUEST_DATETIME_FORMAT = "dmY-H:i";
-
-    /**
-     * Request date format.
-     *
-     * @var string
-     */
-    const REQUEST_DATE_FORMAT = "dmY";
+abstract class AbstractRequest implements RequestInterface {
 
     /**
      * Constructor.

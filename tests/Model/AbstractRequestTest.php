@@ -52,15 +52,4 @@ class AbstractRequestTest extends AbstractTestCase {
             $this->assertEquals("The numero \"exception\" is invalid", $ex->getMessage());
         }
     }
-
-    /**
-     * Tests the __construct() method.
-     *
-     * @return void
-     */
-    public function testConstruct() {
-
-        $this->assertEquals("dmY", AbstractRequest::REQUEST_DATE_FORMAT);
-        $this->assertEquals("dmY-H:i", AbstractRequest::REQUEST_DATETIME_FORMAT);
-    }
 }

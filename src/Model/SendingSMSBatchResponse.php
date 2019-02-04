@@ -19,4 +19,30 @@ namespace WBW\Library\SMSMode\Model;
  */
 class SendingSMSBatchResponse extends AbstractResponse {
 
+    /**
+     * Campagne ID.
+     *
+     * @var string
+     */
+    private $campagneID;
+
+    /**
+     * Get the campagne ID.
+     *
+     * @return string Returns the campagne ID.
+     */
+    public function getCampagneID() {
+        return $this->campagneID;
+    }
+
+    /**
+     * Set the campagne ID.
+     *
+     * @param string $campagneID The campagne ID.
+     * @return SendingSMSBatchResponse Returns this sending SMS batch response.
+     */
+    public function setCampagneID($campagneID) {
+        $this->campagneID = $campagneID;
+        return $this;
+    }
 }

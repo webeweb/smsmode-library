@@ -57,7 +57,7 @@ trait ClasseMsgTrait {
      * @throws UnexpectedValueException Throws an unexpected value exception exception if the classe msg is invalid.
      */
     public function setClasseMsg($classeMsg) {
-        if (false === in_array($classeMsg, $this->enumClasseMsg())) {
+        if (null !== $classeMsg && false === in_array($classeMsg, $this->enumClasseMsg())) {
             throw new UnexpectedValueException(sprintf("The classe msg \"%s\" is invalid", $classeMsg));
         }
         $this->classeMsg = $classeMsg;

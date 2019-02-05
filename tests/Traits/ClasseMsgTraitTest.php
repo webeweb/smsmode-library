@@ -64,6 +64,9 @@ class ClasseMsgTraitTest extends AbstractTestCase {
 
         $obj->setClasseMsg(SendingSMSBatchInterface::CLASSE_MSG_SMS);
         $this->assertEquals(SendingSMSBatchInterface::CLASSE_MSG_SMS, $obj->getClasseMsg());
+
+        $obj->setClasseMsg(null);
+        $this->assertNull($obj->getClasseMsg());
     }
 
     /**

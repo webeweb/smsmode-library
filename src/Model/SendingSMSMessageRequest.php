@@ -189,7 +189,7 @@ class SendingSMSMessageRequest extends AbstractRequest implements SendingSMSMess
      * @throws \UnexpectedValueException Throws an unexpected value exception if the classe msg is invalid.
      */
     public function setStop($stop) {
-        if (false === in_array($stop, $this->enumStop())) {
+        if (null !== $stop && false === in_array($stop, $this->enumStop())) {
             throw new UnexpectedValueException(sprintf("The stop \"%s\" is invalid", $stop));
         }
         $this->stop = $stop;

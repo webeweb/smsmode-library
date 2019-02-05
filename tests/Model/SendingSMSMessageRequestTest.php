@@ -65,11 +65,11 @@ class SendingSMSMessageRequestTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the enumLanguage() method.
+     * Tests the enumStop() method.
      *
      * @return void
      */
-    public function testEnumLanguage() {
+    public function testEnumStop() {
 
         $obj = new SendingSMSMessageRequest();
 
@@ -118,6 +118,9 @@ class SendingSMSMessageRequestTest extends AbstractTestCase {
 
         $obj->setStop(SendingSMSMessageRequest::STOP_ALWAYS);
         $this->assertEquals(SendingSMSMessageRequest::STOP_ALWAYS, $obj->getStop());
+
+        $obj->setStop(null);
+        $this->assertNull($obj->getStop());
     }
 
     /**

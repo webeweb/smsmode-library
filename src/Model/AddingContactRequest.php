@@ -103,7 +103,7 @@ class AddingContactRequest extends AbstractRequest {
      * @param string[] $groupes The groupes.
      * @return AddingContactRequest Returns this adding contact request.
      */
-    public function setGroupes(array $groupes) {
+    public function setGroupes(array $groupes = []) {
         $this->groupes = $groupes;
         return $this;
     }

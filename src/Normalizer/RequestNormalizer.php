@@ -40,8 +40,9 @@ class RequestNormalizer {
 
         $directory = ObjectHelper::getDirectory($this);
         $filename  = $directory . "/../Resources/config/request-normalizer.yml";
+        $content   = file_get_contents(realpath($filename));
 
-        $this->setConfiguration(Yaml::parseFile(realpath($filename)));
+        $this->setConfiguration(Yaml::parse($content));
     }
 
     /**

@@ -13,7 +13,6 @@ namespace WBW\Library\SMSMode\Provider;
 
 use Exception;
 use InvalidArgumentException;
-use ReflectionException;
 use WBW\Library\Core\Exception\Network\CURLRequestCallException;
 use WBW\Library\Core\Network\CURL\Factory\CURLFactory;
 use WBW\Library\Core\Network\HTTP\HTTPInterface;
@@ -107,7 +106,6 @@ class APIProvider {
      * @return AccountBalanceResponse Returns the account balance response.
      * @throws APIException Throws an API exception if an error occurs.
      * @throws InvalidArgumentException Throws an invalid argument exception if a parameter is missing.
-     * @throws ReflectionException Throws a reflection exception.
      */
     public function accountBalance(AccountBalanceRequest $accountBalanceRequest) {
 
@@ -125,7 +123,6 @@ class APIProvider {
      * @return AddingContactResponse Returns the adding contact response.
      * @throws APIException Throws an API exception if an error occurs.
      * @throws InvalidArgumentException Throws an invalid argument exception if a parameter is missing.
-     * @throws ReflectionException Throws a reflection exception.
      */
     public function addingContact(AddingContactRequest $addingContactRequest) {
 
@@ -193,7 +190,6 @@ class APIProvider {
      * @return CheckingSMSMessageStatusResponse Returns the checking SMS message status response.
      * @throws APIException Throws an API exception if an error occurs.
      * @throws InvalidArgumentException Throws an invalid argument exception if a parameter is missing.
-     * @throws ReflectionException Throws a reflection exception.
      */
     public function checkingSMSMessageStatus(CheckingSMSMessageStatusRequest $checkingSMSMessageStatusRequest) {
 
@@ -209,8 +205,8 @@ class APIProvider {
      *
      * @param CreatingAPIKeyRequest $creatingAPIKeyRequest The creating API key request.
      * @return CreatingAPIKeyResponse Returns the creating API key response.
+     * @throws APIException Throws an API exception if an error occurs.
      * @throws InvalidArgumentException Throws an invalid argument exception if a parameter is missing.
-     * @throws ReflectionException Throws a reflection exception.
      */
     public function creatingAPIKey(CreatingAPIKeyRequest $creatingAPIKeyRequest) {
 
@@ -219,7 +215,7 @@ class APIProvider {
         try {
 
             $rawResponse = $this->callAPI($creatingAPIKeyRequest, $queryData);
-        } catch (Exception $ex) {
+        } catch (APIException $ex) {
 
             $previous = $ex->getPrevious();
             if (false === ($previous instanceof CURLRequestCallException)) {
@@ -239,7 +235,6 @@ class APIProvider {
      * @return CreatingSubAccountResponse Returns the creating sub-account response.
      * @throws APIException Throws an API exception if an error occurs.
      * @throws InvalidArgumentException Throws an invalid argument exception if a parameter is missing.
-     * @throws ReflectionException Throws a reflection exception.
      */
     public function creatingSubAccount(CreatingSubAccountRequest $creatingSubAccountRequest) {
 
@@ -257,7 +252,6 @@ class APIProvider {
      * @return DeletingSMSResponse Returns the delivery SMS message response.
      * @throws APIException Throws an API exception if an error occurs.
      * @throws InvalidArgumentException Throws an invalid argument exception if a parameter is missing.
-     * @throws ReflectionException Throws a reflection exception.
      */
     public function deletingSMS(DeletingSMSRequest $deletingSMSRequest) {
 
@@ -275,7 +269,6 @@ class APIProvider {
      * @return DeletingSubAccountResponse Returns the delivery sub-account response.
      * @throws APIException Throws an API exception if an error occurs.
      * @throws InvalidArgumentException Throws an invalid argument exception if a parameter is missing.
-     * @throws ReflectionException Throws a reflection exception.
      */
     public function deletingSubAccount(DeletingSubAccountRequest $deletingSubAccountRequest) {
 
@@ -293,7 +286,6 @@ class APIProvider {
      * @return DeliveryReportResponse Returns the delivery report response.
      * @throws APIException Throws an API exception if an error occurs.
      * @throws InvalidArgumentException Throws an invalid argument exception if a parameter is missing.
-     * @throws ReflectionException Throws a reflection exception.
      */
     public function deliveryReport(DeliveryReportRequest $deliveryReportRequest) {
 
@@ -338,7 +330,6 @@ class APIProvider {
      * @return RetrievingSMSReplyResponse Returns the retrieving SMS reply response.
      * @throws APIException Throws an API exception if an error occurs.
      * @throws InvalidArgumentException Throws an invalid argument exception if a parameter is missing.
-     * @throws ReflectionException Throws a reflection exception.
      */
     public function retrievingSMSReply(RetrievingSMSReplyRequest $retrievingSMSReplyRequest) {
 
@@ -356,7 +347,6 @@ class APIProvider {
      * @return SendingSMSBatchResponse Returns the sending SMS message response.
      * @throws APIException Throws an API exception if an error occurs.
      * @throws InvalidArgumentException Throws an invalid argument exception if a parameter is missing.
-     * @throws ReflectionException Throws a reflection exception.
      */
     public function sendingSMSBatch(SendingSMSBatchRequest $sendingSMSBatchRequest) {
 
@@ -384,7 +374,6 @@ class APIProvider {
      * @return SendingSMSMessageResponse Returns the sending SMS message response.
      * @throws APIException Throws an API exception if an error occurs.
      * @throws InvalidArgumentException Throws an invalid argument exception if a parameter is missing.
-     * @throws ReflectionException Throws a reflection exception.
      */
     public function sendingSMSMessage(SendingSMSMessageRequest $sendingSMSMessageRequest) {
 
@@ -408,7 +397,6 @@ class APIProvider {
      * @return SendingTextToSpeechSMSResponse Returns the sending text-to-speech response.
      * @throws APIException Throws an API exception if an error occurs.
      * @throws InvalidArgumentException Throws an invalid argument exception if a parameter is missing.
-     * @throws ReflectionException Throws a reflection exception.
      */
     public function sendingTextToSpeechSMS(SendingTextToSpeechSMSRequest $sendingTextToSpeechSMSRequest) {
 
@@ -432,7 +420,6 @@ class APIProvider {
      * @return SendingUnicodeSMSResponse Returns the sending unicode response.
      * @throws APIException Throws an API exception if an error occurs.
      * @throws InvalidArgumentException Throws an invalid argument exception if a parameter is missing.
-     * @throws ReflectionException Throws a reflection exception.
      */
     public function sendingUnicodeSMS(SendingUnicodeSMSRequest $sendingUnicodeSMSRequest) {
 
@@ -456,7 +443,6 @@ class APIProvider {
      * @return SentSMSMessageListResponse Returns the sent SMS message list response.
      * @throws APIException Throws an API exception if an error occurs.
      * @throws InvalidArgumentException Throws an invalid argument exception if a parameter is missing.
-     * @throws ReflectionException Throws a reflection exception.
      */
     public function sentSMSMessageList(SentSMSMessageListRequest $sentSMSMessageListRequest) {
 
@@ -507,7 +493,6 @@ class APIProvider {
      * @return TransferringCreditsResponse Returns the transferring credits response.
      * @throws APIException Throws an API exception if an error occurs.
      * @throws InvalidArgumentException Throws an invalid argument exception if a parameter is missing.
-     * @throws ReflectionException Throws a reflection exception.
      */
     public function transferringCredits(TransferringCreditsRequest $transferringCreditsRequest) {
 

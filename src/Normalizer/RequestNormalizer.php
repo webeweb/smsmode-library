@@ -13,7 +13,6 @@ namespace WBW\Library\SMSMode\Normalizer;
 
 use DateTime;
 use InvalidArgumentException;
-use ReflectionException;
 use Symfony\Component\Yaml\Yaml;
 use WBW\Library\Core\Argument\ArrayHelper;
 use WBW\Library\Core\Argument\ObjectHelper;
@@ -224,12 +223,11 @@ class RequestNormalizer {
      * @param object $object The object.
      * @return array Returns the normalized parameters.
      * @throws InvalidArgumentException Throws an invalid argument exception if a mandatory parameter is missing.
-     * @throws ReflectionException Throws a reflection exception.
      */
     public function normalize($object) {
 
         // Get and check the object classname.
-        $classname = ObjectHelper::getName($object);
+        $classname = get_class($object);
         if (false === array_key_exists($classname, $this->getConfiguration())) {
             return [];
         }

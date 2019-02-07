@@ -132,7 +132,7 @@ class SendingTextToSpeechSMSRequest extends AbstractRequest implements SendingTe
      * @throws UnexpectedValueException Throws an unexpected value exception if the language is invalid.
      */
     public function setLanguage($language) {
-        if (null!== $language && false === in_array($language, $this->enumLanguage())) {
+        if (null !== $language && false === in_array($language, $this->enumLanguage())) {
             throw new UnexpectedValueException(sprintf("The language \"%s\" is invalid", $language));
         }
         $this->language = $language;

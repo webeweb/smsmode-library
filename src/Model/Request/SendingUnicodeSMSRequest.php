@@ -9,13 +9,13 @@
  * file that was distributed with this source code.
  */
 
-namespace WBW\Library\SMSMode\Model;
+namespace WBW\Library\SMSMode\Model\Request;
 
 /**
  * Sending unicode SMS request.
  *
  * @author webeweb <https://github.com/webeweb/>
- * @package WBW\Library\SMSMode\Model
+ * @package WBW\Library\SMSMode\Model\Request
  */
 class SendingUnicodeSMSRequest extends SendingSMSMessageRequest {
 

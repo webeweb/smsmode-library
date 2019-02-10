@@ -11,6 +11,8 @@
 
 namespace WBW\Library\SMSMode\Tests\Normalizer;
 
+use Exception;
+use UnexpectedValueException;
 use WBW\Library\SMSMode\Normalizer\NumeroNormalizer;
 use WBW\Library\SMSMode\Tests\AbstractTestCase;
 
@@ -21,6 +23,35 @@ use WBW\Library\SMSMode\Tests\AbstractTestCase;
  * @package WBW\Library\SMSMode\Normalizer
  */
 class NumeroNormalizerTest extends AbstractTestCase {
+
+    /**
+     * Tests the checkNumero() method.
+     *
+     * @return void
+     * @throws Exception Throws an exception if an error occurs.
+     */
+    public function testCheckNumero() {
+
+        $this->assertNull(NumeroNormalizer::checkNumero("33600000000"));
+    }
+
+    /**
+     * Tests the checkNumero() method.
+     *
+     * @return void
+     * @throws Exception Throws an exception if an error occurs.
+     */
+    public function testCheckNumeroWithUnexpectedValueException() {
+
+        try {
+
+            NumeroNormalizer::checkNumero("exception");
+        } catch (Exception $ex) {
+
+            $this->assertInstanceOf(UnexpectedValueException::class, $ex);
+            $this->assertEquals("The numero \"exception\" is invalid", $ex->getMessage());
+        }
+    }
 
     /**
      * Tests the denormalizeNumero() method.

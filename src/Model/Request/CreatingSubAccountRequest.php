@@ -13,6 +13,7 @@ namespace WBW\Library\SMSMode\Model\Request;
 
 use UnexpectedValueException;
 use WBW\Library\SMSMode\Model\AbstractRequest;
+use WBW\Library\SMSMode\Normalizer\NumeroNormalizer;
 use WBW\Library\SMSMode\Traits\DateTrait;
 use WBW\Library\SMSMode\Traits\MobileTrait;
 use WBW\Library\SMSMode\Traits\NomTrait;
@@ -218,7 +219,7 @@ class CreatingSubAccountRequest extends AbstractRequest {
      * @thows UnexpectedValueException Throws an unexpected value exception if the fax is invalid.
      */
     public function setFax($fax) {
-        static::checkNumero($fax);
+        NumeroNormalizer::checkNumero($fax);
         $this->fax = $fax;
         return $this;
     }
@@ -231,7 +232,7 @@ class CreatingSubAccountRequest extends AbstractRequest {
      * @throws UnexpectedValueException Throws an unexpected value exception if the mobile is invalid.
      */
     public function setMobile($mobile) {
-        static::checkNumero($mobile);
+        NumeroNormalizer::checkNumero($mobile);
         $this->mobile = $mobile;
         return $this;
     }
@@ -266,7 +267,7 @@ class CreatingSubAccountRequest extends AbstractRequest {
      * @throws UnexpectedValueException Throws an unexpected value exception if the numero is invalid.
      */
     public function setTelephone($telephone) {
-        static::checkNumero($telephone);
+        NumeroNormalizer::checkNumero($telephone);
         $this->telephone = $telephone;
         return $this;
     }

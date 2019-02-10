@@ -14,6 +14,7 @@ namespace WBW\Library\SMSMode\Model\Request;
 use UnexpectedValueException;
 use WBW\Library\SMSMode\API\SendingSMSMessageInterface;
 use WBW\Library\SMSMode\Model\AbstractRequest;
+use WBW\Library\SMSMode\Normalizer\NumeroNormalizer;
 use WBW\Library\SMSMode\Traits\ClasseMsgTrait;
 use WBW\Library\SMSMode\Traits\DateEnvoiTrait;
 use WBW\Library\SMSMode\Traits\EmetteurTrait;
@@ -89,7 +90,7 @@ class SendingSMSMessageRequest extends AbstractRequest implements SendingSMSMess
      * @throws UnexpectedValueException Throws an unexpected value exception if the numero is invalid.
      */
     public function addNumero($numero) {
-        static::checkNumero($numero);
+        NumeroNormalizer::checkNumero($numero);
         $this->numero[] = $numero;
         return $this;
     }

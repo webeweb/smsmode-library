@@ -11,6 +11,8 @@
 
 namespace WBW\Library\SMSMode\Normalizer;
 
+use UnexpectedValueException;
+
 /**
  * Numero normalizer.
  *
@@ -18,6 +20,19 @@ namespace WBW\Library\SMSMode\Normalizer;
  * @package WBW\Library\SMSMode\Normalizer
  */
 class NumeroNormalizer {
+
+    /**
+     * Checks a numero.
+     *
+     * @param string $numero The numero.
+     * @return void
+     * @throws UnexpectedValueException Throws an unexpected value exception if the numero is invalid.
+     */
+    public static function checkNumero($numero) {
+        if (0 === preg_match("/^[0-9]{1,}$/", $numero)) {
+            throw new UnexpectedValueException(sprintf("The numero \"%s\" is invalid", $numero));
+        }
+    }
 
     /**
      * Denormalize a numero.

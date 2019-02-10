@@ -11,7 +11,6 @@
 
 namespace WBW\Library\SMSMode\Model;
 
-use UnexpectedValueException;
 use WBW\Library\SMSMode\API\RequestInterface;
 
 /**
@@ -27,19 +26,6 @@ abstract class AbstractRequest implements RequestInterface {
      */
     public function __construct() {
         // NOTHING TO DO.
-    }
-
-    /**
-     * Checks a numero.
-     *
-     * @param string $numero The numero.
-     * @return void
-     * @throws UnexpectedValueException Throws an unexpected value exception if the numero is invalid.
-     */
-    public static function checkNumero($numero) {
-        if (0 === preg_match("/^[0-9]{1,}$/", $numero)) {
-            throw new UnexpectedValueException(sprintf("The numero \"%s\" is invalid", $numero));
-        }
     }
 
     /**

@@ -9,13 +9,16 @@
  * file that was distributed with this source code.
  */
 
-namespace WBW\Library\SMSMode\Model;
+namespace WBW\Library\SMSMode\Model\Response;
+
+use WBW\Library\SMSMode\Model\AbstractResponse;
+use WBW\Library\SMSMode\Model\SMSReply;
 
 /**
  * Retrieving SMS reply response.
  *
  * @author webeweb <https://github.com/webeweb/>
- * @package WBW\Library\SMSMode\Model
+ * @package WBW\Library\SMSMode\Model\Response
  */
 class RetrievingSMSReplyResponse extends AbstractResponse {
 

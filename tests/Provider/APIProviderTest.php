@@ -318,7 +318,7 @@ class APIProviderTest extends AbstractTestCase {
     public function testSendingSMSBatch() {
 
         // Set a Fichier mock.
-        $fichier = getcwd() . "/tests/Fixtures/Model/SendingSMSBatchRequest.csv";
+        $fichier = getcwd() . "/tests/Fixtures/Model/Request/SendingSMSBatchRequest.csv";
 
         // Set a Sending SMS message batch mock.
         $arg = new SendingSMSBatchRequest();

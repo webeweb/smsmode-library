@@ -54,7 +54,7 @@ class SendingSMSBatchRequestTest extends AbstractTestCase {
     public function testSetFichier() {
 
         // Set a Fichier mock.
-        $fichier = getcwd() . "/tests/Fixtures/Model/SendingSMSBatchRequest.csv";
+        $fichier = getcwd() . "/tests/Fixtures/Model/Request/SendingSMSBatchRequest.csv";
 
         $obj = new SendingSMSBatchRequest();
 

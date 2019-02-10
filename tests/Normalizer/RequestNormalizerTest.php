@@ -609,7 +609,7 @@ class RequestNormalizerTest extends AbstractTestCase {
     public function testNormalizeSendingSMSBatchRequest() {
 
         // Set a Fichier mock.
-        $fichier = getcwd() . "/tests/Fixtures/Model/SendingSMSBatchRequest.csv";
+        $fichier = getcwd() . "/tests/Fixtures/Model/Request/SendingSMSBatchRequest.csv";
 
         // Set a Sending SMS batch request mock.
         $arg = new SendingSMSBatchRequest();

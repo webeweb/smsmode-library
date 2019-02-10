@@ -9,10 +9,11 @@
  * file that was distributed with this source code.
  */
 
-namespace WBW\Library\SMSMode\Model;
+namespace WBW\Library\SMSMode\Model\Request;
 
 use UnexpectedValueException;
 use WBW\Library\SMSMode\API\SendingSMSBatchInterface;
+use WBW\Library\SMSMode\Model\AbstractRequest;
 use WBW\Library\SMSMode\Traits\ClasseMsgTrait;
 use WBW\Library\SMSMode\Traits\DateEnvoiTrait;
 use WBW\Library\SMSMode\Traits\EmetteurTrait;
@@ -24,7 +25,7 @@ use WBW\Library\SMSMode\Traits\RefClientTrait;
  * Sending SMS batch request.
  *
  * @author webeweb <https://github.com/webeweb/>
- * @package WBW\Library\SMSMode\Model
+ * @package WBW\Library\SMSMode\Model\Request
  */
 class SendingSMSBatchRequest extends AbstractRequest implements SendingSMSBatchInterface {
 

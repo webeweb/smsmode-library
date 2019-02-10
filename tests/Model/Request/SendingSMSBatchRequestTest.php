@@ -9,18 +9,18 @@
  * file that was distributed with this source code.
  */
 
-namespace WBW\Library\SMSMode\Tests\Model;
+namespace WBW\Library\SMSMode\Tests\Model\Request;
 
 use Exception;
 use UnexpectedValueException;
-use WBW\Library\SMSMode\Model\SendingSMSBatchRequest;
+use WBW\Library\SMSMode\Model\Request\SendingSMSBatchRequest;
 use WBW\Library\SMSMode\Tests\AbstractTestCase;
 
 /**
  * Sending SMS batch request test.
  *
  * @author webeweb <https://github.com/webeweb/>
- * @package WBW\Library\SMSMode\Tests\Model
+ * @package WBW\Library\SMSMode\Tests\Model\Request
  */
 class SendingSMSBatchRequestTest extends AbstractTestCase {
 

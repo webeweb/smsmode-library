@@ -9,16 +9,16 @@
  * file that was distributed with this source code.
  */
 
-namespace WBW\Library\SMSMode\Tests\Model;
+namespace WBW\Library\SMSMode\Tests\Model\Request;
 
-use WBW\Library\SMSMode\Model\CheckingSMSMessageStatusRequest;
+use WBW\Library\SMSMode\Model\Request\CheckingSMSMessageStatusRequest;
 use WBW\Library\SMSMode\Tests\AbstractTestCase;
 
 /**
  * Checking SMS message status request test.
  *
  * @author webeweb <https://github.com/webeweb/>
- * @package WBW\Library\SMSMode\Tests\Model
+ * @package WBW\Library\SMSMode\Tests\Model\Request
  */
 class CheckingSMSMessageStatusRequestTest extends AbstractTestCase {
 

@@ -9,16 +9,16 @@
  * file that was distributed with this source code.
  */
 
-namespace WBW\Library\SMSMode\Tests\Model;
+namespace WBW\Library\SMSMode\Tests\Model\Response;
 
-use WBW\Library\SMSMode\Model\DeletingSubAccountResponse;
+use WBW\Library\SMSMode\Model\Response\DeletingSubAccountResponse;
 use WBW\Library\SMSMode\Tests\AbstractTestCase;
 
 /**
  * Deleting sub-account response test.
  *
  * @author webeweb <https://github.com/webeweb/>
- * @package WBW\Library\SMSMode\Tests\Model
+ * @package WBW\Library\SMSMode\Tests\Model\Response
  */
 class DeletingSubAccountResponseTest extends AbstractTestCase {
 

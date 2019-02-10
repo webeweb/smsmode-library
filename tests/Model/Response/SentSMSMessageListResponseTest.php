@@ -9,17 +9,17 @@
  * file that was distributed with this source code.
  */
 
-namespace WBW\Library\SMSMode\Tests\Model;
+namespace WBW\Library\SMSMode\Tests\Model\Response;
 
+use WBW\Library\SMSMode\Model\Response\SentSMSMessageListResponse;
 use WBW\Library\SMSMode\Model\SentSMSMessage;
-use WBW\Library\SMSMode\Model\SentSMSMessageListResponse;
 use WBW\Library\SMSMode\Tests\AbstractTestCase;
 
 /**
  * Sent SMS message list response test.
  *
  * @author webeweb <https://github.com/webeweb/>
- * @package WBW\Library\SMSMode\Tests\Model
+ * @package WBW\Library\SMSMode\Tests\Model\Response
  */
 class SentSMSMessageListResponseTest extends AbstractTestCase {
 

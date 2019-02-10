@@ -9,18 +9,18 @@
  * file that was distributed with this source code.
  */
 
-namespace WBW\Library\SMSMode\Tests\Model;
+namespace WBW\Library\SMSMode\Tests\Model\Request;
 
 use DateTime;
 use Exception;
-use WBW\Library\SMSMode\Model\RetrievingSMSReplyRequest;
+use WBW\Library\SMSMode\Model\Request\RetrievingSMSReplyRequest;
 use WBW\Library\SMSMode\Tests\AbstractTestCase;
 
 /**
  * Retrieving SMS reply request test.
  *
  * @author webeweb <https://github.com/webeweb/>
- * @package WBW\Library\SMSMode\Tests\Model
+ * @package WBW\Library\SMSMode\Tests\Model\Request
  */
 class RetrievingSMSReplyRequestTest extends AbstractTestCase {
 

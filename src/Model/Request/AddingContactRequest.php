@@ -9,9 +9,10 @@
  * file that was distributed with this source code.
  */
 
-namespace WBW\Library\SMSMode\Model;
+namespace WBW\Library\SMSMode\Model\Request;
 
 use UnexpectedValueException;
+use WBW\Library\SMSMode\Model\AbstractRequest;
 use WBW\Library\SMSMode\Traits\DateTrait;
 use WBW\Library\SMSMode\Traits\MobileTrait;
 use WBW\Library\SMSMode\Traits\NomTrait;
@@ -22,7 +23,7 @@ use WBW\Library\SMSMode\Traits\SocieteTrait;
  * Adding contact request.
  *
  * @author webeweb <https://github.com/webeweb/>
- * @package WBW\Library\SMSMode\Model
+ * @package WBW\Library\SMSMode\Model\Request
  */
 class AddingContactRequest extends AbstractRequest {
 

@@ -1,5 +1,5 @@
 # src/Resources/config/request-normalizer.yml
-WBW\Library\SMSMode\Model\AddingContactRequest:
+WBW\Library\SMSMode\Model\Request\AddingContactRequest:
     nom:
         method:    "getNom"
         mandatory: true
@@ -24,24 +24,12 @@ WBW\Library\SMSMode\Model\AddingContactRequest:
         mandatory:  false
         formatter:  "formatDate"
 
-WBW\Library\SMSMode\Model\Authentication:
-    accessToken:
-        method:    "getAccessToken"
-        mandatory: false
-        continue:  false
-    pseudo:
-        method:    "getPseudo"
-        mandatory: true
-    pass:
-        method:    "getPass"
-        mandatory: true
-
-WBW\Library\SMSMode\Model\CheckingSMSMessageStatusRequest:
+WBW\Library\SMSMode\Model\Request\CheckingSMSMessageStatusRequest:
     smsID:
         method:    "getSmsID"
         mandatory: true
 
-WBW\Library\SMSMode\Model\CreatingSubAccountRequest:
+WBW\Library\SMSMode\Model\Request\CreatingSubAccountRequest:
     newPseudo:
         method:    "getNewPseudo"
         mandatory: true
@@ -86,7 +74,7 @@ WBW\Library\SMSMode\Model\CreatingSubAccountRequest:
         mandatory: false
         formatter: "formatDate"
 
-WBW\Library\SMSMode\Model\DeletingSMSRequest:
+WBW\Library\SMSMode\Model\Request\DeletingSMSRequest:
     smsID:
         method:           "getSmsID"
         mandatory:        true
@@ -97,17 +85,17 @@ WBW\Library\SMSMode\Model\DeletingSMSRequest:
         mandatory:        true
         excludeIf:        "smsID"
 
-WBW\Library\SMSMode\Model\DeletingSubAccountRequest:
+WBW\Library\SMSMode\Model\Request\DeletingSubAccountRequest:
     pseudoToDelete:
         method:    "getPseudoToDelete"
         mandatory: true
 
-WBW\Library\SMSMode\Model\DeliveryReportRequest:
+WBW\Library\SMSMode\Model\Request\DeliveryReportRequest:
     smsID:
         method:    "getSmsID"
         mandatory: true
 
-WBW\Library\SMSMode\Model\RetrievingSMSReplyRequest:
+WBW\Library\SMSMode\Model\Request\RetrievingSMSReplyRequest:
     start:
         method:     "getStart"
         mandatory:  false
@@ -127,7 +115,7 @@ WBW\Library\SMSMode\Model\RetrievingSMSReplyRequest:
         formatter:  "formatDateTime"
         complement: "startDate"
 
-WBW\Library\SMSMode\Model\SendingSMSBatchRequest:
+WBW\Library\SMSMode\Model\Request\SendingSMSBatchRequest:
     fichier:
         method:    "getFichier"
         mandatory: true
@@ -151,7 +139,7 @@ WBW\Library\SMSMode\Model\SendingSMSBatchRequest:
         method:    "getNotificationUrl"
         mandatory: false
 
-WBW\Library\SMSMode\Model\SendingSMSMessageRequest:
+WBW\Library\SMSMode\Model\Request\SendingSMSMessageRequest:
     message:
         method:    "getMessage"
         mandatory: true
@@ -191,7 +179,7 @@ WBW\Library\SMSMode\Model\SendingSMSMessageRequest:
         method:    "getStop"
         mandatory: false
 
-WBW\Library\SMSMode\Model\SendingTextToSpeechSMSRequest:
+WBW\Library\SMSMode\Model\Request\SendingTextToSpeechSMSRequest:
     message:
         method:    "getMessage"
         mandatory: true
@@ -211,7 +199,7 @@ WBW\Library\SMSMode\Model\SendingTextToSpeechSMSRequest:
         method:    "getLanguage"
         mandatory: false
 
-WBW\Library\SMSMode\Model\SendingUnicodeSMSRequest:
+WBW\Library\SMSMode\Model\Request\SendingUnicodeSMSRequest:
     message:
         method:    "getMessage"
         mandatory: true
@@ -251,12 +239,12 @@ WBW\Library\SMSMode\Model\SendingUnicodeSMSRequest:
         method:    "getStop"
         mandatory: false
 
-WBW\Library\SMSMode\Model\SentSMSMessageListRequest:
+WBW\Library\SMSMode\Model\Request\SentSMSMessageListRequest:
     offset:
         method:    "getOffset"
         mandatory: false
 
-WBW\Library\SMSMode\Model\TransferringCreditsRequest:
+WBW\Library\SMSMode\Model\Request\TransferringCreditsRequest:
     targetPseudo:
         method:    "getTargetPseudo"
         mandatory: true
@@ -266,3 +254,15 @@ WBW\Library\SMSMode\Model\TransferringCreditsRequest:
     reference:
         method:    "getReference"
         mandatory: false
+
+WBW\Library\SMSMode\Model\Authentication:
+    accessToken:
+        method:    "getAccessToken"
+        mandatory: false
+        continue:  false
+    pseudo:
+        method:    "getPseudo"
+        mandatory: true
+    pass:
+        method:    "getPass"
+        mandatory: true

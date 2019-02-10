@@ -14,6 +14,12 @@ namespace WBW\Library\SMSMode\Tests\Model;
 use WBW\Library\SMSMode\Model\SMSReplyCallback;
 use WBW\Library\SMSMode\Tests\AbstractTestCase;
 
+/**
+ * SMS reply callback test.
+ *
+ * @author webeweb <https://github.com/webeweb/>
+ * @package WBW\Library\SMSMode\Tests\Model
+ */
 class SMSReplyCallbackTest extends AbstractTestCase {
 
     /**

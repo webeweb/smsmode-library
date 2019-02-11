@@ -55,7 +55,7 @@ Composer documentation.
 
 ## Usage
 
-Read the [documentation](DOCUMENTATION).
+Read the [documentation](DOCUMENTATION.md).
 
 ---
 

@@ -55,24 +55,7 @@ Composer documentation.
 
 ## Usage
 
-```php
-    // Create the provider.
-    $provider = new APIProvider(new Authentication());
-
-    // Initialize the authentication.
-    $provider->getAuthentication()->setUsername("username");
-    $provider->getAuthentication()->setPassword("password");
-
-    // Initialize the request.
-    $request = new SendingSMSMessageRequest();
-    $request->addNumber("33612345678");
-    $request->setMessage("Hello world !");
-    $request->setSender("sender");
-    $request->setStop(SMSModeSendSMSRequest::STOP_ONLY);
-
-    // Call API.
-    $response = $provider->sendingSMSMessage($request);
-```
+Read the [documentation](DOCUMENTATION).
 
 ---
 

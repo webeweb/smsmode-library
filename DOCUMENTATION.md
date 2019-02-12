@@ -284,7 +284,7 @@ $response = $provider->sentSMSMessageList(new SentSMSMessageListRequest());
 $response->getCode();
 $response->getDescription();
 
-foreach($response->getSentSMSMessage() as $current) {
+foreach($response->getSentSMSMessages() as $current) {
     $current->getSmsID();
     $current->getSendDate();
     $current->getMessage();
@@ -360,7 +360,7 @@ foreach($response->getSMSReplies() as $current) {
 }
 ```
 
-12° Sending SMS text-to-speech SMS
+12° Sending text-to-speech SMS
 ---
 
 ```php

@@ -130,7 +130,7 @@ class RequestNormalizer {
      * @return string Returns the formatted message.
      */
     protected function formatMessageUnicode($value) {
-        return urlencode($value);
+        return $value; // return urlencode($value);
     }
 
     /**

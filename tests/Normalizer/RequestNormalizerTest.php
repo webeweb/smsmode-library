@@ -684,7 +684,7 @@ class RequestNormalizerTest extends AbstractTestCase {
         $obj = new RequestNormalizer();
 
         $res = [
-            "message"                  => "Hello+Mum",
+            "message"                  => "Hello Mum",
             "numero"                   => "33600000000,33600000001",
             "classe_msg"               => 4,
             "date_envoi"               => "07092017-10:00",
@@ -722,7 +722,7 @@ class RequestNormalizerTest extends AbstractTestCase {
         $obj = new RequestNormalizer();
 
         $res = [
-            "message"                  => "Hello+Mum",
+            "message"                  => "Hello Mum",
             "groupe"                   => "groupe",
             "classe_msg"               => 4,
             "date_envoi"               => "07092017-10:00",
@@ -788,7 +788,7 @@ class RequestNormalizerTest extends AbstractTestCase {
         $obj = new RequestNormalizer();
 
         $res = [
-            "message"    => "Hello+Mum",
+            "message"    => "Hello Mum",
             "numero"     => "33600000000,33600000001",
             "title"      => "title",
             "date_envoi" => "17012019",
@@ -855,7 +855,7 @@ class RequestNormalizerTest extends AbstractTestCase {
         $obj = new RequestNormalizer();
 
         $res = [
-            "message"                  => "%E2%98%BA",
+            "message"                  => "☺",
             "numero"                   => "33600000000,33600000001",
             "classe_msg"               => 4,
             "date_envoi"               => "02022019-11:00",

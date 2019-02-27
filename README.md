@@ -11,11 +11,6 @@ smsmode-library
 
 Integrate sMsmode API with your projects.
 
-> IMPORTANT NOTICE: This package is still under development. Any changes will be
-> done without prior notice to consumers of this package. Of course this code
-> will become stable at a certain point, but for now, prefer this
-> [stable version](https://github.com/webeweb/smsmode-library/tree/v1.0.8).
-
 `sMsmode` provides an API that enables you to easily and automatically send SMS
 messages from your applications. This API provides the following functions:
 
@@ -44,7 +39,7 @@ Open a command console, enter your project directory and execute the following
 command to download the latest stable version of this package:
 
 ```bash
-$ composer require webeweb/smsmode-library "^1.0"
+$ composer require webeweb/smsmode-library "^2.0"
 ```
 
 This command requires you to have Composer installed globally, as explained in
@@ -66,9 +61,8 @@ Open a command console and execute the following commands to download the latest
 stable version of this package:
 
 ```bash
-$ mkdir smsmode-library
+$ git clone https://github.com/webeweb/smsmode-library.git
 $ cd smsmode-library
-$ git clone https://github.com/webeweb/smsmode-library.git .
 $ composer install
 ```
 

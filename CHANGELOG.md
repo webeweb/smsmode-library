@@ -1,7 +1,7 @@
 CHANGELOG
 =========
 
-### master
+### [2.0.0](https://github.com/webeweb/smsmode-library/tree/v2.0.0) (2019-02-27)
 
 - Add CHANGELOG
 - Add DOCUMENTATION

@@ -14,7 +14,7 @@ namespace WBW\Library\SMSMode\Tests;
 use PHPUnit\Framework\TestCase;
 
 /**
- * Abstract sMsmode framework test case.
+ * Abstract test case.
  *
  * @author webeweb <https://github.com/webeweb/>
  * @package WBW\Library\SMSMode\Tests

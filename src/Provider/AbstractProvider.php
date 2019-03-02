@@ -160,7 +160,7 @@ abstract class AbstractProvider {
      * Set the debug.
      *
      * @param bool $debug The debug.
-     * @return APIProvider Returns this API provider.
+     * @return APIProvider Returns this provider.
      */
     public function setDebug($debug) {
         $this->debug = $debug;
@@ -171,7 +171,7 @@ abstract class AbstractProvider {
      * Set the request normalizer.
      *
      * @param RequestNormalizer $requestNormalizer
-     * @return APIProvider Returns this API provider.
+     * @return APIProvider Returns this provider.
      */
     protected function setRequestNormalizer(RequestNormalizer $requestNormalizer) {
         $this->requestNormalizer = $requestNormalizer;

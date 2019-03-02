@@ -138,22 +138,6 @@ class APIProviderTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the __construct() method.
-     *
-     * @return void
-     */
-    public function testConstruct() {
-
-        $this->assertEquals("https://api.smsmode.com", APIProvider::ENDPOINT_PATH);
-
-        $obj = new APIProvider($this->authentication);
-
-        $this->assertSame($this->authentication, $obj->getAuthentication());
-        $this->assertFalse($obj->getDebug());
-        $this->assertNotNull($obj->getRequestNormalizer());
-    }
-
-    /**
      * Tests the creatingAPIKey() method.
      *
      * @return void
@@ -417,19 +401,6 @@ class APIProviderTest extends AbstractTestCase {
 
         $this->assertEquals(32, $res->getCode());
         $this->assertRegExp("/.*/", $res->getDescription());
-    }
-
-    /**
-     * Tests the setDebug() method.
-     *
-     * @return void
-     */
-    public function testSetDebug() {
-
-        $obj = new APIProvider($this->authentication);
-
-        $obj->setDebug(true);
-        $this->assertTrue($obj->getDebug());
     }
 
     /**

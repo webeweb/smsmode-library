@@ -1,7 +1,7 @@
 CHANGELOG
 =========
 
-### master
+### [2.0.1](https://github.com/webeweb/smsmode-library/tree/v2.0.1) (2019-04-01)
 
 - Split API provider
 

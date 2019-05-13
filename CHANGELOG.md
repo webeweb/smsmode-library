@@ -1,6 +1,10 @@
 CHANGELOG
 =========
 
+### [2.1.1](https://github.com/webeweb/smsmode-library/tree/v2.1.1) (2019-05-13)
+
+- Fix PHPDoc
+
 ### [2.1.0](https://github.com/webeweb/smsmode-library/tree/v2.1.0) (2019-05-13)
 
 - Add Adding contact interface

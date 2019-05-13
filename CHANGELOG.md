@@ -1,6 +1,23 @@
 CHANGELOG
 =========
 
+### [2.1.0](https://github.com/webeweb/smsmode-library/tree/v2.1.0) (2019-05-13)
+
+- Add Adding contact interface
+- Add Checking SMS message interface
+- Add Creating sub-account interface
+- Add Deleting SMS interface
+- Add Deleting sub-account interface
+- Add Delivery report interface
+- Add Request factory
+- Add Retrieving SMS reply interface
+- Add Sending SMS batch interface
+- Add Sending SMS message interface
+- Add Sending text-to-speech interface
+- Add Sending unicode SMS interface
+- Add Sent SMS message list interface
+- Add Transferring credits interface
+
 ### [2.0.1](https://github.com/webeweb/smsmode-library/tree/v2.0.1) (2019-04-01)
 
 - Split API provider

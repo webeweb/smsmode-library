@@ -22,7 +22,7 @@ interface TransferringCreditsInterface extends SMSModeEntityInterface {
     /**
      * Get the credit amount.
      *
-     * @return float Returns the credit amount.
+     * @return int Returns the credit amount.
      */
     public function getSMSModeCreditAmount();
 

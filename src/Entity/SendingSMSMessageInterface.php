@@ -11,6 +11,8 @@
 
 namespace WBW\Library\SMSMode\Entity;
 
+use DateTime;
+
 /**
  * Sending SMS message interface.
  *

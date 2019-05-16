@@ -12,9 +12,8 @@
 namespace WBW\Library\SMSMode\Provider;
 
 use Exception;
+use GuzzleHttp\Client;
 use InvalidArgumentException;
-use WBW\Library\Core\Network\CURL\Factory\CURLFactory;
-use WBW\Library\Core\Network\HTTP\HTTPInterface;
 use WBW\Library\SMSMode\Exception\APIException;
 use WBW\Library\SMSMode\Model\AbstractRequest;
 use WBW\Library\SMSMode\Model\Authentication;
@@ -82,33 +81,26 @@ abstract class AbstractProvider {
 
         try {
 
-            $cURLRequest = CURLFactory::getInstance(0 === count($postData) ? HTTPInterface::HTTP_METHOD_GET : HTTPInterface::HTTP_METHOD_POST);
-            $cURLRequest->getConfiguration()->addHeader("Accept", "text/html");
-            $cURLRequest->getConfiguration()->setDebug($this->getDebug());
-            $cURLRequest->getConfiguration()->setHost(self::ENDPOINT_PATH);
-            $cURLRequest->getConfiguration()->setUserAgent("webeweb/smsmode-library");
-            $cURLRequest->setResourcePath($request->getResourcePath());
+            $client = new Client([
+                "base_uri"    => self::ENDPOINT_PATH . "/",
+                "debug"       => $this->getDebug(),
+                "headers"     => [
+                    "Accept"     => "text/html",
+                    "User-Agent" => "webeweb/smsmode-library",
+                ],
+                "synchronous" => true,
+            ]);
 
-            $authenticationData = $this->getRequestNormalizer()->normalize($this->getAuthentication());
+            $method  = 0 === count($postData) ? "GET" : "POST";
+            $uri     = substr($request->getResourcePath(), 1);
+            $options = [
+                "query"       => array_merge($this->getRequestNormalizer()->normalize($this->getAuthentication()), $queryData),
+                "form_params" => $postData,
+            ];
 
-            // Handle each authentication data.
-            foreach ($authenticationData as $name => $value) {
-                $cURLRequest->addQueryData($name, $value);
-            }
+            $response = $client->request($method, $uri, $options);
 
-            // Handle each query data.
-            foreach ($queryData as $name => $value) {
-                $cURLRequest->addQueryData($name, $value);
-            }
-
-            // Handle each post data.
-            foreach ($postData as $name => $value) {
-                $cURLRequest->addPostData($name, $value);
-            }
-
-            $cURLResponse = $cURLRequest->call();
-
-            return utf8_encode($cURLResponse->getResponseBody());
+            return utf8_encode($response->getBody()->getContents());
         } catch (InvalidArgumentException $ex) {
 
             throw $ex;
@@ -119,6 +111,33 @@ abstract class AbstractProvider {
     }
 
     /**
+//            $cURLRequest = CURLFactory::getInstance(0 === count($postData) ? HTTPInterface::HTTP_METHOD_GET : HTTPInterface::HTTP_METHOD_POST);
+//            $cURLRequest->getConfiguration()->addHeader("Accept", "text/html");
+//            $cURLRequest->getConfiguration()->setDebug($this->getDebug());
+//            $cURLRequest->getConfiguration()->setHost(self::ENDPOINT_PATH);
+//            $cURLRequest->getConfiguration()->setUserAgent("webeweb/smsmode-library");
+//            $cURLRequest->setResourcePath($request->getResourcePath());
+//
+//            $authenticationData = $this->getRequestNormalizer()->normalize($this->getAuthentication());
+//
+//            // Handle each authentication data.
+//            foreach ($authenticationData as $name => $value) {
+//                $cURLRequest->addQueryData($name, $value);
+//            }
+//
+//            // Handle each query data.
+//            foreach ($queryData as $name => $value) {
+//                $cURLRequest->addQueryData($name, $value);
+//            }
+//
+//            // Handle each post data.
+//            foreach ($postData as $name => $value) {
+//                $cURLRequest->addPostData($name, $value);
+//            }
+//
+//            $cURLResponse = $cURLRequest->call();
+//
+//            return utf8_encode($cURLResponse->getResponseBody());
      * Get the authentication.
      *
      * @return Authentication Returns the authentication.

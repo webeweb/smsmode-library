@@ -11,8 +11,8 @@
 
 namespace WBW\Library\SMSMode\Provider;
 
+use GuzzleHttp\Exception\ClientException;
 use InvalidArgumentException;
-use WBW\Library\Core\Exception\Network\CURLRequestCallException;
 use WBW\Library\SMSMode\Exception\APIException;
 use WBW\Library\SMSMode\Model\Request\AccountBalanceRequest;
 use WBW\Library\SMSMode\Model\Request\AddingContactRequest;
@@ -123,11 +123,11 @@ class APIProvider extends AbstractProvider {
         } catch (APIException $ex) {
 
             $previous = $ex->getPrevious();
-            if (false === ($previous instanceof CURLRequestCallException)) {
+            if (false === ($previous instanceof ClientException)) {
                 throw $ex;
             }
 
-            $rawResponse = $previous->getResponse()->getResponseBody();
+            $rawResponse = $previous->getResponse()->getBody()->getContents();
         }
 
         return ResponseNormalizer::denormalizeCreatingAPIKeyResponse($rawResponse);

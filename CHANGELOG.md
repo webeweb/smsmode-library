@@ -1,6 +1,11 @@
 CHANGELOG
 =========
 
+### [2.2.0](https://github.com/webeweb/smsmode-library/tree/v2.2.0) (2019-05-16)
+
+- Add API HTTP 3.3 documentations
+- Use Guzzle client in place of cURL request (core-library)
+
 ### [2.1.1](https://github.com/webeweb/smsmode-library/tree/v2.1.1) (2019-05-13)
 
 - Fix PHPDoc

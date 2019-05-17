@@ -5,7 +5,7 @@ DOCUMENTATION
 ---
 
 ```php
-// Creates an authentication model.
+// Create an authentication model.
 $authentication = new Authentication();
 
 // Set a couple login/password.
@@ -19,7 +19,7 @@ $authentication->setAccessToken("accessToken");
 Creating an API key :
 
 ```php
-// Creates the API provider.
+// Create the API provider.
 $provider = new APIProvider(new Authentication());
 
 // Set a couple login/password.
@@ -29,7 +29,7 @@ $provider->getAuthentication()->setPass("pass");
 // or use an access token.
 // $provider->getAuthentication()->setAccessToken("accessToken");
 
-// Calls the API and get the response.
+// Call the API and get the response.
 $response = $provider->creatingAPIKey(new CreatingAPIKeyRequest());
 
 // Handle the response.
@@ -49,7 +49,7 @@ $response->getState();
 ---
 
 ```php
-// Creates the API provider.
+// Create the API provider.
 $provider = new APIProvider(new Authentication());
 
 // Set a couple login/password.
@@ -59,14 +59,14 @@ $provider->getAuthentication()->setPass("pass");
 // or use an access token.
 // $provider->getAuthentication()->setAccessToken("accessToken");
 
-// Creates a Sending SMS message model.
+// Create a Sending SMS message model.
 $model = new SendingSMSMessageRequest();
 $model->setMessage("message")
 $model->addNumero("33600000001")
 $model->addNumero("33600000002")
 // ...
 
-// Calls the API and get the response.
+// Call the API and get the response.
 $response = $provider->sendingSMSMessage($model);
 
 // Handle the response.
@@ -80,7 +80,7 @@ $response->getSmsID();
 ---
 
 ```php
-// Creates the API provider.
+// Create the API provider.
 $provider = new APIProvider(new Authentication());
 
 // Set a couple login/password.
@@ -90,11 +90,11 @@ $provider->getAuthentication()->setPass("pass");
 // or use an access token.
 // $provider->getAuthentication()->setAccessToken("accessToken");
 
-// Creates a Delivery report model.
+// Create a Delivery report model.
 $model = new DeliveryReportRequest();
 $model->setSmsID("smsID")
 
-// Calls the API and get the response.
+// Call the API and get the response.
 $response = $provider->deliveryReport($model);
 
 // Handle the response.
@@ -111,7 +111,7 @@ foreach($response->getDeliveryReports() as $current) {
 ---
 
 ```php
-// Creates the API provider.
+// Create the API provider.
 $provider = new APIProvider(new Authentication());
 
 // Set a couple login/password.
@@ -121,7 +121,7 @@ $provider->getAuthentication()->setPass("pass");
 // or use an access token.
 // $provider->getAuthentication()->setAccessToken("accessToken");
 
-// Calls the API and get the response.
+// Call the API and get the response.
 $response = $provider->accountBalance(new AccountBalanceRequest());
 
 // Handle response.
@@ -135,7 +135,7 @@ $response->getAccountBalance();
 ---
 
 ```php
-// Creates the API provider.
+// Create the API provider.
 $provider = new APIProvider(new Authentication());
 
 // Set a couple login/password.
@@ -145,12 +145,12 @@ $provider->getAuthentication()->setPass("pass");
 // or use an access token.
 // $provider->getAuthentication()->setAccessToken("accessToken");
 
-// Creates a Creating sub-account model.
+// Create a Creating sub-account model.
 $model = new CreatingSubAccountRequest();
 $model->setNewPseudo("pseudo");
 $model->setNewPass("pass")
 
-// Calls the API and get the response.
+// Call the API and get the response.
 $response = $provider->creatingSubAccount($model);
 
 // Handle the response.
@@ -161,7 +161,7 @@ $response->getDescription();
 Deleting sub-account :
 
 ```php
-// Creates the API provider.
+// Create the API provider.
 $provider = new APIProvider(new Authentication());
 
 // Set a couple login/password.
@@ -171,11 +171,11 @@ $provider->getAuthentication()->setPass("pass");
 // or use an access token.
 // $provider->getAuthentication()->setAccessToken("accessToken");
 
-// Creates a Deleting sub-account model.
+// Create a Deleting sub-account model.
 $model = new DeletingSubAccountRequest();
 $model->setPseudoToDelete("pseudoToDelete")
 
-// Calls the API and get the response.
+// Call the API and get the response.
 $response = $provider->deletingSubAccount($model);
 
 // Handle the response.
@@ -187,7 +187,7 @@ $response->getDescription();
 ---
 
 ```php
-// Creates the API provider.
+// Create the API provider.
 $provider = new APIProvider(new Authentication());
 
 // Set a couple login/password.
@@ -197,12 +197,12 @@ $provider->getAuthentication()->setPass("pass");
 // or use an access token.
 // $provider->getAuthentication()->setAccessToken("accessToken");
 
-// Creates a Transferring credits model.
+// Create a Transferring credits model.
 $model = new TransferringCreditsRequest();
 $model->setCreditAmount(212);
 $model->setTargetPseudo("targetPseudo");
 
-// Calls the API and get the response.
+// Call the API and get the response.
 $response = $provider->transferringCredits($model);
 
 // Handle the response.
@@ -214,7 +214,7 @@ $response->getDescription();
 ---
 
 ```php
-// Creates the API provider.
+// Create the API provider.
 $provider = new APIProvider(new Authentication());
 
 // Set a couple login/password.
@@ -224,12 +224,12 @@ $provider->getAuthentication()->setPass("pass");
 // or use an access token.
 // $provider->getAuthentication()->setAccessToken("accessToken");
 
-// Creates an Adding contact model.
+// Create an Adding contact model.
 $model = new AddingContactRequest();
 $model->setNom("lastname");
 $model->setMobile("33600000000")
 
-// Calls the API and get the response.
+// Call the API and get the response.
 $response = $provider->addingContact($model);
 
 // Handle the response.
@@ -241,7 +241,7 @@ $response->getDescription();
 ---
 
 ```php
-// Creates the API provider.
+// Create the API provider.
 $provider = new APIProvider(new Authentication());
 
 // Set a couple login/password.
@@ -251,11 +251,11 @@ $provider->getAuthentication()->setPass("pass");
 // or use an access token.
 // $provider->getAuthentication()->setAccessToken("accessToken");
 
-// Creates a Deleting SMS model.
+// Create a Deleting SMS model.
 $model = new DeletingSMSRequest();
 $model->setSmsID("smsID")
 
-// Calls the API and get the response.
+// Call the API and get the response.
 $response = $provider->deletingSMS($model);
 
 // Handle the response.
@@ -267,7 +267,7 @@ $response->getDescription();
 ---
 
 ```php
-// Creates the API provider.
+// Create the API provider.
 $provider = new APIProvider(new Authentication());
 
 // Set a couple login/password.
@@ -277,7 +277,7 @@ $provider->getAuthentication()->setPass("pass");
 // or use an access token.
 // $provider->getAuthentication()->setAccessToken("accessToken");
 
-// Calls the API and get the response.
+// Call the API and get the response.
 $response = $provider->sentSMSMessageList(new SentSMSMessageListRequest());
 
 // Handle response.
@@ -298,7 +298,7 @@ foreach($response->getSentSMSMessages() as $current) {
 ---
 
 ```php
-// Creates the API provider.
+// Create the API provider.
 $provider = new APIProvider(new Authentication());
 
 // Set a couple login/password.
@@ -308,11 +308,11 @@ $provider->getAuthentication()->setPass("pass");
 // or use an access token.
 // $provider->getAuthentication()->setAccessToken("accessToken");
 
-// Creates a Checking SMS message status model.
+// Create a Checking SMS message status model.
 $model = new CheckingSMSMessageStatusRequest();
 $model->setSmsID("smsID")
 
-// Calls the API and get the response.
+// Call the API and get the response.
 $response = $provider->checkingSMSMessageStatus($model);
 
 // Handle the response.
@@ -324,7 +324,7 @@ $response->getDescription();
 ---
 
 ```php
-// Creates the API provider.
+// Create the API provider.
 $provider = new APIProvider(new Authentication());
 
 // Set a couple login/password.
@@ -334,7 +334,7 @@ $provider->getAuthentication()->setPass("pass");
 // or use an access token.
 // $provider->getAuthentication()->setAccessToken("accessToken");
 
-// Creates a Retrieving SMS reply model.
+// Create a Retrieving SMS reply model.
 $model = new RetrievingSMSReplyRequest();
 $model->setStart(0);
 $model->setOffset(10);
@@ -343,7 +343,7 @@ $model->setOffset(10);
 // $model->setStartDate(new DateTime("2017-09-14 00:00:00"));
 // $model->setEndDate(new DateTime("2017-09-15 00:00:00"));
 
-// Calls the API and get the response.
+// Call the API and get the response.
 $response = $provider->retrievingSMSReply($model);
 
 // Handle the response.
@@ -364,7 +364,7 @@ foreach($response->getSMSReplies() as $current) {
 ---
 
 ```php
-// Creates the API provider.
+// Create the API provider.
 $provider = new APIProvider(new Authentication());
 
 // Set a couple login/password.
@@ -374,14 +374,14 @@ $provider->getAuthentication()->setPass("pass");
 // or use an access token.
 // $provider->getAuthentication()->setAccessToken("accessToken");
 
-// Creates a Sending text-to-speech SMS model.
+// Create a Sending text-to-speech SMS model.
 $model = new SendingTextToSpeechSMSRequest();
 $model->setMessage("message")
 $model->addNumero("33600000001")
 $model->addNumero("33600000002")
 // ...
 
-// Calls the API and get the response.
+// Call the API and get the response.
 $response = $provider->sendingTextToSpeechSMS($model);
 
 // Handle the response.
@@ -395,7 +395,7 @@ $response->getSmsID();
 ---
 
 ```php
-// Creates the API provider.
+// Create the API provider.
 $provider = new APIProvider(new Authentication());
 
 // Set a couple login/password.
@@ -405,14 +405,14 @@ $provider->getAuthentication()->setPass("pass");
 // or use an access token.
 // $provider->getAuthentication()->setAccessToken("accessToken");
 
-// Creates a Sending unicode SMS model.
+// Create a Sending unicode SMS model.
 $model = new SendingUnicodeSMSRequest();
 $model->setMessage("message")
 $model->addNumero("33600000001")
 $model->addNumero("33600000002")
 // ...
 
-// Calls the API and get the response.
+// Call the API and get the response.
 $response = $provider->sendingUnicodeSMS($model);
 
 // Handle the response.
@@ -426,7 +426,7 @@ $response->getSmsID();
 ---
 
 ```php
-// Creates the API provider.
+// Create the API provider.
 $provider = new APIProvider(new Authentication());
 
 // Set a couple login/password.
@@ -436,11 +436,11 @@ $provider->getAuthentication()->setPass("pass");
 // or use an access token.
 // $provider->getAuthentication()->setAccessToken("accessToken");
 
-// Creates a Sending SMS batch model.
+// Create a Sending SMS batch model.
 $model = new SendingSMSBatchRequest();
 $model->setFichier("fichier.csv")
 
-// Calls the API and get the response.
+// Call the API and get the response.
 $response = $provider->sendingSMSBatch($model);
 
 // Handle the response.

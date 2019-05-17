@@ -111,33 +111,6 @@ abstract class AbstractProvider {
     }
 
     /**
-//            $cURLRequest = CURLFactory::getInstance(0 === count($postData) ? HTTPInterface::HTTP_METHOD_GET : HTTPInterface::HTTP_METHOD_POST);
-//            $cURLRequest->getConfiguration()->addHeader("Accept", "text/html");
-//            $cURLRequest->getConfiguration()->setDebug($this->getDebug());
-//            $cURLRequest->getConfiguration()->setHost(self::ENDPOINT_PATH);
-//            $cURLRequest->getConfiguration()->setUserAgent("webeweb/smsmode-library");
-//            $cURLRequest->setResourcePath($request->getResourcePath());
-//
-//            $authenticationData = $this->getRequestNormalizer()->normalize($this->getAuthentication());
-//
-//            // Handle each authentication data.
-//            foreach ($authenticationData as $name => $value) {
-//                $cURLRequest->addQueryData($name, $value);
-//            }
-//
-//            // Handle each query data.
-//            foreach ($queryData as $name => $value) {
-//                $cURLRequest->addQueryData($name, $value);
-//            }
-//
-//            // Handle each post data.
-//            foreach ($postData as $name => $value) {
-//                $cURLRequest->addPostData($name, $value);
-//            }
-//
-//            $cURLResponse = $cURLRequest->call();
-//
-//            return utf8_encode($cURLResponse->getResponseBody());
      * Get the authentication.
      *
      * @return Authentication Returns the authentication.

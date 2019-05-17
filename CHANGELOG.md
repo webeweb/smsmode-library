@@ -1,6 +1,10 @@
 CHANGELOG
 =========
 
+### [2.2.1](https://github.com/webeweb/smsmode-library/tree/v2.2.1) (2019-05-17)
+
+- Remove forgotten comments
+
 ### [2.2.0](https://github.com/webeweb/smsmode-library/tree/v2.2.0) (2019-05-16)
 
 - Add API HTTP 3.3 documentations

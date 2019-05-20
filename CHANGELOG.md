@@ -1,6 +1,10 @@
 CHANGELOG
 =========
 
+### master
+
+- Reorganize documentation
+
 ### [2.2.1](https://github.com/webeweb/smsmode-library/tree/v2.2.1) (2019-05-17)
 
 - Remove forgotten comments

@@ -3,7 +3,9 @@ CHANGELOG
 
 ### master
 
+- Update Composer (according to Composer schema)
 - Reorganize documentation
+- Update documentation
 
 ### [2.2.1](https://github.com/webeweb/smsmode-library/tree/v2.2.1) (2019-05-17)
 

@@ -101,7 +101,9 @@ $response = $provider->deliveryReport($model);
 $response->getCode();
 $response->getDescription();
 
+/** @var DeliveryReport $current */
 foreach($response->getDeliveryReports() as $current) {
+    
     $current->getCode();
     $current->getNumero();
 }
@@ -284,7 +286,9 @@ $response = $provider->sentSMSMessageList(new SentSMSMessageListRequest());
 $response->getCode();
 $response->getDescription();
 
+/** @var SentSMSMessage $current */
 foreach($response->getSentSMSMessages() as $current) {
+    
     $current->getSmsID();
     $current->getSendDate();
     $current->getMessage();
@@ -350,7 +354,9 @@ $response = $provider->retrievingSMSReply($model);
 $response->getCode();
 $response->getDescription();
 
+/** @var SMSReply $current */
 foreach($response->getSMSReplies() as $current) {
+   
     $current->getResponseID();
     $current->getReceptionDate();
     $current->getFrom();

@@ -99,7 +99,7 @@ $ vendor/bin/phpunit
 
 ## License
 
-`smsmode-library` is released under the LGPL License. See the bundled [LICENSE](LICENSE)
+`smsmode-library` is released under the MIT License. See the bundled [LICENSE](LICENSE)
 file for details.
 
 Please note that the sMsmode API is not free for use, see their

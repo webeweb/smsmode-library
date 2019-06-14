@@ -11,7 +11,7 @@
 
 namespace WBW\Library\SMSMode\Model\Request;
 
-use UnexpectedValueException;
+use InvalidArgumentException;
 use WBW\Library\SMSMode\API\SendingSMSBatchInterface;
 use WBW\Library\SMSMode\Model\AbstractRequest;
 use WBW\Library\SMSMode\Traits\ClasseMsgTrait;
@@ -71,11 +71,11 @@ class SendingSMSBatchRequest extends AbstractRequest implements SendingSMSBatchI
      *
      * @param string $fichier The fichier.
      * @return SendingSMSBatchRequest Returns this sending SMS batch request.
-     * @throws UnexpectedValueException Throws an unexpected value exception if the file does not exist.
+     * @throws InvalidArgumentException Throws an invalid argument exception if the file does not exist.
      */
     public function setFichier($fichier) {
         if (false === realpath($fichier)) {
-            throw new UnexpectedValueException(sprintf("File \"%s\" could not be found.", $fichier));
+            throw new InvalidArgumentException(sprintf("File \"%s\" could not be found.", $fichier));
         }
         $this->fichier = $fichier;
         return $this;

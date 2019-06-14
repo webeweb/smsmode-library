@@ -12,7 +12,7 @@
 namespace WBW\Library\SMSMode\Tests\Traits;
 
 use Exception;
-use UnexpectedValueException;
+use InvalidArgumentException;
 use WBW\Library\SMSMode\Tests\AbstractTestCase;
 use WBW\Library\SMSMode\Tests\Fixtures\Traits\TestNbrMsgTrait;
 
@@ -54,7 +54,7 @@ class NbrMsgTraitTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testSetNbrMsgWithUnexpectedValueException() {
+    public function testSetNbrMsgWithInvalidArgumentException() {
 
         $obj = new TestNbrMsgTrait();
 
@@ -63,7 +63,7 @@ class NbrMsgTraitTest extends AbstractTestCase {
             $obj->setNbrMsg(0);
         } catch (Exception $ex) {
 
-            $this->assertInstanceOf(UnexpectedValueException::class, $ex);
+            $this->assertInstanceOf(InvalidArgumentException::class, $ex);
             $this->assertEquals("The \"nbr msg\" must be greater than 0", $ex->getMessage());
         }
     }

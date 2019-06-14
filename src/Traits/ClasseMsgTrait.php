@@ -11,7 +11,7 @@
 
 namespace WBW\Library\SMSMode\Traits;
 
-use UnexpectedValueException;
+use InvalidArgumentException;
 use WBW\Library\SMSMode\API\SendingSMSBatchInterface;
 
 /**
@@ -54,11 +54,11 @@ trait ClasseMsgTrait {
      * Set the classe msg.
      *
      * @param int $classeMsg The classe msg.
-     * @throws UnexpectedValueException Throws an unexpected value exception exception if the classe msg is invalid.
+     * @throws InvalidArgumentException Throws an invalid argument exception exception if the classe msg is invalid.
      */
     public function setClasseMsg($classeMsg) {
         if (null !== $classeMsg && false === in_array($classeMsg, $this->enumClasseMsg())) {
-            throw new UnexpectedValueException(sprintf("The classe msg \"%s\" is invalid", $classeMsg));
+            throw new InvalidArgumentException(sprintf("The classe msg \"%s\" is invalid", $classeMsg));
         }
         $this->classeMsg = $classeMsg;
         return $this;

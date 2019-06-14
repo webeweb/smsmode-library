@@ -11,7 +11,7 @@
 
 namespace WBW\Library\SMSMode\Traits;
 
-use UnexpectedValueException;
+use InvalidArgumentException;
 
 /**
  * Offset trait.
@@ -41,11 +41,11 @@ trait OffsetTrait {
      * Set the offset.
      *
      * @param int $offset The offset.
-     * @throws UnexpectedValueException Throws an illegal argument exception if the offset is less than 1.
+     * @throws InvalidArgumentException Throws an invalid argument exception if the offset is less than 1.
      */
     public function setOffset($offset) {
         if (null !== $offset && $offset < 1) {
-            throw new UnexpectedValueException("The \"offset\" must be greater than 0");
+            throw new InvalidArgumentException("The \"offset\" must be greater than 0");
         }
         $this->offset = $offset;
         return $this;

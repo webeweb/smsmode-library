@@ -12,7 +12,7 @@
 namespace WBW\Library\SMSMode\Tests\Traits;
 
 use Exception;
-use UnexpectedValueException;
+use InvalidArgumentException;
 use WBW\Library\SMSMode\API\SendingSMSBatchInterface;
 use WBW\Library\SMSMode\Tests\AbstractTestCase;
 use WBW\Library\SMSMode\Tests\Fixtures\Traits\TestClasseMsgTrait;
@@ -74,7 +74,7 @@ class ClasseMsgTraitTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testSetClasseMsgWithUnexpectedValueException() {
+    public function testSetClasseMsgWithInvalidArgumentException() {
 
         $obj = new TestClasseMsgTrait();
 
@@ -83,7 +83,7 @@ class ClasseMsgTraitTest extends AbstractTestCase {
             $obj->setClasseMsg(0);
         } catch (Exception $ex) {
 
-            $this->assertInstanceOf(UnexpectedValueException::class, $ex);
+            $this->assertInstanceOf(InvalidArgumentException::class, $ex);
             $this->assertEquals("The classe msg \"0\" is invalid", $ex->getMessage());
         }
     }

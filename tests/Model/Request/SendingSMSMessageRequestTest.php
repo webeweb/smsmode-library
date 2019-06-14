@@ -12,7 +12,7 @@
 namespace WBW\Library\SMSMode\Tests\Model\Request;
 
 use Exception;
-use UnexpectedValueException;
+use InvalidArgumentException;
 use WBW\Library\SMSMode\API\SendingSMSMessageInterface;
 use WBW\Library\SMSMode\Model\Request\SendingSMSMessageRequest;
 use WBW\Library\SMSMode\Tests\AbstractTestCase;
@@ -128,7 +128,7 @@ class SendingSMSMessageRequestTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testSetStopWithUnexpectedValueException() {
+    public function testSetStopWithInvalidArgumentException() {
 
         $obj = new SendingSMSMessageRequest();
 
@@ -137,7 +137,7 @@ class SendingSMSMessageRequestTest extends AbstractTestCase {
             $obj->setStop(-1);
         } catch (Exception $ex) {
 
-            $this->assertInstanceOf(UnexpectedValueException::class, $ex);
+            $this->assertInstanceOf(InvalidArgumentException::class, $ex);
             $this->assertEquals("The stop \"-1\" is invalid", $ex->getMessage());
         }
     }

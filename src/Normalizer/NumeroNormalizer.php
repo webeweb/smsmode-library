@@ -11,7 +11,7 @@
 
 namespace WBW\Library\SMSMode\Normalizer;
 
-use UnexpectedValueException;
+use InvalidArgumentException;
 
 /**
  * Numero normalizer.
@@ -26,11 +26,11 @@ class NumeroNormalizer {
      *
      * @param string $numero The numero.
      * @return void
-     * @throws UnexpectedValueException Throws an unexpected value exception if the numero is invalid.
+     * @throws InvalidArgumentException Throws an invalid argument exception if the numero is invalid.
      */
     public static function checkNumero($numero) {
         if (0 === preg_match("/^[0-9]{1,}$/", $numero)) {
-            throw new UnexpectedValueException(sprintf("The numero \"%s\" is invalid", $numero));
+            throw new InvalidArgumentException(sprintf("The numero \"%s\" is invalid", $numero));
         }
     }
 

@@ -1,6 +1,10 @@
 CHANGELOG
 =========
 
+### [2.4.0](https://github.com/webeweb/smsmode-library/tree/v2.4.0) (2019-06-14)
+
+- Use InvalidArgumentException in place of UnexpectedValueException
+
 ### [2.3.0](https://github.com/webeweb/smsmode-library/tree/v2.3.0) (2019-06-08)
 
 - Change license

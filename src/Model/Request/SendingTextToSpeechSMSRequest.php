@@ -11,6 +11,7 @@
 
 namespace WBW\Library\SMSMode\Model\Request;
 
+use InvalidArgumentException;
 use UnexpectedValueException;
 use WBW\Library\SMSMode\API\SendingTextToSpeechSMSInterface;
 use WBW\Library\SMSMode\Model\AbstractRequest;
@@ -131,11 +132,11 @@ class SendingTextToSpeechSMSRequest extends AbstractRequest implements SendingTe
      *
      * @param string $language The language.
      * @return SendingTextToSpeechSMSRequest Returns this sending text-to-speech request.
-     * @throws UnexpectedValueException Throws an unexpected value exception if the language is invalid.
+     * @throws InvalidArgumentException Throws an invalid argument exception if the language is invalid.
      */
     public function setLanguage($language) {
         if (null !== $language && false === in_array($language, $this->enumLanguage())) {
-            throw new UnexpectedValueException(sprintf("The language \"%s\" is invalid", $language));
+            throw new InvalidArgumentException(sprintf("The language \"%s\" is invalid", $language));
         }
         $this->language = $language;
         return $this;

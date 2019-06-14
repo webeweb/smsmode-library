@@ -11,6 +11,7 @@
 
 namespace WBW\Library\SMSMode\Model\Request;
 
+use InvalidArgumentException;
 use UnexpectedValueException;
 use WBW\Library\SMSMode\API\SendingSMSMessageInterface;
 use WBW\Library\SMSMode\Model\AbstractRequest;
@@ -188,11 +189,11 @@ class SendingSMSMessageRequest extends AbstractRequest implements SendingSMSMess
      *
      * @param int|null $stop The stop.
      * @return SendingSMSMessageRequest Returns this sending SMS message request.
-     * @throws \UnexpectedValueException Throws an unexpected value exception if the classe msg is invalid.
+     * @throws InvalidArgumentException Throws an invalid argument exception if the classe msg is invalid.
      */
     public function setStop($stop) {
         if (null !== $stop && false === in_array($stop, $this->enumStop())) {
-            throw new UnexpectedValueException(sprintf("The stop \"%s\" is invalid", $stop));
+            throw new InvalidArgumentException(sprintf("The stop \"%s\" is invalid", $stop));
         }
         $this->stop = $stop;
         return $this;

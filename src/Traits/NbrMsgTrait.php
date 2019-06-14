@@ -11,7 +11,7 @@
 
 namespace WBW\Library\SMSMode\Traits;
 
-use UnexpectedValueException;
+use InvalidArgumentException;
 
 /**
  * Nbr msg trait.
@@ -41,11 +41,11 @@ trait NbrMsgTrait {
      * Set the nbr msg.
      *
      * @param int $nbrMsg The nbr msg.
-     * @throws UnexpectedValueException Throws an illegal argument exception if the nbr msg is less than 1.
+     * @throws InvalidArgumentException Throws an invalid argument exception if the nbr msg is less than 1.
      */
     public function setNbrMsg($nbrMsg) {
         if (null === $nbrMsg || $nbrMsg < 1) {
-            throw new UnexpectedValueException("The \"nbr msg\" must be greater than 0");
+            throw new InvalidArgumentException("The \"nbr msg\" must be greater than 0");
         }
         $this->nbrMsg = $nbrMsg;
         return $this;

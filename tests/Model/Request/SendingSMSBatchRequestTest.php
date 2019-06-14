@@ -12,7 +12,7 @@
 namespace WBW\Library\SMSMode\Tests\Model\Request;
 
 use Exception;
-use UnexpectedValueException;
+use InvalidArgumentException;
 use WBW\Library\SMSMode\Model\Request\SendingSMSBatchRequest;
 use WBW\Library\SMSMode\Tests\AbstractTestCase;
 
@@ -67,7 +67,7 @@ class SendingSMSBatchRequestTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testSetFichierWithUnexpectedValueException() {
+    public function testSetFichierWithInvalidArgumentException() {
 
         $obj = new SendingSMSBatchRequest();
 
@@ -76,7 +76,7 @@ class SendingSMSBatchRequestTest extends AbstractTestCase {
             $obj->setFichier("fichier");
         } catch (Exception $ex) {
 
-            $this->assertInstanceOf(UnexpectedValueException::class, $ex);
+            $this->assertInstanceOf(InvalidArgumentException::class, $ex);
             $this->assertEquals("File \"fichier\" could not be found.", $ex->getMessage());
         }
     }

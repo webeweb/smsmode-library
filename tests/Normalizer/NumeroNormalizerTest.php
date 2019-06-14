@@ -12,7 +12,7 @@
 namespace WBW\Library\SMSMode\Tests\Normalizer;
 
 use Exception;
-use UnexpectedValueException;
+use InvalidArgumentException;
 use WBW\Library\SMSMode\Normalizer\NumeroNormalizer;
 use WBW\Library\SMSMode\Tests\AbstractTestCase;
 
@@ -41,14 +41,14 @@ class NumeroNormalizerTest extends AbstractTestCase {
      * @return void
      * @throws Exception Throws an exception if an error occurs.
      */
-    public function testCheckNumeroWithUnexpectedValueException() {
+    public function testCheckNumeroWithInvalidArgumentException() {
 
         try {
 
             NumeroNormalizer::checkNumero("exception");
         } catch (Exception $ex) {
 
-            $this->assertInstanceOf(UnexpectedValueException::class, $ex);
+            $this->assertInstanceOf(InvalidArgumentException::class, $ex);
             $this->assertEquals("The numero \"exception\" is invalid", $ex->getMessage());
         }
     }

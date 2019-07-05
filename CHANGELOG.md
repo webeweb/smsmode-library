@@ -1,6 +1,10 @@
 CHANGELOG
 =========
 
+### master
+
+- Update exception inheritance
+
 ### [2.4.0](https://github.com/webeweb/smsmode-library/tree/v2.4.0) (2019-06-14)
 
 - Use InvalidArgumentException in place of UnexpectedValueException

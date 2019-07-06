@@ -1,7 +1,7 @@
 CHANGELOG
 =========
 
-### master
+### [2.4.1](https://github.com/webeweb/smsmode-library/tree/v2.4.1) (2019-07-06)
 
 - Update exception inheritance
 

@@ -19,6 +19,8 @@
     ],
     "require": {
         "php": "^5.6|^7.0",
+        "ext-iconv": "*",
+        "ext-json": "*",
         "guzzlehttp/guzzle": "^6.0",
         "webeweb/core-library": "^5.0"
     },

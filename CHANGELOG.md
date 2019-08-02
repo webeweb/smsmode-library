@@ -1,6 +1,11 @@
 CHANGELOG
 =========
 
+### [2.4.3](https://github.com/webeweb/smsmode-library/tree/v2.4.3) (2019-08-02)
+
+- Add buildConfiguration() method
+- Fix PHPDoc
+
 ### [2.4.2](https://github.com/webeweb/smsmode-library/tree/v2.4.2) (2019-07-22)
 
 - Add PHP extensions into Composer

@@ -68,6 +68,23 @@ abstract class AbstractProvider {
     }
 
     /**
+     * Build the configuration.
+     *
+     * @return array Returns the configuration.
+     */
+    private function buildConfiguration() {
+        return [
+            "base_uri"    => self::ENDPOINT_PATH . "/",
+            "debug"       => $this->getDebug(),
+            "headers"     => [
+                "Accept"     => "text/html",
+                "User-Agent" => "webeweb/smsmode-library",
+            ],
+            "synchronous" => true,
+        ];
+    }
+
+    /**
      * Call API.
      *
      * @param AbstractRequest $request The request.
@@ -81,15 +98,7 @@ abstract class AbstractProvider {
 
         try {
 
-            $client = new Client([
-                "base_uri"    => self::ENDPOINT_PATH . "/",
-                "debug"       => $this->getDebug(),
-                "headers"     => [
-                    "Accept"     => "text/html",
-                    "User-Agent" => "webeweb/smsmode-library",
-                ],
-                "synchronous" => true,
-            ]);
+            $client = new Client($this->buildConfiguration());
 
             $method  = 0 === count($postData) ? "GET" : "POST";
             $uri     = substr($request->getResourcePath(), 1);
@@ -141,7 +150,7 @@ abstract class AbstractProvider {
      * Set the authentication.
      *
      * @param Authentication $authentication The authentication.
-     * @return APIProvider Returns this provider.
+     * @return AbstractProvider Returns this provider.
      */
     protected function setAuthentication(Authentication $authentication) {
         $this->authentication = $authentication;
@@ -152,7 +161,7 @@ abstract class AbstractProvider {
      * Set the debug.
      *
      * @param bool $debug The debug.
-     * @return APIProvider Returns this provider.
+     * @return AbstractProvider Returns this provider.
      */
     public function setDebug($debug) {
         $this->debug = $debug;
@@ -163,7 +172,7 @@ abstract class AbstractProvider {
      * Set the request normalizer.
      *
      * @param RequestNormalizer $requestNormalizer
-     * @return APIProvider Returns this provider.
+     * @return AbstractProvider Returns this provider.
      */
     protected function setRequestNormalizer(RequestNormalizer $requestNormalizer) {
         $this->requestNormalizer = $requestNormalizer;

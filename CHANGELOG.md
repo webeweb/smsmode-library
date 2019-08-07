@@ -1,6 +1,10 @@
 CHANGELOG
 =========
 
+### [2.5.0](https://github.com/webeweb/smsmode-library/tree/v2.5.0) (2019-08-07)
+
+- Add Logger interface into API provider
+
 ### [2.4.3](https://github.com/webeweb/smsmode-library/tree/v2.4.3) (2019-08-02)
 
 - Add buildConfiguration() method

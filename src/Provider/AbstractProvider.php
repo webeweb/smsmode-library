@@ -14,6 +14,7 @@ namespace WBW\Library\SMSMode\Provider;
 use Exception;
 use GuzzleHttp\Client;
 use InvalidArgumentException;
+use Psr\Log\LoggerInterface;
 use WBW\Library\SMSMode\Exception\APIException;
 use WBW\Library\SMSMode\Model\AbstractRequest;
 use WBW\Library\SMSMode\Model\Authentication;
@@ -50,6 +51,13 @@ abstract class AbstractProvider {
     private $debug;
 
     /**
+     * Logger.
+     *
+     * @var LoggerInterface
+     */
+    private $logger;
+
+    /**
      * Request normalizer.
      *
      * @var RequestNormalizer
@@ -60,10 +68,12 @@ abstract class AbstractProvider {
      * Constructor.
      *
      * @param Authentication $authentication The authentication.
+     * @param LoggerInterface|null $logger The logger.
      */
-    public function __construct(Authentication $authentication) {
+    public function __construct(Authentication $authentication, LoggerInterface $logger = null) {
         $this->setAuthentication($authentication);
         $this->setDebug(false);
+        $this->setLogger($logger);
         $this->setRequestNormalizer(new RequestNormalizer());
     }
 
@@ -98,7 +108,9 @@ abstract class AbstractProvider {
 
         try {
 
-            $client = new Client($this->buildConfiguration());
+            $config = $this->buildConfiguration();
+
+            $client = new Client($config);
 
             $method  = 0 === count($postData) ? "GET" : "POST";
             $uri     = substr($request->getResourcePath(), 1);
@@ -106,6 +118,8 @@ abstract class AbstractProvider {
                 "query"       => array_merge($this->getRequestNormalizer()->normalize($this->getAuthentication()), $queryData),
                 "form_params" => $postData,
             ];
+
+            $this->log(sprintf("Call sMsmode API %s %s", $method, $uri), ["config" => $config, "options" => $options]);
 
             $response = $client->request($method, $uri, $options);
 
@@ -138,12 +152,35 @@ abstract class AbstractProvider {
     }
 
     /**
+     * Get the logger.
+     *
+     * @return LoggerInterface Returns the logger.
+     */
+    public function getLogger() {
+        return $this->logger;
+    }
+
+    /**
      * Get the request normalizer.
      *
      * @return RequestNormalizer The request normalizer.
      */
     public function getRequestNormalizer() {
         return $this->requestNormalizer;
+    }
+
+    /**
+     * Log.
+     *
+     * @param string $message The message.
+     * @param array $context The context.
+     * @return AbstractProvider Returns this provider.
+     */
+    protected function log($message, array $context) {
+        if (null !== $this->getLogger()) {
+            $this->getLogger()->info($message, $context);
+        }
+        return $this;
     }
 
     /**
@@ -165,6 +202,17 @@ abstract class AbstractProvider {
      */
     public function setDebug($debug) {
         $this->debug = $debug;
+        return $this;
+    }
+
+    /**
+     * Set the logger.
+     *
+     * @param LoggerInterface|null $logger The logger
+     * @return AbstractProvider Returns this provider
+     */
+    protected function setLogger(LoggerInterface $logger = null) {
+        $this->logger = $logger;
         return $this;
     }
 

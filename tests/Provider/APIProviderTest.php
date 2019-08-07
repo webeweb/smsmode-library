@@ -13,6 +13,7 @@ namespace WBW\Library\SMSMode\Tests\Provider;
 
 use Exception;
 use InvalidArgumentException;
+use Psr\Log\LoggerInterface;
 use WBW\Library\SMSMode\Model\Authentication;
 use WBW\Library\SMSMode\Model\Request\AccountBalanceRequest;
 use WBW\Library\SMSMode\Model\Request\AddingContactRequest;
@@ -81,10 +82,13 @@ class APIProviderTest extends AbstractTestCase {
      */
     public function testAccountBalance() {
 
+        // Set a Logger mock.
+        $logger = $this->getMockBuilder(LoggerInterface::class)->getMock();
+
         // Set an Account balance request mock.
         $arg = new AccountBalanceRequest();
 
-        $obj = new APIProvider($this->authentication);
+        $obj = new APIProvider($this->authentication, $logger);
 
         $res = $obj->accountBalance($arg);
         $this->assertInstanceOf(AccountBalanceResponse::class, $res);

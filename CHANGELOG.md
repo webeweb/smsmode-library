@@ -1,6 +1,10 @@
 CHANGELOG
 =========
 
+### [2.5.1](https://github.com/webeweb/smsmode-library/tree/v2.5.1) (2019-08-08)
+
+- Fix log level
+
 ### [2.5.0](https://github.com/webeweb/smsmode-library/tree/v2.5.0) (2019-08-07)
 
 - Add Logger interface into API provider

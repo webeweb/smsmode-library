@@ -39,7 +39,7 @@ Open a command console, enter your project directory and execute the following
 command to download the latest stable version of this package:
 
 ```bash
-$ composer require webeweb/smsmode-library "^2.0"
+$ composer require webeweb/smsmode-library
 ```
 
 This command requires you to have Composer installed globally, as explained in

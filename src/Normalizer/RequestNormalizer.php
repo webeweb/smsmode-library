@@ -15,7 +15,6 @@ use DateTime;
 use InvalidArgumentException;
 use Symfony\Component\Yaml\Yaml;
 use WBW\Library\Core\Argument\ArrayHelper;
-use WBW\Library\Core\Argument\ObjectHelper;
 use WBW\Library\SMSMode\API\RequestInterface;
 
 /**
@@ -38,9 +37,8 @@ class RequestNormalizer {
      */
     public function __construct() {
 
-        $directory = ObjectHelper::getDirectory($this);
-        $filename  = $directory . "/../Resources/config/request-normalizer.yml";
-        $content   = file_get_contents(realpath($filename));
+        $filename = __DIR__ . "/../Resources/config/request-normalizer.yml";
+        $content  = file_get_contents(realpath($filename));
 
         $this->setConfiguration(Yaml::parse($content));
     }

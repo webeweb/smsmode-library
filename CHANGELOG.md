@@ -1,6 +1,10 @@
 CHANGELOG
 =========
 
+### master
+
+- Update dependencies
+
 ### [2.5.1](https://github.com/webeweb/smsmode-library/tree/v2.5.1) (2019-08-08)
 
 - Fix log level

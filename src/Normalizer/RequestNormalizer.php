@@ -14,7 +14,7 @@ namespace WBW\Library\SMSMode\Normalizer;
 use DateTime;
 use InvalidArgumentException;
 use Symfony\Component\Yaml\Yaml;
-use WBW\Library\Core\Argument\ArrayHelper;
+use WBW\Library\Core\Argument\Helper\ArrayHelper;
 use WBW\Library\SMSMode\API\RequestInterface;
 
 /**

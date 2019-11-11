@@ -12,7 +12,7 @@
 namespace WBW\Library\SMSMode\Normalizer;
 
 use DateTime;
-use WBW\Library\Core\Argument\ArrayHelper;
+use WBW\Library\Core\Argument\Helper\ArrayHelper;
 use WBW\Library\SMSMode\API\ResponseInterface;
 use WBW\Library\SMSMode\Model\AbstractResponse;
 use WBW\Library\SMSMode\Model\DeliveryReport;

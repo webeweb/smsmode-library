@@ -12,7 +12,7 @@
 namespace WBW\Library\SMSMode\Exception;
 
 use Exception;
-use WBW\Library\Core\Exception\AbstractCoreException as BaseException;
+use WBW\Library\Core\Exception\AbstractException as BaseException;
 
 /**
  * Abstract exception.

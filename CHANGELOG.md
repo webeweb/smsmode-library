@@ -1,7 +1,7 @@
 CHANGELOG
 =========
 
-### master
+### [2.6.0](https://github.com/webeweb/smsmode-library/tree/v2.6.0) (2019-11-25)
 
 - Update dependencies
 

@@ -51,7 +51,7 @@ class ResponseNormalizer {
     public static function denormalizeAccountBalanceResponse($rawResponse) {
 
         $model = new AccountBalanceResponse();
-        if (1 === preg_match("/^[0-9]{2,4}\ \|/", trim($rawResponse))) {
+        if (1 === preg_match("/^[0-9]{2,4} \|/", trim($rawResponse))) {
             static::denormalizeResponse($model, $rawResponse);
             return $model;
         }
@@ -175,7 +175,7 @@ class ResponseNormalizer {
         $model = new DeliveryReport();
         $model->setRawResponse($rawResponse);
 
-        $responses = explode(" ", preg_replace("/\ {1,}/", " ", trim($rawResponse)));
+        $responses = explode(" ", preg_replace("/ {1,}/", " ", trim($rawResponse)));
         if (count($responses) < 2) {
             return $model;
         }
@@ -195,7 +195,7 @@ class ResponseNormalizer {
     public static function denormalizeDeliveryReportResponse($rawResponse) {
 
         $model = new DeliveryReportResponse();
-        if (1 === preg_match("/^[0-9]{2,4}\ \|/", trim($rawResponse))) {
+        if (1 === preg_match("/^[0-9]{2,4} \|/", trim($rawResponse))) {
             static::denormalizeResponse($model, $rawResponse);
             return $model;
         }
@@ -239,7 +239,7 @@ class ResponseNormalizer {
     public static function denormalizeRetrievingSMSReplyResponse($rawResponse) {
 
         $model = new RetrievingSMSReplyResponse();
-        if (1 === preg_match("/^[0-9]{2,4}\ \|/", trim($rawResponse))) {
+        if (1 === preg_match("/^[0-9]{2,4} \|/", trim($rawResponse))) {
             static::denormalizeResponse($model, $rawResponse);
             return $model;
         }
@@ -399,7 +399,7 @@ class ResponseNormalizer {
     public static function denormalizeSentSMSMessageListResponse($rawResponse) {
 
         $model = new SentSMSMessageListResponse();
-        if (1 === preg_match("/^[0-9]{2,4}\ \|/", trim($rawResponse))) {
+        if (1 === preg_match("/^[0-9]{2,4} \|/", trim($rawResponse))) {
             static::denormalizeResponse($model, $rawResponse);
             return $model;
         }

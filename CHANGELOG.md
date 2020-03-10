@@ -1,6 +1,10 @@
 CHANGELOG
 =========
 
+### [2.7.0](https://github.com/webeweb/smsmode-library/tree/v2.7.0) (2020-03-10)
+
+- Rename Normalizer package 
+
 ### [2.6.0](https://github.com/webeweb/smsmode-library/tree/v2.6.0) (2019-11-25)
 
 - Update dependencies

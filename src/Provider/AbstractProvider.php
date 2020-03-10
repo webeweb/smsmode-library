@@ -18,7 +18,7 @@ use Psr\Log\LoggerInterface;
 use WBW\Library\SMSMode\Exception\APIException;
 use WBW\Library\SMSMode\Model\AbstractRequest;
 use WBW\Library\SMSMode\Model\Authentication;
-use WBW\Library\SMSMode\Normalizer\RequestNormalizer;
+use WBW\Library\SMSMode\Serializer\RequestSerializer;
 
 /**
  * Abstract provider.
@@ -58,11 +58,11 @@ abstract class AbstractProvider {
     private $logger;
 
     /**
-     * Request normalizer.
+     * Request serializer.
      *
-     * @var RequestNormalizer
+     * @var RequestSerializer
      */
-    private $requestNormalizer;
+    private $requestSerializer;
 
     /**
      * Constructor.
@@ -74,7 +74,7 @@ abstract class AbstractProvider {
         $this->setAuthentication($authentication);
         $this->setDebug(false);
         $this->setLogger($logger);
-        $this->setRequestNormalizer(new RequestNormalizer());
+        $this->setRequestSerializer(new RequestSerializer());
     }
 
     /**
@@ -115,7 +115,7 @@ abstract class AbstractProvider {
             $method  = 0 === count($postData) ? "GET" : "POST";
             $uri     = substr($request->getResourcePath(), 1);
             $options = [
-                "query"       => array_merge($this->getRequestNormalizer()->normalize($this->getAuthentication()), $queryData),
+                "query"       => array_merge($this->getRequestSerializer()->serialize($this->getAuthentication()), $queryData),
                 "form_params" => $postData,
             ];
 
@@ -161,12 +161,12 @@ abstract class AbstractProvider {
     }
 
     /**
-     * Get the request normalizer.
+     * Get the request serializer.
      *
-     * @return RequestNormalizer The request normalizer.
+     * @return RequestSerializer The request serializer.
      */
-    public function getRequestNormalizer() {
-        return $this->requestNormalizer;
+    public function getRequestSerializer() {
+        return $this->requestSerializer;
     }
 
     /**
@@ -217,13 +217,13 @@ abstract class AbstractProvider {
     }
 
     /**
-     * Set the request normalizer.
+     * Set the request serializer.
      *
-     * @param RequestNormalizer $requestNormalizer
+     * @param RequestSerializer $requestSerializer
      * @return AbstractProvider Returns this provider.
      */
-    protected function setRequestNormalizer(RequestNormalizer $requestNormalizer) {
-        $this->requestNormalizer = $requestNormalizer;
+    protected function setRequestSerializer(RequestSerializer $requestSerializer) {
+        $this->requestSerializer = $requestSerializer;
         return $this;
     }
 }

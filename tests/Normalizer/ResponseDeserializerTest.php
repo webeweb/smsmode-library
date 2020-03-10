@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace WBW\Library\SMSMode\Tests\Normalizer;
+namespace WBW\Library\SMSMode\Tests\Serializer;
 
 use WBW\Library\SMSMode\Model\DeliveryReport;
 use WBW\Library\SMSMode\Model\Response\AccountBalanceResponse;
@@ -29,29 +29,29 @@ use WBW\Library\SMSMode\Model\Response\SentSMSMessageListResponse;
 use WBW\Library\SMSMode\Model\Response\TransferringCreditsResponse;
 use WBW\Library\SMSMode\Model\SentSMSMessage;
 use WBW\Library\SMSMode\Model\SMSReply;
-use WBW\Library\SMSMode\Normalizer\ResponseNormalizer;
+use WBW\Library\SMSMode\Serializer\ResponseDeserializer;
 use WBW\Library\SMSMode\Tests\AbstractTestCase;
-use WBW\Library\SMSMode\Tests\Fixtures\Normalizer\TestResponseNormalizer;
+use WBW\Library\SMSMode\Tests\Fixtures\Serializer\TestResponseDeserializer;
 
 /**
- * Object normalizer test.
+ * Object deserializer test.
  *
  * @author webeweb <https://github.com/webeweb/>
- * @package WBW\Library\SMSMode\Tests\Normalizer
+ * @package WBW\Library\SMSMode\Tests\Serializer
  */
-class ResponseNormalizerTest extends AbstractTestCase {
+class ResponseDeserializerTest extends AbstractTestCase {
 
     /**
-     * Tests the denormalizeAccountBalanceResponse() method.
+     * Tests the deserializeAccountBalanceResponse() method.
      *
      * @return void
      */
-    public function testDenormalizeAccountBalanceResponse() {
+    public function testDeserializeAccountBalanceResponse() {
 
         // Initialize a Raw response mock.
         $rawResponse = "212.5";
 
-        $obj = ResponseNormalizer::denormalizeAccountBalanceResponse($rawResponse);
+        $obj = ResponseDeserializer::deserializeAccountBalanceResponse($rawResponse);
         $this->assertInstanceOf(AccountBalanceResponse::class, $obj);
 
         $this->assertNull($obj->getCode());
@@ -62,16 +62,16 @@ class ResponseNormalizerTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the denormalizeAddingContactResponse() method.
+     * Tests the deserializeAddingContactResponse() method.
      *
      * @return void
      */
-    public function testDenormalizeAddingContactResponse() {
+    public function testDeserializeAddingContactResponse() {
 
         // Initialize a Raw response mock.
         $rawResponse = "0 | Contact added";
 
-        $obj = ResponseNormalizer::denormalizeAddingContactResponse($rawResponse);
+        $obj = ResponseDeserializer::deserializeAddingContactResponse($rawResponse);
         $this->assertInstanceOf(AddingContactResponse::class, $obj);
 
         $this->assertEquals(0, $obj->getCode());
@@ -80,16 +80,16 @@ class ResponseNormalizerTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the denormalizeCheckingSMSMessageStatusResponse() method.
+     * Tests the deserializeCheckingSMSMessageStatusResponse() method.
      *
      * @return void
      */
-    public function testDenormalizeCheckingSMSMessageStatusResponse() {
+    public function testDeserializeCheckingSMSMessageStatusResponse() {
 
         // Initialize a Raw response mock.
         $rawResponse = "0 | Sent";
 
-        $obj = ResponseNormalizer::denormalizeCheckingSMSMessageStatusResponse($rawResponse);
+        $obj = ResponseDeserializer::deserializeCheckingSMSMessageStatusResponse($rawResponse);
         $this->assertInstanceOf(CheckingSMSMessageStatusResponse::class, $obj);
 
         $this->assertEquals(0, $obj->getCode());
@@ -98,11 +98,11 @@ class ResponseNormalizerTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the denormalizeCreatingAPIKeyResponse() method.
+     * Tests the deserializeCreatingAPIKeyResponse() method.
      *
      * @return void
      */
-    public function testDenormalizeCreatingAPIKeyResponse() {
+    public function testDeserializeCreatingAPIKeyResponse() {
 
         // Initialize a Raw response mock.
         $rawResponse = <<< EOT
@@ -116,7 +116,7 @@ class ResponseNormalizerTest extends AbstractTestCase {
 }
 EOT;
 
-        $obj = ResponseNormalizer::denormalizeCreatingAPIKeyResponse($rawResponse);
+        $obj = ResponseDeserializer::deserializeCreatingAPIKeyResponse($rawResponse);
         $this->assertInstanceOf(CreatingAPIKeyResponse::class, $obj);
 
         $this->assertNull($obj->getCode());
@@ -132,16 +132,16 @@ EOT;
     }
 
     /**
-     * Tests the denormalizeCreatingSubAccountResponse() method.
+     * Tests the deserializeCreatingSubAccountResponse() method.
      *
      * @return void
      */
-    public function testDenormalizeCreatingSubAccountResponse() {
+    public function testDeserializeCreatingSubAccountResponse() {
 
         // Initialize a Raw response mock.
         $rawResponse = "0 | Sub-account created";
 
-        $obj = ResponseNormalizer::denormalizeCreatingSubAccountResponse($rawResponse);
+        $obj = ResponseDeserializer::deserializeCreatingSubAccountResponse($rawResponse);
         $this->assertInstanceOf(CreatingSubAccountResponse::class, $obj);
 
         $this->assertEquals(0, $obj->getCode());
@@ -150,16 +150,16 @@ EOT;
     }
 
     /**
-     * Tests the denormalizeDeletingSMSResponse() method.
+     * Tests the deserializeDeletingSMSResponse() method.
      *
      * @return void
      */
-    public function testDenormalizeDeletingSMSResponse() {
+    public function testDeserializeDeletingSMSResponse() {
 
         // Initialize a Raw response mock.
         $rawResponse = "0 | SMS message deleted";
 
-        $obj = ResponseNormalizer::denormalizeDeletingSMSResponse($rawResponse);
+        $obj = ResponseDeserializer::deserializeDeletingSMSResponse($rawResponse);
         $this->assertInstanceOf(DeletingSMSResponse::class, $obj);
 
         $this->assertEquals(0, $obj->getCode());
@@ -168,16 +168,16 @@ EOT;
     }
 
     /**
-     * Tests the denormalizeDeletingSubAccountResponse() method.
+     * Tests the deserializeDeletingSubAccountResponse() method.
      *
      * @return void
      */
-    public function testDenormalizeDeletingSubAccountResponse() {
+    public function testDeserializeDeletingSubAccountResponse() {
 
         // Initialize a Raw response mock.
         $rawResponse = "0 | Sub-account deleted";
 
-        $obj = ResponseNormalizer::denormalizeDeletingSubAccountResponse($rawResponse);
+        $obj = ResponseDeserializer::deserializeDeletingSubAccountResponse($rawResponse);
         $this->assertInstanceOf(DeletingSubAccountResponse::class, $obj);
 
         $this->assertEquals(0, $obj->getCode());
@@ -186,17 +186,17 @@ EOT;
     }
 
     /**
-     * Tests the denormalizeDeliveryReport() method.
+     * Tests the deserializeDeliveryReport() method.
      *
      * @return void
      */
-    public function testDenormalizeDeliveryReport() {
+    public function testDeserializeDeliveryReport() {
 
         // Initialize a Raw response mock.
         // $rawResponse = "33600000000 0"; /* A well formed raw response */
         $rawResponse = "  33600000000  0  "; /* A bad formed raw response */
 
-        $obj = TestResponseNormalizer::denormalizeDeliveryReport($rawResponse);
+        $obj = TestResponseDeserializer::deserializeDeliveryReport($rawResponse);
         $this->assertInstanceOf(DeliveryReport::class, $obj);
 
         $this->assertEquals(0, $obj->getCode());
@@ -207,17 +207,17 @@ EOT;
     }
 
     /**
-     * Tests the denormalizeDeliveryReport() method.
+     * Tests the deserializeDeliveryReport() method.
      *
      * @return void
      */
-    public function testDenormalizeDeliveryReportResponse() {
+    public function testDeserializeDeliveryReportResponse() {
 
         // Initialize a Raw response mock.
         // $rawResponse = "33600000001 0 | 33600000002 2 | 33600000003 11"; /* A well formed delivery report. */
         $rawResponse = "  33600000001  0  |  33600000002  2  |  33600000003  11  "; /* A bad formed delivery report */
 
-        $obj = ResponseNormalizer::denormalizeDeliveryReportResponse($rawResponse);
+        $obj = ResponseDeserializer::deserializeDeliveryReportResponse($rawResponse);
         $this->assertInstanceOf(DeliveryReportResponse::class, $obj);
 
         $this->assertNull($obj->getCode());
@@ -237,16 +237,16 @@ EOT;
     }
 
     /**
-     * Tests the denormalizeDeliveryReport() method.
+     * Tests the deserializeDeliveryReport() method.
      *
      * @return void
      */
-    public function testDenormalizeDeliveryReportResponseWithException() {
+    public function testDeserializeDeliveryReportResponseWithException() {
 
         // Initialize a Raw response mock.
         $rawResponse = "31 | Internal error";
 
-        $obj = ResponseNormalizer::denormalizeDeliveryReportResponse($rawResponse);
+        $obj = ResponseDeserializer::deserializeDeliveryReportResponse($rawResponse);
         $this->assertInstanceOf(DeliveryReportResponse::class, $obj);
 
         $this->assertEquals(31, $obj->getCode());
@@ -257,17 +257,17 @@ EOT;
     }
 
     /**
-     * Tests the denormalizeDeliveryReport() method.
+     * Tests the deserializeDeliveryReport() method.
      *
      * @return void
      */
-    public function testDenormalizeDeliveryReportWithoutArguments() {
+    public function testDeserializeDeliveryReportWithoutArguments() {
 
         // Initialize a Raw response mock.
         // $rawResponse = "33600000000 0"; /* A well formed raw response */
         $rawResponse = "33600000000"; /* A bad formed raw response */
 
-        $obj = TestResponseNormalizer::denormalizeDeliveryReport($rawResponse);
+        $obj = TestResponseDeserializer::deserializeDeliveryReport($rawResponse);
         $this->assertInstanceOf(DeliveryReport::class, $obj);
 
         $this->assertNull($obj->getCode());
@@ -278,11 +278,11 @@ EOT;
     }
 
     /**
-     * Tests the denormalizeResponse() method.
+     * Tests the deserializeResponse() method.
      *
      * @return void
      */
-    public function testDenormalizeResponse() {
+    public function testDeserializeResponse() {
 
         // Set a Sent SMS message response mock.
         $obj = new SendingSMSMessageResponse();
@@ -291,7 +291,7 @@ EOT;
         // $rawResponse = "0 | Sent"; /* A well formed raw response */
         $rawResponse = "0"; /* A bad formed raw response */
 
-        TestResponseNormalizer::denormalizeResponse($obj, $rawResponse);
+        TestResponseDeserializer::deserializeResponse($obj, $rawResponse);
 
         $this->assertNull($obj->getCode());
         $this->assertNull($obj->getDescription());
@@ -299,11 +299,11 @@ EOT;
     }
 
     /**
-     * Tests the denormalizeRetrievingSMSReplyResponse() method.
+     * Tests the deserializeRetrievingSMSReplyResponse() method.
      *
      * @return void
      */
-    public function testDenormalizeRetrievingSMSReplyResponse() {
+    public function testDeserializeRetrievingSMSReplyResponse() {
 
         // Initialize a Raw response mock.
         $rawResponse = <<< EOT
@@ -312,7 +312,7 @@ responseID2 | 23012019-19:00 | 33600000002 | text2 | to2 | messageID2
 responseID3 | 23012019-20:00 | 33600000003 | text3 | to3 | messageID3
 EOT;
 
-        $obj = ResponseNormalizer::denormalizeRetrievingSMSReplyResponse($rawResponse);
+        $obj = ResponseDeserializer::deserializeRetrievingSMSReplyResponse($rawResponse);
         $this->assertInstanceOf(RetrievingSMSReplyResponse::class, $obj);
 
         $this->assertNull($obj->getCode());
@@ -344,16 +344,16 @@ EOT;
     }
 
     /**
-     * Tests the denormalizeRetrievingSMSReplyResponse() method.
+     * Tests the deserializeRetrievingSMSReplyResponse() method.
      *
      * @return void
      */
-    public function testDenormalizeRetrievingSMSReplyResponseWithException() {
+    public function testDeserializeRetrievingSMSReplyResponseWithException() {
 
         // Initialize a Raw response mock.
         $rawResponse = "32 | Authentication error";
 
-        $obj = ResponseNormalizer::denormalizeRetrievingSMSReplyResponse($rawResponse);
+        $obj = ResponseDeserializer::deserializeRetrievingSMSReplyResponse($rawResponse);
         $this->assertInstanceOf(RetrievingSMSReplyResponse::class, $obj);
 
         $this->assertEquals(32, $obj->getCode());
@@ -364,17 +364,17 @@ EOT;
     }
 
     /**
-     * Tests the denormalizeSMSReply() method.
+     * Tests the deserializeSMSReply() method.
      *
      * @return void
      */
-    public function testDenormalizeSMSReply() {
+    public function testDeserializeSMSReply() {
 
         // Initialize a Raw response mock.
         // $rawResponse = "responseID | 23012019-18:00 | 33600000000 | text | to | messageID"; /* A well formed raw response */
         $rawResponse = "  responseID  |  23012019-18:00  |  33600000000  |  text  |  to  |  messageID  "; /* A bad formed raw response */
 
-        $obj = TestResponseNormalizer::denormalizeSMSReply($rawResponse);
+        $obj = TestResponseDeserializer::deserializeSMSReply($rawResponse);
         $this->assertInstanceOf(SMSReply::class, $obj);
 
         $this->assertNull($obj->getCode());
@@ -390,17 +390,17 @@ EOT;
     }
 
     /**
-     * Tests the denormalizeSMSReply() method.
+     * Tests the deserializeSMSReply() method.
      *
      * @return void
      */
-    public function testDenormalizeSMSReplyWithoutArguments() {
+    public function testDeserializeSMSReplyWithoutArguments() {
 
         // Initialize a Raw response mock.
         // $rawResponse = "responseID | 23012019-18:00 | 33600000000 | text | to | messageID"; /* A well formed raw response */
         $rawResponse = "responseID | 23012019-18:00 | 33600000000 | text | to"; /* A bad formed raw response */
 
-        $obj = TestResponseNormalizer::denormalizeSMSReply($rawResponse);
+        $obj = TestResponseDeserializer::deserializeSMSReply($rawResponse);
         $this->assertInstanceOf(SMSReply::class, $obj);
 
         $this->assertNull($obj->getCode());
@@ -416,16 +416,16 @@ EOT;
     }
 
     /**
-     * Tests the denormalizeSendingSMSBatchResponse() method.
+     * Tests the deserializeSendingSMSBatchResponse() method.
      *
      * @return void
      */
-    public function testDenormalizeSendingSMSBatchResponse() {
+    public function testDeserializeSendingSMSBatchResponse() {
 
         // Initialize a Raw response mock.
         $rawResponse = "0 | Accepted | campagneID";
 
-        $obj = ResponseNormalizer::denormalizeSendingSMSBatchResponse($rawResponse);
+        $obj = ResponseDeserializer::deserializeSendingSMSBatchResponse($rawResponse);
         $this->assertInstanceOf(SendingSMSBatchResponse::class, $obj);
 
         $this->assertEquals(0, $obj->getCode());
@@ -436,16 +436,16 @@ EOT;
     }
 
     /**
-     * Tests the denormalizeSendingSMSMessageResponse() method.
+     * Tests the deserializeSendingSMSMessageResponse() method.
      *
      * @return void
      */
-    public function testDenormalizeSendingSMSMessageResponse() {
+    public function testDeserializeSendingSMSMessageResponse() {
 
         // Initialize a Raw response mock.
         $rawResponse = "0 | Accepted | smsID";
 
-        $obj = ResponseNormalizer::denormalizeSendingSMSMessageResponse($rawResponse);
+        $obj = ResponseDeserializer::deserializeSendingSMSMessageResponse($rawResponse);
         $this->assertInstanceOf(SendingSMSMessageResponse::class, $obj);
 
         $this->assertEquals(0, $obj->getCode());
@@ -456,16 +456,16 @@ EOT;
     }
 
     /**
-     * Tests the denormalizeSendingTextToSpeechSMSResponse() method.
+     * Tests the deserializeSendingTextToSpeechSMSResponse() method.
      *
      * @return void
      */
-    public function testDenormalizeSendingTextToSpeechSMSResponse() {
+    public function testDeserializeSendingTextToSpeechSMSResponse() {
 
         // Initialize a Raw response mock.
         $rawResponse = "0 | Accepted | smsID";
 
-        $obj = ResponseNormalizer::denormalizeSendingTextToSpeechSMSResponse($rawResponse);
+        $obj = ResponseDeserializer::deserializeSendingTextToSpeechSMSResponse($rawResponse);
         $this->assertInstanceOf(SendingTextToSpeechSMSResponse::class, $obj);
 
         $this->assertEquals(0, $obj->getCode());
@@ -476,16 +476,16 @@ EOT;
     }
 
     /**
-     * Tests the denormalizeSendingUnicodeSMSResponse() method.
+     * Tests the deserializeSendingUnicodeSMSResponse() method.
      *
      * @return void
      */
-    public function testDenormalizeSendingUnicodeSMSResponse() {
+    public function testDeserializeSendingUnicodeSMSResponse() {
 
         // Initialize a Raw response mock.
         $rawResponse = "0 | Accepted | smsID";
 
-        $obj = ResponseNormalizer::denormalizeSendingUnicodeSMSResponse($rawResponse);
+        $obj = ResponseDeserializer::deserializeSendingUnicodeSMSResponse($rawResponse);
         $this->assertInstanceOf(SendingUnicodeSMSResponse::class, $obj);
 
         $this->assertEquals(0, $obj->getCode());
@@ -496,17 +496,17 @@ EOT;
     }
 
     /**
-     * Tests the denormalizeSentSMSMessage() method.
+     * Tests the deserializeSentSMSMessage() method.
      *
      * @return void
      */
-    public function testDenormalizeSentSMSMessage() {
+    public function testDeserializeSentSMSMessage() {
 
         // Initialize a Raw response mock.
         // $rawResponse = "smsID | 23012019-18:00 | message | 33600000000 | 0.1 | 1"; /* A well formed raw response */
         $rawResponse = "  smsID  |  23012019-18:00  |  message  | 33600000000  |  0.1  |  1  "; /* A bad formed raw response */
 
-        $obj = TestResponseNormalizer::denormalizeSentSMSMessage($rawResponse);
+        $obj = TestResponseDeserializer::deserializeSentSMSMessage($rawResponse);
         $this->assertInstanceOf(SentSMSMessage::class, $obj);
 
         $this->assertNull($obj->getCode());
@@ -522,11 +522,11 @@ EOT;
     }
 
     /**
-     * Tests the denormalizeSentSMSMessageListResponse() method.
+     * Tests the deserializeSentSMSMessageListResponse() method.
      *
      * @return void
      */
-    public function testDenormalizeSentSMSMessageListResponse() {
+    public function testDeserializeSentSMSMessageListResponse() {
 
         // Initialize a Raw response mock.
         $rawResponse = <<< EOT
@@ -535,7 +535,7 @@ smsID2 | 23012019-19:00 | message2 | 33600000002 | 0.2 | 2
 smsID3 | 23012019-20:00 | message3 | 33600000003 | 0.3 | 3
 EOT;
 
-        $obj = ResponseNormalizer::denormalizeSentSMSMessageListResponse($rawResponse);
+        $obj = ResponseDeserializer::deserializeSentSMSMessageListResponse($rawResponse);
         $this->assertInstanceOf(SentSMSMessageListResponse::class, $obj);
 
         $this->assertNull($obj->getCode());
@@ -567,16 +567,16 @@ EOT;
     }
 
     /**
-     * Tests the denormalizeSentSMSMessageListResponse() method.
+     * Tests the deserializeSentSMSMessageListResponse() method.
      *
      * @return void
      */
-    public function testDenormalizeSentSMSMessageListResponseWithException() {
+    public function testDeserializeSentSMSMessageListResponseWithException() {
 
         // Initialize a Raw response mock.
         $rawResponse = "32 | Authentication error";
 
-        $obj = ResponseNormalizer::denormalizeSentSMSMessageListResponse($rawResponse);
+        $obj = ResponseDeserializer::deserializeSentSMSMessageListResponse($rawResponse);
         $this->assertInstanceOf(SentSMSMessageListResponse::class, $obj);
 
         $this->assertEquals(32, $obj->getCode());
@@ -587,17 +587,17 @@ EOT;
     }
 
     /**
-     * Tests the denormalizeSentSMSMessage() method.
+     * Tests the deserializeSentSMSMessage() method.
      *
      * @return void
      */
-    public function testDenormalizeSentSMSMessageWithoutArguments() {
+    public function testDeserializeSentSMSMessageWithoutArguments() {
 
         // Initialize a Raw response mock.
         // $rawResponse = "smsID | 23012019-18:00 | message | 33600000000 | 0.1 | 1"; /* A well formed raw response */
         $rawResponse = "smsID | 23012019-18:00 | message | 33600000000 | 0.1"; /* A bad formed raw response */
 
-        $obj = TestResponseNormalizer::denormalizeSentSMSMessage($rawResponse);
+        $obj = TestResponseDeserializer::deserializeSentSMSMessage($rawResponse);
         $this->assertInstanceOf(SentSMSMessage::class, $obj);
 
         $this->assertNull($obj->getCode());
@@ -613,16 +613,16 @@ EOT;
     }
 
     /**
-     * Tests the denormalizeTransferringCreditsResponse() method.
+     * Tests the deserializeTransferringCreditsResponse() method.
      *
      * @return void
      */
-    public function testDenormalizeTransferringCreditsResponse() {
+    public function testDeserializeTransferringCreditsResponse() {
 
         // Initialize a Raw response mock.
         $rawResponse = "0 | Transfer done";
 
-        $obj = ResponseNormalizer::denormalizeTransferringCreditsResponse($rawResponse);
+        $obj = ResponseDeserializer::deserializeTransferringCreditsResponse($rawResponse);
         $this->assertInstanceOf(TransferringCreditsResponse::class, $obj);
 
         $this->assertEquals(0, $obj->getCode());

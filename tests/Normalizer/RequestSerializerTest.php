@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace WBW\Library\SMSMode\Tests\Normalizer;
+namespace WBW\Library\SMSMode\Tests\Serializer;
 
 use DateTime;
 use Exception;
@@ -30,16 +30,16 @@ use WBW\Library\SMSMode\Model\Request\SendingTextToSpeechSMSRequest;
 use WBW\Library\SMSMode\Model\Request\SendingUnicodeSMSRequest;
 use WBW\Library\SMSMode\Model\Request\SentSMSMessageListRequest;
 use WBW\Library\SMSMode\Model\Request\TransferringCreditsRequest;
-use WBW\Library\SMSMode\Normalizer\RequestNormalizer;
+use WBW\Library\SMSMode\Serializer\RequestSerializer;
 use WBW\Library\SMSMode\Tests\AbstractTestCase;
 
 /**
- * Object normalizer test.
+ * Object serializer test.
  *
  * @author webeweb <https://github.com/webeweb/>
- * @package WBW\Library\SMSMode\Tests\Normalizer
+ * @package WBW\Library\SMSMode\Tests\Serializer
  */
-class RequestNormalizerTest extends AbstractTestCase {
+class RequestSerializerTest extends AbstractTestCase {
 
     /**
      * Tests the __construct() method.
@@ -48,35 +48,35 @@ class RequestNormalizerTest extends AbstractTestCase {
      */
     public function testConstruct() {
 
-        $obj = new RequestNormalizer();
+        $obj = new RequestSerializer();
 
         $this->assertNotEmpty($obj->getConfiguration());
     }
 
     /**
-     * Tests the normalize() method.
+     * Tests the serialize() method.
      *
      * @return void
      * @throws Exception Throws an exception if an error occurs.
      */
-    public function testNormalizeAccountBalance() {
+    public function testSerializeAccountBalance() {
 
         // Set an account balance request mock.
         $arg = new AccountBalanceRequest();
 
-        $obj = new RequestNormalizer();
+        $obj = new RequestSerializer();
 
         $res = [];
-        $this->assertEquals($res, $obj->normalize($arg));
+        $this->assertEquals($res, $obj->serialize($arg));
     }
 
     /**
-     * Tests the normalize() method.
+     * Tests the serialize() method.
      *
      * @return void
      * @throws Exception Throws an exception if an error occurs.
      */
-    public function testNormalizeAddingContactRequest() {
+    public function testSerializeAddingContactRequest() {
 
         // Set an Adding contact request mock.
         $arg = new AddingContactRequest();
@@ -89,7 +89,7 @@ class RequestNormalizerTest extends AbstractTestCase {
         $arg->setOther("other");
         $arg->setDate(new DateTime("2017-09-12 11:00:00"));
 
-        $obj = new RequestNormalizer();
+        $obj = new RequestSerializer();
 
         $res = [
             "nom"     => "nom",
@@ -100,24 +100,24 @@ class RequestNormalizerTest extends AbstractTestCase {
             "other"   => "other",
             "date"    => "12092017",
         ];
-        $this->assertEquals($res, $obj->normalize($arg));
+        $this->assertEquals($res, $obj->serialize($arg));
     }
 
     /**
-     * Tests the normalize() method.
+     * Tests the serialize() method.
      *
      * @return void
      */
-    public function testNormalizeAddingContactRequestWithoutArguments() {
+    public function testSerializeAddingContactRequestWithoutArguments() {
 
         // Set an Adding contact request mock.
         $arg = new AddingContactRequest();
 
-        $obj = new RequestNormalizer();
+        $obj = new RequestSerializer();
 
         try {
 
-            $obj->normalize($arg);
+            $obj->serialize($arg);
         } catch (Exception $ex) {
 
             $this->assertInstanceOf(InvalidArgumentException::class, $ex);
@@ -127,7 +127,7 @@ class RequestNormalizerTest extends AbstractTestCase {
         try {
 
             $arg->setNom("nom");
-            $obj->normalize($arg);
+            $obj->serialize($arg);
         } catch (Exception $ex) {
 
             $this->assertInstanceOf(InvalidArgumentException::class, $ex);
@@ -136,34 +136,34 @@ class RequestNormalizerTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the normalize() method.
+     * Tests the serialize() method.
      *
      * @return void
      * @throws Exception Throws an exception if an error occurs.
      */
-    public function testNormalizeAuthentication() {
+    public function testSerializeAuthentication() {
 
         // Set a Creating sub-account request mock.
         $arg = new Authentication();
         $arg->setPseudo("pseudo");
         $arg->setPass("pass");
 
-        $obj = new RequestNormalizer();
+        $obj = new RequestSerializer();
 
         $res = [
             "pseudo" => "pseudo",
             "pass"   => "pass",
         ];
-        $this->assertEquals($res, $obj->normalize($arg));
+        $this->assertEquals($res, $obj->serialize($arg));
     }
 
     /**
-     * Tests the normalize() method.
+     * Tests the serialize() method.
      *
      * @return void
      * @throws Exception Throws an exception if an error occurs.
      */
-    public function testNormalizeAuthenticationWithToken() {
+    public function testSerializeAuthenticationWithToken() {
 
         // Set a Creating sub-account request mock.
         $arg = new Authentication();
@@ -172,29 +172,29 @@ class RequestNormalizerTest extends AbstractTestCase {
         $arg->setPseudo("pseudo");
         $arg->setPass("pass");
 
-        $obj = new RequestNormalizer();
+        $obj = new RequestSerializer();
 
         $res = [
             "accessToken" => "accessToken",
         ];
-        $this->assertEquals($res, $obj->normalize($arg));
+        $this->assertEquals($res, $obj->serialize($arg));
     }
 
     /**
-     * Tests the normalize() method.
+     * Tests the serialize() method.
      *
      * @return void
      */
-    public function testNormalizeAuthenticationWithoutArguments() {
+    public function testSerializeAuthenticationWithoutArguments() {
 
         // Set a Authentication mock.
         $arg = new Authentication();
 
-        $obj = new RequestNormalizer();
+        $obj = new RequestSerializer();
 
         try {
 
-            $obj->normalize($arg);
+            $obj->serialize($arg);
         } catch (Exception $ex) {
 
             $this->assertInstanceOf(InvalidArgumentException::class, $ex);
@@ -204,7 +204,7 @@ class RequestNormalizerTest extends AbstractTestCase {
         try {
 
             $arg->setPseudo("pseudo");
-            $obj->normalize($arg);
+            $obj->serialize($arg);
         } catch (Exception $ex) {
 
             $this->assertInstanceOf(InvalidArgumentException::class, $ex);
@@ -213,40 +213,40 @@ class RequestNormalizerTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the normalize() method.
+     * Tests the serialize() method.
      *
      * @return void
      * @throws Exception Throws an exception if an error occurs.
      */
-    public function testNormalizeCheckingSMSMessageStatusRequest() {
+    public function testSerializeCheckingSMSMessageStatusRequest() {
 
         // Set a Checking SMS message status mock.
         $arg = new CheckingSMSMessageStatusRequest();
         $arg->setSmsID("smsID");
 
-        $obj = new RequestNormalizer();
+        $obj = new RequestSerializer();
 
         $res = [
             "smsID" => "smsID",
         ];
-        $this->assertEquals($res, $obj->normalize($arg));
+        $this->assertEquals($res, $obj->serialize($arg));
     }
 
     /**
-     * Tests the normalize() method.
+     * Tests the serialize() method.
      *
      * @return void
      */
-    public function testNormalizeCheckingSMSMessageStatusRequestWithoutArguments() {
+    public function testSerializeCheckingSMSMessageStatusRequestWithoutArguments() {
 
         // Set a Checking SMS message status mock.
         $arg = new CheckingSMSMessageStatusRequest();
 
-        $obj = new RequestNormalizer();
+        $obj = new RequestSerializer();
 
         try {
 
-            $obj->normalize($arg);
+            $obj->serialize($arg);
         } catch (Exception $ex) {
 
             $this->assertInstanceOf(InvalidArgumentException::class, $ex);
@@ -255,29 +255,29 @@ class RequestNormalizerTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the normalize() method.
+     * Tests the serialize() method.
      *
      * @return void
      * @throws Exception Throws an exception if an error occurs.
      */
-    public function testNormalizeCreatingAPIKeyRequest() {
+    public function testSerializeCreatingAPIKeyRequest() {
 
         // Set an Creating API key request mock.
         $arg = new CreatingAPIKeyRequest();
 
-        $obj = new RequestNormalizer();
+        $obj = new RequestSerializer();
 
         $res = [];
-        $this->assertEquals($res, $obj->normalize($arg));
+        $this->assertEquals($res, $obj->serialize($arg));
     }
 
     /**
-     * Tests the normalize() method.
+     * Tests the serialize() method.
      *
      * @return void
      * @throws Exception Throws an exception if an error occurs.
      */
-    public function testNormalizeCreatingSubAccount() {
+    public function testSerializeCreatingSubAccount() {
 
         // Set a Creating sub-account request mock.
         $arg = new CreatingSubAccountRequest();
@@ -297,7 +297,7 @@ class RequestNormalizerTest extends AbstractTestCase {
         $arg->setEmail("email");
         $arg->setDate(new DateTime("2017-09-12 11:00:00"));
 
-        $obj = new RequestNormalizer();
+        $obj = new RequestSerializer();
 
         $res = [
             "newPseudo"  => "newPseudo",
@@ -315,24 +315,24 @@ class RequestNormalizerTest extends AbstractTestCase {
             "email"      => "email",
             "date"       => "12092017",
         ];
-        $this->assertEquals($res, $obj->normalize($arg));
+        $this->assertEquals($res, $obj->serialize($arg));
     }
 
     /**
-     * Tests the normalize() method.
+     * Tests the serialize() method.
      *
      * @return void
      */
-    public function testNormalizeCreatingSubAccountWithoutArguments() {
+    public function testSerializeCreatingSubAccountWithoutArguments() {
 
         // Set a Creating sub-account request mock.
         $arg = new CreatingSubAccountRequest();
 
-        $obj = new RequestNormalizer();
+        $obj = new RequestSerializer();
 
         try {
 
-            $obj->normalize($arg);
+            $obj->serialize($arg);
         } catch (Exception $ex) {
 
             $this->assertInstanceOf(InvalidArgumentException::class, $ex);
@@ -342,7 +342,7 @@ class RequestNormalizerTest extends AbstractTestCase {
         try {
 
             $arg->setNewPseudo("newPseudo");
-            $obj->normalize($arg);
+            $obj->serialize($arg);
         } catch (Exception $ex) {
 
             $this->assertInstanceOf(InvalidArgumentException::class, $ex);
@@ -351,23 +351,23 @@ class RequestNormalizerTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the normalize() method.
+     * Tests the serialize() method.
      *
      * @return void
      * @throws Exception Throws an exception if an error occurs.
      */
-    public function testNormalizeDeletingSMSRequest() {
+    public function testSerializeDeletingSMSRequest() {
 
         // Set a Delete SMS request mock.
         $arg = new DeletingSMSRequest();
         $arg->setSmsID("smsID");
 
-        $obj = new RequestNormalizer();
+        $obj = new RequestSerializer();
 
         $res1 = [
             "smsID" => "smsID",
         ];
-        $this->assertEquals($res1, $obj->normalize($arg));
+        $this->assertEquals($res1, $obj->serialize($arg));
 
         $arg->setSmsID(null);
         $arg->setNumero("33600000000");
@@ -375,24 +375,24 @@ class RequestNormalizerTest extends AbstractTestCase {
         $res2 = [
             "numero" => "33600000000",
         ];
-        $this->assertEquals($res2, $obj->normalize($arg));
+        $this->assertEquals($res2, $obj->serialize($arg));
     }
 
     /**
-     * Tests the normalize() method.
+     * Tests the serialize() method.
      *
      * @return void
      */
-    public function testNormalizeDeletingSMSRequestWithoutArguments() {
+    public function testSerializeDeletingSMSRequestWithoutArguments() {
 
         // Set a Delete SMS request mock.
         $arg = new DeletingSMSRequest();
 
-        $obj = new RequestNormalizer();
+        $obj = new RequestSerializer();
 
         try {
 
-            $obj->normalize($arg);
+            $obj->serialize($arg);
         } catch (Exception $ex) {
 
             $this->assertInstanceOf(InvalidArgumentException::class, $ex);
@@ -401,40 +401,40 @@ class RequestNormalizerTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the normalize() method.
+     * Tests the serialize() method.
      *
      * @return void
      * @throws Exception Throws an exception if an error occurs.
      */
-    public function testNormalizeDeletingSubAccountRequest() {
+    public function testSerializeDeletingSubAccountRequest() {
 
         // Set a Deleting sub-account request mock.
         $arg = new DeletingSubAccountRequest();
         $arg->setPseudoToDelete("pseudoToDelete");
 
-        $obj = new RequestNormalizer();
+        $obj = new RequestSerializer();
 
         $res = [
             "pseudoToDelete" => "pseudoToDelete",
         ];
-        $this->assertEquals($res, $obj->normalize($arg));
+        $this->assertEquals($res, $obj->serialize($arg));
     }
 
     /**
-     * Tests the normalize() method.
+     * Tests the serialize() method.
      *
      * @return void
      */
-    public function testNormalizeDeletingSubAccountRequestWithoutArguments() {
+    public function testSerializeDeletingSubAccountRequestWithoutArguments() {
 
         // Set a Deleting sub-account request mock.
         $arg = new DeletingSubAccountRequest();
 
-        $obj = new RequestNormalizer();
+        $obj = new RequestSerializer();
 
         try {
 
-            $obj->normalize($arg);
+            $obj->serialize($arg);
         } catch (Exception $ex) {
 
             $this->assertInstanceOf(InvalidArgumentException::class, $ex);
@@ -443,40 +443,40 @@ class RequestNormalizerTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the normalize() method.
+     * Tests the serialize() method.
      *
      * @return void
      * @throws Exception Throws an exception if an error occurs.
      */
-    public function testNormalizeDeliveryReportRequest() {
+    public function testSerializeDeliveryReportRequest() {
 
         // Set a Delivery report request mock.
         $arg = new DeliveryReportRequest();
         $arg->setSmsID("smsID");
 
-        $obj = new RequestNormalizer();
+        $obj = new RequestSerializer();
 
         $res = [
             "smsID" => "smsID",
         ];
-        $this->assertEquals($res, $obj->normalize($arg));
+        $this->assertEquals($res, $obj->serialize($arg));
     }
 
     /**
-     * Tests the normalize() method.
+     * Tests the serialize() method.
      *
      * @return void
      */
-    public function testNormalizeDeliveryReportRequestWithoutArguments() {
+    public function testSerializeDeliveryReportRequestWithoutArguments() {
 
         // Set a Delivery report request mock.
         $arg = new DeliveryReportRequest();
 
-        $obj = new RequestNormalizer();
+        $obj = new RequestSerializer();
 
         try {
 
-            $obj->normalize($arg);
+            $obj->serialize($arg);
         } catch (Exception $ex) {
 
             $this->assertInstanceOf(InvalidArgumentException::class, $ex);
@@ -485,23 +485,23 @@ class RequestNormalizerTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the normalize() method.
+     * Tests the serialize() method.
      *
      * @return void
      * @throws Exception Throws an exception if an error occurs.
      */
-    public function testNormalizeRetrievingSMSReplyRequest() {
+    public function testSerializeRetrievingSMSReplyRequest() {
 
         // Set a Retrieving SMS reply request mock.
         $arg = new RetrievingSMSReplyRequest();
 
-        $obj = new RequestNormalizer();
+        $obj = new RequestSerializer();
 
         try {
 
             $arg->setStart(0);
             $arg->setOffset(null);
-            $obj->normalize($arg);
+            $obj->serialize($arg);
         } catch (Exception $ex) {
 
             $this->assertInstanceOf(InvalidArgumentException::class, $ex);
@@ -512,7 +512,7 @@ class RequestNormalizerTest extends AbstractTestCase {
 
             $arg->setStart(null);
             $arg->setOffset(1);
-            $obj->normalize($arg);
+            $obj->serialize($arg);
         } catch (Exception $ex) {
 
             $this->assertInstanceOf(InvalidArgumentException::class, $ex);
@@ -526,26 +526,26 @@ class RequestNormalizerTest extends AbstractTestCase {
             "start"  => 0,
             "offset" => 10,
         ];
-        $this->assertEquals($res, $obj->normalize($arg));
+        $this->assertEquals($res, $obj->serialize($arg));
     }
 
     /**
-     * Tests the normalize() method.
+     * Tests the serialize() method.
      *
      * @return void
      * @throws Exception Throws an exception if an error occurs.
      */
-    public function testNormalizeRetrievingSMSReplyRequestWithStartAndEndDate() {
+    public function testSerializeRetrievingSMSReplyRequestWithStartAndEndDate() {
 
         // Set a Retrieving SMS reply request mock.
         $arg = new RetrievingSMSReplyRequest();
 
-        $obj = new RequestNormalizer();
+        $obj = new RequestSerializer();
 
         try {
 
             $arg->setStartDate(new DateTime("2017-09-14 12:00:00"));
-            $obj->normalize($arg);
+            $obj->serialize($arg);
         } catch (Exception $ex) {
             $this->assertInstanceOf(InvalidArgumentException::class, $ex);
             $this->assertEquals("The optional parameter \"endDate\" is required when \"startDate\" is provided", $ex->getMessage());
@@ -555,7 +555,7 @@ class RequestNormalizerTest extends AbstractTestCase {
 
             $arg->setStartDate(null);
             $arg->setEndDate(new DateTime("2017-09-14 12:00:00"));
-            $obj->normalize($arg);
+            $obj->serialize($arg);
         } catch (Exception $ex) {
 
             $this->assertInstanceOf(InvalidArgumentException::class, $ex);
@@ -566,7 +566,7 @@ class RequestNormalizerTest extends AbstractTestCase {
 
             $arg->setStartDate(new DateTime("2017-09-14 12:00:00"));
             $arg->setEndDate(new DateTime("2017-09-14 12:00:00"));
-            $obj->normalize($arg);
+            $obj->serialize($arg);
         } catch (Exception $ex) {
 
             $this->assertInstanceOf(IllegalArgumentException::class, $ex);
@@ -580,33 +580,33 @@ class RequestNormalizerTest extends AbstractTestCase {
             "startDate" => "14092017-12:00",
             "endDate"   => "14092017-14:00",
         ];
-        $this->assertEquals($res, $obj->normalize($arg));
+        $this->assertEquals($res, $obj->serialize($arg));
     }
 
     /**
-     * Tests the normalize() method.
+     * Tests the serialize() method.
      *
      * @return void
      * @throws Exception Throws an exception if an error occurs.
      */
-    public function testNormalizeRetrievingSMSReplyRequestWithoutArguments() {
+    public function testSerializeRetrievingSMSReplyRequestWithoutArguments() {
 
         // Set a Retrieving SMS reply request mock.
         $arg = new RetrievingSMSReplyRequest();
 
-        $obj = new RequestNormalizer();
+        $obj = new RequestSerializer();
 
         $res = [];
-        $this->assertEquals($res, $obj->normalize($arg));
+        $this->assertEquals($res, $obj->serialize($arg));
     }
 
     /**
-     * Tests the normalize() method.
+     * Tests the serialize() method.
      *
      * @return void
      * @throws Exception Throws an exception if an error occurs.
      */
-    public function testNormalizeSendingSMSBatchRequest() {
+    public function testSerializeSendingSMSBatchRequest() {
 
         // Set a Fichier mock.
         $fichier = getcwd() . "/tests/Fixtures/Model/Request/SendingSMSBatchRequest.csv";
@@ -622,7 +622,7 @@ class RequestNormalizerTest extends AbstractTestCase {
         $arg->setNbrMsg(1);
         $arg->setNotificationUrl("notificationUrl");
 
-        $obj = new RequestNormalizer();
+        $obj = new RequestSerializer();
 
         $res = [
             "classe_msg"       => 4,
@@ -633,24 +633,24 @@ class RequestNormalizerTest extends AbstractTestCase {
             "notification_url" => "notificationUrl",
             "fichier"          => $fichier,
         ];
-        $this->assertEquals($res, $obj->normalize($arg));
+        $this->assertEquals($res, $obj->serialize($arg));
     }
 
     /**
-     * Tests the normalize() method.
+     * Tests the serialize() method.
      *
      * @return void
      */
-    public function testNormalizeSendingSMSBatchRequestWithoutArguments() {
+    public function testSerializeSendingSMSBatchRequestWithoutArguments() {
 
         // Set a Sending SMS batch request mock.
         $arg = new SendingSMSBatchRequest();
 
-        $obj = new RequestNormalizer();
+        $obj = new RequestSerializer();
 
         try {
 
-            $obj->normalize($arg);
+            $obj->serialize($arg);
         } catch (Exception $ex) {
 
             $this->assertInstanceOf(InvalidArgumentException::class, $ex);
@@ -659,12 +659,12 @@ class RequestNormalizerTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the normalize() method.
+     * Tests the serialize() method.
      *
      * @return void
      * @throws Exception Throws an exception if an error occurs.
      */
-    public function testNormalizeSendingSMSMessageRequest() {
+    public function testSerializeSendingSMSMessageRequest() {
 
         // Set a Sending SMS message request mock.
         $arg = new SendingSMSMessageRequest();
@@ -681,7 +681,7 @@ class RequestNormalizerTest extends AbstractTestCase {
         $arg->setNotificationUrlReponse("notificationUrlReponse");
         $arg->setStop(SendingSMSMessageRequest::STOP_ALWAYS);
 
-        $obj = new RequestNormalizer();
+        $obj = new RequestSerializer();
 
         $res = [
             "message"                  => "Hello Mum",
@@ -695,16 +695,16 @@ class RequestNormalizerTest extends AbstractTestCase {
             "notification_url_reponse" => "notificationUrlReponse",
             "stop"                     => 2,
         ];
-        $this->assertEquals($res, $obj->normalize($arg));
+        $this->assertEquals($res, $obj->serialize($arg));
     }
 
     /**
-     * Tests the normalize() method.
+     * Tests the serialize() method.
      *
      * @return void
      * @throws Exception Throws an exception if an error occurs.
      */
-    public function testNormalizeSendingSMSMessageRequestWithGroupe() {
+    public function testSerializeSendingSMSMessageRequestWithGroupe() {
 
         // Set a Sending SMS message request mock.
         $arg = new SendingSMSMessageRequest();
@@ -719,7 +719,7 @@ class RequestNormalizerTest extends AbstractTestCase {
         $arg->setNotificationUrl("notificationUrl");
         $arg->setNotificationUrlReponse("notificationUrlReponse");
 
-        $obj = new RequestNormalizer();
+        $obj = new RequestSerializer();
 
         $res = [
             "message"                  => "Hello Mum",
@@ -732,24 +732,24 @@ class RequestNormalizerTest extends AbstractTestCase {
             "notification_url"         => "notificationUrl",
             "notification_url_reponse" => "notificationUrlReponse",
         ];
-        $this->assertEquals($res, $obj->normalize($arg));
+        $this->assertEquals($res, $obj->serialize($arg));
     }
 
     /**
-     * Tests the normalize() method.
+     * Tests the serialize() method.
      *
      * @return void
      */
-    public function testNormalizeSendingSMSMessageRequestWithoutArguments() {
+    public function testSerializeSendingSMSMessageRequestWithoutArguments() {
 
         // Set a Sending SMS message request mock.
         $arg = new SendingSMSMessageRequest();
 
-        $obj = new RequestNormalizer();
+        $obj = new RequestSerializer();
 
         try {
 
-            $obj->normalize($arg);
+            $obj->serialize($arg);
         } catch (Exception $ex) {
 
             $this->assertInstanceOf(InvalidArgumentException::class, $ex);
@@ -759,7 +759,7 @@ class RequestNormalizerTest extends AbstractTestCase {
         try {
 
             $arg->setMessage("message");
-            $obj->normalize($arg);
+            $obj->serialize($arg);
         } catch (Exception $ex) {
 
             $this->assertInstanceOf(InvalidArgumentException::class, $ex);
@@ -768,12 +768,12 @@ class RequestNormalizerTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the normalize() method.
+     * Tests the serialize() method.
      *
      * @return void
      * @throws Exception Throws an exception if an error occurs.
      */
-    public function testNormalizeSendingTextToSpeechRequest() {
+    public function testSerializeSendingTextToSpeechRequest() {
 
         // Set a Sending text-to-speech request mock.
         $arg = new SendingTextToSpeechSMSRequest();
@@ -785,7 +785,7 @@ class RequestNormalizerTest extends AbstractTestCase {
         $arg->setDateEnvoi(new DateTime("2019-01-17"));
         $arg->setLanguage("fr-FR");
 
-        $obj = new RequestNormalizer();
+        $obj = new RequestSerializer();
 
         $res = [
             "message"    => "Hello Mum",
@@ -794,24 +794,24 @@ class RequestNormalizerTest extends AbstractTestCase {
             "date_envoi" => "17012019",
             "language"   => "fr-FR",
         ];
-        $this->assertEquals($res, $obj->normalize($arg));
+        $this->assertEquals($res, $obj->serialize($arg));
     }
 
     /**
-     * Tests the normalize() method.
+     * Tests the serialize() method.
      *
      * @return void
      */
-    public function testNormalizeSendingTextToSpeechRequestWithoutArguments() {
+    public function testSerializeSendingTextToSpeechRequestWithoutArguments() {
 
         // Set a Sending text-to-speech request mock.
         $arg = new SendingTextToSpeechSMSRequest();
 
-        $obj = new RequestNormalizer();
+        $obj = new RequestSerializer();
 
         try {
 
-            $obj->normalize($arg);
+            $obj->serialize($arg);
         } catch (Exception $ex) {
 
             $this->assertInstanceOf(InvalidArgumentException::class, $ex);
@@ -821,7 +821,7 @@ class RequestNormalizerTest extends AbstractTestCase {
         try {
 
             $arg->setMessage("message");
-            $obj->normalize($arg);
+            $obj->serialize($arg);
         } catch (Exception $ex) {
 
             $this->assertInstanceOf(InvalidArgumentException::class, $ex);
@@ -830,12 +830,12 @@ class RequestNormalizerTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the normalize() method.
+     * Tests the serialize() method.
      *
      * @return void
      * @throws Exception Throws an exception if an error occurs.
      */
-    public function testNormalizeSendingUnicodeSMSRequest() {
+    public function testSerializeSendingUnicodeSMSRequest() {
 
         // Set a Sending Unicode SMS request mock.
         $arg = new SendingUnicodeSMSRequest();
@@ -852,7 +852,7 @@ class RequestNormalizerTest extends AbstractTestCase {
         $arg->setNotificationUrlReponse("notificationUrlReponse");
         $arg->setStop(SendingSMSMessageRequest::STOP_ALWAYS);
 
-        $obj = new RequestNormalizer();
+        $obj = new RequestSerializer();
 
         $res = [
             "message"                  => "☺",
@@ -866,53 +866,53 @@ class RequestNormalizerTest extends AbstractTestCase {
             "notification_url_reponse" => "notificationUrlReponse",
             "stop"                     => 2,
         ];
-        $this->assertEquals($res, $obj->normalize($arg));
+        $this->assertEquals($res, $obj->serialize($arg));
     }
 
     /**
-     * Tests the normalize() method.
+     * Tests the serialize() method.
      *
      * @return void
      * @throws Exception Throws an exception if an error occurs.
      */
-    public function testNormalizeSentSMSMessageRequest() {
+    public function testSerializeSentSMSMessageRequest() {
 
         // Set a Deleting sub-account request mock.
         $arg = new SentSMSMessageListRequest();
         $arg->setOffset(10);
 
-        $obj = new RequestNormalizer();
+        $obj = new RequestSerializer();
 
         $res = [
             "offset" => 10,
         ];
-        $this->assertEquals($res, $obj->normalize($arg));
+        $this->assertEquals($res, $obj->serialize($arg));
     }
 
     /**
-     * Tests the normalize() method.
+     * Tests the serialize() method.
      *
      * @return void
      * @throws Exception Throws an exception if an error occurs.
      */
-    public function testNormalizeSentSMSMessageRequestWithoutArguments() {
+    public function testSerializeSentSMSMessageRequestWithoutArguments() {
 
         // Set a Deleting sub-account request mock.
         $arg = new SentSMSMessageListRequest();
 
-        $obj = new RequestNormalizer();
+        $obj = new RequestSerializer();
 
         $res = [];
-        $this->assertEquals($res, $obj->normalize($arg));
+        $this->assertEquals($res, $obj->serialize($arg));
     }
 
     /**
-     * Test the normalize() method.
+     * Test the serialize() method.
      *
      * @return void
      * @throws Exception Throws an exception if an error occurs.
      */
-    public function testNormalizeTransferringCreditsRequest() {
+    public function testSerializeTransferringCreditsRequest() {
 
         // Set a Transferring credits request mock.
         $arg = new TransferringCreditsRequest();
@@ -921,32 +921,32 @@ class RequestNormalizerTest extends AbstractTestCase {
 
         $arg->setReference("reference");
 
-        $obj = new RequestNormalizer();
+        $obj = new RequestSerializer();
 
         $res = [
             "targetPseudo" => "targetPseudo",
             "creditAmount" => 212,
             "reference"    => "reference",
         ];
-        $this->assertEquals($res, $obj->normalize($arg));
+        $this->assertEquals($res, $obj->serialize($arg));
     }
 
     /**
-     * Test the normalize() method.
+     * Test the serialize() method.
      *
      * @return void
      * @throws Exception Throws an exception if an error occurs.
      */
-    public function testNormalizeTransferringCreditsRequestWithoutArguments() {
+    public function testSerializeTransferringCreditsRequestWithoutArguments() {
 
         // Set a Transferring credits request mock.
         $arg = new TransferringCreditsRequest();
 
-        $obj = new RequestNormalizer();
+        $obj = new RequestSerializer();
 
         try {
 
-            $obj->normalize($arg);
+            $obj->serialize($arg);
         } catch (Exception $ex) {
 
             $this->assertInstanceOf(InvalidArgumentException::class, $ex);
@@ -956,7 +956,7 @@ class RequestNormalizerTest extends AbstractTestCase {
         try {
 
             $arg->setTargetPseudo("targetPseudo");
-            $obj->normalize($arg);
+            $obj->serialize($arg);
         } catch (Exception $ex) {
 
             $this->assertInstanceOf(InvalidArgumentException::class, $ex);

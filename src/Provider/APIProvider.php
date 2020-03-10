@@ -44,7 +44,7 @@ use WBW\Library\SMSMode\Model\Response\SendingTextToSpeechSMSResponse;
 use WBW\Library\SMSMode\Model\Response\SendingUnicodeSMSResponse;
 use WBW\Library\SMSMode\Model\Response\SentSMSMessageListResponse;
 use WBW\Library\SMSMode\Model\Response\TransferringCreditsResponse;
-use WBW\Library\SMSMode\Normalizer\ResponseNormalizer;
+use WBW\Library\SMSMode\Serializer\ResponseDeserializer;
 
 /**
  * API provider.
@@ -64,11 +64,11 @@ class APIProvider extends AbstractProvider {
      */
     public function accountBalance(AccountBalanceRequest $accountBalanceRequest) {
 
-        $queryData = $this->getRequestNormalizer()->normalize($accountBalanceRequest);
+        $queryData = $this->getRequestSerializer()->serialize($accountBalanceRequest);
 
         $rawResponse = $this->callAPI($accountBalanceRequest, $queryData);
 
-        return ResponseNormalizer::denormalizeAccountBalanceResponse($rawResponse);
+        return ResponseDeserializer::deserializeAccountBalanceResponse($rawResponse);
     }
 
     /**
@@ -81,11 +81,11 @@ class APIProvider extends AbstractProvider {
      */
     public function addingContact(AddingContactRequest $addingContactRequest) {
 
-        $queryData = $this->getRequestNormalizer()->normalize($addingContactRequest);
+        $queryData = $this->getRequestSerializer()->serialize($addingContactRequest);
 
         $rawResponse = $this->callAPI($addingContactRequest, $queryData);
 
-        return ResponseNormalizer::denormalizeAddingContactResponse($rawResponse);
+        return ResponseDeserializer::deserializeAddingContactResponse($rawResponse);
     }
 
     /**
@@ -98,11 +98,11 @@ class APIProvider extends AbstractProvider {
      */
     public function checkingSMSMessageStatus(CheckingSMSMessageStatusRequest $checkingSMSMessageStatusRequest) {
 
-        $queryData = $this->getRequestNormalizer()->normalize($checkingSMSMessageStatusRequest);
+        $queryData = $this->getRequestSerializer()->serialize($checkingSMSMessageStatusRequest);
 
         $rawResponse = $this->callAPI($checkingSMSMessageStatusRequest, $queryData);
 
-        return ResponseNormalizer::denormalizeCheckingSMSMessageStatusResponse($rawResponse);
+        return ResponseDeserializer::deserializeCheckingSMSMessageStatusResponse($rawResponse);
     }
 
     /**
@@ -115,7 +115,7 @@ class APIProvider extends AbstractProvider {
      */
     public function creatingAPIKey(CreatingAPIKeyRequest $creatingAPIKeyRequest) {
 
-        $queryData = $this->getRequestNormalizer()->normalize($creatingAPIKeyRequest);
+        $queryData = $this->getRequestSerializer()->serialize($creatingAPIKeyRequest);
 
         try {
 
@@ -130,7 +130,7 @@ class APIProvider extends AbstractProvider {
             $rawResponse = $previous->getResponse()->getBody()->getContents();
         }
 
-        return ResponseNormalizer::denormalizeCreatingAPIKeyResponse($rawResponse);
+        return ResponseDeserializer::deserializeCreatingAPIKeyResponse($rawResponse);
     }
 
     /**
@@ -143,11 +143,11 @@ class APIProvider extends AbstractProvider {
      */
     public function creatingSubAccount(CreatingSubAccountRequest $creatingSubAccountRequest) {
 
-        $queryData = $this->getRequestNormalizer()->normalize($creatingSubAccountRequest);
+        $queryData = $this->getRequestSerializer()->serialize($creatingSubAccountRequest);
 
         $rawResponse = $this->callAPI($creatingSubAccountRequest, $queryData);
 
-        return ResponseNormalizer::denormalizeCreatingSubAccountResponse($rawResponse);
+        return ResponseDeserializer::deserializeCreatingSubAccountResponse($rawResponse);
     }
 
     /**
@@ -160,11 +160,11 @@ class APIProvider extends AbstractProvider {
      */
     public function deletingSMS(DeletingSMSRequest $deletingSMSRequest) {
 
-        $queryData = $this->getRequestNormalizer()->normalize($deletingSMSRequest);
+        $queryData = $this->getRequestSerializer()->serialize($deletingSMSRequest);
 
         $rawResponse = $this->callAPI($deletingSMSRequest, $queryData);
 
-        return ResponseNormalizer::denormalizeDeletingSMSResponse($rawResponse);
+        return ResponseDeserializer::deserializeDeletingSMSResponse($rawResponse);
     }
 
     /**
@@ -177,11 +177,11 @@ class APIProvider extends AbstractProvider {
      */
     public function deletingSubAccount(DeletingSubAccountRequest $deletingSubAccountRequest) {
 
-        $queryData = $this->getRequestNormalizer()->normalize($deletingSubAccountRequest);
+        $queryData = $this->getRequestSerializer()->serialize($deletingSubAccountRequest);
 
         $rawResponse = $this->callAPI($deletingSubAccountRequest, $queryData);
 
-        return ResponseNormalizer::denormalizeDeletingSubAccountResponse($rawResponse);
+        return ResponseDeserializer::deserializeDeletingSubAccountResponse($rawResponse);
     }
 
     /**
@@ -194,11 +194,11 @@ class APIProvider extends AbstractProvider {
      */
     public function deliveryReport(DeliveryReportRequest $deliveryReportRequest) {
 
-        $queryData = $this->getRequestNormalizer()->normalize($deliveryReportRequest);
+        $queryData = $this->getRequestSerializer()->serialize($deliveryReportRequest);
 
         $rawResponse = $this->callAPI($deliveryReportRequest, $queryData);
 
-        return ResponseNormalizer::denormalizeDeliveryReportResponse($rawResponse);
+        return ResponseDeserializer::deserializeDeliveryReportResponse($rawResponse);
     }
 
     /**
@@ -211,11 +211,11 @@ class APIProvider extends AbstractProvider {
      */
     public function retrievingSMSReply(RetrievingSMSReplyRequest $retrievingSMSReplyRequest) {
 
-        $queryData = $this->getRequestNormalizer()->normalize($retrievingSMSReplyRequest);
+        $queryData = $this->getRequestSerializer()->serialize($retrievingSMSReplyRequest);
 
         $rawResponse = $this->callAPI($retrievingSMSReplyRequest, $queryData);
 
-        return ResponseNormalizer::denormalizeRetrievingSMSReplyResponse($rawResponse);
+        return ResponseDeserializer::deserializeRetrievingSMSReplyResponse($rawResponse);
     }
 
     /**
@@ -228,7 +228,7 @@ class APIProvider extends AbstractProvider {
      */
     public function sendingSMSBatch(SendingSMSBatchRequest $sendingSMSBatchRequest) {
 
-        $queryData = $this->getRequestNormalizer()->normalize($sendingSMSBatchRequest);
+        $queryData = $this->getRequestSerializer()->serialize($sendingSMSBatchRequest);
 
         $postData = [];
 
@@ -242,7 +242,7 @@ class APIProvider extends AbstractProvider {
 
         $rawResponse = $this->callAPI($sendingSMSBatchRequest, $queryData, $postData);
 
-        return ResponseNormalizer::denormalizeSendingSMSBatchResponse($rawResponse);
+        return ResponseDeserializer::deserializeSendingSMSBatchResponse($rawResponse);
     }
 
     /**
@@ -255,7 +255,7 @@ class APIProvider extends AbstractProvider {
      */
     public function sendingSMSMessage(SendingSMSMessageRequest $sendingSMSMessageRequest) {
 
-        $queryData = $this->getRequestNormalizer()->normalize($sendingSMSMessageRequest);
+        $queryData = $this->getRequestSerializer()->serialize($sendingSMSMessageRequest);
 
         $postData = [];
         if (true === array_key_exists("numero", $queryData)) {
@@ -265,7 +265,7 @@ class APIProvider extends AbstractProvider {
 
         $rawResponse = $this->callAPI($sendingSMSMessageRequest, $queryData, $postData);
 
-        return ResponseNormalizer::denormalizeSendingSMSMessageResponse($rawResponse);
+        return ResponseDeserializer::deserializeSendingSMSMessageResponse($rawResponse);
     }
 
     /**
@@ -278,7 +278,7 @@ class APIProvider extends AbstractProvider {
      */
     public function sendingTextToSpeechSMS(SendingTextToSpeechSMSRequest $sendingTextToSpeechSMSRequest) {
 
-        $queryData = $this->getRequestNormalizer()->normalize($sendingTextToSpeechSMSRequest);
+        $queryData = $this->getRequestSerializer()->serialize($sendingTextToSpeechSMSRequest);
 
         $postData = [];
         if (true === array_key_exists("numero", $queryData)) {
@@ -288,7 +288,7 @@ class APIProvider extends AbstractProvider {
 
         $rawResponse = $this->callAPI($sendingTextToSpeechSMSRequest, $queryData, $postData);
 
-        return ResponseNormalizer::denormalizeSendingTextToSpeechSMSResponse($rawResponse);
+        return ResponseDeserializer::deserializeSendingTextToSpeechSMSResponse($rawResponse);
     }
 
     /**
@@ -301,7 +301,7 @@ class APIProvider extends AbstractProvider {
      */
     public function sendingUnicodeSMS(SendingUnicodeSMSRequest $sendingUnicodeSMSRequest) {
 
-        $queryData = $this->getRequestNormalizer()->normalize($sendingUnicodeSMSRequest);
+        $queryData = $this->getRequestSerializer()->serialize($sendingUnicodeSMSRequest);
 
         $postData = [];
         if (true === array_key_exists("numero", $queryData)) {
@@ -311,7 +311,7 @@ class APIProvider extends AbstractProvider {
 
         $rawResponse = $this->callAPI($sendingUnicodeSMSRequest, $queryData, $postData);
 
-        return ResponseNormalizer::denormalizeSendingUnicodeSMSResponse($rawResponse);
+        return ResponseDeserializer::deserializeSendingUnicodeSMSResponse($rawResponse);
     }
 
     /**
@@ -324,11 +324,11 @@ class APIProvider extends AbstractProvider {
      */
     public function sentSMSMessageList(SentSMSMessageListRequest $sentSMSMessageListRequest) {
 
-        $queryData = $this->getRequestNormalizer()->normalize($sentSMSMessageListRequest);
+        $queryData = $this->getRequestSerializer()->serialize($sentSMSMessageListRequest);
 
         $rawResponse = $this->callAPI($sentSMSMessageListRequest, $queryData);
 
-        return ResponseNormalizer::denormalizeSentSMSMessageListResponse($rawResponse);
+        return ResponseDeserializer::deserializeSentSMSMessageListResponse($rawResponse);
     }
 
     /**
@@ -341,10 +341,10 @@ class APIProvider extends AbstractProvider {
      */
     public function transferringCredits(TransferringCreditsRequest $transferringCreditsRequest) {
 
-        $queryData = $this->getRequestNormalizer()->normalize($transferringCreditsRequest);
+        $queryData = $this->getRequestSerializer()->serialize($transferringCreditsRequest);
 
         $rawResponse = $this->callAPI($transferringCreditsRequest, $queryData);
 
-        return ResponseNormalizer::denormalizeTransferringCreditsResponse($rawResponse);
+        return ResponseDeserializer::deserializeTransferringCreditsResponse($rawResponse);
     }
 }

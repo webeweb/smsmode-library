@@ -55,7 +55,7 @@ class AbstractProviderTest extends AbstractTestCase {
 
         $this->assertSame($this->authentication, $obj->getAuthentication());
         $this->assertFalse($obj->getDebug());
-        $this->assertNotNull($obj->getRequestNormalizer());
+        $this->assertNotNull($obj->getRequestSerializer());
     }
 
     /**

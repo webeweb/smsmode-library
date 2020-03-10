@@ -9,20 +9,20 @@
  * file that was distributed with this source code.
  */
 
-namespace WBW\Library\SMSMode\Normalizer;
+namespace WBW\Library\SMSMode\Serializer;
 
 use InvalidArgumentException;
 
 /**
- * Numero normalizer.
+ * Numero serializer.
  *
  * @author webeweb <https://github.com/webeweb/>
- * @package WBW\Library\SMSMode\Normalizer
+ * @package WBW\Library\SMSMode\Serializer
  */
-class NumeroNormalizer {
+class NumeroSerializer {
 
     /**
-     * Checks a numero.
+     * Check a numero.
      *
      * @param string $numero The numero.
      * @return void
@@ -35,24 +35,24 @@ class NumeroNormalizer {
     }
 
     /**
-     * Denormalize a numero.
+     * Deserialize a numero.
      *
      * @param string $numero The numero.
-     * @return string Returns the denormalized numero.
+     * @return string Returns the deserialized numero.
      */
-    public static function denormalizeNumero($numero) {
+    public static function deserializeNumero($numero) {
         $output = preg_replace("/^336/", "06", $numero, 1);
         $result = preg_replace("/^337/", "07", $output, 1);
         return $result;
     }
 
     /**
-     * Normalize a numero.
+     * Serialize a numero.
      *
      * @param string $numero The numero.
-     * @return string Returns the normalized numero.
+     * @return string Returns the serialized numero.
      */
-    public static function normalizeNumero($numero) {
+    public static function serializeNumero($numero) {
         $output = preg_replace("/^06/", "336", $numero, 1);
         $result = preg_replace("/^07/", "337", $output, 1);
         return $result;

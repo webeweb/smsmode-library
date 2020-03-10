@@ -13,7 +13,7 @@ namespace WBW\Library\SMSMode\Model\Request;
 
 use UnexpectedValueException;
 use WBW\Library\SMSMode\Model\AbstractRequest;
-use WBW\Library\SMSMode\Normalizer\NumeroNormalizer;
+use WBW\Library\SMSMode\Serializer\NumeroSerializer;
 use WBW\Library\SMSMode\Traits\NumeroTrait;
 use WBW\Library\SMSMode\Traits\SmsIDTrait;
 
@@ -50,7 +50,7 @@ class DeletingSMSRequest extends AbstractRequest {
      * @throws UnexpectedValueException Throws an unexpected value exception if the numero is invalid.
      */
     public function setNumero($numero) {
-        NumeroNormalizer::checkNumero($numero);
+        NumeroSerializer::checkNumero($numero);
         $this->numero = $numero;
         return $this;
     }

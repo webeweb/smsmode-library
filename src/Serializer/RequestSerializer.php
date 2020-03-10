@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace WBW\Library\SMSMode\Normalizer;
+namespace WBW\Library\SMSMode\Serializer;
 
 use DateTime;
 use InvalidArgumentException;
@@ -18,12 +18,12 @@ use WBW\Library\Core\Argument\Helper\ArrayHelper;
 use WBW\Library\SMSMode\API\RequestInterface;
 
 /**
- * Request normalizer.
+ * Request serializer.
  *
  * @author webeweb <https://github.com/webeweb/>
- * @package WBW\Library\SMSMode\Normalizer
+ * @package WBW\Library\SMSMode\Serializer
  */
-class RequestNormalizer {
+class RequestSerializer {
 
     /**
      * Configuration.
@@ -37,7 +37,7 @@ class RequestNormalizer {
      */
     public function __construct() {
 
-        $filename = __DIR__ . "/../Resources/config/request-normalizer.yml";
+        $filename = __DIR__ . "/../Resources/config/request_serializer.yml";
         $content  = file_get_contents(realpath($filename));
 
         $this->setConfiguration(Yaml::parse($content));
@@ -217,13 +217,25 @@ class RequestNormalizer {
     }
 
     /**
-     * Normalize an object.
+     * Determines if an object value is null.
      *
      * @param object $object The object.
-     * @return array Returns the normalized parameters.
+     * @param string $getter The getter.
+     * @return bool Returns true in case of success, false otherwise.
+     */
+    protected function nullObjectValue($object, $getter) {
+        $value = $this->getObjectValue($object, $getter);
+        return $this->isNullValue($value);
+    }
+
+    /**
+     * Serialize an object.
+     *
+     * @param object $object The object.
+     * @return array Returns the serialized parameters.
      * @throws InvalidArgumentException Throws an invalid argument exception if a mandatory parameter is missing.
      */
-    public function normalize($object) {
+    public function serialize($object) {
 
         // Get and check the object classname.
         $classname = get_class($object);
@@ -260,22 +272,10 @@ class RequestNormalizer {
     }
 
     /**
-     * Determines if an object value is null.
-     *
-     * @param object $object The object.
-     * @param string $getter The getter.
-     * @return bool Returns true in case of success, false otherwise.
-     */
-    protected function nullObjectValue($object, $getter) {
-        $value = $this->getObjectValue($object, $getter);
-        return $this->isNullValue($value);
-    }
-
-    /**
      * Set the configuration.
      *
      * @param array $configuration The configuration.
-     * @return RequestNormalizer Returns this object normalizer.
+     * @return RequestSerializer Returns this object serializer.
      */
     protected function setConfiguration(array $configuration) {
         $this->configuration = $configuration;

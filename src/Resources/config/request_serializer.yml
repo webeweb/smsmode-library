@@ -1,4 +1,4 @@
-# src/Resources/config/request-normalizer.yml
+# src/Resources/config/request_serializer.yml
 WBW\Library\SMSMode\Model\Request\AddingContactRequest:
     nom:
         method:    "getNom"

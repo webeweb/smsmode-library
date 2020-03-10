@@ -13,7 +13,7 @@ namespace WBW\Library\SMSMode\Model\Request;
 
 use UnexpectedValueException;
 use WBW\Library\SMSMode\Model\AbstractRequest;
-use WBW\Library\SMSMode\Normalizer\NumeroNormalizer;
+use WBW\Library\SMSMode\Serializer\NumeroSerializer;
 use WBW\Library\SMSMode\Traits\DateTrait;
 use WBW\Library\SMSMode\Traits\MobileTrait;
 use WBW\Library\SMSMode\Traits\NomTrait;
@@ -118,7 +118,7 @@ class AddingContactRequest extends AbstractRequest {
      * @throws UnexpectedValueException Throws an unexpected value exception if the numero is invalid.
      */
     public function setMobile($mobile) {
-        NumeroNormalizer::checkNumero($mobile);
+        NumeroSerializer::checkNumero($mobile);
         $this->mobile = $mobile;
         return $this;
     }

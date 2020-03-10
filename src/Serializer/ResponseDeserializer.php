@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace WBW\Library\SMSMode\Normalizer;
+namespace WBW\Library\SMSMode\Serializer;
 
 use DateTime;
 use WBW\Library\Core\Argument\Helper\ArrayHelper;
@@ -35,24 +35,24 @@ use WBW\Library\SMSMode\Model\SentSMSMessage;
 use WBW\Library\SMSMode\Model\SMSReply;
 
 /**
- * Response normalizer.
+ * Response deserializer.
  *
  * @author webeweb <https://github.com/webeweb/>
- * @package WBW\Library\SMSMode\Normalizer
+ * @package WBW\Library\SMSMode\Serializer
  */
-class ResponseNormalizer {
+class ResponseDeserializer {
 
     /**
-     * Denormalize an account balance response.
+     * Deserialize an account balance response.
      *
      * @param string $rawResponse The response.
      * @return AccountBalanceResponse Returns the account balance response.
      */
-    public static function denormalizeAccountBalanceResponse($rawResponse) {
+    public static function deserializeAccountBalanceResponse($rawResponse) {
 
         $model = new AccountBalanceResponse();
         if (1 === preg_match("/^[0-9]{2,4} \|/", trim($rawResponse))) {
-            static::denormalizeResponse($model, $rawResponse);
+            static::deserializeResponse($model, $rawResponse);
             return $model;
         }
 
@@ -65,40 +65,40 @@ class ResponseNormalizer {
     }
 
     /**
-     * Denormalize an adding contact response.
+     * Deserialize an adding contact response.
      *
      * @param string $rawResponse The raw response.
      * @return AddingContactResponse Returns the adding contact response.
      */
-    public static function denormalizeAddingContactResponse($rawResponse) {
+    public static function deserializeAddingContactResponse($rawResponse) {
 
         $model = new AddingContactResponse();
-        static::denormalizeResponse($model, $rawResponse);
+        static::deserializeResponse($model, $rawResponse);
 
         return $model;
     }
 
     /**
-     * Denormalize a checking SMS message status response.
+     * Deserialize a checking SMS message status response.
      *
      * @param string $rawResponse The raw response.
      * @return CheckingSMSMessageStatusResponse Returns the checking SMS message status response.
      */
-    public static function denormalizeCheckingSMSMessageStatusResponse($rawResponse) {
+    public static function deserializeCheckingSMSMessageStatusResponse($rawResponse) {
 
         $model = new CheckingSMSMessageStatusResponse();
-        static::denormalizeResponse($model, $rawResponse);
+        static::deserializeResponse($model, $rawResponse);
 
         return $model;
     }
 
     /**
-     * Denormalize a creating API key response.
+     * Deserialize a creating API key response.
      *
      * @param string $rawResponse The raw response.
      * @return CreatingAPIKeyResponse Returns the creating API key response.
      */
-    public static function denormalizeCreatingAPIKeyResponse($rawResponse) {
+    public static function deserializeCreatingAPIKeyResponse($rawResponse) {
 
         $decodedResponse = json_decode(trim($rawResponse), true);
 
@@ -123,54 +123,54 @@ class ResponseNormalizer {
     }
 
     /**
-     * Denormalize a creating sub-account response.
+     * Deserialize a creating sub-account response.
      *
      * @param string $rawResponse The raw response.
      * @return CreatingSubAccountResponse Returns the creating sub-account response.
      */
-    public static function denormalizeCreatingSubAccountResponse($rawResponse) {
+    public static function deserializeCreatingSubAccountResponse($rawResponse) {
 
         $model = new CreatingSubAccountResponse();
-        static::denormalizeResponse($model, $rawResponse);
+        static::deserializeResponse($model, $rawResponse);
 
         return $model;
     }
 
     /**
-     * Denormalize a deleting SMS response.
+     * Deserialize a deleting SMS response.
      *
      * @param string $rawResponse The raw response.
      * @return DeletingSMSResponse Returns the deleting SMS response.
      */
-    public static function denormalizeDeletingSMSResponse($rawResponse) {
+    public static function deserializeDeletingSMSResponse($rawResponse) {
 
         $model = new DeletingSMSResponse();
-        static::denormalizeResponse($model, $rawResponse);
+        static::deserializeResponse($model, $rawResponse);
 
         return $model;
     }
 
     /**
-     * Denormalize a deleting su-account response.
+     * Deserialize a deleting su-account response.
      *
      * @param string $rawResponse The raw response.
      * @return DeletingSubAccountResponse Returns the deleting sub-account response.
      */
-    public static function denormalizeDeletingSubAccountResponse($rawResponse) {
+    public static function deserializeDeletingSubAccountResponse($rawResponse) {
 
         $model = new DeletingSubAccountResponse();
-        static::denormalizeResponse($model, $rawResponse);
+        static::deserializeResponse($model, $rawResponse);
 
         return $model;
     }
 
     /**
-     * Denormalize a delivery report.
+     * Deserialize a delivery report.
      *
      * @param string $rawResponse The raw response.
      * @return DeliveryReport Returns the delivery report.
      */
-    protected static function denormalizeDeliveryReport($rawResponse) {
+    protected static function deserializeDeliveryReport($rawResponse) {
 
         $model = new DeliveryReport();
         $model->setRawResponse($rawResponse);
@@ -187,16 +187,16 @@ class ResponseNormalizer {
     }
 
     /**
-     * Denormalize a delivery report response.
+     * Deserialize a delivery report response.
      *
      * @param string $rawResponse The raw response.
      * @return DeliveryReportResponse Returns the delivery report response.
      */
-    public static function denormalizeDeliveryReportResponse($rawResponse) {
+    public static function deserializeDeliveryReportResponse($rawResponse) {
 
         $model = new DeliveryReportResponse();
         if (1 === preg_match("/^[0-9]{2,4} \|/", trim($rawResponse))) {
-            static::denormalizeResponse($model, $rawResponse);
+            static::deserializeResponse($model, $rawResponse);
             return $model;
         }
 
@@ -204,20 +204,20 @@ class ResponseNormalizer {
 
         $responses = explode(ResponseInterface::RESPONSE_DELIMITER, trim($rawResponse));
         foreach ($responses as $current) {
-            $model->addDeliveryReport(static::denormalizeDeliveryReport($current));
+            $model->addDeliveryReport(static::deserializeDeliveryReport($current));
         }
 
         return $model;
     }
 
     /**
-     * Denormalize a response.
+     * Deserialize a response.
      *
      * @param AbstractResponse $model The response.
      * @param string $rawResponse The raw response.
      * @return void
      */
-    protected static function denormalizeResponse(AbstractResponse $model, $rawResponse) {
+    protected static function deserializeResponse(AbstractResponse $model, $rawResponse) {
 
         $model->setRawResponse($rawResponse);
 
@@ -231,16 +231,16 @@ class ResponseNormalizer {
     }
 
     /**
-     * Denormalize a retrieving SMS reply response.
+     * Deserialize a retrieving SMS reply response.
      *
      * @param string $rawResponse The raw response.
      * @return RetrievingSMSReplyResponse Returns the retrieving SMS reply response.
      */
-    public static function denormalizeRetrievingSMSReplyResponse($rawResponse) {
+    public static function deserializeRetrievingSMSReplyResponse($rawResponse) {
 
         $model = new RetrievingSMSReplyResponse();
         if (1 === preg_match("/^[0-9]{2,4} \|/", trim($rawResponse))) {
-            static::denormalizeResponse($model, $rawResponse);
+            static::deserializeResponse($model, $rawResponse);
             return $model;
         }
 
@@ -248,19 +248,19 @@ class ResponseNormalizer {
 
         $responses = explode("\n", trim($rawResponse));
         foreach ($responses as $current) {
-            $model->addSMSReply(static::denormalizeSMSReply($current));
+            $model->addSMSReply(static::deserializeSMSReply($current));
         }
 
         return $model;
     }
 
     /**
-     * Denormalize a SMS reply.
+     * Deserialize a SMS reply.
      *
      * @param string $rawResponse The raw response.
      * @return SMSReply Returns the SMS reply.
      */
-    protected static function denormalizeSMSReply($rawResponse) {
+    protected static function deserializeSMSReply($rawResponse) {
 
         $model = new SMSReply();
         $model->setRawResponse($rawResponse);
@@ -285,15 +285,15 @@ class ResponseNormalizer {
     }
 
     /**
-     * Denormalize a sending SMS batch response.
+     * Deserialize a sending SMS batch response.
      *
      * @param string $rawResponse The raw response.
      * @return SendingSMSBatchResponse Returns the sending SMS batch response.
      */
-    public static function denormalizeSendingSMSBatchResponse($rawResponse) {
+    public static function deserializeSendingSMSBatchResponse($rawResponse) {
 
         $model = new SendingSMSBatchResponse();
-        static::denormalizeResponse($model, $rawResponse);
+        static::deserializeResponse($model, $rawResponse);
 
         $responses = explode(ResponseInterface::RESPONSE_DELIMITER, trim($rawResponse));
         if (ResponseInterface::RESPONSE_CODE_0 === $model->getCode() && 3 === count($responses)) {
@@ -304,15 +304,15 @@ class ResponseNormalizer {
     }
 
     /**
-     * Denormalize a sending SMS message response.
+     * Deserialize a sending SMS message response.
      *
      * @param string $rawResponse The raw response.
      * @return SendingSMSMessageResponse Returns the sending SMS message response.
      */
-    public static function denormalizeSendingSMSMessageResponse($rawResponse) {
+    public static function deserializeSendingSMSMessageResponse($rawResponse) {
 
         $model = new SendingSMSMessageResponse();
-        static::denormalizeResponse($model, $rawResponse);
+        static::deserializeResponse($model, $rawResponse);
 
         $responses = explode(ResponseInterface::RESPONSE_DELIMITER, trim($rawResponse));
         if (ResponseInterface::RESPONSE_CODE_0 === $model->getCode() && 3 === count($responses)) {
@@ -323,15 +323,15 @@ class ResponseNormalizer {
     }
 
     /**
-     * Denormalize a sending text-to-speech SMS response.
+     * Deserialize a sending text-to-speech SMS response.
      *
      * @param string $rawResponse The raw response.
      * @return SendingTextToSpeechSMSResponse Returns the sending text-to-speech SMS response.
      */
-    public static function denormalizeSendingTextToSpeechSMSResponse($rawResponse) {
+    public static function deserializeSendingTextToSpeechSMSResponse($rawResponse) {
 
         $model = new SendingTextToSpeechSMSResponse();
-        static::denormalizeResponse($model, $rawResponse);
+        static::deserializeResponse($model, $rawResponse);
 
         $responses = explode(ResponseInterface::RESPONSE_DELIMITER, trim($rawResponse));
         if (ResponseInterface::RESPONSE_CODE_0 === $model->getCode() && 3 === count($responses)) {
@@ -342,15 +342,15 @@ class ResponseNormalizer {
     }
 
     /**
-     * Denormalize a sending unicode SMS response.
+     * Deserialize a sending unicode SMS response.
      *
      * @param string $rawResponse The raw response.
      * @return SendingUnicodeSMSResponse Returns the sending unicode SMS response.
      */
-    public static function denormalizeSendingUnicodeSMSResponse($rawResponse) {
+    public static function deserializeSendingUnicodeSMSResponse($rawResponse) {
 
         $model = new SendingUnicodeSMSResponse();
-        static::denormalizeResponse($model, $rawResponse);
+        static::deserializeResponse($model, $rawResponse);
 
         $responses = explode(ResponseInterface::RESPONSE_DELIMITER, trim($rawResponse));
         if (ResponseInterface::RESPONSE_CODE_0 === $model->getCode() && 3 === count($responses)) {
@@ -361,12 +361,12 @@ class ResponseNormalizer {
     }
 
     /**
-     * Denormalize a sent SMS message.
+     * Deserialize a sent SMS message.
      *
      * @param string $rawResponse The raw response.
      * @return SentSMSMessage Returns the sent SMS message.
      */
-    protected static function denormalizeSentSMSMessage($rawResponse) {
+    protected static function deserializeSentSMSMessage($rawResponse) {
 
         $model = new SentSMSMessage();
         $model->setRawResponse($rawResponse);
@@ -391,16 +391,16 @@ class ResponseNormalizer {
     }
 
     /**
-     * Denormalize a sent SMS message list response.
+     * Deserialize a sent SMS message list response.
      *
      * @param string $rawResponse The raw response.
      * @return SentSMSMessageListResponse Returns the sent SMS message list response.
      */
-    public static function denormalizeSentSMSMessageListResponse($rawResponse) {
+    public static function deserializeSentSMSMessageListResponse($rawResponse) {
 
         $model = new SentSMSMessageListResponse();
         if (1 === preg_match("/^[0-9]{2,4} \|/", trim($rawResponse))) {
-            static::denormalizeResponse($model, $rawResponse);
+            static::deserializeResponse($model, $rawResponse);
             return $model;
         }
 
@@ -408,22 +408,22 @@ class ResponseNormalizer {
 
         $responses = explode("\n", trim($rawResponse));
         foreach ($responses as $current) {
-            $model->addSentSMSMessage(static::denormalizeSentSMSMessage($current));
+            $model->addSentSMSMessage(static::deserializeSentSMSMessage($current));
         }
 
         return $model;
     }
 
     /**
-     * Denormalize a transferring credits response.
+     * Deserialize a transferring credits response.
      *
      * @param string $rawResponse The raw response.
      * @return TransferringCreditsResponse Returns the transferring credits response.
      */
-    public static function denormalizeTransferringCreditsResponse($rawResponse) {
+    public static function deserializeTransferringCreditsResponse($rawResponse) {
 
         $model = new TransferringCreditsResponse();
-        static::denormalizeResponse($model, $rawResponse);
+        static::deserializeResponse($model, $rawResponse);
 
         return $model;
     }

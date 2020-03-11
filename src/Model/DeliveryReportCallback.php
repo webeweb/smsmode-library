@@ -12,9 +12,9 @@
 namespace WBW\Library\SMSMode\Model;
 
 use WBW\Library\SMSMode\API\DeliveryReportCallbackInterface;
-use WBW\Library\SMSMode\Traits\DateReceptionTrait;
-use WBW\Library\SMSMode\Traits\RefClientTrait;
-use WBW\Library\SMSMode\Traits\SmsIDTrait;
+use WBW\Library\SMSMode\Model\Attribute\DateTimeDateReceptionTrait;
+use WBW\Library\SMSMode\Model\Attribute\StringRefClientTrait;
+use WBW\Library\SMSMode\Model\Attribute\StringSmsIDTrait;
 
 /**
  * Delivery report callback.
@@ -24,9 +24,9 @@ use WBW\Library\SMSMode\Traits\SmsIDTrait;
  */
 class DeliveryReportCallback extends DeliveryReport implements DeliveryReportCallbackInterface {
 
-    use DateReceptionTrait;
-    use RefClientTrait;
-    use SmsIDTrait;
+    use DateTimeDateReceptionTrait;
+    use StringRefClientTrait;
+    use StringSmsIDTrait;
 
     /**
      * MCC MNC.

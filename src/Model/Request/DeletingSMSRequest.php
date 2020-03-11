@@ -12,10 +12,10 @@
 namespace WBW\Library\SMSMode\Model\Request;
 
 use UnexpectedValueException;
+use WBW\Library\SMSMode\Model\Attribute\StringNumeroTrait;
+use WBW\Library\SMSMode\Model\Attribute\StringSmsIDTrait;
 use WBW\Library\SMSMode\Model\AbstractRequest;
 use WBW\Library\SMSMode\Serializer\NumeroSerializer;
-use WBW\Library\SMSMode\Traits\NumeroTrait;
-use WBW\Library\SMSMode\Traits\SmsIDTrait;
 
 /**
  * Deleting SMS request.
@@ -25,8 +25,8 @@ use WBW\Library\SMSMode\Traits\SmsIDTrait;
  */
 class DeletingSMSRequest extends AbstractRequest {
 
-    use NumeroTrait;
-    use SmsIDTrait;
+    use StringNumeroTrait;
+    use StringSmsIDTrait;
 
     /**
      * Deleting SMS resource path.

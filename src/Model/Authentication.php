@@ -11,7 +11,7 @@
 
 namespace WBW\Library\SMSMode\Model;
 
-use WBW\Library\SMSMode\Traits\AccessTokenTrait;
+use WBW\Library\SMSMode\Model\Attribute\StringAccessTokenTrait;
 
 /**
  * Authentication.
@@ -21,7 +21,7 @@ use WBW\Library\SMSMode\Traits\AccessTokenTrait;
  */
 class Authentication {
 
-    use AccessTokenTrait;
+    use StringAccessTokenTrait;
 
     /**
      * Pass.

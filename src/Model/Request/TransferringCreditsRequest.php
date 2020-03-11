@@ -11,8 +11,8 @@
 
 namespace WBW\Library\SMSMode\Model\Request;
 
+use WBW\Library\SMSMode\Model\Attribute\StringReferenceTrait;
 use WBW\Library\SMSMode\Model\AbstractRequest;
-use WBW\Library\SMSMode\Traits\ReferenceTrait;
 
 /**
  * Transferring credits request.
@@ -22,7 +22,7 @@ use WBW\Library\SMSMode\Traits\ReferenceTrait;
  */
 class TransferringCreditsRequest extends AbstractRequest {
 
-    use ReferenceTrait;
+    use StringReferenceTrait;
 
     /**
      * Transferring credits resource path.

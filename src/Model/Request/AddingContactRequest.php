@@ -12,13 +12,13 @@
 namespace WBW\Library\SMSMode\Model\Request;
 
 use UnexpectedValueException;
+use WBW\Library\Core\Model\Attribute\DateTimeDateTrait;
 use WBW\Library\SMSMode\Model\AbstractRequest;
+use WBW\Library\SMSMode\Model\Attribute\StringMobileTrait;
+use WBW\Library\SMSMode\Model\Attribute\StringNomTrait;
+use WBW\Library\SMSMode\Model\Attribute\StringPrenomTrait;
+use WBW\Library\SMSMode\Model\Attribute\StringSocieteTrait;
 use WBW\Library\SMSMode\Serializer\NumeroSerializer;
-use WBW\Library\SMSMode\Traits\DateTrait;
-use WBW\Library\SMSMode\Traits\MobileTrait;
-use WBW\Library\SMSMode\Traits\NomTrait;
-use WBW\Library\SMSMode\Traits\PrenomTrait;
-use WBW\Library\SMSMode\Traits\SocieteTrait;
 
 /**
  * Adding contact request.
@@ -28,11 +28,11 @@ use WBW\Library\SMSMode\Traits\SocieteTrait;
  */
 class AddingContactRequest extends AbstractRequest {
 
-    use DateTrait;
-    use MobileTrait;
-    use NomTrait;
-    use PrenomTrait;
-    use SocieteTrait;
+    use DateTimeDateTrait;
+    use StringMobileTrait;
+    use StringNomTrait;
+    use StringPrenomTrait;
+    use StringSocieteTrait;
 
     /**
      * Adding contact resource path.

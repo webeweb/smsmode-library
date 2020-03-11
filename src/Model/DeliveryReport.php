@@ -11,7 +11,7 @@
 
 namespace WBW\Library\SMSMode\Model;
 
-use WBW\Library\SMSMode\Traits\NumeroTrait;
+use WBW\Library\SMSMode\Model\Attribute\StringNumeroTrait;
 
 /**
  * Delivery report.
@@ -21,5 +21,5 @@ use WBW\Library\SMSMode\Traits\NumeroTrait;
  */
 class DeliveryReport extends AbstractResponse {
 
-    use NumeroTrait;
+    use StringNumeroTrait;
 }

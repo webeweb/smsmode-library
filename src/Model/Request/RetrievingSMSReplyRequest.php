@@ -12,8 +12,8 @@
 namespace WBW\Library\SMSMode\Model\Request;
 
 use DateTime;
+use WBW\Library\SMSMode\Model\Attribute\IntegerOffsetTrait;
 use WBW\Library\SMSMode\Model\AbstractRequest;
-use WBW\Library\SMSMode\Traits\OffsetTrait;
 
 /**
  * Retrieving SMS reply request.
@@ -23,7 +23,7 @@ use WBW\Library\SMSMode\Traits\OffsetTrait;
  */
 class RetrievingSMSReplyRequest extends AbstractRequest {
 
-    use OffsetTrait;
+    use IntegerOffsetTrait;
 
     /**
      * Retrieving SMS reply resource path.

@@ -12,8 +12,8 @@
 namespace WBW\Library\SMSMode\Model\Response;
 
 use DateTime;
+use WBW\Library\SMSMode\Model\Attribute\StringAccessTokenTrait;
 use WBW\Library\SMSMode\Model\AbstractResponse;
-use WBW\Library\SMSMode\Traits\AccessTokenTrait;
 
 /**
  * Creating API key response.
@@ -23,7 +23,7 @@ use WBW\Library\SMSMode\Traits\AccessTokenTrait;
  */
 class CreatingAPIKeyResponse extends AbstractResponse {
 
-    use AccessTokenTrait;
+    use StringAccessTokenTrait;
 
     /**
      * Account.

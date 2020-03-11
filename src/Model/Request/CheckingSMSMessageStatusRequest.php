@@ -11,8 +11,8 @@
 
 namespace WBW\Library\SMSMode\Model\Request;
 
+use WBW\Library\SMSMode\Model\Attribute\StringSmsIDTrait;
 use WBW\Library\SMSMode\Model\AbstractRequest;
-use WBW\Library\SMSMode\Traits\SmsIDTrait;
 
 /**
  * Checking SMS message status request.
@@ -22,7 +22,7 @@ use WBW\Library\SMSMode\Traits\SmsIDTrait;
  */
 class CheckingSMSMessageStatusRequest extends AbstractRequest {
 
-    use SmsIDTrait;
+    use StringSmsIDTrait;
 
     /**
      * Checking SMS message status resource path.

@@ -11,8 +11,8 @@
 
 namespace WBW\Library\SMSMode\Model\Response;
 
+use WBW\Library\SMSMode\Model\Attribute\StringSmsIDTrait;
 use WBW\Library\SMSMode\Model\AbstractResponse;
-use WBW\Library\SMSMode\Traits\SmsIDTrait;
 
 /**
  * Sending SMS message response.
@@ -22,5 +22,5 @@ use WBW\Library\SMSMode\Traits\SmsIDTrait;
  */
 class SendingSMSMessageResponse extends AbstractResponse {
 
-    use SmsIDTrait;
+    use StringSmsIDTrait;
 }

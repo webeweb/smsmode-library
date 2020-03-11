@@ -12,9 +12,9 @@
 namespace WBW\Library\SMSMode\Model;
 
 use DateTime;
-use WBW\Library\SMSMode\Traits\MessageTrait;
-use WBW\Library\SMSMode\Traits\NumeroTrait;
-use WBW\Library\SMSMode\Traits\SmsIDTrait;
+use WBW\Library\SMSMode\Model\Attribute\StringMessageTrait;
+use WBW\Library\SMSMode\Model\Attribute\StringNumeroTrait;
+use WBW\Library\SMSMode\Model\Attribute\StringSmsIDTrait;
 
 /**
  * Sent SMS message.
@@ -24,9 +24,9 @@ use WBW\Library\SMSMode\Traits\SmsIDTrait;
  */
 class SentSMSMessage extends AbstractResponse {
 
-    use MessageTrait;
-    use NumeroTrait;
-    use SmsIDTrait;
+    use StringMessageTrait;
+    use StringNumeroTrait;
+    use StringSmsIDTrait;
 
     /**
      * Cost in credits.

@@ -12,12 +12,12 @@
 namespace WBW\Library\SMSMode\Model;
 
 use WBW\Library\SMSMode\API\SMSReplyCallbackInterface;
-use WBW\Library\SMSMode\Traits\DateReceptionTrait;
-use WBW\Library\SMSMode\Traits\EmetteurTrait;
-use WBW\Library\SMSMode\Traits\MessageTrait;
-use WBW\Library\SMSMode\Traits\NumeroTrait;
-use WBW\Library\SMSMode\Traits\RefClientTrait;
-use WBW\Library\SMSMode\Traits\SmsIDTrait;
+use WBW\Library\SMSMode\Model\Attribute\DateTimeDateReceptionTrait;
+use WBW\Library\SMSMode\Model\Attribute\StringEmetteurTrait;
+use WBW\Library\SMSMode\Model\Attribute\StringMessageTrait;
+use WBW\Library\SMSMode\Model\Attribute\StringNumeroTrait;
+use WBW\Library\SMSMode\Model\Attribute\StringRefClientTrait;
+use WBW\Library\SMSMode\Model\Attribute\StringSmsIDTrait;
 
 /**
  * SMS reply callback.
@@ -27,12 +27,12 @@ use WBW\Library\SMSMode\Traits\SmsIDTrait;
  */
 class SMSReplyCallback extends AbstractResponse implements SMSReplyCallbackInterface {
 
-    use DateReceptionTrait;
-    use EmetteurTrait;
-    use MessageTrait;
-    use NumeroTrait;
-    use RefClientTrait;
-    use SmsIDTrait;
+    use DateTimeDateReceptionTrait;
+    use StringEmetteurTrait;
+    use StringMessageTrait;
+    use StringNumeroTrait;
+    use StringRefClientTrait;
+    use StringSmsIDTrait;
 
     /**
      * Response ID.

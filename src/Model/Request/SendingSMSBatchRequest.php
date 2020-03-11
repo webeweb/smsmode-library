@@ -13,13 +13,13 @@ namespace WBW\Library\SMSMode\Model\Request;
 
 use InvalidArgumentException;
 use WBW\Library\SMSMode\API\SendingSMSBatchInterface;
+use WBW\Library\SMSMode\Model\Attribute\DateTimeDateEnvoiTrait;
+use WBW\Library\SMSMode\Model\Attribute\IntegerClasseMsgTrait;
+use WBW\Library\SMSMode\Model\Attribute\IntegerNbrMsgTrait;
+use WBW\Library\SMSMode\Model\Attribute\StringEmetteurTrait;
+use WBW\Library\SMSMode\Model\Attribute\StringNotificationUrlTrait;
+use WBW\Library\SMSMode\Model\Attribute\StringRefClientTrait;
 use WBW\Library\SMSMode\Model\AbstractRequest;
-use WBW\Library\SMSMode\Traits\ClasseMsgTrait;
-use WBW\Library\SMSMode\Traits\DateEnvoiTrait;
-use WBW\Library\SMSMode\Traits\EmetteurTrait;
-use WBW\Library\SMSMode\Traits\NbrMsgTrait;
-use WBW\Library\SMSMode\Traits\NotificationUrlTrait;
-use WBW\Library\SMSMode\Traits\RefClientTrait;
 
 /**
  * Sending SMS batch request.
@@ -29,12 +29,12 @@ use WBW\Library\SMSMode\Traits\RefClientTrait;
  */
 class SendingSMSBatchRequest extends AbstractRequest implements SendingSMSBatchInterface {
 
-    use ClasseMsgTrait;
-    use DateEnvoiTrait;
-    use EmetteurTrait;
-    use NbrMsgTrait;
-    use NotificationUrlTrait;
-    use RefClientTrait;
+    use DateTimeDateEnvoiTrait;
+    use IntegerClasseMsgTrait;
+    use IntegerNbrMsgTrait;
+    use StringEmetteurTrait;
+    use StringNotificationUrlTrait;
+    use StringRefClientTrait;
 
     /**
      * Sending SMS batch resource path.

@@ -14,10 +14,10 @@ namespace WBW\Library\SMSMode\Model\Request;
 use InvalidArgumentException;
 use UnexpectedValueException;
 use WBW\Library\SMSMode\API\SendingTextToSpeechSMSInterface;
+use WBW\Library\SMSMode\Model\Attribute\DateTimeDateEnvoiTrait;
+use WBW\Library\SMSMode\Model\Attribute\StringMessageTrait;
 use WBW\Library\SMSMode\Model\AbstractRequest;
 use WBW\Library\SMSMode\Serializer\NumeroSerializer;
-use WBW\Library\SMSMode\Traits\DateEnvoiTrait;
-use WBW\Library\SMSMode\Traits\MessageTrait;
 
 /**
  * Sending text-to-speech SMS request.
@@ -27,8 +27,8 @@ use WBW\Library\SMSMode\Traits\MessageTrait;
  */
 class SendingTextToSpeechSMSRequest extends AbstractRequest implements SendingTextToSpeechSMSInterface {
 
-    use DateEnvoiTrait;
-    use MessageTrait;
+    use DateTimeDateEnvoiTrait;
+    use StringMessageTrait;
 
     /**
      * Sending text-to-speech SMS request.

@@ -11,8 +11,8 @@
 
 namespace WBW\Library\SMSMode\Model\Request;
 
+use WBW\Library\SMSMode\Model\Attribute\StringSmsIDTrait;
 use WBW\Library\SMSMode\Model\AbstractRequest;
-use WBW\Library\SMSMode\Traits\SmsIDTrait;
 
 /**
  * Delivery report request.
@@ -22,7 +22,7 @@ use WBW\Library\SMSMode\Traits\SmsIDTrait;
  */
 class DeliveryReportRequest extends AbstractRequest {
 
-    use SmsIDTrait;
+    use StringSmsIDTrait;
 
     /**
      * Delivery report resource path.

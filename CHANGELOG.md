@@ -1,9 +1,13 @@
 CHANGELOG
 =========
 
+### [2.8.0](https://github.com/webeweb/smsmode-library/tree/v2.8.0) (2020-03-11)
+
+- Rename traits 
+
 ### [2.7.0](https://github.com/webeweb/smsmode-library/tree/v2.7.0) (2020-03-10)
 
-- Rename Normalizer package 
+- Rename Normalizer package
 
 ### [2.6.0](https://github.com/webeweb/smsmode-library/tree/v2.6.0) (2019-11-25)
 

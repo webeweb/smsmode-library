@@ -1,0 +1,54 @@
+<?php
+
+/*
+ * This file is part of the smsmode-library package.
+ *
+ * (c) 2020 WEBEWEB
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
+require_once __DIR__ . "/../vendor/autoload.php";
+
+use WBW\Library\SMSMode\Model\Authentication;
+use WBW\Library\SMSMode\Model\Request\RetrievingSMSReplyRequest;
+use WBW\Library\SMSMode\Model\SMSReply;
+use WBW\Library\SMSMode\Provider\APIProvider;
+
+// Create the API provider.
+$provider = new APIProvider(new Authentication());
+
+// Set a couple login/password.
+$provider->getAuthentication()->setPseudo("pseudo");
+$provider->getAuthentication()->setPass("pass");
+
+// or use an access token.
+// $provider->getAuthentication()->setAccessToken("accessToken");
+
+// Create a Retrieving SMS reply model.
+$model = new RetrievingSMSReplyRequest();
+$model->setStart(0);
+$model->setOffset(10);
+
+// or use a date interval
+// $model->setStartDate(new DateTime("2017-09-14 00:00:00"));
+// $model->setEndDate(new DateTime("2017-09-15 00:00:00"));
+
+// Call the API and get the response.
+$response = $provider->retrievingSMSReply($model);
+
+// Handle the response.
+echo "Code: " . $response->getCode() . "\n";
+echo "Description: " . $response->getDescription() . "\n";
+
+/** @var SMSReply $current */
+foreach ($response->getSMSReplies() as $current) {
+
+    echo "Response ID: " . $current->getResponseID() . "\n";
+    echo "Reception date: " . $current->getReceptionDate() . "\n";
+    echo "From: " . $current->getFrom() . "\n";
+    echo "Text: " . $current->getText() . "\n";
+    echo "To: " . $current->getTo() . "\n";
+    echo "Message ID: " . $current->getMessageID() . "\n";
+}

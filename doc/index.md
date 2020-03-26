@@ -32,6 +32,8 @@ $provider->getAuthentication()->setPass("pass");
 // Call the API and get the response.
 $response = $provider->creatingAPIKey(new CreatingAPIKeyRequest());
 
+$response->getException();
+
 // Handle the response.
 $response->getCode();
 $response->getDescription();
@@ -61,9 +63,9 @@ $provider->getAuthentication()->setPass("pass");
 
 // Create a Sending SMS message model.
 $model = new SendingSMSMessageRequest();
-$model->setMessage("message")
-$model->addNumero("33600000001")
-$model->addNumero("33600000002")
+$model->setMessage("message");
+$model->addNumero("33600000001");
+$model->addNumero("33600000002");
 // ...
 
 // Call the API and get the response.
@@ -92,7 +94,7 @@ $provider->getAuthentication()->setPass("pass");
 
 // Create a Delivery report model.
 $model = new DeliveryReportRequest();
-$model->setSmsID("smsID")
+$model->setSmsID("smsID");
 
 // Call the API and get the response.
 $response = $provider->deliveryReport($model);
@@ -150,7 +152,7 @@ $provider->getAuthentication()->setPass("pass");
 // Create a Creating sub-account model.
 $model = new CreatingSubAccountRequest();
 $model->setNewPseudo("pseudo");
-$model->setNewPass("pass")
+$model->setNewPass("pass");
 
 // Call the API and get the response.
 $response = $provider->creatingSubAccount($model);
@@ -229,7 +231,7 @@ $provider->getAuthentication()->setPass("pass");
 // Create an Adding contact model.
 $model = new AddingContactRequest();
 $model->setNom("lastname");
-$model->setMobile("33600000000")
+$model->setMobile("33600000000");
 
 // Call the API and get the response.
 $response = $provider->addingContact($model);
@@ -255,7 +257,7 @@ $provider->getAuthentication()->setPass("pass");
 
 // Create a Deleting SMS model.
 $model = new DeletingSMSRequest();
-$model->setSmsID("smsID")
+$model->setSmsID("smsID");
 
 // Call the API and get the response.
 $response = $provider->deletingSMS($model);
@@ -314,7 +316,7 @@ $provider->getAuthentication()->setPass("pass");
 
 // Create a Checking SMS message status model.
 $model = new CheckingSMSMessageStatusRequest();
-$model->setSmsID("smsID")
+$model->setSmsID("smsID");
 
 // Call the API and get the response.
 $response = $provider->checkingSMSMessageStatus($model);
@@ -382,9 +384,9 @@ $provider->getAuthentication()->setPass("pass");
 
 // Create a Sending text-to-speech SMS model.
 $model = new SendingTextToSpeechSMSRequest();
-$model->setMessage("message")
-$model->addNumero("33600000001")
-$model->addNumero("33600000002")
+$model->setMessage("message");
+$model->addNumero("33600000001");
+$model->addNumero("33600000002");
 // ...
 
 // Call the API and get the response.
@@ -413,9 +415,9 @@ $provider->getAuthentication()->setPass("pass");
 
 // Create a Sending unicode SMS model.
 $model = new SendingUnicodeSMSRequest();
-$model->setMessage("message")
-$model->addNumero("33600000001")
-$model->addNumero("33600000002")
+$model->setMessage("message");
+$model->addNumero("33600000001");
+$model->addNumero("33600000002");
 // ...
 
 // Call the API and get the response.
@@ -444,7 +446,7 @@ $provider->getAuthentication()->setPass("pass");
 
 // Create a Sending SMS batch model.
 $model = new SendingSMSBatchRequest();
-$model->setFichier("fichier.csv")
+$model->setFichier("fichier.csv");
 
 // Call the API and get the response.
 $response = $provider->sendingSMSBatch($model);

@@ -189,7 +189,7 @@ class SendingSMSMessageRequest extends AbstractRequest implements SendingSMSMess
      *
      * @param int|null $stop The stop.
      * @return SendingSMSMessageRequest Returns this sending SMS message request.
-     * @throws InvalidArgumentException Throws an invalid argument exception if the classe msg is invalid.
+     * @throws InvalidArgumentException Throws an invalid argument exception if the stop is invalid.
      */
     public function setStop($stop) {
         if (null !== $stop && false === in_array($stop, $this->enumStop())) {

@@ -408,6 +408,9 @@ class ResponseDeserializer {
 
         $responses = explode("\n", trim($rawResponse));
         foreach ($responses as $current) {
+            if ("" === $current) {
+                continue;
+            }
             $model->addSentSMSMessage(static::deserializeSentSMSMessage($current));
         }
 

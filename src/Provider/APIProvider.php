@@ -233,7 +233,7 @@ class APIProvider extends AbstractProvider {
         $postData = [];
 
         $buffer   = [];
-        $buffer[] = "@" . $queryData["fichier"];
+        $buffer[] = "@" . realpath($queryData["fichier"]);
         $buffer[] = "filename=" . basename($queryData["fichier"]);
         $buffer[] = "type=text/csv";
 

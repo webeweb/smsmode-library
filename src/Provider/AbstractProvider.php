@@ -100,11 +100,12 @@ abstract class AbstractProvider {
      * @param AbstractRequest $request The request.
      * @param array $queryData The query data.
      * @param array $postData The post data.
+     * @param string $contentType The content type.
      * @return string Returns the raw response.
      * @throws APIException Throws an API exception if an error occurs.
      * @throws InvalidArgumentException Throws an invalid argument exception if a parameter is missing.
      */
-    protected function callAPI(AbstractRequest $request, array $queryData, array $postData = []) {
+    protected function callAPI(AbstractRequest $request, array $queryData, array $postData = [], $contentType = null) {
 
         try {
 
@@ -118,6 +119,9 @@ abstract class AbstractProvider {
                 "query"       => array_merge($this->getRequestSerializer()->serialize($this->getAuthentication()), $queryData),
                 "form_params" => $postData,
             ];
+            if (null !== $contentType) {
+                $options["headers"] = ["Content-Type" => $contentType];
+            }
 
             $this->logInfo(sprintf("Call sMsmode API %s %s", $method, $uri), ["config" => $config, "options" => $options]);
 

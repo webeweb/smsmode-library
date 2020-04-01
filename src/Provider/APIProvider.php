@@ -240,7 +240,7 @@ class APIProvider extends AbstractProvider {
         $postData["fichier"] = implode(";", $buffer);
         unset($queryData["fichier"]);
 
-        $rawResponse = $this->callAPI($sendingSMSBatchRequest, $queryData, $postData);
+        $rawResponse = $this->callAPI($sendingSMSBatchRequest, $queryData, $postData, "multipart/form-data");
 
         return ResponseDeserializer::deserializeSendingSMSBatchResponse($rawResponse);
     }

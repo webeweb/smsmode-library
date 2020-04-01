@@ -3,7 +3,7 @@ CHANGELOG
 
 ### master
 
-- Fix Account balance when the response contains negative numbers
+- Fix Account balance response with negative numbers
 - Fix Sent SMS message list response
 - Fix Sending SMS batch request content type
 

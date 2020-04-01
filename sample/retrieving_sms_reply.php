@@ -18,6 +18,7 @@ use WBW\Library\SMSMode\Provider\APIProvider;
 
 // Create the API provider.
 $provider = new APIProvider(new Authentication());
+$provider->setDebug(false);
 
 // Set a couple login/password.
 $provider->getAuthentication()->setPseudo("pseudo");

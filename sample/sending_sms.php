@@ -37,6 +37,6 @@ $response = $provider->sendingSMSMessage($model);
 
 // Handle the response.
 echo "Code: " . $response->getCode() . "\n";
-echo "Description: " . $response->getDescription() . "\n";
+echo "Description: " . $response->getDescription() . "\n\n";
 
 echo "SMS ID: " . $response->getSmsID() . "\n";

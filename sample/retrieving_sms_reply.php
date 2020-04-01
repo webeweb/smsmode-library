@@ -40,15 +40,16 @@ $response = $provider->retrievingSMSReply($model);
 
 // Handle the response.
 echo "Code: " . $response->getCode() . "\n";
-echo "Description: " . $response->getDescription() . "\n";
+echo "Description: " . $response->getDescription() . "\n\n";
 
 /** @var SMSReply $current */
 foreach ($response->getSMSReplies() as $current) {
 
+    echo "\n";
     echo "Response ID: " . $current->getResponseID() . "\n";
     echo "Reception date: " . $current->getReceptionDate() . "\n";
     echo "From: " . $current->getFrom() . "\n";
     echo "Text: " . $current->getText() . "\n";
     echo "To: " . $current->getTo() . "\n";
-    echo "Message ID: " . $current->getMessageID() . "\n";
+    echo "Message ID: " . $current->getMessageID() . "\n\n";
 }

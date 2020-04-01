@@ -35,11 +35,11 @@ $response = $provider->deliveryReport($model);
 
 // Handle the response.
 echo "Code: " . $response->getCode() . "\n";
-echo "Description: " . $response->getDescription() . "\n";
+echo "Description: " . $response->getDescription() . "\n\n";
 
 /** @var DeliveryReport $current */
 foreach ($response->getDeliveryReports() as $current) {
 
     echo "Code: " . $current->getCode() . "\n";
-    echo "Numero: " . $current->getNumero() . "\n";
+    echo "Numero: " . $current->getNumero() . "\n\n";
 }

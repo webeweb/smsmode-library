@@ -29,10 +29,10 @@ $provider->getAuthentication()->setPass("pass");
 $response = $provider->creatingAPIKey(new CreatingAPIKeyRequest());
 
 // Handle the response.
-echo "Exception:" . print_r($response->getException(), true) . "\n";
+echo "Exception:" . print_r($response->getException(), true) . "\n\n";
 
 echo "Code: " . $response->getCode() . "\n";
-echo "Description: " . $response->getDescription() . "\n";
+echo "Description: " . $response->getDescription() . "\n\n";
 
 echo "Id: " . $response->getId() . "\n";
 echo "Access token: " . $response->getAccessToken() . "\n";

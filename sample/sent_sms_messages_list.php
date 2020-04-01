@@ -31,15 +31,15 @@ $response = $provider->sentSMSMessageList(new SentSMSMessageListRequest());
 
 // Handle response.
 echo "Code: " . $response->getCode() . "\n";
-echo "Description: " . $response->getDescription() . "\n";
+echo "Description: " . $response->getDescription() . "\n\n";
 
 /** @var SentSMSMessage $current */
 foreach ($response->getSentSMSMessages() as $current) {
 
     echo "SMS ID: " . $current->getSmsID() . "\n";
-    echo "Send date: " . $current->getSendDate() . "\n";
+    echo "Send date: " . $current->getSendDate()->format("Y-m-d H:i") . "\n";
     echo "Message: " . $current->getMessage() . "\n";
     echo "Numero: " . $current->getNumero() . "\n";
     echo "Cost credits: " . $current->getCostCredits() . "\n";
-    echo "Recipient count: " . $current->getRecipientCount() . "\n";
+    echo "Recipient count: " . $current->getRecipientCount() . "\n\n";
 }

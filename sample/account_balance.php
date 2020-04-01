@@ -30,6 +30,6 @@ $response = $provider->accountBalance(new AccountBalanceRequest());
 
 // Handle response.
 echo "Code: " . $response->getCode() . "\n";
-echo "Description: " . $response->getDescription() . "\n";
+echo "Description: " . $response->getDescription() . "\n\n";
 
 echo "Account balance: " . $response->getAccountBalance() . "\n";

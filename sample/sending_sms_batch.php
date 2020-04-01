@@ -34,6 +34,6 @@ $response = $provider->sendingSMSBatch($model);
 
 // Handle the response.
 echo "Code: " . $response->getCode() . "\n";
-echo "Description: " . $response->getDescription() . "\n";
+echo "Description: " . $response->getDescription() . "\n\n";
 
 echo "Campagne ID: " . $response->getCampagneID() . "\n";

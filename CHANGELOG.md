@@ -1,6 +1,12 @@
 CHANGELOG
 =========
 
+### master
+
+- Fix Account balance when the response contains negative numbers
+- Fix Sent SMS message list response
+- Fix Sending SMS batch request content type
+
 ### [2.8.0](https://github.com/webeweb/smsmode-library/tree/v2.8.0) (2020-03-11)
 
 - Rename traits 

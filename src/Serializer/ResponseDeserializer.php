@@ -57,7 +57,7 @@ class ResponseDeserializer {
         }
 
         $model->setRawResponse($rawResponse);
-        if (1 === preg_match("/^[0-9]{1,}\.[0-9]{1,}$/", trim($rawResponse))) {
+        if (1 === preg_match("/^\-?[0-9]{1,}\.[0-9]{1,}$/", trim($rawResponse))) {
             $model->setAccountBalance(floatval(trim($rawResponse)));
         }
 
@@ -376,7 +376,7 @@ class ResponseDeserializer {
             return $model;
         }
 
-        $sendDate = DateTime::createFromFormat(ResponseInterface::RESPONSE_DATETIME_FORMAT, trim($responses[1]));
+        $sendDate = DateTime::createFromFormat("d/m/Y H:i", trim($responses[1]));
 
         $model->setSmsID(trim($responses[0]));
         if (false !== $sendDate) {
@@ -406,11 +406,8 @@ class ResponseDeserializer {
 
         $model->setRawResponse($rawResponse);
 
-        $responses = explode("\n", trim($rawResponse));
+        $responses = explode("\n\n", trim($rawResponse));
         foreach ($responses as $current) {
-            if ("" === $current) {
-                continue;
-            }
             $model->addSentSMSMessage(static::deserializeSentSMSMessage($current));
         }
 

@@ -62,6 +62,26 @@ class ResponseDeserializerTest extends AbstractTestCase {
     }
 
     /**
+     * Tests the deserializeAccountBalanceResponse() method.
+     *
+     * @return void
+     */
+    public function testDeserializeAccountBalanceResponseWithNegative() {
+
+        // Initialize a Raw response mock.
+        $rawResponse = "-212.5";
+
+        $obj = ResponseDeserializer::deserializeAccountBalanceResponse($rawResponse);
+        $this->assertInstanceOf(AccountBalanceResponse::class, $obj);
+
+        $this->assertNull($obj->getCode());
+        $this->assertNull($obj->getDescription());
+        $this->assertEquals($rawResponse, $obj->getRawResponse());
+
+        $this->assertEquals(-212.5, $obj->getAccountBalance());
+    }
+
+    /**
      * Tests the deserializeAddingContactResponse() method.
      *
      * @return void
@@ -504,7 +524,7 @@ EOT;
 
         // Initialize a Raw response mock.
         // $rawResponse = "smsID | 23012019-18:00 | message | 33600000000 | 0.1 | 1"; /* A well formed raw response */
-        $rawResponse = "  smsID  |  23012019-18:00  |  message  | 33600000000  |  0.1  |  1  "; /* A bad formed raw response */
+        $rawResponse = "  smsID  |  23/01/2019 18:00  |  message  | 33600000000  |  0.1  |  1  "; /* A bad formed raw response */
 
         $obj = TestResponseDeserializer::deserializeSentSMSMessage($rawResponse);
         $this->assertInstanceOf(SentSMSMessage::class, $obj);
@@ -530,9 +550,11 @@ EOT;
 
         // Initialize a Raw response mock.
         $rawResponse = <<< EOT
-smsID1 | 23012019-18:00 | message1 | 33600000001 | 0.1 | 1
-smsID2 | 23012019-19:00 | message2 | 33600000002 | 0.2 | 2
-smsID3 | 23012019-20:00 | message3 | 33600000003 | 0.3 | 3
+smsID1 | 23/01/2019 18:00 | message1 | 33600000001 | 0.1 | 1
+
+smsID2 | 23/01/2019 19:00 | message2 | 33600000002 | 0.2 | 2
+
+smsID3 | 23/01/2019 20:00 | message3 | 33600000003 | 0.3 | 3
 EOT;
 
         $obj = ResponseDeserializer::deserializeSentSMSMessageListResponse($rawResponse);

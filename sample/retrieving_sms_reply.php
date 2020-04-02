@@ -48,7 +48,7 @@ foreach ($response->getSMSReplies() as $current) {
 
     echo "\n";
     echo "Response ID: " . $current->getResponseID() . "\n";
-    echo "Reception date: " . $current->getReceptionDate() . "\n";
+    echo "Reception date: " . $current->getReceptionDate()->format("Y-m-d H:i") . "\n";
     echo "From: " . $current->getFrom() . "\n";
     echo "Text: " . $current->getText() . "\n";
     echo "To: " . $current->getTo() . "\n";

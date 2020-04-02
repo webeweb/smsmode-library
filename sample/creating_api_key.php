@@ -38,6 +38,6 @@ echo "Description: " . $response->getDescription() . "\n\n";
 echo "Id: " . $response->getId() . "\n";
 echo "Access token: " . $response->getAccessToken() . "\n";
 echo "Account: " . $response->getAccount() . "\n";
-echo "Creation date: " . $response->getCreationDate() . "\n";
-echo "Expiration: " . $response->getExpiration() . "\n";
+echo "Creation date: " . $response->getCreationDate()->format("Y-m-d H:i") . "\n";
+echo "Expiration: " . $response->getExpiration()->format("Y-m-d H:i") . "\n";
 echo "State: " . $response->getState() . "\n";

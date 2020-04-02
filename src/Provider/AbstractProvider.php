@@ -15,6 +15,7 @@ use Exception;
 use GuzzleHttp\Client;
 use InvalidArgumentException;
 use Psr\Log\LoggerInterface;
+use WBW\Library\Core\Argument\Helper\ArrayHelper;
 use WBW\Library\SMSMode\Exception\APIException;
 use WBW\Library\SMSMode\Model\AbstractRequest;
 use WBW\Library\SMSMode\Model\Authentication;
@@ -100,12 +101,11 @@ abstract class AbstractProvider {
      * @param AbstractRequest $request The request.
      * @param array $queryData The query data.
      * @param array $postData The post data.
-     * @param string $contentType The content type.
      * @return string Returns the raw response.
      * @throws APIException Throws an API exception if an error occurs.
      * @throws InvalidArgumentException Throws an invalid argument exception if a parameter is missing.
      */
-    protected function callAPI(AbstractRequest $request, array $queryData, array $postData = [], $contentType = null) {
+    protected function callAPI(AbstractRequest $request, array $queryData, array $postData = []) {
 
         try {
 
@@ -113,15 +113,14 @@ abstract class AbstractProvider {
 
             $client = new Client($config);
 
+            $body = true === ArrayHelper::isObject($postData) ? "form_params" : "multipart";
+
             $method  = 0 === count($postData) ? "GET" : "POST";
             $uri     = substr($request->getResourcePath(), 1);
             $options = [
-                "query"       => array_merge($this->getRequestSerializer()->serialize($this->getAuthentication()), $queryData),
-                "form_params" => $postData,
+                "query" => array_merge($this->getRequestSerializer()->serialize($this->getAuthentication()), $queryData),
+                $body   => $postData,
             ];
-            if (null !== $contentType) {
-                $options["headers"] = ["Content-Type" => $contentType];
-            }
 
             $this->logInfo(sprintf("Call sMsmode API %s %s", $method, $uri), ["config" => $config, "options" => $options]);
 

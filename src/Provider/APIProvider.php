@@ -231,18 +231,17 @@ class APIProvider extends AbstractProvider {
         $queryData = $this->getRequestSerializer()->serialize($sendingSMSBatchRequest);
 
         $filename = realpath($queryData["fichier"]);
-        $boundary = "--------" . hash_file("md5", $filename);
-
-        unset($queryData["fichier"]);
         $postData = [
-            "fichier" => implode(";", [
-                "@{$filename}",
-                "filename=" . basename($filename),
-                "type=text/csv",
-            ]),
+            [
+                "name"     => "fichier",
+                "contents" => fopen($filename, "r"),
+                "filename" => basename($filename),
+            ],
         ];
 
-        $rawResponse = $this->callAPI($sendingSMSBatchRequest, $queryData, $postData, "multipart/form-data; boundary={$boundary}");
+        unset($queryData["fichier"]);
+
+        $rawResponse = $this->callAPI($sendingSMSBatchRequest, $queryData, $postData);
 
         return ResponseDeserializer::deserializeSendingSMSBatchResponse($rawResponse);
     }

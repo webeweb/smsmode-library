@@ -1,6 +1,10 @@
 CHANGELOG
 =========
 
+### master
+
+- Improve unit tests 
+
 ### [2.8.1](https://github.com/webeweb/smsmode-library/tree/v2.8.1) (2020-04-08)
 
 - Add sample scripts

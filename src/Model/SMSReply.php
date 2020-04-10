@@ -12,6 +12,9 @@
 namespace WBW\Library\SMSMode\Model;
 
 use DateTime;
+use WBW\Library\Core\Model\Attribute\StringFromTrait;
+use WBW\Library\Core\Model\Attribute\StringTextTrait;
+use WBW\Library\Core\Model\Attribute\StringToTrait;
 
 /**
  * SMS reply.
@@ -21,12 +24,9 @@ use DateTime;
  */
 class SMSReply extends AbstractResponse {
 
-    /**
-     * From.
-     *
-     * @var string
-     */
-    private $from;
+    use StringFromTrait;
+    use StringTextTrait;
+    use StringToTrait;
 
     /**
      * Message id.
@@ -48,29 +48,6 @@ class SMSReply extends AbstractResponse {
      * @var string
      */
     private $responseID;
-
-    /**
-     * Text.
-     *
-     * @var string
-     */
-    private $text;
-
-    /**
-     * To.
-     *
-     * @var string
-     */
-    private $to;
-
-    /**
-     * Get the from.
-     *
-     * @return string Returns the from.
-     */
-    public function getFrom() {
-        return $this->from;
-    }
 
     /**
      * Get the message id.
@@ -97,35 +74,6 @@ class SMSReply extends AbstractResponse {
      */
     public function getResponseID() {
         return $this->responseID;
-    }
-
-    /**
-     * Get the text.
-     *
-     * @return string Returns the text.
-     */
-    public function getText() {
-        return $this->text;
-    }
-
-    /**
-     * Get the to.
-     *
-     * @return string Returns the to.
-     */
-    public function getTo() {
-        return $this->to;
-    }
-
-    /**
-     * Set the from.
-     *
-     * @param string $from The from.
-     * @return SMSReply Returns this retrieving SMS reply.
-     */
-    public function setFrom($from) {
-        $this->from = $from;
-        return $this;
     }
 
     /**
@@ -158,28 +106,6 @@ class SMSReply extends AbstractResponse {
      */
     public function setResponseID($responseID) {
         $this->responseID = $responseID;
-        return $this;
-    }
-
-    /**
-     * Set the text.
-     *
-     * @param string $text The text.
-     * @return SMSReply Returns this retrieving SMS reply.
-     */
-    public function setText($text) {
-        $this->text = $text;
-        return $this;
-    }
-
-    /**
-     * Set the to.
-     *
-     * @param string $to The to.
-     * @return SMSReply Returns this retrieving SMS reply.
-     */
-    public function setTo($to) {
-        $this->to = $to;
         return $this;
     }
 }

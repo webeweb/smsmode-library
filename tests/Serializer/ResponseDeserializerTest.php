@@ -143,12 +143,12 @@ EOT;
         $this->assertNull($obj->getDescription());
         $this->assertEquals($rawResponse, $obj->getRawResponse());
 
-        $this->assertEquals("accessToken", $obj->getAccessToken());
-        $this->assertEquals("account", $obj->getAccount());
-        $this->assertEquals("2019-01-21", $obj->getCreationDate()->format("Y-m-d"));
-        $this->assertEquals("2019-01-22", $obj->getExpiration()->format("Y-m-d"));
         $this->assertEquals("id", $obj->getId());
+        $this->assertEquals("accessToken", $obj->getAccessToken());
+        $this->assertEquals("2019-01-21", $obj->getCreationDate()->format("Y-m-d"));
         $this->assertEquals("state", $obj->getState());
+        $this->assertEquals("2019-01-22", $obj->getExpiration()->format("Y-m-d"));
+        $this->assertEquals("account", $obj->getAccount());
     }
 
     /**
@@ -341,26 +341,26 @@ EOT;
 
         $this->assertCount(3, $obj->getSmsReplies());
 
-        $this->assertEquals("33600000001", $obj->getSmsReplies()[0]->getFrom());
-        $this->assertEquals("messageID1", $obj->getSmsReplies()[0]->getMessageID());
-        $this->assertEquals("2019-01-23 18:00", $obj->getSmsReplies()[0]->getReceptionDate()->format("Y-m-d H:i"));
         $this->assertEquals("responseID1", $obj->getSmsReplies()[0]->getResponseID());
+        $this->assertEquals("2019-01-23 18:00", $obj->getSmsReplies()[0]->getReceptionDate()->format("Y-m-d H:i"));
+        $this->assertEquals("33600000001", $obj->getSmsReplies()[0]->getFrom());
         $this->assertEquals("text1", $obj->getSmsReplies()[0]->getText());
         $this->assertEquals("to1", $obj->getSmsReplies()[0]->getTo());
+        $this->assertEquals("messageID1", $obj->getSmsReplies()[0]->getMessageID());
 
-        $this->assertEquals("33600000002", $obj->getSmsReplies()[1]->getFrom());
-        $this->assertEquals("messageID2", $obj->getSmsReplies()[1]->getMessageID());
-        $this->assertEquals("2019-01-23 19:00", $obj->getSmsReplies()[1]->getReceptionDate()->format("Y-m-d H:i"));
         $this->assertEquals("responseID2", $obj->getSmsReplies()[1]->getResponseID());
+        $this->assertEquals("2019-01-23 19:00", $obj->getSmsReplies()[1]->getReceptionDate()->format("Y-m-d H:i"));
+        $this->assertEquals("33600000002", $obj->getSmsReplies()[1]->getFrom());
         $this->assertEquals("text2", $obj->getSmsReplies()[1]->getText());
         $this->assertEquals("to2", $obj->getSmsReplies()[1]->getTo());
+        $this->assertEquals("messageID2", $obj->getSmsReplies()[1]->getMessageID());
 
-        $this->assertEquals("33600000003", $obj->getSmsReplies()[2]->getFrom());
-        $this->assertEquals("messageID3", $obj->getSmsReplies()[2]->getMessageID());
-        $this->assertEquals("2019-01-23 20:00", $obj->getSmsReplies()[2]->getReceptionDate()->format("Y-m-d H:i"));
         $this->assertEquals("responseID3", $obj->getSmsReplies()[2]->getResponseID());
+        $this->assertEquals("2019-01-23 20:00", $obj->getSmsReplies()[2]->getReceptionDate()->format("Y-m-d H:i"));
+        $this->assertEquals("33600000003", $obj->getSmsReplies()[2]->getFrom());
         $this->assertEquals("text3", $obj->getSmsReplies()[2]->getText());
         $this->assertEquals("to3", $obj->getSmsReplies()[2]->getTo());
+        $this->assertEquals("messageID3", $obj->getSmsReplies()[2]->getMessageID());
     }
 
     /**
@@ -401,12 +401,12 @@ EOT;
         $this->assertNull($obj->getDescription());
         $this->assertEquals($rawResponse, $obj->getRawResponse());
 
-        $this->assertEquals("33600000000", $obj->getFrom());
-        $this->assertEquals("messageID", $obj->getMessageID());
-        $this->assertEquals("2019-01-23 18:00", $obj->getReceptionDate()->format("Y-m-d H:i"));
         $this->assertEquals("responseID", $obj->getResponseID());
+        $this->assertEquals("2019-01-23 18:00", $obj->getReceptionDate()->format("Y-m-d H:i"));
+        $this->assertEquals("33600000000", $obj->getFrom());
         $this->assertEquals("text", $obj->getText());
         $this->assertEquals("to", $obj->getTo());
+        $this->assertEquals("messageID", $obj->getMessageID());
     }
 
     /**
@@ -427,12 +427,12 @@ EOT;
         $this->assertNull($obj->getDescription());
         $this->assertEquals($rawResponse, $obj->getRawResponse());
 
-        $this->assertNull($obj->getFrom());
-        $this->assertNull($obj->getMessageID());
-        $this->assertNull($obj->getReceptionDate());
         $this->assertNull($obj->getResponseID());
+        $this->assertNull($obj->getReceptionDate());
+        $this->assertNull($obj->getFrom());
         $this->assertNull($obj->getText());
         $this->assertNull($obj->getTo());
+        $this->assertNull($obj->getMessageID());
     }
 
     /**
@@ -533,12 +533,12 @@ EOT;
         $this->assertNull($obj->getDescription());
         $this->assertEquals($rawResponse, $obj->getRawResponse());
 
-        $this->assertEquals(0.1, $obj->getCostCredits());
+        $this->assertEquals("smsID", $obj->getSmsID());
+        $this->assertEquals("2019-01-23 18:00", $obj->getSendDate()->format("Y-m-d H:i"));
         $this->assertEquals("message", $obj->getMessage());
         $this->assertEquals("33600000000", $obj->getNumero());
+        $this->assertEquals(0.1, $obj->getCostCredits());
         $this->assertEquals(1, $obj->getRecipientCount());
-        $this->assertEquals("2019-01-23 18:00", $obj->getSendDate()->format("Y-m-d H:i"));
-        $this->assertEquals("smsID", $obj->getSmsID());
     }
 
     /**
@@ -566,26 +566,26 @@ EOT;
 
         $this->assertCount(3, $obj->getSentSMSMessages());
 
-        $this->assertEquals(0.1, $obj->getSentSMSMessages()[0]->getCostCredits());
+        $this->assertEquals("smsID1", $obj->getSentSMSMessages()[0]->getSmsID());
+        $this->assertEquals("2019-01-23 18:00", $obj->getSentSMSMessages()[0]->getSendDate()->format("Y-m-d H:i"));
         $this->assertEquals("message1", $obj->getSentSMSMessages()[0]->getMessage());
         $this->assertEquals("33600000001", $obj->getSentSMSMessages()[0]->getNumero());
+        $this->assertEquals(0.1, $obj->getSentSMSMessages()[0]->getCostCredits());
         $this->assertEquals(1, $obj->getSentSMSMessages()[0]->getRecipientCount());
-        $this->assertEquals("2019-01-23 18:00", $obj->getSentSMSMessages()[0]->getSendDate()->format("Y-m-d H:i"));
-        $this->assertEquals("smsID1", $obj->getSentSMSMessages()[0]->getSmsID());
 
-        $this->assertEquals(0.2, $obj->getSentSMSMessages()[1]->getCostCredits());
+        $this->assertEquals("smsID2", $obj->getSentSMSMessages()[1]->getSmsID());
+        $this->assertEquals("2019-01-23 19:00", $obj->getSentSMSMessages()[1]->getSendDate()->format("Y-m-d H:i"));
         $this->assertEquals("message2", $obj->getSentSMSMessages()[1]->getMessage());
         $this->assertEquals("33600000002", $obj->getSentSMSMessages()[1]->getNumero());
+        $this->assertEquals(0.2, $obj->getSentSMSMessages()[1]->getCostCredits());
         $this->assertEquals(2, $obj->getSentSMSMessages()[1]->getRecipientCount());
-        $this->assertEquals("2019-01-23 19:00", $obj->getSentSMSMessages()[1]->getSendDate()->format("Y-m-d H:i"));
-        $this->assertEquals("smsID2", $obj->getSentSMSMessages()[1]->getSmsID());
 
-        $this->assertEquals(0.3, $obj->getSentSMSMessages()[2]->getCostCredits());
+        $this->assertEquals("smsID3", $obj->getSentSMSMessages()[2]->getSmsID());
+        $this->assertEquals("2019-01-23 20:00", $obj->getSentSMSMessages()[2]->getSendDate()->format("Y-m-d H:i"));
         $this->assertEquals("message3", $obj->getSentSMSMessages()[2]->getMessage());
         $this->assertEquals("33600000003", $obj->getSentSMSMessages()[2]->getNumero());
+        $this->assertEquals(0.3, $obj->getSentSMSMessages()[2]->getCostCredits());
         $this->assertEquals(3, $obj->getSentSMSMessages()[2]->getRecipientCount());
-        $this->assertEquals("2019-01-23 20:00", $obj->getSentSMSMessages()[2]->getSendDate()->format("Y-m-d H:i"));
-        $this->assertEquals("smsID3", $obj->getSentSMSMessages()[2]->getSmsID());
     }
 
     /**
@@ -626,12 +626,12 @@ EOT;
         $this->assertNull($obj->getDescription());
         $this->assertEquals($rawResponse, $obj->getRawResponse());
 
-        $this->assertNull($obj->getCostCredits());
+        $this->assertNull($obj->getSmsID());
+        $this->assertNull($obj->getSendDate());
         $this->assertNull($obj->getMessage());
         $this->assertNull($obj->getNumero());
+        $this->assertNull($obj->getCostCredits());
         $this->assertNull($obj->getRecipientCount());
-        $this->assertNull($obj->getSendDate());
-        $this->assertNull($obj->getSmsID());
     }
 
     /**

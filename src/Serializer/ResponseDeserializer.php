@@ -114,10 +114,10 @@ class ResponseDeserializer {
 
         $model->setId(ArrayHelper::get($decodedResponse, "id"));
         $model->setAccessToken(ArrayHelper::get($decodedResponse, "accessToken"));
-        $model->setAccount(ArrayHelper::get($decodedResponse, "account"));
         $model->setCreationDate(false !== $creationDate ? $creationDate : null);
-        $model->setExpiration(false !== $expiration ? $expiration : null);
         $model->setState(ArrayHelper::get($decodedResponse, "state"));
+        $model->setExpiration(false !== $expiration ? $expiration : null);
+        $model->setAccount(ArrayHelper::get($decodedResponse, "account"));
 
         return $model;
     }

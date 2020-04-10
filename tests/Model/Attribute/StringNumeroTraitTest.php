@@ -23,18 +23,6 @@ use WBW\Library\SMSMode\Tests\Fixtures\Model\Attribute\TestStringNumeroTrait;
 class StringNumeroTraitTest extends AbstractTestCase {
 
     /**
-     * Tests the __construct() method.
-     *
-     * @return void
-     */
-    public function testConstruct() {
-
-        $obj = new TestStringNumeroTrait();
-
-        $this->assertNull($obj->getNumero());
-    }
-
-    /**
      * Tests the setNumero() method.
      *
      * @return void
@@ -45,5 +33,17 @@ class StringNumeroTraitTest extends AbstractTestCase {
 
         $obj->setNumero("numero");
         $this->assertEquals("numero", $obj->getNumero());
+    }
+
+    /**
+     * Tests the __construct() method.
+     *
+     * @return void
+     */
+    public function test__construct() {
+
+        $obj = new TestStringNumeroTrait();
+
+        $this->assertNull($obj->getNumero());
     }
 }

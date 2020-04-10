@@ -23,18 +23,6 @@ use WBW\Library\SMSMode\Tests\Fixtures\Model\Attribute\TestStringRefClientTrait;
 class StringRefClientTraitTest extends AbstractTestCase {
 
     /**
-     * Tests the __construct() method.
-     *
-     * @return void
-     */
-    public function testConstruct() {
-
-        $obj = new TestStringRefClientTrait();
-
-        $this->assertNull($obj->getRefClient());
-    }
-
-    /**
      * Tests the setRefClient() method.
      *
      * @return void
@@ -45,5 +33,17 @@ class StringRefClientTraitTest extends AbstractTestCase {
 
         $obj->setRefClient("refClient");
         $this->assertEquals("refClient", $obj->getRefClient());
+    }
+
+    /**
+     * Tests the __construct() method.
+     *
+     * @return void
+     */
+    public function test__construct() {
+
+        $obj = new TestStringRefClientTrait();
+
+        $this->assertNull($obj->getRefClient());
     }
 }

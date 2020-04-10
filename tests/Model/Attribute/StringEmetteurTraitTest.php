@@ -23,18 +23,6 @@ use WBW\Library\SMSMode\Tests\Fixtures\Model\Attribute\TestStringEmetteurTrait;
 class StringEmetteurTraitTest extends AbstractTestCase {
 
     /**
-     * Tests the __construct() method.
-     *
-     * @return void
-     */
-    public function testConstruct() {
-
-        $obj = new TestStringEmetteurTrait();
-
-        $this->assertNull($obj->getEmetteur());
-    }
-
-    /**
      * Tests the setEmetteur() method.
      *
      * @return void
@@ -45,5 +33,17 @@ class StringEmetteurTraitTest extends AbstractTestCase {
 
         $obj->setEmetteur("emetteur");
         $this->assertEquals("emetteur", $obj->getEmetteur());
+    }
+
+    /**
+     * Tests the __construct() method.
+     *
+     * @return void
+     */
+    public function test__construct() {
+
+        $obj = new TestStringEmetteurTrait();
+
+        $this->assertNull($obj->getEmetteur());
     }
 }

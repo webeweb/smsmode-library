@@ -25,27 +25,6 @@ use WBW\Library\SMSMode\Tests\AbstractTestCase;
 class SendingSMSBatchRequestTest extends AbstractTestCase {
 
     /**
-     * Tests the __construct() method.
-     *
-     * @return void
-     */
-    public function testConstruct() {
-
-        $this->assertEquals("/http/1.6/sendSMSBatch.do", SendingSMSBatchRequest::SENDING_SMS_BATCH_RESOURCE_PATH);
-
-        $obj = new SendingSMSBatchRequest();
-
-        $this->assertNull($obj->getClasseMsg());
-        $this->assertNull($obj->getDateEnvoi());
-        $this->assertNull($obj->getEmetteur());
-        $this->assertNull($obj->getFichier());
-        $this->assertNull($obj->getNbrMsg());
-        $this->assertNull($obj->getNotificationUrl());
-        $this->assertNull($obj->getRefClient());
-        $this->assertEquals(SendingSMSBatchRequest::SENDING_SMS_BATCH_RESOURCE_PATH, $obj->getResourcePath());
-    }
-
-    /**
      * Tests the setFichier() method.
      *
      * @return void
@@ -79,5 +58,26 @@ class SendingSMSBatchRequestTest extends AbstractTestCase {
             $this->assertInstanceOf(InvalidArgumentException::class, $ex);
             $this->assertEquals("File \"fichier\" could not be found.", $ex->getMessage());
         }
+    }
+
+    /**
+     * Tests the __construct() method.
+     *
+     * @return void
+     */
+    public function test__construct() {
+
+        $this->assertEquals("/http/1.6/sendSMSBatch.do", SendingSMSBatchRequest::SENDING_SMS_BATCH_RESOURCE_PATH);
+
+        $obj = new SendingSMSBatchRequest();
+
+        $this->assertNull($obj->getClasseMsg());
+        $this->assertNull($obj->getDateEnvoi());
+        $this->assertNull($obj->getEmetteur());
+        $this->assertNull($obj->getFichier());
+        $this->assertNull($obj->getNbrMsg());
+        $this->assertNull($obj->getNotificationUrl());
+        $this->assertNull($obj->getRefClient());
+        $this->assertEquals(SendingSMSBatchRequest::SENDING_SMS_BATCH_RESOURCE_PATH, $obj->getResourcePath());
     }
 }

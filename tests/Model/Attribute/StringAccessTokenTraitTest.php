@@ -23,18 +23,6 @@ use WBW\Library\SMSMode\Tests\Fixtures\Model\Attribute\TestStringAccessTokenTrai
 class StringAccessTokenTraitTest extends AbstractTestCase {
 
     /**
-     * Tests the __construct() method.
-     *
-     * @return void
-     */
-    public function testConstruct() {
-
-        $obj = new TestStringAccessTokenTrait();
-
-        $this->assertNull($obj->getAccessToken());
-    }
-
-    /**
      * Tests the setAccessToken() method.
      *
      * @return void
@@ -45,5 +33,17 @@ class StringAccessTokenTraitTest extends AbstractTestCase {
 
         $obj->setAccessToken("accessToken");
         $this->assertEquals("accessToken", $obj->getAccessToken());
+    }
+
+    /**
+     * Tests the __construct() method.
+     *
+     * @return void
+     */
+    public function test__construct() {
+
+        $obj = new TestStringAccessTokenTrait();
+
+        $this->assertNull($obj->getAccessToken());
     }
 }

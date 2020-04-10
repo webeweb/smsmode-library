@@ -25,18 +25,6 @@ use WBW\Library\SMSMode\Tests\Fixtures\Model\Attribute\TestDateTimeDateEnvoiTrai
 class DateTimeDateEnvoiTraitTest extends AbstractTestCase {
 
     /**
-     * Tests the __construct() method.
-     *
-     * @return void
-     */
-    public function testConstruct() {
-
-        $obj = new TestDateTimeDateEnvoiTrait();
-
-        $this->assertNull($obj->getDateEnvoi());
-    }
-
-    /**
      * Tests the setDateEnvoi() method.
      *
      * @return void
@@ -51,5 +39,17 @@ class DateTimeDateEnvoiTraitTest extends AbstractTestCase {
 
         $obj->setDateEnvoi($dateEnvoi);
         $this->assertSame($dateEnvoi, $obj->getDateEnvoi());
+    }
+
+    /**
+     * Tests the __construct() method.
+     *
+     * @return void
+     */
+    public function test__construct() {
+
+        $obj = new TestDateTimeDateEnvoiTrait();
+
+        $this->assertNull($obj->getDateEnvoi());
     }
 }

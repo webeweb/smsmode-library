@@ -27,7 +27,7 @@ class AccountBalanceRequestTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testConstruct() {
+    public function test__construct() {
 
         $this->assertEquals("/http/1.6/credit.do", AccountBalanceRequest::ACCOUNT_BALANCE_RESOURCE_PATH);
 

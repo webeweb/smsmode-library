@@ -25,26 +25,6 @@ use WBW\Library\SMSMode\Tests\AbstractTestCase;
 class SMSReplyTest extends AbstractTestCase {
 
     /**
-     * Tests the __construct() method.
-     *
-     * @return void
-     */
-    public function testConstruct() {
-
-        $obj = new SMSReply();
-
-        $this->assertNull($obj->getCode());
-        $this->assertNull($obj->getDescription());
-
-        $this->assertNull($obj->getFrom());
-        $this->assertNull($obj->getMessageID());
-        $this->assertNull($obj->getReceptionDate());
-        $this->assertNull($obj->getResponseID());
-        $this->assertNull($obj->getText());
-        $this->assertNull($obj->getTo());
-    }
-
-    /**
      * Tests the setFrom() method.
      *
      * @return void
@@ -124,5 +104,25 @@ class SMSReplyTest extends AbstractTestCase {
 
         $obj->setTo("to");
         $this->assertEquals("to", $obj->getTo());
+    }
+
+    /**
+     * Tests the __construct() method.
+     *
+     * @return void
+     */
+    public function test__construct() {
+
+        $obj = new SMSReply();
+
+        $this->assertNull($obj->getCode());
+        $this->assertNull($obj->getDescription());
+
+        $this->assertNull($obj->getFrom());
+        $this->assertNull($obj->getMessageID());
+        $this->assertNull($obj->getReceptionDate());
+        $this->assertNull($obj->getResponseID());
+        $this->assertNull($obj->getText());
+        $this->assertNull($obj->getTo());
     }
 }

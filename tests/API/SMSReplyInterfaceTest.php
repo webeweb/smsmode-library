@@ -27,7 +27,7 @@ class SMSReplyInterfaceTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testConstruct() {
+    public function test__construct() {
 
         $this->assertEquals("date_reception", SMSReplyCallbackInterface::PARAMETER_DATE_RECEPTION);
         $this->assertEquals("emetteur", SMSReplyCallbackInterface::PARAMETER_EMETTEUR);

@@ -23,18 +23,6 @@ use WBW\Library\SMSMode\Tests\Fixtures\Model\Attribute\TestStringMessageTrait;
 class StringMessageTraitTest extends AbstractTestCase {
 
     /**
-     * Tests the __construct() method.
-     *
-     * @return void
-     */
-    public function testConstruct() {
-
-        $obj = new TestStringMessageTrait();
-
-        $this->assertNull($obj->getMessage());
-    }
-
-    /**
      * Tests the setMessage() method.
      *
      * @return void
@@ -45,5 +33,17 @@ class StringMessageTraitTest extends AbstractTestCase {
 
         $obj->setMessage("message");
         $this->assertEquals("message", $obj->getMessage());
+    }
+
+    /**
+     * Tests the __construct() method.
+     *
+     * @return void
+     */
+    public function test__construct() {
+
+        $obj = new TestStringMessageTrait();
+
+        $this->assertNull($obj->getMessage());
     }
 }

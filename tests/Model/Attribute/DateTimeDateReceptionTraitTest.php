@@ -25,18 +25,6 @@ use WBW\Library\SMSMode\Tests\Fixtures\Model\Attribute\TestDateTimeDateReception
 class DateTimeDateReceptionTraitTest extends AbstractTestCase {
 
     /**
-     * Tests the __construct() method.
-     *
-     * @return void
-     */
-    public function testConstruct() {
-
-        $obj = new TestDateTimeDateReceptionTrait();
-
-        $this->assertNull($obj->getDateReception());
-    }
-
-    /**
      * Tests the setDateReception() method.
      *
      * @return void
@@ -51,5 +39,17 @@ class DateTimeDateReceptionTraitTest extends AbstractTestCase {
 
         $obj->setDateReception($dateReception);
         $this->assertSame($dateReception, $obj->getDateReception());
+    }
+
+    /**
+     * Tests the __construct() method.
+     *
+     * @return void
+     */
+    public function test__construct() {
+
+        $obj = new TestDateTimeDateReceptionTrait();
+
+        $this->assertNull($obj->getDateReception());
     }
 }

@@ -25,18 +25,6 @@ use WBW\Library\SMSMode\Tests\Fixtures\Model\Attribute\TestIntegerNbrMsgTrait;
 class IntegerNbrMsgTraitTest extends AbstractTestCase {
 
     /**
-     * Tests the __construct() method.
-     *
-     * @return void
-     */
-    public function testConstruct() {
-
-        $obj = new TestIntegerNbrMsgTrait();
-
-        $this->assertNull($obj->getNbrMsg());
-    }
-
-    /**
      * Tests the setNbrMsg() method.
      *
      * @return void
@@ -66,5 +54,17 @@ class IntegerNbrMsgTraitTest extends AbstractTestCase {
             $this->assertInstanceOf(InvalidArgumentException::class, $ex);
             $this->assertEquals("The \"nbr msg\" must be greater than 0", $ex->getMessage());
         }
+    }
+
+    /**
+     * Tests the __construct() method.
+     *
+     * @return void
+     */
+    public function test__construct() {
+
+        $obj = new TestIntegerNbrMsgTrait();
+
+        $this->assertNull($obj->getNbrMsg());
     }
 }

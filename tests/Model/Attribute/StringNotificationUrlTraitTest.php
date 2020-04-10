@@ -23,18 +23,6 @@ use WBW\Library\SMSMode\Tests\Fixtures\Model\Attribute\TestStringNotificationUrl
 class StringNotificationUrlTraitTest extends AbstractTestCase {
 
     /**
-     * Tests the __construct() method.
-     *
-     * @return void
-     */
-    public function testConstruct() {
-
-        $obj = new TestStringNotificationUrlTrait();
-
-        $this->assertNull($obj->getNotificationUrl());
-    }
-
-    /**
      * Tests the setNotificationUrl() method.
      *
      * @return void
@@ -45,5 +33,17 @@ class StringNotificationUrlTraitTest extends AbstractTestCase {
 
         $obj->setNotificationUrl("notificationUrl");
         $this->assertEquals("notificationUrl", $obj->getNotificationUrl());
+    }
+
+    /**
+     * Tests the __construct() method.
+     *
+     * @return void
+     */
+    public function test__construct() {
+
+        $obj = new TestStringNotificationUrlTrait();
+
+        $this->assertNull($obj->getNotificationUrl());
     }
 }

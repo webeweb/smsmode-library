@@ -23,20 +23,6 @@ use WBW\Library\SMSMode\Tests\AbstractTestCase;
 class AuthenticationTest extends AbstractTestCase {
 
     /**
-     * Tests the __construct() method.
-     *
-     * @return void
-     */
-    public function testConstruct() {
-
-        $obj = new Authentication();
-
-        $this->assertNull($obj->getPass());
-        $this->assertNull($obj->getPseudo());
-        $this->assertNull($obj->getAccessToken());
-    }
-
-    /**
      * Tests the setPass() method.
      *
      * @return void
@@ -60,5 +46,19 @@ class AuthenticationTest extends AbstractTestCase {
 
         $obj->setPseudo("pseudo");
         $this->assertEquals("pseudo", $obj->getPseudo());
+    }
+
+    /**
+     * Tests the __construct() method.
+     *
+     * @return void
+     */
+    public function test__construct() {
+
+        $obj = new Authentication();
+
+        $this->assertNull($obj->getPass());
+        $this->assertNull($obj->getPseudo());
+        $this->assertNull($obj->getAccessToken());
     }
 }

@@ -25,18 +25,6 @@ use WBW\Library\SMSMode\Tests\Fixtures\Model\Attribute\TestIntegerOffsetTrait;
 class IntegerOffsetTraitTest extends AbstractTestCase {
 
     /**
-     * Tests the __construct() method.
-     *
-     * @return void
-     */
-    public function testConstruct() {
-
-        $obj = new TestIntegerOffsetTrait();
-
-        $this->assertNull($obj->getOffset());
-    }
-
-    /**
      * Tests the setOffset() method.
      *
      * @return void
@@ -66,5 +54,17 @@ class IntegerOffsetTraitTest extends AbstractTestCase {
             $this->assertInstanceOf(InvalidArgumentException::class, $ex);
             $this->assertEquals("The \"offset\" must be greater than 0", $ex->getMessage());
         }
+    }
+
+    /**
+     * Tests the __construct() method.
+     *
+     * @return void
+     */
+    public function test__construct() {
+
+        $obj = new TestIntegerOffsetTrait();
+
+        $this->assertNull($obj->getOffset());
     }
 }

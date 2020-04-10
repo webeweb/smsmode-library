@@ -42,18 +42,6 @@ use WBW\Library\SMSMode\Tests\AbstractTestCase;
 class RequestSerializerTest extends AbstractTestCase {
 
     /**
-     * Tests the __construct() method.
-     *
-     * @return void
-     */
-    public function testConstruct() {
-
-        $obj = new RequestSerializer();
-
-        $this->assertNotEmpty($obj->getConfiguration());
-    }
-
-    /**
      * Tests the serialize() method.
      *
      * @return void
@@ -962,5 +950,17 @@ class RequestSerializerTest extends AbstractTestCase {
             $this->assertInstanceOf(InvalidArgumentException::class, $ex);
             $this->assertEquals("The mandatory parameter \"creditAmount\" is missing", $ex->getMessage());
         }
+    }
+
+    /**
+     * Tests the __construct() method.
+     *
+     * @return void
+     */
+    public function test__construct() {
+
+        $obj = new RequestSerializer();
+
+        $this->assertNotEmpty($obj->getConfiguration());
     }
 }

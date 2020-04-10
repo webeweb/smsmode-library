@@ -40,22 +40,6 @@ class RetrievingSMSReplyResponseTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the __construct() method.
-     *
-     * @return void
-     */
-    public function testConstruct() {
-
-        $obj = new RetrievingSMSReplyResponse();
-
-        $this->assertNull($obj->getCode());
-        $this->assertNull($obj->getDescription());
-
-        $this->assertEquals([], $obj->getSMSReplies());
-        $this->assertFalse($obj->hasSMSReply());
-    }
-
-    /**
      * Tests the hasSMSReply() method.
      *
      * @return void
@@ -69,5 +53,21 @@ class RetrievingSMSReplyResponseTest extends AbstractTestCase {
 
         $obj->addSMSReply($smsReply);
         $this->assertTrue($obj->hasSMSReply());
+    }
+
+    /**
+     * Tests the __construct() method.
+     *
+     * @return void
+     */
+    public function test__construct() {
+
+        $obj = new RetrievingSMSReplyResponse();
+
+        $this->assertNull($obj->getCode());
+        $this->assertNull($obj->getDescription());
+
+        $this->assertEquals([], $obj->getSMSReplies());
+        $this->assertFalse($obj->hasSMSReply());
     }
 }

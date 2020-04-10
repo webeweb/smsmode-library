@@ -23,18 +23,6 @@ use WBW\Library\SMSMode\Tests\Fixtures\Model\Attribute\TestStringNomTrait;
 class StringNomTraitTest extends AbstractTestCase {
 
     /**
-     * Tests the __construct() method.
-     *
-     * @return void
-     */
-    public function testConstruct() {
-
-        $obj = new TestStringNomTrait();
-
-        $this->assertNull($obj->getNom());
-    }
-
-    /**
      * Tests the setNom() method.
      *
      * @return void
@@ -45,5 +33,17 @@ class StringNomTraitTest extends AbstractTestCase {
 
         $obj->setNom("nom");
         $this->assertEquals("nom", $obj->getNom());
+    }
+
+    /**
+     * Tests the __construct() method.
+     *
+     * @return void
+     */
+    public function test__construct() {
+
+        $obj = new TestStringNomTrait();
+
+        $this->assertNull($obj->getNom());
     }
 }

@@ -25,24 +25,6 @@ use WBW\Library\SMSMode\Tests\AbstractTestCase;
 class RetrievingSMSReplyRequestTest extends AbstractTestCase {
 
     /**
-     * Tests the __construct() method.
-     *
-     * @return void
-     */
-    public function testConstruct() {
-
-        $this->assertEquals("/http/1.6/responseList.do", RetrievingSMSReplyRequest::RETRIEVING_SMS_REPLY_RESOURCE_PATH);
-
-        $obj = new RetrievingSMSReplyRequest();
-
-        $this->assertNull($obj->getEndDate());
-        $this->assertNull($obj->getOffset());
-        $this->assertEquals(RetrievingSMSReplyRequest::RETRIEVING_SMS_REPLY_RESOURCE_PATH, $obj->getResourcePath());
-        $this->assertNull($obj->getStart());
-        $this->assertNull($obj->getStartDate());
-    }
-
-    /**
      * Tests the setEndDate() method.
      *
      * @return void
@@ -87,5 +69,23 @@ class RetrievingSMSReplyRequestTest extends AbstractTestCase {
 
         $obj->setStartDate($startDate);
         $this->assertSame($startDate, $obj->getStartDate());
+    }
+
+    /**
+     * Tests the __construct() method.
+     *
+     * @return void
+     */
+    public function test__construct() {
+
+        $this->assertEquals("/http/1.6/responseList.do", RetrievingSMSReplyRequest::RETRIEVING_SMS_REPLY_RESOURCE_PATH);
+
+        $obj = new RetrievingSMSReplyRequest();
+
+        $this->assertNull($obj->getEndDate());
+        $this->assertNull($obj->getOffset());
+        $this->assertEquals(RetrievingSMSReplyRequest::RETRIEVING_SMS_REPLY_RESOURCE_PATH, $obj->getResourcePath());
+        $this->assertNull($obj->getStart());
+        $this->assertNull($obj->getStartDate());
     }
 }

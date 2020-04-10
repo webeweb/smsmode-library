@@ -23,18 +23,6 @@ use WBW\Library\SMSMode\Tests\Fixtures\Model\Attribute\TestStringSmsIDTrait;
 class StringSmsIDTraitTest extends AbstractTestCase {
 
     /**
-     * Tests the __construct() method.
-     *
-     * @return void
-     */
-    public function testConstruct() {
-
-        $obj = new TestStringSmsIDTrait();
-
-        $this->assertNull($obj->getSmsID());
-    }
-
-    /**
      * Tests the setSmsID() method.
      *
      * @return void
@@ -45,5 +33,17 @@ class StringSmsIDTraitTest extends AbstractTestCase {
 
         $obj->setSmsID("smsID");
         $this->assertEquals("smsID", $obj->getSmsID());
+    }
+
+    /**
+     * Tests the __construct() method.
+     *
+     * @return void
+     */
+    public function test__construct() {
+
+        $obj = new TestStringSmsIDTrait();
+
+        $this->assertNull($obj->getSmsID());
     }
 }

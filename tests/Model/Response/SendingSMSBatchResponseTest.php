@@ -23,21 +23,6 @@ use WBW\Library\SMSMode\Tests\AbstractTestCase;
 class SendingSMSBatchResponseTest extends AbstractTestCase {
 
     /**
-     * Tests the __construct() method.
-     *
-     * @return void
-     */
-    public function testConstruct() {
-
-        $obj = new SendingSMSBatchResponse();
-
-        $this->assertNull($obj->getCode());
-        $this->assertNull($obj->getDescription());
-
-        $this->assertNull($obj->getCampagneID());
-    }
-
-    /**
      * Tests the setCampagneID() method.
      *
      * @return void
@@ -48,5 +33,20 @@ class SendingSMSBatchResponseTest extends AbstractTestCase {
 
         $obj->setCampagneID("campagneID");
         $this->assertEquals("campagneID", $obj->getCampagneID());
+    }
+
+    /**
+     * Tests the __construct() method.
+     *
+     * @return void
+     */
+    public function test__construct() {
+
+        $obj = new SendingSMSBatchResponse();
+
+        $this->assertNull($obj->getCode());
+        $this->assertNull($obj->getDescription());
+
+        $this->assertNull($obj->getCampagneID());
     }
 }

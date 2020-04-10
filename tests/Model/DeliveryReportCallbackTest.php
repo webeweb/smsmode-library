@@ -23,26 +23,6 @@ use WBW\Library\SMSMode\Tests\AbstractTestCase;
 class DeliveryReportCallbackTest extends AbstractTestCase {
 
     /**
-     * Tests the __construct() method.
-     *
-     * @return void
-     */
-    public function testConstruct() {
-
-        $obj = new DeliveryReportCallback();
-
-        $this->assertNull($obj->getCode());
-        $this->assertNull($obj->getDescription());
-        $this->assertNull($obj->getNumero());
-
-        $this->assertNull($obj->getDateReception());
-        $this->assertNull($obj->getMccMnc());
-        $this->assertNull($obj->getRefClient());
-        $this->assertNull($obj->getStatus());
-        $this->assertNull($obj->getSmsID());
-    }
-
-    /**
      * Tests the setMccMnc() method.
      *
      * @return void
@@ -66,5 +46,25 @@ class DeliveryReportCallbackTest extends AbstractTestCase {
 
         $obj->setStatus(20801);
         $this->assertEquals(20801, $obj->getStatus());
+    }
+
+    /**
+     * Tests the __construct() method.
+     *
+     * @return void
+     */
+    public function test__construct() {
+
+        $obj = new DeliveryReportCallback();
+
+        $this->assertNull($obj->getCode());
+        $this->assertNull($obj->getDescription());
+        $this->assertNull($obj->getNumero());
+
+        $this->assertNull($obj->getDateReception());
+        $this->assertNull($obj->getMccMnc());
+        $this->assertNull($obj->getRefClient());
+        $this->assertNull($obj->getStatus());
+        $this->assertNull($obj->getSmsID());
     }
 }

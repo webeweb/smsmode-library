@@ -25,27 +25,6 @@ use WBW\Library\SMSMode\Tests\AbstractTestCase;
 class CreatingAPIKeyResponseTest extends AbstractTestCase {
 
     /**
-     * Tests the __construct() method.
-     *
-     * @return void
-     */
-    public function testConstruct() {
-
-        $obj = new CreatingAPIKeyResponse();
-
-        $this->assertNull($obj->getCode());
-        $this->assertNull($obj->getDescription());
-
-        $this->assertNull($obj->getAccessToken());
-        $this->assertNull($obj->getAccount());
-        $this->assertNull($obj->getCreationDate());
-        $this->assertNull($obj->getException());
-        $this->assertNull($obj->getExpiration());
-        $this->assertNull($obj->getId());
-        $this->assertNull($obj->getState());
-    }
-
-    /**
      * Tests the setAccount() method.
      *
      * @return void
@@ -129,5 +108,26 @@ class CreatingAPIKeyResponseTest extends AbstractTestCase {
 
         $obj->setState("state");
         $this->assertEquals("state", $obj->getState());
+    }
+
+    /**
+     * Tests the __construct() method.
+     *
+     * @return void
+     */
+    public function test__construct() {
+
+        $obj = new CreatingAPIKeyResponse();
+
+        $this->assertNull($obj->getCode());
+        $this->assertNull($obj->getDescription());
+
+        $this->assertNull($obj->getAccessToken());
+        $this->assertNull($obj->getAccount());
+        $this->assertNull($obj->getCreationDate());
+        $this->assertNull($obj->getException());
+        $this->assertNull($obj->getExpiration());
+        $this->assertNull($obj->getId());
+        $this->assertNull($obj->getState());
     }
 }

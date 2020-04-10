@@ -27,7 +27,7 @@ class SendingTextToSpeechSMSInterfaceTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testConstruct() {
+    public function test__construct() {
 
         $this->assertEquals("de-DE", SendingTextToSpeechSMSInterface::LANGUAGE_DE);
         $this->assertEquals("en-GB", SendingTextToSpeechSMSInterface::LANGUAGE_EN);

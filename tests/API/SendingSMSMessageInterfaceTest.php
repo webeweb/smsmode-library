@@ -27,7 +27,7 @@ class SendingSMSMessageInterfaceTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testConstruct() {
+    public function test__construct() {
 
         $this->assertEquals(4, SendingSMSMessageInterface::CLASSE_MSG_SMS);
         $this->assertEquals(2, SendingSMSMessageInterface::CLASSE_MSG_SMS_PRO);

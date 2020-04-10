@@ -27,7 +27,7 @@ class DeliveryReportRequestTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testConstruct() {
+    public function test__construct() {
 
         $this->assertEquals("/http/1.6/compteRendu.do", DeliveryReportRequest::DELIVERY_REPORT_RESOURCE_PATH);
 

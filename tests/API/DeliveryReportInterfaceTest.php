@@ -27,7 +27,7 @@ class DeliveryReportInterfaceTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testConstruct() {
+    public function test__construct() {
 
         $this->assertEquals("date_reception", DeliveryReportCallbackInterface::PARAMETER_DATE_RECEPTION);
         $this->assertEquals("mcc_mnc", DeliveryReportCallbackInterface::PARAMETER_MCC_MNC);

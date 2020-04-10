@@ -26,18 +26,6 @@ use WBW\Library\SMSMode\Tests\Fixtures\Model\Attribute\TestIntegerClasseMsgTrait
 class IntegerClasseMsgTraitTest extends AbstractTestCase {
 
     /**
-     * Tests the __construct() method.
-     *
-     * @return void
-     */
-    public function testConstruct() {
-
-        $obj = new TestIntegerClasseMsgTrait();
-
-        $this->assertNull($obj->getClasseMsg());
-    }
-
-    /**
      * Tests the enumClasseMsg() method.
      *
      * @return void
@@ -86,5 +74,17 @@ class IntegerClasseMsgTraitTest extends AbstractTestCase {
             $this->assertInstanceOf(InvalidArgumentException::class, $ex);
             $this->assertEquals("The classe msg \"0\" is invalid", $ex->getMessage());
         }
+    }
+
+    /**
+     * Tests the __construct() method.
+     *
+     * @return void
+     */
+    public function test__construct() {
+
+        $obj = new TestIntegerClasseMsgTrait();
+
+        $this->assertNull($obj->getClasseMsg());
     }
 }

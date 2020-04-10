@@ -25,26 +25,6 @@ use WBW\Library\SMSMode\Tests\AbstractTestCase;
 class SentSMSMessageTest extends AbstractTestCase {
 
     /**
-     * Tests the __construct() method.
-     *
-     * @return void
-     */
-    public function testConstruct() {
-
-        $obj = new SentSMSMessage();
-
-        $this->assertNull($obj->getCode());
-        $this->assertNull($obj->getDescription());
-
-        $this->assertNull($obj->getCostCredits());
-        $this->assertNull($obj->getMessage());
-        $this->assertNull($obj->getNumero());
-        $this->assertNull($obj->getRecipientCount());
-        $this->assertNull($obj->getSendDate());
-        $this->assertNull($obj->getSmsID());
-    }
-
-    /**
      * Tests the setCostCredit() method.
      *
      * @return void
@@ -85,5 +65,25 @@ class SentSMSMessageTest extends AbstractTestCase {
 
         $obj->setSendDate($sendDate);
         $this->assertSame($sendDate, $obj->getSendDate());
+    }
+
+    /**
+     * Tests the __construct() method.
+     *
+     * @return void
+     */
+    public function test__construct() {
+
+        $obj = new SentSMSMessage();
+
+        $this->assertNull($obj->getCode());
+        $this->assertNull($obj->getDescription());
+
+        $this->assertNull($obj->getCostCredits());
+        $this->assertNull($obj->getMessage());
+        $this->assertNull($obj->getNumero());
+        $this->assertNull($obj->getRecipientCount());
+        $this->assertNull($obj->getSendDate());
+        $this->assertNull($obj->getSmsID());
     }
 }

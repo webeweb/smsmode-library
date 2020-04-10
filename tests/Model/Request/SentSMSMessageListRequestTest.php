@@ -27,7 +27,7 @@ class SentSMSMessageListRequestTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testConstruct() {
+    public function test__construct() {
 
         $this->assertEquals("/http/1.6/smsList.do", SentSMSMessageListRequest::SENT_SMS_MESSAGE_LIST_RESOURCE_PATH);
 

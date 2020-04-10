@@ -40,22 +40,6 @@ class DeliveryReportResponseTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the __construct() method.
-     *
-     * @return void
-     */
-    public function testConstruct() {
-
-        $obj = new DeliveryReportResponse();
-
-        $this->assertNull($obj->getCode());
-        $this->assertNull($obj->getDescription());
-
-        $this->assertEquals([], $obj->getDeliveryReports());
-        $this->assertFalse($obj->hasDeliveryReport());
-    }
-
-    /**
      * Tests the hasDeliveryReport() method.
      *
      * @return void
@@ -69,5 +53,21 @@ class DeliveryReportResponseTest extends AbstractTestCase {
 
         $obj->addDeliveryReport($deliveryReport);
         $this->assertTrue($obj->hasDeliveryReport());
+    }
+
+    /**
+     * Tests the __construct() method.
+     *
+     * @return void
+     */
+    public function test__construct() {
+
+        $obj = new DeliveryReportResponse();
+
+        $this->assertNull($obj->getCode());
+        $this->assertNull($obj->getDescription());
+
+        $this->assertEquals([], $obj->getDeliveryReports());
+        $this->assertFalse($obj->hasDeliveryReport());
     }
 }

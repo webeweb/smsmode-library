@@ -23,23 +23,6 @@ use WBW\Library\SMSMode\Tests\AbstractTestCase;
 class TransferringCreditsRequestTest extends AbstractTestCase {
 
     /**
-     * Tests the __construct() method.
-     *
-     * @return void
-     */
-    public function testConstruct() {
-
-        $this->assertEquals("/http/1.6/creditTransfert.do", TransferringCreditsRequest::TRANSFERRING_CREDITS_RESOURCE_PATH);
-
-        $obj = new TransferringCreditsRequest();
-
-        $this->assertNull($obj->getCreditAmount());
-        $this->assertNull($obj->getReference());
-        $this->assertEquals(TransferringCreditsRequest::TRANSFERRING_CREDITS_RESOURCE_PATH, $obj->getResourcePath());
-        $this->assertNull($obj->getTargetPseudo());
-    }
-
-    /**
      * Tests the setCreditAmount() method.
      *
      * @return void
@@ -63,5 +46,22 @@ class TransferringCreditsRequestTest extends AbstractTestCase {
 
         $obj->setTargetPseudo("targetPseudo");
         $this->assertEquals("targetPseudo", $obj->getTargetPseudo());
+    }
+
+    /**
+     * Tests the __construct() method.
+     *
+     * @return void
+     */
+    public function test__construct() {
+
+        $this->assertEquals("/http/1.6/creditTransfert.do", TransferringCreditsRequest::TRANSFERRING_CREDITS_RESOURCE_PATH);
+
+        $obj = new TransferringCreditsRequest();
+
+        $this->assertNull($obj->getCreditAmount());
+        $this->assertNull($obj->getReference());
+        $this->assertEquals(TransferringCreditsRequest::TRANSFERRING_CREDITS_RESOURCE_PATH, $obj->getResourcePath());
+        $this->assertNull($obj->getTargetPseudo());
     }
 }

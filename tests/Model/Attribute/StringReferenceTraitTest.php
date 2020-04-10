@@ -23,18 +23,6 @@ use WBW\Library\SMSMode\Tests\Fixtures\Model\Attribute\TestStringReferenceTrait;
 class StringReferenceTraitTest extends AbstractTestCase {
 
     /**
-     * Tests the __construct() method.
-     *
-     * @return void
-     */
-    public function testConstruct() {
-
-        $obj = new TestStringReferenceTrait();
-
-        $this->assertNull($obj->getReference());
-    }
-
-    /**
      * Tests the setReference() method.
      *
      * @return void
@@ -45,5 +33,17 @@ class StringReferenceTraitTest extends AbstractTestCase {
 
         $obj->setReference("reference");
         $this->assertEquals("reference", $obj->getReference());
+    }
+
+    /**
+     * Tests the __construct() method.
+     *
+     * @return void
+     */
+    public function test__construct() {
+
+        $obj = new TestStringReferenceTrait();
+
+        $this->assertNull($obj->getReference());
     }
 }

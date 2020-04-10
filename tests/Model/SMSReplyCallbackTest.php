@@ -23,11 +23,24 @@ use WBW\Library\SMSMode\Tests\AbstractTestCase;
 class SMSReplyCallbackTest extends AbstractTestCase {
 
     /**
+     * Tests the setResponseID() method.
+     *
+     * @return void
+     */
+    public function testSetResponseID() {
+
+        $obj = new SMSReplyCallback();
+
+        $obj->setResponseID("responseID");
+        $this->assertEquals("responseID", $obj->getResponseID());
+    }
+
+    /**
      * Tests the __construct() method.
      *
      * @return void
      */
-    public function testConstruct() {
+    public function test__construct() {
 
         $obj = new SMSReplyCallback();
 
@@ -41,18 +54,5 @@ class SMSReplyCallbackTest extends AbstractTestCase {
         $this->assertNull($obj->getRefClient());
         $this->assertNull($obj->getResponseID());
         $this->assertNull($obj->getSmsID());
-    }
-
-    /**
-     * Tests the setResponseID() method.
-     *
-     * @return void
-     */
-    public function testSetResponseID() {
-
-        $obj = new SMSReplyCallback();
-
-        $obj->setResponseID("responseID");
-        $this->assertEquals("responseID", $obj->getResponseID());
     }
 }

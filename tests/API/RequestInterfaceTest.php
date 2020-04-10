@@ -27,7 +27,7 @@ class RequestInterfaceTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testConstruct() {
+    public function test__construct() {
 
         $this->assertEquals("dmY", RequestInterface::REQUEST_DATE_FORMAT);
         $this->assertEquals("dmY-H:i", RequestInterface::REQUEST_DATETIME_FORMAT);

@@ -40,22 +40,6 @@ class SentSMSMessageListResponseTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the __construct() method.
-     *
-     * @return void
-     */
-    public function testConstruct() {
-
-        $obj = new SentSMSMessageListResponse();
-
-        $this->assertNull($obj->getCode());
-        $this->assertNull($obj->getDescription());
-
-        $this->assertEquals([], $obj->getSentSMSMessages());
-        $this->assertFalse($obj->hasSentSMSMessage());
-    }
-
-    /**
      * Tests the hasSentSMSMessage() method.
      *
      * @return void
@@ -69,5 +53,21 @@ class SentSMSMessageListResponseTest extends AbstractTestCase {
 
         $obj->addSentSMSMessage($sentSMSMessage);
         $this->assertTrue($obj->hasSentSMSMessage());
+    }
+
+    /**
+     * Tests the __construct() method.
+     *
+     * @return void
+     */
+    public function test__construct() {
+
+        $obj = new SentSMSMessageListResponse();
+
+        $this->assertNull($obj->getCode());
+        $this->assertNull($obj->getDescription());
+
+        $this->assertEquals([], $obj->getSentSMSMessages());
+        $this->assertFalse($obj->hasSentSMSMessage());
     }
 }

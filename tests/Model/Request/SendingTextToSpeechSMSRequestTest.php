@@ -40,25 +40,6 @@ class SendingTextToSpeechSMSRequestTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the __construct() method.
-     *
-     * @return void
-     */
-    public function testConstruct() {
-
-        $this->assertEquals("/http/1.6/sendVoiceMessage.do", SendingTextToSpeechSMSRequest::SENDING_TEXT_TO_SPEECH_SMS_RESOURCE_PATH);
-
-        $obj = new SendingTextToSpeechSMSRequest();
-
-        $this->assertNull($obj->getDateEnvoi());
-        $this->assertNull($obj->getLanguage());
-        $this->assertNull($obj->getMessage());
-        $this->assertEquals([], $obj->getNumero());
-        $this->assertEquals(SendingTextToSpeechSMSRequest::SENDING_TEXT_TO_SPEECH_SMS_RESOURCE_PATH, $obj->getResourcePath());
-        $this->assertNull($obj->getTitle());
-    }
-
-    /**
      * Tests the enumLanguage() method.
      *
      * @return void
@@ -123,5 +104,24 @@ class SendingTextToSpeechSMSRequestTest extends AbstractTestCase {
 
         $obj->setTitle("title");
         $this->assertEquals("title", $obj->getTitle());
+    }
+
+    /**
+     * Tests the __construct() method.
+     *
+     * @return void
+     */
+    public function test__construct() {
+
+        $this->assertEquals("/http/1.6/sendVoiceMessage.do", SendingTextToSpeechSMSRequest::SENDING_TEXT_TO_SPEECH_SMS_RESOURCE_PATH);
+
+        $obj = new SendingTextToSpeechSMSRequest();
+
+        $this->assertNull($obj->getDateEnvoi());
+        $this->assertNull($obj->getLanguage());
+        $this->assertNull($obj->getMessage());
+        $this->assertEquals([], $obj->getNumero());
+        $this->assertEquals(SendingTextToSpeechSMSRequest::SENDING_TEXT_TO_SPEECH_SMS_RESOURCE_PATH, $obj->getResourcePath());
+        $this->assertNull($obj->getTitle());
     }
 }

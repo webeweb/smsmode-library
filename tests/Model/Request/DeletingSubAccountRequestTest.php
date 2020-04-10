@@ -23,21 +23,6 @@ use WBW\Library\SMSMode\Tests\AbstractTestCase;
 class DeletingSubAccountRequestTest extends AbstractTestCase {
 
     /**
-     * Tests the __construct() method.
-     *
-     * @return void
-     */
-    public function testConstruct() {
-
-        $this->assertEquals("/http/1.6/deleteSubAccount.do", DeletingSubAccountRequest::DELETING_SUB_ACCOUNT_RESOURCE_PATH);
-
-        $obj = new DeletingSubAccountRequest();
-
-        $this->assertNull($obj->getPseudoToDelete());
-        $this->assertEquals(DeletingSubAccountRequest::DELETING_SUB_ACCOUNT_RESOURCE_PATH, $obj->getResourcePath());
-    }
-
-    /**
      * Tests the setPseudoToDelete() method.
      *
      * @return void
@@ -48,5 +33,20 @@ class DeletingSubAccountRequestTest extends AbstractTestCase {
 
         $obj->setPseudoToDelete("pseudoToDelete");
         $this->assertEquals("pseudoToDelete", $obj->getPseudoToDelete());
+    }
+
+    /**
+     * Tests the __construct() method.
+     *
+     * @return void
+     */
+    public function test__construct() {
+
+        $this->assertEquals("/http/1.6/deleteSubAccount.do", DeletingSubAccountRequest::DELETING_SUB_ACCOUNT_RESOURCE_PATH);
+
+        $obj = new DeletingSubAccountRequest();
+
+        $this->assertNull($obj->getPseudoToDelete());
+        $this->assertEquals(DeletingSubAccountRequest::DELETING_SUB_ACCOUNT_RESOURCE_PATH, $obj->getResourcePath());
     }
 }

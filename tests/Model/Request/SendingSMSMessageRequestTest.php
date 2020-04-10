@@ -40,31 +40,6 @@ class SendingSMSMessageRequestTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the __construct() method.
-     *
-     * @return void
-     */
-    public function testConstruct() {
-
-        $this->assertEquals("/http/1.6/sendSMS.do", SendingSMSMessageRequest::SENDING_SMS_MESSAGE_RESOURCE_PATH);
-
-        $obj = new SendingSMSMessageRequest();
-
-        $this->assertNull($obj->getClasseMsg());
-        $this->assertNull($obj->getDateEnvoi());
-        $this->assertNull($obj->getEmetteur());
-        $this->assertNull($obj->getGroupe());
-        $this->assertNull($obj->getMessage());
-        $this->assertNull($obj->getNbrMsg());
-        $this->assertNull($obj->getNotificationUrl());
-        $this->assertNull($obj->getNotificationUrlReponse());
-        $this->assertEquals([], $obj->getNumero());
-        $this->assertNull($obj->getRefClient());
-        $this->assertEquals(SendingSMSMessageRequest::SENDING_SMS_MESSAGE_RESOURCE_PATH, $obj->getResourcePath());
-        $this->assertNull($obj->getStop());
-    }
-
-    /**
      * Tests the enumStop() method.
      *
      * @return void
@@ -140,5 +115,30 @@ class SendingSMSMessageRequestTest extends AbstractTestCase {
             $this->assertInstanceOf(InvalidArgumentException::class, $ex);
             $this->assertEquals("The stop \"-1\" is invalid", $ex->getMessage());
         }
+    }
+
+    /**
+     * Tests the __construct() method.
+     *
+     * @return void
+     */
+    public function test__construct() {
+
+        $this->assertEquals("/http/1.6/sendSMS.do", SendingSMSMessageRequest::SENDING_SMS_MESSAGE_RESOURCE_PATH);
+
+        $obj = new SendingSMSMessageRequest();
+
+        $this->assertNull($obj->getClasseMsg());
+        $this->assertNull($obj->getDateEnvoi());
+        $this->assertNull($obj->getEmetteur());
+        $this->assertNull($obj->getGroupe());
+        $this->assertNull($obj->getMessage());
+        $this->assertNull($obj->getNbrMsg());
+        $this->assertNull($obj->getNotificationUrl());
+        $this->assertNull($obj->getNotificationUrlReponse());
+        $this->assertEquals([], $obj->getNumero());
+        $this->assertNull($obj->getRefClient());
+        $this->assertEquals(SendingSMSMessageRequest::SENDING_SMS_MESSAGE_RESOURCE_PATH, $obj->getResourcePath());
+        $this->assertNull($obj->getStop());
     }
 }

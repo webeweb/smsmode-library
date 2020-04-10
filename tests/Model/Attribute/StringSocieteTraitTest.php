@@ -23,18 +23,6 @@ use WBW\Library\SMSMode\Tests\Fixtures\Model\Attribute\TestStringSocieteTrait;
 class StringSocieteTraitTest extends AbstractTestCase {
 
     /**
-     * Tests the __construct() method.
-     *
-     * @return void
-     */
-    public function testConstruct() {
-
-        $obj = new TestStringSocieteTrait();
-
-        $this->assertNull($obj->getSociete());
-    }
-
-    /**
      * Tests the setSociete() method.
      *
      * @return void
@@ -45,5 +33,17 @@ class StringSocieteTraitTest extends AbstractTestCase {
 
         $obj->setSociete("societe");
         $this->assertEquals("societe", $obj->getSociete());
+    }
+
+    /**
+     * Tests the __construct() method.
+     *
+     * @return void
+     */
+    public function test__construct() {
+
+        $obj = new TestStringSocieteTrait();
+
+        $this->assertNull($obj->getSociete());
     }
 }

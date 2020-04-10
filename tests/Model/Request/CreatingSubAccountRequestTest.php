@@ -24,34 +24,6 @@ use WBW\Library\SMSMode\Tests\AbstractTestCase;
 class CreatingSubAccountRequestTest extends AbstractTestCase {
 
     /**
-     * Tests the __construct() method.
-     *
-     * @return void
-     */
-    public function testConstruct() {
-
-        $this->assertEquals("/http/1.6/createSubAccount.do", CreatingSubAccountRequest::CREATING_SUB_ACCOUNT_RESOURCE_PATH);
-
-        $obj = new CreatingSubAccountRequest();
-
-        $this->assertNull($obj->getAdresse());
-        $this->assertNull($obj->getCodePostal());
-        $this->assertNull($obj->getDate());
-        $this->assertNull($obj->getEmail());
-        $this->assertNull($obj->getFax());
-        $this->assertNull($obj->getMobile());
-        $this->assertNull($obj->getNewPass());
-        $this->assertNull($obj->getNewPseudo());
-        $this->assertNull($obj->getNom());
-        $this->assertNull($obj->getPrenom());
-        $this->assertNull($obj->getReference());
-        $this->assertEquals(CreatingSubAccountRequest::CREATING_SUB_ACCOUNT_RESOURCE_PATH, $obj->getResourcePath());
-        $this->assertNull($obj->getSociete());
-        $this->assertNull($obj->getTelephone());
-        $this->assertNull($obj->getVille());
-    }
-
-    /**
      * Tests the setAdresse() method.
      *
      * @return void
@@ -154,5 +126,33 @@ class CreatingSubAccountRequestTest extends AbstractTestCase {
 
         $obj->setVille("ville");
         $this->assertEquals("ville", $obj->getVille());
+    }
+
+    /**
+     * Tests the __construct() method.
+     *
+     * @return void
+     */
+    public function test__construct() {
+
+        $this->assertEquals("/http/1.6/createSubAccount.do", CreatingSubAccountRequest::CREATING_SUB_ACCOUNT_RESOURCE_PATH);
+
+        $obj = new CreatingSubAccountRequest();
+
+        $this->assertNull($obj->getAdresse());
+        $this->assertNull($obj->getCodePostal());
+        $this->assertNull($obj->getDate());
+        $this->assertNull($obj->getEmail());
+        $this->assertNull($obj->getFax());
+        $this->assertNull($obj->getMobile());
+        $this->assertNull($obj->getNewPass());
+        $this->assertNull($obj->getNewPseudo());
+        $this->assertNull($obj->getNom());
+        $this->assertNull($obj->getPrenom());
+        $this->assertNull($obj->getReference());
+        $this->assertEquals(CreatingSubAccountRequest::CREATING_SUB_ACCOUNT_RESOURCE_PATH, $obj->getResourcePath());
+        $this->assertNull($obj->getSociete());
+        $this->assertNull($obj->getTelephone());
+        $this->assertNull($obj->getVille());
     }
 }

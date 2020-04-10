@@ -23,18 +23,6 @@ use WBW\Library\SMSMode\Tests\Fixtures\Model\Attribute\TestStringMobileTrait;
 class StringMobileTraitTest extends AbstractTestCase {
 
     /**
-     * Tests the __construct() method.
-     *
-     * @return void
-     */
-    public function testConstruct() {
-
-        $obj = new TestStringMobileTrait();
-
-        $this->assertNull($obj->getMobile());
-    }
-
-    /**
      * Tests the setMobile() method.
      *
      * @return void
@@ -45,5 +33,17 @@ class StringMobileTraitTest extends AbstractTestCase {
 
         $obj->setMobile("mobile");
         $this->assertEquals("mobile", $obj->getMobile());
+    }
+
+    /**
+     * Tests the __construct() method.
+     *
+     * @return void
+     */
+    public function test__construct() {
+
+        $obj = new TestStringMobileTrait();
+
+        $this->assertNull($obj->getMobile());
     }
 }

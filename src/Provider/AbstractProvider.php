@@ -16,7 +16,8 @@ use GuzzleHttp\Client;
 use InvalidArgumentException;
 use Psr\Log\LoggerInterface;
 use WBW\Library\Core\Argument\Helper\ArrayHelper;
-use WBW\Library\SMSMode\Exception\APIException;
+use WBW\Library\Core\Exception\ApiException;
+use WBW\Library\Core\Provider\AbstractProvider as BaseProvider;
 use WBW\Library\SMSMode\Model\AbstractRequest;
 use WBW\Library\SMSMode\Model\Authentication;
 use WBW\Library\SMSMode\Serializer\RequestSerializer;
@@ -28,7 +29,7 @@ use WBW\Library\SMSMode\Serializer\RequestSerializer;
  * @package WBW\Library\SMSMode\Provider
  * @abstract
  */
-abstract class AbstractProvider {
+abstract class AbstractProvider extends BaseProvider {
 
     /**
      * Endpoint path.
@@ -45,20 +46,6 @@ abstract class AbstractProvider {
     private $authentication;
 
     /**
-     * Debug.
-     *
-     * @var bool
-     */
-    private $debug;
-
-    /**
-     * Logger.
-     *
-     * @var LoggerInterface
-     */
-    private $logger;
-
-    /**
      * Request serializer.
      *
      * @var RequestSerializer
@@ -72,6 +59,7 @@ abstract class AbstractProvider {
      * @param LoggerInterface|null $logger The logger.
      */
     public function __construct(Authentication $authentication, LoggerInterface $logger = null) {
+        parent::__construct($logger);
         $this->setAuthentication($authentication);
         $this->setDebug(false);
         $this->setLogger($logger);
@@ -102,7 +90,7 @@ abstract class AbstractProvider {
      * @param array $queryData The query data.
      * @param array $postData The post data.
      * @return string Returns the raw response.
-     * @throws APIException Throws an API exception if an error occurs.
+     * @throws ApiException Throws an API exception if an error occurs.
      * @throws InvalidArgumentException Throws an invalid argument exception if a parameter is missing.
      */
     protected function callAPI(AbstractRequest $request, array $queryData, array $postData = []) {
@@ -132,7 +120,7 @@ abstract class AbstractProvider {
             throw $ex;
         } catch (Exception $ex) {
 
-            throw new APIException("Call sMsmode API failed", $ex);
+            throw new ApiException("Call sMsmode API failed", 500, $ex);
         }
     }
 
@@ -155,35 +143,12 @@ abstract class AbstractProvider {
     }
 
     /**
-     * Get the logger.
-     *
-     * @return LoggerInterface Returns the logger.
-     */
-    public function getLogger() {
-        return $this->logger;
-    }
-
-    /**
      * Get the request serializer.
      *
      * @return RequestSerializer The request serializer.
      */
     public function getRequestSerializer() {
         return $this->requestSerializer;
-    }
-
-    /**
-     * Log an info.
-     *
-     * @param string $message The message.
-     * @param array $context The context.
-     * @return AbstractProvider Returns this provider.
-     */
-    protected function logInfo($message, array $context) {
-        if (null !== $this->getLogger()) {
-            $this->getLogger()->info($message, $context);
-        }
-        return $this;
     }
 
     /**
@@ -194,28 +159,6 @@ abstract class AbstractProvider {
      */
     protected function setAuthentication(Authentication $authentication) {
         $this->authentication = $authentication;
-        return $this;
-    }
-
-    /**
-     * Set the debug.
-     *
-     * @param bool $debug The debug.
-     * @return AbstractProvider Returns this provider.
-     */
-    public function setDebug($debug) {
-        $this->debug = $debug;
-        return $this;
-    }
-
-    /**
-     * Set the logger.
-     *
-     * @param LoggerInterface|null $logger The logger
-     * @return AbstractProvider Returns this provider
-     */
-    protected function setLogger(LoggerInterface $logger = null) {
-        $this->logger = $logger;
         return $this;
     }
 

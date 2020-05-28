@@ -13,10 +13,10 @@ require_once __DIR__ . "/../vendor/autoload.php";
 
 use WBW\Library\SMSMode\Model\Authentication;
 use WBW\Library\SMSMode\Model\Request\DeletingSMSRequest;
-use WBW\Library\SMSMode\Provider\APIProvider;
+use WBW\Library\SMSMode\Provider\ApiProvider;
 
 // Create the API provider.
-$provider = new APIProvider(new Authentication());
+$provider = new ApiProvider(new Authentication());
 $provider->setDebug(false);
 
 // Set a couple login/password.

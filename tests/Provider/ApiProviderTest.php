@@ -44,7 +44,7 @@ use WBW\Library\SMSMode\Model\Response\SendingTextToSpeechSMSResponse;
 use WBW\Library\SMSMode\Model\Response\SendingUnicodeSMSResponse;
 use WBW\Library\SMSMode\Model\Response\SentSMSMessageListResponse;
 use WBW\Library\SMSMode\Model\Response\TransferringCreditsResponse;
-use WBW\Library\SMSMode\Provider\APIProvider;
+use WBW\Library\SMSMode\Provider\ApiProvider;
 use WBW\Library\SMSMode\Tests\AbstractTestCase;
 
 /**
@@ -53,7 +53,7 @@ use WBW\Library\SMSMode\Tests\AbstractTestCase;
  * @author webeweb <https://github.com/webeweb/>
  * @package WBW\Library\SMSMode\Tests\Provider
  */
-class APIProviderTest extends AbstractTestCase {
+class ApiProviderTest extends AbstractTestCase {
 
     /**
      * Authentication.
@@ -88,7 +88,7 @@ class APIProviderTest extends AbstractTestCase {
         // Set an Account balance request mock.
         $arg = new AccountBalanceRequest();
 
-        $obj = new APIProvider($this->authentication, $logger);
+        $obj = new ApiProvider($this->authentication, $logger);
 
         $res = $obj->accountBalance($arg);
         $this->assertInstanceOf(AccountBalanceResponse::class, $res);
@@ -111,7 +111,7 @@ class APIProviderTest extends AbstractTestCase {
         $arg->setNom("nom");
         $arg->setMobile("33600000000");
 
-        $obj = new APIProvider($this->authentication);
+        $obj = new ApiProvider($this->authentication);
 
         $res = $obj->addingContact($arg);
         $this->assertInstanceOf(AddingContactResponse::class, $res);
@@ -132,7 +132,7 @@ class APIProviderTest extends AbstractTestCase {
         $arg = new CheckingSMSMessageStatusRequest();
         $arg->setSmsID("smsID");
 
-        $obj = new APIProvider($this->authentication);
+        $obj = new ApiProvider($this->authentication);
 
         $res = $obj->checkingSMSMessageStatus($arg);
         $this->assertInstanceOf(CheckingSMSMessageStatusResponse::class, $res);
@@ -152,7 +152,7 @@ class APIProviderTest extends AbstractTestCase {
         // Set a Creating API key request mock.
         $arg = new CreatingAPIKeyRequest();
 
-        $obj = new APIProvider($this->authentication);
+        $obj = new ApiProvider($this->authentication);
 
         $res = $obj->creatingAPIKey($arg);
 
@@ -180,7 +180,7 @@ class APIProviderTest extends AbstractTestCase {
         // Set a Creating API key request mock.
         $arg = new CreatingAPIKeyRequest();
 
-        $obj = new APIProvider(new Authentication());
+        $obj = new ApiProvider(new Authentication());
 
         try {
 
@@ -205,7 +205,7 @@ class APIProviderTest extends AbstractTestCase {
         $arg->setNewPseudo("newPseudo");
         $arg->setNewPass("newPass");
 
-        $obj = new APIProvider($this->authentication);
+        $obj = new ApiProvider($this->authentication);
 
         $res = $obj->creatingSubAccount($arg);
         $this->assertInstanceOf(CreatingSubAccountResponse::class, $res);
@@ -226,7 +226,7 @@ class APIProviderTest extends AbstractTestCase {
         $arg = new DeletingSMSRequest();
         $arg->setSmsID("smsID");
 
-        $obj = new APIProvider($this->authentication);
+        $obj = new ApiProvider($this->authentication);
 
         $res = $obj->deletingSMS($arg);
         $this->assertInstanceOf(DeletingSMSResponse::class, $res);
@@ -247,7 +247,7 @@ class APIProviderTest extends AbstractTestCase {
         $arg = new DeletingSubAccountRequest();
         $arg->setPseudoToDelete("pseudoToDelete");
 
-        $obj = new APIProvider($this->authentication);
+        $obj = new ApiProvider($this->authentication);
 
         $res = $obj->deletingSubAccount($arg);
         $this->assertInstanceOf(DeletingSubAccountResponse::class, $res);
@@ -268,7 +268,7 @@ class APIProviderTest extends AbstractTestCase {
         $arg = new DeliveryReportRequest();
         $arg->setSmsID("smsID");
 
-        $obj = new APIProvider($this->authentication);
+        $obj = new ApiProvider($this->authentication);
 
         $res = $obj->deliveryReport($arg);
         $this->assertInstanceOf(DeliveryReportResponse::class, $res);
@@ -288,7 +288,7 @@ class APIProviderTest extends AbstractTestCase {
         // Set a Retrieving SMS reply request mock.
         $arg = new RetrievingSMSReplyRequest();
 
-        $obj = new APIProvider($this->authentication);
+        $obj = new ApiProvider($this->authentication);
 
         $res = $obj->retrievingSMSReply($arg);
         $this->assertInstanceOf(RetrievingSMSReplyResponse::class, $res);
@@ -312,7 +312,7 @@ class APIProviderTest extends AbstractTestCase {
         $arg = new SendingSMSBatchRequest();
         $arg->setFichier($fichier);
 
-        $obj = new APIProvider($this->authentication);
+        $obj = new ApiProvider($this->authentication);
 
         $res = $obj->sendingSMSBatch($arg);
         $this->assertInstanceOf(SendingSMSBatchResponse::class, $res);
@@ -334,7 +334,7 @@ class APIProviderTest extends AbstractTestCase {
         $arg->setMessage("message");
         $arg->addNumero("33600000000");
 
-        $obj = new APIProvider($this->authentication);
+        $obj = new ApiProvider($this->authentication);
 
         $res = $obj->sendingSMSMessage($arg);
         $this->assertInstanceOf(SendingSMSMessageResponse::class, $res);
@@ -356,7 +356,7 @@ class APIProviderTest extends AbstractTestCase {
         $arg->setMessage("message");
         $arg->addNumero("33600000000");
 
-        $obj = new APIProvider($this->authentication);
+        $obj = new ApiProvider($this->authentication);
 
         $res = $obj->sendingTextToSpeechSMS($arg);
         $this->assertInstanceOf(SendingTextToSpeechSMSResponse::class, $res);
@@ -378,7 +378,7 @@ class APIProviderTest extends AbstractTestCase {
         $arg->setMessage("message");
         $arg->addNumero("33600000000");
 
-        $obj = new APIProvider($this->authentication);
+        $obj = new ApiProvider($this->authentication);
 
         $res = $obj->sendingUnicodeSMS($arg);
         $this->assertInstanceOf(SendingUnicodeSMSResponse::class, $res);
@@ -398,7 +398,7 @@ class APIProviderTest extends AbstractTestCase {
         // Set a Sent SMS message list request mock.
         $arg = new SentSMSMessageListRequest();
 
-        $obj = new APIProvider($this->authentication);
+        $obj = new ApiProvider($this->authentication);
 
         $res = $obj->sentSMSMessageList($arg);
         $this->assertInstanceOf(SentSMSMessageListResponse::class, $res);
@@ -420,7 +420,7 @@ class APIProviderTest extends AbstractTestCase {
         $arg->setCreditAmount(212);
         $arg->setTargetPseudo("targetPseudo");
 
-        $obj = new APIProvider($this->authentication);
+        $obj = new ApiProvider($this->authentication);
 
         $res = $obj->transferringCredits($arg);
         $this->assertInstanceOf(TransferringCreditsResponse::class, $res);

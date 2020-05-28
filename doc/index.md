@@ -20,7 +20,7 @@ Creating an API key :
 
 ```php
 // Create the API provider.
-$provider = new APIProvider(new Authentication());
+$provider = new ApiProvider(new Authentication());
 
 // Set a couple login/password.
 $provider->getAuthentication()->setPseudo("pseudo");
@@ -52,7 +52,7 @@ $response->getState();
 
 ```php
 // Create the API provider.
-$provider = new APIProvider(new Authentication());
+$provider = new ApiProvider(new Authentication());
 
 // Set a couple login/password.
 $provider->getAuthentication()->setPseudo("pseudo");
@@ -83,7 +83,7 @@ $response->getSmsID();
 
 ```php
 // Create the API provider.
-$provider = new APIProvider(new Authentication());
+$provider = new ApiProvider(new Authentication());
 
 // Set a couple login/password.
 $provider->getAuthentication()->setPseudo("pseudo");
@@ -116,7 +116,7 @@ foreach($response->getDeliveryReports() as $current) {
 
 ```php
 // Create the API provider.
-$provider = new APIProvider(new Authentication());
+$provider = new ApiProvider(new Authentication());
 
 // Set a couple login/password.
 $provider->getAuthentication()->setPseudo("pseudo");
@@ -140,7 +140,7 @@ $response->getAccountBalance();
 
 ```php
 // Create the API provider.
-$provider = new APIProvider(new Authentication());
+$provider = new ApiProvider(new Authentication());
 
 // Set a couple login/password.
 $provider->getAuthentication()->setPseudo("pseudo");
@@ -166,7 +166,7 @@ Deleting sub-account :
 
 ```php
 // Create the API provider.
-$provider = new APIProvider(new Authentication());
+$provider = new ApiProvider(new Authentication());
 
 // Set a couple login/password.
 $provider->getAuthentication()->setPseudo("pseudo");
@@ -192,7 +192,7 @@ $response->getDescription();
 
 ```php
 // Create the API provider.
-$provider = new APIProvider(new Authentication());
+$provider = new ApiProvider(new Authentication());
 
 // Set a couple login/password.
 $provider->getAuthentication()->setPseudo("pseudo");
@@ -219,7 +219,7 @@ $response->getDescription();
 
 ```php
 // Create the API provider.
-$provider = new APIProvider(new Authentication());
+$provider = new ApiProvider(new Authentication());
 
 // Set a couple login/password.
 $provider->getAuthentication()->setPseudo("pseudo");
@@ -246,7 +246,7 @@ $response->getDescription();
 
 ```php
 // Create the API provider.
-$provider = new APIProvider(new Authentication());
+$provider = new ApiProvider(new Authentication());
 
 // Set a couple login/password.
 $provider->getAuthentication()->setPseudo("pseudo");
@@ -272,7 +272,7 @@ $response->getDescription();
 
 ```php
 // Create the API provider.
-$provider = new APIProvider(new Authentication());
+$provider = new ApiProvider(new Authentication());
 
 // Set a couple login/password.
 $provider->getAuthentication()->setPseudo("pseudo");
@@ -305,7 +305,7 @@ foreach($response->getSentSMSMessages() as $current) {
 
 ```php
 // Create the API provider.
-$provider = new APIProvider(new Authentication());
+$provider = new ApiProvider(new Authentication());
 
 // Set a couple login/password.
 $provider->getAuthentication()->setPseudo("pseudo");
@@ -331,7 +331,7 @@ $response->getDescription();
 
 ```php
 // Create the API provider.
-$provider = new APIProvider(new Authentication());
+$provider = new ApiProvider(new Authentication());
 
 // Set a couple login/password.
 $provider->getAuthentication()->setPseudo("pseudo");
@@ -373,7 +373,7 @@ foreach($response->getSMSReplies() as $current) {
 
 ```php
 // Create the API provider.
-$provider = new APIProvider(new Authentication());
+$provider = new ApiProvider(new Authentication());
 
 // Set a couple login/password.
 $provider->getAuthentication()->setPseudo("pseudo");
@@ -404,7 +404,7 @@ $response->getSmsID();
 
 ```php
 // Create the API provider.
-$provider = new APIProvider(new Authentication());
+$provider = new ApiProvider(new Authentication());
 
 // Set a couple login/password.
 $provider->getAuthentication()->setPseudo("pseudo");
@@ -435,7 +435,7 @@ $response->getSmsID();
 
 ```php
 // Create the API provider.
-$provider = new APIProvider(new Authentication());
+$provider = new ApiProvider(new Authentication());
 
 // Set a couple login/password.
 $provider->getAuthentication()->setPseudo("pseudo");

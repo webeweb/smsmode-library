@@ -62,7 +62,6 @@ abstract class AbstractProvider extends BaseProvider {
         parent::__construct($logger);
         $this->setAuthentication($authentication);
         $this->setDebug(false);
-        $this->setLogger($logger);
         $this->setRequestSerializer(new RequestSerializer());
     }
 
@@ -93,7 +92,7 @@ abstract class AbstractProvider extends BaseProvider {
      * @throws ApiException Throws an API exception if an error occurs.
      * @throws InvalidArgumentException Throws an invalid argument exception if a parameter is missing.
      */
-    protected function callAPI(AbstractRequest $request, array $queryData, array $postData = []) {
+    protected function callApi(AbstractRequest $request, array $queryData, array $postData = []) {
 
         try {
 
@@ -131,15 +130,6 @@ abstract class AbstractProvider extends BaseProvider {
      */
     public function getAuthentication() {
         return $this->authentication;
-    }
-
-    /**
-     * Get the debug.
-     *
-     * @return bool Returns the debug.
-     */
-    public function getDebug() {
-        return $this->debug;
     }
 
     /**

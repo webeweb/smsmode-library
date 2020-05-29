@@ -57,16 +57,16 @@ class ApiProvider extends AbstractProvider {
     /**
      * Account balance.
      *
-     * @param AccountBalanceRequest $accountBalanceRequest The account balance request.
+     * @param AccountBalanceRequest $request The account balance request.
      * @return AccountBalanceResponse Returns the account balance response.
      * @throws ApiException Throws an API exception if an error occurs.
      * @throws InvalidArgumentException Throws an invalid argument exception if a parameter is missing.
      */
-    public function accountBalance(AccountBalanceRequest $accountBalanceRequest) {
+    public function accountBalance(AccountBalanceRequest $request) {
 
-        $queryData = $this->getRequestSerializer()->serialize($accountBalanceRequest);
+        $queryData = $this->getRequestSerializer()->serialize($request);
 
-        $rawResponse = $this->callApi($accountBalanceRequest, $queryData);
+        $rawResponse = $this->callApi($request, $queryData);
 
         return ResponseDeserializer::deserializeAccountBalanceResponse($rawResponse);
     }
@@ -74,16 +74,16 @@ class ApiProvider extends AbstractProvider {
     /**
      * Adding contact.
      *
-     * @param AddingContactRequest $addingContactRequest The adding contact request.
+     * @param AddingContactRequest $request The adding contact request.
      * @return AddingContactResponse Returns the adding contact response.
      * @throws ApiException Throws an API exception if an error occurs.
      * @throws InvalidArgumentException Throws an invalid argument exception if a parameter is missing.
      */
-    public function addingContact(AddingContactRequest $addingContactRequest) {
+    public function addingContact(AddingContactRequest $request) {
 
-        $queryData = $this->getRequestSerializer()->serialize($addingContactRequest);
+        $queryData = $this->getRequestSerializer()->serialize($request);
 
-        $rawResponse = $this->callApi($addingContactRequest, $queryData);
+        $rawResponse = $this->callApi($request, $queryData);
 
         return ResponseDeserializer::deserializeAddingContactResponse($rawResponse);
     }
@@ -91,16 +91,16 @@ class ApiProvider extends AbstractProvider {
     /**
      * Checking SMS message status.
      *
-     * @param CheckingSMSMessageStatusRequest $checkingSMSMessageStatusRequest The checking SMS message status request.
+     * @param CheckingSMSMessageStatusRequest $request The checking SMS message status request.
      * @return CheckingSMSMessageStatusResponse Returns the checking SMS message status response.
      * @throws ApiException Throws an API exception if an error occurs.
      * @throws InvalidArgumentException Throws an invalid argument exception if a parameter is missing.
      */
-    public function checkingSMSMessageStatus(CheckingSMSMessageStatusRequest $checkingSMSMessageStatusRequest) {
+    public function checkingSMSMessageStatus(CheckingSMSMessageStatusRequest $request) {
 
-        $queryData = $this->getRequestSerializer()->serialize($checkingSMSMessageStatusRequest);
+        $queryData = $this->getRequestSerializer()->serialize($request);
 
-        $rawResponse = $this->callApi($checkingSMSMessageStatusRequest, $queryData);
+        $rawResponse = $this->callApi($request, $queryData);
 
         return ResponseDeserializer::deserializeCheckingSMSMessageStatusResponse($rawResponse);
     }
@@ -108,18 +108,18 @@ class ApiProvider extends AbstractProvider {
     /**
      * Creating API key.
      *
-     * @param CreatingAPIKeyRequest $creatingAPIKeyRequest The creating API key request.
+     * @param CreatingAPIKeyRequest $request The creating API key request.
      * @return CreatingAPIKeyResponse Returns the creating API key response.
      * @throws ApiException Throws an API exception if an error occurs.
      * @throws InvalidArgumentException Throws an invalid argument exception if a parameter is missing.
      */
-    public function creatingAPIKey(CreatingAPIKeyRequest $creatingAPIKeyRequest) {
+    public function creatingAPIKey(CreatingAPIKeyRequest $request) {
 
-        $queryData = $this->getRequestSerializer()->serialize($creatingAPIKeyRequest);
+        $queryData = $this->getRequestSerializer()->serialize($request);
 
         try {
 
-            $rawResponse = $this->callApi($creatingAPIKeyRequest, $queryData);
+            $rawResponse = $this->callApi($request, $queryData);
         } catch (ApiException $ex) {
 
             $previous = $ex->getPrevious();
@@ -136,16 +136,16 @@ class ApiProvider extends AbstractProvider {
     /**
      * Creating sub-account.
      *
-     * @param CreatingSubAccountRequest $creatingSubAccountRequest The creating sub-account request.
+     * @param CreatingSubAccountRequest $request The creating sub-account request.
      * @return CreatingSubAccountResponse Returns the creating sub-account response.
      * @throws ApiException Throws an API exception if an error occurs.
      * @throws InvalidArgumentException Throws an invalid argument exception if a parameter is missing.
      */
-    public function creatingSubAccount(CreatingSubAccountRequest $creatingSubAccountRequest) {
+    public function creatingSubAccount(CreatingSubAccountRequest $request) {
 
-        $queryData = $this->getRequestSerializer()->serialize($creatingSubAccountRequest);
+        $queryData = $this->getRequestSerializer()->serialize($request);
 
-        $rawResponse = $this->callApi($creatingSubAccountRequest, $queryData);
+        $rawResponse = $this->callApi($request, $queryData);
 
         return ResponseDeserializer::deserializeCreatingSubAccountResponse($rawResponse);
     }
@@ -153,16 +153,16 @@ class ApiProvider extends AbstractProvider {
     /**
      * Deleting SMS.
      *
-     * @param DeletingSMSRequest $deletingSMSRequest The deleting SMS request.
+     * @param DeletingSMSRequest $request The deleting SMS request.
      * @return DeletingSMSResponse Returns the delivery SMS message response.
      * @throws ApiException Throws an API exception if an error occurs.
      * @throws InvalidArgumentException Throws an invalid argument exception if a parameter is missing.
      */
-    public function deletingSMS(DeletingSMSRequest $deletingSMSRequest) {
+    public function deletingSMS(DeletingSMSRequest $request) {
 
-        $queryData = $this->getRequestSerializer()->serialize($deletingSMSRequest);
+        $queryData = $this->getRequestSerializer()->serialize($request);
 
-        $rawResponse = $this->callApi($deletingSMSRequest, $queryData);
+        $rawResponse = $this->callApi($request, $queryData);
 
         return ResponseDeserializer::deserializeDeletingSMSResponse($rawResponse);
     }
@@ -170,16 +170,16 @@ class ApiProvider extends AbstractProvider {
     /**
      * Deleting sub-account.
      *
-     * @param DeletingSubAccountRequest $deletingSubAccountRequest The deleting sub-account request.
+     * @param DeletingSubAccountRequest $request The deleting sub-account request.
      * @return DeletingSubAccountResponse Returns the delivery sub-account response.
      * @throws ApiException Throws an API exception if an error occurs.
      * @throws InvalidArgumentException Throws an invalid argument exception if a parameter is missing.
      */
-    public function deletingSubAccount(DeletingSubAccountRequest $deletingSubAccountRequest) {
+    public function deletingSubAccount(DeletingSubAccountRequest $request) {
 
-        $queryData = $this->getRequestSerializer()->serialize($deletingSubAccountRequest);
+        $queryData = $this->getRequestSerializer()->serialize($request);
 
-        $rawResponse = $this->callApi($deletingSubAccountRequest, $queryData);
+        $rawResponse = $this->callApi($request, $queryData);
 
         return ResponseDeserializer::deserializeDeletingSubAccountResponse($rawResponse);
     }
@@ -187,16 +187,16 @@ class ApiProvider extends AbstractProvider {
     /**
      * Delivery report.
      *
-     * @param DeliveryReportRequest $deliveryReportRequest The delivery report request.
+     * @param DeliveryReportRequest $request The delivery report request.
      * @return DeliveryReportResponse Returns the delivery report response.
      * @throws ApiException Throws an API exception if an error occurs.
      * @throws InvalidArgumentException Throws an invalid argument exception if a parameter is missing.
      */
-    public function deliveryReport(DeliveryReportRequest $deliveryReportRequest) {
+    public function deliveryReport(DeliveryReportRequest $request) {
 
-        $queryData = $this->getRequestSerializer()->serialize($deliveryReportRequest);
+        $queryData = $this->getRequestSerializer()->serialize($request);
 
-        $rawResponse = $this->callApi($deliveryReportRequest, $queryData);
+        $rawResponse = $this->callApi($request, $queryData);
 
         return ResponseDeserializer::deserializeDeliveryReportResponse($rawResponse);
     }
@@ -204,16 +204,16 @@ class ApiProvider extends AbstractProvider {
     /**
      * Retrieving SMS reply.
      *
-     * @param RetrievingSMSReplyRequest $retrievingSMSReplyRequest The retrieving SMS reply request.
+     * @param RetrievingSMSReplyRequest $request The retrieving SMS reply request.
      * @return RetrievingSMSReplyResponse Returns the retrieving SMS reply response.
      * @throws ApiException Throws an API exception if an error occurs.
      * @throws InvalidArgumentException Throws an invalid argument exception if a parameter is missing.
      */
-    public function retrievingSMSReply(RetrievingSMSReplyRequest $retrievingSMSReplyRequest) {
+    public function retrievingSMSReply(RetrievingSMSReplyRequest $request) {
 
-        $queryData = $this->getRequestSerializer()->serialize($retrievingSMSReplyRequest);
+        $queryData = $this->getRequestSerializer()->serialize($request);
 
-        $rawResponse = $this->callApi($retrievingSMSReplyRequest, $queryData);
+        $rawResponse = $this->callApi($request, $queryData);
 
         return ResponseDeserializer::deserializeRetrievingSMSReplyResponse($rawResponse);
     }
@@ -221,14 +221,14 @@ class ApiProvider extends AbstractProvider {
     /**
      * Sending SMS batch.
      *
-     * @param SendingSMSBatchRequest $sendingSMSBatchRequest The sending SMS batch request.
+     * @param SendingSMSBatchRequest $request The sending SMS batch request.
      * @return SendingSMSBatchResponse Returns the sending SMS message response.
      * @throws ApiException Throws an API exception if an error occurs.
      * @throws InvalidArgumentException Throws an invalid argument exception if a parameter is missing.
      */
-    public function sendingSMSBatch(SendingSMSBatchRequest $sendingSMSBatchRequest) {
+    public function sendingSMSBatch(SendingSMSBatchRequest $request) {
 
-        $queryData = $this->getRequestSerializer()->serialize($sendingSMSBatchRequest);
+        $queryData = $this->getRequestSerializer()->serialize($request);
 
         $filename = realpath($queryData["fichier"]);
         $postData = [
@@ -241,7 +241,7 @@ class ApiProvider extends AbstractProvider {
 
         unset($queryData["fichier"]);
 
-        $rawResponse = $this->callApi($sendingSMSBatchRequest, $queryData, $postData);
+        $rawResponse = $this->callApi($request, $queryData, $postData);
 
         return ResponseDeserializer::deserializeSendingSMSBatchResponse($rawResponse);
     }
@@ -249,14 +249,14 @@ class ApiProvider extends AbstractProvider {
     /**
      * Sending SMS message.
      *
-     * @param SendingSMSMessageRequest $sendingSMSMessageRequest The sending SMS message request.
+     * @param SendingSMSMessageRequest $request The sending SMS message request.
      * @return SendingSMSMessageResponse Returns the sending SMS message response.
      * @throws ApiException Throws an API exception if an error occurs.
      * @throws InvalidArgumentException Throws an invalid argument exception if a parameter is missing.
      */
-    public function sendingSMSMessage(SendingSMSMessageRequest $sendingSMSMessageRequest) {
+    public function sendingSMSMessage(SendingSMSMessageRequest $request) {
 
-        $queryData = $this->getRequestSerializer()->serialize($sendingSMSMessageRequest);
+        $queryData = $this->getRequestSerializer()->serialize($request);
 
         $postData = [];
         if (true === array_key_exists("numero", $queryData)) {
@@ -264,7 +264,7 @@ class ApiProvider extends AbstractProvider {
             unset($queryData["numero"]);
         }
 
-        $rawResponse = $this->callApi($sendingSMSMessageRequest, $queryData, $postData);
+        $rawResponse = $this->callApi($request, $queryData, $postData);
 
         return ResponseDeserializer::deserializeSendingSMSMessageResponse($rawResponse);
     }
@@ -272,14 +272,14 @@ class ApiProvider extends AbstractProvider {
     /**
      * Sending text-to-speech SMS request.
      *
-     * @param SendingTextToSpeechSMSRequest $sendingTextToSpeechSMSRequest The sending text-to-speech SMS request.
+     * @param SendingTextToSpeechSMSRequest $request The sending text-to-speech SMS request.
      * @return SendingTextToSpeechSMSResponse Returns the sending text-to-speech response.
      * @throws ApiException Throws an API exception if an error occurs.
      * @throws InvalidArgumentException Throws an invalid argument exception if a parameter is missing.
      */
-    public function sendingTextToSpeechSMS(SendingTextToSpeechSMSRequest $sendingTextToSpeechSMSRequest) {
+    public function sendingTextToSpeechSMS(SendingTextToSpeechSMSRequest $request) {
 
-        $queryData = $this->getRequestSerializer()->serialize($sendingTextToSpeechSMSRequest);
+        $queryData = $this->getRequestSerializer()->serialize($request);
 
         $postData = [];
         if (true === array_key_exists("numero", $queryData)) {
@@ -287,7 +287,7 @@ class ApiProvider extends AbstractProvider {
             unset($queryData["numero"]);
         }
 
-        $rawResponse = $this->callApi($sendingTextToSpeechSMSRequest, $queryData, $postData);
+        $rawResponse = $this->callApi($request, $queryData, $postData);
 
         return ResponseDeserializer::deserializeSendingTextToSpeechSMSResponse($rawResponse);
     }
@@ -295,14 +295,14 @@ class ApiProvider extends AbstractProvider {
     /**
      * Sending unicode SMS request.
      *
-     * @param SendingUnicodeSMSRequest $sendingUnicodeSMSRequest The sending unicode SMS request.
+     * @param SendingUnicodeSMSRequest $request The sending unicode SMS request.
      * @return SendingUnicodeSMSResponse Returns the sending unicode response.
      * @throws ApiException Throws an API exception if an error occurs.
      * @throws InvalidArgumentException Throws an invalid argument exception if a parameter is missing.
      */
-    public function sendingUnicodeSMS(SendingUnicodeSMSRequest $sendingUnicodeSMSRequest) {
+    public function sendingUnicodeSMS(SendingUnicodeSMSRequest $request) {
 
-        $queryData = $this->getRequestSerializer()->serialize($sendingUnicodeSMSRequest);
+        $queryData = $this->getRequestSerializer()->serialize($request);
 
         $postData = [];
         if (true === array_key_exists("numero", $queryData)) {
@@ -310,7 +310,7 @@ class ApiProvider extends AbstractProvider {
             unset($queryData["numero"]);
         }
 
-        $rawResponse = $this->callApi($sendingUnicodeSMSRequest, $queryData, $postData);
+        $rawResponse = $this->callApi($request, $queryData, $postData);
 
         return ResponseDeserializer::deserializeSendingUnicodeSMSResponse($rawResponse);
     }
@@ -318,16 +318,16 @@ class ApiProvider extends AbstractProvider {
     /**
      * Sent SMS message list.
      *
-     * @param SentSMSMessageListRequest $sentSMSMessageListRequest The sent SMS message list request.
+     * @param SentSMSMessageListRequest $request The sent SMS message list request.
      * @return SentSMSMessageListResponse Returns the sent SMS message list response.
      * @throws ApiException Throws an API exception if an error occurs.
      * @throws InvalidArgumentException Throws an invalid argument exception if a parameter is missing.
      */
-    public function sentSMSMessageList(SentSMSMessageListRequest $sentSMSMessageListRequest) {
+    public function sentSMSMessageList(SentSMSMessageListRequest $request) {
 
-        $queryData = $this->getRequestSerializer()->serialize($sentSMSMessageListRequest);
+        $queryData = $this->getRequestSerializer()->serialize($request);
 
-        $rawResponse = $this->callApi($sentSMSMessageListRequest, $queryData);
+        $rawResponse = $this->callApi($request, $queryData);
 
         return ResponseDeserializer::deserializeSentSMSMessageListResponse($rawResponse);
     }
@@ -335,16 +335,16 @@ class ApiProvider extends AbstractProvider {
     /**
      * Transferring credits.
      *
-     * @param TransferringCreditsRequest $transferringCreditsRequest The transferring credits request.
+     * @param TransferringCreditsRequest $request The transferring credits request.
      * @return TransferringCreditsResponse Returns the transferring credits response.
      * @throws ApiException Throws an API exception if an error occurs.
      * @throws InvalidArgumentException Throws an invalid argument exception if a parameter is missing.
      */
-    public function transferringCredits(TransferringCreditsRequest $transferringCreditsRequest) {
+    public function transferringCredits(TransferringCreditsRequest $request) {
 
-        $queryData = $this->getRequestSerializer()->serialize($transferringCreditsRequest);
+        $queryData = $this->getRequestSerializer()->serialize($request);
 
-        $rawResponse = $this->callApi($transferringCreditsRequest, $queryData);
+        $rawResponse = $this->callApi($request, $queryData);
 
         return ResponseDeserializer::deserializeTransferringCreditsResponse($rawResponse);
     }

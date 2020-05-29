@@ -1,6 +1,10 @@
 CHANGELOG
 =========
 
+### [2.9.1](https://github.com/webeweb/smsmode-library/tree/v2.9.1) (2020-05-29)
+
+- Code checkstyle
+
 ### [2.9.0](https://github.com/webeweb/smsmode-library/tree/v2.9.0) (2020-05-27)
 
 - Improve unit tests

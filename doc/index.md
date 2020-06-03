@@ -1,8 +1,7 @@
 DOCUMENTATION
 =============
 
-1° Authentication
----
+1) Authentication
 
 ```php
 // Create an authentication model.
@@ -47,8 +46,7 @@ $response->getState();
 ```
 
 
-2° Sending SMS message
----
+2) Sending SMS message
 
 ```php
 // Create the API provider.
@@ -78,8 +76,7 @@ $response->getDescription();
 $response->getSmsID();
 ```
 
-3° Delivery report
----
+3) Delivery report
 
 ```php
 // Create the API provider.
@@ -111,8 +108,7 @@ foreach($response->getDeliveryReports() as $current) {
 }
 ```
 
-4° Account balance
----
+4) Account balance
 
 ```php
 // Create the API provider.
@@ -135,8 +131,7 @@ $response->getDescription();
 $response->getAccountBalance();
 ```
 
-5° Creating sub-account
----
+5) Creating sub-account
 
 ```php
 // Create the API provider.
@@ -187,8 +182,7 @@ $response->getCode();
 $response->getDescription();
 ```
 
-6° Transferring credits from one account to another
----
+6) Transferring credits from one account to another
 
 ```php
 // Create the API provider.
@@ -214,8 +208,7 @@ $response->getCode();
 $response->getDescription();
 ```
 
-7° Adding contacts
----
+7) Adding contacts
 
 ```php
 // Create the API provider.
@@ -241,8 +234,7 @@ $response->getCode();
 $response->getDescription();
 ```
 
-8° Deleting SMS
----
+8) Deleting SMS
 
 ```php
 // Create the API provider.
@@ -267,8 +259,7 @@ $response->getCode();
 $response->getDescription();
 ```
 
-9° Sent SMS message list
----
+9) Sent SMS message list
 
 ```php
 // Create the API provider.
@@ -300,8 +291,7 @@ foreach($response->getSentSMSMessages() as $current) {
 }
 ```
 
-10° Checking SMS message status
----
+10) Checking SMS message status
 
 ```php
 // Create the API provider.
@@ -326,8 +316,7 @@ $response->getCode();
 $response->getDescription();
 ```
 
-11° Retrieving SMS replies
----
+11) Retrieving SMS replies
 
 ```php
 // Create the API provider.
@@ -368,8 +357,7 @@ foreach($response->getSMSReplies() as $current) {
 }
 ```
 
-12° Sending text-to-speech SMS
----
+12) Sending text-to-speech SMS
 
 ```php
 // Create the API provider.
@@ -399,8 +387,7 @@ $response->getDescription();
 $response->getSmsID();
 ```
 
-13° Sending unicode SMS
----
+13) Sending unicode SMS
 
 ```php
 // Create the API provider.
@@ -430,8 +417,7 @@ $response->getDescription();
 $response->getSmsID();
 ```
 
-14° Sending SMS in batch mode (attached file)
----
+14) Sending SMS in batch mode (attached file)
 
 ```php
 // Create the API provider.

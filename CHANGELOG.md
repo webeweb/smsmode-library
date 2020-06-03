@@ -1,6 +1,10 @@
 CHANGELOG
 =========
 
+### [2.9.2](https://github.com/webeweb/smsmode-library/tree/v2.9.2) (2020-06-03)
+
+- Update documentation
+
 ### [2.9.1](https://github.com/webeweb/smsmode-library/tree/v2.9.1) (2020-05-29)
 
 - Code checkstyle

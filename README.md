@@ -67,6 +67,19 @@ Once all required libraries are installed then do:
 $ vendor/bin/phpunit
 ```
 
+## License
+
+`smsmode-library` is released under the MIT License. See the bundled [LICENSE](LICENSE)
+file for details.
+
+Please note that the sMsmode API is not free for use, see their
+[product page](https://www.smsmode.com/tarifs-sms/) for details on pricing.
+
+## Donate
+
+If you like this work, please consider donating at
+[![paypal.me](https://img.shields.io/badge/paypal.me-webeweb-0070ba.svg?style=flat-square&logo=paypal)](https://www.paypal.me/webeweb)
+
 ## Todo
 
 - ~~[2 Authentication](https://www.smsmode.com/pdf/fiche-HTTP-api-EN.pdf)~~
@@ -87,16 +100,3 @@ $ vendor/bin/phpunit
 - ~~[15 Sending text-to-speech SMS](https://www.smsmode.com/pdf/fiche-HTTP-api-EN.pdf)~~
 - ~~[16 Sending unicode SMS](https://www.smsmode.com/pdf/fiche-HTTP-api-EN.pdf)~~
 - ~~[17 Sending SMS in batch mode (attached file)](https://www.smsmode.com/pdf/fiche-HTTP-api-EN.pdf)~~
-
-## License
-
-`smsmode-library` is released under the MIT License. See the bundled [LICENSE](LICENSE)
-file for details.
-
-Please note that the sMsmode API is not free for use, see their
-[product page](https://www.smsmode.com/tarifs-sms/) for details on pricing.
-
-## Donate
-
-If you like this work, please consider donating at
-[![paypal.me](https://img.shields.io/badge/paypal.me-webeweb-0070ba.svg?style=flat-square&logo=paypal)](https://www.paypal.me/webeweb)

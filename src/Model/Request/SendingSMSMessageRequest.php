@@ -193,7 +193,7 @@ class SendingSMSMessageRequest extends AbstractRequest implements SendingSMSMess
      */
     public function setStop($stop) {
         if (null !== $stop && false === in_array($stop, $this->enumStop())) {
-            throw new InvalidArgumentException(sprintf("The stop \"%s\" is invalid", $stop));
+            throw new InvalidArgumentException(sprintf('The stop "%s" is invalid', $stop));
         }
         $this->stop = $stop;
         return $this;

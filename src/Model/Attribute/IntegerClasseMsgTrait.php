@@ -58,7 +58,7 @@ trait IntegerClasseMsgTrait {
      */
     public function setClasseMsg($classeMsg) {
         if (null !== $classeMsg && false === in_array($classeMsg, $this->enumClasseMsg())) {
-            throw new InvalidArgumentException(sprintf("The classe msg \"%s\" is invalid", $classeMsg));
+            throw new InvalidArgumentException(sprintf('The classe msg "%s" is invalid', $classeMsg));
         }
         $this->classeMsg = $classeMsg;
         return $this;

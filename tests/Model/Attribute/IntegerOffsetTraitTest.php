@@ -52,7 +52,7 @@ class IntegerOffsetTraitTest extends AbstractTestCase {
         } catch (Exception $ex) {
 
             $this->assertInstanceOf(InvalidArgumentException::class, $ex);
-            $this->assertEquals("The \"offset\" must be greater than 0", $ex->getMessage());
+            $this->assertEquals('The "offset" must be greater than 0', $ex->getMessage());
         }
     }
 

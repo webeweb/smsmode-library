@@ -49,7 +49,7 @@ class NumeroSerializerTest extends AbstractTestCase {
         } catch (Exception $ex) {
 
             $this->assertInstanceOf(InvalidArgumentException::class, $ex);
-            $this->assertEquals("The numero \"exception\" is invalid", $ex->getMessage());
+            $this->assertEquals('The numero "exception" is invalid', $ex->getMessage());
         }
     }
 

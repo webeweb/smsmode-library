@@ -72,7 +72,7 @@ class IntegerClasseMsgTraitTest extends AbstractTestCase {
         } catch (Exception $ex) {
 
             $this->assertInstanceOf(InvalidArgumentException::class, $ex);
-            $this->assertEquals("The classe msg \"0\" is invalid", $ex->getMessage());
+            $this->assertEquals('The classe msg "0" is invalid', $ex->getMessage());
         }
     }
 

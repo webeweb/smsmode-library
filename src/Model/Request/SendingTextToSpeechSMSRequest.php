@@ -136,7 +136,7 @@ class SendingTextToSpeechSMSRequest extends AbstractRequest implements SendingTe
      */
     public function setLanguage($language) {
         if (null !== $language && false === in_array($language, $this->enumLanguage())) {
-            throw new InvalidArgumentException(sprintf("The language \"%s\" is invalid", $language));
+            throw new InvalidArgumentException(sprintf('The language "%s" is invalid', $language));
         }
         $this->language = $language;
         return $this;

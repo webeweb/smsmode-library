@@ -57,7 +57,7 @@ class RequestSerializer {
         $complement = ArrayHelper::get($configuration[$attribute], "complement");
 
         if (null !== $complement && true === $this->nullObjectValue($object, $configuration[$complement]["method"])) {
-            throw new InvalidArgumentException(sprintf("The optional parameter \"%s\" is required when \"%s\" is provided", $complement, $attribute));
+            throw new InvalidArgumentException(sprintf('The optional parameter "%s" is required when "%s" is provided', $complement, $attribute));
         }
     }
 
@@ -76,7 +76,7 @@ class RequestSerializer {
         $value     = $this->getObjectValue($object, $configuration["method"]);
 
         if (true === $mandatory && $this->isNullValue($value)) {
-            throw new InvalidArgumentException(sprintf("The mandatory parameter \"%s\" is missing", $attribute));
+            throw new InvalidArgumentException(sprintf('The mandatory parameter "%s" is missing', $attribute));
         }
     }
 

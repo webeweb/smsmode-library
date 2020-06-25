@@ -89,7 +89,7 @@ class SendingTextToSpeechSMSRequestTest extends AbstractTestCase {
         } catch (Exception $ex) {
 
             $this->assertInstanceOf(InvalidArgumentException::class, $ex);
-            $this->assertEquals("The language \"language\" is invalid", $ex->getMessage());
+            $this->assertEquals('The language "language" is invalid', $ex->getMessage());
         }
     }
 

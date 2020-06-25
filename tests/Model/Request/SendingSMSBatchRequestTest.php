@@ -56,7 +56,7 @@ class SendingSMSBatchRequestTest extends AbstractTestCase {
         } catch (Exception $ex) {
 
             $this->assertInstanceOf(InvalidArgumentException::class, $ex);
-            $this->assertEquals("File \"fichier\" could not be found.", $ex->getMessage());
+            $this->assertEquals('File "fichier" could not be found.', $ex->getMessage());
         }
     }
 

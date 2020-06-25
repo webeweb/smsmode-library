@@ -109,7 +109,7 @@ class RequestSerializerTest extends AbstractTestCase {
         } catch (Exception $ex) {
 
             $this->assertInstanceOf(InvalidArgumentException::class, $ex);
-            $this->assertEquals("The mandatory parameter \"nom\" is missing", $ex->getMessage());
+            $this->assertEquals('The mandatory parameter "nom" is missing', $ex->getMessage());
         }
 
         try {
@@ -119,7 +119,7 @@ class RequestSerializerTest extends AbstractTestCase {
         } catch (Exception $ex) {
 
             $this->assertInstanceOf(InvalidArgumentException::class, $ex);
-            $this->assertEquals("The mandatory parameter \"mobile\" is missing", $ex->getMessage());
+            $this->assertEquals('The mandatory parameter "mobile" is missing', $ex->getMessage());
         }
     }
 
@@ -186,7 +186,7 @@ class RequestSerializerTest extends AbstractTestCase {
         } catch (Exception $ex) {
 
             $this->assertInstanceOf(InvalidArgumentException::class, $ex);
-            $this->assertEquals("The mandatory parameter \"pseudo\" is missing", $ex->getMessage());
+            $this->assertEquals('The mandatory parameter "pseudo" is missing', $ex->getMessage());
         }
 
         try {
@@ -196,7 +196,7 @@ class RequestSerializerTest extends AbstractTestCase {
         } catch (Exception $ex) {
 
             $this->assertInstanceOf(InvalidArgumentException::class, $ex);
-            $this->assertEquals("The mandatory parameter \"pass\" is missing", $ex->getMessage());
+            $this->assertEquals('The mandatory parameter "pass" is missing', $ex->getMessage());
         }
     }
 
@@ -238,7 +238,7 @@ class RequestSerializerTest extends AbstractTestCase {
         } catch (Exception $ex) {
 
             $this->assertInstanceOf(InvalidArgumentException::class, $ex);
-            $this->assertEquals("The mandatory parameter \"smsID\" is missing", $ex->getMessage());
+            $this->assertEquals('The mandatory parameter "smsID" is missing', $ex->getMessage());
         }
     }
 
@@ -324,7 +324,7 @@ class RequestSerializerTest extends AbstractTestCase {
         } catch (Exception $ex) {
 
             $this->assertInstanceOf(InvalidArgumentException::class, $ex);
-            $this->assertEquals("The mandatory parameter \"newPseudo\" is missing", $ex->getMessage());
+            $this->assertEquals('The mandatory parameter "newPseudo" is missing', $ex->getMessage());
         }
 
         try {
@@ -334,7 +334,7 @@ class RequestSerializerTest extends AbstractTestCase {
         } catch (Exception $ex) {
 
             $this->assertInstanceOf(InvalidArgumentException::class, $ex);
-            $this->assertEquals("The mandatory parameter \"newPass\" is missing", $ex->getMessage());
+            $this->assertEquals('The mandatory parameter "newPass" is missing', $ex->getMessage());
         }
     }
 
@@ -384,7 +384,7 @@ class RequestSerializerTest extends AbstractTestCase {
         } catch (Exception $ex) {
 
             $this->assertInstanceOf(InvalidArgumentException::class, $ex);
-            $this->assertEquals("The mandatory parameter \"smsID\" is missing", $ex->getMessage());
+            $this->assertEquals('The mandatory parameter "smsID" is missing', $ex->getMessage());
         }
     }
 
@@ -426,7 +426,7 @@ class RequestSerializerTest extends AbstractTestCase {
         } catch (Exception $ex) {
 
             $this->assertInstanceOf(InvalidArgumentException::class, $ex);
-            $this->assertEquals("The mandatory parameter \"pseudoToDelete\" is missing", $ex->getMessage());
+            $this->assertEquals('The mandatory parameter "pseudoToDelete" is missing', $ex->getMessage());
         }
     }
 
@@ -468,7 +468,7 @@ class RequestSerializerTest extends AbstractTestCase {
         } catch (Exception $ex) {
 
             $this->assertInstanceOf(InvalidArgumentException::class, $ex);
-            $this->assertEquals("The mandatory parameter \"smsID\" is missing", $ex->getMessage());
+            $this->assertEquals('The mandatory parameter "smsID" is missing', $ex->getMessage());
         }
     }
 
@@ -493,7 +493,7 @@ class RequestSerializerTest extends AbstractTestCase {
         } catch (Exception $ex) {
 
             $this->assertInstanceOf(InvalidArgumentException::class, $ex);
-            $this->assertEquals("The optional parameter \"offset\" is required when \"start\" is provided", $ex->getMessage());
+            $this->assertEquals('The optional parameter "offset" is required when "start" is provided', $ex->getMessage());
         }
 
         try {
@@ -504,7 +504,7 @@ class RequestSerializerTest extends AbstractTestCase {
         } catch (Exception $ex) {
 
             $this->assertInstanceOf(InvalidArgumentException::class, $ex);
-            $this->assertEquals("The optional parameter \"start\" is required when \"offset\" is provided", $ex->getMessage());
+            $this->assertEquals('The optional parameter "start" is required when "offset" is provided', $ex->getMessage());
         }
 
         $arg->setStart(0);
@@ -536,7 +536,7 @@ class RequestSerializerTest extends AbstractTestCase {
             $obj->serialize($arg);
         } catch (Exception $ex) {
             $this->assertInstanceOf(InvalidArgumentException::class, $ex);
-            $this->assertEquals("The optional parameter \"endDate\" is required when \"startDate\" is provided", $ex->getMessage());
+            $this->assertEquals('The optional parameter "endDate" is required when "startDate" is provided', $ex->getMessage());
         }
 
         try {
@@ -547,7 +547,7 @@ class RequestSerializerTest extends AbstractTestCase {
         } catch (Exception $ex) {
 
             $this->assertInstanceOf(InvalidArgumentException::class, $ex);
-            $this->assertEquals("The optional parameter \"startDate\" is required when \"endDate\" is provided", $ex->getMessage());
+            $this->assertEquals('The optional parameter "startDate" is required when "endDate" is provided', $ex->getMessage());
         }
 
         try {
@@ -558,7 +558,7 @@ class RequestSerializerTest extends AbstractTestCase {
         } catch (Exception $ex) {
 
             $this->assertInstanceOf(IllegalArgumentException::class, $ex);
-            $this->assertEquals("The \"endDate\" must be greater than \"startDate\"", $ex->getMessage());
+            $this->assertEquals('The "endDate" must be greater than "startDate"', $ex->getMessage());
         }
 
         $arg->setStartDate(new DateTime("2017-09-14 12:00:00"));
@@ -642,7 +642,7 @@ class RequestSerializerTest extends AbstractTestCase {
         } catch (Exception $ex) {
 
             $this->assertInstanceOf(InvalidArgumentException::class, $ex);
-            $this->assertEquals("The mandatory parameter \"fichier\" is missing", $ex->getMessage());
+            $this->assertEquals('The mandatory parameter "fichier" is missing', $ex->getMessage());
         }
     }
 
@@ -741,7 +741,7 @@ class RequestSerializerTest extends AbstractTestCase {
         } catch (Exception $ex) {
 
             $this->assertInstanceOf(InvalidArgumentException::class, $ex);
-            $this->assertEquals("The mandatory parameter \"message\" is missing", $ex->getMessage());
+            $this->assertEquals('The mandatory parameter "message" is missing', $ex->getMessage());
         }
 
         try {
@@ -751,7 +751,7 @@ class RequestSerializerTest extends AbstractTestCase {
         } catch (Exception $ex) {
 
             $this->assertInstanceOf(InvalidArgumentException::class, $ex);
-            $this->assertEquals("The mandatory parameter \"numero\" is missing", $ex->getMessage());
+            $this->assertEquals('The mandatory parameter "numero" is missing', $ex->getMessage());
         }
     }
 
@@ -803,7 +803,7 @@ class RequestSerializerTest extends AbstractTestCase {
         } catch (Exception $ex) {
 
             $this->assertInstanceOf(InvalidArgumentException::class, $ex);
-            $this->assertEquals("The mandatory parameter \"message\" is missing", $ex->getMessage());
+            $this->assertEquals('The mandatory parameter "message" is missing', $ex->getMessage());
         }
 
         try {
@@ -813,7 +813,7 @@ class RequestSerializerTest extends AbstractTestCase {
         } catch (Exception $ex) {
 
             $this->assertInstanceOf(InvalidArgumentException::class, $ex);
-            $this->assertEquals("The mandatory parameter \"numero\" is missing", $ex->getMessage());
+            $this->assertEquals('The mandatory parameter "numero" is missing', $ex->getMessage());
         }
     }
 
@@ -938,7 +938,7 @@ class RequestSerializerTest extends AbstractTestCase {
         } catch (Exception $ex) {
 
             $this->assertInstanceOf(InvalidArgumentException::class, $ex);
-            $this->assertEquals("The mandatory parameter \"targetPseudo\" is missing", $ex->getMessage());
+            $this->assertEquals('The mandatory parameter "targetPseudo" is missing', $ex->getMessage());
         }
 
         try {
@@ -948,7 +948,7 @@ class RequestSerializerTest extends AbstractTestCase {
         } catch (Exception $ex) {
 
             $this->assertInstanceOf(InvalidArgumentException::class, $ex);
-            $this->assertEquals("The mandatory parameter \"creditAmount\" is missing", $ex->getMessage());
+            $this->assertEquals('The mandatory parameter "creditAmount" is missing', $ex->getMessage());
         }
     }
 

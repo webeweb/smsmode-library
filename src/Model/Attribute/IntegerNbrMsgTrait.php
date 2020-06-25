@@ -45,7 +45,7 @@ trait IntegerNbrMsgTrait {
      */
     public function setNbrMsg($nbrMsg) {
         if (null === $nbrMsg || $nbrMsg < 1) {
-            throw new InvalidArgumentException("The \"nbr msg\" must be greater than 0");
+            throw new InvalidArgumentException('The "nbr msg" must be greater than 0');
         }
         $this->nbrMsg = $nbrMsg;
         return $this;

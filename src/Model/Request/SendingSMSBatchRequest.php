@@ -75,7 +75,7 @@ class SendingSMSBatchRequest extends AbstractRequest implements SendingSMSBatchI
      */
     public function setFichier($fichier) {
         if (false === realpath($fichier)) {
-            throw new InvalidArgumentException(sprintf("File \"%s\" could not be found.", $fichier));
+            throw new InvalidArgumentException(sprintf('File "%s" could not be found.', $fichier));
         }
         $this->fichier = $fichier;
         return $this;

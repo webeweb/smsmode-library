@@ -113,7 +113,7 @@ class SendingSMSMessageRequestTest extends AbstractTestCase {
         } catch (Exception $ex) {
 
             $this->assertInstanceOf(InvalidArgumentException::class, $ex);
-            $this->assertEquals("The stop \"-1\" is invalid", $ex->getMessage());
+            $this->assertEquals('The stop "-1" is invalid', $ex->getMessage());
         }
     }
 

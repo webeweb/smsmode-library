@@ -52,7 +52,7 @@ class IntegerNbrMsgTraitTest extends AbstractTestCase {
         } catch (Exception $ex) {
 
             $this->assertInstanceOf(InvalidArgumentException::class, $ex);
-            $this->assertEquals("The \"nbr msg\" must be greater than 0", $ex->getMessage());
+            $this->assertEquals('The "nbr msg" must be greater than 0', $ex->getMessage());
         }
     }
 

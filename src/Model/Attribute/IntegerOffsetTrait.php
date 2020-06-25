@@ -45,7 +45,7 @@ trait IntegerOffsetTrait {
      */
     public function setOffset($offset) {
         if (null !== $offset && $offset < 1) {
-            throw new InvalidArgumentException("The \"offset\" must be greater than 0");
+            throw new InvalidArgumentException('The "offset" must be greater than 0');
         }
         $this->offset = $offset;
         return $this;

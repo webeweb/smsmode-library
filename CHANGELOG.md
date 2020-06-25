@@ -1,6 +1,10 @@
 CHANGELOG
 =========
 
+### [2.9.3](https://github.com/webeweb/smsmode-library/tree/v2.9.3) (2020-06-25)
+
+- Improve code quality
+
 ### [2.9.2](https://github.com/webeweb/smsmode-library/tree/v2.9.2) (2020-06-03)
 
 - Update documentation

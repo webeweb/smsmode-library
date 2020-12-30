@@ -20,9 +20,9 @@ WBW\Library\SMSMode\Model\Request\AddingContactRequest:
         method:    "getOther"
         mandatory: false
     date:
-        method:     "getDate"
-        mandatory:  false
-        formatter:  "formatDate"
+        method:    "getDate"
+        mandatory: false
+        formatter: "formatDate"
 
 WBW\Library\SMSMode\Model\Request\CheckingSMSMessageStatusRequest:
     smsID:
@@ -76,14 +76,14 @@ WBW\Library\SMSMode\Model\Request\CreatingSubAccountRequest:
 
 WBW\Library\SMSMode\Model\Request\DeletingSMSRequest:
     smsID:
-        method:           "getSmsID"
-        mandatory:        true
-        excludeIf:        "numero"
-        continue:         false
+        method:    "getSmsID"
+        mandatory: true
+        excludeIf: "numero"
+        continue:  false
     numero:
-        method:           "getNumero"
-        mandatory:        true
-        excludeIf:        "smsID"
+        method:    "getNumero"
+        mandatory: true
+        excludeIf: "smsID"
 
 WBW\Library\SMSMode\Model\Request\DeletingSubAccountRequest:
     pseudoToDelete:
@@ -192,9 +192,9 @@ WBW\Library\SMSMode\Model\Request\SendingTextToSpeechSMSRequest:
         method:    "getTitle"
         mandatory: false
     date_envoi:
-        method:     "getDateEnvoi"
-        mandatory:  false
-        formatter:  "formatDate"
+        method:    "getDateEnvoi"
+        mandatory: false
+        formatter: "formatDate"
     language:
         method:    "getLanguage"
         mandatory: false

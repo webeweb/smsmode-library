@@ -43,7 +43,7 @@ class RetrievingSMSReplyResponse extends AbstractResponse {
      * @param SMSReply $smsReply The SMS reply.
      * @return RetrievingSMSReplyResponse Returns this retrieving SMS reply response.
      */
-    public function addSMSReply(SMSReply $smsReply) {
+    public function addSMSReply(SMSReply $smsReply): RetrievingSMSReplyResponse {
         $this->smsReplies[] = $smsReply;
         return $this;
     }
@@ -53,7 +53,7 @@ class RetrievingSMSReplyResponse extends AbstractResponse {
      *
      * @return SMSReply[] Returns the SMS replies.
      */
-    public function getSMSReplies() {
+    public function getSMSReplies(): array {
         return $this->smsReplies;
     }
 
@@ -62,7 +62,7 @@ class RetrievingSMSReplyResponse extends AbstractResponse {
      *
      * @return bool Returns true in cas of success, false otherwise.
      */
-    public function hasSMSReply() {
+    public function hasSMSReply(): bool {
         return 0 < count($this->smsReplies);
     }
 
@@ -72,7 +72,7 @@ class RetrievingSMSReplyResponse extends AbstractResponse {
      * @param SMSReply[] $smsReplies The SMS replies.
      * @return RetrievingSMSReplyResponse Returns this retrieving SMS reply response.
      */
-    protected function setSMSReplies($smsReplies) {
+    protected function setSMSReplies(array $smsReplies): RetrievingSMSReplyResponse {
         $this->smsReplies = $smsReplies;
         return $this;
     }

@@ -27,7 +27,7 @@ class StringAccessTokenTraitTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testSetAccessToken() {
+    public function testSetAccessToken(): void {
 
         $obj = new TestStringAccessTokenTrait();
 
@@ -40,7 +40,7 @@ class StringAccessTokenTraitTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function test__construct() {
+    public function test__construct(): void {
 
         $obj = new TestStringAccessTokenTrait();
 

@@ -31,7 +31,7 @@ class AccountBalanceRequest extends AbstractRequest {
     /**
      * {@inheritdoc}
      */
-    public function getResourcePath() {
+    public function getResourcePath(): string {
         return self::ACCOUNT_BALANCE_RESOURCE_PATH;
     }
 }

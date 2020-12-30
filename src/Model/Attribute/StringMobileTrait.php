@@ -22,25 +22,25 @@ trait StringMobileTrait {
     /**
      * Mobile.
      *
-     * @var string
+     * @var string|null
      */
     private $mobile;
 
     /**
      * Get the mobile.
      *
-     * @return string Returns the mobile.
+     * @return string|null Returns the mobile.
      */
-    public function getMobile() {
+    public function getMobile(): ?string {
         return $this->mobile;
     }
 
     /**
      * Set the mobile.
      *
-     * @param string $mobile The mobile.
+     * @param string|null $mobile The mobile.
      */
-    public function setMobile($mobile) {
+    public function setMobile(?string $mobile): self {
         $this->mobile = $mobile;
         return $this;
     }

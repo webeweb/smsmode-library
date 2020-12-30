@@ -12,8 +12,9 @@
 namespace WBW\Library\SMSMode\Model\Response;
 
 use DateTime;
-use WBW\Library\SMSMode\Model\Attribute\StringAccessTokenTrait;
+use WBW\Library\Core\Model\Attribute\StringIdTrait;
 use WBW\Library\SMSMode\Model\AbstractResponse;
+use WBW\Library\SMSMode\Model\Attribute\StringAccessTokenTrait;
 
 /**
  * Creating API key response.
@@ -24,18 +25,19 @@ use WBW\Library\SMSMode\Model\AbstractResponse;
 class CreatingAPIKeyResponse extends AbstractResponse {
 
     use StringAccessTokenTrait;
+    use StringIdTrait;
 
     /**
      * Account.
      *
-     * @var string
+     * @var string|null
      */
     private $account;
 
     /**
      * Creation date.
      *
-     * @var DateTime
+     * @var DateTime|null
      */
     private $creationDate;
 
@@ -49,85 +51,69 @@ class CreatingAPIKeyResponse extends AbstractResponse {
     /**
      * Expiration.
      *
-     * @var DateTime
+     * @var DateTime|null
      */
     private $expiration;
 
     /**
-     * Id.
-     *
-     * @var string
-     */
-    private $id;
-
-    /**
      * State.
      *
-     * @var string
+     * @var string|null
      */
     private $state;
 
     /**
      * Get the account.
      *
-     * @return string Returns the account.
+     * @return string|null Returns the account.
      */
-    public function getAccount() {
+    public function getAccount(): ?string {
         return $this->account;
     }
 
     /**
      * Get the creation date.
      *
-     * @return DateTime Returns the creation date.
+     * @return DateTime|null Returns the creation date.
      */
-    public function getCreationDate() {
+    public function getCreationDate(): ?DateTime {
         return $this->creationDate;
     }
 
     /**
      * Get the exception.
      *
-     * @return array Returns the exception.
+     * @return array|null Returns the exception.
      */
-    public function getException() {
+    public function getException(): ?array {
         return $this->exception;
     }
 
     /**
      * Get the expiration.
      *
-     * @return DateTime Returns the expiration.
+     * @return DateTime|null Returns the expiration.
      */
-    public function getExpiration() {
+    public function getExpiration(): ?DateTime {
         return $this->expiration;
-    }
-
-    /**
-     * Get the id.
-     *
-     * @return string Returns the id.
-     */
-    public function getId() {
-        return $this->id;
     }
 
     /**
      * Get the state.
      *
-     * @return string Returns the state.
+     * @return string|null Returns the state.
      */
-    public function getState() {
+    public function getState(): ?string {
         return $this->state;
     }
 
     /**
      * Set the account.
      *
-     * @param string $account The account.
+     * @param string|null $account The account.
      * @return CreatingAPIKeyResponse Returns this creating API key response.
      */
-    public function setAccount($account) {
+    public function setAccount(?string $account): CreatingAPIKeyResponse {
         $this->account = $account;
         return $this;
     }
@@ -138,7 +124,7 @@ class CreatingAPIKeyResponse extends AbstractResponse {
      * @param DateTime|null $creationDate The creation date.
      * @return CreatingAPIKeyResponse Returns this creating API key response.
      */
-    public function setCreationDate(DateTime $creationDate = null) {
+    public function setCreationDate(?DateTime $creationDate): CreatingAPIKeyResponse {
         $this->creationDate = $creationDate;
         return $this;
     }
@@ -149,7 +135,7 @@ class CreatingAPIKeyResponse extends AbstractResponse {
      * @param array $exception The exception.
      * @return CreatingAPIKeyResponse Returns this creating API key.
      */
-    public function setException(array $exception) {
+    public function setException(array $exception): CreatingAPIKeyResponse {
         $this->exception = $exception;
         return $this;
     }
@@ -160,29 +146,18 @@ class CreatingAPIKeyResponse extends AbstractResponse {
      * @param DateTime|null $expiration The expiration.
      * @return CreatingAPIKeyResponse Returns this creating API key response.
      */
-    public function setExpiration(DateTime $expiration = null) {
+    public function setExpiration(?DateTime $expiration): CreatingAPIKeyResponse {
         $this->expiration = $expiration;
-        return $this;
-    }
-
-    /**
-     * Set the id.
-     *
-     * @param string $id The id.
-     * @return CreatingAPIKeyResponse Returns this creating API key response.
-     */
-    public function setId($id) {
-        $this->id = $id;
         return $this;
     }
 
     /**
      * Set the state.
      *
-     * @param string $state The state.
+     * @param string|null $state The state.
      * @return CreatingAPIKeyResponse Returns this creating API key response.
      */
-    public function setState($state) {
+    public function setState(?string $state): CreatingAPIKeyResponse {
         $this->state = $state;
         return $this;
     }

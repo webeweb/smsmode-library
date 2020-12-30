@@ -53,7 +53,7 @@ class RequestFactory {
      *
      * @return AccountBalanceRequest Returns the account balance request.
      */
-    public static function newAccountBalanceRequest() {
+    public static function newAccountBalanceRequest(): AccountBalanceRequest {
         return new AccountBalanceRequest();
     }
 
@@ -63,7 +63,7 @@ class RequestFactory {
      * @param AddingContactInterface $addingContact The adding contact.
      * @return AddingContactRequest Returns the adding contact request.
      */
-    public static function newAddingContactRequest(AddingContactInterface $addingContact) {
+    public static function newAddingContactRequest(AddingContactInterface $addingContact): AddingContactRequest {
 
         $model = new AddingContactRequest();
         $model->setDate($addingContact->getSMSModeDate());
@@ -83,7 +83,7 @@ class RequestFactory {
      * @param CheckingSMSMessageStatusInterface $checkingSMSMessageStatus the checking SMS message status.
      * @return CheckingSMSMessageStatusRequest Returns the checking SMS message status request.
      */
-    public static function newCheckingSMSMessageStatusRequest(CheckingSMSMessageStatusInterface $checkingSMSMessageStatus) {
+    public static function newCheckingSMSMessageStatusRequest(CheckingSMSMessageStatusInterface $checkingSMSMessageStatus): CheckingSMSMessageStatusRequest {
 
         $model = new CheckingSMSMessageStatusRequest();
         $model->setSmsID($checkingSMSMessageStatus->getSMSModeSmsID());
@@ -96,7 +96,7 @@ class RequestFactory {
      *
      * @return CreatingAPIKeyRequest Returns the creating API key request.
      */
-    public static function newCreatingAPIKeyRequest() {
+    public static function newCreatingAPIKeyRequest(): CreatingAPIKeyRequest {
         return new CreatingAPIKeyRequest();
     }
 
@@ -106,7 +106,7 @@ class RequestFactory {
      * @param CreatingSubAccountInterface $creatingSubAccount the creating sub-account.
      * @return CreatingSubAccountRequest Returns the creating sub-account request.
      */
-    public static function newCreatingSubAccountRequest(CreatingSubAccountInterface $creatingSubAccount) {
+    public static function newCreatingSubAccountRequest(CreatingSubAccountInterface $creatingSubAccount): CreatingSubAccountRequest {
 
         $model = new CreatingSubAccountRequest();
         $model->setAdresse($creatingSubAccount->getSMSModeAdresse());
@@ -133,7 +133,7 @@ class RequestFactory {
      * @param DeletingSMSInterface $deletingSMS the deleting SMS.
      * @return DeletingSMSRequest Returns the deleting SMS request.
      */
-    public static function newDeletingSMSRequest(DeletingSMSInterface $deletingSMS) {
+    public static function newDeletingSMSRequest(DeletingSMSInterface $deletingSMS): DeletingSMSRequest {
 
         $model = new DeletingSMSRequest();
         $model->setNumero($deletingSMS->getSMSModeNumero());
@@ -148,7 +148,7 @@ class RequestFactory {
      * @param DeletingSubAccountInterface $deletingSubAccount the deleting sub-account.
      * @return DeletingSubAccountRequest Returns the deleting sub-account status request.
      */
-    public static function newDeletingSubAccountRequest(DeletingSubAccountInterface $deletingSubAccount) {
+    public static function newDeletingSubAccountRequest(DeletingSubAccountInterface $deletingSubAccount): DeletingSubAccountRequest {
 
         $model = new DeletingSubAccountRequest();
         $model->setPseudoToDelete($deletingSubAccount->getSMSModePseudoToDelete());
@@ -162,7 +162,7 @@ class RequestFactory {
      * @param DeliveryReportInterface $deliveryReport the delivery report.
      * @return DeliveryReportRequest Returns the delivery report request.
      */
-    public static function newDeliveryReportRequest(DeliveryReportInterface $deliveryReport) {
+    public static function newDeliveryReportRequest(DeliveryReportInterface $deliveryReport): DeliveryReportRequest {
 
         $model = new DeliveryReportRequest();
         $model->setSmsID($deliveryReport->getSMSModeSmsID());
@@ -176,7 +176,7 @@ class RequestFactory {
      * @param RetrievingSMSReplyInterface $retrievingSMSReply the retrieving SMS reply.
      * @return RetrievingSMSReplyRequest Returns the retrieving SMS reply request.
      */
-    public static function newRetrievingSMSReplyRequest(RetrievingSMSReplyInterface $retrievingSMSReply) {
+    public static function newRetrievingSMSReplyRequest(RetrievingSMSReplyInterface $retrievingSMSReply): RetrievingSMSReplyRequest {
 
         $model = new RetrievingSMSReplyRequest();
         $model->setOffset($retrievingSMSReply->getSMSModeOffset());
@@ -193,7 +193,7 @@ class RequestFactory {
      * @param SendingSMSBatchInterface $sendingSMSBatch the sending SMS batch.
      * @return SendingSMSBatchRequest Returns the sending SMS batch request.
      */
-    public static function newSendingSMSBatchRequest(SendingSMSBatchInterface $sendingSMSBatch) {
+    public static function newSendingSMSBatchRequest(SendingSMSBatchInterface $sendingSMSBatch): SendingSMSBatchRequest {
 
         $model = new SendingSMSBatchRequest();
         $model->setClasseMsg($sendingSMSBatch->getSMSModeClasseMsg());
@@ -213,7 +213,7 @@ class RequestFactory {
      * @param SendingSMSMessageInterface $sendingSMSMessage the sending SMS message.
      * @return SendingSMSMessageRequest Returns the sending SMS message request.
      */
-    public static function newSendingSMSMessageRequest(SendingSMSMessageInterface $sendingSMSMessage) {
+    public static function newSendingSMSMessageRequest(SendingSMSMessageInterface $sendingSMSMessage): SendingSMSMessageRequest {
 
         $model = new SendingSMSMessageRequest();
         $model->setClasseMsg($sendingSMSMessage->getSMSModeClasseMsg());
@@ -239,7 +239,7 @@ class RequestFactory {
      * @param SendingTextToSpeechSMSInterface $sendingTextToSpeechSMS the sending text-to-speech SMS.
      * @return SendingTextToSpeechSMSRequest Returns the sending text-to-speech SMS request.
      */
-    public static function newSendingTextToSpeechSMSRequest(SendingTextToSpeechSMSInterface $sendingTextToSpeechSMS) {
+    public static function newSendingTextToSpeechSMSRequest(SendingTextToSpeechSMSInterface $sendingTextToSpeechSMS): SendingTextToSpeechSMSRequest {
 
         $model = new SendingTextToSpeechSMSRequest();
         $model->setDateEnvoi($sendingTextToSpeechSMS->getSMSModeDateEnvoi());
@@ -259,7 +259,7 @@ class RequestFactory {
      * @param SendingUnicodeSMSInterface $sendingUnicodeSMS the sending unicode SMS.
      * @return SendingUnicodeSMSRequest Returns the sending unicode SMS request.
      */
-    public static function newSendingUnicodeSMSRequest(SendingUnicodeSMSInterface $sendingUnicodeSMS) {
+    public static function newSendingUnicodeSMSRequest(SendingUnicodeSMSInterface $sendingUnicodeSMS): SendingUnicodeSMSRequest {
 
         $model = new SendingUnicodeSMSRequest();
         $model->setClasseMsg($sendingUnicodeSMS->getSMSModeClasseMsg());
@@ -285,7 +285,7 @@ class RequestFactory {
      * @param SentSMSMessageListInterface $sentSMSMessageList the sent SMS message list.
      * @return SentSMSMessageListRequest Returns the sent SMS message list request.
      */
-    public static function newSentSMSMessageListRequest(SentSMSMessageListInterface $sentSMSMessageList) {
+    public static function newSentSMSMessageListRequest(SentSMSMessageListInterface $sentSMSMessageList): SentSMSMessageListRequest {
 
         $model = new SentSMSMessageListRequest();
         $model->setOffset($sentSMSMessageList->getSMSModeOffset());
@@ -299,7 +299,7 @@ class RequestFactory {
      * @param TransferringCreditsInterface $transferringCredits the transferring credits.
      * @return TransferringCreditsRequest Returns the transferring credits request.
      */
-    public static function newTransferringCreditsRequest(TransferringCreditsInterface $transferringCredits) {
+    public static function newTransferringCreditsRequest(TransferringCreditsInterface $transferringCredits): TransferringCreditsRequest {
 
         $model = new TransferringCreditsRequest();
         $model->setCreditAmount($transferringCredits->getSMSModeCreditAmount());

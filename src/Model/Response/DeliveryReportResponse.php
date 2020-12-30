@@ -43,7 +43,7 @@ class DeliveryReportResponse extends AbstractResponse {
      * @param DeliveryReport $deliveryReport The delivery report.
      * @return DeliveryReportResponse Returns this delivery report response.
      */
-    public function addDeliveryReport(DeliveryReport $deliveryReport) {
+    public function addDeliveryReport(DeliveryReport $deliveryReport): DeliveryReportResponse {
         $this->deliveryReports[] = $deliveryReport;
         return $this;
     }
@@ -53,7 +53,7 @@ class DeliveryReportResponse extends AbstractResponse {
      *
      * @return DeliveryReport[] Returns the delivery reports.
      */
-    public function getDeliveryReports() {
+    public function getDeliveryReports(): array {
         return $this->deliveryReports;
     }
 
@@ -62,7 +62,7 @@ class DeliveryReportResponse extends AbstractResponse {
      *
      * @return bool Returns true in case of success, false otherwise.
      */
-    public function hasDeliveryReport() {
+    public function hasDeliveryReport(): bool {
         return 0 < count($this->deliveryReports);
     }
 
@@ -72,9 +72,8 @@ class DeliveryReportResponse extends AbstractResponse {
      * @param DeliveryReport[] $deliveryReports The delivery reports.
      * @return DeliveryReportResponse Returns this delivery report response.
      */
-    protected function setDeliveryReports($deliveryReports) {
+    protected function setDeliveryReports(array $deliveryReports): DeliveryReportResponse {
         $this->deliveryReports = $deliveryReports;
         return $this;
     }
-
 }

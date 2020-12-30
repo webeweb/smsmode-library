@@ -29,7 +29,7 @@ class IntegerOffsetTraitTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testSetOffset() {
+    public function testSetOffset(): void {
 
         $obj = new TestIntegerOffsetTrait();
 
@@ -42,7 +42,7 @@ class IntegerOffsetTraitTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testSetOffsetWithInvalidArgumentException() {
+    public function testSetOffsetWithInvalidArgumentException(): void {
 
         $obj = new TestIntegerOffsetTrait();
 
@@ -61,7 +61,7 @@ class IntegerOffsetTraitTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function test__construct() {
+    public function test__construct(): void {
 
         $obj = new TestIntegerOffsetTrait();
 

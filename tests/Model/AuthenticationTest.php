@@ -27,7 +27,7 @@ class AuthenticationTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testSetPass() {
+    public function testSetPass(): void {
 
         $obj = new Authentication();
 
@@ -40,7 +40,7 @@ class AuthenticationTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testSetPseudo() {
+    public function testSetPseudo(): void {
 
         $obj = new Authentication();
 
@@ -53,7 +53,7 @@ class AuthenticationTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function test__construct() {
+    public function test__construct(): void {
 
         $obj = new Authentication();
 

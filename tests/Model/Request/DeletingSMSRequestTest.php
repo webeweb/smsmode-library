@@ -27,7 +27,7 @@ class DeletingSMSRequestTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function test__construct() {
+    public function test__construct(): void {
 
         $this->assertEquals("/http/1.6/deleteSMS.do", DeletingSMSRequest::DELETING_SMS_RESOURCE_PATH);
 

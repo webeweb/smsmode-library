@@ -11,8 +11,8 @@
 
 namespace WBW\Library\SMSMode\Model\Request;
 
-use WBW\Library\SMSMode\Model\Attribute\IntegerOffsetTrait;
 use WBW\Library\SMSMode\Model\AbstractRequest;
+use WBW\Library\SMSMode\Model\Attribute\IntegerOffsetTrait;
 
 /**
  * Sent SMS message list request.
@@ -34,7 +34,7 @@ class SentSMSMessageListRequest extends AbstractRequest {
     /**
      * {@inheritdoc}
      */
-    public function getResourcePath() {
+    public function getResourcePath(): string {
         return self::SENT_SMS_MESSAGE_LIST_RESOURCE_PATH;
     }
 }

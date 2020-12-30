@@ -24,98 +24,98 @@ interface CreatingSubAccountInterface extends SMSModeEntityInterface {
     /**
      * Get the adresse.
      *
-     * @return string Returns the adresse.
+     * @return string|null Returns the adresse.
      */
-    public function getSMSModeAdresse();
+    public function getSMSModeAdresse(): ?string;
 
     /**
      * Get the code postal.
      *
-     * @return string Returns the code postal.
+     * @return string|null Returns the code postal.
      */
-    public function getSMSModeCodePostal();
+    public function getSMSModeCodePostal(): ?string;
 
     /**
      * Get the date.
      *
-     * @return DateTime Returns the date.
+     * @return DateTime|null Returns the date.
      */
-    public function getSMSModeDate();
+    public function getSMSModeDate(): ?Datetime;
 
     /**
      * Get the email.
      *
-     * @return string Returns the email.
+     * @return string|null Returns the email.
      */
-    public function getSMSModeEmail();
+    public function getSMSModeEmail(): ?string;
 
     /**
      * Get the fax.
      *
-     * @return string Returns the fax.
+     * @return string|null Returns the fax.
      */
-    public function getSMSModeFax();
+    public function getSMSModeFax(): ?string;
 
     /**
      * Get the mobile.
      *
-     * @return string Returns the mobile.
+     * @return string|null Returns the mobile.
      */
-    public function getSMSModeMobile();
+    public function getSMSModeMobile(): ?string;
 
     /**
      * Get the new pass.
      *
-     * @return string Returns the new pass.
+     * @return string|null Returns the new pass.
      */
-    public function getSMSModeNewPass();
+    public function getSMSModeNewPass(): ?string;
 
     /**
      * Get the new pseudo.
      *
-     * @return string Returns the new pseudo.
+     * @return string|null Returns the new pseudo.
      */
-    public function getSMSModeNewPseudo();
+    public function getSMSModeNewPseudo(): ?string;
 
     /**
      * Get the nom.
      *
-     * @return string Returns the nom.
+     * @return string|null Returns the nom.
      */
-    public function getSMSModeNom();
+    public function getSMSModeNom(): ?string;
 
     /**
      * Get the prenom.
      *
-     * @return string Returns the prenom.
+     * @return string|null Returns the prenom.
      */
-    public function getSMSModePrenom();
+    public function getSMSModePrenom(): ?string;
 
     /**
      * Get the reference.
      *
-     * @return string Returns the reference.
+     * @return string|null Returns the reference.
      */
-    public function getSMSModeReference();
+    public function getSMSModeReference(): ?string;
 
     /**
      * Get the societe.
      *
-     * @return string Returns the societe.
+     * @return string|null Returns the societe.
      */
-    public function getSMSModeSociete();
+    public function getSMSModeSociete(): ?string;
 
     /**
      * Get the telephone.
      *
-     * @return string Returns the telephone.
+     * @return string|null Returns the telephone.
      */
-    public function getSMSModeTelephone();
+    public function getSMSModeTelephone(): ?string;
 
     /**
      * Get the ville.
      *
-     * @return string Returns the ville.
+     * @return string|null Returns the ville.
      */
-    public function getSMSModeVille();
+    public function getSMSModeVille(): ?string;
 }

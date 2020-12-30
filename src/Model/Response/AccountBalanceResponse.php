@@ -24,26 +24,26 @@ class AccountBalanceResponse extends AbstractResponse {
     /**
      * Account balance.
      *
-     * @var float
+     * @var float|null
      */
     private $accountBalance;
 
     /**
      * Get the account balance.
      *
-     * @return float Returns the account balance.
+     * @return float|null Returns the account balance.
      */
-    public function getAccountBalance() {
+    public function getAccountBalance(): ?float {
         return $this->accountBalance;
     }
 
     /**
      * Set the account balance.
      *
-     * @param float $accountBalance The account balance.
+     * @param float|null $accountBalance The account balance.
      * @return AccountBalanceResponse Returns this account balance response.
      */
-    public function setAccountBalance($accountBalance) {
+    public function setAccountBalance(?float $accountBalance): AccountBalanceResponse {
         $this->accountBalance = $accountBalance;
         return $this;
     }

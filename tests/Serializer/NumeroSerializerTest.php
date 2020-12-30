@@ -30,7 +30,7 @@ class NumeroSerializerTest extends AbstractTestCase {
      * @return void
      * @throws Exception Throws an exception if an error occurs.
      */
-    public function testCheckNumero() {
+    public function testCheckNumero(): void {
 
         $this->assertNull(NumeroSerializer::checkNumero("33600000000"));
     }
@@ -41,7 +41,7 @@ class NumeroSerializerTest extends AbstractTestCase {
      * @return void
      * @throws Exception Throws an exception if an error occurs.
      */
-    public function testCheckNumeroWithInvalidArgumentException() {
+    public function testCheckNumeroWithInvalidArgumentException(): void {
 
         try {
 
@@ -58,7 +58,7 @@ class NumeroSerializerTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testDeserializeNumero() {
+    public function testDeserializeNumero(): void {
 
         $this->assertEquals("0612345678", NumeroSerializer::deserializeNumero("33612345678"));
         $this->assertEquals("0712345678", NumeroSerializer::deserializeNumero("33712345678"));
@@ -71,7 +71,7 @@ class NumeroSerializerTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testSerializeNumero() {
+    public function testSerializeNumero(): void {
 
         $this->assertEquals("33612345678", NumeroSerializer::serializeNumero("0612345678"));
         $this->assertEquals("33712345678", NumeroSerializer::serializeNumero("0712345678"));

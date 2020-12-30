@@ -24,28 +24,28 @@ interface RetrievingSMSReplyInterface extends SMSModeEntityInterface {
     /**
      * Get the end date.
      *
-     * @return DateTime Returns the end date.
+     * @return DateTime|null Returns the end date.
      */
-    public function getSMSModeEndDate();
+    public function getSMSModeEndDate(): ?DateTime;
 
     /**
      * Get the offset.
      *
-     * @return int Returns the offset.
+     * @return int|null Returns the offset.
      */
-    public function getSMSModeOffset();
+    public function getSMSModeOffset(): ?int;
 
     /**
      * Get the start.
      *
-     * @return int Returns the start.
+     * @return int|null Returns the start.
      */
-    public function getSMSModeStart();
+    public function getSMSModeStart(): ?int;
 
     /**
      * Get the start date.
      *
-     * @return DateTime Returns the start date.
+     * @return DateTime|null Returns the start date.
      */
-    public function getSMSModeStartDate();
+    public function getSMSModeStartDate(): ?DateTime;
 }

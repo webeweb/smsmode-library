@@ -12,9 +12,9 @@
 namespace WBW\Library\SMSMode\Model\Request;
 
 use UnexpectedValueException;
+use WBW\Library\SMSMode\Model\AbstractRequest;
 use WBW\Library\SMSMode\Model\Attribute\StringNumeroTrait;
 use WBW\Library\SMSMode\Model\Attribute\StringSmsIDTrait;
-use WBW\Library\SMSMode\Model\AbstractRequest;
 use WBW\Library\SMSMode\Serializer\NumeroSerializer;
 
 /**
@@ -38,18 +38,18 @@ class DeletingSMSRequest extends AbstractRequest {
     /**
      * {@inheritdoc}
      */
-    public function getResourcePath() {
+    public function getResourcePath(): string {
         return self::DELETING_SMS_RESOURCE_PATH;
     }
 
     /**
      * Set the numero.
      *
-     * @param string $numero The numero.
+     * @param string|null $numero The numero.
      * @return DeletingSMSRequest Returns this deleting SMS request.
      * @throws UnexpectedValueException Throws an unexpected value exception if the numero is invalid.
      */
-    public function setNumero($numero) {
+    public function setNumero(?string $numero): DeletingSMSRequest {
         NumeroSerializer::checkNumero($numero);
         $this->numero = $numero;
         return $this;

@@ -24,26 +24,26 @@ class SendingSMSBatchResponse extends AbstractResponse {
     /**
      * Campagne ID.
      *
-     * @var string
+     * @var string|null
      */
     private $campagneID;
 
     /**
      * Get the campagne ID.
      *
-     * @return string Returns the campagne ID.
+     * @return string|null Returns the campagne ID.
      */
-    public function getCampagneID() {
+    public function getCampagneID(): ?string {
         return $this->campagneID;
     }
 
     /**
      * Set the campagne ID.
      *
-     * @param string $campagneID The campagne ID.
+     * @param string|null $campagneID The campagne ID.
      * @return SendingSMSBatchResponse Returns this sending SMS batch response.
      */
-    public function setCampagneID($campagneID) {
+    public function setCampagneID(?string $campagneID): SendingSMSBatchResponse {
         $this->campagneID = $campagneID;
         return $this;
     }

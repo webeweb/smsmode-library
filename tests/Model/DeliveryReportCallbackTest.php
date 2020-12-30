@@ -27,12 +27,12 @@ class DeliveryReportCallbackTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testSetMccMnc() {
+    public function testSetMccMnc(): void {
 
         $obj = new DeliveryReportCallback();
 
-        $obj->setMccMnc("mccMnc");
-        $this->assertEquals("mccMnc", $obj->getMccMnc());
+        $obj->setMccMnc(0);
+        $this->assertEquals(0, $obj->getMccMnc());
     }
 
     /**
@@ -40,7 +40,7 @@ class DeliveryReportCallbackTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testSetStatus() {
+    public function testSetStatus(): void {
 
         $obj = new DeliveryReportCallback();
 
@@ -53,7 +53,7 @@ class DeliveryReportCallbackTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function test__construct() {
+    public function test__construct(): void {
 
         $obj = new DeliveryReportCallback();
 

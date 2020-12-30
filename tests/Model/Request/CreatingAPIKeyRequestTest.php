@@ -27,7 +27,7 @@ class CreatingAPIKeyRequestTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function test__construct() {
+    public function test__construct(): void {
 
         $this->assertEquals("/http/2.0/createAuthorisation.do", CreatingAPIKeyRequest::CREATING_API_KEY_RESOURCE_PATH);
 
@@ -35,5 +35,4 @@ class CreatingAPIKeyRequestTest extends AbstractTestCase {
 
         $this->assertEquals(CreatingAPIKeyRequest::CREATING_API_KEY_RESOURCE_PATH, $obj->getResourcePath());
     }
-
 }

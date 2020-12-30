@@ -29,7 +29,7 @@ class CreatingAPIKeyResponseTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testSetAccount() {
+    public function testSetAccount(): void {
 
         $obj = new CreatingAPIKeyResponse();
 
@@ -43,7 +43,7 @@ class CreatingAPIKeyResponseTest extends AbstractTestCase {
      * @return void
      * @throws Exception Throws an exception if an error occurs.
      */
-    public function testSetCreationDate() {
+    public function testSetCreationDate(): void {
 
         // Set a Date/time mock.
         $creationDate = new DateTime();
@@ -59,7 +59,7 @@ class CreatingAPIKeyResponseTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testSetException() {
+    public function testSetException(): void {
 
         $obj = new CreatingAPIKeyResponse();
 
@@ -73,7 +73,7 @@ class CreatingAPIKeyResponseTest extends AbstractTestCase {
      * @return void
      * @throws Exception Throws an exception if an error occurs.
      */
-    public function testSetExpiration() {
+    public function testSetExpiration(): void {
 
         // Set a Date/time mock.
         $expiration = new DateTime();
@@ -85,24 +85,11 @@ class CreatingAPIKeyResponseTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the setId() method.
-     *
-     * @return void
-     */
-    public function testSetId() {
-
-        $obj = new CreatingAPIKeyResponse();
-
-        $obj->setId("id");
-        $this->assertEquals("id", $obj->getId());
-    }
-
-    /**
      * Tests the setState() method.
      *
      * @return void
      */
-    public function testSetState() {
+    public function testSetState(): void {
 
         $obj = new CreatingAPIKeyResponse();
 
@@ -115,7 +102,7 @@ class CreatingAPIKeyResponseTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function test__construct() {
+    public function test__construct(): void {
 
         $obj = new CreatingAPIKeyResponse();
 

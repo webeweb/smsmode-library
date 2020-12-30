@@ -24,77 +24,77 @@ interface SendingSMSMessageInterface extends SMSModeEntityInterface {
     /**
      * Get the classe msg.
      *
-     * @return int Returns the classe msg.
+     * @return int|null Returns the classe msg.
      */
-    public function getSMSModeClasseMsg();
+    public function getSMSModeClasseMsg(): ?int;
 
     /**
      * Get the date envoi.
      *
-     * @return DateTime Returns the date envoi.
+     * @return DateTime|null Returns the date envoi.
      */
-    public function getSMSModeDateEnvoi();
+    public function getSMSModeDateEnvoi(): ?DateTime;
 
     /**
      * Get the emetteur.
      *
-     * @return string Returns the emetteur.
+     * @return string|null Returns the emetteur.
      */
-    public function getSMSModeEmetteur();
+    public function getSMSModeEmetteur(): ?string;
 
     /**
      * Get the groupe.
      *
-     * @return string Returns the groupe.
+     * @return string|null Returns the groupe.
      */
-    public function getSMSModeGroupe();
+    public function getSMSModeGroupe(): ?string;
 
     /**
      * Get the message.
      *
-     * @return string Returns the message.
+     * @return string|null Returns the message.
      */
-    public function getSMSModeMessage();
+    public function getSMSModeMessage(): ?string;
 
     /**
      * Get the nbr msg.
      *
-     * @return int Returns the nbr msg.
+     * @return int|null Returns the nbr msg.
      */
-    public function getSMSModeNbrMsg();
+    public function getSMSModeNbrMsg(): ?int;
 
     /**
      * Get the notification URL.
      *
-     * @return string Returns the notification URL.
+     * @return string|null Returns the notification URL.
      */
-    public function getSMSModeNotificationUrl();
+    public function getSMSModeNotificationUrl(): ?string;
 
     /**
      * Get the notification URL reponse.
      *
-     * @return string Returns the notification URL reponse.
+     * @return string|null Returns the notification URL reponse.
      */
-    public function getSMSModeNotificationUrlReponse();
+    public function getSMSModeNotificationUrlReponse(): ?string;
 
     /**
      * Get the numero.
      *
      * @return string[] Returns the numero.
      */
-    public function getSMSModeNumero();
+    public function getSMSModeNumero(): array;
 
     /**
      * Get the ref client.
      *
-     * @return string Returns the ref client.
+     * @return string|null Returns the ref client.
      */
-    public function getSMSModeRefClient();
+    public function getSMSModeRefClient(): ?string;
 
     /**
      * Get the stop.
      *
-     * @return int Returns the stop.
+     * @return int|null Returns the stop.
      */
-    public function getSMSModeStop();
+    public function getSMSModeStop(): ?int;
 }

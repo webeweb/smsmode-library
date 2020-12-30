@@ -27,7 +27,7 @@ class SendingSMSBatchResponseTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testSetCampagneID() {
+    public function testSetCampagneID(): void {
 
         $obj = new SendingSMSBatchResponse();
 
@@ -40,7 +40,7 @@ class SendingSMSBatchResponseTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function test__construct() {
+    public function test__construct(): void {
 
         $obj = new SendingSMSBatchResponse();
 

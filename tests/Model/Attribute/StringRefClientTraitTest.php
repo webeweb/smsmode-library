@@ -27,7 +27,7 @@ class StringRefClientTraitTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testSetRefClient() {
+    public function testSetRefClient(): void {
 
         $obj = new TestStringRefClientTrait();
 
@@ -40,7 +40,7 @@ class StringRefClientTraitTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function test__construct() {
+    public function test__construct(): void {
 
         $obj = new TestStringRefClientTrait();
 

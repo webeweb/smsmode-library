@@ -11,15 +11,15 @@
 
 namespace WBW\Library\SMSMode\Tests\Fixtures\Model\Attribute;
 
-use WBW\Library\SMSMode\Model\Attribute\StringReferenceTrait;
+use WBW\Library\SMSMode\Model\Attribute\StringResponseIDTrait;
 
 /**
- * Test string reference trait.
+ * Test string response ID trait.
  *
  * @author webeweb <https://github.com/webeweb/>
  * @package WBW\Library\SMSMode\Tests\Fixtures\Model\Attribute
  */
-class TestStringReferenceTrait {
+class TestStringResponseIDTrait {
 
-    use StringReferenceTrait;
+    use StringResponseIDTrait;
 }

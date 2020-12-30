@@ -13,13 +13,13 @@ namespace WBW\Library\SMSMode\Model\Request;
 
 use InvalidArgumentException;
 use WBW\Library\SMSMode\API\SendingSMSBatchInterface;
+use WBW\Library\SMSMode\Model\AbstractRequest;
 use WBW\Library\SMSMode\Model\Attribute\DateTimeDateEnvoiTrait;
 use WBW\Library\SMSMode\Model\Attribute\IntegerClasseMsgTrait;
 use WBW\Library\SMSMode\Model\Attribute\IntegerNbrMsgTrait;
 use WBW\Library\SMSMode\Model\Attribute\StringEmetteurTrait;
 use WBW\Library\SMSMode\Model\Attribute\StringNotificationUrlTrait;
 use WBW\Library\SMSMode\Model\Attribute\StringRefClientTrait;
-use WBW\Library\SMSMode\Model\AbstractRequest;
 
 /**
  * Sending SMS batch request.
@@ -46,34 +46,34 @@ class SendingSMSBatchRequest extends AbstractRequest implements SendingSMSBatchI
     /**
      * Fichier.
      *
-     * @var string
+     * @var string|null
      */
     private $fichier;
 
     /**
      * Get the fichier.
      *
-     * @return string Returns the fichier.
+     * @return string|null Returns the fichier.
      */
-    public function getFichier() {
+    public function getFichier(): ?string {
         return $this->fichier;
     }
 
     /**
      * {@inheritdoc}
      */
-    public function getResourcePath() {
+    public function getResourcePath(): string {
         return self::SENDING_SMS_BATCH_RESOURCE_PATH;
     }
 
     /**
      * Set the fichier.
      *
-     * @param string $fichier The fichier.
+     * @param string|null $fichier The fichier.
      * @return SendingSMSBatchRequest Returns this sending SMS batch request.
      * @throws InvalidArgumentException Throws an invalid argument exception if the file does not exist.
      */
-    public function setFichier($fichier) {
+    public function setFichier(?string $fichier): SendingSMSBatchRequest {
         if (false === realpath($fichier)) {
             throw new InvalidArgumentException(sprintf('File "%s" could not be found.', $fichier));
         }

@@ -51,7 +51,7 @@ class AddingContactRequest extends AbstractRequest {
     /**
      * Other.
      *
-     * @var string
+     * @var string|null
      */
     private $other;
 
@@ -69,7 +69,7 @@ class AddingContactRequest extends AbstractRequest {
      * @param string $groupe The groupe.
      * @return AddingContactRequest Returns this adding contact request.
      */
-    public function addGroupe($groupe) {
+    public function addGroupe(string $groupe): AddingContactRequest {
         $this->groupes[] = $groupe;
         return $this;
     }
@@ -79,23 +79,23 @@ class AddingContactRequest extends AbstractRequest {
      *
      * @return string[] Returns the groupes.
      */
-    public function getGroupes() {
+    public function getGroupes(): array {
         return $this->groupes;
     }
 
     /**
      * Get the other.
      *
-     * @return string Returns the other.
+     * @return string|null Returns the other.
      */
-    public function getOther() {
+    public function getOther(): ?string {
         return $this->other;
     }
 
     /**
      * {@inheritdoc}
      */
-    public function getResourcePath() {
+    public function getResourcePath(): string {
         return self::ADDING_CONTACT_RESOURCE_PATH;
     }
 
@@ -105,7 +105,7 @@ class AddingContactRequest extends AbstractRequest {
      * @param string[] $groupes The groupes.
      * @return AddingContactRequest Returns this adding contact request.
      */
-    public function setGroupes(array $groupes = []) {
+    public function setGroupes(array $groupes = []): AddingContactRequest {
         $this->groupes = $groupes;
         return $this;
     }
@@ -113,11 +113,11 @@ class AddingContactRequest extends AbstractRequest {
     /**
      * Set the mobile.
      *
-     * @param string $mobile The mobile.
+     * @param string|null $mobile The mobile.
      * @return AddingContactRequest Returns this adding contact request.
      * @throws UnexpectedValueException Throws an unexpected value exception if the numero is invalid.
      */
-    public function setMobile($mobile) {
+    public function setMobile(?string $mobile): AddingContactRequest {
         NumeroSerializer::checkNumero($mobile);
         $this->mobile = $mobile;
         return $this;
@@ -126,10 +126,10 @@ class AddingContactRequest extends AbstractRequest {
     /**
      * Set the other.
      *
-     * @param string $other The other.
+     * @param string|null $other The other.
      * @return AddingContactRequest Returns this adding contact request.
      */
-    public function setOther($other) {
+    public function setOther(?string $other): AddingContactRequest {
         $this->other = $other;
         return $this;
     }

@@ -15,6 +15,7 @@ use DateTime;
 use WBW\Library\Core\Model\Attribute\StringFromTrait;
 use WBW\Library\Core\Model\Attribute\StringTextTrait;
 use WBW\Library\Core\Model\Attribute\StringToTrait;
+use WBW\Library\SMSMode\Model\Attribute\StringResponseIDTrait;
 
 /**
  * SMS reply.
@@ -25,64 +26,49 @@ use WBW\Library\Core\Model\Attribute\StringToTrait;
 class SMSReply extends AbstractResponse {
 
     use StringFromTrait;
+    use StringResponseIDTrait;
     use StringTextTrait;
     use StringToTrait;
 
     /**
      * Message id.
      *
-     * @var string
+     * @var string|null
      */
     private $messageID;
 
     /**
      * Reception date.
      *
-     * @var DateTime
+     * @var DateTime|null
      */
     private $receptionDate;
 
     /**
-     * Response ID.
-     *
-     * @var string
-     */
-    private $responseID;
-
-    /**
      * Get the message id.
      *
-     * @return string Returns the message id.
+     * @return string|null Returns the message id.
      */
-    public function getMessageID() {
+    public function getMessageID(): ?string {
         return $this->messageID;
     }
 
     /**
      * Get the reception date.
      *
-     * @return DateTime Returns the reception date.
+     * @return DateTime|null Returns the reception date.
      */
-    public function getReceptionDate() {
+    public function getReceptionDate(): ?DateTime {
         return $this->receptionDate;
-    }
-
-    /**
-     * Get the response id.
-     *
-     * @return string Returns the response id.
-     */
-    public function getResponseID() {
-        return $this->responseID;
     }
 
     /**
      * Set the message id.
      *
-     * @param string $messageID The message id.
+     * @param string|null $messageID The message id.
      * @return SMSReply Returns this retrieving SMS reply.
      */
-    public function setMessageID($messageID) {
+    public function setMessageID(?string $messageID): SMSReply {
         $this->messageID = $messageID;
         return $this;
     }
@@ -93,19 +79,8 @@ class SMSReply extends AbstractResponse {
      * @param DateTime|null $receptionDate The reception date.
      * @return SMSReply Returns this retrieving SMS reply.
      */
-    public function setReceptionDate(DateTime $receptionDate = null) {
+    public function setReceptionDate(?DateTime $receptionDate): SMSReply {
         $this->receptionDate = $receptionDate;
-        return $this;
-    }
-
-    /**
-     * Set the response id.
-     *
-     * @param string $responseID The response id.
-     * @return SMSReply Returns this retrieving SMS reply.
-     */
-    public function setResponseID($responseID) {
-        $this->responseID = $responseID;
         return $this;
     }
 }

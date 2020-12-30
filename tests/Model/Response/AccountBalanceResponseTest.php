@@ -27,7 +27,7 @@ class AccountBalanceResponseTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testSetAccountBalance() {
+    public function testSetAccountBalance(): void {
 
         $obj = new AccountBalanceResponse();
 
@@ -40,7 +40,7 @@ class AccountBalanceResponseTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function test__construct() {
+    public function test__construct(): void {
 
         $obj = new AccountBalanceResponse();
 

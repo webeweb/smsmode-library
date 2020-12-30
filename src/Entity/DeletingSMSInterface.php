@@ -22,14 +22,14 @@ interface DeletingSMSInterface extends SMSModeEntityInterface {
     /**
      * Get the numero.
      *
-     * @return string Returns the numero.
+     * @return string|null Returns the numero.
      */
-    public function getSMSModeNumero();
+    public function getSMSModeNumero(): ?string;
 
     /**
      * Get the SMS ID.
      *
-     * @return string Returns the SMS ID.
+     * @return string|null Returns the SMS ID.
      */
-    public function getSMSModeSmsID();
+    public function getSMSModeSmsID(): ?string;
 }

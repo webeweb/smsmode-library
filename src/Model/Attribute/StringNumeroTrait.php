@@ -22,25 +22,25 @@ trait StringNumeroTrait {
     /**
      * Numero.
      *
-     * @var string
+     * @var string|null
      */
     private $numero;
 
     /**
      * Get the numero.
      *
-     * @return string Returns the numero.
+     * @return string|null Returns the numero.
      */
-    public function getNumero() {
+    public function getNumero(): ?string {
         return $this->numero;
     }
 
     /**
      * Set the numero.
      *
-     * @param string $numero The numero.
+     * @param string|null $numero The numero.
      */
-    public function setNumero($numero) {
+    public function setNumero(?string $numero): self {
         $this->numero = $numero;
         return $this;
     }

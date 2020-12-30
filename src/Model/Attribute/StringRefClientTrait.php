@@ -22,25 +22,25 @@ trait StringRefClientTrait {
     /**
      * RefClient.
      *
-     * @var string
+     * @var string|null
      */
     private $refClient;
 
     /**
      * Get the refClient.
      *
-     * @return string Returns the refClient.
+     * @return string|null Returns the refClient.
      */
-    public function getRefClient() {
+    public function getRefClient(): ?string {
         return $this->refClient;
     }
 
     /**
      * Set the refClient.
      *
-     * @param string $refClient The refClient.
+     * @param string|null $refClient The refClient.
      */
-    public function setRefClient($refClient) {
+    public function setRefClient(?string $refClient): self {
         $this->refClient = $refClient;
         return $this;
     }

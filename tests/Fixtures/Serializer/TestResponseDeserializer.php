@@ -12,6 +12,9 @@
 namespace WBW\Library\SMSMode\Tests\Fixtures\Serializer;
 
 use WBW\Library\SMSMode\Model\AbstractResponse;
+use WBW\Library\SMSMode\Model\DeliveryReport;
+use WBW\Library\SMSMode\Model\SentSMSMessage;
+use WBW\Library\SMSMode\Model\SMSReply;
 use WBW\Library\SMSMode\Serializer\ResponseDeserializer;
 
 /**
@@ -25,28 +28,28 @@ class TestResponseDeserializer extends ResponseDeserializer {
     /**
      * {@inheritdoc}
      */
-    public static function deserializeDeliveryReport($rawResponse) {
+    public static function deserializeDeliveryReport(string $rawResponse): DeliveryReport {
         return parent::deserializeDeliveryReport($rawResponse);
     }
 
     /**
      * {@inheritdoc}
      */
-    public static function deserializeResponse(AbstractResponse $model, $rawResponse) {
-        return parent::deserializeResponse($model, $rawResponse);
+    public static function deserializeResponse(AbstractResponse $model, string $rawResponse): void {
+        parent::deserializeResponse($model, $rawResponse);
     }
 
     /**
      * {@inheritdoc}
      */
-    public static function deserializeSMSReply($rawResponse) {
+    public static function deserializeSMSReply(string $rawResponse): SMSReply {
         return parent::deserializeSMSReply($rawResponse);
     }
 
     /**
      * {@inheritdoc}
      */
-    public static function deserializeSentSMSMessage($rawResponse) {
+    public static function deserializeSentSMSMessage(string $rawResponse): SentSMSMessage {
         return parent::deserializeSentSMSMessage($rawResponse);
     }
 }

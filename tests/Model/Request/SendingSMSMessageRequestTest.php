@@ -31,7 +31,7 @@ class SendingSMSMessageRequestTest extends AbstractTestCase {
      * @return void
      * @throws Exception Throws an exception if an error occurs.
      */
-    public function testAddNumero() {
+    public function testAddNumero(): void {
 
         $obj = new SendingSMSMessageRequest();
 
@@ -44,7 +44,7 @@ class SendingSMSMessageRequestTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testEnumStop() {
+    public function testEnumStop(): void {
 
         $obj = new SendingSMSMessageRequest();
 
@@ -60,7 +60,7 @@ class SendingSMSMessageRequestTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testSetGroupe() {
+    public function testSetGroupe(): void {
 
         $obj = new SendingSMSMessageRequest();
 
@@ -73,7 +73,7 @@ class SendingSMSMessageRequestTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testSetNotificationUrlReponse() {
+    public function testSetNotificationUrlReponse(): void {
 
         $obj = new SendingSMSMessageRequest();
 
@@ -87,7 +87,7 @@ class SendingSMSMessageRequestTest extends AbstractTestCase {
      * @return void
      * @throws Exception Throws an exception if an error occurs.
      */
-    public function testSetStop() {
+    public function testSetStop(): void {
 
         $obj = new SendingSMSMessageRequest();
 
@@ -103,7 +103,7 @@ class SendingSMSMessageRequestTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testSetStopWithInvalidArgumentException() {
+    public function testSetStopWithInvalidArgumentException(): void {
 
         $obj = new SendingSMSMessageRequest();
 
@@ -122,7 +122,7 @@ class SendingSMSMessageRequestTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function test__construct() {
+    public function test__construct(): void {
 
         $this->assertEquals("/http/1.6/sendSMS.do", SendingSMSMessageRequest::SENDING_SMS_MESSAGE_RESOURCE_PATH);
 

@@ -30,7 +30,7 @@ class IntegerClasseMsgTraitTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testEnumClasseMsg() {
+    public function testEnumClasseMsg(): void {
 
         $obj = new TestIntegerClasseMsgTrait();
 
@@ -46,7 +46,7 @@ class IntegerClasseMsgTraitTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testSetClasseMsg() {
+    public function testSetClasseMsg(): void {
 
         $obj = new TestIntegerClasseMsgTrait();
 
@@ -62,7 +62,7 @@ class IntegerClasseMsgTraitTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testSetClasseMsgWithInvalidArgumentException() {
+    public function testSetClasseMsgWithInvalidArgumentException(): void {
 
         $obj = new TestIntegerClasseMsgTrait();
 
@@ -81,7 +81,7 @@ class IntegerClasseMsgTraitTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function test__construct() {
+    public function test__construct(): void {
 
         $obj = new TestIntegerClasseMsgTrait();
 

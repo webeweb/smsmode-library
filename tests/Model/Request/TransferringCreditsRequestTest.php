@@ -27,7 +27,7 @@ class TransferringCreditsRequestTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testSetCreditAmount() {
+    public function testSetCreditAmount(): void {
 
         $obj = new TransferringCreditsRequest();
 
@@ -40,7 +40,7 @@ class TransferringCreditsRequestTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testSetTargetPseudo() {
+    public function testSetTargetPseudo(): void {
 
         $obj = new TransferringCreditsRequest();
 
@@ -53,7 +53,7 @@ class TransferringCreditsRequestTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function test__construct() {
+    public function test__construct(): void {
 
         $this->assertEquals("/http/1.6/creditTransfert.do", TransferringCreditsRequest::TRANSFERRING_CREDITS_RESOURCE_PATH);
 

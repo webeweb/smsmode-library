@@ -24,26 +24,26 @@ trait IntegerOffsetTrait {
     /**
      * Offset.
      *
-     * @var int
+     * @var int|null
      */
     private $offset;
 
     /**
      * Get the offset.
      *
-     * @return int Returns the offset.
+     * @return int|null Returns the offset.
      */
-    public function getOffset() {
+    public function getOffset(): ?int {
         return $this->offset;
     }
 
     /**
      * Set the offset.
      *
-     * @param int $offset The offset.
+     * @param int|null $offset The offset.
      * @throws InvalidArgumentException Throws an invalid argument exception if the offset is less than 1.
      */
-    public function setOffset($offset) {
+    public function setOffset(?int $offset): self {
         if (null !== $offset && $offset < 1) {
             throw new InvalidArgumentException('The "offset" must be greater than 0');
         }

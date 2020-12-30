@@ -27,7 +27,7 @@ class StringNumeroTraitTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testSetNumero() {
+    public function testSetNumero(): void {
 
         $obj = new TestStringNumeroTrait();
 
@@ -40,7 +40,7 @@ class StringNumeroTraitTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function test__construct() {
+    public function test__construct(): void {
 
         $obj = new TestStringNumeroTrait();
 

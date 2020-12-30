@@ -30,7 +30,7 @@ class DateTimeDateEnvoiTraitTest extends AbstractTestCase {
      * @return void
      * @throws Exception Throws an exception if an error occurs.
      */
-    public function testSetDateEnvoi() {
+    public function testSetDateEnvoi(): void {
 
         // Set a Date envoi mock.
         $dateEnvoi = new DateTime();
@@ -46,7 +46,7 @@ class DateTimeDateEnvoiTraitTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function test__construct() {
+    public function test__construct(): void {
 
         $obj = new TestDateTimeDateEnvoiTrait();
 

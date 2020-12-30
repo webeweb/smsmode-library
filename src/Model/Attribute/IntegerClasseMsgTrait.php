@@ -25,16 +25,16 @@ trait IntegerClasseMsgTrait {
     /**
      * Classe msg.
      *
-     * @var int
+     * @var int|null
      */
     private $classeMsg;
 
     /**
      * Enumerates the classe msg.
      *
-     * @return array Returns the classe msg enumeration.
+     * @return int[] Returns the classe msg enumeration.
      */
-    public function enumClasseMsg() {
+    public function enumClasseMsg(): array {
         return [
             SendingSMSBatchInterface::CLASSE_MSG_SMS,
             SendingSMSBatchInterface::CLASSE_MSG_SMS_PRO,
@@ -44,19 +44,19 @@ trait IntegerClasseMsgTrait {
     /**
      * Get the classe msg.
      *
-     * @return int Returns the classe msg.
+     * @return int|null Returns the classe msg.
      */
-    public function getClasseMsg() {
+    public function getClasseMsg(): ?int {
         return $this->classeMsg;
     }
 
     /**
      * Set the classe msg.
      *
-     * @param int $classeMsg The classe msg.
+     * @param int|null $classeMsg The classe msg.
      * @throws InvalidArgumentException Throws an invalid argument exception exception if the classe msg is invalid.
      */
-    public function setClasseMsg($classeMsg) {
+    public function setClasseMsg(?int $classeMsg): self {
         if (null !== $classeMsg && false === in_array($classeMsg, $this->enumClasseMsg())) {
             throw new InvalidArgumentException(sprintf('The classe msg "%s" is invalid', $classeMsg));
         }

@@ -22,25 +22,25 @@ trait StringNomTrait {
     /**
      * Nom.
      *
-     * @var string
+     * @var string|null
      */
     private $nom;
 
     /**
      * Get the nom.
      *
-     * @return string Returns the nom.
+     * @return string|null Returns the nom.
      */
-    public function getNom() {
+    public function getNom(): ?string {
         return $this->nom;
     }
 
     /**
      * Set the nom.
      *
-     * @param string $nom The nom.
+     * @param string|null $nom The nom.
      */
-    public function setNom($nom) {
+    public function setNom(?string $nom): self {
         $this->nom = $nom;
         return $this;
     }

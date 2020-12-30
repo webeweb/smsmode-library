@@ -33,7 +33,7 @@ class AbstractProviderTest extends AbstractTestCase {
     /**
      * {@inheritdoc}
      */
-    protected function setUp() {
+    protected function setUp(): void {
         parent::setUp();
 
         // Set an Authentication mock.
@@ -47,7 +47,7 @@ class AbstractProviderTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testSetDebug() {
+    public function testSetDebug(): void {
 
         $obj = new TestProvider($this->authentication);
 
@@ -60,7 +60,7 @@ class AbstractProviderTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function test__construct() {
+    public function test__construct(): void {
 
         $this->assertEquals("https://api.smsmode.com", TestProvider::ENDPOINT_PATH);
 

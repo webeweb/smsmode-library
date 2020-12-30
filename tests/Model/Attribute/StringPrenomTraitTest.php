@@ -27,7 +27,7 @@ class StringPrenomTraitTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testSetPrenom() {
+    public function testSetPrenom(): void {
 
         $obj = new TestStringPrenomTrait();
 
@@ -40,7 +40,7 @@ class StringPrenomTraitTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function test__construct() {
+    public function test__construct(): void {
 
         $obj = new TestStringPrenomTrait();
 

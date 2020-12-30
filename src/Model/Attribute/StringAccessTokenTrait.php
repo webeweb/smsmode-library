@@ -22,25 +22,25 @@ trait StringAccessTokenTrait {
     /**
      * Access token.
      *
-     * @var string
+     * @var string|null
      */
     private $accessToken;
 
     /**
      * Get the access token.
      *
-     * @return string Returns the access token.
+     * @return string|null Returns the access token.
      */
-    public function getAccessToken() {
+    public function getAccessToken(): ?string {
         return $this->accessToken;
     }
 
     /**
      * Set the access token.
      *
-     * @param string $accessToken The access token.
+     * @param string|null $accessToken The access token.
      */
-    public function setAccessToken($accessToken) {
+    public function setAccessToken(?string $accessToken): self {
         $this->accessToken = $accessToken;
         return $this;
     }

@@ -13,15 +13,15 @@ namespace WBW\Library\SMSMode\Model\Request;
 
 use InvalidArgumentException;
 use UnexpectedValueException;
+use WBW\Library\Core\Model\Attribute\StringMessageTrait;
 use WBW\Library\SMSMode\API\SendingSMSMessageInterface;
+use WBW\Library\SMSMode\Model\AbstractRequest;
 use WBW\Library\SMSMode\Model\Attribute\DateTimeDateEnvoiTrait;
 use WBW\Library\SMSMode\Model\Attribute\IntegerClasseMsgTrait;
 use WBW\Library\SMSMode\Model\Attribute\IntegerNbrMsgTrait;
 use WBW\Library\SMSMode\Model\Attribute\StringEmetteurTrait;
-use WBW\Library\SMSMode\Model\Attribute\StringMessageTrait;
 use WBW\Library\SMSMode\Model\Attribute\StringNotificationUrlTrait;
 use WBW\Library\SMSMode\Model\Attribute\StringRefClientTrait;
-use WBW\Library\SMSMode\Model\AbstractRequest;
 use WBW\Library\SMSMode\Serializer\NumeroSerializer;
 
 /**
@@ -50,14 +50,14 @@ class SendingSMSMessageRequest extends AbstractRequest implements SendingSMSMess
     /**
      * Groupe.
      *
-     * @var string
+     * @var string|null
      */
     private $groupe;
 
     /**
      * Notification URL reponse.
      *
-     * @var string
+     * @var string|null
      */
     private $notificationUrlReponse;
 
@@ -71,7 +71,7 @@ class SendingSMSMessageRequest extends AbstractRequest implements SendingSMSMess
     /**
      * STOP.
      *
-     * @var int
+     * @var int|null
      */
     private $stop;
 
@@ -90,7 +90,7 @@ class SendingSMSMessageRequest extends AbstractRequest implements SendingSMSMess
      * @return SendingSMSMessageRequest Returns this sending SMS message request.
      * @throws UnexpectedValueException Throws an unexpected value exception if the numero is invalid.
      */
-    public function addNumero($numero) {
+    public function addNumero(string $numero): ?SendingSMSMessageRequest {
         NumeroSerializer::checkNumero($numero);
         $this->numero[] = $numero;
         return $this;
@@ -99,9 +99,9 @@ class SendingSMSMessageRequest extends AbstractRequest implements SendingSMSMess
     /**
      * Enumerates the stop.
      *
-     * @return array Returns the stop enumeration.
+     * @return int[] Returns the stop enumeration.
      */
-    public function enumStop() {
+    public function enumStop(): array {
         return [
             self::STOP_ALWAYS,
             self::STOP_ONLY,
@@ -111,18 +111,18 @@ class SendingSMSMessageRequest extends AbstractRequest implements SendingSMSMess
     /**
      * Get the groupe.
      *
-     * @return string Returns the groupe.
+     * @return string|null Returns the groupe.
      */
-    public function getGroupe() {
+    public function getGroupe(): ?string {
         return $this->groupe;
     }
 
     /**
      * Get the notification URL reponse.
      *
-     * @return string Returns the notification URL reponse.
+     * @return string|null Returns the notification URL reponse.
      */
-    public function getNotificationUrlReponse() {
+    public function getNotificationUrlReponse(): ?string {
         return $this->notificationUrlReponse;
     }
 
@@ -131,33 +131,33 @@ class SendingSMSMessageRequest extends AbstractRequest implements SendingSMSMess
      *
      * @return string[] Returns the numero.
      */
-    public function getNumero() {
+    public function getNumero(): array {
         return $this->numero;
     }
 
     /**
      * {@inheritdoc}
      */
-    public function getResourcePath() {
+    public function getResourcePath(): string {
         return self::SENDING_SMS_MESSAGE_RESOURCE_PATH;
     }
 
     /**
      * Get the stop.
      *
-     * @return int Returns the stop.
+     * @return int|null Returns the stop.
      */
-    public function getStop() {
+    public function getStop(): ?int {
         return $this->stop;
     }
 
     /**
      * Set the groupe.
      *
-     * @param string $groupe The groupe.
+     * @param string|null $groupe The groupe.
      * @return SendingSMSMessageRequest Returns this sending SMS message request.
      */
-    public function setGroupe($groupe) {
+    public function setGroupe(?string $groupe): SendingSMSMessageRequest {
         $this->groupe = $groupe;
         return $this;
     }
@@ -165,10 +165,10 @@ class SendingSMSMessageRequest extends AbstractRequest implements SendingSMSMess
     /**
      * Set the notification URL reponse.
      *
-     * @param string $notificationUrlReponse The notification URL reponse.
+     * @param string|null $notificationUrlReponse The notification URL reponse.
      * @return SendingSMSMessageRequest Returns this sending SMS message request.
      */
-    public function setNotificationUrlReponse($notificationUrlReponse) {
+    public function setNotificationUrlReponse(?string $notificationUrlReponse): SendingSMSMessageRequest {
         $this->notificationUrlReponse = $notificationUrlReponse;
         return $this;
     }
@@ -179,7 +179,7 @@ class SendingSMSMessageRequest extends AbstractRequest implements SendingSMSMess
      * @param string[] $numero The numero.
      * @return SendingSMSMessageRequest Returns this sending SMS message request.
      */
-    protected function setNumero(array $numero) {
+    protected function setNumero(array $numero): SendingSMSMessageRequest {
         $this->numero = $numero;
         return $this;
     }
@@ -191,7 +191,7 @@ class SendingSMSMessageRequest extends AbstractRequest implements SendingSMSMess
      * @return SendingSMSMessageRequest Returns this sending SMS message request.
      * @throws InvalidArgumentException Throws an invalid argument exception if the stop is invalid.
      */
-    public function setStop($stop) {
+    public function setStop(?int $stop): SendingSMSMessageRequest {
         if (null !== $stop && false === in_array($stop, $this->enumStop())) {
             throw new InvalidArgumentException(sprintf('The stop "%s" is invalid', $stop));
         }

@@ -27,7 +27,7 @@ class StringSmsIDTraitTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testSetSmsID() {
+    public function testSetSmsID(): void {
 
         $obj = new TestStringSmsIDTrait();
 
@@ -40,7 +40,7 @@ class StringSmsIDTraitTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function test__construct() {
+    public function test__construct(): void {
 
         $obj = new TestStringSmsIDTrait();
 

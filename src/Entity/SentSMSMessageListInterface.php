@@ -22,7 +22,7 @@ interface SentSMSMessageListInterface extends SMSModeEntityInterface {
     /**
      * Get the offset.
      *
-     * @return int Returns the offset.
+     * @return int|null Returns the offset.
      */
-    public function getSMSModeOffset();
+    public function getSMSModeOffset(): ?int;
 }

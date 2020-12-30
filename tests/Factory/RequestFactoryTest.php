@@ -42,7 +42,7 @@ class RequestFactoryTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testNewAccountBalanceRequest() {
+    public function testNewAccountBalanceRequest(): void {
 
         $res = RequestFactory::newAccountBalanceRequest();
         $this->assertInstanceOf(AccountBalanceRequest::class, $res);
@@ -53,7 +53,7 @@ class RequestFactoryTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testNewAddingContactRequest() {
+    public function testNewAddingContactRequest(): void {
 
         $res = RequestFactory::newAddingContactRequest($this->addingContact);
         $this->assertInstanceOf(AddingContactRequest::class, $res);
@@ -71,7 +71,7 @@ class RequestFactoryTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testNewCheckingSMSMessageStatusRequest() {
+    public function testNewCheckingSMSMessageStatusRequest(): void {
 
         $res = RequestFactory::newCheckingSMSMessageStatusRequest($this->checkingSMSMessageStatus);
         $this->assertInstanceOf(CheckingSMSMessageStatusRequest::class, $res);
@@ -84,7 +84,7 @@ class RequestFactoryTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testNewCreatingAPIKeyRequest() {
+    public function testNewCreatingAPIKeyRequest(): void {
 
         $res = RequestFactory::newCreatingAPIKeyRequest();
         $this->assertInstanceOf(CreatingAPIKeyRequest::class, $res);
@@ -95,7 +95,7 @@ class RequestFactoryTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testNewCreatingSubAccountRequest() {
+    public function testNewCreatingSubAccountRequest(): void {
 
         $res = RequestFactory::newCreatingSubAccountRequest($this->creatingSubAccount);
         $this->assertInstanceOf(CreatingSubAccountRequest::class, $res);
@@ -121,7 +121,7 @@ class RequestFactoryTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testNewDeletingSMSRequest() {
+    public function testNewDeletingSMSRequest(): void {
 
         $res = RequestFactory::newDeletingSMSRequest($this->deletingSMS);
         $this->assertInstanceOf(DeletingSMSRequest::class, $res);
@@ -135,7 +135,7 @@ class RequestFactoryTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testNewDeletingSubAccountRequest() {
+    public function testNewDeletingSubAccountRequest(): void {
 
         $res = RequestFactory::newDeletingSubAccountRequest($this->deletingSubAccount);
         $this->assertInstanceOf(DeletingSubAccountRequest::class, $res);
@@ -148,7 +148,7 @@ class RequestFactoryTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testNewDeliveryReportRequest() {
+    public function testNewDeliveryReportRequest(): void {
 
         $res = RequestFactory::newDeliveryReportRequest($this->deliveryReport);
         $this->assertInstanceOf(DeliveryReportRequest::class, $res);
@@ -161,7 +161,7 @@ class RequestFactoryTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testNewRetrievingSMSReplyRequest() {
+    public function testNewRetrievingSMSReplyRequest(): void {
 
         $res = RequestFactory::newRetrievingSMSReplyRequest($this->retrievingSMSReply);
         $this->assertInstanceOf(RetrievingSMSReplyRequest::class, $res);
@@ -177,7 +177,7 @@ class RequestFactoryTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testNewSendingSMSBatchRequest() {
+    public function testNewSendingSMSBatchRequest(): void {
 
         $res = RequestFactory::newSendingSMSBatchRequest($this->sendingSMSBatch);
         $this->assertInstanceOf(SendingSMSBatchRequest::class, $res);
@@ -196,7 +196,7 @@ class RequestFactoryTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testNewSendingSMSMessageRequest() {
+    public function testNewSendingSMSMessageRequest(): void {
 
         $res = RequestFactory::newSendingSMSMessageRequest($this->sendingSMSMessage);
         $this->assertInstanceOf(SendingSMSMessageRequest::class, $res);
@@ -219,7 +219,7 @@ class RequestFactoryTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testNewSendingTextToSpeechSMSRequest() {
+    public function testNewSendingTextToSpeechSMSRequest(): void {
 
         $res = RequestFactory::newSendingTextToSpeechSMSRequest($this->sendingTextToSpeechSMS);
         $this->assertInstanceOf(SendingTextToSpeechSMSRequest::class, $res);
@@ -236,7 +236,7 @@ class RequestFactoryTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testNewSendingUnicodeSMSRequest() {
+    public function testNewSendingUnicodeSMSRequest(): void {
 
         $res = RequestFactory::newSendingUnicodeSMSRequest($this->sendingUnicodeSMS);
         $this->assertInstanceOf(SendingUnicodeSMSRequest::class, $res);
@@ -259,7 +259,7 @@ class RequestFactoryTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testNewSentSMSMessageListRequest() {
+    public function testNewSentSMSMessageListRequest(): void {
 
         $res = RequestFactory::newSentSMSMessageListRequest($this->sentSMSMessageList);
         $this->assertInstanceOf(SentSMSMessageListRequest::class, $res);
@@ -272,7 +272,7 @@ class RequestFactoryTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testNewTransferringCreditsRequest() {
+    public function testNewTransferringCreditsRequest(): void {
 
         $res = RequestFactory::newTransferringCreditsRequest($this->transferringCredits);
         $this->assertInstanceOf(TransferringCreditsRequest::class, $res);

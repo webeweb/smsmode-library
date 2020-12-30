@@ -24,35 +24,35 @@ interface SendingTextToSpeechSMSInterface extends SMSModeEntityInterface {
     /**
      * Get the date envoi.
      *
-     * @return DateTime Returns the date envoi.
+     * @return DateTime|null Returns the date envoi.
      */
-    public function getSMSModeDateEnvoi();
+    public function getSMSModeDateEnvoi(): ?DateTime;
 
     /**
      * Get the language.
      *
-     * @return string Returns the language.
+     * @return string|null Returns the language.
      */
-    public function getSMSModeLanguage();
+    public function getSMSModeLanguage(): ?string;
 
     /**
      * Get the message.
      *
-     * @return string Returns the message.
+     * @return string|null Returns the message.
      */
-    public function getSMSModeMessage();
+    public function getSMSModeMessage(): ?string;
 
     /**
      * Get the numero.
      *
      * @return string[] Returns the numero.
      */
-    public function getSMSModeNumero();
+    public function getSMSModeNumero(): array;
 
     /**
      * Get the title.
      *
-     * @return string Returns the title.
+     * @return string|null Returns the title.
      */
-    public function getSMSModeTitle();
+    public function getSMSModeTitle(): ?string;
 }

@@ -29,7 +29,7 @@ class SentSMSMessageTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testSetCostCredit() {
+    public function testSetCostCredit(): void {
 
         $obj = new SentSMSMessage();
 
@@ -42,7 +42,7 @@ class SentSMSMessageTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testSetRecipientCount() {
+    public function testSetRecipientCount(): void {
 
         $obj = new SentSMSMessage();
 
@@ -56,7 +56,7 @@ class SentSMSMessageTest extends AbstractTestCase {
      * @return void
      * @throws Exception Throws an exception if an error occurs.
      */
-    public function testSetSendDate() {
+    public function testSetSendDate(): void {
 
         // Set a Send date mock.
         $sendDate = new DateTime();
@@ -72,7 +72,7 @@ class SentSMSMessageTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function test__construct() {
+    public function test__construct(): void {
 
         $obj = new SentSMSMessage();
 

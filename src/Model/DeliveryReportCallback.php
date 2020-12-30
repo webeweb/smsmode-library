@@ -31,44 +31,35 @@ class DeliveryReportCallback extends DeliveryReport implements DeliveryReportCal
     /**
      * MCC MNC.
      *
-     * @var int
+     * @var int|null
      */
     private $mccMnc;
 
     /**
      * Get the MCC MNC.
      *
-     * @return int Returns the MCC MNC.
+     * @return int|null Returns the MCC MNC.
      */
-    public function getMccMnc() {
+    public function getMccMnc(): ?int {
         return $this->mccMnc;
-    }
-
-    /**
-     * Get the ref client.
-     *
-     * @return string Returns the ref client.
-     */
-    public function getRefClient() {
-        return $this->refClient;
     }
 
     /**
      * Get the status.
      *
-     * @return int Returns the status.
+     * @return int|null Returns the status.
      */
-    public function getStatus() {
+    public function getStatus(): ?int {
         return parent::getCode();
     }
 
     /**
      * Set the MCC MNC.
      *
-     * @param int $mccMnc The MCC MNC.
+     * @param int|null $mccMnc The MCC MNC.
      * @return DeliveryReportCallback Returns this delivery report callback.
      */
-    public function setMccMnc($mccMnc) {
+    public function setMccMnc(?int $mccMnc): DeliveryReportCallback {
         $this->mccMnc = $mccMnc;
         return $this;
     }
@@ -76,10 +67,10 @@ class DeliveryReportCallback extends DeliveryReport implements DeliveryReportCal
     /**
      * Set the status.
      *
-     * @param int $status The status.
+     * @param int|null $status The status.
      * @return DeliveryReportCallback Returns this delivery report callback.
      */
-    public function setStatus($status) {
+    public function setStatus(?int $status): DeliveryReportCallback {
         return parent::setCode($status);
     }
 }

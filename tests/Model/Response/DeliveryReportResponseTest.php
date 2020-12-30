@@ -28,7 +28,7 @@ class DeliveryReportResponseTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testAddDeliveryReports() {
+    public function testAddDeliveryReports(): void {
 
         // Set a Delivery report mock.
         $deliveryReport = new DeliveryReport();
@@ -44,7 +44,7 @@ class DeliveryReportResponseTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testHasDeliveryReport() {
+    public function testHasDeliveryReport(): void {
 
         // Set a Delivery report mock.
         $deliveryReport = new DeliveryReport();
@@ -60,7 +60,7 @@ class DeliveryReportResponseTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function test__construct() {
+    public function test__construct(): void {
 
         $obj = new DeliveryReportResponse();
 

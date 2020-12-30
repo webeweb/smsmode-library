@@ -24,26 +24,26 @@ trait IntegerNbrMsgTrait {
     /**
      * Nbr msg.
      *
-     * @var int
+     * @var int|null
      */
     private $nbrMsg;
 
     /**
      * Get the nbr msg.
      *
-     * @return int Returns the nbr msg.
+     * @return int|null Returns the nbr msg.
      */
-    public function getNbrMsg() {
+    public function getNbrMsg(): ?int {
         return $this->nbrMsg;
     }
 
     /**
      * Set the nbr msg.
      *
-     * @param int $nbrMsg The nbr msg.
+     * @param int|null $nbrMsg The nbr msg.
      * @throws InvalidArgumentException Throws an invalid argument exception if the nbr msg is less than 1.
      */
-    public function setNbrMsg($nbrMsg) {
+    public function setNbrMsg(?int $nbrMsg): self {
         if (null === $nbrMsg || $nbrMsg < 1) {
             throw new InvalidArgumentException('The "nbr msg" must be greater than 0');
         }

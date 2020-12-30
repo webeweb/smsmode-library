@@ -24,49 +24,49 @@ interface AddingContactInterface extends SMSModeEntityInterface {
     /**
      * Get the date.
      *
-     * @return DateTime Returns the date.
+     * @return DateTime|null Returns the date.
      */
-    public function getSMSModeDate();
+    public function getSMSModeDate(): ?Datetime;
 
     /**
      * Get the groupes.
      *
      * @return string[] Returns the groupes.
      */
-    public function getSMSModeGroupes();
+    public function getSMSModeGroupes(): array;
 
     /**
      * Get the mobile.
      *
-     * @return string Returns the mobile.
+     * @return string|null Returns the mobile.
      */
-    public function getSMSModeMobile();
+    public function getSMSModeMobile(): ?string;
 
     /**
      * Get the nom.
      *
-     * @return string Returns the nom.
+     * @return string|null Returns the nom.
      */
-    public function getSMSModeNom();
+    public function getSMSModeNom(): ?string;
 
     /**
      * Get the other.
      *
-     * @return string Returns the other.
+     * @return string|null Returns the other.
      */
-    public function getSMSModeOther();
+    public function getSMSModeOther(): ?string;
 
     /**
      * Get the prenom.
      *
-     * @return string Returns the prenom.
+     * @return string|null Returns the prenom.
      */
-    public function getSMSModePrenom();
+    public function getSMSModePrenom(): ?string;
 
     /**
      * Get the societe.
      *
-     * @return string Returns the societe.
+     * @return string|null Returns the societe.
      */
-    public function getSMSModeSociete();
+    public function getSMSModeSociete(): ?string;
 }

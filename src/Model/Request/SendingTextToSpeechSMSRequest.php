@@ -13,10 +13,10 @@ namespace WBW\Library\SMSMode\Model\Request;
 
 use InvalidArgumentException;
 use UnexpectedValueException;
+use WBW\Library\Core\Model\Attribute\StringMessageTrait;
 use WBW\Library\SMSMode\API\SendingTextToSpeechSMSInterface;
-use WBW\Library\SMSMode\Model\Attribute\DateTimeDateEnvoiTrait;
-use WBW\Library\SMSMode\Model\Attribute\StringMessageTrait;
 use WBW\Library\SMSMode\Model\AbstractRequest;
+use WBW\Library\SMSMode\Model\Attribute\DateTimeDateEnvoiTrait;
 use WBW\Library\SMSMode\Serializer\NumeroSerializer;
 
 /**
@@ -38,9 +38,9 @@ class SendingTextToSpeechSMSRequest extends AbstractRequest implements SendingTe
     const SENDING_TEXT_TO_SPEECH_SMS_RESOURCE_PATH = "/http/1.6/sendVoiceMessage.do";
 
     /**
-     * Lnaguage.
+     * Language.
      *
-     * @var string
+     * @var string|null
      */
     private $language;
 
@@ -54,7 +54,7 @@ class SendingTextToSpeechSMSRequest extends AbstractRequest implements SendingTe
     /**
      * Title.
      *
-     * @var string
+     * @var string|null
      */
     private $title;
 
@@ -73,7 +73,7 @@ class SendingTextToSpeechSMSRequest extends AbstractRequest implements SendingTe
      * @return SendingTextToSpeechSMSRequest Returns this sending text-to-speech SMS request.
      * @throws UnexpectedValueException Throws an unexpected value exception if the numero is invalid.
      */
-    public function addNumero($numero) {
+    public function addNumero(string $numero): SendingTextToSpeechSMSRequest {
         NumeroSerializer::checkNumero($numero);
         $this->numero[] = $numero;
         return $this;
@@ -82,9 +82,9 @@ class SendingTextToSpeechSMSRequest extends AbstractRequest implements SendingTe
     /**
      * Enumerates the language.
      *
-     * @return array Returns the language enumeration.
+     * @return string[] Returns the language enumeration.
      */
-    public function enumLanguage() {
+    public function enumLanguage(): array {
         return [
             self::LANGUAGE_FR,
             self::LANGUAGE_EN,
@@ -96,9 +96,9 @@ class SendingTextToSpeechSMSRequest extends AbstractRequest implements SendingTe
     /**
      * Get the language.
      *
-     * @return string Returns the language.
+     * @return string|null Returns the language.
      */
-    public function getLanguage() {
+    public function getLanguage(): ?string {
         return $this->language;
     }
 
@@ -107,34 +107,34 @@ class SendingTextToSpeechSMSRequest extends AbstractRequest implements SendingTe
      *
      * @return string[] Returns the numero.
      */
-    public function getNumero() {
+    public function getNumero(): array {
         return $this->numero;
     }
 
     /**
      * {@inheritdoc}
      */
-    public function getResourcePath() {
+    public function getResourcePath(): string {
         return self::SENDING_TEXT_TO_SPEECH_SMS_RESOURCE_PATH;
     }
 
     /**
      * Get the title.
      *
-     * @return string Returns the title.
+     * @return string|null Returns the title.
      */
-    public function getTitle() {
+    public function getTitle(): ?string {
         return $this->title;
     }
 
     /**
      * Set the language.
      *
-     * @param string $language The language.
+     * @param string|null $language The language.
      * @return SendingTextToSpeechSMSRequest Returns this sending text-to-speech request.
      * @throws InvalidArgumentException Throws an invalid argument exception if the language is invalid.
      */
-    public function setLanguage($language) {
+    public function setLanguage(?string $language): SendingTextToSpeechSMSRequest {
         if (null !== $language && false === in_array($language, $this->enumLanguage())) {
             throw new InvalidArgumentException(sprintf('The language "%s" is invalid', $language));
         }
@@ -148,7 +148,7 @@ class SendingTextToSpeechSMSRequest extends AbstractRequest implements SendingTe
      * @param string[] $numero The numero.
      * @return SendingTextToSpeechSMSRequest Returns this sending text-to-speech request.
      */
-    protected function setNumero(array $numero) {
+    protected function setNumero(array $numero): SendingTextToSpeechSMSRequest {
         $this->numero = $numero;
         return $this;
     }
@@ -156,10 +156,10 @@ class SendingTextToSpeechSMSRequest extends AbstractRequest implements SendingTe
     /**
      * Set the title.
      *
-     * @param string $title The title.
+     * @param string|null $title The title.
      * @return SendingTextToSpeechSMSRequest Returns this sending text-to-speech request.
      */
-    public function setTitle($title) {
+    public function setTitle(?string $title): SendingTextToSpeechSMSRequest {
         $this->title = $title;
         return $this;
     }

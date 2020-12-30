@@ -28,7 +28,7 @@ class CreatingSubAccountRequestTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testSetAdresse() {
+    public function testSetAdresse(): void {
 
         $obj = new CreatingSubAccountRequest();
 
@@ -41,7 +41,7 @@ class CreatingSubAccountRequestTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testSetCodePostal() {
+    public function testSetCodePostal(): void {
 
         $obj = new CreatingSubAccountRequest();
 
@@ -54,7 +54,7 @@ class CreatingSubAccountRequestTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testSetEmail() {
+    public function testSetEmail(): void {
 
         $obj = new CreatingSubAccountRequest();
 
@@ -68,7 +68,7 @@ class CreatingSubAccountRequestTest extends AbstractTestCase {
      * @return void
      * @throws Exception Throws an exception if an error occurs.
      */
-    public function testSetFax() {
+    public function testSetFax(): void {
 
         $obj = new CreatingSubAccountRequest();
 
@@ -81,7 +81,7 @@ class CreatingSubAccountRequestTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testSetNewPass() {
+    public function testSetNewPass(): void {
 
         $obj = new CreatingSubAccountRequest();
 
@@ -94,7 +94,7 @@ class CreatingSubAccountRequestTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testSetNewPseudo() {
+    public function testSetNewPseudo(): void {
 
         $obj = new CreatingSubAccountRequest();
 
@@ -107,7 +107,7 @@ class CreatingSubAccountRequestTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testSetTelephone() {
+    public function testSetTelephone(): void {
 
         $obj = new CreatingSubAccountRequest();
 
@@ -120,7 +120,7 @@ class CreatingSubAccountRequestTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testSetVille() {
+    public function testSetVille(): void {
 
         $obj = new CreatingSubAccountRequest();
 
@@ -133,7 +133,7 @@ class CreatingSubAccountRequestTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function test__construct() {
+    public function test__construct(): void {
 
         $this->assertEquals("/http/1.6/createSubAccount.do", CreatingSubAccountRequest::CREATING_SUB_ACCOUNT_RESOURCE_PATH);
 

@@ -11,6 +11,9 @@
 
 namespace WBW\Library\SMSMode\Model;
 
+use WBW\Library\Core\Model\Attribute\IntegerCodeTrait;
+use WBW\Library\Core\Model\Attribute\StringDescriptionTrait;
+use WBW\Library\Core\Model\Attribute\StringRawResponseTrait;
 use WBW\Library\SMSMode\API\ResponseInterface;
 
 /**
@@ -22,32 +25,15 @@ use WBW\Library\SMSMode\API\ResponseInterface;
  */
 abstract class AbstractResponse implements ResponseInterface {
 
-    /**
-     * Code.
-     *
-     * @var int
-     */
-    private $code;
-
-    /**
-     * Description.
-     *
-     * @var string
-     */
-    private $description;
-
-    /**
-     * Raw response.
-     *
-     * @var string
-     */
-    private $rawResponse;
+    use IntegerCodeTrait;
+    use StringDescriptionTrait;
+    use StringRawResponseTrait;
 
     /**
      * Constructor.
      */
     public function __construct() {
-        // NOTHING TO DO.
+        // NOTHING TO DO
     }
 
     /**
@@ -55,7 +41,7 @@ abstract class AbstractResponse implements ResponseInterface {
      *
      * @return array Returns the responses enumeration.
      */
-    public static function enumResponses() {
+    public static function enumResponses(): array {
         return [
             self::RESPONSE_CODE_0    => self::RESPONSE_DESCRIPTION_0,
             self::RESPONSE_CODE_1    => self::RESPONSE_DESCRIPTION_1,
@@ -96,65 +82,5 @@ abstract class AbstractResponse implements ResponseInterface {
             self::RESPONSE_CODE_3998 => self::RESPONSE_DESCRIPTION_3998,
             self::RESPONSE_CODE_3999 => self::RESPONSE_DESCRIPTION_3999,
         ];
-    }
-
-    /**
-     * Get the code.
-     *
-     * @return int Returns the code.
-     */
-    public function getCode() {
-        return $this->code;
-    }
-
-    /**
-     * Get the description.
-     *
-     * @return string Returns the description.
-     */
-    public function getDescription() {
-        return $this->description;
-    }
-
-    /**
-     * Get the raw response.
-     *
-     * @return string Returns the raw response.
-     */
-    public function getRawResponse() {
-        return $this->rawResponse;
-    }
-
-    /**
-     * Set the code.
-     *
-     * @param int $code The code.
-     * @return AbstractResponse Returns this response.
-     */
-    public function setCode($code) {
-        $this->code = $code;
-        return $this;
-    }
-
-    /**
-     * Set the description.
-     *
-     * @param string $description The description.
-     * @return AbstractResponse Returns this response.
-     */
-    public function setDescription($description) {
-        $this->description = $description;
-        return $this;
-    }
-
-    /**
-     * Set the raw response.
-     *
-     * @param string $rawResponse The raw response.
-     * @return AbstractResponse Returns this response.
-     */
-    public function setRawResponse($rawResponse) {
-        $this->rawResponse = $rawResponse;
-        return $this;
     }
 }

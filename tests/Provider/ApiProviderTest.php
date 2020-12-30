@@ -65,7 +65,7 @@ class ApiProviderTest extends AbstractTestCase {
     /**
      * {@inheritdoc}
      */
-    protected function setUp() {
+    protected function setUp(): void {
         parent::setUp();
 
         // Set an Authentication mock.
@@ -80,7 +80,7 @@ class ApiProviderTest extends AbstractTestCase {
      * @return void
      * @throws Exception Throws an exception if an error occurs.
      */
-    public function testAccountBalance() {
+    public function testAccountBalance(): void {
 
         // Set a Logger mock.
         $logger = $this->getMockBuilder(LoggerInterface::class)->getMock();
@@ -103,7 +103,7 @@ class ApiProviderTest extends AbstractTestCase {
      * @return void
      * @throws Exception Throws an exception if an error occurs.
      */
-    public function testAddingContact() {
+    public function testAddingContact(): void {
 
         // Set an Adding contact request mock.
         $arg = new AddingContactRequest();
@@ -126,7 +126,7 @@ class ApiProviderTest extends AbstractTestCase {
      * @return void
      * @throws Exception Throws an exception if an error occurs.
      */
-    public function testCheckingSMSMessageStatus() {
+    public function testCheckingSMSMessageStatus(): void {
 
         // Set a Checking SMS message status request mock.
         $arg = new CheckingSMSMessageStatusRequest();
@@ -147,7 +147,7 @@ class ApiProviderTest extends AbstractTestCase {
      * @return void
      * @throws Exception Throws an exception if an error occurs.
      */
-    public function testCreatingAPIKey() {
+    public function testCreatingAPIKey(): void {
 
         // Set a Creating API key request mock.
         $arg = new CreatingAPIKeyRequest();
@@ -175,7 +175,7 @@ class ApiProviderTest extends AbstractTestCase {
      * @return void
      * @throws Exception Throws an exception if an error occurs.
      */
-    public function testCreatingAPIKeyWithInvalidArgumentException() {
+    public function testCreatingAPIKeyWithInvalidArgumentException(): void {
 
         // Set a Creating API key request mock.
         $arg = new CreatingAPIKeyRequest();
@@ -198,7 +198,7 @@ class ApiProviderTest extends AbstractTestCase {
      * @return void
      * @throws Exception Throws an exception if an error occurs.
      */
-    public function testCreatingSubAccount() {
+    public function testCreatingSubAccount(): void {
 
         // Set a Creating sub-account request mock.
         $arg = new CreatingSubAccountRequest();
@@ -220,7 +220,7 @@ class ApiProviderTest extends AbstractTestCase {
      * @return void
      * @throws Exception Throws an exception if an error occurs.
      */
-    public function testDeletingSMS() {
+    public function testDeletingSMS(): void {
 
         // Set a Deleting SMS request mock.
         $arg = new DeletingSMSRequest();
@@ -241,7 +241,7 @@ class ApiProviderTest extends AbstractTestCase {
      * @return void
      * @throws Exception Throws an exception if an error occurs.
      */
-    public function testDeletingSubAccount() {
+    public function testDeletingSubAccount(): void {
 
         // Set a Deleting sub-account request mock.
         $arg = new DeletingSubAccountRequest();
@@ -262,7 +262,7 @@ class ApiProviderTest extends AbstractTestCase {
      * @return void
      * @throws Exception Throws an exception if an error occurs.
      */
-    public function testDeliveryReport() {
+    public function testDeliveryReport(): void {
 
         // Set a Delivery report request mock.
         $arg = new DeliveryReportRequest();
@@ -283,7 +283,7 @@ class ApiProviderTest extends AbstractTestCase {
      * @return void
      * @throws Exception Throws an exception if an error occurs.
      */
-    public function testRetrievingSMSReply() {
+    public function testRetrievingSMSReply(): void {
 
         // Set a Retrieving SMS reply request mock.
         $arg = new RetrievingSMSReplyRequest();
@@ -303,7 +303,7 @@ class ApiProviderTest extends AbstractTestCase {
      * @return void
      * @throws Exception Throws an exception if an error occurs.
      */
-    public function testSendingSMSBatch() {
+    public function testSendingSMSBatch(): void {
 
         // Set a Fichier mock.
         $fichier = getcwd() . "/tests/Fixtures/Model/Request/SendingSMSBatchRequest.csv";
@@ -327,7 +327,7 @@ class ApiProviderTest extends AbstractTestCase {
      * @return void
      * @throws Exception Throws an exception if an error occurs.
      */
-    public function testSendingSMSMessage() {
+    public function testSendingSMSMessage(): void {
 
         // Set a Sending SMS message request mock.
         $arg = new SendingSMSMessageRequest();
@@ -349,7 +349,7 @@ class ApiProviderTest extends AbstractTestCase {
      * @return void
      * @throws Exception Throws an exception if an error occurs.
      */
-    public function testSendingTextToSpeechSMS() {
+    public function testSendingTextToSpeechSMS(): void {
 
         // Set a Sending text-to-speech SMS request mock.
         $arg = new SendingTextToSpeechSMSRequest();
@@ -371,7 +371,7 @@ class ApiProviderTest extends AbstractTestCase {
      * @return void
      * @throws Exception Throws an exception if an error occurs.
      */
-    public function testSendingUnicodeSMS() {
+    public function testSendingUnicodeSMS(): void {
 
         // Set a Sending unicode SMS request mock.
         $arg = new SendingUnicodeSMSRequest();
@@ -393,7 +393,7 @@ class ApiProviderTest extends AbstractTestCase {
      * @return void
      * @throws Exception Throws an exception if an error occurs.
      */
-    public function testSentSMSMessageList() {
+    public function testSentSMSMessageList(): void {
 
         // Set a Sent SMS message list request mock.
         $arg = new SentSMSMessageListRequest();
@@ -413,7 +413,7 @@ class ApiProviderTest extends AbstractTestCase {
      * @return void
      * @throws Exception Throws an exception if an error occurs.
      */
-    public function testTransferringCredits() {
+    public function testTransferringCredits(): void {
 
         // Set a Transferring credits request mock.
         $arg = new TransferringCreditsRequest();

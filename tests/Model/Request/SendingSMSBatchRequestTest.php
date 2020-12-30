@@ -30,7 +30,7 @@ class SendingSMSBatchRequestTest extends AbstractTestCase {
      * @return void
      * @throws Exception Throws an exception if an error occurs.
      */
-    public function testSetFichier() {
+    public function testSetFichier(): void {
 
         // Set a Fichier mock.
         $fichier = getcwd() . "/tests/Fixtures/Model/Request/SendingSMSBatchRequest.csv";
@@ -46,7 +46,7 @@ class SendingSMSBatchRequestTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testSetFichierWithInvalidArgumentException() {
+    public function testSetFichierWithInvalidArgumentException(): void {
 
         $obj = new SendingSMSBatchRequest();
 
@@ -65,7 +65,7 @@ class SendingSMSBatchRequestTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function test__construct() {
+    public function test__construct(): void {
 
         $this->assertEquals("/http/1.6/sendSMSBatch.do", SendingSMSBatchRequest::SENDING_SMS_BATCH_RESOURCE_PATH);
 

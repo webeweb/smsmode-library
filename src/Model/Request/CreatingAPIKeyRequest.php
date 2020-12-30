@@ -31,7 +31,7 @@ class CreatingAPIKeyRequest extends AbstractRequest {
     /**
      * {@inheritdoc}
      */
-    public function getResourcePath() {
+    public function getResourcePath(): string {
         return self::CREATING_API_KEY_RESOURCE_PATH;
     }
 }

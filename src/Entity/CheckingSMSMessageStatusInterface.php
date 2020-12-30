@@ -22,7 +22,7 @@ interface CheckingSMSMessageStatusInterface extends SMSModeEntityInterface {
     /**
      * Get the SMS ID.
      *
-     * @return string Returns the SMS ID.
+     * @return string|null Returns the SMS ID.
      */
-    public function getSMSModeSmsID();
+    public function getSMSModeSmsID(): ?string;
 }

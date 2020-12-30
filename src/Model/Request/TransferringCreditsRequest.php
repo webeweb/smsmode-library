@@ -11,7 +11,7 @@
 
 namespace WBW\Library\SMSMode\Model\Request;
 
-use WBW\Library\SMSMode\Model\Attribute\StringReferenceTrait;
+use WBW\Library\Core\Model\Attribute\StringReferenceTrait;
 use WBW\Library\SMSMode\Model\AbstractRequest;
 
 /**
@@ -34,49 +34,49 @@ class TransferringCreditsRequest extends AbstractRequest {
     /**
      * Credit amount.
      *
-     * @var int
+     * @var int|null
      */
     private $creditAmount;
 
     /**
      * Target pseudo.
      *
-     * @var string
+     * @var string|null
      */
     private $targetPseudo;
 
     /**
      * Get the credit amount.
      *
-     * @return int Returns the credit amount.
+     * @return int|null Returns the credit amount.
      */
-    public function getCreditAmount() {
+    public function getCreditAmount(): ?int {
         return $this->creditAmount;
     }
 
     /**
      * {@inheritdoc}
      */
-    public function getResourcePath() {
+    public function getResourcePath(): string {
         return self::TRANSFERRING_CREDITS_RESOURCE_PATH;
     }
 
     /**
      * Get the target pseudo.
      *
-     * @return string Returns the target pseudo.
+     * @return string|null Returns the target pseudo.
      */
-    public function getTargetPseudo() {
+    public function getTargetPseudo(): ?string {
         return $this->targetPseudo;
     }
 
     /**
      * Set the credit amount.
      *
-     * @param int $creditAmount The credit amount.
+     * @param int|null $creditAmount The credit amount.
      * @return TransferringCreditsRequest Returns this transferring credits request.
      */
-    public function setCreditAmount($creditAmount) {
+    public function setCreditAmount(?int $creditAmount): TransferringCreditsRequest {
         $this->creditAmount = $creditAmount;
         return $this;
     }
@@ -84,10 +84,10 @@ class TransferringCreditsRequest extends AbstractRequest {
     /**
      * Set the target pseudo.
      *
-     * @param string $targetPseudo The target pseudo.
+     * @param string|null $targetPseudo The target pseudo.
      * @return TransferringCreditsRequest Returns this transferring credits request.
      */
-    public function setTargetPseudo($targetPseudo) {
+    public function setTargetPseudo(?string $targetPseudo): TransferringCreditsRequest {
         $this->targetPseudo = $targetPseudo;
         return $this;
     }

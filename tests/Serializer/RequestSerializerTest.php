@@ -47,7 +47,7 @@ class RequestSerializerTest extends AbstractTestCase {
      * @return void
      * @throws Exception Throws an exception if an error occurs.
      */
-    public function testSerializeAccountBalance() {
+    public function testSerializeAccountBalance(): void {
 
         // Set an account balance request mock.
         $arg = new AccountBalanceRequest();
@@ -64,7 +64,7 @@ class RequestSerializerTest extends AbstractTestCase {
      * @return void
      * @throws Exception Throws an exception if an error occurs.
      */
-    public function testSerializeAddingContactRequest() {
+    public function testSerializeAddingContactRequest(): void {
 
         // Set an Adding contact request mock.
         $arg = new AddingContactRequest();
@@ -96,7 +96,7 @@ class RequestSerializerTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testSerializeAddingContactRequestWithoutArguments() {
+    public function testSerializeAddingContactRequestWithoutArguments(): void {
 
         // Set an Adding contact request mock.
         $arg = new AddingContactRequest();
@@ -129,7 +129,7 @@ class RequestSerializerTest extends AbstractTestCase {
      * @return void
      * @throws Exception Throws an exception if an error occurs.
      */
-    public function testSerializeAuthentication() {
+    public function testSerializeAuthentication(): void {
 
         // Set a Creating sub-account request mock.
         $arg = new Authentication();
@@ -151,7 +151,7 @@ class RequestSerializerTest extends AbstractTestCase {
      * @return void
      * @throws Exception Throws an exception if an error occurs.
      */
-    public function testSerializeAuthenticationWithToken() {
+    public function testSerializeAuthenticationWithToken(): void {
 
         // Set a Creating sub-account request mock.
         $arg = new Authentication();
@@ -173,7 +173,7 @@ class RequestSerializerTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testSerializeAuthenticationWithoutArguments() {
+    public function testSerializeAuthenticationWithoutArguments(): void {
 
         // Set a Authentication mock.
         $arg = new Authentication();
@@ -206,7 +206,7 @@ class RequestSerializerTest extends AbstractTestCase {
      * @return void
      * @throws Exception Throws an exception if an error occurs.
      */
-    public function testSerializeCheckingSMSMessageStatusRequest() {
+    public function testSerializeCheckingSMSMessageStatusRequest(): void {
 
         // Set a Checking SMS message status mock.
         $arg = new CheckingSMSMessageStatusRequest();
@@ -225,7 +225,7 @@ class RequestSerializerTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testSerializeCheckingSMSMessageStatusRequestWithoutArguments() {
+    public function testSerializeCheckingSMSMessageStatusRequestWithoutArguments(): void {
 
         // Set a Checking SMS message status mock.
         $arg = new CheckingSMSMessageStatusRequest();
@@ -248,7 +248,7 @@ class RequestSerializerTest extends AbstractTestCase {
      * @return void
      * @throws Exception Throws an exception if an error occurs.
      */
-    public function testSerializeCreatingAPIKeyRequest() {
+    public function testSerializeCreatingAPIKeyRequest(): void {
 
         // Set an Creating API key request mock.
         $arg = new CreatingAPIKeyRequest();
@@ -265,7 +265,7 @@ class RequestSerializerTest extends AbstractTestCase {
      * @return void
      * @throws Exception Throws an exception if an error occurs.
      */
-    public function testSerializeCreatingSubAccount() {
+    public function testSerializeCreatingSubAccount(): void {
 
         // Set a Creating sub-account request mock.
         $arg = new CreatingSubAccountRequest();
@@ -311,7 +311,7 @@ class RequestSerializerTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testSerializeCreatingSubAccountWithoutArguments() {
+    public function testSerializeCreatingSubAccountWithoutArguments(): void {
 
         // Set a Creating sub-account request mock.
         $arg = new CreatingSubAccountRequest();
@@ -344,7 +344,7 @@ class RequestSerializerTest extends AbstractTestCase {
      * @return void
      * @throws Exception Throws an exception if an error occurs.
      */
-    public function testSerializeDeletingSMSRequest() {
+    public function testSerializeDeletingSMSRequest(): void {
 
         // Set a Delete SMS request mock.
         $arg = new DeletingSMSRequest();
@@ -371,7 +371,7 @@ class RequestSerializerTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testSerializeDeletingSMSRequestWithoutArguments() {
+    public function testSerializeDeletingSMSRequestWithoutArguments(): void {
 
         // Set a Delete SMS request mock.
         $arg = new DeletingSMSRequest();
@@ -394,7 +394,7 @@ class RequestSerializerTest extends AbstractTestCase {
      * @return void
      * @throws Exception Throws an exception if an error occurs.
      */
-    public function testSerializeDeletingSubAccountRequest() {
+    public function testSerializeDeletingSubAccountRequest(): void {
 
         // Set a Deleting sub-account request mock.
         $arg = new DeletingSubAccountRequest();
@@ -413,7 +413,7 @@ class RequestSerializerTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testSerializeDeletingSubAccountRequestWithoutArguments() {
+    public function testSerializeDeletingSubAccountRequestWithoutArguments(): void {
 
         // Set a Deleting sub-account request mock.
         $arg = new DeletingSubAccountRequest();
@@ -436,7 +436,7 @@ class RequestSerializerTest extends AbstractTestCase {
      * @return void
      * @throws Exception Throws an exception if an error occurs.
      */
-    public function testSerializeDeliveryReportRequest() {
+    public function testSerializeDeliveryReportRequest(): void {
 
         // Set a Delivery report request mock.
         $arg = new DeliveryReportRequest();
@@ -455,7 +455,7 @@ class RequestSerializerTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testSerializeDeliveryReportRequestWithoutArguments() {
+    public function testSerializeDeliveryReportRequestWithoutArguments(): void {
 
         // Set a Delivery report request mock.
         $arg = new DeliveryReportRequest();
@@ -478,7 +478,7 @@ class RequestSerializerTest extends AbstractTestCase {
      * @return void
      * @throws Exception Throws an exception if an error occurs.
      */
-    public function testSerializeRetrievingSMSReplyRequest() {
+    public function testSerializeRetrievingSMSReplyRequest(): void {
 
         // Set a Retrieving SMS reply request mock.
         $arg = new RetrievingSMSReplyRequest();
@@ -523,7 +523,7 @@ class RequestSerializerTest extends AbstractTestCase {
      * @return void
      * @throws Exception Throws an exception if an error occurs.
      */
-    public function testSerializeRetrievingSMSReplyRequestWithStartAndEndDate() {
+    public function testSerializeRetrievingSMSReplyRequestWithStartAndEndDate(): void {
 
         // Set a Retrieving SMS reply request mock.
         $arg = new RetrievingSMSReplyRequest();
@@ -577,7 +577,7 @@ class RequestSerializerTest extends AbstractTestCase {
      * @return void
      * @throws Exception Throws an exception if an error occurs.
      */
-    public function testSerializeRetrievingSMSReplyRequestWithoutArguments() {
+    public function testSerializeRetrievingSMSReplyRequestWithoutArguments(): void {
 
         // Set a Retrieving SMS reply request mock.
         $arg = new RetrievingSMSReplyRequest();
@@ -594,7 +594,7 @@ class RequestSerializerTest extends AbstractTestCase {
      * @return void
      * @throws Exception Throws an exception if an error occurs.
      */
-    public function testSerializeSendingSMSBatchRequest() {
+    public function testSerializeSendingSMSBatchRequest(): void {
 
         // Set a Fichier mock.
         $fichier = getcwd() . "/tests/Fixtures/Model/Request/SendingSMSBatchRequest.csv";
@@ -629,7 +629,7 @@ class RequestSerializerTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testSerializeSendingSMSBatchRequestWithoutArguments() {
+    public function testSerializeSendingSMSBatchRequestWithoutArguments(): void {
 
         // Set a Sending SMS batch request mock.
         $arg = new SendingSMSBatchRequest();
@@ -652,7 +652,7 @@ class RequestSerializerTest extends AbstractTestCase {
      * @return void
      * @throws Exception Throws an exception if an error occurs.
      */
-    public function testSerializeSendingSMSMessageRequest() {
+    public function testSerializeSendingSMSMessageRequest(): void {
 
         // Set a Sending SMS message request mock.
         $arg = new SendingSMSMessageRequest();
@@ -692,7 +692,7 @@ class RequestSerializerTest extends AbstractTestCase {
      * @return void
      * @throws Exception Throws an exception if an error occurs.
      */
-    public function testSerializeSendingSMSMessageRequestWithGroupe() {
+    public function testSerializeSendingSMSMessageRequestWithGroupe(): void {
 
         // Set a Sending SMS message request mock.
         $arg = new SendingSMSMessageRequest();
@@ -728,7 +728,7 @@ class RequestSerializerTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testSerializeSendingSMSMessageRequestWithoutArguments() {
+    public function testSerializeSendingSMSMessageRequestWithoutArguments(): void {
 
         // Set a Sending SMS message request mock.
         $arg = new SendingSMSMessageRequest();
@@ -761,7 +761,7 @@ class RequestSerializerTest extends AbstractTestCase {
      * @return void
      * @throws Exception Throws an exception if an error occurs.
      */
-    public function testSerializeSendingTextToSpeechRequest() {
+    public function testSerializeSendingTextToSpeechRequest(): void {
 
         // Set a Sending text-to-speech request mock.
         $arg = new SendingTextToSpeechSMSRequest();
@@ -790,7 +790,7 @@ class RequestSerializerTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testSerializeSendingTextToSpeechRequestWithoutArguments() {
+    public function testSerializeSendingTextToSpeechRequestWithoutArguments(): void {
 
         // Set a Sending text-to-speech request mock.
         $arg = new SendingTextToSpeechSMSRequest();
@@ -823,7 +823,7 @@ class RequestSerializerTest extends AbstractTestCase {
      * @return void
      * @throws Exception Throws an exception if an error occurs.
      */
-    public function testSerializeSendingUnicodeSMSRequest() {
+    public function testSerializeSendingUnicodeSMSRequest(): void {
 
         // Set a Sending Unicode SMS request mock.
         $arg = new SendingUnicodeSMSRequest();
@@ -863,7 +863,7 @@ class RequestSerializerTest extends AbstractTestCase {
      * @return void
      * @throws Exception Throws an exception if an error occurs.
      */
-    public function testSerializeSentSMSMessageRequest() {
+    public function testSerializeSentSMSMessageRequest(): void {
 
         // Set a Deleting sub-account request mock.
         $arg = new SentSMSMessageListRequest();
@@ -883,7 +883,7 @@ class RequestSerializerTest extends AbstractTestCase {
      * @return void
      * @throws Exception Throws an exception if an error occurs.
      */
-    public function testSerializeSentSMSMessageRequestWithoutArguments() {
+    public function testSerializeSentSMSMessageRequestWithoutArguments(): void {
 
         // Set a Deleting sub-account request mock.
         $arg = new SentSMSMessageListRequest();
@@ -900,7 +900,7 @@ class RequestSerializerTest extends AbstractTestCase {
      * @return void
      * @throws Exception Throws an exception if an error occurs.
      */
-    public function testSerializeTransferringCreditsRequest() {
+    public function testSerializeTransferringCreditsRequest(): void {
 
         // Set a Transferring credits request mock.
         $arg = new TransferringCreditsRequest();
@@ -925,7 +925,7 @@ class RequestSerializerTest extends AbstractTestCase {
      * @return void
      * @throws Exception Throws an exception if an error occurs.
      */
-    public function testSerializeTransferringCreditsRequestWithoutArguments() {
+    public function testSerializeTransferringCreditsRequestWithoutArguments(): void {
 
         // Set a Transferring credits request mock.
         $arg = new TransferringCreditsRequest();
@@ -957,7 +957,7 @@ class RequestSerializerTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function test__construct() {
+    public function test__construct(): void {
 
         $obj = new RequestSerializer();
 

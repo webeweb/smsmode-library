@@ -27,7 +27,7 @@ class AddingContactRequestTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testAddGroupe() {
+    public function testAddGroupe(): void {
 
         $obj = new AddingContactRequest();
 
@@ -40,7 +40,7 @@ class AddingContactRequestTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testSetGroupes() {
+    public function testSetGroupes(): void {
 
         $obj = new AddingContactRequest();
 
@@ -53,7 +53,7 @@ class AddingContactRequestTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testSetOther() {
+    public function testSetOther(): void {
 
         $obj = new AddingContactRequest();
 
@@ -66,7 +66,7 @@ class AddingContactRequestTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function test__construct() {
+    public function test__construct(): void {
 
         $this->assertEquals("/http/1.6/addContact.do", AddingContactRequest::ADDING_CONTACT_RESOURCE_PATH);
 

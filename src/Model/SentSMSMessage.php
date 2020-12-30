@@ -12,7 +12,7 @@
 namespace WBW\Library\SMSMode\Model;
 
 use DateTime;
-use WBW\Library\SMSMode\Model\Attribute\StringMessageTrait;
+use WBW\Library\Core\Model\Attribute\StringMessageTrait;
 use WBW\Library\SMSMode\Model\Attribute\StringNumeroTrait;
 use WBW\Library\SMSMode\Model\Attribute\StringSmsIDTrait;
 
@@ -31,56 +31,58 @@ class SentSMSMessage extends AbstractResponse {
     /**
      * Cost in credits.
      *
-     * @var float
+     * @var float|null
      */
     private $costCredits;
 
     /**
      * Recipient count.
      *
-     * @var int
+     * @var int|null
      */
     private $recipientCount;
 
     /**
      * Date envoi.
      *
-     * @var DateTime
+     * @var DateTime|null
      */
     private $sendDate;
 
     /**
      * Get the cost in credits.
      *
-     * @return float Returns the cost in credits.
+     * @return float|null Returns the cost in credits.
      */
-    public function getCostCredits() {
+    public function getCostCredits(): ?float {
         return $this->costCredits;
     }
 
     /**
-     * @return int
+     * Get the recipient count.
+     *
+     * @return int|null Returns the recipient count.
      */
-    public function getRecipientCount() {
+    public function getRecipientCount(): ?int {
         return $this->recipientCount;
     }
 
     /**
      * Get the send date.
      *
-     * @return DateTime Returns the send date.
+     * @return DateTime|null Returns the send date.
      */
-    public function getSendDate() {
+    public function getSendDate(): ?DateTime {
         return $this->sendDate;
     }
 
     /**
      * Set the cost in credits.
      *
-     * @param float $costCredits The cost in credits.
+     * @param float|null $costCredits The cost in credits.
      * @return SentSMSMessage Returns this sent SMS message list.
      */
-    public function setCostCredits($costCredits) {
+    public function setCostCredits(?float $costCredits): SentSMSMessage {
         $this->costCredits = $costCredits;
         return $this;
     }
@@ -88,10 +90,10 @@ class SentSMSMessage extends AbstractResponse {
     /**
      * Set the recipient count.
      *
-     * @param int $recipientCount The recipient count.
+     * @param int|null $recipientCount The recipient count.
      * @return SentSMSMessage Returns this sent SMS message list.
      */
-    public function setRecipientCount($recipientCount) {
+    public function setRecipientCount(?int $recipientCount): SentSMSMessage {
         $this->recipientCount = $recipientCount;
         return $this;
     }
@@ -102,7 +104,7 @@ class SentSMSMessage extends AbstractResponse {
      * @param DateTime|null $sendDate The send date.
      * @return SentSMSMessage Returns this sent SMS message list.
      */
-    public function setSendDate(DateTime $sendDate = null) {
+    public function setSendDate(?DateTime $sendDate): SentSMSMessage {
         $this->sendDate = $sendDate;
         return $this;
     }

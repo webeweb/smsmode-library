@@ -30,7 +30,7 @@ class DateTimeDateReceptionTraitTest extends AbstractTestCase {
      * @return void
      * @throws Exception Throws an exception if an error occurs.
      */
-    public function testSetDateReception() {
+    public function testSetDateReception(): void {
 
         // Set a Date reception mock.
         $dateReception = new DateTime();
@@ -46,7 +46,7 @@ class DateTimeDateReceptionTraitTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function test__construct() {
+    public function test__construct(): void {
 
         $obj = new TestDateTimeDateReceptionTrait();
 

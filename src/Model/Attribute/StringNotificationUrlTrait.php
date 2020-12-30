@@ -22,25 +22,25 @@ trait StringNotificationUrlTrait {
     /**
      * Notification URL.
      *
-     * @var string
+     * @var string|null
      */
     private $notificationUrl;
 
     /**
      * Get the notification URL.
      *
-     * @return string Returns the notification URL.
+     * @return string|null Returns the notification URL.
      */
-    public function getNotificationUrl() {
+    public function getNotificationUrl(): ?string {
         return $this->notificationUrl;
     }
 
     /**
      * Set the notification URL.
      *
-     * @param string $notificationUrl The notification URL.
+     * @param string $notificationUrl |null The notification URL.
      */
-    public function setNotificationUrl($notificationUrl) {
+    public function setNotificationUrl(?string $notificationUrl): self {
         $this->notificationUrl = $notificationUrl;
         return $this;
     }

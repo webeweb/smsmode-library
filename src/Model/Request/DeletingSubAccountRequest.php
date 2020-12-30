@@ -31,33 +31,33 @@ class DeletingSubAccountRequest extends AbstractRequest {
     /**
      * Pseudo to delete.
      *
-     * @var string
+     * @var string|null
      */
     private $pseudoToDelete;
 
     /**
      * Get the pseudo to delete.
      *
-     * @return string Returns the pseudo to delete.
+     * @return string|null Returns the pseudo to delete.
      */
-    public function getPseudoToDelete() {
+    public function getPseudoToDelete(): ?string {
         return $this->pseudoToDelete;
     }
 
     /**
      * {@inheritdoc}
      */
-    public function getResourcePath() {
+    public function getResourcePath(): string {
         return self::DELETING_SUB_ACCOUNT_RESOURCE_PATH;
     }
 
     /**
      * Set the pseudo to delete.
      *
-     * @param string $pseudoToDelete The pseudo to delete.
+     * @param string|null $pseudoToDelete The pseudo to delete.
      * @return DeletingSubAccountRequest Returns this deleting sub-account request.
      */
-    public function setPseudoToDelete($pseudoToDelete) {
+    public function setPseudoToDelete(?string $pseudoToDelete): DeletingSubAccountRequest {
         $this->pseudoToDelete = $pseudoToDelete;
         return $this;
     }

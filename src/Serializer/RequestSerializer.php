@@ -52,7 +52,7 @@ class RequestSerializer {
      * @return void
      * @throws InvalidArgumentException Throws an invalid argument exception if the complement value is missing.
      */
-    protected function checkComplementValue($object, array $configuration, $attribute) {
+    protected function checkComplementValue($object, array $configuration, string $attribute): void {
 
         $complement = ArrayHelper::get($configuration[$attribute], "complement");
 
@@ -70,7 +70,7 @@ class RequestSerializer {
      * @return void
      * @throws InvalidArgumentException Throws an invalid argument exception if the mandatory parameter is missing.
      */
-    protected function checkMandatoryValue($object, array $configuration, $attribute) {
+    protected function checkMandatoryValue($object, array $configuration, string $attribute): void {
 
         $mandatory = $configuration["mandatory"];
         $value     = $this->getObjectValue($object, $configuration["method"]);
@@ -86,7 +86,7 @@ class RequestSerializer {
      * @param array $value The array.
      * @return string Returns the formatted array.
      */
-    protected function formatArray(array $value) {
+    protected function formatArray(array $value): string {
         return implode(",", $value);
     }
 
@@ -96,7 +96,7 @@ class RequestSerializer {
      * @param DateTime $value The date.
      * @return string Returns the formatted date.
      */
-    protected function formatDate(DateTime $value) {
+    protected function formatDate(DateTime $value): string {
         return $value->format(RequestInterface::REQUEST_DATE_FORMAT);
     }
 
@@ -106,7 +106,7 @@ class RequestSerializer {
      * @param DateTime $value The date/time.
      * @return string Returns the formatted date/time.
      */
-    protected function formatDateTime(DateTime $value) {
+    protected function formatDateTime(DateTime $value): string {
         return $value->format(RequestInterface::REQUEST_DATETIME_FORMAT);
     }
 
@@ -116,7 +116,7 @@ class RequestSerializer {
      * @param string $value The value.
      * @return string Returns the formatted message.
      */
-    protected function formatMessageISO8859($value) {
+    protected function formatMessageISO8859($value): string {
         $iconv = iconv("UTF-8", "ISO-8859-15", $value);
         return $this->formatMessageUnicode($iconv);
     }
@@ -127,7 +127,7 @@ class RequestSerializer {
      * @param string $value The value.
      * @return string Returns the formatted message.
      */
-    protected function formatMessageUnicode($value) {
+    protected function formatMessageUnicode($value): string {
         return $value; // return urlencode($value);
     }
 
@@ -138,7 +138,7 @@ class RequestSerializer {
      * @param array $configuration The configuration.
      * @return string Returns the formatted value.
      */
-    protected function formatValue($object, array $configuration) {
+    protected function formatValue($object, array $configuration): string {
 
         $formatter = ArrayHelper::get($configuration, "formatter");
         $value     = $this->getObjectValue($object, $configuration["method"]);
@@ -155,7 +155,7 @@ class RequestSerializer {
      *
      * @return array Returns the configuration.
      */
-    public function getConfiguration() {
+    public function getConfiguration(): array {
         return $this->configuration;
     }
 
@@ -166,7 +166,7 @@ class RequestSerializer {
      * @param string $getter The getter method.
      * @return mixed Returns the object value.
      */
-    protected function getObjectValue($object, $getter) {
+    protected function getObjectValue($object, string $getter) {
         return $object->$getter();
     }
 
@@ -176,7 +176,7 @@ class RequestSerializer {
      * @param array $configuration The configuration.
      * @return bool Returns true in case of success, false otherwise.
      */
-    protected function isBreakValue(array $configuration) {
+    protected function isBreakValue(array $configuration): bool {
         return false === ArrayHelper::get($configuration, "continue");
     }
 
@@ -188,7 +188,7 @@ class RequestSerializer {
      * @param string $attribute The attribute.
      * @return bool Returns true in case of success, false otherwise.
      */
-    protected function isMandatoryValue($object, array $configuration, $attribute) {
+    protected function isMandatoryValue($object, array $configuration, string $attribute): bool {
 
         $mandatory = $configuration[$attribute]["mandatory"];
         $excludeIf = ArrayHelper::get($configuration[$attribute], "excludeIf");
@@ -206,7 +206,7 @@ class RequestSerializer {
      * @param mixed $value The value.
      * @return bool Returns true in case of success, false otherwise.
      */
-    protected function isNullValue($value) {
+    protected function isNullValue($value): bool {
         if (null === $value) {
             return true;
         }
@@ -223,7 +223,7 @@ class RequestSerializer {
      * @param string $getter The getter.
      * @return bool Returns true in case of success, false otherwise.
      */
-    protected function nullObjectValue($object, $getter) {
+    protected function nullObjectValue($object, string $getter): bool {
         $value = $this->getObjectValue($object, $getter);
         return $this->isNullValue($value);
     }
@@ -235,7 +235,7 @@ class RequestSerializer {
      * @return array Returns the serialized parameters.
      * @throws InvalidArgumentException Throws an invalid argument exception if a mandatory parameter is missing.
      */
-    public function serialize($object) {
+    public function serialize($object): array {
 
         // Get and check the object classname.
         $classname = get_class($object);
@@ -277,7 +277,7 @@ class RequestSerializer {
      * @param array $configuration The configuration.
      * @return RequestSerializer Returns this object serializer.
      */
-    protected function setConfiguration(array $configuration) {
+    protected function setConfiguration(array $configuration): RequestSerializer {
         $this->configuration = $configuration;
         return $this;
     }

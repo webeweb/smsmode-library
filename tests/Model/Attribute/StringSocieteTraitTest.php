@@ -27,7 +27,7 @@ class StringSocieteTraitTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testSetSociete() {
+    public function testSetSociete(): void {
 
         $obj = new TestStringSocieteTrait();
 
@@ -40,7 +40,7 @@ class StringSocieteTraitTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function test__construct() {
+    public function test__construct(): void {
 
         $obj = new TestStringSocieteTrait();
 

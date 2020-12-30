@@ -27,7 +27,7 @@ class StringNotificationUrlTraitTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testSetNotificationUrl() {
+    public function testSetNotificationUrl(): void {
 
         $obj = new TestStringNotificationUrlTrait();
 
@@ -40,7 +40,7 @@ class StringNotificationUrlTraitTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function test__construct() {
+    public function test__construct(): void {
 
         $obj = new TestStringNotificationUrlTrait();
 

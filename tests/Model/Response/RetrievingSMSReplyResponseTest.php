@@ -28,7 +28,7 @@ class RetrievingSMSReplyResponseTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testAddSMSReply() {
+    public function testAddSMSReply(): void {
 
         // Set a SMS reply mock.
         $smsReply = new SMSReply();
@@ -44,7 +44,7 @@ class RetrievingSMSReplyResponseTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testHasSMSReply() {
+    public function testHasSMSReply(): void {
 
         // Set a SMS reply mock.
         $smsReply = new SMSReply();
@@ -60,7 +60,7 @@ class RetrievingSMSReplyResponseTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function test__construct() {
+    public function test__construct(): void {
 
         $obj = new RetrievingSMSReplyResponse();
 

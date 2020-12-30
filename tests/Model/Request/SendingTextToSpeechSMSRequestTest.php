@@ -31,7 +31,7 @@ class SendingTextToSpeechSMSRequestTest extends AbstractTestCase {
      * @return void
      * @throws Exception Throws an exception if an error occurs.
      */
-    public function testAddNumero() {
+    public function testAddNumero(): void {
 
         $obj = new SendingTextToSpeechSMSRequest();
 
@@ -44,7 +44,7 @@ class SendingTextToSpeechSMSRequestTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testEnumLanguage() {
+    public function testEnumLanguage(): void {
 
         $obj = new SendingTextToSpeechSMSRequest();
 
@@ -63,7 +63,7 @@ class SendingTextToSpeechSMSRequestTest extends AbstractTestCase {
      * @return void
      * @throws Exception Throws an exception if an error occurs.
      */
-    public function testSetLanguage() {
+    public function testSetLanguage(): void {
 
         $obj = new SendingTextToSpeechSMSRequest();
 
@@ -79,7 +79,7 @@ class SendingTextToSpeechSMSRequestTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testSetLanguageWithInvalidArgumentException() {
+    public function testSetLanguageWithInvalidArgumentException(): void {
 
         $obj = new SendingTextToSpeechSMSRequest();
 
@@ -98,7 +98,7 @@ class SendingTextToSpeechSMSRequestTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testSetTitle() {
+    public function testSetTitle(): void {
 
         $obj = new SendingTextToSpeechSMSRequest();
 
@@ -111,7 +111,7 @@ class SendingTextToSpeechSMSRequestTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function test__construct() {
+    public function test__construct(): void {
 
         $this->assertEquals("/http/1.6/sendVoiceMessage.do", SendingTextToSpeechSMSRequest::SENDING_TEXT_TO_SPEECH_SMS_RESOURCE_PATH);
 

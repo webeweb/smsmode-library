@@ -30,7 +30,7 @@ class RetrievingSMSReplyRequestTest extends AbstractTestCase {
      * @return void
      * @throws Exception Throws an exception.
      */
-    public function testSetEndDate() {
+    public function testSetEndDate(): void {
 
         // Set a End date mock.
         $endDate = new DateTime();
@@ -46,7 +46,7 @@ class RetrievingSMSReplyRequestTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testSetStart() {
+    public function testSetStart(): void {
 
         $obj = new RetrievingSMSReplyRequest();
 
@@ -60,7 +60,7 @@ class RetrievingSMSReplyRequestTest extends AbstractTestCase {
      * @return void
      * @throws Exception Throws an exception.
      */
-    public function testSetStartDate() {
+    public function testSetStartDate(): void {
 
         // Set a Start date mock.
         $startDate = new DateTime();
@@ -76,7 +76,7 @@ class RetrievingSMSReplyRequestTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function test__construct() {
+    public function test__construct(): void {
 
         $this->assertEquals("/http/1.6/responseList.do", RetrievingSMSReplyRequest::RETRIEVING_SMS_REPLY_RESOURCE_PATH);
 

@@ -13,12 +13,13 @@ namespace WBW\Library\SMSMode\Model\Request;
 
 use UnexpectedValueException;
 use WBW\Library\Core\Model\Attribute\DateTimeDateTrait;
+use WBW\Library\Core\Model\Attribute\StringEmailTrait;
+use WBW\Library\Core\Model\Attribute\StringReferenceTrait;
+use WBW\Library\SMSMode\Model\AbstractRequest;
 use WBW\Library\SMSMode\Model\Attribute\StringMobileTrait;
 use WBW\Library\SMSMode\Model\Attribute\StringNomTrait;
 use WBW\Library\SMSMode\Model\Attribute\StringPrenomTrait;
-use WBW\Library\SMSMode\Model\Attribute\StringReferenceTrait;
 use WBW\Library\SMSMode\Model\Attribute\StringSocieteTrait;
-use WBW\Library\SMSMode\Model\AbstractRequest;
 use WBW\Library\SMSMode\Serializer\NumeroSerializer;
 
 /**
@@ -30,6 +31,7 @@ use WBW\Library\SMSMode\Serializer\NumeroSerializer;
 class CreatingSubAccountRequest extends AbstractRequest {
 
     use DateTimeDateTrait;
+    use StringEmailTrait;
     use StringMobileTrait;
     use StringNomTrait;
     use StringPrenomTrait;
@@ -46,145 +48,129 @@ class CreatingSubAccountRequest extends AbstractRequest {
     /**
      * Adresse.
      *
-     * @var string
+     * @var string|null
      */
     private $adresse;
 
     /**
      * Code postal.
      *
-     * @var string
+     * @var string|null
      */
     private $codePostal;
 
     /**
-     * Email.
-     *
-     * @var string
-     */
-    private $email;
-
-    /**
      * Fax.
      *
-     * @var string
+     * @var string|null
      */
     private $fax;
 
     /**
      * New pass.
      *
-     * @var string
+     * @var string|null
      */
     private $newPass;
 
     /**
      * New pseudo.
      *
-     * @var string
+     * @var string|null
      */
     private $newPseudo;
 
     /**
      * Telephone.
      *
-     * @var string
+     * @var string|null
      */
     private $telephone;
 
     /**
      * Ville.
      *
-     * @var string
+     * @var string|null
      */
     private $ville;
 
     /**
      * Get the adresse.
      *
-     * @return string Returns the adresse.
+     * @return string|null Returns the adresse.
      */
-    public function getAdresse() {
+    public function getAdresse(): ?string {
         return $this->adresse;
     }
 
     /**
      * Get the code postal.
      *
-     * @return string Returns the code postal.
+     * @return string|null Returns the code postal.
      */
-    public function getCodePostal() {
+    public function getCodePostal(): ?string {
         return $this->codePostal;
-    }
-
-    /**
-     * Get the email.
-     *
-     * @return string Returns the email.
-     */
-    public function getEmail() {
-        return $this->email;
     }
 
     /**
      * Get the fax.
      *
-     * @return string Returns the fax.
+     * @return string|null Returns the fax.
      */
-    public function getFax() {
+    public function getFax(): ?string {
         return $this->fax;
     }
 
     /**
      * Get the new pass.
      *
-     * @return string Returns the new pass.
+     * @return string|null Returns the new pass.
      */
-    public function getNewPass() {
+    public function getNewPass(): ?string {
         return $this->newPass;
     }
 
     /**
      * Get the new pseudo.
      *
-     * @return string Returns the new pseudo.
+     * @return string|null Returns the new pseudo.
      */
-    public function getNewPseudo() {
+    public function getNewPseudo(): ?string {
         return $this->newPseudo;
     }
 
     /**
      * {@inheritdoc}
      */
-    public function getResourcePath() {
+    public function getResourcePath(): string {
         return self::CREATING_SUB_ACCOUNT_RESOURCE_PATH;
     }
 
     /**
      * Get the telephone.
      *
-     * @return string Returns the telephone.
+     * @return string|null Returns the telephone.
      */
-    public function getTelephone() {
+    public function getTelephone(): ?string {
         return $this->telephone;
     }
 
     /**
      * Get the ville.
      *
-     * @return string Returns the ville.
+     * @return string|null Returns the ville.
      */
-    public function getVille() {
+    public function getVille(): ?string {
         return $this->ville;
     }
 
     /**
      * Set the adresse.
      *
-     * @param string $adresse The adresse.
+     * @param string|null $adresse The adresse.
      * @return CreatingSubAccountRequest Returns this creating sub-account request.
      */
-    public function setAdresse($adresse) {
+    public function setAdresse(?string $adresse): CreatingSubAccountRequest {
         $this->adresse = $adresse;
         return $this;
     }
@@ -192,33 +178,22 @@ class CreatingSubAccountRequest extends AbstractRequest {
     /**
      * Set the code postal.
      *
-     * @param string $codePostal The code postal.
+     * @param string|null $codePostal The code postal.
      * @return CreatingSubAccountRequest Returns this creating sub-account request.
      */
-    public function setCodePostal($codePostal) {
+    public function setCodePostal(?string $codePostal): CreatingSubAccountRequest {
         $this->codePostal = $codePostal;
-        return $this;
-    }
-
-    /**
-     * Set the email.
-     *
-     * @param string $email The email.
-     * @return CreatingSubAccountRequest Returns this creating sub-account request.
-     */
-    public function setEmail($email) {
-        $this->email = $email;
         return $this;
     }
 
     /**
      * Set the fax.
      *
-     * @param string $fax The fax.
+     * @param string|null $fax The fax.
      * @return CreatingSubAccountRequest Returns this creating sub-account request.
      * @thows UnexpectedValueException Throws an unexpected value exception if the fax is invalid.
      */
-    public function setFax($fax) {
+    public function setFax(?string $fax): CreatingSubAccountRequest {
         NumeroSerializer::checkNumero($fax);
         $this->fax = $fax;
         return $this;
@@ -227,11 +202,11 @@ class CreatingSubAccountRequest extends AbstractRequest {
     /**
      * Set the mobile.
      *
-     * @param string $mobile The mobile.
+     * @param string|null $mobile The mobile.
      * @return CreatingSubAccountRequest Returns this creating sub-account request.
      * @throws UnexpectedValueException Throws an unexpected value exception if the mobile is invalid.
      */
-    public function setMobile($mobile) {
+    public function setMobile(?string $mobile): CreatingSubAccountRequest {
         NumeroSerializer::checkNumero($mobile);
         $this->mobile = $mobile;
         return $this;
@@ -240,10 +215,10 @@ class CreatingSubAccountRequest extends AbstractRequest {
     /**
      * Set the new pass.
      *
-     * @param string $newPass The new pass.
+     * @param string|null $newPass The new pass.
      * @return CreatingSubAccountRequest Returns this creating sub-account request.
      */
-    public function setNewPass($newPass) {
+    public function setNewPass(?string $newPass): CreatingSubAccountRequest {
         $this->newPass = $newPass;
         return $this;
     }
@@ -251,10 +226,10 @@ class CreatingSubAccountRequest extends AbstractRequest {
     /**
      * Set the new pseudo.
      *
-     * @param string $newPseudo The new pseudo.
+     * @param string|null $newPseudo The new pseudo.
      * @return CreatingSubAccountRequest Returns this creating sub-account request.
      */
-    public function setNewPseudo($newPseudo) {
+    public function setNewPseudo(?string $newPseudo): CreatingSubAccountRequest {
         $this->newPseudo = $newPseudo;
         return $this;
     }
@@ -262,11 +237,11 @@ class CreatingSubAccountRequest extends AbstractRequest {
     /**
      * Set the telephone.
      *
-     * @param string $telephone The telephone.
+     * @param string|null $telephone The telephone.
      * @return CreatingSubAccountRequest Returns this creating sub-account request.
      * @throws UnexpectedValueException Throws an unexpected value exception if the numero is invalid.
      */
-    public function setTelephone($telephone) {
+    public function setTelephone(?string $telephone): CreatingSubAccountRequest {
         NumeroSerializer::checkNumero($telephone);
         $this->telephone = $telephone;
         return $this;
@@ -275,10 +250,10 @@ class CreatingSubAccountRequest extends AbstractRequest {
     /**
      * Set the ville.
      *
-     * @param string $ville The ville.
+     * @param string|null $ville The ville.
      * @return CreatingSubAccountRequest Returns this creating sub-account request.
      */
-    public function setVille($ville) {
+    public function setVille(?string $ville): CreatingSubAccountRequest {
         $this->ville = $ville;
         return $this;
     }

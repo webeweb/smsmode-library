@@ -24,16 +24,16 @@ trait DateTimeDateEnvoiTrait {
     /**
      * Date envoi.
      *
-     * @var DateTime
+     * @var DateTime|null
      */
     private $dateEnvoi;
 
     /**
      * Get the date envoi.
      *
-     * @return DateTime Returns the date envoi.
+     * @return DateTime|null Returns the date envoi.
      */
-    public function getDateEnvoi() {
+    public function getDateEnvoi(): ?DateTime {
         return $this->dateEnvoi;
     }
 
@@ -42,7 +42,7 @@ trait DateTimeDateEnvoiTrait {
      *
      * @param DateTime|null $dateEnvoi The date envoi.
      */
-    public function setDateEnvoi(DateTime $dateEnvoi = null) {
+    public function setDateEnvoi(?DateTime $dateEnvoi): self {
         $this->dateEnvoi = $dateEnvoi;
         return $this;
     }

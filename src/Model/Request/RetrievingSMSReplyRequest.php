@@ -12,8 +12,8 @@
 namespace WBW\Library\SMSMode\Model\Request;
 
 use DateTime;
-use WBW\Library\SMSMode\Model\Attribute\IntegerOffsetTrait;
 use WBW\Library\SMSMode\Model\AbstractRequest;
+use WBW\Library\SMSMode\Model\Attribute\IntegerOffsetTrait;
 
 /**
  * Retrieving SMS reply request.
@@ -35,55 +35,55 @@ class RetrievingSMSReplyRequest extends AbstractRequest {
     /**
      * End date.
      *
-     * @var DateTime
+     * @var DateTime|null
      */
     private $endDate;
 
     /**
      * Start
      *
-     * @var int
+     * @var int|null
      */
     private $start;
 
     /**
      * Start date.
      *
-     * @var DateTime
+     * @var DateTime|null
      */
     private $startDate;
 
     /**
      * Get the end date.
      *
-     * @return DateTime Returns the end date.
+     * @return DateTime|null Returns the end date.
      */
-    public function getEndDate() {
+    public function getEndDate(): ?DateTime {
         return $this->endDate;
     }
 
     /**
      * {@inheritdoc}
      */
-    public function getResourcePath() {
+    public function getResourcePath(): string {
         return self::RETRIEVING_SMS_REPLY_RESOURCE_PATH;
     }
 
     /**
      * Get the start.
      *
-     * @return int Returns the start.
+     * @return int|null Returns the start.
      */
-    public function getStart() {
+    public function getStart(): ?int {
         return $this->start;
     }
 
     /**
      * Get the start date.
      *
-     * @return DateTime Returns the start date.
+     * @return DateTime|null Returns the start date.
      */
-    public function getStartDate() {
+    public function getStartDate(): ?DateTime {
         return $this->startDate;
     }
 
@@ -93,7 +93,7 @@ class RetrievingSMSReplyRequest extends AbstractRequest {
      * @param DateTime|null $endDate The end date.
      * @return RetrievingSMSReplyRequest Returns this retrieving SMS reply request.
      */
-    public function setEndDate(DateTime $endDate = null) {
+    public function setEndDate(?DateTime $endDate): RetrievingSMSReplyRequest {
         $this->endDate = $endDate;
         return $this;
     }
@@ -101,10 +101,10 @@ class RetrievingSMSReplyRequest extends AbstractRequest {
     /**
      * Set the start.
      *
-     * @param int $start The start.
+     * @param int|null $start The start.
      * @return RetrievingSMSReplyRequest Returns this retrieving SMS reply request.
      */
-    public function setStart($start) {
+    public function setStart(?int $start): RetrievingSMSReplyRequest {
         $this->start = $start;
         return $this;
     }
@@ -115,7 +115,7 @@ class RetrievingSMSReplyRequest extends AbstractRequest {
      * @param DateTime|null $startDate The start date.
      * @return RetrievingSMSReplyRequest Returns this retrieving SMS reply request.
      */
-    public function setStartDate(DateTime $startDate = null) {
+    public function setStartDate(?DateTime $startDate): RetrievingSMSReplyRequest {
         $this->startDate = $startDate;
         return $this;
     }

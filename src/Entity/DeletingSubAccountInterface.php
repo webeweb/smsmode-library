@@ -22,7 +22,7 @@ interface DeletingSubAccountInterface extends SMSModeEntityInterface {
     /**
      * Get the pseudo to delete.
      *
-     * @return string Returns the pseudo to delete.
+     * @return string|null Returns the pseudo to delete.
      */
-    public function getSMSModePseudoToDelete();
+    public function getSMSModePseudoToDelete(): ?string;
 }

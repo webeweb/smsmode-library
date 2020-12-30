@@ -29,7 +29,7 @@ class AbstractResponseTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testEnumResponses() {
+    public function testEnumResponses(): void {
 
         $res = AbstractResponse::enumResponses();
         $this->assertCount(38, $res);
@@ -114,50 +114,11 @@ class AbstractResponseTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the setCode() method.
-     *
-     * @return void
-     */
-    public function testSetCode() {
-
-        $obj = new TestResponse();
-
-        $obj->setCode(0);
-        $this->assertEquals(0, $obj->getCode());
-    }
-
-    /**
-     * Tests the setDescription() method.
-     *
-     * @return void
-     */
-    public function testSetDescription() {
-
-        $obj = new TestResponse();
-
-        $obj->setDescription("description");
-        $this->assertEquals("description", $obj->getDescription());
-    }
-
-    /**
-     * Tests the setRawResponse() method.
-     *
-     * @return void
-     */
-    public function testSetRawResponse() {
-
-        $obj = new TestResponse();
-
-        $obj->setRawResponse("rawResponse");
-        $this->assertEquals("rawResponse", $obj->getRawResponse());
-    }
-
-    /**
      * Tests the __construct() method.
      *
      * @return void
      */
-    public function test__construct() {
+    public function test__construct(): void {
 
         $obj = new TestResponse();
 

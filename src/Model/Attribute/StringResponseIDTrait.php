@@ -3,7 +3,7 @@
 /*
  * This file is part of the smsmode-library package.
  *
- * (c) 2019 WEBEWEB
+ * (c) 2020 WEBEWEB
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -12,36 +12,36 @@
 namespace WBW\Library\SMSMode\Model\Attribute;
 
 /**
- * String prenom trait.
+ * String response ID trait.
  *
  * @author webeweb <https://github.com/webeweb/>
  * @package WBW\Library\SMSMode\Model\Attribute
  */
-trait StringPrenomTrait {
+trait StringResponseIDTrait {
 
     /**
-     * Prenom.
+     * Response ID.
      *
      * @var string|null
      */
-    private $prenom;
+    private $responseID;
 
     /**
-     * Get the prenom.
+     * Get the response ID.
      *
-     * @return string|null Returns the prenom.
+     * @return string|null Returns the response ID.
      */
-    public function getPrenom(): ?string {
-        return $this->prenom;
+    public function getResponseID(): ?string {
+        return $this->responseID;
     }
 
     /**
-     * Set the prenom.
+     * Set the response ID.
      *
-     * @param string|null $prenom The prenom.
+     * @param string|null $responseID The response ID.
      */
-    public function setPrenom(string $prenom): self {
-        $this->prenom = $prenom;
+    public function setResponseID(?string $responseID): self {
+        $this->responseID = $responseID;
         return $this;
     }
 }

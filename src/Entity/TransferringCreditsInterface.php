@@ -22,21 +22,21 @@ interface TransferringCreditsInterface extends SMSModeEntityInterface {
     /**
      * Get the credit amount.
      *
-     * @return int Returns the credit amount.
+     * @return int|null Returns the credit amount.
      */
-    public function getSMSModeCreditAmount();
+    public function getSMSModeCreditAmount(): ?int;
 
     /**
      * Get the reference.
      *
-     * @return string Returns the reference.
+     * @return string|null Returns the reference.
      */
-    public function getSMSModeReference();
+    public function getSMSModeReference(): ?string;
 
     /**
      * Get the target pseudo.
      *
-     * @return string Returns the target pseudo.
+     * @return string|null Returns the target pseudo.
      */
-    public function getSMSModeTargetPseudo();
+    public function getSMSModeTargetPseudo(): ?string;
 }

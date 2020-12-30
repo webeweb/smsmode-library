@@ -22,25 +22,25 @@ trait StringSocieteTrait {
     /**
      * Societe.
      *
-     * @var string
+     * @var string|null
      */
     private $societe;
 
     /**
      * Get the societe.
      *
-     * @return string Returns the societe.
+     * @return string|null Returns the societe.
      */
-    public function getSociete() {
+    public function getSociete(): ?string {
         return $this->societe;
     }
 
     /**
      * Set the societe.
      *
-     * @param string $societe The societe.
+     * @param string|null $societe The societe.
      */
-    public function setSociete($societe) {
+    public function setSociete(?string $societe): self {
         $this->societe = $societe;
         return $this;
     }

@@ -26,24 +26,24 @@ class Authentication {
     /**
      * Pass.
      *
-     * @var string
+     * @var string|null
      */
     private $pass;
 
     /**
      * Pseudo.
      *
-     * @var string
+     * @var string|null
      */
     private $pseudo;
 
     /**
      * Constructor.
      *
-     * @param string $pseudo The pseudo.
-     * @param string $pass The pass.
+     * @param string|null $pseudo The pseudo.
+     * @param string|null $pass The pass.
      */
-    public function __construct($pseudo = null, $pass = null) {
+    public function __construct(string $pseudo = null, string $pass = null) {
         $this->setPass($pass);
         $this->setPseudo($pseudo);
     }
@@ -51,28 +51,28 @@ class Authentication {
     /**
      * Get the pass.
      *
-     * @return string Returns the pass.
+     * @return string|null Returns the pass.
      */
-    public function getPass() {
+    public function getPass(): ?string {
         return $this->pass;
     }
 
     /**
      * Get the pseudo.
      *
-     * @return string Returns the pseudo.
+     * @return string|null Returns the pseudo.
      */
-    public function getPseudo() {
+    public function getPseudo(): ?string {
         return $this->pseudo;
     }
 
     /**
      * Set the pass.
      *
-     * @param string $pass The pass.
+     * @param string|null $pass The pass.
      * @return Authentication Returns this authentication.
      */
-    public function setPass($pass) {
+    public function setPass(?string $pass): Authentication {
         $this->pass = $pass;
         return $this;
     }
@@ -80,10 +80,10 @@ class Authentication {
     /**
      * Set the pseudo.
      *
-     * @param string $pseudo The pseudo.
+     * @param string|null $pseudo The pseudo.
      * @return Authentication Returns this authentication.
      */
-    public function setPseudo($pseudo) {
+    public function setPseudo(?string $pseudo): Authentication {
         $this->pseudo = $pseudo;
         return $this;
     }

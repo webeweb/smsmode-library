@@ -70,7 +70,7 @@ abstract class AbstractProvider extends BaseProvider {
      *
      * @return array Returns the configuration.
      */
-    private function buildConfiguration() {
+    private function buildConfiguration(): array {
         return [
             "base_uri"    => self::ENDPOINT_PATH . "/",
             "debug"       => $this->getDebug(),
@@ -92,7 +92,7 @@ abstract class AbstractProvider extends BaseProvider {
      * @throws ApiException Throws an API exception if an error occurs.
      * @throws InvalidArgumentException Throws an invalid argument exception if a parameter is missing.
      */
-    protected function callApi(AbstractRequest $request, array $queryData, array $postData = []) {
+    protected function callApi(AbstractRequest $request, array $queryData, array $postData = []): string {
 
         try {
 
@@ -128,7 +128,7 @@ abstract class AbstractProvider extends BaseProvider {
      *
      * @return Authentication Returns the authentication.
      */
-    public function getAuthentication() {
+    public function getAuthentication(): Authentication {
         return $this->authentication;
     }
 
@@ -137,7 +137,7 @@ abstract class AbstractProvider extends BaseProvider {
      *
      * @return RequestSerializer The request serializer.
      */
-    public function getRequestSerializer() {
+    public function getRequestSerializer(): RequestSerializer {
         return $this->requestSerializer;
     }
 
@@ -147,7 +147,7 @@ abstract class AbstractProvider extends BaseProvider {
      * @param Authentication $authentication The authentication.
      * @return AbstractProvider Returns this provider.
      */
-    protected function setAuthentication(Authentication $authentication) {
+    protected function setAuthentication(Authentication $authentication): AbstractProvider {
         $this->authentication = $authentication;
         return $this;
     }
@@ -158,7 +158,7 @@ abstract class AbstractProvider extends BaseProvider {
      * @param RequestSerializer $requestSerializer
      * @return AbstractProvider Returns this provider.
      */
-    protected function setRequestSerializer(RequestSerializer $requestSerializer) {
+    protected function setRequestSerializer(RequestSerializer $requestSerializer): AbstractProvider {
         $this->requestSerializer = $requestSerializer;
         return $this;
     }

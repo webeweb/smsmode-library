@@ -28,7 +28,7 @@ class NumeroSerializer {
      * @return void
      * @throws InvalidArgumentException Throws an invalid argument exception if the numero is invalid.
      */
-    public static function checkNumero($numero) {
+    public static function checkNumero(string $numero): void {
         if (0 === preg_match("/^[0-9]{1,}$/", $numero)) {
             throw new InvalidArgumentException(sprintf('The numero "%s" is invalid', $numero));
         }
@@ -40,7 +40,7 @@ class NumeroSerializer {
      * @param string $numero The numero.
      * @return string Returns the deserialized numero.
      */
-    public static function deserializeNumero($numero) {
+    public static function deserializeNumero(string $numero): string {
         $output = preg_replace("/^336/", "06", $numero, 1);
         $result = preg_replace("/^337/", "07", $output, 1);
         return $result;
@@ -52,7 +52,7 @@ class NumeroSerializer {
      * @param string $numero The numero.
      * @return string Returns the serialized numero.
      */
-    public static function serializeNumero($numero) {
+    public static function serializeNumero(string $numero): string {
         $output = preg_replace("/^06/", "336", $numero, 1);
         $result = preg_replace("/^07/", "337", $output, 1);
         return $result;

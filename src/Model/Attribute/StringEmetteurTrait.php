@@ -22,25 +22,25 @@ trait StringEmetteurTrait {
     /**
      * Emetteur.
      *
-     * @var string
+     * @var string|null
      */
     private $emetteur;
 
     /**
      * Get the emetteur.
      *
-     * @return string Returns the emetteur.
+     * @return string|null Returns the emetteur.
      */
-    public function getEmetteur() {
+    public function getEmetteur(): ?string {
         return $this->emetteur;
     }
 
     /**
      * Set the emetteur.
      *
-     * @param string $emetteur The emetteur.
+     * @param string|null $emetteur The emetteur.
      */
-    public function setEmetteur($emetteur) {
+    public function setEmetteur(?string $emetteur): self {
         $this->emetteur = $emetteur;
         return $this;
     }

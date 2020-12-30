@@ -27,7 +27,7 @@ class StringMobileTraitTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testSetMobile() {
+    public function testSetMobile(): void {
 
         $obj = new TestStringMobileTrait();
 
@@ -40,7 +40,7 @@ class StringMobileTraitTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function test__construct() {
+    public function test__construct(): void {
 
         $obj = new TestStringMobileTrait();
 

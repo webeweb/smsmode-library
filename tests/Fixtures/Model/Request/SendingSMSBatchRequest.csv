@@ -1,4 +1,4 @@
-“numero”,”message”,”emetteur”
-“99999911”,”This is the body of the message 1, test fichier CSV”,”RDV”,”ref123”
-88888888,”This is the body of the message 2, test fichier CSV”,””,”ref456”
-777777777,”This is the body of the message 3, test fichier CSV”,”TOTO”,”ref789”
+“numero”  ,”message”                         ,”emetteur”
+“99999911”,”This is the body of the message 1,test fichier CSV”,”RDV” ,”ref123”
+88888888  ,”This is the body of the message 2,test fichier CSV”,””    ,”ref456”
+777777777 ,”This is the body of the message 3,test fichier CSV”,”TOTO”,”ref789”

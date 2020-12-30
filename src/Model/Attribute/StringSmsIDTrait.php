@@ -22,25 +22,25 @@ trait StringSmsIDTrait {
     /**
      * SMS ID.
      *
-     * @var string
+     * @var string|null
      */
     private $smsID;
 
     /**
      * Get the SMS ID.
      *
-     * @return string Returns the SMS ID.
+     * @return string|null Returns the SMS ID.
      */
-    public function getSmsID() {
+    public function getSmsID(): ?string {
         return $this->smsID;
     }
 
     /**
      * Set the SMS ID.
      *
-     * @param string $smsID The SMS ID.
+     * @param string|null $smsID The SMS ID.
      */
-    public function setSmsID($smsID) {
+    public function setSmsID(?string $smsID): self {
         $this->smsID = $smsID;
         return $this;
     }

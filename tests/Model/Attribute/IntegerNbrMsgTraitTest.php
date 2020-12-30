@@ -29,7 +29,7 @@ class IntegerNbrMsgTraitTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testSetNbrMsg() {
+    public function testSetNbrMsg(): void {
 
         $obj = new TestIntegerNbrMsgTrait();
 
@@ -42,7 +42,7 @@ class IntegerNbrMsgTraitTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testSetNbrMsgWithInvalidArgumentException() {
+    public function testSetNbrMsgWithInvalidArgumentException(): void {
 
         $obj = new TestIntegerNbrMsgTrait();
 
@@ -61,7 +61,7 @@ class IntegerNbrMsgTraitTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function test__construct() {
+    public function test__construct(): void {
 
         $obj = new TestIntegerNbrMsgTrait();
 

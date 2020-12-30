@@ -24,16 +24,16 @@ trait DateTimeDateReceptionTrait {
     /**
      * Date reception.
      *
-     * @var DateTime
+     * @var DateTime|null
      */
     private $dateReception;
 
     /**
      * Get the date reception.
      *
-     * @return DateTime Returns the date reception.
+     * @return DateTime|null Returns the date reception.
      */
-    public function getDateReception() {
+    public function getDateReception(): ?DateTime {
         return $this->dateReception;
     }
 
@@ -42,7 +42,7 @@ trait DateTimeDateReceptionTrait {
      *
      * @param DateTime|null $dateReception The date reception.
      */
-    public function setDateReception(DateTime $dateReception = null) {
+    public function setDateReception(?DateTime $dateReception): self {
         $this->dateReception = $dateReception;
         return $this;
     }

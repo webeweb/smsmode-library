@@ -28,7 +28,7 @@ class SentSMSMessageListResponseTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testAddSentSMSMessage() {
+    public function testAddSentSMSMessage(): void {
 
         // Set a Sent SMS message mock.
         $sentSMSMessage = new SentSMSMessage();
@@ -44,7 +44,7 @@ class SentSMSMessageListResponseTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testHasSentSMSMessage() {
+    public function testHasSentSMSMessage(): void {
 
         // Set a Sent SMS message mock.
         $sentSMSMessage = new SentSMSMessage();
@@ -60,7 +60,7 @@ class SentSMSMessageListResponseTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function test__construct() {
+    public function test__construct(): void {
 
         $obj = new SentSMSMessageListResponse();
 

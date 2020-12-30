@@ -27,7 +27,7 @@ class StringEmetteurTraitTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testSetEmetteur() {
+    public function testSetEmetteur(): void {
 
         $obj = new TestStringEmetteurTrait();
 
@@ -40,7 +40,7 @@ class StringEmetteurTraitTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function test__construct() {
+    public function test__construct(): void {
 
         $obj = new TestStringEmetteurTrait();
 

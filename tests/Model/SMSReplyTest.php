@@ -25,24 +25,11 @@ use WBW\Library\SMSMode\Tests\AbstractTestCase;
 class SMSReplyTest extends AbstractTestCase {
 
     /**
-     * Tests the setFrom() method.
-     *
-     * @return void
-     */
-    public function testSetFrom() {
-
-        $obj = new SMSReply();
-
-        $obj->setFrom("from");
-        $this->assertEquals("from", $obj->getFrom());
-    }
-
-    /**
      * Tests the setMessageID() method.
      *
      * @return void
      */
-    public function testSetMessageID() {
+    public function testSetMessageID(): void {
 
         $obj = new SMSReply();
 
@@ -56,7 +43,7 @@ class SMSReplyTest extends AbstractTestCase {
      * @return void
      * @throws Exception Throws an exception if an error occurs.
      */
-    public function testSetReceptionDate() {
+    public function testSetReceptionDate(): void {
 
         // Set a Reception date mock.
         $receptionDate = new DateTime();
@@ -68,50 +55,11 @@ class SMSReplyTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the setResponseID() method.
-     *
-     * @return void
-     */
-    public function testSetResponseID() {
-
-        $obj = new SMSReply();
-
-        $obj->setResponseID("responseID");
-        $this->assertEquals("responseID", $obj->getResponseID());
-    }
-
-    /**
-     * Tests the setText() method.
-     *
-     * @return void
-     */
-    public function testSetText() {
-
-        $obj = new SMSReply();
-
-        $obj->setText("text");
-        $this->assertEquals("text", $obj->getText());
-    }
-
-    /**
-     * Tests the setTo() method.
-     *
-     * @return void
-     */
-    public function testSetTo() {
-
-        $obj = new SMSReply();
-
-        $obj->setTo("to");
-        $this->assertEquals("to", $obj->getTo());
-    }
-
-    /**
      * Tests the __construct() method.
      *
      * @return void
      */
-    public function test__construct() {
+    public function test__construct(): void {
 
         $obj = new SMSReply();
 

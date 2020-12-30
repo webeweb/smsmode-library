@@ -12,27 +12,27 @@
 namespace WBW\Library\SMSMode\Tests\Attribute;
 
 use WBW\Library\SMSMode\Tests\AbstractTestCase;
-use WBW\Library\SMSMode\Tests\Fixtures\Model\Attribute\TestStringReferenceTrait;
+use WBW\Library\SMSMode\Tests\Fixtures\Model\Attribute\TestStringResponseIDTrait;
 
 /**
- * String reference trait test.
+ * String response ID trait test.
  *
  * @author webeweb <https://github.com/webeweb/>
  * @package WBW\Library\SMSMode\Tests\Attribute
  */
-class StringReferenceTraitTest extends AbstractTestCase {
+class StringResponseIDTraitTest extends AbstractTestCase {
 
     /**
-     * Tests the setReference() method.
+     * Tests the setResponseID() method.
      *
      * @return void
      */
-    public function testSetReference() {
+    public function testSetResponseID(): void {
 
-        $obj = new TestStringReferenceTrait();
+        $obj = new TestStringResponseIDTrait();
 
-        $obj->setReference("reference");
-        $this->assertEquals("reference", $obj->getReference());
+        $obj->setResponseID("responseID");
+        $this->assertEquals("responseID", $obj->getResponseID());
     }
 
     /**
@@ -40,10 +40,10 @@ class StringReferenceTraitTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function test__construct() {
+    public function test__construct(): void {
 
-        $obj = new TestStringReferenceTrait();
+        $obj = new TestStringResponseIDTrait();
 
-        $this->assertNull($obj->getReference());
+        $this->assertNull($obj->getResponseID());
     }
 }

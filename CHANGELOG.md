@@ -1,6 +1,17 @@
 CHANGELOG
 =========
 
+### [2.10.0](https://github.com/webeweb/smsmode-library/tree/v2.10.0) (2020-12-30)
+
+> IMPORTANT NOTICE: The following PHP versions are now not supported
+> - PHP 5.6
+> - PHP 7.0
+
+- Add PHP 8.0 support
+- Improve PHP doc
+- Improve unit tests
+- Migrating from PHP 5.6 to PHP 7.1
+
 ### [2.9.3](https://github.com/webeweb/smsmode-library/tree/v2.9.3) (2020-06-25)
 
 - Improve code quality

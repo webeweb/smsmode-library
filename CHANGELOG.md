@@ -1,6 +1,10 @@
 CHANGELOG
 =========
 
+### [2.10.1](https://github.com/webeweb/smsmode-library/tree/v2.10.1) (2020-12-31)
+
+- Fix compatibility
+
 ### [2.10.0](https://github.com/webeweb/smsmode-library/tree/v2.10.0) (2020-12-30)
 
 > IMPORTANT NOTICE: The following PHP versions are now not supported

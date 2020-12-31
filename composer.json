@@ -23,7 +23,7 @@
         "ext-json": "*",
         "guzzlehttp/guzzle": "^6.0",
         "psr/log": "^1.0",
-        "webeweb/core-library": "^6.7"
+        "webeweb/core-library": "^6.8"
     },
     "conflict": {
         "webeweb/smsmode-bundle": "<1.7"

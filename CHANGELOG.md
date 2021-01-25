@@ -1,6 +1,11 @@
 CHANGELOG
 =========
 
+### [2.10.2](https://github.com/webeweb/smsmode-library/tree/v2.10.2) (2021-01-25)
+
+- Improve code quality
+- Improve PHPDoc
+
 ### [2.10.1](https://github.com/webeweb/smsmode-library/tree/v2.10.1) (2020-12-31)
 
 - Fix compatibility

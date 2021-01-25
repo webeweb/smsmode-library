@@ -38,7 +38,8 @@ trait StringNotificationUrlTrait {
     /**
      * Set the notification URL.
      *
-     * @param string $notificationUrl |null The notification URL.
+     * @param string|null $notificationUrl The notification URL.
+     * @return self Returns this instance.
      */
     public function setNotificationUrl(?string $notificationUrl): self {
         $this->notificationUrl = $notificationUrl;

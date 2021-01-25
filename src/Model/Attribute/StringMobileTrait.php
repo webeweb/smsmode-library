@@ -39,6 +39,7 @@ trait StringMobileTrait {
      * Set the mobile.
      *
      * @param string|null $mobile The mobile.
+     * @return self Returns this instance.
      */
     public function setMobile(?string $mobile): self {
         $this->mobile = $mobile;

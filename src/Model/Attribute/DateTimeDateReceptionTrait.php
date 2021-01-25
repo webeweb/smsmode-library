@@ -41,6 +41,7 @@ trait DateTimeDateReceptionTrait {
      * Set the date reception.
      *
      * @param DateTime|null $dateReception The date reception.
+     * @return self Returns this instance.
      */
     public function setDateReception(?DateTime $dateReception): self {
         $this->dateReception = $dateReception;

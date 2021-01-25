@@ -39,6 +39,7 @@ trait StringPrenomTrait {
      * Set the prenom.
      *
      * @param string|null $prenom The prenom.
+     * @return self Returns this instance.
      */
     public function setPrenom(string $prenom): self {
         $this->prenom = $prenom;

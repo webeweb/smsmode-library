@@ -39,6 +39,7 @@ trait StringSmsIDTrait {
      * Set the SMS ID.
      *
      * @param string|null $smsID The SMS ID.
+     * @return self Returns this instance.
      */
     public function setSmsID(?string $smsID): self {
         $this->smsID = $smsID;

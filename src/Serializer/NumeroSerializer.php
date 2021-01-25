@@ -42,8 +42,7 @@ class NumeroSerializer {
      */
     public static function deserializeNumero(string $numero): string {
         $output = preg_replace("/^336/", "06", $numero, 1);
-        $result = preg_replace("/^337/", "07", $output, 1);
-        return $result;
+        return preg_replace("/^337/", "07", $output, 1);
     }
 
     /**
@@ -54,7 +53,6 @@ class NumeroSerializer {
      */
     public static function serializeNumero(string $numero): string {
         $output = preg_replace("/^06/", "336", $numero, 1);
-        $result = preg_replace("/^07/", "337", $output, 1);
-        return $result;
+        return preg_replace("/^07/", "337", $output, 1);
     }
 }

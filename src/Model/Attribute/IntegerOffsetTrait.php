@@ -41,6 +41,7 @@ trait IntegerOffsetTrait {
      * Set the offset.
      *
      * @param int|null $offset The offset.
+     * @return self Returns this instance.
      * @throws InvalidArgumentException Throws an invalid argument exception if the offset is less than 1.
      */
     public function setOffset(?int $offset): self {

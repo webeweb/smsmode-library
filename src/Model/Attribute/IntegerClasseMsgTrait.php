@@ -54,6 +54,7 @@ trait IntegerClasseMsgTrait {
      * Set the classe msg.
      *
      * @param int|null $classeMsg The classe msg.
+     * @return self Returns this instance.
      * @throws InvalidArgumentException Throws an invalid argument exception exception if the classe msg is invalid.
      */
     public function setClasseMsg(?int $classeMsg): self {

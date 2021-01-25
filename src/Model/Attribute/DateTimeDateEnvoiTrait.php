@@ -41,6 +41,7 @@ trait DateTimeDateEnvoiTrait {
      * Set the date envoi.
      *
      * @param DateTime|null $dateEnvoi The date envoi.
+     * @return self Returns this instance.
      */
     public function setDateEnvoi(?DateTime $dateEnvoi): self {
         $this->dateEnvoi = $dateEnvoi;

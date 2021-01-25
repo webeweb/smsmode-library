@@ -13,6 +13,7 @@ namespace WBW\Library\SMSMode\Provider;
 
 use Exception;
 use GuzzleHttp\Client;
+use GuzzleHttp\Exception\GuzzleException;
 use InvalidArgumentException;
 use Psr\Log\LoggerInterface;
 use WBW\Library\Core\Argument\Helper\ArrayHelper;
@@ -89,8 +90,9 @@ abstract class AbstractProvider extends BaseProvider {
      * @param array $queryData The query data.
      * @param array $postData The post data.
      * @return string Returns the raw response.
-     * @throws ApiException Throws an API exception if an error occurs.
      * @throws InvalidArgumentException Throws an invalid argument exception if a parameter is missing.
+     * @throws GuzzleException Throws a Guzzle exception if an error occurs.
+     * @throws ApiException Throws an API exception if an error occurs.
      */
     protected function callApi(AbstractRequest $request, array $queryData, array $postData = []): string {
 

@@ -39,6 +39,7 @@ trait StringRefClientTrait {
      * Set the refClient.
      *
      * @param string|null $refClient The refClient.
+     * @return self Returns this instance.
      */
     public function setRefClient(?string $refClient): self {
         $this->refClient = $refClient;

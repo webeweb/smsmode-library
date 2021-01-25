@@ -39,6 +39,7 @@ trait StringEmetteurTrait {
      * Set the emetteur.
      *
      * @param string|null $emetteur The emetteur.
+     * @return self Returns this instance.
      */
     public function setEmetteur(?string $emetteur): self {
         $this->emetteur = $emetteur;

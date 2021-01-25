@@ -39,6 +39,7 @@ trait StringAccessTokenTrait {
      * Set the access token.
      *
      * @param string|null $accessToken The access token.
+     * @return self Returns this instance.
      */
     public function setAccessToken(?string $accessToken): self {
         $this->accessToken = $accessToken;

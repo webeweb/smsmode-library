@@ -41,6 +41,7 @@ trait IntegerNbrMsgTrait {
      * Set the nbr msg.
      *
      * @param int|null $nbrMsg The nbr msg.
+     * @return self Returns this instance.
      * @throws InvalidArgumentException Throws an invalid argument exception if the nbr msg is less than 1.
      */
     public function setNbrMsg(?int $nbrMsg): self {

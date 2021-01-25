@@ -39,6 +39,7 @@ trait StringResponseIDTrait {
      * Set the response ID.
      *
      * @param string|null $responseID The response ID.
+     * @return self Returns this instance.
      */
     public function setResponseID(?string $responseID): self {
         $this->responseID = $responseID;

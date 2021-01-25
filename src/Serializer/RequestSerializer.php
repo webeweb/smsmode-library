@@ -116,7 +116,7 @@ class RequestSerializer {
      * @param string $value The value.
      * @return string Returns the formatted message.
      */
-    protected function formatMessageISO8859($value): string {
+    protected function formatMessageISO8859(string $value): string {
         $iconv = iconv("UTF-8", "ISO-8859-15", $value);
         return $this->formatMessageUnicode($iconv);
     }
@@ -127,7 +127,7 @@ class RequestSerializer {
      * @param string $value The value.
      * @return string Returns the formatted message.
      */
-    protected function formatMessageUnicode($value): string {
+    protected function formatMessageUnicode(string $value): string {
         return $value; // return urlencode($value);
     }
 

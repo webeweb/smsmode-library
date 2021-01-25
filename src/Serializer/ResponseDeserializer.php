@@ -57,7 +57,7 @@ class ResponseDeserializer {
         }
 
         $model->setRawResponse($rawResponse);
-        if (1 === preg_match("/^\-?[0-9]{1,}\.[0-9]{1,}$/", trim($rawResponse))) {
+        if (1 === preg_match("/^-?[0-9]{1,}\.[0-9]{1,}$/", trim($rawResponse))) {
             $model->setAccountBalance(floatval(trim($rawResponse)));
         }
 

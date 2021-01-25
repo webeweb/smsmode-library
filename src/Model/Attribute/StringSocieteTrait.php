@@ -39,6 +39,7 @@ trait StringSocieteTrait {
      * Set the societe.
      *
      * @param string|null $societe The societe.
+     * @return self Returns this instance.
      */
     public function setSociete(?string $societe): self {
         $this->societe = $societe;

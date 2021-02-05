@@ -1,6 +1,10 @@
 CHANGELOG
 =========
 
+### [2.10.3](https://github.com/webeweb/smsmode-library/tree/v2.10.3) (2021-02-05)
+
+- Replace Class:: by static::
+
 ### [2.10.2](https://github.com/webeweb/smsmode-library/tree/v2.10.2) (2021-01-25)
 
 - Improve code quality

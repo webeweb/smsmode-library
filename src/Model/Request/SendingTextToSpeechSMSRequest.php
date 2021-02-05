@@ -86,10 +86,10 @@ class SendingTextToSpeechSMSRequest extends AbstractRequest implements SendingTe
      */
     public function enumLanguage(): array {
         return [
-            self::LANGUAGE_FR,
-            self::LANGUAGE_EN,
-            self::LANGUAGE_DE,
-            self::LANGUAGE_ES,
+            static::LANGUAGE_FR,
+            static::LANGUAGE_EN,
+            static::LANGUAGE_DE,
+            static::LANGUAGE_ES,
         ];
     }
 
@@ -115,7 +115,7 @@ class SendingTextToSpeechSMSRequest extends AbstractRequest implements SendingTe
      * {@inheritdoc}
      */
     public function getResourcePath(): string {
-        return self::SENDING_TEXT_TO_SPEECH_SMS_RESOURCE_PATH;
+        return static::SENDING_TEXT_TO_SPEECH_SMS_RESOURCE_PATH;
     }
 
     /**

@@ -35,6 +35,6 @@ class CheckingSMSMessageStatusRequest extends AbstractRequest {
      * {@inheritdoc}
      */
     public function getResourcePath(): string {
-        return self::CHECKING_SMS_MESSAGE_STATUS_RESOURCE_PATH;
+        return static::CHECKING_SMS_MESSAGE_STATUS_RESOURCE_PATH;
     }
 }

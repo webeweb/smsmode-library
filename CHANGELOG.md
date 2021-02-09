@@ -1,6 +1,10 @@
 CHANGELOG
 =========
 
+### [2.10.4](https://github.com/webeweb/smsmode-library/tree/v2.10.4) (2021-02-09)
+
+- Improve unit tests
+
 ### [2.10.3](https://github.com/webeweb/smsmode-library/tree/v2.10.3) (2021-02-05)
 
 - Replace Class:: by static::

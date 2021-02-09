@@ -55,16 +55,4 @@ class IntegerNbrMsgTraitTest extends AbstractTestCase {
             $this->assertEquals('The "nbr msg" must be greater than 0', $ex->getMessage());
         }
     }
-
-    /**
-     * Tests the __construct() method.
-     *
-     * @return void
-     */
-    public function test__construct(): void {
-
-        $obj = new TestIntegerNbrMsgTrait();
-
-        $this->assertNull($obj->getNbrMsg());
-    }
 }

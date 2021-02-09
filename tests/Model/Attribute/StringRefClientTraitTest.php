@@ -34,16 +34,4 @@ class StringRefClientTraitTest extends AbstractTestCase {
         $obj->setRefClient("refClient");
         $this->assertEquals("refClient", $obj->getRefClient());
     }
-
-    /**
-     * Tests the __construct() method.
-     *
-     * @return void
-     */
-    public function test__construct(): void {
-
-        $obj = new TestStringRefClientTrait();
-
-        $this->assertNull($obj->getRefClient());
-    }
 }

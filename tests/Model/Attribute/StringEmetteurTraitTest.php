@@ -34,16 +34,4 @@ class StringEmetteurTraitTest extends AbstractTestCase {
         $obj->setEmetteur("emetteur");
         $this->assertEquals("emetteur", $obj->getEmetteur());
     }
-
-    /**
-     * Tests the __construct() method.
-     *
-     * @return void
-     */
-    public function test__construct(): void {
-
-        $obj = new TestStringEmetteurTrait();
-
-        $this->assertNull($obj->getEmetteur());
-    }
 }

@@ -34,16 +34,4 @@ class StringNotificationUrlTraitTest extends AbstractTestCase {
         $obj->setNotificationUrl("notificationUrl");
         $this->assertEquals("notificationUrl", $obj->getNotificationUrl());
     }
-
-    /**
-     * Tests the __construct() method.
-     *
-     * @return void
-     */
-    public function test__construct(): void {
-
-        $obj = new TestStringNotificationUrlTrait();
-
-        $this->assertNull($obj->getNotificationUrl());
-    }
 }

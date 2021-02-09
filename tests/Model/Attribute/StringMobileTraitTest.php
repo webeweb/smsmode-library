@@ -34,16 +34,4 @@ class StringMobileTraitTest extends AbstractTestCase {
         $obj->setMobile("mobile");
         $this->assertEquals("mobile", $obj->getMobile());
     }
-
-    /**
-     * Tests the __construct() method.
-     *
-     * @return void
-     */
-    public function test__construct(): void {
-
-        $obj = new TestStringMobileTrait();
-
-        $this->assertNull($obj->getMobile());
-    }
 }

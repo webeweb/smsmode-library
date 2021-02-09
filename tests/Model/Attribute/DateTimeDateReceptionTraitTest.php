@@ -40,16 +40,4 @@ class DateTimeDateReceptionTraitTest extends AbstractTestCase {
         $obj->setDateReception($dateReception);
         $this->assertSame($dateReception, $obj->getDateReception());
     }
-
-    /**
-     * Tests the __construct() method.
-     *
-     * @return void
-     */
-    public function test__construct(): void {
-
-        $obj = new TestDateTimeDateReceptionTrait();
-
-        $this->assertNull($obj->getDateReception());
-    }
 }

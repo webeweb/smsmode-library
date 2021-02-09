@@ -34,16 +34,4 @@ class StringSocieteTraitTest extends AbstractTestCase {
         $obj->setSociete("societe");
         $this->assertEquals("societe", $obj->getSociete());
     }
-
-    /**
-     * Tests the __construct() method.
-     *
-     * @return void
-     */
-    public function test__construct(): void {
-
-        $obj = new TestStringSocieteTrait();
-
-        $this->assertNull($obj->getSociete());
-    }
 }

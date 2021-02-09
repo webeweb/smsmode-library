@@ -55,16 +55,4 @@ class IntegerOffsetTraitTest extends AbstractTestCase {
             $this->assertEquals('The "offset" must be greater than 0', $ex->getMessage());
         }
     }
-
-    /**
-     * Tests the __construct() method.
-     *
-     * @return void
-     */
-    public function test__construct(): void {
-
-        $obj = new TestIntegerOffsetTrait();
-
-        $this->assertNull($obj->getOffset());
-    }
 }

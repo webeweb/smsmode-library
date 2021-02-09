@@ -34,16 +34,4 @@ class StringPrenomTraitTest extends AbstractTestCase {
         $obj->setPrenom("prenom");
         $this->assertEquals("prenom", $obj->getPrenom());
     }
-
-    /**
-     * Tests the __construct() method.
-     *
-     * @return void
-     */
-    public function test__construct(): void {
-
-        $obj = new TestStringPrenomTrait();
-
-        $this->assertNull($obj->getPrenom());
-    }
 }

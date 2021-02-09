@@ -34,16 +34,4 @@ class StringSmsIDTraitTest extends AbstractTestCase {
         $obj->setSmsID("smsID");
         $this->assertEquals("smsID", $obj->getSmsID());
     }
-
-    /**
-     * Tests the __construct() method.
-     *
-     * @return void
-     */
-    public function test__construct(): void {
-
-        $obj = new TestStringSmsIDTrait();
-
-        $this->assertNull($obj->getSmsID());
-    }
 }

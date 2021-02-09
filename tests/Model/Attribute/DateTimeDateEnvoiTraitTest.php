@@ -40,16 +40,4 @@ class DateTimeDateEnvoiTraitTest extends AbstractTestCase {
         $obj->setDateEnvoi($dateEnvoi);
         $this->assertSame($dateEnvoi, $obj->getDateEnvoi());
     }
-
-    /**
-     * Tests the __construct() method.
-     *
-     * @return void
-     */
-    public function test__construct(): void {
-
-        $obj = new TestDateTimeDateEnvoiTrait();
-
-        $this->assertNull($obj->getDateEnvoi());
-    }
 }

@@ -75,16 +75,4 @@ class IntegerClasseMsgTraitTest extends AbstractTestCase {
             $this->assertEquals('The classe msg "0" is invalid', $ex->getMessage());
         }
     }
-
-    /**
-     * Tests the __construct() method.
-     *
-     * @return void
-     */
-    public function test__construct(): void {
-
-        $obj = new TestIntegerClasseMsgTrait();
-
-        $this->assertNull($obj->getClasseMsg());
-    }
 }

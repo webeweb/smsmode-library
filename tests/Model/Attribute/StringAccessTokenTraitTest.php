@@ -34,16 +34,4 @@ class StringAccessTokenTraitTest extends AbstractTestCase {
         $obj->setAccessToken("accessToken");
         $this->assertEquals("accessToken", $obj->getAccessToken());
     }
-
-    /**
-     * Tests the __construct() method.
-     *
-     * @return void
-     */
-    public function test__construct(): void {
-
-        $obj = new TestStringAccessTokenTrait();
-
-        $this->assertNull($obj->getAccessToken());
-    }
 }

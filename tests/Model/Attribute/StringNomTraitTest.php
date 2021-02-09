@@ -34,16 +34,4 @@ class StringNomTraitTest extends AbstractTestCase {
         $obj->setNom("nom");
         $this->assertEquals("nom", $obj->getNom());
     }
-
-    /**
-     * Tests the __construct() method.
-     *
-     * @return void
-     */
-    public function test__construct(): void {
-
-        $obj = new TestStringNomTrait();
-
-        $this->assertNull($obj->getNom());
-    }
 }

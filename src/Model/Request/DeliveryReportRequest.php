@@ -35,6 +35,6 @@ class DeliveryReportRequest extends AbstractRequest {
      * {@inheritdoc}
      */
     public function getResourcePath(): string {
-        return static::DELIVERY_REPORT_RESOURCE_PATH;
+        return self::DELIVERY_REPORT_RESOURCE_PATH;
     }
 }

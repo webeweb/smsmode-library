@@ -73,7 +73,7 @@ abstract class AbstractProvider extends BaseProvider {
      */
     private function buildConfiguration(): array {
         return [
-            "base_uri"    => static::ENDPOINT_PATH . "/",
+            "base_uri"    => self::ENDPOINT_PATH . "/",
             "debug"       => $this->getDebug(),
             "headers"     => [
                 "Accept"     => "text/html",

@@ -103,8 +103,8 @@ class SendingSMSMessageRequest extends AbstractRequest implements SendingSMSMess
      */
     public function enumStop(): array {
         return [
-            static::STOP_ALWAYS,
-            static::STOP_ONLY,
+            self::STOP_ALWAYS,
+            self::STOP_ONLY,
         ];
     }
 

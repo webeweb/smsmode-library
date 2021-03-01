@@ -39,7 +39,7 @@ class DeletingSMSRequest extends AbstractRequest {
      * {@inheritdoc}
      */
     public function getResourcePath(): string {
-        return static::DELETING_SMS_RESOURCE_PATH;
+        return self::DELETING_SMS_RESOURCE_PATH;
     }
 
     /**

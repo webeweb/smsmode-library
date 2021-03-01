@@ -35,6 +35,6 @@ class SentSMSMessageListRequest extends AbstractRequest {
      * {@inheritdoc}
      */
     public function getResourcePath(): string {
-        return static::SENT_SMS_MESSAGE_LIST_RESOURCE_PATH;
+        return self::SENT_SMS_MESSAGE_LIST_RESOURCE_PATH;
     }
 }

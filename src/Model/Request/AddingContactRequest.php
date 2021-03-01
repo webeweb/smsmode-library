@@ -96,7 +96,7 @@ class AddingContactRequest extends AbstractRequest {
      * {@inheritdoc}
      */
     public function getResourcePath(): string {
-        return static::ADDING_CONTACT_RESOURCE_PATH;
+        return self::ADDING_CONTACT_RESOURCE_PATH;
     }
 
     /**

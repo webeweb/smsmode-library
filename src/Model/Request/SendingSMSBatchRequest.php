@@ -63,7 +63,7 @@ class SendingSMSBatchRequest extends AbstractRequest implements SendingSMSBatchI
      * {@inheritdoc}
      */
     public function getResourcePath(): string {
-        return static::SENDING_SMS_BATCH_RESOURCE_PATH;
+        return self::SENDING_SMS_BATCH_RESOURCE_PATH;
     }
 
     /**

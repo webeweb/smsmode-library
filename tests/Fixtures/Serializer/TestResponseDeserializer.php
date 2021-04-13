@@ -11,10 +11,10 @@
 
 namespace WBW\Library\SMSMode\Tests\Fixtures\Serializer;
 
-use WBW\Library\SMSMode\Model\AbstractResponse;
 use WBW\Library\SMSMode\Model\DeliveryReport;
 use WBW\Library\SMSMode\Model\SentSMSMessage;
 use WBW\Library\SMSMode\Model\SMSReply;
+use WBW\Library\SMSMode\Response\AbstractResponse;
 use WBW\Library\SMSMode\Serializer\ResponseDeserializer;
 
 /**

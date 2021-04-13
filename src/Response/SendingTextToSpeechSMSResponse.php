@@ -9,18 +9,17 @@
  * file that was distributed with this source code.
  */
 
-namespace WBW\Library\SMSMode\Model;
+namespace WBW\Library\SMSMode\Response;
 
-use WBW\Library\SMSMode\Model\Attribute\StringNumeroTrait;
-use WBW\Library\SMSMode\Response\AbstractResponse;
+use WBW\Library\SMSMode\Model\Attribute\StringSmsIDTrait;
 
 /**
- * Delivery report.
+ * Sending text-to-speech SMS response.
  *
  * @author webeweb <https://github.com/webeweb/>
- * @package WBW\Library\SMSMode\Model
+ * @package WBW\Library\SMSMode\Response
  */
-class DeliveryReport extends AbstractResponse {
+class SendingTextToSpeechSMSResponse extends AbstractResponse {
 
-    use StringNumeroTrait;
+    use StringSmsIDTrait;
 }

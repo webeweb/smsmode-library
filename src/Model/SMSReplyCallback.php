@@ -19,6 +19,7 @@ use WBW\Library\SMSMode\Model\Attribute\StringNumeroTrait;
 use WBW\Library\SMSMode\Model\Attribute\StringRefClientTrait;
 use WBW\Library\SMSMode\Model\Attribute\StringResponseIDTrait;
 use WBW\Library\SMSMode\Model\Attribute\StringSmsIDTrait;
+use WBW\Library\SMSMode\Response\AbstractResponse;
 
 /**
  * SMS reply callback.

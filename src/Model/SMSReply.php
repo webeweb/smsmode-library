@@ -16,6 +16,7 @@ use WBW\Library\Core\Model\Attribute\StringFromTrait;
 use WBW\Library\Core\Model\Attribute\StringTextTrait;
 use WBW\Library\Core\Model\Attribute\StringToTrait;
 use WBW\Library\SMSMode\Model\Attribute\StringResponseIDTrait;
+use WBW\Library\SMSMode\Response\AbstractResponse;
 
 /**
  * SMS reply.

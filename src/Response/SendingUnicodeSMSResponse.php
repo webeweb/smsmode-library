@@ -9,18 +9,14 @@
  * file that was distributed with this source code.
  */
 
-namespace WBW\Library\SMSMode\Model;
-
-use WBW\Library\SMSMode\Model\Attribute\StringNumeroTrait;
-use WBW\Library\SMSMode\Response\AbstractResponse;
+namespace WBW\Library\SMSMode\Response;
 
 /**
- * Delivery report.
+ * Sending unicode SMS response.
  *
  * @author webeweb <https://github.com/webeweb/>
- * @package WBW\Library\SMSMode\Model
+ * @package WBW\Library\SMSMode\Response
  */
-class DeliveryReport extends AbstractResponse {
+class SendingUnicodeSMSResponse extends SendingSMSMessageResponse {
 
-    use StringNumeroTrait;
 }

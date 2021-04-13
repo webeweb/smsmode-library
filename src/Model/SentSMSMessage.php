@@ -15,6 +15,7 @@ use DateTime;
 use WBW\Library\Core\Model\Attribute\StringMessageTrait;
 use WBW\Library\SMSMode\Model\Attribute\StringNumeroTrait;
 use WBW\Library\SMSMode\Model\Attribute\StringSmsIDTrait;
+use WBW\Library\SMSMode\Response\AbstractResponse;
 
 /**
  * Sent SMS message.

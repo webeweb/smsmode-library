@@ -15,21 +15,21 @@ use DateTime;
 use Exception;
 use InvalidArgumentException;
 use WBW\Library\SMSMode\Model\Authentication;
-use WBW\Library\SMSMode\Model\Request\AccountBalanceRequest;
-use WBW\Library\SMSMode\Model\Request\AddingContactRequest;
-use WBW\Library\SMSMode\Model\Request\CheckingSMSMessageStatusRequest;
-use WBW\Library\SMSMode\Model\Request\CreatingAPIKeyRequest;
-use WBW\Library\SMSMode\Model\Request\CreatingSubAccountRequest;
-use WBW\Library\SMSMode\Model\Request\DeletingSMSRequest;
-use WBW\Library\SMSMode\Model\Request\DeletingSubAccountRequest;
-use WBW\Library\SMSMode\Model\Request\DeliveryReportRequest;
-use WBW\Library\SMSMode\Model\Request\RetrievingSMSReplyRequest;
-use WBW\Library\SMSMode\Model\Request\SendingSMSBatchRequest;
-use WBW\Library\SMSMode\Model\Request\SendingSMSMessageRequest;
-use WBW\Library\SMSMode\Model\Request\SendingTextToSpeechSMSRequest;
-use WBW\Library\SMSMode\Model\Request\SendingUnicodeSMSRequest;
-use WBW\Library\SMSMode\Model\Request\SentSMSMessageListRequest;
-use WBW\Library\SMSMode\Model\Request\TransferringCreditsRequest;
+use WBW\Library\SMSMode\Request\AccountBalanceRequest;
+use WBW\Library\SMSMode\Request\AddingContactRequest;
+use WBW\Library\SMSMode\Request\CheckingSMSMessageStatusRequest;
+use WBW\Library\SMSMode\Request\CreatingAPIKeyRequest;
+use WBW\Library\SMSMode\Request\CreatingSubAccountRequest;
+use WBW\Library\SMSMode\Request\DeletingSMSRequest;
+use WBW\Library\SMSMode\Request\DeletingSubAccountRequest;
+use WBW\Library\SMSMode\Request\DeliveryReportRequest;
+use WBW\Library\SMSMode\Request\RetrievingSMSReplyRequest;
+use WBW\Library\SMSMode\Request\SendingSMSBatchRequest;
+use WBW\Library\SMSMode\Request\SendingSMSMessageRequest;
+use WBW\Library\SMSMode\Request\SendingTextToSpeechSMSRequest;
+use WBW\Library\SMSMode\Request\SendingUnicodeSMSRequest;
+use WBW\Library\SMSMode\Request\SentSMSMessageListRequest;
+use WBW\Library\SMSMode\Request\TransferringCreditsRequest;
 use WBW\Library\SMSMode\Serializer\RequestSerializer;
 use WBW\Library\SMSMode\Tests\AbstractTestCase;
 
@@ -596,9 +596,6 @@ class RequestSerializerTest extends AbstractTestCase {
      */
     public function testSerializeSendingSMSBatchRequest(): void {
 
-        // Set a Fichier mock.
-        $fichier = getcwd() . "/tests/Fixtures/Model/Request/SendingSMSBatchRequest.csv";
-
         // Set a Sending SMS batch request mock.
         $arg = new SendingSMSBatchRequest();
 
@@ -606,7 +603,7 @@ class RequestSerializerTest extends AbstractTestCase {
         $arg->setDateEnvoi(new DateTime("2019-02-04 18:00:00"));
         $arg->setRefClient("refClient");
         $arg->setEmetteur("emetteur");
-        $arg->setFichier($fichier);
+        $arg->setFichier($this->fichier);
         $arg->setNbrMsg(1);
         $arg->setNotificationUrl("notificationUrl");
 
@@ -619,7 +616,7 @@ class RequestSerializerTest extends AbstractTestCase {
             "emetteur"         => "emetteur",
             "nbr_msg"          => 1,
             "notification_url" => "notificationUrl",
-            "fichier"          => $fichier,
+            "fichier"          => $this->fichier,
         ];
         $this->assertEquals($res, $obj->serialize($arg));
     }

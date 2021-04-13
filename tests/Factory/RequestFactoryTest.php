@@ -12,21 +12,21 @@
 namespace WBW\Library\SMSMode\Tests\Factory;
 
 use WBW\Library\SMSMode\Factory\RequestFactory;
-use WBW\Library\SMSMode\Model\Request\AccountBalanceRequest;
-use WBW\Library\SMSMode\Model\Request\AddingContactRequest;
-use WBW\Library\SMSMode\Model\Request\CheckingSMSMessageStatusRequest;
-use WBW\Library\SMSMode\Model\Request\CreatingAPIKeyRequest;
-use WBW\Library\SMSMode\Model\Request\CreatingSubAccountRequest;
-use WBW\Library\SMSMode\Model\Request\DeletingSMSRequest;
-use WBW\Library\SMSMode\Model\Request\DeletingSubAccountRequest;
-use WBW\Library\SMSMode\Model\Request\DeliveryReportRequest;
-use WBW\Library\SMSMode\Model\Request\RetrievingSMSReplyRequest;
-use WBW\Library\SMSMode\Model\Request\SendingSMSBatchRequest;
-use WBW\Library\SMSMode\Model\Request\SendingSMSMessageRequest;
-use WBW\Library\SMSMode\Model\Request\SendingTextToSpeechSMSRequest;
-use WBW\Library\SMSMode\Model\Request\SendingUnicodeSMSRequest;
-use WBW\Library\SMSMode\Model\Request\SentSMSMessageListRequest;
-use WBW\Library\SMSMode\Model\Request\TransferringCreditsRequest;
+use WBW\Library\SMSMode\Request\AccountBalanceRequest;
+use WBW\Library\SMSMode\Request\AddingContactRequest;
+use WBW\Library\SMSMode\Request\CheckingSMSMessageStatusRequest;
+use WBW\Library\SMSMode\Request\CreatingAPIKeyRequest;
+use WBW\Library\SMSMode\Request\CreatingSubAccountRequest;
+use WBW\Library\SMSMode\Request\DeletingSMSRequest;
+use WBW\Library\SMSMode\Request\DeletingSubAccountRequest;
+use WBW\Library\SMSMode\Request\DeliveryReportRequest;
+use WBW\Library\SMSMode\Request\RetrievingSMSReplyRequest;
+use WBW\Library\SMSMode\Request\SendingSMSBatchRequest;
+use WBW\Library\SMSMode\Request\SendingSMSMessageRequest;
+use WBW\Library\SMSMode\Request\SendingTextToSpeechSMSRequest;
+use WBW\Library\SMSMode\Request\SendingUnicodeSMSRequest;
+use WBW\Library\SMSMode\Request\SentSMSMessageListRequest;
+use WBW\Library\SMSMode\Request\TransferringCreditsRequest;
 use WBW\Library\SMSMode\Tests\AbstractTestCase;
 
 /**

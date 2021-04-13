@@ -19,8 +19,8 @@ use Psr\Log\LoggerInterface;
 use WBW\Library\Core\Argument\Helper\ArrayHelper;
 use WBW\Library\Core\Exception\ApiException;
 use WBW\Library\Core\Provider\AbstractProvider as BaseProvider;
-use WBW\Library\SMSMode\Model\AbstractRequest;
 use WBW\Library\SMSMode\Model\Authentication;
+use WBW\Library\SMSMode\Request\AbstractRequest;
 use WBW\Library\SMSMode\Serializer\RequestSerializer;
 
 /**

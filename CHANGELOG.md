@@ -1,6 +1,11 @@
 CHANGELOG
 =========
 
+### [3.0.0](https://github.com/webeweb/smsmode-library/tree/v3.0.0) (2021-04-13)
+
+- Move Request models
+- Move Response models
+
 ### [2.10.5](https://github.com/webeweb/smsmode-library/tree/v2.10.5) (2021-03-01)
 
 - Improve code quality
@@ -48,7 +53,7 @@ CHANGELOG
 ### [2.9.0](https://github.com/webeweb/smsmode-library/tree/v2.9.0) (2020-05-27)
 
 - Improve unit tests
-- Update dependencies 
+- Update dependencies
 
 ### [2.8.1](https://github.com/webeweb/smsmode-library/tree/v2.8.1) (2020-04-08)
 
@@ -59,7 +64,7 @@ CHANGELOG
 
 ### [2.8.0](https://github.com/webeweb/smsmode-library/tree/v2.8.0) (2020-03-11)
 
-- Rename traits 
+- Rename traits
 
 ### [2.7.0](https://github.com/webeweb/smsmode-library/tree/v2.7.0) (2020-03-10)
 

@@ -45,7 +45,6 @@ $response->getExpiration();
 $response->getState();
 ```
 
-
 2) Sending SMS message
 
 ```php

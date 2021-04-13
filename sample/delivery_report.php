@@ -13,8 +13,8 @@ require_once __DIR__ . "/../vendor/autoload.php";
 
 use WBW\Library\SMSMode\Model\Authentication;
 use WBW\Library\SMSMode\Model\DeliveryReport;
-use WBW\Library\SMSMode\Model\Request\DeliveryReportRequest;
 use WBW\Library\SMSMode\Provider\ApiProvider;
+use WBW\Library\SMSMode\Request\DeliveryReportRequest;
 
 // Create the API provider.
 $provider = new ApiProvider(new Authentication());

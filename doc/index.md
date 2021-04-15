@@ -4,7 +4,7 @@ DOCUMENTATION
 1) Authentication
 
 ```php
-// Create an authentication model.
+// Create an authentication request.
 $authentication = new Authentication();
 
 // Set a couple login/password.
@@ -58,15 +58,15 @@ $provider->getAuthentication()->setPass("pass");
 // or use an access token.
 // $provider->getAuthentication()->setAccessToken("accessToken");
 
-// Create a Sending SMS message model.
-$model = new SendingSMSMessageRequest();
-$model->setMessage("message");
-$model->addNumero("33600000001");
-$model->addNumero("33600000002");
+// Create a Sending SMS message request.
+$request = new SendingSMSMessageRequest();
+$request->setMessage("message");
+$request->addNumero("33600000001");
+$request->addNumero("33600000002");
 // ...
 
 // Call the API and get the response.
-$response = $provider->sendingSMSMessage($model);
+$response = $provider->sendingSMSMessage($request);
 
 // Handle the response.
 $response->getCode();
@@ -88,12 +88,12 @@ $provider->getAuthentication()->setPass("pass");
 // or use an access token.
 // $provider->getAuthentication()->setAccessToken("accessToken");
 
-// Create a Delivery report model.
-$model = new DeliveryReportRequest();
-$model->setSmsID("smsID");
+// Create a Delivery report request.
+$request = new DeliveryReportRequest();
+$request->setSmsID("smsID");
 
 // Call the API and get the response.
-$response = $provider->deliveryReport($model);
+$response = $provider->deliveryReport($request);
 
 // Handle the response.
 $response->getCode();
@@ -143,13 +143,13 @@ $provider->getAuthentication()->setPass("pass");
 // or use an access token.
 // $provider->getAuthentication()->setAccessToken("accessToken");
 
-// Create a Creating sub-account model.
-$model = new CreatingSubAccountRequest();
-$model->setNewPseudo("pseudo");
-$model->setNewPass("pass");
+// Create a Creating sub-account request.
+$request = new CreatingSubAccountRequest();
+$request->setNewPseudo("pseudo");
+$request->setNewPass("pass");
 
 // Call the API and get the response.
-$response = $provider->creatingSubAccount($model);
+$response = $provider->creatingSubAccount($request);
 
 // Handle the response.
 $response->getCode();
@@ -169,12 +169,12 @@ $provider->getAuthentication()->setPass("pass");
 // or use an access token.
 // $provider->getAuthentication()->setAccessToken("accessToken");
 
-// Create a Deleting sub-account model.
-$model = new DeletingSubAccountRequest();
-$model->setPseudoToDelete("pseudoToDelete")
+// Create a Deleting sub-account request.
+$request = new DeletingSubAccountRequest();
+$request->setPseudoToDelete("pseudoToDelete")
 
 // Call the API and get the response.
-$response = $provider->deletingSubAccount($model);
+$response = $provider->deletingSubAccount($request);
 
 // Handle the response.
 $response->getCode();
@@ -194,13 +194,13 @@ $provider->getAuthentication()->setPass("pass");
 // or use an access token.
 // $provider->getAuthentication()->setAccessToken("accessToken");
 
-// Create a Transferring credits model.
-$model = new TransferringCreditsRequest();
-$model->setCreditAmount(212);
-$model->setTargetPseudo("targetPseudo");
+// Create a Transferring credits request.
+$request = new TransferringCreditsRequest();
+$request->setCreditAmount(212);
+$request->setTargetPseudo("targetPseudo");
 
 // Call the API and get the response.
-$response = $provider->transferringCredits($model);
+$response = $provider->transferringCredits($request);
 
 // Handle the response.
 $response->getCode();
@@ -220,13 +220,13 @@ $provider->getAuthentication()->setPass("pass");
 // or use an access token.
 // $provider->getAuthentication()->setAccessToken("accessToken");
 
-// Create an Adding contact model.
-$model = new AddingContactRequest();
-$model->setNom("lastname");
-$model->setMobile("33600000000");
+// Create an Adding contact request.
+$request = new AddingContactRequest();
+$request->setNom("lastname");
+$request->setMobile("33600000000");
 
 // Call the API and get the response.
-$response = $provider->addingContact($model);
+$response = $provider->addingContact($request);
 
 // Handle the response.
 $response->getCode();
@@ -246,12 +246,12 @@ $provider->getAuthentication()->setPass("pass");
 // or use an access token.
 // $provider->getAuthentication()->setAccessToken("accessToken");
 
-// Create a Deleting SMS model.
-$model = new DeletingSMSRequest();
-$model->setSmsID("smsID");
+// Create a Deleting SMS request.
+$request = new DeletingSMSRequest();
+$request->setSmsID("smsID");
 
 // Call the API and get the response.
-$response = $provider->deletingSMS($model);
+$response = $provider->deletingSMS($request);
 
 // Handle the response.
 $response->getCode();
@@ -303,12 +303,12 @@ $provider->getAuthentication()->setPass("pass");
 // or use an access token.
 // $provider->getAuthentication()->setAccessToken("accessToken");
 
-// Create a Checking SMS message status model.
-$model = new CheckingSMSMessageStatusRequest();
-$model->setSmsID("smsID");
+// Create a Checking SMS message status request.
+$request = new CheckingSMSMessageStatusRequest();
+$request->setSmsID("smsID");
 
 // Call the API and get the response.
-$response = $provider->checkingSMSMessageStatus($model);
+$response = $provider->checkingSMSMessageStatus($request);
 
 // Handle the response.
 $response->getCode();
@@ -328,17 +328,17 @@ $provider->getAuthentication()->setPass("pass");
 // or use an access token.
 // $provider->getAuthentication()->setAccessToken("accessToken");
 
-// Create a Retrieving SMS reply model.
-$model = new RetrievingSMSReplyRequest();
-$model->setStart(0);
-$model->setOffset(10);
+// Create a Retrieving SMS reply request.
+$request = new RetrievingSMSReplyRequest();
+$request->setStart(0);
+$request->setOffset(10);
 
 // or use a date interval
-// $model->setStartDate(new DateTime("2017-09-14 00:00:00"));
-// $model->setEndDate(new DateTime("2017-09-15 00:00:00"));
+// $request->setStartDate(new DateTime("2017-09-14 00:00:00"));
+// $request->setEndDate(new DateTime("2017-09-15 00:00:00"));
 
 // Call the API and get the response.
-$response = $provider->retrievingSMSReply($model);
+$response = $provider->retrievingSMSReply($request);
 
 // Handle the response.
 $response->getCode();
@@ -369,15 +369,15 @@ $provider->getAuthentication()->setPass("pass");
 // or use an access token.
 // $provider->getAuthentication()->setAccessToken("accessToken");
 
-// Create a Sending text-to-speech SMS model.
-$model = new SendingTextToSpeechSMSRequest();
-$model->setMessage("message");
-$model->addNumero("33600000001");
-$model->addNumero("33600000002");
+// Create a Sending text-to-speech SMS request.
+$request = new SendingTextToSpeechSMSRequest();
+$request->setMessage("message");
+$request->addNumero("33600000001");
+$request->addNumero("33600000002");
 // ...
 
 // Call the API and get the response.
-$response = $provider->sendingTextToSpeechSMS($model);
+$response = $provider->sendingTextToSpeechSMS($request);
 
 // Handle the response.
 $response->getCode();
@@ -399,15 +399,15 @@ $provider->getAuthentication()->setPass("pass");
 // or use an access token.
 // $provider->getAuthentication()->setAccessToken("accessToken");
 
-// Create a Sending unicode SMS model.
-$model = new SendingUnicodeSMSRequest();
-$model->setMessage("message");
-$model->addNumero("33600000001");
-$model->addNumero("33600000002");
+// Create a Sending unicode SMS request.
+$request = new SendingUnicodeSMSRequest();
+$request->setMessage("message");
+$request->addNumero("33600000001");
+$request->addNumero("33600000002");
 // ...
 
 // Call the API and get the response.
-$response = $provider->sendingUnicodeSMS($model);
+$response = $provider->sendingUnicodeSMS($request);
 
 // Handle the response.
 $response->getCode();
@@ -429,12 +429,12 @@ $provider->getAuthentication()->setPass("pass");
 // or use an access token.
 // $provider->getAuthentication()->setAccessToken("accessToken");
 
-// Create a Sending SMS batch model.
-$model = new SendingSMSBatchRequest();
-$model->setFichier("fichier.csv");
+// Create a Sending SMS batch request.
+$request = new SendingSMSBatchRequest();
+$request->setFichier("fichier.csv");
 
 // Call the API and get the response.
-$response = $provider->sendingSMSBatch($model);
+$response = $provider->sendingSMSBatch($request);
 
 // Handle the response.
 $response->getCode();

@@ -26,12 +26,12 @@ $provider->getAuthentication()->setPass("pass");
 // or use an access token.
 // $provider->getAuthentication()->setAccessToken("accessToken");
 
-// Create a Sending SMS batch model.
-$model = new SendingSMSBatchRequest();
-$model->setFichier(__DIR__ . "/../tests/Fixtures/Model/Request/SendingSMSBatchRequest.csv");
+// Create a Sending SMS batch request.
+$request = new SendingSMSBatchRequest();
+$request->setFichier(__DIR__ . "/../tests/Fixtures/Request/SendingSMSBatchRequest.csv");
 
 // Call the API and get the response.
-$response = $provider->sendingSMSBatch($model);
+$response = $provider->sendingSMSBatch($request);
 
 // Handle the response.
 echo "Code: " . $response->getCode() . "\n";

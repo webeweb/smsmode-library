@@ -26,12 +26,12 @@ $provider->getAuthentication()->setPass("pass");
 // or use an access token.
 // $provider->getAuthentication()->setAccessToken("accessToken");
 
-// Create a Checking SMS message status model.
-$model = new CheckingSMSMessageStatusRequest();
-$model->setSmsID("smsID");
+// Create a Checking SMS message status request.
+$request = new CheckingSMSMessageStatusRequest();
+$request->setSmsID("smsID");
 
 // Call the API and get the response.
-$response = $provider->checkingSMSMessageStatus($model);
+$response = $provider->checkingSMSMessageStatus($request);
 
 // Handle the response.
 echo "Code: " . $response->getCode() . "\n";

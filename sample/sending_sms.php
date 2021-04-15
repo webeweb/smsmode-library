@@ -26,15 +26,15 @@ $provider->getAuthentication()->setPass("pass");
 // or use an access token.
 // $provider->getAuthentication()->setAccessToken("accessToken");
 
-// Create a Sending SMS message model.
-$model = new SendingSMSMessageRequest();
-$model->setMessage("message");
-$model->addNumero("33600000001");
-$model->addNumero("33600000002");
+// Create a Sending SMS message request.
+$request = new SendingSMSMessageRequest();
+$request->setMessage("message");
+$request->addNumero("33600000001");
+$request->addNumero("33600000002");
 // ...
 
 // Call the API and get the response.
-$response = $provider->sendingSMSMessage($model);
+$response = $provider->sendingSMSMessage($request);
 
 // Handle the response.
 echo "Code: " . $response->getCode() . "\n";

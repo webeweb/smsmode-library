@@ -26,12 +26,12 @@ $provider->getAuthentication()->setPass("pass");
 // or use an access token.
 // $provider->getAuthentication()->setAccessToken("accessToken");
 
-// Create a Creating sub-account model.
-$model = new DeletingSubAccountRequest();
-$model->setPseudoToDelete("pseudo");
+// Create a Creating sub-account request.
+$request = new DeletingSubAccountRequest();
+$request->setPseudoToDelete("pseudo");
 
 // Call the API and get the response.
-$response = $provider->deletingSubAccount($model);
+$response = $provider->deletingSubAccount($request);
 
 // Handle the response.
 echo "Code: " . $response->getCode() . "\n";

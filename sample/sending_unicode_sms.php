@@ -26,15 +26,15 @@ $provider->getAuthentication()->setPass("pass");
 // or use an access token.
 // $provider->getAuthentication()->setAccessToken("accessToken");
 
-// Create a Sending unicode SMS model.
-$model = new SendingUnicodeSMSRequest();
-$model->setMessage("message");
-$model->addNumero("33600000001");
-$model->addNumero("33600000002");
+// Create a Sending unicode SMS request.
+$request = new SendingUnicodeSMSRequest();
+$request->setMessage("message");
+$request->addNumero("33600000001");
+$request->addNumero("33600000002");
 // ...
 
 // Call the API and get the response.
-$response = $provider->sendingUnicodeSMS($model);
+$response = $provider->sendingUnicodeSMS($request);
 
 // Handle the response.
 echo "Code: " . $response->getCode() . "\n";

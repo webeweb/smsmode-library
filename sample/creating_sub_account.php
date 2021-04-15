@@ -26,13 +26,13 @@ $provider->getAuthentication()->setPass("pass");
 // or use an access token.
 // $provider->getAuthentication()->setAccessToken("accessToken");
 
-// Create a Creating sub-account model.
-$model = new CreatingSubAccountRequest();
-$model->setNewPseudo("pseudo");
-$model->setNewPass("pass");
+// Create a Creating sub-account request.
+$request = new CreatingSubAccountRequest();
+$request->setNewPseudo("pseudo");
+$request->setNewPass("pass");
 
 // Call the API and get the response.
-$response = $provider->creatingSubAccount($model);
+$response = $provider->creatingSubAccount($request);
 
 // Handle the response.
 echo "Code: " . $response->getCode() . "\n";

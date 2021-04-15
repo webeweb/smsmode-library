@@ -26,13 +26,13 @@ $provider->getAuthentication()->setPass("pass");
 // or use an access token.
 // $provider->getAuthentication()->setAccessToken("accessToken");
 
-// Create a Transferring credits model.
-$model = new TransferringCreditsRequest();
-$model->setCreditAmount(212);
-$model->setTargetPseudo("targetPseudo");
+// Create a Transferring credits request.
+$request = new TransferringCreditsRequest();
+$request->setCreditAmount(212);
+$request->setTargetPseudo("targetPseudo");
 
 // Call the API and get the response.
-$response = $provider->transferringCredits($model);
+$response = $provider->transferringCredits($request);
 
 // Handle the response.
 echo "Code: " . $response->getCode() . "\n";

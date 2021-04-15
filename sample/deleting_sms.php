@@ -26,12 +26,12 @@ $provider->getAuthentication()->setPass("pass");
 // or use an access token.
 // $provider->getAuthentication()->setAccessToken("accessToken");
 
-// Create a Deleting SMS model.
-$model = new DeletingSMSRequest();
-$model->setSmsID("smsID");
+// Create a Deleting SMS request.
+$request = new DeletingSMSRequest();
+$request->setSmsID("smsID");
 
 // Call the API and get the response.
-$response = $provider->deletingSMS($model);
+$response = $provider->deletingSMS($request);
 
 // Handle the response.
 echo "Code: " . $response->getCode() . "\n";

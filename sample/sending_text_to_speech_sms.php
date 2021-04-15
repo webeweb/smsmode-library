@@ -26,15 +26,15 @@ $provider->getAuthentication()->setPass("pass");
 // or use an access token.
 // $provider->getAuthentication()->setAccessToken("accessToken");
 
-// Create a Sending text-to-speech SMS model.
-$model = new SendingTextToSpeechSMSRequest();
-$model->setMessage("message");
-$model->addNumero("33600000001");
-$model->addNumero("33600000002");
+// Create a Sending text-to-speech SMS request.
+$request = new SendingTextToSpeechSMSRequest();
+$request->setMessage("message");
+$request->addNumero("33600000001");
+$request->addNumero("33600000002");
 // ...
 
 // Call the API and get the response.
-$response = $provider->sendingTextToSpeechSMS($model);
+$response = $provider->sendingTextToSpeechSMS($request);
 
 // Handle the response.
 echo "Code: " . $response->getCode() . "\n";

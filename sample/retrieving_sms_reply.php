@@ -27,17 +27,17 @@ $provider->getAuthentication()->setPass("pass");
 // or use an access token.
 // $provider->getAuthentication()->setAccessToken("accessToken");
 
-// Create a Retrieving SMS reply model.
-$model = new RetrievingSMSReplyRequest();
-$model->setStart(0);
-$model->setOffset(10);
+// Create a Retrieving SMS reply request.
+$request = new RetrievingSMSReplyRequest();
+$request->setStart(0);
+$request->setOffset(10);
 
 // or use a date interval
-// $model->setStartDate(new DateTime("2017-09-14 00:00:00"));
-// $model->setEndDate(new DateTime("2017-09-15 00:00:00"));
+// $request->setStartDate(new DateTime("2017-09-14 00:00:00"));
+// $request->setEndDate(new DateTime("2017-09-15 00:00:00"));
 
 // Call the API and get the response.
-$response = $provider->retrievingSMSReply($model);
+$response = $provider->retrievingSMSReply($request);
 
 // Handle the response.
 echo "Code: " . $response->getCode() . "\n";

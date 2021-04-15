@@ -26,13 +26,13 @@ $provider->getAuthentication()->setPass("pass");
 // or use an access token.
 // $provider->getAuthentication()->setAccessToken("accessToken");
 
-// Create an Adding contact model.
-$model = new AddingContactRequest();
-$model->setNom("lastname");
-$model->setMobile("33600000000");
+// Create an Adding contact request.
+$request = new AddingContactRequest();
+$request->setNom("lastname");
+$request->setMobile("33600000000");
 
 // Call the API and get the response.
-$response = $provider->addingContact($model);
+$response = $provider->addingContact($request);
 
 // Handle the response.
 echo "Code: " . $response->getCode() . "\n";

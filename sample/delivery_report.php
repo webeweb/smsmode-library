@@ -27,12 +27,12 @@ $provider->getAuthentication()->setPass("pass");
 // or use an access token.
 // $provider->getAuthentication()->setAccessToken("accessToken");
 
-// Create a Delivery report model.
-$model = new DeliveryReportRequest();
-$model->setSmsID("smsID");
+// Create a Delivery report request.
+$request = new DeliveryReportRequest();
+$request->setSmsID("smsID");
 
 // Call the API and get the response.
-$response = $provider->deliveryReport($model);
+$response = $provider->deliveryReport($request);
 
 // Handle the response.
 echo "Code: " . $response->getCode() . "\n";

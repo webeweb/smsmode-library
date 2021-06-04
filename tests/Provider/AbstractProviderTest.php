@@ -43,19 +43,6 @@ class AbstractProviderTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the setDebug() method.
-     *
-     * @return void
-     */
-    public function testSetDebug(): void {
-
-        $obj = new TestProvider($this->authentication);
-
-        $obj->setDebug(true);
-        $this->assertTrue($obj->getDebug());
-    }
-
-    /**
      * Tests the __construct() method.
      *
      * @return void
@@ -67,7 +54,6 @@ class AbstractProviderTest extends AbstractTestCase {
         $obj = new TestProvider($this->authentication);
 
         $this->assertSame($this->authentication, $obj->getAuthentication());
-        $this->assertFalse($obj->getDebug());
         $this->assertNotNull($obj->getRequestSerializer());
     }
 }

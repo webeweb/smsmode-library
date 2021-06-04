@@ -11,6 +11,7 @@
 
 namespace WBW\Library\SMSMode\Tests\Provider;
 
+use WBW\Library\Core\Logger\NullLogger;
 use WBW\Library\SMSMode\Model\Authentication;
 use WBW\Library\SMSMode\Tests\AbstractTestCase;
 use WBW\Library\SMSMode\Tests\Fixtures\Provider\TestProvider;
@@ -49,9 +50,14 @@ class AbstractProviderTest extends AbstractTestCase {
      */
     public function test__construct(): void {
 
+        // Set a Logger mock.
+        $logger = new NullLogger();
+
         $this->assertEquals("https://api.smsmode.com", TestProvider::ENDPOINT_PATH);
 
-        $obj = new TestProvider($this->authentication);
+        $obj = new TestProvider($this->authentication, $logger);
+
+        $this->assertSame($logger, $obj->getLogger());
 
         $this->assertSame($this->authentication, $obj->getAuthentication());
         $this->assertNotNull($obj->getRequestSerializer());

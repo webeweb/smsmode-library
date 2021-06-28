@@ -12,8 +12,8 @@
 namespace WBW\Library\SMSMode\Response;
 
 use DateTime;
-use WBW\Library\Core\Model\Attribute\StringIdTrait;
 use WBW\Library\SMSMode\Model\Attribute\StringAccessTokenTrait;
+use WBW\Library\Traits\Strings\StringIdTrait;
 
 /**
  * Creating API key response.

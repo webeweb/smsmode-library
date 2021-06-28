@@ -11,7 +11,7 @@
 
 namespace WBW\Library\SMSMode\Request;
 
-use WBW\Library\Core\Model\Attribute\StringReferenceTrait;
+use WBW\Library\Traits\Strings\StringReferenceTrait;
 
 /**
  * Transferring credits request.

@@ -13,7 +13,6 @@ namespace WBW\Library\SMSMode\Request;
 
 use InvalidArgumentException;
 use UnexpectedValueException;
-use WBW\Library\Core\Model\Attribute\StringMessageTrait;
 use WBW\Library\SMSMode\API\SendingSMSMessageInterface;
 use WBW\Library\SMSMode\Model\Attribute\DateTimeDateEnvoiTrait;
 use WBW\Library\SMSMode\Model\Attribute\IntegerClasseMsgTrait;
@@ -22,6 +21,7 @@ use WBW\Library\SMSMode\Model\Attribute\StringEmetteurTrait;
 use WBW\Library\SMSMode\Model\Attribute\StringNotificationUrlTrait;
 use WBW\Library\SMSMode\Model\Attribute\StringRefClientTrait;
 use WBW\Library\SMSMode\Serializer\NumeroSerializer;
+use WBW\Library\Traits\Strings\StringMessageTrait;
 
 /**
  * Sending SMS message request.

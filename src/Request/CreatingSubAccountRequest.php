@@ -12,14 +12,14 @@
 namespace WBW\Library\SMSMode\Request;
 
 use UnexpectedValueException;
-use WBW\Library\Core\Model\Attribute\DateTimeDateTrait;
-use WBW\Library\Core\Model\Attribute\StringEmailTrait;
-use WBW\Library\Core\Model\Attribute\StringReferenceTrait;
 use WBW\Library\SMSMode\Model\Attribute\StringMobileTrait;
 use WBW\Library\SMSMode\Model\Attribute\StringNomTrait;
 use WBW\Library\SMSMode\Model\Attribute\StringPrenomTrait;
 use WBW\Library\SMSMode\Model\Attribute\StringSocieteTrait;
 use WBW\Library\SMSMode\Serializer\NumeroSerializer;
+use WBW\Library\Traits\DateTimes\DateTimeDateTrait;
+use WBW\Library\Traits\Strings\StringEmailTrait;
+use WBW\Library\Traits\Strings\StringReferenceTrait;
 
 /**
  * Creating sub-account request.

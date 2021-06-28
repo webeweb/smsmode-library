@@ -11,7 +11,6 @@
 
 namespace WBW\Library\SMSMode\Model;
 
-use WBW\Library\Core\Model\Attribute\StringMessageTrait;
 use WBW\Library\SMSMode\API\SMSReplyCallbackInterface;
 use WBW\Library\SMSMode\Model\Attribute\DateTimeDateReceptionTrait;
 use WBW\Library\SMSMode\Model\Attribute\StringEmetteurTrait;
@@ -20,6 +19,7 @@ use WBW\Library\SMSMode\Model\Attribute\StringRefClientTrait;
 use WBW\Library\SMSMode\Model\Attribute\StringResponseIDTrait;
 use WBW\Library\SMSMode\Model\Attribute\StringSmsIDTrait;
 use WBW\Library\SMSMode\Response\AbstractResponse;
+use WBW\Library\Traits\Strings\StringMessageTrait;
 
 /**
  * SMS reply callback.

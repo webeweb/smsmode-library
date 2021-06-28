@@ -12,11 +12,11 @@
 namespace WBW\Library\SMSMode\Model;
 
 use DateTime;
-use WBW\Library\Core\Model\Attribute\StringFromTrait;
-use WBW\Library\Core\Model\Attribute\StringTextTrait;
-use WBW\Library\Core\Model\Attribute\StringToTrait;
 use WBW\Library\SMSMode\Model\Attribute\StringResponseIDTrait;
 use WBW\Library\SMSMode\Response\AbstractResponse;
+use WBW\Library\Traits\Strings\StringFromTrait;
+use WBW\Library\Traits\Strings\StringTextTrait;
+use WBW\Library\Traits\Strings\StringToTrait;
 
 /**
  * SMS reply.

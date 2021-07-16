@@ -1,9 +1,10 @@
 CHANGELOG
 =========
 
-### master
+### [3.0.2](https://github.com/webeweb/smsmode-library/tree/v3.0.2) (2021-07-16)
 
 - Improve unit tests
+- Update dependencies
 
 ### [3.0.1](https://github.com/webeweb/smsmode-library/tree/v3.0.1) (2021-06-28)
 

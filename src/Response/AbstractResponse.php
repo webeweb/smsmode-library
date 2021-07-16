@@ -11,10 +11,10 @@
 
 namespace WBW\Library\SMSMode\Response;
 
+use WBW\Library\Provider\Response\AbstractResponse as BaseResponse;
 use WBW\Library\SMSMode\API\ResponseInterface;
 use WBW\Library\Traits\Integers\IntegerCodeTrait;
 use WBW\Library\Traits\Strings\StringDescriptionTrait;
-use WBW\Library\Traits\Strings\StringRawResponseTrait;
 
 /**
  * Abstract response.
@@ -23,11 +23,10 @@ use WBW\Library\Traits\Strings\StringRawResponseTrait;
  * @package WBW\Library\SMSMode\Response
  * @abstract
  */
-abstract class AbstractResponse implements ResponseInterface {
+abstract class AbstractResponse extends BaseResponse implements ResponseInterface {
 
     use IntegerCodeTrait;
     use StringDescriptionTrait;
-    use StringRawResponseTrait;
 
     /**
      * Constructor.

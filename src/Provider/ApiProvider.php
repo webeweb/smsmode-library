@@ -14,7 +14,7 @@ namespace WBW\Library\SMSMode\Provider;
 use GuzzleHttp\Exception\ClientException;
 use GuzzleHttp\Exception\GuzzleException;
 use InvalidArgumentException;
-use WBW\Library\Core\Exception\ApiException;
+use WBW\Library\Provider\Exception\ApiException;
 use WBW\Library\SMSMode\Request\AccountBalanceRequest;
 use WBW\Library\SMSMode\Request\AddingContactRequest;
 use WBW\Library\SMSMode\Request\CheckingSMSMessageStatusRequest;

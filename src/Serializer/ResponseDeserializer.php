@@ -12,7 +12,6 @@
 namespace WBW\Library\SMSMode\Serializer;
 
 use DateTime;
-use WBW\Library\Core\Argument\Helper\ArrayHelper;
 use WBW\Library\SMSMode\API\ResponseInterface;
 use WBW\Library\SMSMode\Model\DeliveryReport;
 use WBW\Library\SMSMode\Model\SentSMSMessage;
@@ -33,6 +32,7 @@ use WBW\Library\SMSMode\Response\SendingTextToSpeechSMSResponse;
 use WBW\Library\SMSMode\Response\SendingUnicodeSMSResponse;
 use WBW\Library\SMSMode\Response\SentSMSMessageListResponse;
 use WBW\Library\SMSMode\Response\TransferringCreditsResponse;
+use WBW\Library\Types\Helper\ArrayHelper;
 
 /**
  * Response deserializer.

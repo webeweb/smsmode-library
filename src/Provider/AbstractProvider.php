@@ -16,12 +16,12 @@ use GuzzleHttp\Client;
 use GuzzleHttp\Exception\GuzzleException;
 use InvalidArgumentException;
 use Psr\Log\LoggerInterface;
-use WBW\Library\Core\Argument\Helper\ArrayHelper;
 use WBW\Library\Provider\Exception\ApiException;
 use WBW\Library\Provider\Provider\AbstractProvider as BaseProvider;
 use WBW\Library\SMSMode\Model\Authentication;
 use WBW\Library\SMSMode\Request\AbstractRequest;
 use WBW\Library\SMSMode\Serializer\RequestSerializer;
+use WBW\Library\Types\Helper\ArrayHelper;
 
 /**
  * Abstract provider.

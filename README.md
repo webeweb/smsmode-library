@@ -49,7 +49,8 @@ Composer documentation.
 
 ## Usage
 
-Read the [documentation](doc/index.md).
+Read the [documentation](doc/index.md). You can aslo consult or execute sample
+scripts into dev folder.
 
 ## Testing
 

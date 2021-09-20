@@ -198,7 +198,7 @@ $provider->getAuthentication()->setPass("pass");
 
 // Create a Deleting sub-account request.
 $request = new DeletingSubAccountRequest();
-$request->setPseudoToDelete("pseudoToDelete")
+$request->setPseudoToDelete("pseudoToDelete");
 
 // Call the API and get the response.
 $response = $provider->deletingSubAccount($request);

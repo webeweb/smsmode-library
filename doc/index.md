@@ -4,6 +4,8 @@ DOCUMENTATION
 1) Authentication
 
 ```php
+use WBW\Library\SMSMode\Model\Authentication;
+
 // Create an authentication request.
 $authentication = new Authentication();
 
@@ -18,6 +20,10 @@ $authentication->setAccessToken("accessToken");
 Creating an API key :
 
 ```php
+use WBW\Library\SMSMode\Model\Authentication;
+use WBW\Library\SMSMode\Provider\ApiProvider;
+use WBW\Library\SMSMode\Request\CreatingAPIKeyRequest;
+
 // Create the API provider.
 $provider = new ApiProvider(new Authentication());
 
@@ -48,6 +54,10 @@ $response->getState();
 2) Sending SMS message
 
 ```php
+use WBW\Library\SMSMode\Model\Authentication;
+use WBW\Library\SMSMode\Provider\ApiProvider;
+use WBW\Library\SMSMode\Request\SendingSMSMessageRequest;
+
 // Create the API provider.
 $provider = new ApiProvider(new Authentication());
 
@@ -78,6 +88,11 @@ $response->getSmsID();
 3) Delivery report
 
 ```php
+use WBW\Library\SMSMode\Model\Authentication;
+use WBW\Library\SMSMode\Model\DeliveryReport;
+use WBW\Library\SMSMode\Provider\ApiProvider;
+use WBW\Library\SMSMode\Request\DeliveryReportRequest;
+
 // Create the API provider.
 $provider = new ApiProvider(new Authentication());
 
@@ -110,6 +125,10 @@ foreach($response->getDeliveryReports() as $current) {
 4) Account balance
 
 ```php
+use WBW\Library\SMSMode\Model\Authentication;
+use WBW\Library\SMSMode\Provider\ApiProvider;
+use WBW\Library\SMSMode\Request\AccountBalanceRequest;
+
 // Create the API provider.
 $provider = new ApiProvider(new Authentication());
 
@@ -133,6 +152,10 @@ $response->getAccountBalance();
 5) Creating sub-account
 
 ```php
+use WBW\Library\SMSMode\Model\Authentication;
+use WBW\Library\SMSMode\Provider\ApiProvider;
+use WBW\Library\SMSMode\Request\CreatingSubAccountRequest;
+
 // Create the API provider.
 $provider = new ApiProvider(new Authentication());
 
@@ -159,6 +182,10 @@ $response->getDescription();
 Deleting sub-account :
 
 ```php
+use WBW\Library\SMSMode\Model\Authentication;
+use WBW\Library\SMSMode\Provider\ApiProvider;
+use WBW\Library\SMSMode\Request\DeletingSubAccountRequest;
+
 // Create the API provider.
 $provider = new ApiProvider(new Authentication());
 
@@ -184,6 +211,10 @@ $response->getDescription();
 6) Transferring credits from one account to another
 
 ```php
+use WBW\Library\SMSMode\Model\Authentication;
+use WBW\Library\SMSMode\Provider\ApiProvider;
+use WBW\Library\SMSMode\Request\TransferringCreditsRequest;
+
 // Create the API provider.
 $provider = new ApiProvider(new Authentication());
 
@@ -210,6 +241,10 @@ $response->getDescription();
 7) Adding contacts
 
 ```php
+use WBW\Library\SMSMode\Model\Authentication;
+use WBW\Library\SMSMode\Provider\ApiProvider;
+use WBW\Library\SMSMode\Request\AddingContactRequest;
+
 // Create the API provider.
 $provider = new ApiProvider(new Authentication());
 
@@ -236,6 +271,10 @@ $response->getDescription();
 8) Deleting SMS
 
 ```php
+use WBW\Library\SMSMode\Model\Authentication;
+use WBW\Library\SMSMode\Provider\ApiProvider;
+use WBW\Library\SMSMode\Request\DeletingSMSRequest;
+
 // Create the API provider.
 $provider = new ApiProvider(new Authentication());
 
@@ -261,6 +300,11 @@ $response->getDescription();
 9) Sent SMS message list
 
 ```php
+use WBW\Library\SMSMode\Model\Authentication;
+use WBW\Library\SMSMode\Model\SentSMSMessage;
+use WBW\Library\SMSMode\Provider\ApiProvider;
+use WBW\Library\SMSMode\Request\SentSMSMessageListRequest;
+
 // Create the API provider.
 $provider = new ApiProvider(new Authentication());
 
@@ -293,6 +337,10 @@ foreach($response->getSentSMSMessages() as $current) {
 10) Checking SMS message status
 
 ```php
+use WBW\Library\SMSMode\Model\Authentication;
+use WBW\Library\SMSMode\Provider\ApiProvider;
+use WBW\Library\SMSMode\Request\CheckingSMSMessageStatusRequest;
+
 // Create the API provider.
 $provider = new ApiProvider(new Authentication());
 
@@ -318,6 +366,11 @@ $response->getDescription();
 11) Retrieving SMS replies
 
 ```php
+use WBW\Library\SMSMode\Model\Authentication;
+use WBW\Library\SMSMode\Model\SMSReply;
+use WBW\Library\SMSMode\Provider\ApiProvider;
+use WBW\Library\SMSMode\Request\RetrievingSMSReplyRequest;
+
 // Create the API provider.
 $provider = new ApiProvider(new Authentication());
 
@@ -359,6 +412,10 @@ foreach($response->getSMSReplies() as $current) {
 12) Sending text-to-speech SMS
 
 ```php
+use WBW\Library\SMSMode\Model\Authentication;
+use WBW\Library\SMSMode\Provider\ApiProvider;
+use WBW\Library\SMSMode\Request\SendingTextToSpeechSMSRequest;
+
 // Create the API provider.
 $provider = new ApiProvider(new Authentication());
 
@@ -389,6 +446,10 @@ $response->getSmsID();
 13) Sending unicode SMS
 
 ```php
+use WBW\Library\SMSMode\Model\Authentication;
+use WBW\Library\SMSMode\Provider\ApiProvider;
+use WBW\Library\SMSMode\Request\SendingUnicodeSMSRequest;
+
 // Create the API provider.
 $provider = new ApiProvider(new Authentication());
 
@@ -419,6 +480,10 @@ $response->getSmsID();
 14) Sending SMS in batch mode (attached file)
 
 ```php
+use WBW\Library\SMSMode\Model\Authentication;
+use WBW\Library\SMSMode\Provider\ApiProvider;
+use WBW\Library\SMSMode\Request\SendingSMSBatchRequest;
+
 // Create the API provider.
 $provider = new ApiProvider(new Authentication());
 

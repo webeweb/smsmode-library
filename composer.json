@@ -21,7 +21,7 @@
         "php": "^7.1|^8.0",
         "ext-iconv": "*",
         "ext-json": "*",
-        "guzzlehttp/guzzle": "^6.0",
+        "guzzlehttp/guzzle": "^6.0|^7.0",
         "psr/log": "^1.0",
         "webeweb/core-library": "^8.0"
     },
@@ -33,7 +33,7 @@
     },
     "extra": {
         "branch-alias": {
-            "dev-master": "2.x-dev"
+            "dev-master": "3.x-dev"
         }
     },
     "autoload": {

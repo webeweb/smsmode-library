@@ -1,8 +1,8 @@
 DOCUMENTATION
 =============
 
-> IMPORTANT NOTICE: The API provider can also be used with a debug flag and/or
-> a logger with the following code:
+> IMPORTANT NOTICE: The API provider can be used with a debug flag and/or a
+> logger with the following code:
 
 ```php
 use Psr\Log\LoggerInterface;

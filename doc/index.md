@@ -1,8 +1,8 @@
 DOCUMENTATION
 =============
 
-The API provider can also be used with a debug flag and/or a logger with the
-following code:
+> IMPORTANT NOTICE: The API provider can also be used with a debug flag and/or
+> a logger with the following code:
 
 ```php
 use Psr\Log\LoggerInterface;
@@ -16,6 +16,8 @@ use WBW\Library\SMSMode\Provider\ApiProvider;
 $provider = new ApiProvider(new Authentication(), $logger);
 $provider->setDebug(true);
 ```
+
+---
 
 1) Authentication
 

@@ -59,6 +59,7 @@ class AddingContactRequest extends AbstractRequest {
      */
     public function __construct() {
         parent::__construct();
+
         $this->setGroupes([]);
     }
 

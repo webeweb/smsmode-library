@@ -79,6 +79,7 @@ class SendingSMSMessageRequest extends AbstractRequest implements SendingSMSMess
      */
     public function __construct() {
         parent::__construct();
+
         $this->setNumero([]);
     }
 

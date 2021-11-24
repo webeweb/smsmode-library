@@ -62,6 +62,7 @@ class SendingTextToSpeechSMSRequest extends AbstractRequest implements SendingTe
      */
     public function __construct() {
         parent::__construct();
+
         $this->setNumero([]);
     }
 

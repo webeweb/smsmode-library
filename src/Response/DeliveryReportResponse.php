@@ -33,6 +33,7 @@ class DeliveryReportResponse extends AbstractResponse {
      */
     public function __construct() {
         parent::__construct();
+
         $this->setDeliveryReports([]);
     }
 

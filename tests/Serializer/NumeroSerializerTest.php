@@ -25,7 +25,7 @@ use WBW\Library\SMSMode\Tests\AbstractTestCase;
 class NumeroSerializerTest extends AbstractTestCase {
 
     /**
-     Tests checkNumero()
+     * Tests checkNumero()
      *
      * @return void
      * @throws Exception Throws an exception if an error occurs.
@@ -36,7 +36,7 @@ class NumeroSerializerTest extends AbstractTestCase {
     }
 
     /**
-     Tests checkNumero()
+     * Tests checkNumero()
      *
      * @return void
      * @throws Exception Throws an exception if an error occurs.
@@ -54,7 +54,7 @@ class NumeroSerializerTest extends AbstractTestCase {
     }
 
     /**
-     Tests deserializeNumero()
+     * Tests deserializeNumero()
      *
      * @return void
      */
@@ -67,7 +67,7 @@ class NumeroSerializerTest extends AbstractTestCase {
     }
 
     /**
-     Tests serializeNumero()
+     * Tests serializeNumero()
      *
      * @return void
      */

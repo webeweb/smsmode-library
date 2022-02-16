@@ -23,7 +23,7 @@ use WBW\Library\SMSMode\Tests\AbstractTestCase;
 class SendingSMSMessageResponseTest extends AbstractTestCase {
 
     /**
-     Tests __construct()
+     * Tests __construct()
      *
      * @return void
      */

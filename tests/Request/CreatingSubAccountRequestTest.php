@@ -24,7 +24,7 @@ use WBW\Library\SMSMode\Tests\AbstractTestCase;
 class CreatingSubAccountRequestTest extends AbstractTestCase {
 
     /**
-     Tests setAdresse()
+     * Tests setAdresse()
      *
      * @return void
      */
@@ -37,7 +37,7 @@ class CreatingSubAccountRequestTest extends AbstractTestCase {
     }
 
     /**
-     Tests setCodePostal()
+     * Tests setCodePostal()
      *
      * @return void
      */
@@ -50,7 +50,7 @@ class CreatingSubAccountRequestTest extends AbstractTestCase {
     }
 
     /**
-     Tests setEmail()
+     * Tests setEmail()
      *
      * @return void
      */
@@ -63,7 +63,7 @@ class CreatingSubAccountRequestTest extends AbstractTestCase {
     }
 
     /**
-     Tests setFax()
+     * Tests setFax()
      *
      * @return void
      * @throws Exception Throws an exception if an error occurs.
@@ -77,7 +77,7 @@ class CreatingSubAccountRequestTest extends AbstractTestCase {
     }
 
     /**
-     Tests setNewPass()
+     * Tests setNewPass()
      *
      * @return void
      */
@@ -90,7 +90,7 @@ class CreatingSubAccountRequestTest extends AbstractTestCase {
     }
 
     /**
-     Tests setNewPseudo()
+     * Tests setNewPseudo()
      *
      * @return void
      */
@@ -103,7 +103,7 @@ class CreatingSubAccountRequestTest extends AbstractTestCase {
     }
 
     /**
-     Tests setTelephone()
+     * Tests setTelephone()
      *
      * @return void
      */
@@ -116,7 +116,7 @@ class CreatingSubAccountRequestTest extends AbstractTestCase {
     }
 
     /**
-     Tests setVille()
+     * Tests setVille()
      *
      * @return void
      */
@@ -129,7 +129,7 @@ class CreatingSubAccountRequestTest extends AbstractTestCase {
     }
 
     /**
-     Tests __construct()
+     * Tests __construct()
      *
      * @return void
      */

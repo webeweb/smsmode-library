@@ -23,7 +23,7 @@ use WBW\Library\SMSMode\Tests\AbstractTestCase;
 class AddingContactRequestTest extends AbstractTestCase {
 
     /**
-     Tests addGroupe()
+     * Tests addGroupe()
      *
      * @return void
      */
@@ -36,7 +36,7 @@ class AddingContactRequestTest extends AbstractTestCase {
     }
 
     /**
-     Tests setGroupes()
+     * Tests setGroupes()
      *
      * @return void
      */
@@ -49,7 +49,7 @@ class AddingContactRequestTest extends AbstractTestCase {
     }
 
     /**
-     Tests setOther()
+     * Tests setOther()
      *
      * @return void
      */
@@ -62,7 +62,7 @@ class AddingContactRequestTest extends AbstractTestCase {
     }
 
     /**
-     Tests __construct()
+     * Tests __construct()
      *
      * @return void
      */

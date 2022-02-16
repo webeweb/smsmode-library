@@ -23,7 +23,7 @@ use WBW\Library\SMSMode\Tests\Fixtures\Model\Attribute\TestStringSmsIDTrait;
 class StringSmsIDTraitTest extends AbstractTestCase {
 
     /**
-     Tests setSmsID()
+     * Tests setSmsID()
      *
      * @return void
      */

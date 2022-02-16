@@ -38,7 +38,7 @@ use WBW\Library\SMSMode\Tests\AbstractTestCase;
 class RequestFactoryTest extends AbstractTestCase {
 
     /**
-     Tests newAccountBalanceRequest()
+     * Tests newAccountBalanceRequest()
      *
      * @return void
      */
@@ -49,7 +49,7 @@ class RequestFactoryTest extends AbstractTestCase {
     }
 
     /**
-     Tests newAddingContactRequest()
+     * Tests newAddingContactRequest()
      *
      * @return void
      */
@@ -67,7 +67,7 @@ class RequestFactoryTest extends AbstractTestCase {
     }
 
     /**
-     Tests newCheckingSMSMessageStatusRequest()
+     * Tests newCheckingSMSMessageStatusRequest()
      *
      * @return void
      */
@@ -80,7 +80,7 @@ class RequestFactoryTest extends AbstractTestCase {
     }
 
     /**
-     Tests newCreatingAPIKeyRequest()
+     * Tests newCreatingAPIKeyRequest()
      *
      * @return void
      */
@@ -91,7 +91,7 @@ class RequestFactoryTest extends AbstractTestCase {
     }
 
     /**
-     Tests newCreatingSubAccountRequest()
+     * Tests newCreatingSubAccountRequest()
      *
      * @return void
      */
@@ -117,7 +117,7 @@ class RequestFactoryTest extends AbstractTestCase {
     }
 
     /**
-     Tests newDeletingSMSRequest()
+     * Tests newDeletingSMSRequest()
      *
      * @return void
      */
@@ -131,7 +131,7 @@ class RequestFactoryTest extends AbstractTestCase {
     }
 
     /**
-     Tests newDeletingSubAccountRequest()
+     * Tests newDeletingSubAccountRequest()
      *
      * @return void
      */
@@ -144,7 +144,7 @@ class RequestFactoryTest extends AbstractTestCase {
     }
 
     /**
-     Tests newDeliveryReportRequest()
+     * Tests newDeliveryReportRequest()
      *
      * @return void
      */
@@ -157,7 +157,7 @@ class RequestFactoryTest extends AbstractTestCase {
     }
 
     /**
-     Tests newRetrievingSMSReplyRequest()
+     * Tests newRetrievingSMSReplyRequest()
      *
      * @return void
      */
@@ -173,7 +173,7 @@ class RequestFactoryTest extends AbstractTestCase {
     }
 
     /**
-     Tests newSendingSMSBatchRequest()
+     * Tests newSendingSMSBatchRequest()
      *
      * @return void
      */
@@ -192,7 +192,7 @@ class RequestFactoryTest extends AbstractTestCase {
     }
 
     /**
-     Tests newSendingSMSMessageRequest()
+     * Tests newSendingSMSMessageRequest()
      *
      * @return void
      */
@@ -215,7 +215,7 @@ class RequestFactoryTest extends AbstractTestCase {
     }
 
     /**
-     Tests newSendingTextToSpeechSMSRequest()
+     * Tests newSendingTextToSpeechSMSRequest()
      *
      * @return void
      */
@@ -232,7 +232,7 @@ class RequestFactoryTest extends AbstractTestCase {
     }
 
     /**
-     Tests newSendingUnicodeSMSRequest()
+     * Tests newSendingUnicodeSMSRequest()
      *
      * @return void
      */
@@ -255,7 +255,7 @@ class RequestFactoryTest extends AbstractTestCase {
     }
 
     /**
-     Tests newSentSMSMessageListRequest()
+     * Tests newSentSMSMessageListRequest()
      *
      * @return void
      */
@@ -268,7 +268,7 @@ class RequestFactoryTest extends AbstractTestCase {
     }
 
     /**
-     Tests newTransferringCreditsRequest()
+     * Tests newTransferringCreditsRequest()
      *
      * @return void
      */

@@ -23,7 +23,7 @@ use WBW\Library\SMSMode\Tests\AbstractTestCase;
 class AuthenticationTest extends AbstractTestCase {
 
     /**
-     Tests setPass()
+     * Tests setPass()
      *
      * @return void
      */
@@ -36,7 +36,7 @@ class AuthenticationTest extends AbstractTestCase {
     }
 
     /**
-     Tests setPseudo()
+     * Tests setPseudo()
      *
      * @return void
      */
@@ -49,7 +49,7 @@ class AuthenticationTest extends AbstractTestCase {
     }
 
     /**
-     Tests __construct()
+     * Tests __construct()
      *
      * @return void
      */

@@ -42,7 +42,7 @@ use WBW\Library\SMSMode\Tests\AbstractTestCase;
 class RequestSerializerTest extends AbstractTestCase {
 
     /**
-     Tests serialize()
+     * Tests serialize()
      *
      * @return void
      * @throws Exception Throws an exception if an error occurs.
@@ -59,7 +59,7 @@ class RequestSerializerTest extends AbstractTestCase {
     }
 
     /**
-     Tests serialize()
+     * Tests serialize()
      *
      * @return void
      * @throws Exception Throws an exception if an error occurs.
@@ -92,7 +92,7 @@ class RequestSerializerTest extends AbstractTestCase {
     }
 
     /**
-     Tests serialize()
+     * Tests serialize()
      *
      * @return void
      */
@@ -124,7 +124,7 @@ class RequestSerializerTest extends AbstractTestCase {
     }
 
     /**
-     Tests serialize()
+     * Tests serialize()
      *
      * @return void
      * @throws Exception Throws an exception if an error occurs.
@@ -146,7 +146,7 @@ class RequestSerializerTest extends AbstractTestCase {
     }
 
     /**
-     Tests serialize()
+     * Tests serialize()
      *
      * @return void
      * @throws Exception Throws an exception if an error occurs.
@@ -169,7 +169,7 @@ class RequestSerializerTest extends AbstractTestCase {
     }
 
     /**
-     Tests serialize()
+     * Tests serialize()
      *
      * @return void
      */
@@ -201,7 +201,7 @@ class RequestSerializerTest extends AbstractTestCase {
     }
 
     /**
-     Tests serialize()
+     * Tests serialize()
      *
      * @return void
      * @throws Exception Throws an exception if an error occurs.
@@ -221,7 +221,7 @@ class RequestSerializerTest extends AbstractTestCase {
     }
 
     /**
-     Tests serialize()
+     * Tests serialize()
      *
      * @return void
      */
@@ -243,7 +243,7 @@ class RequestSerializerTest extends AbstractTestCase {
     }
 
     /**
-     Tests serialize()
+     * Tests serialize()
      *
      * @return void
      * @throws Exception Throws an exception if an error occurs.
@@ -260,7 +260,7 @@ class RequestSerializerTest extends AbstractTestCase {
     }
 
     /**
-     Tests serialize()
+     * Tests serialize()
      *
      * @return void
      * @throws Exception Throws an exception if an error occurs.
@@ -307,7 +307,7 @@ class RequestSerializerTest extends AbstractTestCase {
     }
 
     /**
-     Tests serialize()
+     * Tests serialize()
      *
      * @return void
      */
@@ -339,7 +339,7 @@ class RequestSerializerTest extends AbstractTestCase {
     }
 
     /**
-     Tests serialize()
+     * Tests serialize()
      *
      * @return void
      * @throws Exception Throws an exception if an error occurs.
@@ -367,7 +367,7 @@ class RequestSerializerTest extends AbstractTestCase {
     }
 
     /**
-     Tests serialize()
+     * Tests serialize()
      *
      * @return void
      */
@@ -389,7 +389,7 @@ class RequestSerializerTest extends AbstractTestCase {
     }
 
     /**
-     Tests serialize()
+     * Tests serialize()
      *
      * @return void
      * @throws Exception Throws an exception if an error occurs.
@@ -409,7 +409,7 @@ class RequestSerializerTest extends AbstractTestCase {
     }
 
     /**
-     Tests serialize()
+     * Tests serialize()
      *
      * @return void
      */
@@ -431,7 +431,7 @@ class RequestSerializerTest extends AbstractTestCase {
     }
 
     /**
-     Tests serialize()
+     * Tests serialize()
      *
      * @return void
      * @throws Exception Throws an exception if an error occurs.
@@ -451,7 +451,7 @@ class RequestSerializerTest extends AbstractTestCase {
     }
 
     /**
-     Tests serialize()
+     * Tests serialize()
      *
      * @return void
      */
@@ -473,7 +473,7 @@ class RequestSerializerTest extends AbstractTestCase {
     }
 
     /**
-     Tests serialize()
+     * Tests serialize()
      *
      * @return void
      * @throws Exception Throws an exception if an error occurs.
@@ -518,7 +518,7 @@ class RequestSerializerTest extends AbstractTestCase {
     }
 
     /**
-     Tests serialize()
+     * Tests serialize()
      *
      * @return void
      * @throws Exception Throws an exception if an error occurs.
@@ -572,7 +572,7 @@ class RequestSerializerTest extends AbstractTestCase {
     }
 
     /**
-     Tests serialize()
+     * Tests serialize()
      *
      * @return void
      * @throws Exception Throws an exception if an error occurs.
@@ -589,7 +589,7 @@ class RequestSerializerTest extends AbstractTestCase {
     }
 
     /**
-     Tests serialize()
+     * Tests serialize()
      *
      * @return void
      * @throws Exception Throws an exception if an error occurs.
@@ -622,7 +622,7 @@ class RequestSerializerTest extends AbstractTestCase {
     }
 
     /**
-     Tests serialize()
+     * Tests serialize()
      *
      * @return void
      */
@@ -644,7 +644,7 @@ class RequestSerializerTest extends AbstractTestCase {
     }
 
     /**
-     Tests serialize()
+     * Tests serialize()
      *
      * @return void
      * @throws Exception Throws an exception if an error occurs.
@@ -684,7 +684,7 @@ class RequestSerializerTest extends AbstractTestCase {
     }
 
     /**
-     Tests serialize()
+     * Tests serialize()
      *
      * @return void
      * @throws Exception Throws an exception if an error occurs.
@@ -721,7 +721,7 @@ class RequestSerializerTest extends AbstractTestCase {
     }
 
     /**
-     Tests serialize()
+     * Tests serialize()
      *
      * @return void
      */
@@ -753,7 +753,7 @@ class RequestSerializerTest extends AbstractTestCase {
     }
 
     /**
-     Tests serialize()
+     * Tests serialize()
      *
      * @return void
      * @throws Exception Throws an exception if an error occurs.
@@ -783,7 +783,7 @@ class RequestSerializerTest extends AbstractTestCase {
     }
 
     /**
-     Tests serialize()
+     * Tests serialize()
      *
      * @return void
      */
@@ -815,7 +815,7 @@ class RequestSerializerTest extends AbstractTestCase {
     }
 
     /**
-     Tests serialize()
+     * Tests serialize()
      *
      * @return void
      * @throws Exception Throws an exception if an error occurs.
@@ -855,7 +855,7 @@ class RequestSerializerTest extends AbstractTestCase {
     }
 
     /**
-     Tests serialize()
+     * Tests serialize()
      *
      * @return void
      * @throws Exception Throws an exception if an error occurs.
@@ -875,7 +875,7 @@ class RequestSerializerTest extends AbstractTestCase {
     }
 
     /**
-     Tests serialize()
+     * Tests serialize()
      *
      * @return void
      * @throws Exception Throws an exception if an error occurs.
@@ -950,7 +950,7 @@ class RequestSerializerTest extends AbstractTestCase {
     }
 
     /**
-     Tests __construct()
+     * Tests __construct()
      *
      * @return void
      */

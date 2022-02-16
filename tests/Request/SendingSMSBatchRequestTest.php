@@ -25,7 +25,7 @@ use WBW\Library\SMSMode\Tests\AbstractTestCase;
 class SendingSMSBatchRequestTest extends AbstractTestCase {
 
     /**
-     Tests setFichier()
+     * Tests setFichier()
      *
      * @return void
      * @throws Exception Throws an exception if an error occurs.
@@ -39,7 +39,7 @@ class SendingSMSBatchRequestTest extends AbstractTestCase {
     }
 
     /**
-     Tests setFichier()
+     * Tests setFichier()
      *
      * @return void
      */
@@ -58,7 +58,7 @@ class SendingSMSBatchRequestTest extends AbstractTestCase {
     }
 
     /**
-     Tests __construct()
+     * Tests __construct()
      *
      * @return void
      */

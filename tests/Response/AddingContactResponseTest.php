@@ -23,7 +23,7 @@ use WBW\Library\SMSMode\Tests\AbstractTestCase;
 class AddingContactResponseTest extends AbstractTestCase {
 
     /**
-     Tests __construct()
+     * Tests __construct()
      *
      * @return void
      */

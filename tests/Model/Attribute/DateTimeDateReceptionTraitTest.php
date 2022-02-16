@@ -25,7 +25,7 @@ use WBW\Library\SMSMode\Tests\Fixtures\Model\Attribute\TestDateTimeDateReception
 class DateTimeDateReceptionTraitTest extends AbstractTestCase {
 
     /**
-     Tests setDateReception()
+     * Tests setDateReception()
      *
      * @return void
      * @throws Exception Throws an exception if an error occurs.

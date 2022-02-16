@@ -23,7 +23,7 @@ use WBW\Library\SMSMode\Tests\AbstractTestCase;
 class SendingSMSBatchResponseTest extends AbstractTestCase {
 
     /**
-     Tests setCampagneID()
+     * Tests setCampagneID()
      *
      * @return void
      */
@@ -36,7 +36,7 @@ class SendingSMSBatchResponseTest extends AbstractTestCase {
     }
 
     /**
-     Tests __construct()
+     * Tests __construct()
      *
      * @return void
      */

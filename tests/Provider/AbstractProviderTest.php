@@ -44,7 +44,7 @@ class AbstractProviderTest extends AbstractTestCase {
     }
 
     /**
-     Tests __construct()
+     * Tests __construct()
      *
      * @return void
      */

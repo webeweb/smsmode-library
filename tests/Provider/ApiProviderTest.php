@@ -75,7 +75,7 @@ class ApiProviderTest extends AbstractTestCase {
     }
 
     /**
-     Tests accountBalance()
+     * Tests accountBalance()
      *
      * @return void
      * @throws Exception Throws an exception if an error occurs.
@@ -98,7 +98,7 @@ class ApiProviderTest extends AbstractTestCase {
     }
 
     /**
-     Tests addingContact()
+     * Tests addingContact()
      *
      * @return void
      * @throws Exception Throws an exception if an error occurs.
@@ -121,7 +121,7 @@ class ApiProviderTest extends AbstractTestCase {
     }
 
     /**
-     Tests checkingSMSMessageStatus()
+     * Tests checkingSMSMessageStatus()
      *
      * @return void
      * @throws Exception Throws an exception if an error occurs.
@@ -142,7 +142,7 @@ class ApiProviderTest extends AbstractTestCase {
     }
 
     /**
-     Tests creatingAPIKey()
+     * Tests creatingAPIKey()
      *
      * @return void
      * @throws Exception Throws an exception if an error occurs.
@@ -170,7 +170,7 @@ class ApiProviderTest extends AbstractTestCase {
     }
 
     /**
-     Tests creatingAPIKey()
+     * Tests creatingAPIKey()
      *
      * @return void
      * @throws Exception Throws an exception if an error occurs.
@@ -193,7 +193,7 @@ class ApiProviderTest extends AbstractTestCase {
     }
 
     /**
-     Tests creatingSubAccount()
+     * Tests creatingSubAccount()
      *
      * @return void
      * @throws Exception Throws an exception if an error occurs.
@@ -215,7 +215,7 @@ class ApiProviderTest extends AbstractTestCase {
     }
 
     /**
-     Tests deletingSMS()
+     * Tests deletingSMS()
      *
      * @return void
      * @throws Exception Throws an exception if an error occurs.
@@ -236,7 +236,7 @@ class ApiProviderTest extends AbstractTestCase {
     }
 
     /**
-     Tests deletingSubAccount()
+     * Tests deletingSubAccount()
      *
      * @return void
      * @throws Exception Throws an exception if an error occurs.
@@ -257,7 +257,7 @@ class ApiProviderTest extends AbstractTestCase {
     }
 
     /**
-     Tests deliveryReport()
+     * Tests deliveryReport()
      *
      * @return void
      * @throws Exception Throws an exception if an error occurs.
@@ -278,7 +278,7 @@ class ApiProviderTest extends AbstractTestCase {
     }
 
     /**
-     Tests retrievingSMSReply()
+     * Tests retrievingSMSReply()
      *
      * @return void
      * @throws Exception Throws an exception if an error occurs.
@@ -298,7 +298,7 @@ class ApiProviderTest extends AbstractTestCase {
     }
 
     /**
-     Tests sendingSMSBatch()
+     * Tests sendingSMSBatch()
      *
      * @return void
      * @throws Exception Throws an exception if an error occurs.
@@ -319,7 +319,7 @@ class ApiProviderTest extends AbstractTestCase {
     }
 
     /**
-     Tests sendingSMSMessage()
+     * Tests sendingSMSMessage()
      *
      * @return void
      * @throws Exception Throws an exception if an error occurs.
@@ -341,7 +341,7 @@ class ApiProviderTest extends AbstractTestCase {
     }
 
     /**
-     Tests sendingTextToSpeechSMS()
+     * Tests sendingTextToSpeechSMS()
      *
      * @return void
      * @throws Exception Throws an exception if an error occurs.
@@ -363,7 +363,7 @@ class ApiProviderTest extends AbstractTestCase {
     }
 
     /**
-     Tests sendingUnicodeSMS()
+     * Tests sendingUnicodeSMS()
      *
      * @return void
      * @throws Exception Throws an exception if an error occurs.
@@ -385,7 +385,7 @@ class ApiProviderTest extends AbstractTestCase {
     }
 
     /**
-     Tests sentSMSMessageList()
+     * Tests sentSMSMessageList()
      *
      * @return void
      * @throws Exception Throws an exception if an error occurs.
@@ -405,7 +405,7 @@ class ApiProviderTest extends AbstractTestCase {
     }
 
     /**
-     Tests transferringCredits()
+     * Tests transferringCredits()
      *
      * @return void
      * @throws Exception Throws an exception if an error occurs.

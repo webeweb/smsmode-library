@@ -25,7 +25,7 @@ use WBW\Library\SMSMode\Tests\AbstractTestCase;
 class SentSMSMessageTest extends AbstractTestCase {
 
     /**
-     Tests setCostCredit()
+     * Tests setCostCredit()
      *
      * @return void
      */
@@ -38,7 +38,7 @@ class SentSMSMessageTest extends AbstractTestCase {
     }
 
     /**
-     Tests setRecipientCount()
+     * Tests setRecipientCount()
      *
      * @return void
      */
@@ -51,7 +51,7 @@ class SentSMSMessageTest extends AbstractTestCase {
     }
 
     /**
-     Tests setSendDate()
+     * Tests setSendDate()
      *
      * @return void
      * @throws Exception Throws an exception if an error occurs.
@@ -68,7 +68,7 @@ class SentSMSMessageTest extends AbstractTestCase {
     }
 
     /**
-     Tests __construct()
+     * Tests __construct()
      *
      * @return void
      */

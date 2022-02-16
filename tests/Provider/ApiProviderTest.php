@@ -75,7 +75,7 @@ class ApiProviderTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the accountBalance() method.
+     Tests accountBalance()
      *
      * @return void
      * @throws Exception Throws an exception if an error occurs.
@@ -98,7 +98,7 @@ class ApiProviderTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the addingContact() method.
+     Tests addingContact()
      *
      * @return void
      * @throws Exception Throws an exception if an error occurs.
@@ -121,7 +121,7 @@ class ApiProviderTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the checkingSMSMessageStatus() method.
+     Tests checkingSMSMessageStatus()
      *
      * @return void
      * @throws Exception Throws an exception if an error occurs.
@@ -142,7 +142,7 @@ class ApiProviderTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the creatingAPIKey() method.
+     Tests creatingAPIKey()
      *
      * @return void
      * @throws Exception Throws an exception if an error occurs.
@@ -170,7 +170,7 @@ class ApiProviderTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the creatingAPIKey() method.
+     Tests creatingAPIKey()
      *
      * @return void
      * @throws Exception Throws an exception if an error occurs.
@@ -193,7 +193,7 @@ class ApiProviderTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the creatingSubAccount() method.
+     Tests creatingSubAccount()
      *
      * @return void
      * @throws Exception Throws an exception if an error occurs.
@@ -215,7 +215,7 @@ class ApiProviderTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the deletingSMS() method.
+     Tests deletingSMS()
      *
      * @return void
      * @throws Exception Throws an exception if an error occurs.
@@ -236,7 +236,7 @@ class ApiProviderTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the deletingSubAccount() method.
+     Tests deletingSubAccount()
      *
      * @return void
      * @throws Exception Throws an exception if an error occurs.
@@ -257,7 +257,7 @@ class ApiProviderTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the deliveryReport() method.
+     Tests deliveryReport()
      *
      * @return void
      * @throws Exception Throws an exception if an error occurs.
@@ -278,7 +278,7 @@ class ApiProviderTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the retrievingSMSReply() method.
+     Tests retrievingSMSReply()
      *
      * @return void
      * @throws Exception Throws an exception if an error occurs.
@@ -298,7 +298,7 @@ class ApiProviderTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the sendingSMSBatch() method.
+     Tests sendingSMSBatch()
      *
      * @return void
      * @throws Exception Throws an exception if an error occurs.
@@ -319,7 +319,7 @@ class ApiProviderTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the sendingSMSMessage() method.
+     Tests sendingSMSMessage()
      *
      * @return void
      * @throws Exception Throws an exception if an error occurs.
@@ -341,7 +341,7 @@ class ApiProviderTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the sendingTextToSpeechSMS() method.
+     Tests sendingTextToSpeechSMS()
      *
      * @return void
      * @throws Exception Throws an exception if an error occurs.
@@ -363,7 +363,7 @@ class ApiProviderTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the sendingUnicodeSMS() method.
+     Tests sendingUnicodeSMS()
      *
      * @return void
      * @throws Exception Throws an exception if an error occurs.
@@ -385,7 +385,7 @@ class ApiProviderTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the sentSMSMessageList() method.
+     Tests sentSMSMessageList()
      *
      * @return void
      * @throws Exception Throws an exception if an error occurs.
@@ -405,7 +405,7 @@ class ApiProviderTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the transferringCredits() method.
+     Tests transferringCredits()
      *
      * @return void
      * @throws Exception Throws an exception if an error occurs.

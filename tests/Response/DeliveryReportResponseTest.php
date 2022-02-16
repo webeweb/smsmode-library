@@ -24,7 +24,7 @@ use WBW\Library\SMSMode\Tests\AbstractTestCase;
 class DeliveryReportResponseTest extends AbstractTestCase {
 
     /**
-     * Tests the addDeliveryReport() method.
+     Tests addDeliveryReport()
      *
      * @return void
      */
@@ -40,7 +40,7 @@ class DeliveryReportResponseTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the hasDeliveryReport() method.
+     Tests hasDeliveryReport()
      *
      * @return void
      */
@@ -56,7 +56,7 @@ class DeliveryReportResponseTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the __construct() method.
+     Tests __construct()
      *
      * @return void
      */

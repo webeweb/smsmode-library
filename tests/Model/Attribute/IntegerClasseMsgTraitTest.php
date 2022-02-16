@@ -26,7 +26,7 @@ use WBW\Library\SMSMode\Tests\Fixtures\Model\Attribute\TestIntegerClasseMsgTrait
 class IntegerClasseMsgTraitTest extends AbstractTestCase {
 
     /**
-     * Tests the enumClasseMsg() method.
+     Tests enumClasseMsg()
      *
      * @return void
      */
@@ -42,7 +42,7 @@ class IntegerClasseMsgTraitTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the setClasseMsg() method.
+     Tests setClasseMsg()
      *
      * @return void
      */
@@ -58,7 +58,7 @@ class IntegerClasseMsgTraitTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the setClasseMsg() method.
+     Tests setClasseMsg()
      *
      * @return void
      */

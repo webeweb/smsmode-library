@@ -25,7 +25,7 @@ use WBW\Library\SMSMode\Tests\Fixtures\Model\Attribute\TestIntegerOffsetTrait;
 class IntegerOffsetTraitTest extends AbstractTestCase {
 
     /**
-     * Tests the setOffset() method.
+     Tests setOffset()
      *
      * @return void
      */
@@ -38,7 +38,7 @@ class IntegerOffsetTraitTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the setOffset() method.
+     Tests setOffset()
      *
      * @return void
      */

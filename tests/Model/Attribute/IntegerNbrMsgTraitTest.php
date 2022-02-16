@@ -25,7 +25,7 @@ use WBW\Library\SMSMode\Tests\Fixtures\Model\Attribute\TestIntegerNbrMsgTrait;
 class IntegerNbrMsgTraitTest extends AbstractTestCase {
 
     /**
-     * Tests the setNbrMsg() method.
+     Tests setNbrMsg()
      *
      * @return void
      */
@@ -38,7 +38,7 @@ class IntegerNbrMsgTraitTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the setNbrMsg() method.
+     Tests setNbrMsg()
      *
      * @return void
      */

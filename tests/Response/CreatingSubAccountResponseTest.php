@@ -23,7 +23,7 @@ use WBW\Library\SMSMode\Tests\AbstractTestCase;
 class CreatingSubAccountResponseTest extends AbstractTestCase {
 
     /**
-     * Tests the __construct() method.
+     Tests __construct()
      *
      * @return void
      */

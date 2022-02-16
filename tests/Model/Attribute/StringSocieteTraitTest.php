@@ -23,7 +23,7 @@ use WBW\Library\SMSMode\Tests\Fixtures\Model\Attribute\TestStringSocieteTrait;
 class StringSocieteTraitTest extends AbstractTestCase {
 
     /**
-     * Tests the setSociete() method.
+     Tests setSociete()
      *
      * @return void
      */

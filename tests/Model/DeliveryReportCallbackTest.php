@@ -23,7 +23,7 @@ use WBW\Library\SMSMode\Tests\AbstractTestCase;
 class DeliveryReportCallbackTest extends AbstractTestCase {
 
     /**
-     * Tests the setMccMnc() method.
+     Tests setMccMnc()
      *
      * @return void
      */
@@ -36,7 +36,7 @@ class DeliveryReportCallbackTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the setStatus() method.
+     Tests setStatus()
      *
      * @return void
      */
@@ -49,7 +49,7 @@ class DeliveryReportCallbackTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the __construct() method.
+     Tests __construct()
      *
      * @return void
      */

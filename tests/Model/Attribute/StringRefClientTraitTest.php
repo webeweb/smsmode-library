@@ -23,7 +23,7 @@ use WBW\Library\SMSMode\Tests\Fixtures\Model\Attribute\TestStringRefClientTrait;
 class StringRefClientTraitTest extends AbstractTestCase {
 
     /**
-     * Tests the setRefClient() method.
+     Tests setRefClient()
      *
      * @return void
      */

@@ -23,7 +23,7 @@ use WBW\Library\SMSMode\Tests\AbstractTestCase;
 class DeletingSubAccountRequestTest extends AbstractTestCase {
 
     /**
-     * Tests the setPseudoToDelete() method.
+     Tests setPseudoToDelete()
      *
      * @return void
      */
@@ -36,7 +36,7 @@ class DeletingSubAccountRequestTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the __construct() method.
+     Tests __construct()
      *
      * @return void
      */

@@ -42,7 +42,7 @@ use WBW\Library\SMSMode\Tests\Fixtures\Serializer\TestResponseDeserializer;
 class ResponseDeserializerTest extends AbstractTestCase {
 
     /**
-     * Tests the deserializeAccountBalanceResponse() method.
+     Tests deserializeAccountBalanceResponse()
      *
      * @return void
      */
@@ -62,7 +62,7 @@ class ResponseDeserializerTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the deserializeAccountBalanceResponse() method.
+     Tests deserializeAccountBalanceResponse()
      *
      * @return void
      */
@@ -82,7 +82,7 @@ class ResponseDeserializerTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the deserializeAddingContactResponse() method.
+     Tests deserializeAddingContactResponse()
      *
      * @return void
      */
@@ -100,7 +100,7 @@ class ResponseDeserializerTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the deserializeCheckingSMSMessageStatusResponse() method.
+     Tests deserializeCheckingSMSMessageStatusResponse()
      *
      * @return void
      */
@@ -118,7 +118,7 @@ class ResponseDeserializerTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the deserializeCreatingAPIKeyResponse() method.
+     Tests deserializeCreatingAPIKeyResponse()
      *
      * @return void
      */
@@ -152,7 +152,7 @@ EOT;
     }
 
     /**
-     * Tests the deserializeCreatingSubAccountResponse() method.
+     Tests deserializeCreatingSubAccountResponse()
      *
      * @return void
      */
@@ -170,7 +170,7 @@ EOT;
     }
 
     /**
-     * Tests the deserializeDeletingSMSResponse() method.
+     Tests deserializeDeletingSMSResponse()
      *
      * @return void
      */
@@ -188,7 +188,7 @@ EOT;
     }
 
     /**
-     * Tests the deserializeDeletingSubAccountResponse() method.
+     Tests deserializeDeletingSubAccountResponse()
      *
      * @return void
      */
@@ -206,7 +206,7 @@ EOT;
     }
 
     /**
-     * Tests the deserializeDeliveryReport() method.
+     Tests deserializeDeliveryReport()
      *
      * @return void
      */
@@ -227,7 +227,7 @@ EOT;
     }
 
     /**
-     * Tests the deserializeDeliveryReport() method.
+     Tests deserializeDeliveryReport()
      *
      * @return void
      */
@@ -257,7 +257,7 @@ EOT;
     }
 
     /**
-     * Tests the deserializeDeliveryReport() method.
+     Tests deserializeDeliveryReport()
      *
      * @return void
      */
@@ -277,7 +277,7 @@ EOT;
     }
 
     /**
-     * Tests the deserializeDeliveryReport() method.
+     Tests deserializeDeliveryReport()
      *
      * @return void
      */
@@ -298,7 +298,7 @@ EOT;
     }
 
     /**
-     * Tests the deserializeResponse() method.
+     Tests deserializeResponse()
      *
      * @return void
      */
@@ -319,7 +319,7 @@ EOT;
     }
 
     /**
-     * Tests the deserializeRetrievingSMSReplyResponse() method.
+     Tests deserializeRetrievingSMSReplyResponse()
      *
      * @return void
      */
@@ -364,7 +364,7 @@ EOT;
     }
 
     /**
-     * Tests the deserializeRetrievingSMSReplyResponse() method.
+     Tests deserializeRetrievingSMSReplyResponse()
      *
      * @return void
      */
@@ -384,7 +384,7 @@ EOT;
     }
 
     /**
-     * Tests the deserializeSMSReply() method.
+     Tests deserializeSMSReply()
      *
      * @return void
      */
@@ -410,7 +410,7 @@ EOT;
     }
 
     /**
-     * Tests the deserializeSMSReply() method.
+     Tests deserializeSMSReply()
      *
      * @return void
      */
@@ -436,7 +436,7 @@ EOT;
     }
 
     /**
-     * Tests the deserializeSendingSMSBatchResponse() method.
+     Tests deserializeSendingSMSBatchResponse()
      *
      * @return void
      */
@@ -456,7 +456,7 @@ EOT;
     }
 
     /**
-     * Tests the deserializeSendingSMSMessageResponse() method.
+     Tests deserializeSendingSMSMessageResponse()
      *
      * @return void
      */
@@ -476,7 +476,7 @@ EOT;
     }
 
     /**
-     * Tests the deserializeSendingTextToSpeechSMSResponse() method.
+     Tests deserializeSendingTextToSpeechSMSResponse()
      *
      * @return void
      */
@@ -496,7 +496,7 @@ EOT;
     }
 
     /**
-     * Tests the deserializeSendingUnicodeSMSResponse() method.
+     Tests deserializeSendingUnicodeSMSResponse()
      *
      * @return void
      */
@@ -516,7 +516,7 @@ EOT;
     }
 
     /**
-     * Tests the deserializeSentSMSMessage() method.
+     Tests deserializeSentSMSMessage()
      *
      * @return void
      */
@@ -542,7 +542,7 @@ EOT;
     }
 
     /**
-     * Tests the deserializeSentSMSMessageListResponse() method.
+     Tests deserializeSentSMSMessageListResponse()
      *
      * @return void
      */
@@ -589,7 +589,7 @@ EOT;
     }
 
     /**
-     * Tests the deserializeSentSMSMessageListResponse() method.
+     Tests deserializeSentSMSMessageListResponse()
      *
      * @return void
      */
@@ -609,7 +609,7 @@ EOT;
     }
 
     /**
-     * Tests the deserializeSentSMSMessage() method.
+     Tests deserializeSentSMSMessage()
      *
      * @return void
      */
@@ -635,7 +635,7 @@ EOT;
     }
 
     /**
-     * Tests the deserializeTransferringCreditsResponse() method.
+     Tests deserializeTransferringCreditsResponse()
      *
      * @return void
      */

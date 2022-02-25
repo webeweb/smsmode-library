@@ -16,7 +16,7 @@ use WBW\Library\SMSMode\Model\Attribute\IntegerOffsetTrait;
 /**
  * Test integer offset trait.
  *
- * @author webeweb <https://github.com/webeweb/>
+ * @author webeweb <https://github.com/webeweb>
  * @package WBW\Library\SMSMode\Tests\Fixtures\Model\Attribute
  */
 class TestIntegerOffsetTrait {

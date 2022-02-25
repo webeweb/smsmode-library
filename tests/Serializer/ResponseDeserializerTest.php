@@ -36,7 +36,7 @@ use WBW\Library\SMSMode\Tests\Fixtures\Serializer\TestResponseDeserializer;
 /**
  * Object deserializer test.
  *
- * @author webeweb <https://github.com/webeweb/>
+ * @author webeweb <https://github.com/webeweb>
  * @package WBW\Library\SMSMode\Tests\Serializer
  */
 class ResponseDeserializerTest extends AbstractTestCase {

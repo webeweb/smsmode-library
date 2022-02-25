@@ -16,7 +16,7 @@ use WBW\Library\SMSMode\Model\SentSMSMessage;
 /**
  * Sent SMS message list response.
  *
- * @author webeweb <https://github.com/webeweb/>
+ * @author webeweb <https://github.com/webeweb>
  * @package WBW\Library\SMSMode\Response
  */
 class SentSMSMessageListResponse extends AbstractResponse {

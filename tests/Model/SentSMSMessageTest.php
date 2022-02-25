@@ -19,7 +19,7 @@ use WBW\Library\SMSMode\Tests\AbstractTestCase;
 /**
  * Sent SMS message test.
  *
- * @author webeweb <https://github.com/webeweb/>
+ * @author webeweb <https://github.com/webeweb>
  * @package WBW\Library\SMSMode\Tests\Model
  */
 class SentSMSMessageTest extends AbstractTestCase {

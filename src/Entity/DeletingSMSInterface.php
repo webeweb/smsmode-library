@@ -14,7 +14,7 @@ namespace WBW\Library\SMSMode\Entity;
 /**
  * Deleting SMS interface.
  *
- * @author webeweb <https://github.com/webeweb/>
+ * @author webeweb <https://github.com/webeweb>
  * @package WBW\Library\SMSMode\Entity
  */
 interface DeletingSMSInterface extends SMSModeEntityInterface {

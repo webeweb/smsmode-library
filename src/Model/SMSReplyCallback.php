@@ -24,7 +24,7 @@ use WBW\Library\Traits\Strings\StringMessageTrait;
 /**
  * SMS reply callback.
  *
- * @author webeweb <https://github.com/webeweb/>
+ * @author webeweb <https://github.com/webeweb>
  * @package WBW\Library\SMSMode\Model
  */
 class SMSReplyCallback extends AbstractResponse implements SMSReplyCallbackInterface {

@@ -20,7 +20,7 @@ use WBW\Library\SMSMode\Tests\Fixtures\Model\Attribute\TestIntegerClasseMsgTrait
 /**
  * Integer classe msg trait test.
  *
- * @author webeweb <https://github.com/webeweb/>
+ * @author webeweb <https://github.com/webeweb>
  * @package WBW\Library\SMSMode\Tests\Attribute
  */
 class IntegerClasseMsgTraitTest extends AbstractTestCase {

@@ -14,7 +14,7 @@ namespace WBW\Library\SMSMode\API;
 /**
  * Request interface.
  *
- * @author webeweb <https://github.com/webeweb/>
+ * @author webeweb <https://github.com/webeweb>
  * @package WBW\Library\SMSMode\API
  */
 interface RequestInterface {

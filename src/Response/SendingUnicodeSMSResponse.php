@@ -14,7 +14,7 @@ namespace WBW\Library\SMSMode\Response;
 /**
  * Sending unicode SMS response.
  *
- * @author webeweb <https://github.com/webeweb/>
+ * @author webeweb <https://github.com/webeweb>
  * @package WBW\Library\SMSMode\Response
  */
 class SendingUnicodeSMSResponse extends SendingSMSMessageResponse {

@@ -18,7 +18,7 @@ use WBW\Library\SMSMode\Tests\AbstractTestCase;
 /**
  * Creating sub-account request test.
  *
- * @author webeweb <https://github.com/webeweb/>
+ * @author webeweb <https://github.com/webeweb>
  * @package WBW\Library\SMSMode\Tests\Request
  */
 class CreatingSubAccountRequestTest extends AbstractTestCase {

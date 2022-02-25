@@ -16,7 +16,7 @@ use WBW\Library\SMSMode\Response\AbstractResponse;
 /**
  * Test response.
  *
- * @author webeweb <https://github.com/webeweb/>
+ * @author webeweb <https://github.com/webeweb>
  * @package WBW\Library\SMSMode\Tests\Fixtures\Response
  */
 class TestResponse extends AbstractResponse {

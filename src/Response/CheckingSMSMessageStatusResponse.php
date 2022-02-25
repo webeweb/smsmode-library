@@ -14,7 +14,7 @@ namespace WBW\Library\SMSMode\Response;
 /**
  * Checking SMS message status response.
  *
- * @author webeweb <https://github.com/webeweb/>
+ * @author webeweb <https://github.com/webeweb>
  * @package WBW\Library\SMSMode\Response
  */
 class CheckingSMSMessageStatusResponse extends AbstractResponse {

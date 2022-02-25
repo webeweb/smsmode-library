@@ -14,7 +14,7 @@ namespace WBW\Library\SMSMode\Entity;
 /**
  * Checking SMS message status interface.
  *
- * @author webeweb <https://github.com/webeweb/>
+ * @author webeweb <https://github.com/webeweb>
  * @package WBW\Library\SMSMode\Entity
  */
 interface CheckingSMSMessageStatusInterface extends SMSModeEntityInterface {

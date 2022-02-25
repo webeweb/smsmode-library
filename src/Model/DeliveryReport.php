@@ -17,7 +17,7 @@ use WBW\Library\SMSMode\Response\AbstractResponse;
 /**
  * Delivery report.
  *
- * @author webeweb <https://github.com/webeweb/>
+ * @author webeweb <https://github.com/webeweb>
  * @package WBW\Library\SMSMode\Model
  */
 class DeliveryReport extends AbstractResponse {

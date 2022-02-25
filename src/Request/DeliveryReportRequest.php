@@ -16,7 +16,7 @@ use WBW\Library\SMSMode\Model\Attribute\StringSmsIDTrait;
 /**
  * Delivery report request.
  *
- * @author webeweb <https://github.com/webeweb/>
+ * @author webeweb <https://github.com/webeweb>
  * @package WBW\Library\SMSMode\Request
  */
 class DeliveryReportRequest extends AbstractRequest {

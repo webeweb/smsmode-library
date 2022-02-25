@@ -17,7 +17,7 @@ use WBW\Library\SMSMode\API\SendingSMSBatchInterface;
 /**
  * Integer classe msg trait.
  *
- * @author webeweb <https://github.com/webeweb/>
+ * @author webeweb <https://github.com/webeweb>
  * @package WBW\Library\SMSMode\Model\Attribute
  */
 trait IntegerClasseMsgTrait {

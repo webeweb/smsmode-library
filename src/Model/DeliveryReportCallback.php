@@ -19,7 +19,7 @@ use WBW\Library\SMSMode\Model\Attribute\StringSmsIDTrait;
 /**
  * Delivery report callback.
  *
- * @author webeweb <https://github.com/webeweb/>
+ * @author webeweb <https://github.com/webeweb>
  * @package WBW\Library\SMSMode\Model
  */
 class DeliveryReportCallback extends DeliveryReport implements DeliveryReportCallbackInterface {

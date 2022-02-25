@@ -16,7 +16,7 @@ use DateTime;
 /**
  * Sending SMS message interface.
  *
- * @author webeweb <https://github.com/webeweb/>
+ * @author webeweb <https://github.com/webeweb>
  * @package WBW\Library\SMSMode\Entity
  */
 interface SendingSMSMessageInterface extends SMSModeEntityInterface {

@@ -14,7 +14,7 @@ namespace WBW\Library\SMSMode\Model\Attribute;
 /**
  * String SMS ID trait.
  *
- * @author webeweb <https://github.com/webeweb/>
+ * @author webeweb <https://github.com/webeweb>
  * @package WBW\Library\SMSMode\Model\Attribute
  */
 trait StringSmsIDTrait {

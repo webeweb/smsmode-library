@@ -18,7 +18,7 @@ use WBW\Library\Traits\Strings\StringIdTrait;
 /**
  * Creating API key response.
  *
- * @author webeweb <https://github.com/webeweb/>
+ * @author webeweb <https://github.com/webeweb>
  * @package WBW\Library\SMSMode\Response
  */
 class CreatingAPIKeyResponse extends AbstractResponse {

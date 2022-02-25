@@ -17,7 +17,7 @@ use WBW\Library\SMSMode\Tests\AbstractTestCase;
 /**
  * Sending unicode SMS response test.
  *
- * @author webeweb <https://github.com/webeweb/>
+ * @author webeweb <https://github.com/webeweb>
  * @package WBW\Library\SMSMode\Tests\Response
  */
 class SendingUnicodeSMSResponseTest extends AbstractTestCase {

@@ -20,7 +20,7 @@ use WBW\Library\SMSMode\Tests\AbstractTestCase;
 /**
  * Sending text-to-speech SMS request test.
  *
- * @author webeweb <https://github.com/webeweb/>
+ * @author webeweb <https://github.com/webeweb>
  * @package WBW\Library\SMSMode\Tests\Request
  */
 class SendingTextToSpeechSMSRequestTest extends AbstractTestCase {

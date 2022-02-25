@@ -14,7 +14,7 @@ namespace WBW\Library\SMSMode\Entity;
 /**
  * sMsmode entity interface.
  *
- * @author webeweb <https://github.com/webeweb/>
+ * @author webeweb <https://github.com/webeweb>
  * @package WBW\Library\SMSMode\Entity
  */
 interface SMSModeEntityInterface {

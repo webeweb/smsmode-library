@@ -26,7 +26,7 @@ use WBW\Library\Types\Helper\ArrayHelper;
 /**
  * Abstract provider.
  *
- * @author webeweb <https://github.com/webeweb/>
+ * @author webeweb <https://github.com/webeweb>
  * @package WBW\Library\SMSMode\Provider
  * @abstract
  */

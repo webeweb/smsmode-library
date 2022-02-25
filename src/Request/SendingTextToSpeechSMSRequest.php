@@ -21,7 +21,7 @@ use WBW\Library\Traits\Strings\StringMessageTrait;
 /**
  * Sending text-to-speech SMS request.
  *
- * @author webeweb <https://github.com/webeweb/>
+ * @author webeweb <https://github.com/webeweb>
  * @package WBW\Library\SMSMode\Request
  */
 class SendingTextToSpeechSMSRequest extends AbstractRequest implements SendingTextToSpeechSMSInterface {

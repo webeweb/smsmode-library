@@ -16,7 +16,7 @@ use WBW\Library\SMSMode\Model\Attribute\StringSmsIDTrait;
 /**
  * Checking SMS message status request.
  *
- * @author webeweb <https://github.com/webeweb/>
+ * @author webeweb <https://github.com/webeweb>
  * @package WBW\Library\SMSMode\Request
  */
 class CheckingSMSMessageStatusRequest extends AbstractRequest {

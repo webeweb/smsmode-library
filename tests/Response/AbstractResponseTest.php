@@ -19,7 +19,7 @@ use WBW\Library\SMSMode\Tests\Fixtures\Response\TestResponse;
 /**
  * Abstract response test.
  *
- * @author webeweb <https://github.com/webeweb/>
+ * @author webeweb <https://github.com/webeweb>
  * @package WBW\Library\SMSMode\Tests\Response
  */
 class AbstractResponseTest extends AbstractTestCase {

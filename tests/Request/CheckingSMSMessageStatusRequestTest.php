@@ -17,7 +17,7 @@ use WBW\Library\SMSMode\Tests\AbstractTestCase;
 /**
  * Checking SMS message status request test.
  *
- * @author webeweb <https://github.com/webeweb/>
+ * @author webeweb <https://github.com/webeweb>
  * @package WBW\Library\SMSMode\Tests\Request
  */
 class CheckingSMSMessageStatusRequestTest extends AbstractTestCase {

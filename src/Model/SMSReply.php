@@ -21,7 +21,7 @@ use WBW\Library\Traits\Strings\StringToTrait;
 /**
  * SMS reply.
  *
- * @author webeweb <https://github.com/webeweb/>
+ * @author webeweb <https://github.com/webeweb>
  * @package WBW\Library\SMSMode\Model
  */
 class SMSReply extends AbstractResponse {

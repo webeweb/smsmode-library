@@ -17,7 +17,7 @@ use WBW\Library\SMSMode\Model\Attribute\IntegerOffsetTrait;
 /**
  * Retrieving SMS reply request.
  *
- * @author webeweb <https://github.com/webeweb/>
+ * @author webeweb <https://github.com/webeweb>
  * @package WBW\Library\SMSMode\Request
  */
 class RetrievingSMSReplyRequest extends AbstractRequest {

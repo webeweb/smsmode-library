@@ -17,7 +17,7 @@ use WBW\Library\SMSMode\Tests\AbstractTestCase;
 /**
  * Authentication test.
  *
- * @author webeweb <https://github.com/webeweb/>
+ * @author webeweb <https://github.com/webeweb>
  * @package WBW\Library\SMSMode\Tests\Model
  */
 class AuthenticationTest extends AbstractTestCase {

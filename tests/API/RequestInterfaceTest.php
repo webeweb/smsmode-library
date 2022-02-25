@@ -17,7 +17,7 @@ use WBW\Library\SMSMode\Tests\AbstractTestCase;
 /**
  * Request interface test.
  *
- * @author webeweb <https://github.com/webeweb/>
+ * @author webeweb <https://github.com/webeweb>
  * @package WBW\Library\SMSMode\Tests\API
  */
 class RequestInterfaceTest extends AbstractTestCase {

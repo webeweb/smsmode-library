@@ -14,7 +14,7 @@ namespace WBW\Library\SMSMode\API;
 /**
  * Delivery report callback interface.
  *
- * @author webeweb <https://github.com/webeweb/>
+ * @author webeweb <https://github.com/webeweb>
  * @package WBW\Library\SMSMode\API
  */
 interface DeliveryReportCallbackInterface {

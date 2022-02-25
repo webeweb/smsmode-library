@@ -20,7 +20,7 @@ use WBW\Library\Traits\Strings\StringMessageTrait;
 /**
  * Sent SMS message.
  *
- * @author webeweb <https://github.com/webeweb/>
+ * @author webeweb <https://github.com/webeweb>
  * @package WBW\Library\SMSMode\Model
  */
 class SentSMSMessage extends AbstractResponse {

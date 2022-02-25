@@ -16,7 +16,7 @@ use WBW\Library\SMSMode\Model\Attribute\StringSmsIDTrait;
 /**
  * Sending text-to-speech SMS response.
  *
- * @author webeweb <https://github.com/webeweb/>
+ * @author webeweb <https://github.com/webeweb>
  * @package WBW\Library\SMSMode\Response
  */
 class SendingTextToSpeechSMSResponse extends AbstractResponse {

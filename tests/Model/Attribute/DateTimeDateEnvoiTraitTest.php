@@ -19,7 +19,7 @@ use WBW\Library\SMSMode\Tests\Fixtures\Model\Attribute\TestDateTimeDateEnvoiTrai
 /**
  * Date/time date envoi trait test.
  *
- * @author webeweb <https://github.com/webeweb/>
+ * @author webeweb <https://github.com/webeweb>
  * @package WBW\Library\SMSMode\Tests\Attribute
  */
 class DateTimeDateEnvoiTraitTest extends AbstractTestCase {

@@ -19,7 +19,7 @@ use WBW\Library\SMSMode\Tests\AbstractTestCase;
 /**
  * Creating API key response test.
  *
- * @author webeweb <https://github.com/webeweb/>
+ * @author webeweb <https://github.com/webeweb>
  * @package WBW\Library\SMSMode\Tests\Response
  */
 class CreatingAPIKeyResponseTest extends AbstractTestCase {

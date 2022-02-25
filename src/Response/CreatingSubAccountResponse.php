@@ -14,7 +14,7 @@ namespace WBW\Library\SMSMode\Response;
 /**
  * Creating sub-account response.
  *
- * @author webeweb <https://github.com/webeweb/>
+ * @author webeweb <https://github.com/webeweb>
  * @package WBW\Library\SMSMode\Response
  */
 class CreatingSubAccountResponse extends AbstractResponse {

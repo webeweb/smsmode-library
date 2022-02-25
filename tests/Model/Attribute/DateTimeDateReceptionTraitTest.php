@@ -19,7 +19,7 @@ use WBW\Library\SMSMode\Tests\Fixtures\Model\Attribute\TestDateTimeDateReception
 /**
  * Date/time date reception trait test.
  *
- * @author webeweb <https://github.com/webeweb/>
+ * @author webeweb <https://github.com/webeweb>
  * @package WBW\Library\SMSMode\Tests\Attribute
  */
 class DateTimeDateReceptionTraitTest extends AbstractTestCase {

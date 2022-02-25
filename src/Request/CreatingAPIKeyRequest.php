@@ -14,7 +14,7 @@ namespace WBW\Library\SMSMode\Request;
 /**
  * Creating API key request.
  *
- * @author webeweb <https://github.com/webeweb/>
+ * @author webeweb <https://github.com/webeweb>
  * @package WBW\Library\SMSMode\Request
  */
 class CreatingAPIKeyRequest extends AbstractRequest {

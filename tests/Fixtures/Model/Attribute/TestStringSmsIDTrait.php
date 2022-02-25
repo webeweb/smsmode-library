@@ -16,7 +16,7 @@ use WBW\Library\SMSMode\Model\Attribute\StringSmsIDTrait;
 /**
  * Test string SMS ID trait.
  *
- * @author webeweb <https://github.com/webeweb/>
+ * @author webeweb <https://github.com/webeweb>
  * @package WBW\Library\SMSMode\Tests\Fixtures\Model\Attribute
  */
 class TestStringSmsIDTrait {

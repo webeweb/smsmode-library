@@ -16,7 +16,7 @@ use DateTime;
 /**
  * Sending text-to-speech SMS interface.
  *
- * @author webeweb <https://github.com/webeweb/>
+ * @author webeweb <https://github.com/webeweb>
  * @package WBW\Library\SMSMode\Entity
  */
 interface SendingTextToSpeechSMSInterface extends SMSModeEntityInterface {

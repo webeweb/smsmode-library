@@ -36,7 +36,7 @@ use WBW\Library\SMSMode\Tests\AbstractTestCase;
 /**
  * Object serializer test.
  *
- * @author webeweb <https://github.com/webeweb/>
+ * @author webeweb <https://github.com/webeweb>
  * @package WBW\Library\SMSMode\Tests\Serializer
  */
 class RequestSerializerTest extends AbstractTestCase {

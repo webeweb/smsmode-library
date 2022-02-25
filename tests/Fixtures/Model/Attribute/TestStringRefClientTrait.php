@@ -16,7 +16,7 @@ use WBW\Library\SMSMode\Model\Attribute\StringRefClientTrait;
 /**
  * Test string ref client trait.
  *
- * @author webeweb <https://github.com/webeweb/>
+ * @author webeweb <https://github.com/webeweb>
  * @package WBW\Library\SMSMode\Tests\Fixtures\Model\Attribute
  */
 class TestStringRefClientTrait {

@@ -19,7 +19,7 @@ use WBW\Library\SMSMode\Tests\AbstractTestCase;
 /**
  * Retrieving SMS reply request test.
  *
- * @author webeweb <https://github.com/webeweb/>
+ * @author webeweb <https://github.com/webeweb>
  * @package WBW\Library\SMSMode\Tests\Request
  */
 class RetrievingSMSReplyRequestTest extends AbstractTestCase {

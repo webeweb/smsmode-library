@@ -16,7 +16,7 @@ use DateTime;
 /**
  * Sending SMS batch interface.
  *
- * @author webeweb <https://github.com/webeweb/>
+ * @author webeweb <https://github.com/webeweb>
  * @package WBW\Library\SMSMode\Entity
  */
 interface SendingSMSBatchInterface extends SMSModeEntityInterface {

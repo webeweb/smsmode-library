@@ -16,7 +16,7 @@ use WBW\Library\SMSMode\Provider\AbstractProvider;
 /**
  * Test provider.
  *
- * @author webeweb <https://github.com/webeweb/>
+ * @author webeweb <https://github.com/webeweb>
  * @package WBW\Library\SMSMode\Tests\Fixtures\Provider
  */
 class TestProvider extends AbstractProvider {

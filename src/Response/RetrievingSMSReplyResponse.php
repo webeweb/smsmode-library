@@ -16,7 +16,7 @@ use WBW\Library\SMSMode\Model\SMSReply;
 /**
  * Retrieving SMS reply response.
  *
- * @author webeweb <https://github.com/webeweb/>
+ * @author webeweb <https://github.com/webeweb>
  * @package WBW\Library\SMSMode\Response
  */
 class RetrievingSMSReplyResponse extends AbstractResponse {

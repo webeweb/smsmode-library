@@ -18,7 +18,7 @@ use WBW\Library\SMSMode\Tests\AbstractTestCase;
 /**
  * Sent SMS message list response test.
  *
- * @author webeweb <https://github.com/webeweb/>
+ * @author webeweb <https://github.com/webeweb>
  * @package WBW\Library\SMSMode\Tests\Response
  */
 class SentSMSMessageListResponseTest extends AbstractTestCase {

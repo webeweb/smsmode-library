@@ -23,7 +23,7 @@ use WBW\Library\SMSMode\Model\Attribute\StringRefClientTrait;
 /**
  * Sending SMS batch request.
  *
- * @author webeweb <https://github.com/webeweb/>
+ * @author webeweb <https://github.com/webeweb>
  * @package WBW\Library\SMSMode\Request
  */
 class SendingSMSBatchRequest extends AbstractRequest implements SendingSMSBatchInterface {

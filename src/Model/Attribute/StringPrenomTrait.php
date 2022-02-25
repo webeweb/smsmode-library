@@ -14,7 +14,7 @@ namespace WBW\Library\SMSMode\Model\Attribute;
 /**
  * String prenom trait.
  *
- * @author webeweb <https://github.com/webeweb/>
+ * @author webeweb <https://github.com/webeweb>
  * @package WBW\Library\SMSMode\Model\Attribute
  */
 trait StringPrenomTrait {

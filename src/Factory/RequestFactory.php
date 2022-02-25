@@ -43,7 +43,7 @@ use WBW\Library\SMSMode\Request\TransferringCreditsRequest;
 /**
  * Request factory.
  *
- * @author webeweb <https://github.com/webeweb/>
+ * @author webeweb <https://github.com/webeweb>
  * @package WBW\Library\SMSMode\Factory
  */
 class RequestFactory {

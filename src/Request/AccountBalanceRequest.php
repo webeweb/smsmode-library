@@ -14,7 +14,7 @@ namespace WBW\Library\SMSMode\Request;
 /**
  * Account balance request.
  *
- * @author webeweb <https://github.com/webeweb/>
+ * @author webeweb <https://github.com/webeweb>
  * @package WBW\Library\SMSMode\Request
  */
 class AccountBalanceRequest extends AbstractRequest {

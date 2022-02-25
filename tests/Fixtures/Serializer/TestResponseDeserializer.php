@@ -20,7 +20,7 @@ use WBW\Library\SMSMode\Serializer\ResponseDeserializer;
 /**
  * Test response deserializer.
  *
- * @author webeweb <https://github.com/webeweb/>
+ * @author webeweb <https://github.com/webeweb>
  * @package WBW\Library\SMSMode\Tests\Fixtures\Serializer
  */
 class TestResponseDeserializer extends ResponseDeserializer {

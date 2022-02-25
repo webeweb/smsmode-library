@@ -14,7 +14,7 @@ namespace WBW\Library\SMSMode\Entity;
 /**
  * Deleting sub-account interface.
  *
- * @author webeweb <https://github.com/webeweb/>
+ * @author webeweb <https://github.com/webeweb>
  * @package WBW\Library\SMSMode\Entity
  */
 interface DeletingSubAccountInterface extends SMSModeEntityInterface {

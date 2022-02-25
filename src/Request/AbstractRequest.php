@@ -16,7 +16,7 @@ use WBW\Library\SMSMode\API\RequestInterface;
 /**
  * Abstract request.
  *
- * @author webeweb <https://github.com/webeweb/>
+ * @author webeweb <https://github.com/webeweb>
  * @package WBW\Library\SMSMode\Request
  */
 abstract class AbstractRequest implements RequestInterface {

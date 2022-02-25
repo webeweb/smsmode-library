@@ -19,7 +19,7 @@ use WBW\Library\SMSMode\Tests\AbstractTestCase;
 /**
  * Numero serializer test.
  *
- * @author webeweb <https://github.com/webeweb/>
+ * @author webeweb <https://github.com/webeweb>
  * @package WBW\Library\SMSMode\Serializer
  */
 class NumeroSerializerTest extends AbstractTestCase {

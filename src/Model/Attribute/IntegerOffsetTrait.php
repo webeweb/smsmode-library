@@ -16,7 +16,7 @@ use InvalidArgumentException;
 /**
  * Integer offset trait.
  *
- * @author webeweb <https://github.com/webeweb/>
+ * @author webeweb <https://github.com/webeweb>
  * @package WBW\Library\SMSMode\Model\Attribute
  */
 trait IntegerOffsetTrait {

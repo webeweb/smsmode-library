@@ -14,7 +14,7 @@ namespace WBW\Library\SMSMode\Entity;
 /**
  * Delivery report interface.
  *
- * @author webeweb <https://github.com/webeweb/>
+ * @author webeweb <https://github.com/webeweb>
  * @package WBW\Library\SMSMode\Entity
  */
 interface DeliveryReportInterface extends SMSModeEntityInterface {

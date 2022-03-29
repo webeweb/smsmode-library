@@ -1,8 +1,10 @@
 CHANGELOG
 =========
 
-### master
+### [3.2.0](https://github.com/webeweb/smsmode-library/tree/v3.2.0) (2022-03-29)
 
+- Improve code quality
+- Improve documentation
 - Improve PHPDoc
 
 ### [3.1.0](https://github.com/webeweb/smsmode-library/tree/v3.1.0) (2021-09-25)

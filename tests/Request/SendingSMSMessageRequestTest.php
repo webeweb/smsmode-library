@@ -91,8 +91,8 @@ class SendingSMSMessageRequestTest extends AbstractTestCase {
 
         $obj = new SendingSMSMessageRequest();
 
-        $obj->setStop(SendingSMSMessageRequest::STOP_ALWAYS);
-        $this->assertEquals(SendingSMSMessageRequest::STOP_ALWAYS, $obj->getStop());
+        $obj->setStop(SendingSMSMessageInterface::STOP_ALWAYS);
+        $this->assertEquals(SendingSMSMessageInterface::STOP_ALWAYS, $obj->getStop());
 
         $obj->setStop(null);
         $this->assertNull($obj->getStop());

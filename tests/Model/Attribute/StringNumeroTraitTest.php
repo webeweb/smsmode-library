@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace WBW\Library\SMSMode\Tests\Attribute;
+namespace WBW\Library\SMSMode\Tests\Model\Attribute;
 
 use WBW\Library\SMSMode\Tests\AbstractTestCase;
 use WBW\Library\SMSMode\Tests\Fixtures\Model\Attribute\TestStringNumeroTrait;
@@ -18,7 +18,7 @@ use WBW\Library\SMSMode\Tests\Fixtures\Model\Attribute\TestStringNumeroTrait;
  * String numero trait test.
  *
  * @author webeweb <https://github.com/webeweb>
- * @package WBW\Library\SMSMode\Tests\Attribute
+ * @package WBW\Library\SMSMode\Tests\Model\Attribute
  */
 class StringNumeroTraitTest extends AbstractTestCase {
 

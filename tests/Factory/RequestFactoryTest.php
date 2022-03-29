@@ -11,6 +11,9 @@
 
 namespace WBW\Library\SMSMode\Tests\Factory;
 
+use WBW\Library\SMSMode\API\SendingSMSBatchInterface;
+use WBW\Library\SMSMode\API\SendingSMSMessageInterface;
+use WBW\Library\SMSMode\API\SendingTextToSpeechSMSInterface;
 use WBW\Library\SMSMode\Factory\RequestFactory;
 use WBW\Library\SMSMode\Request\AccountBalanceRequest;
 use WBW\Library\SMSMode\Request\AddingContactRequest;
@@ -182,7 +185,7 @@ class RequestFactoryTest extends AbstractTestCase {
         $res = RequestFactory::newSendingSMSBatchRequest($this->sendingSMSBatch);
         $this->assertInstanceOf(SendingSMSBatchRequest::class, $res);
 
-        $this->assertEquals(SendingSMSBatchRequest::CLASSE_MSG_SMS, $res->getClasseMsg());
+        $this->assertEquals(SendingSMSBatchInterface::CLASSE_MSG_SMS, $res->getClasseMsg());
         $this->assertEquals("2019-02-05 18:00:00", $res->getDateEnvoi()->format("Y-m-d H:i:s"));
         $this->assertEquals("emetteur", $res->getEmetteur());
         $this->assertEquals($this->fichier, $res->getFichier());
@@ -201,7 +204,7 @@ class RequestFactoryTest extends AbstractTestCase {
         $res = RequestFactory::newSendingSMSMessageRequest($this->sendingSMSMessage);
         $this->assertInstanceOf(SendingSMSMessageRequest::class, $res);
 
-        $this->assertEquals(SendingSMSMessageRequest::CLASSE_MSG_SMS, $res->getClasseMsg());
+        $this->assertEquals(SendingSMSBatchInterface::CLASSE_MSG_SMS, $res->getClasseMsg());
         $this->assertEquals("2019-02-05 18:00:00", $res->getDateEnvoi()->format("Y-m-d H:i:s"));
         $this->assertEquals("emetteur", $res->getEmetteur());
         $this->assertEquals("groupe", $res->getGroupe());
@@ -211,7 +214,7 @@ class RequestFactoryTest extends AbstractTestCase {
         $this->assertEquals("notificationUrlReponse", $res->getNotificationUrlReponse());
         $this->assertEquals(["33600000000"], $res->getNumero());
         $this->assertEquals("refClient", $res->getRefClient());
-        $this->assertEquals(SendingSMSMessageRequest::STOP_ALWAYS, $res->getStop());
+        $this->assertEquals(SendingSMSMessageInterface::STOP_ALWAYS, $res->getStop());
     }
 
     /**
@@ -227,7 +230,7 @@ class RequestFactoryTest extends AbstractTestCase {
         $this->assertEquals("2019-02-05 18:00:00", $res->getDateEnvoi()->format("Y-m-d H:i:s"));
         $this->assertEquals("message", $res->getMessage());
         $this->assertEquals(["33600000000"], $res->getNumero());
-        $this->assertEquals(SendingTextToSpeechSMSRequest::LANGUAGE_FR, $res->getLanguage());
+        $this->assertEquals(SendingTextToSpeechSMSInterface::LANGUAGE_FR, $res->getLanguage());
         $this->assertEquals("title", $res->getTitle());
     }
 
@@ -241,7 +244,7 @@ class RequestFactoryTest extends AbstractTestCase {
         $res = RequestFactory::newSendingUnicodeSMSRequest($this->sendingUnicodeSMS);
         $this->assertInstanceOf(SendingUnicodeSMSRequest::class, $res);
 
-        $this->assertEquals(SendingUnicodeSMSRequest::CLASSE_MSG_SMS, $res->getClasseMsg());
+        $this->assertEquals(SendingSMSBatchInterface::CLASSE_MSG_SMS, $res->getClasseMsg());
         $this->assertEquals("2019-02-05 18:00:00", $res->getDateEnvoi()->format("Y-m-d H:i:s"));
         $this->assertEquals("emetteur", $res->getEmetteur());
         $this->assertEquals("groupe", $res->getGroupe());
@@ -251,7 +254,7 @@ class RequestFactoryTest extends AbstractTestCase {
         $this->assertEquals("notificationUrlReponse", $res->getNotificationUrlReponse());
         $this->assertEquals(["33600000000"], $res->getNumero());
         $this->assertEquals("refClient", $res->getRefClient());
-        $this->assertEquals(SendingUnicodeSMSRequest::STOP_ALWAYS, $res->getStop());
+        $this->assertEquals(SendingSMSMessageInterface::STOP_ALWAYS, $res->getStop());
     }
 
     /**

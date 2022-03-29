@@ -29,7 +29,7 @@ class NumeroSerializer {
      * @throws InvalidArgumentException Throws an invalid argument exception if the numero is invalid.
      */
     public static function checkNumero(string $numero): void {
-        if (0 === preg_match("/^[0-9]{1,}$/", $numero)) {
+        if (0 === preg_match("/^[0-9]+$/", $numero)) {
             throw new InvalidArgumentException(sprintf('The numero "%s" is invalid', $numero));
         }
     }

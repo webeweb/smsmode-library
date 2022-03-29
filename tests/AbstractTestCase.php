@@ -13,6 +13,9 @@ namespace WBW\Library\SMSMode\Tests;
 
 use DateTime;
 use PHPUnit\Framework\TestCase;
+use WBW\Library\SMSMode\API\SendingSMSBatchInterface as ApiSendingSMSBatchInterface;
+use WBW\Library\SMSMode\API\SendingSMSMessageInterface as ApiSendingSMSMessageInterface;
+use WBW\Library\SMSMode\API\SendingTextToSpeechSMSInterface as ApiSendingTextToSpeechSMSInterface;
 use WBW\Library\SMSMode\Entity\AddingContactInterface;
 use WBW\Library\SMSMode\Entity\CheckingSMSMessageStatusInterface;
 use WBW\Library\SMSMode\Entity\CreatingSubAccountInterface;
@@ -26,10 +29,6 @@ use WBW\Library\SMSMode\Entity\SendingTextToSpeechSMSInterface;
 use WBW\Library\SMSMode\Entity\SendingUnicodeSMSInterface;
 use WBW\Library\SMSMode\Entity\SentSMSMessageListInterface;
 use WBW\Library\SMSMode\Entity\TransferringCreditsInterface;
-use WBW\Library\SMSMode\Request\SendingSMSBatchRequest;
-use WBW\Library\SMSMode\Request\SendingSMSMessageRequest;
-use WBW\Library\SMSMode\Request\SendingTextToSpeechSMSRequest;
-use WBW\Library\SMSMode\Request\SendingUnicodeSMSRequest;
 
 /**
  * Abstract test case.
@@ -200,7 +199,7 @@ abstract class AbstractTestCase extends TestCase {
 
         // Set a Sending SMS batch mock.
         $this->sendingSMSBatch = $this->getMockBuilder(SendingSMSBatchInterface::class)->getMock();
-        $this->sendingSMSBatch->expects($this->any())->method("getSMSModeClasseMsg")->willReturn(SendingSMSBatchRequest::CLASSE_MSG_SMS);
+        $this->sendingSMSBatch->expects($this->any())->method("getSMSModeClasseMsg")->willReturn(ApiSendingSMSBatchInterface::CLASSE_MSG_SMS);
         $this->sendingSMSBatch->expects($this->any())->method("getSMSModeDateEnvoi")->willReturn(new DateTime("2019-02-05 18:00:00"));
         $this->sendingSMSBatch->expects($this->any())->method("getSMSModeEmetteur")->willReturn("emetteur");
         $this->sendingSMSBatch->expects($this->any())->method("getSMSModeFichier")->willReturn($this->fichier);
@@ -210,7 +209,7 @@ abstract class AbstractTestCase extends TestCase {
 
         // Set a Sending SMS message mock.
         $this->sendingSMSMessage = $this->getMockBuilder(SendingSMSMessageInterface::class)->getMock();
-        $this->sendingSMSMessage->expects($this->any())->method("getSMSModeClasseMsg")->willReturn(SendingSMSMessageRequest::CLASSE_MSG_SMS);
+        $this->sendingSMSMessage->expects($this->any())->method("getSMSModeClasseMsg")->willReturn(ApiSendingSMSBatchInterface::CLASSE_MSG_SMS);
         $this->sendingSMSMessage->expects($this->any())->method("getSMSModeDateEnvoi")->willReturn(new DateTime("2019-02-05 18:00:00"));
         $this->sendingSMSMessage->expects($this->any())->method("getSMSModeEmetteur")->willReturn("emetteur");
         $this->sendingSMSMessage->expects($this->any())->method("getSMSModeGroupe")->willReturn("groupe");
@@ -220,19 +219,19 @@ abstract class AbstractTestCase extends TestCase {
         $this->sendingSMSMessage->expects($this->any())->method("getSMSModeNotificationUrlReponse")->willReturn("notificationUrlReponse");
         $this->sendingSMSMessage->expects($this->any())->method("getSMSModeNumero")->willReturn(["33600000000"]);
         $this->sendingSMSMessage->expects($this->any())->method("getSMSModeRefClient")->willReturn("refClient");
-        $this->sendingSMSMessage->expects($this->any())->method("getSMSModeStop")->willReturn(SendingSMSMessageRequest::STOP_ALWAYS);
+        $this->sendingSMSMessage->expects($this->any())->method("getSMSModeStop")->willReturn(ApiSendingSMSMessageInterface::STOP_ALWAYS);
 
         // Set a Sending text-to-speech SMS mock.
         $this->sendingTextToSpeechSMS = $this->getMockBuilder(SendingTextToSpeechSMSInterface::class)->getMock();
         $this->sendingTextToSpeechSMS->expects($this->any())->method("getSMSModeDateEnvoi")->willReturn(new DateTime("2019-02-05 18:00:00"));
         $this->sendingTextToSpeechSMS->expects($this->any())->method("getSMSModeMessage")->willReturn("message");
         $this->sendingTextToSpeechSMS->expects($this->any())->method("getSMSModeNumero")->willReturn(["33600000000"]);
-        $this->sendingTextToSpeechSMS->expects($this->any())->method("getSMSModeLanguage")->willReturn(SendingTextToSpeechSMSRequest::LANGUAGE_FR);
+        $this->sendingTextToSpeechSMS->expects($this->any())->method("getSMSModeLanguage")->willReturn(ApiSendingTextToSpeechSMSInterface::LANGUAGE_FR);
         $this->sendingTextToSpeechSMS->expects($this->any())->method("getSMSModeTitle")->willReturn("title");
 
         // Set a Sending unicode SMS mock.
         $this->sendingUnicodeSMS = $this->getMockBuilder(SendingUnicodeSMSInterface::class)->getMock();
-        $this->sendingUnicodeSMS->expects($this->any())->method("getSMSModeClasseMsg")->willReturn(SendingUnicodeSMSRequest::CLASSE_MSG_SMS);
+        $this->sendingUnicodeSMS->expects($this->any())->method("getSMSModeClasseMsg")->willReturn(ApiSendingSMSBatchInterface::CLASSE_MSG_SMS);
         $this->sendingUnicodeSMS->expects($this->any())->method("getSMSModeDateEnvoi")->willReturn(new DateTime("2019-02-05 18:00:00"));
         $this->sendingUnicodeSMS->expects($this->any())->method("getSMSModeEmetteur")->willReturn("emetteur");
         $this->sendingUnicodeSMS->expects($this->any())->method("getSMSModeGroupe")->willReturn("groupe");
@@ -242,7 +241,7 @@ abstract class AbstractTestCase extends TestCase {
         $this->sendingUnicodeSMS->expects($this->any())->method("getSMSModeNotificationUrlReponse")->willReturn("notificationUrlReponse");
         $this->sendingUnicodeSMS->expects($this->any())->method("getSMSModeNumero")->willReturn(["33600000000"]);
         $this->sendingUnicodeSMS->expects($this->any())->method("getSMSModeRefClient")->willReturn("refClient");
-        $this->sendingUnicodeSMS->expects($this->any())->method("getSMSModeStop")->willReturn(SendingSMSMessageRequest::STOP_ALWAYS);
+        $this->sendingUnicodeSMS->expects($this->any())->method("getSMSModeStop")->willReturn(ApiSendingSMSMessageInterface::STOP_ALWAYS);
 
         // Set a Sent SMS message list mock.
         $this->sentSMSMessageList = $this->getMockBuilder(SentSMSMessageListInterface::class)->getMock();

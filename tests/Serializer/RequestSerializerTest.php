@@ -14,6 +14,8 @@ namespace WBW\Library\SMSMode\Tests\Serializer;
 use DateTime;
 use Exception;
 use InvalidArgumentException;
+use WBW\Library\SMSMode\API\SendingSMSBatchInterface;
+use WBW\Library\SMSMode\API\SendingSMSMessageInterface;
 use WBW\Library\SMSMode\Model\Authentication;
 use WBW\Library\SMSMode\Request\AccountBalanceRequest;
 use WBW\Library\SMSMode\Request\AddingContactRequest;
@@ -557,7 +559,7 @@ class RequestSerializerTest extends AbstractTestCase {
             $obj->serialize($arg);
         } catch (Exception $ex) {
 
-            $this->assertInstanceOf(IllegalArgumentException::class, $ex);
+            $this->assertInstanceOf(InvalidArgumentException::class, $ex);
             $this->assertEquals('The "endDate" must be greater than "startDate"', $ex->getMessage());
         }
 
@@ -599,7 +601,7 @@ class RequestSerializerTest extends AbstractTestCase {
         // Set a Sending SMS batch request mock.
         $arg = new SendingSMSBatchRequest();
 
-        $arg->setClasseMsg(SendingSMSBatchRequest::CLASSE_MSG_SMS);
+        $arg->setClasseMsg(SendingSMSBatchInterface::CLASSE_MSG_SMS);
         $arg->setDateEnvoi(new DateTime("2019-02-04 18:00:00"));
         $arg->setRefClient("refClient");
         $arg->setEmetteur("emetteur");
@@ -657,14 +659,14 @@ class RequestSerializerTest extends AbstractTestCase {
         $arg->addNumero("33600000000");
         $arg->addNumero("33600000001");
 
-        $arg->setClasseMsg(SendingSMSMessageRequest::CLASSE_MSG_SMS);
+        $arg->setClasseMsg(SendingSMSBatchInterface::CLASSE_MSG_SMS);
         $arg->setDateEnvoi(new DateTime("2017-09-07 10:00:00"));
         $arg->setRefClient("refClient");
         $arg->setEmetteur("emetteur");
         $arg->setNbrMsg(1);
         $arg->setNotificationUrl("notificationUrl");
         $arg->setNotificationUrlReponse("notificationUrlReponse");
-        $arg->setStop(SendingSMSMessageRequest::STOP_ALWAYS);
+        $arg->setStop(SendingSMSMessageInterface::STOP_ALWAYS);
 
         $obj = new RequestSerializer();
 
@@ -696,7 +698,7 @@ class RequestSerializerTest extends AbstractTestCase {
         $arg->setMessage("Hello Mum");
         $arg->setGroupe("groupe");
 
-        $arg->setClasseMsg(SendingSMSMessageRequest::CLASSE_MSG_SMS);
+        $arg->setClasseMsg(SendingSMSBatchInterface::CLASSE_MSG_SMS);
         $arg->setDateEnvoi(new DateTime("2017-09-07 10:00:00"));
         $arg->setRefClient("refClient");
         $arg->setEmetteur("emetteur");
@@ -828,14 +830,14 @@ class RequestSerializerTest extends AbstractTestCase {
         $arg->addNumero("33600000000");
         $arg->addNumero("33600000001");
 
-        $arg->setClasseMsg(SendingUnicodeSMSRequest::CLASSE_MSG_SMS);
+        $arg->setClasseMsg(SendingSMSBatchInterface::CLASSE_MSG_SMS);
         $arg->setDateEnvoi(new DateTime("2019-02-02 11:00:00"));
         $arg->setRefClient("refClient");
         $arg->setEmetteur("emetteur");
         $arg->setNbrMsg(1);
         $arg->setNotificationUrl("notificationUrl");
         $arg->setNotificationUrlReponse("notificationUrlReponse");
-        $arg->setStop(SendingSMSMessageRequest::STOP_ALWAYS);
+        $arg->setStop(SendingSMSMessageInterface::STOP_ALWAYS);
 
         $obj = new RequestSerializer();
 

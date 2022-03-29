@@ -12,7 +12,6 @@
 require_once __DIR__ . "/../vendor/autoload.php";
 
 use WBW\Library\SMSMode\Model\Authentication;
-use WBW\Library\SMSMode\Model\DeliveryReport;
 use WBW\Library\SMSMode\Provider\ApiProvider;
 use WBW\Library\SMSMode\Request\DeliveryReportRequest;
 
@@ -38,7 +37,6 @@ $response = $provider->deliveryReport($request);
 echo "Code: " . $response->getCode() . "\n";
 echo "Description: " . $response->getDescription() . "\n\n";
 
-/** @var DeliveryReport $current */
 foreach ($response->getDeliveryReports() as $current) {
 
     echo "Code: " . $current->getCode() . "\n";

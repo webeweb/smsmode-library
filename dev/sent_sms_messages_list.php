@@ -12,7 +12,6 @@
 require_once __DIR__ . "/../vendor/autoload.php";
 
 use WBW\Library\SMSMode\Model\Authentication;
-use WBW\Library\SMSMode\Model\SentSMSMessage;
 use WBW\Library\SMSMode\Provider\ApiProvider;
 use WBW\Library\SMSMode\Request\SentSMSMessageListRequest;
 
@@ -34,7 +33,6 @@ $response = $provider->sentSMSMessageList(new SentSMSMessageListRequest());
 echo "Code: " . $response->getCode() . "\n";
 echo "Description: " . $response->getDescription() . "\n\n";
 
-/** @var SentSMSMessage $current */
 foreach ($response->getSentSMSMessages() as $current) {
 
     echo "SMS ID: " . $current->getSmsID() . "\n";

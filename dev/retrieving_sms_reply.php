@@ -12,7 +12,6 @@
 require_once __DIR__ . "/../vendor/autoload.php";
 
 use WBW\Library\SMSMode\Model\Authentication;
-use WBW\Library\SMSMode\Model\SMSReply;
 use WBW\Library\SMSMode\Provider\ApiProvider;
 use WBW\Library\SMSMode\Request\RetrievingSMSReplyRequest;
 
@@ -43,7 +42,6 @@ $response = $provider->retrievingSMSReply($request);
 echo "Code: " . $response->getCode() . "\n";
 echo "Description: " . $response->getDescription() . "\n\n";
 
-/** @var SMSReply $current */
 foreach ($response->getSMSReplies() as $current) {
 
     echo "\n";

@@ -57,7 +57,7 @@ class ResponseDeserializer {
         }
 
         $model->setRawResponse($rawResponse);
-        if (1 === preg_match("/^-?[0-9]{1,}\.[0-9]{1,}$/", trim($rawResponse))) {
+        if (1 === preg_match("/^-?[0-9]+\.[0-9]+$/", trim($rawResponse))) {
             $model->setAccountBalance(floatval(trim($rawResponse)));
         }
 
@@ -175,7 +175,7 @@ class ResponseDeserializer {
         $model = new DeliveryReport();
         $model->setRawResponse($rawResponse);
 
-        $responses = explode(" ", preg_replace("/ {1,}/", " ", trim($rawResponse)));
+        $responses = explode(" ", preg_replace("/ +/", " ", trim($rawResponse)));
         if (count($responses) < 2) {
             return $model;
         }

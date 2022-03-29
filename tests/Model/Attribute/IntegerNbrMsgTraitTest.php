@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace WBW\Library\SMSMode\Tests\Attribute;
+namespace WBW\Library\SMSMode\Tests\Model\Attribute;
 
 use Exception;
 use InvalidArgumentException;
@@ -20,7 +20,7 @@ use WBW\Library\SMSMode\Tests\Fixtures\Model\Attribute\TestIntegerNbrMsgTrait;
  * Integer nbr msg trait test.
  *
  * @author webeweb <https://github.com/webeweb>
- * @package WBW\Library\SMSMode\Tests\Attribute
+ * @package WBW\Library\SMSMode\Tests\Model\Attribute
  */
 class IntegerNbrMsgTraitTest extends AbstractTestCase {
 

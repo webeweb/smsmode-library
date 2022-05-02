@@ -53,7 +53,7 @@ $provider->getAuthentication()->setPass("pass");
 // $provider->getAuthentication()->setAccessToken("accessToken");
 
 // Call the API and get the response.
-$response = $provider->creatingAPIKey(new CreatingApiKeyRequest());
+$response = $provider->creatingApiKey(new CreatingApiKeyRequest());
 
 $response->getException();
 

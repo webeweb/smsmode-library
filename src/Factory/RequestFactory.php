@@ -96,7 +96,7 @@ class RequestFactory {
      *
      * @return CreatingApiKeyRequest Returns the creating API key request.
      */
-    public static function newCreatingAPIKeyRequest(): CreatingApiKeyRequest {
+    public static function newCreatingApiKeyRequest(): CreatingApiKeyRequest {
         return new CreatingApiKeyRequest();
     }
 

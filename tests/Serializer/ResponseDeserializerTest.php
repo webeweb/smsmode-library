@@ -122,7 +122,7 @@ class ResponseDeserializerTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testDeserializeCreatingAPIKeyResponse(): void {
+    public function testDeserializeCreatingApiKeyResponse(): void {
 
         // Initialize a Raw response mock.
         $rawResponse = <<< EOT
@@ -136,7 +136,7 @@ class ResponseDeserializerTest extends AbstractTestCase {
 }
 EOT;
 
-        $obj = ResponseDeserializer::deserializeCreatingAPIKeyResponse($rawResponse);
+        $obj = ResponseDeserializer::deserializeCreatingApiKeyResponse($rawResponse);
         $this->assertInstanceOf(CreatingApiKeyResponse::class, $obj);
 
         $this->assertNull($obj->getCode());

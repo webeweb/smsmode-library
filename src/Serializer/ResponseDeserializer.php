@@ -98,7 +98,7 @@ class ResponseDeserializer {
      * @param string $rawResponse The raw response.
      * @return CreatingApiKeyResponse Returns the creating API key response.
      */
-    public static function deserializeCreatingAPIKeyResponse(string $rawResponse): CreatingApiKeyResponse {
+    public static function deserializeCreatingApiKeyResponse(string $rawResponse): CreatingApiKeyResponse {
 
         $decodedResponse = json_decode(trim($rawResponse), true);
 

@@ -27,7 +27,7 @@ $provider->getAuthentication()->setPass("pass");
 // $provider->getAuthentication()->setAccessToken("accessToken");
 
 // Call the API and get the response.
-$response = $provider->creatingAPIKey(new CreatingApiKeyRequest());
+$response = $provider->creatingApiKey(new CreatingApiKeyRequest());
 
 // Handle the response.
 echo "Exception:" . print_r($response->getException(), true) . "\n\n";

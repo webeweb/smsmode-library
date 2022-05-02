@@ -250,7 +250,7 @@ class RequestSerializerTest extends AbstractTestCase {
      * @return void
      * @throws Exception Throws an exception if an error occurs.
      */
-    public function testSerializeCreatingAPIKeyRequest(): void {
+    public function testSerializeCreatingApiKeyRequest(): void {
 
         // Set an Creating API key request mock.
         $arg = new CreatingApiKeyRequest();

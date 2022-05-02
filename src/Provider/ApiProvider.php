@@ -118,7 +118,7 @@ class ApiProvider extends AbstractProvider {
      * @throws GuzzleException Throws a Guzzle exception if an error occurs.
      * @throws ApiException Throws an API exception if an error occurs.
      */
-    public function creatingAPIKey(CreatingApiKeyRequest $request): CreatingApiKeyResponse {
+    public function creatingApiKey(CreatingApiKeyRequest $request): CreatingApiKeyResponse {
 
         $queryData = $this->getRequestSerializer()->serialize($request);
 
@@ -135,7 +135,7 @@ class ApiProvider extends AbstractProvider {
             $rawResponse = $previous->getResponse()->getBody()->getContents();
         }
 
-        return ResponseDeserializer::deserializeCreatingAPIKeyResponse($rawResponse);
+        return ResponseDeserializer::deserializeCreatingApiKeyResponse($rawResponse);
     }
 
     /**

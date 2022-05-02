@@ -87,9 +87,9 @@ class RequestFactoryTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testNewCreatingAPIKeyRequest(): void {
+    public function testNewCreatingApiKeyRequest(): void {
 
-        $res = RequestFactory::newCreatingAPIKeyRequest();
+        $res = RequestFactory::newCreatingApiKeyRequest();
         $this->assertInstanceOf(CreatingApiKeyRequest::class, $res);
     }
 

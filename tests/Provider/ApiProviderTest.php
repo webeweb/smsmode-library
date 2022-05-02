@@ -147,14 +147,14 @@ class ApiProviderTest extends AbstractTestCase {
      * @return void
      * @throws Exception Throws an exception if an error occurs.
      */
-    public function testCreatingAPIKey(): void {
+    public function testCreatingApiKey(): void {
 
         // Set a Creating API key request mock.
         $arg = new CreatingApiKeyRequest();
 
         $obj = new ApiProvider($this->authentication);
 
-        $res = $obj->creatingAPIKey($arg);
+        $res = $obj->creatingApiKey($arg);
 
         $this->assertNull($res->getCode());
         $this->assertNull($res->getDescription());
@@ -175,7 +175,7 @@ class ApiProviderTest extends AbstractTestCase {
      * @return void
      * @throws Exception Throws an exception if an error occurs.
      */
-    public function testCreatingAPIKeyWithInvalidArgumentException(): void {
+    public function testCreatingApiKeyWithInvalidArgumentException(): void {
 
         // Set a Creating API key request mock.
         $arg = new CreatingApiKeyRequest();
@@ -184,7 +184,7 @@ class ApiProviderTest extends AbstractTestCase {
 
         try {
 
-            $obj->creatingAPIKey($arg);
+            $obj->creatingApiKey($arg);
         } catch (Exception $ex) {
 
             $this->assertInstanceOf(InvalidArgumentException::class, $ex);

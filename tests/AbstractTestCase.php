@@ -9,32 +9,32 @@
  * file that was distributed with this source code.
  */
 
-namespace WBW\Library\SMSMode\Tests;
+namespace WBW\Library\SmsMode\Tests;
 
 use DateTime;
 use PHPUnit\Framework\TestCase;
-use WBW\Library\SMSMode\API\SendingSMSBatchInterface as ApiSendingSMSBatchInterface;
-use WBW\Library\SMSMode\API\SendingSMSMessageInterface as ApiSendingSMSMessageInterface;
-use WBW\Library\SMSMode\API\SendingTextToSpeechSMSInterface as ApiSendingTextToSpeechSMSInterface;
-use WBW\Library\SMSMode\Entity\AddingContactInterface;
-use WBW\Library\SMSMode\Entity\CheckingSMSMessageStatusInterface;
-use WBW\Library\SMSMode\Entity\CreatingSubAccountInterface;
-use WBW\Library\SMSMode\Entity\DeletingSMSInterface;
-use WBW\Library\SMSMode\Entity\DeletingSubAccountInterface;
-use WBW\Library\SMSMode\Entity\DeliveryReportInterface;
-use WBW\Library\SMSMode\Entity\RetrievingSMSReplyInterface;
-use WBW\Library\SMSMode\Entity\SendingSMSBatchInterface;
-use WBW\Library\SMSMode\Entity\SendingSMSMessageInterface;
-use WBW\Library\SMSMode\Entity\SendingTextToSpeechSMSInterface;
-use WBW\Library\SMSMode\Entity\SendingUnicodeSMSInterface;
-use WBW\Library\SMSMode\Entity\SentSMSMessageListInterface;
-use WBW\Library\SMSMode\Entity\TransferringCreditsInterface;
+use WBW\Library\SmsMode\API\SendingSmsBatchInterface as ApiSendingSmsBatchInterface;
+use WBW\Library\SmsMode\API\SendingSmsMessageInterface as ApiSendingSmsMessageInterface;
+use WBW\Library\SmsMode\API\SendingTextToSpeechSmsInterface as ApiSendingTextToSpeechSmsInterface;
+use WBW\Library\SmsMode\Entity\AddingContactInterface;
+use WBW\Library\SmsMode\Entity\CheckingSmsMessageStatusInterface;
+use WBW\Library\SmsMode\Entity\CreatingSubAccountInterface;
+use WBW\Library\SmsMode\Entity\DeletingSmsInterface;
+use WBW\Library\SmsMode\Entity\DeletingSubAccountInterface;
+use WBW\Library\SmsMode\Entity\DeliveryReportInterface;
+use WBW\Library\SmsMode\Entity\RetrievingSmsReplyInterface;
+use WBW\Library\SmsMode\Entity\SendingSmsBatchInterface;
+use WBW\Library\SmsMode\Entity\SendingSmsMessageInterface;
+use WBW\Library\SmsMode\Entity\SendingTextToSpeechSmsInterface;
+use WBW\Library\SmsMode\Entity\SendingUnicodeSmsInterface;
+use WBW\Library\SmsMode\Entity\SentSmsMessageListInterface;
+use WBW\Library\SmsMode\Entity\TransferringCreditsInterface;
 
 /**
  * Abstract test case.
  *
  * @author webeweb <https://github.com/webeweb>
- * @package WBW\Library\SMSMode\Tests
+ * @package WBW\Library\SmsMode\Tests
  * @abstract
  */
 abstract class AbstractTestCase extends TestCase {
@@ -49,9 +49,9 @@ abstract class AbstractTestCase extends TestCase {
     /**
      * Checking SMS message status.
      *
-     * @var CheckingSMSMessageStatusInterface
+     * @var CheckingSmsMessageStatusInterface
      */
-    protected $checkingSMSMessageStatus;
+    protected $checkingSmsMessageStatus;
 
     /**
      * Creating sub-account.
@@ -63,9 +63,9 @@ abstract class AbstractTestCase extends TestCase {
     /**
      * Deleting SMS.
      *
-     * @var DeletingSMSInterface
+     * @var DeletingSmsInterface
      */
-    protected $deletingSMS;
+    protected $deletingSms;
 
     /**
      * Deleting sub-account.
@@ -91,44 +91,44 @@ abstract class AbstractTestCase extends TestCase {
     /**
      * Retrieving SMS reply.
      *
-     * @var RetrievingSMSReplyInterface
+     * @var RetrievingSmsReplyInterface
      */
-    protected $retrievingSMSReply;
+    protected $retrievingSmsReply;
 
     /**
      * Sending SMS batch.
      *
-     * @var SendingSMSBatchInterface
+     * @var SendingSmsBatchInterface
      */
-    protected $sendingSMSBatch;
+    protected $sendingSmsBatch;
 
     /**
      * Sending SMS message.
      *
-     * @var SendingSMSMessageInterface
+     * @var SendingSmsMessageInterface
      */
-    protected $sendingSMSMessage;
+    protected $sendingSmsMessage;
 
     /**
      * Sending text-to-speech SMS.
      *
-     * @var SendingTextToSpeechSMSInterface
+     * @var SendingTextToSpeechSmsInterface
      */
-    protected $sendingTextToSpeechSMS;
+    protected $sendingTextToSpeechSms;
 
     /**
      * Sending unicode SMS.
      *
-     * @var SendingUnicodeSMSInterface
+     * @var SendingUnicodeSmsInterface
      */
-    protected $sendingUnicodeSMS;
+    protected $sendingUnicodeSms;
 
     /**
      * Sent SMS message list.
      *
-     * @var SentSMSMessageListInterface
+     * @var SentSmsMessageListInterface
      */
-    protected $sentSMSMessageList;
+    protected $sentSmsMessageList;
 
     /**
      * Transferring credits.
@@ -144,113 +144,113 @@ abstract class AbstractTestCase extends TestCase {
         parent::setUp();
 
         // Set a Fichier mock.
-        $this->fichier = realpath(__DIR__ . "/Fixtures/Request/SendingSMSBatchRequest.csv");
+        $this->fichier = realpath(__DIR__ . "/Fixtures/Request/SendingSmsBatchRequest.csv");
 
         // Set an Adding contact mock.
         $this->addingContact = $this->getMockBuilder(AddingContactInterface::class)->getMock();
-        $this->addingContact->expects($this->any())->method("getSMSModeDate")->willReturn(new DateTime("2019-02-05 18:00:00"));
-        $this->addingContact->expects($this->any())->method("getSMSModeGroupes")->willReturn(["groupe1", "groupe2"]);
-        $this->addingContact->expects($this->any())->method("getSMSModeMobile")->willReturn("33600000000");
-        $this->addingContact->expects($this->any())->method("getSMSModeNom")->willReturn("nom");
-        $this->addingContact->expects($this->any())->method("getSMSModeOther")->willReturn("other");
-        $this->addingContact->expects($this->any())->method("getSMSModePrenom")->willReturn("prenom");
-        $this->addingContact->expects($this->any())->method("getSMSModeSociete")->willReturn("societe");
+        $this->addingContact->expects($this->any())->method("getSmsModeDate")->willReturn(new DateTime("2019-02-05 18:00:00"));
+        $this->addingContact->expects($this->any())->method("getSmsModeGroupes")->willReturn(["groupe1", "groupe2"]);
+        $this->addingContact->expects($this->any())->method("getSmsModeMobile")->willReturn("33600000000");
+        $this->addingContact->expects($this->any())->method("getSmsModeNom")->willReturn("nom");
+        $this->addingContact->expects($this->any())->method("getSmsModeOther")->willReturn("other");
+        $this->addingContact->expects($this->any())->method("getSmsModePrenom")->willReturn("prenom");
+        $this->addingContact->expects($this->any())->method("getSmsModeSociete")->willReturn("societe");
 
         // Set a Checking SMS message status mock.
-        $this->checkingSMSMessageStatus = $this->getMockBuilder(CheckingSMSMessageStatusInterface::class)->getMock();
-        $this->checkingSMSMessageStatus->expects($this->any())->method("getSMSModeSmsID")->willReturn("smsID");
+        $this->checkingSmsMessageStatus = $this->getMockBuilder(CheckingSmsMessageStatusInterface::class)->getMock();
+        $this->checkingSmsMessageStatus->expects($this->any())->method("getSmsModeSmsID")->willReturn("smsID");
 
         // Set a Creating sub-account mock.
         $this->creatingSubAccount = $this->getMockBuilder(CreatingSubAccountInterface::class)->getMock();
-        $this->creatingSubAccount->expects($this->any())->method("getSMSModeAdresse")->willReturn("adresse");
-        $this->creatingSubAccount->expects($this->any())->method("getSMSModeCodePostal")->willReturn("codePostal");
-        $this->creatingSubAccount->expects($this->any())->method("getSMSModeDate")->willReturn(new DateTime("2019-02-05 18:00:00"));
-        $this->creatingSubAccount->expects($this->any())->method("getSMSModeEmail")->willReturn("email");
-        $this->creatingSubAccount->expects($this->any())->method("getSMSModeFax")->willReturn("33100000000");
-        $this->creatingSubAccount->expects($this->any())->method("getSMSModeMobile")->willReturn("33600000000");
-        $this->creatingSubAccount->expects($this->any())->method("getSMSModeNewPseudo")->willReturn("newPseudo");
-        $this->creatingSubAccount->expects($this->any())->method("getSMSModeNewPass")->willReturn("newPass");
-        $this->creatingSubAccount->expects($this->any())->method("getSMSModeNom")->willReturn("nom");
-        $this->creatingSubAccount->expects($this->any())->method("getSMSModePrenom")->willReturn("prenom");
-        $this->creatingSubAccount->expects($this->any())->method("getSMSModeReference")->willReturn("reference");
-        $this->creatingSubAccount->expects($this->any())->method("getSMSModeSociete")->willReturn("societe");
-        $this->creatingSubAccount->expects($this->any())->method("getSMSModeTelephone")->willReturn("33100000000");
-        $this->creatingSubAccount->expects($this->any())->method("getSMSModeVille")->willReturn("ville");
+        $this->creatingSubAccount->expects($this->any())->method("getSmsModeAdresse")->willReturn("adresse");
+        $this->creatingSubAccount->expects($this->any())->method("getSmsModeCodePostal")->willReturn("codePostal");
+        $this->creatingSubAccount->expects($this->any())->method("getSmsModeDate")->willReturn(new DateTime("2019-02-05 18:00:00"));
+        $this->creatingSubAccount->expects($this->any())->method("getSmsModeEmail")->willReturn("email");
+        $this->creatingSubAccount->expects($this->any())->method("getSmsModeFax")->willReturn("33100000000");
+        $this->creatingSubAccount->expects($this->any())->method("getSmsModeMobile")->willReturn("33600000000");
+        $this->creatingSubAccount->expects($this->any())->method("getSmsModeNewPseudo")->willReturn("newPseudo");
+        $this->creatingSubAccount->expects($this->any())->method("getSmsModeNewPass")->willReturn("newPass");
+        $this->creatingSubAccount->expects($this->any())->method("getSmsModeNom")->willReturn("nom");
+        $this->creatingSubAccount->expects($this->any())->method("getSmsModePrenom")->willReturn("prenom");
+        $this->creatingSubAccount->expects($this->any())->method("getSmsModeReference")->willReturn("reference");
+        $this->creatingSubAccount->expects($this->any())->method("getSmsModeSociete")->willReturn("societe");
+        $this->creatingSubAccount->expects($this->any())->method("getSmsModeTelephone")->willReturn("33100000000");
+        $this->creatingSubAccount->expects($this->any())->method("getSmsModeVille")->willReturn("ville");
 
         // Set a Deleting SMS mock.
-        $this->deletingSMS = $this->getMockBuilder(DeletingSMSInterface::class)->getMock();
-        $this->deletingSMS->expects($this->any())->method("getSMSModeNumero")->willReturn("33600000000");
-        $this->deletingSMS->expects($this->any())->method("getSMSModeSmsID")->willReturn("smsID");
+        $this->deletingSms = $this->getMockBuilder(DeletingSmsInterface::class)->getMock();
+        $this->deletingSms->expects($this->any())->method("getSmsModeNumero")->willReturn("33600000000");
+        $this->deletingSms->expects($this->any())->method("getSmsModeSmsID")->willReturn("smsID");
 
         // Set a Deleting sub-account mock.
         $this->deletingSubAccount = $this->getMockBuilder(DeletingSubAccountInterface::class)->getMock();
-        $this->deletingSubAccount->expects($this->any())->method("getSMSModePseudoToDelete")->willReturn("pseudoToDelete");
+        $this->deletingSubAccount->expects($this->any())->method("getSmsModePseudoToDelete")->willReturn("pseudoToDelete");
 
         // Set a Delivery report mock.
         $this->deliveryReport = $this->getMockBuilder(DeliveryReportInterface::class)->getMock();
-        $this->deliveryReport->expects($this->any())->method("getSMSModeSmsID")->willReturn("smsID");
+        $this->deliveryReport->expects($this->any())->method("getSmsModeSmsID")->willReturn("smsID");
 
         // Set a Retrieving SMS reply mock.
-        $this->retrievingSMSReply = $this->getMockBuilder(RetrievingSMSReplyInterface::class)->getMock();
-        $this->retrievingSMSReply->expects($this->any())->method("getSMSModeEndDate")->willReturn(new DateTime("2019-02-05 19:00:00"));
-        $this->retrievingSMSReply->expects($this->any())->method("getSMSModeOffset")->willReturn(10);
-        $this->retrievingSMSReply->expects($this->any())->method("getSMSModeStart")->willReturn(0);
-        $this->retrievingSMSReply->expects($this->any())->method("getSMSModeStartDate")->willReturn(new DateTime("2019-02-05 18:00:00"));
+        $this->retrievingSmsReply = $this->getMockBuilder(RetrievingSmsReplyInterface::class)->getMock();
+        $this->retrievingSmsReply->expects($this->any())->method("getSmsModeEndDate")->willReturn(new DateTime("2019-02-05 19:00:00"));
+        $this->retrievingSmsReply->expects($this->any())->method("getSmsModeOffset")->willReturn(10);
+        $this->retrievingSmsReply->expects($this->any())->method("getSmsModeStart")->willReturn(0);
+        $this->retrievingSmsReply->expects($this->any())->method("getSmsModeStartDate")->willReturn(new DateTime("2019-02-05 18:00:00"));
 
         // Set a Sending SMS batch mock.
-        $this->sendingSMSBatch = $this->getMockBuilder(SendingSMSBatchInterface::class)->getMock();
-        $this->sendingSMSBatch->expects($this->any())->method("getSMSModeClasseMsg")->willReturn(ApiSendingSMSBatchInterface::CLASSE_MSG_SMS);
-        $this->sendingSMSBatch->expects($this->any())->method("getSMSModeDateEnvoi")->willReturn(new DateTime("2019-02-05 18:00:00"));
-        $this->sendingSMSBatch->expects($this->any())->method("getSMSModeEmetteur")->willReturn("emetteur");
-        $this->sendingSMSBatch->expects($this->any())->method("getSMSModeFichier")->willReturn($this->fichier);
-        $this->sendingSMSBatch->expects($this->any())->method("getSMSModeNbrMsg")->willReturn(1);
-        $this->sendingSMSBatch->expects($this->any())->method("getSMSModeNotificationUrl")->willReturn("notificationUrl");
-        $this->sendingSMSBatch->expects($this->any())->method("getSMSModeRefClient")->willReturn("refClient");
+        $this->sendingSmsBatch = $this->getMockBuilder(SendingSmsBatchInterface::class)->getMock();
+        $this->sendingSmsBatch->expects($this->any())->method("getSmsModeClasseMsg")->willReturn(ApiSendingSmsBatchInterface::CLASSE_MSG_SMS);
+        $this->sendingSmsBatch->expects($this->any())->method("getSmsModeDateEnvoi")->willReturn(new DateTime("2019-02-05 18:00:00"));
+        $this->sendingSmsBatch->expects($this->any())->method("getSmsModeEmetteur")->willReturn("emetteur");
+        $this->sendingSmsBatch->expects($this->any())->method("getSmsModeFichier")->willReturn($this->fichier);
+        $this->sendingSmsBatch->expects($this->any())->method("getSmsModeNbrMsg")->willReturn(1);
+        $this->sendingSmsBatch->expects($this->any())->method("getSmsModeNotificationUrl")->willReturn("notificationUrl");
+        $this->sendingSmsBatch->expects($this->any())->method("getSmsModeRefClient")->willReturn("refClient");
 
         // Set a Sending SMS message mock.
-        $this->sendingSMSMessage = $this->getMockBuilder(SendingSMSMessageInterface::class)->getMock();
-        $this->sendingSMSMessage->expects($this->any())->method("getSMSModeClasseMsg")->willReturn(ApiSendingSMSBatchInterface::CLASSE_MSG_SMS);
-        $this->sendingSMSMessage->expects($this->any())->method("getSMSModeDateEnvoi")->willReturn(new DateTime("2019-02-05 18:00:00"));
-        $this->sendingSMSMessage->expects($this->any())->method("getSMSModeEmetteur")->willReturn("emetteur");
-        $this->sendingSMSMessage->expects($this->any())->method("getSMSModeGroupe")->willReturn("groupe");
-        $this->sendingSMSMessage->expects($this->any())->method("getSMSModeMessage")->willReturn("message");
-        $this->sendingSMSMessage->expects($this->any())->method("getSMSModeNbrMsg")->willReturn(1);
-        $this->sendingSMSMessage->expects($this->any())->method("getSMSModeNotificationUrl")->willReturn("notificationUrl");
-        $this->sendingSMSMessage->expects($this->any())->method("getSMSModeNotificationUrlReponse")->willReturn("notificationUrlReponse");
-        $this->sendingSMSMessage->expects($this->any())->method("getSMSModeNumero")->willReturn(["33600000000"]);
-        $this->sendingSMSMessage->expects($this->any())->method("getSMSModeRefClient")->willReturn("refClient");
-        $this->sendingSMSMessage->expects($this->any())->method("getSMSModeStop")->willReturn(ApiSendingSMSMessageInterface::STOP_ALWAYS);
+        $this->sendingSmsMessage = $this->getMockBuilder(SendingSmsMessageInterface::class)->getMock();
+        $this->sendingSmsMessage->expects($this->any())->method("getSmsModeClasseMsg")->willReturn(ApiSendingSmsBatchInterface::CLASSE_MSG_SMS);
+        $this->sendingSmsMessage->expects($this->any())->method("getSmsModeDateEnvoi")->willReturn(new DateTime("2019-02-05 18:00:00"));
+        $this->sendingSmsMessage->expects($this->any())->method("getSmsModeEmetteur")->willReturn("emetteur");
+        $this->sendingSmsMessage->expects($this->any())->method("getSmsModeGroupe")->willReturn("groupe");
+        $this->sendingSmsMessage->expects($this->any())->method("getSmsModeMessage")->willReturn("message");
+        $this->sendingSmsMessage->expects($this->any())->method("getSmsModeNbrMsg")->willReturn(1);
+        $this->sendingSmsMessage->expects($this->any())->method("getSmsModeNotificationUrl")->willReturn("notificationUrl");
+        $this->sendingSmsMessage->expects($this->any())->method("getSmsModeNotificationUrlReponse")->willReturn("notificationUrlReponse");
+        $this->sendingSmsMessage->expects($this->any())->method("getSmsModeNumero")->willReturn(["33600000000"]);
+        $this->sendingSmsMessage->expects($this->any())->method("getSmsModeRefClient")->willReturn("refClient");
+        $this->sendingSmsMessage->expects($this->any())->method("getSmsModeStop")->willReturn(ApiSendingSmsMessageInterface::STOP_ALWAYS);
 
         // Set a Sending text-to-speech SMS mock.
-        $this->sendingTextToSpeechSMS = $this->getMockBuilder(SendingTextToSpeechSMSInterface::class)->getMock();
-        $this->sendingTextToSpeechSMS->expects($this->any())->method("getSMSModeDateEnvoi")->willReturn(new DateTime("2019-02-05 18:00:00"));
-        $this->sendingTextToSpeechSMS->expects($this->any())->method("getSMSModeMessage")->willReturn("message");
-        $this->sendingTextToSpeechSMS->expects($this->any())->method("getSMSModeNumero")->willReturn(["33600000000"]);
-        $this->sendingTextToSpeechSMS->expects($this->any())->method("getSMSModeLanguage")->willReturn(ApiSendingTextToSpeechSMSInterface::LANGUAGE_FR);
-        $this->sendingTextToSpeechSMS->expects($this->any())->method("getSMSModeTitle")->willReturn("title");
+        $this->sendingTextToSpeechSms = $this->getMockBuilder(SendingTextToSpeechSmsInterface::class)->getMock();
+        $this->sendingTextToSpeechSms->expects($this->any())->method("getSmsModeDateEnvoi")->willReturn(new DateTime("2019-02-05 18:00:00"));
+        $this->sendingTextToSpeechSms->expects($this->any())->method("getSmsModeMessage")->willReturn("message");
+        $this->sendingTextToSpeechSms->expects($this->any())->method("getSmsModeNumero")->willReturn(["33600000000"]);
+        $this->sendingTextToSpeechSms->expects($this->any())->method("getSmsModeLanguage")->willReturn(ApiSendingTextToSpeechSmsInterface::LANGUAGE_FR);
+        $this->sendingTextToSpeechSms->expects($this->any())->method("getSmsModeTitle")->willReturn("title");
 
         // Set a Sending unicode SMS mock.
-        $this->sendingUnicodeSMS = $this->getMockBuilder(SendingUnicodeSMSInterface::class)->getMock();
-        $this->sendingUnicodeSMS->expects($this->any())->method("getSMSModeClasseMsg")->willReturn(ApiSendingSMSBatchInterface::CLASSE_MSG_SMS);
-        $this->sendingUnicodeSMS->expects($this->any())->method("getSMSModeDateEnvoi")->willReturn(new DateTime("2019-02-05 18:00:00"));
-        $this->sendingUnicodeSMS->expects($this->any())->method("getSMSModeEmetteur")->willReturn("emetteur");
-        $this->sendingUnicodeSMS->expects($this->any())->method("getSMSModeGroupe")->willReturn("groupe");
-        $this->sendingUnicodeSMS->expects($this->any())->method("getSMSModeMessage")->willReturn("message");
-        $this->sendingUnicodeSMS->expects($this->any())->method("getSMSModeNbrMsg")->willReturn(1);
-        $this->sendingUnicodeSMS->expects($this->any())->method("getSMSModeNotificationUrl")->willReturn("notificationUrl");
-        $this->sendingUnicodeSMS->expects($this->any())->method("getSMSModeNotificationUrlReponse")->willReturn("notificationUrlReponse");
-        $this->sendingUnicodeSMS->expects($this->any())->method("getSMSModeNumero")->willReturn(["33600000000"]);
-        $this->sendingUnicodeSMS->expects($this->any())->method("getSMSModeRefClient")->willReturn("refClient");
-        $this->sendingUnicodeSMS->expects($this->any())->method("getSMSModeStop")->willReturn(ApiSendingSMSMessageInterface::STOP_ALWAYS);
+        $this->sendingUnicodeSms = $this->getMockBuilder(SendingUnicodeSmsInterface::class)->getMock();
+        $this->sendingUnicodeSms->expects($this->any())->method("getSmsModeClasseMsg")->willReturn(ApiSendingSMSBatchInterface::CLASSE_MSG_SMS);
+        $this->sendingUnicodeSms->expects($this->any())->method("getSmsModeDateEnvoi")->willReturn(new DateTime("2019-02-05 18:00:00"));
+        $this->sendingUnicodeSms->expects($this->any())->method("getSmsModeEmetteur")->willReturn("emetteur");
+        $this->sendingUnicodeSms->expects($this->any())->method("getSmsModeGroupe")->willReturn("groupe");
+        $this->sendingUnicodeSms->expects($this->any())->method("getSmsModeMessage")->willReturn("message");
+        $this->sendingUnicodeSms->expects($this->any())->method("getSmsModeNbrMsg")->willReturn(1);
+        $this->sendingUnicodeSms->expects($this->any())->method("getSmsModeNotificationUrl")->willReturn("notificationUrl");
+        $this->sendingUnicodeSms->expects($this->any())->method("getSmsModeNotificationUrlReponse")->willReturn("notificationUrlReponse");
+        $this->sendingUnicodeSms->expects($this->any())->method("getSmsModeNumero")->willReturn(["33600000000"]);
+        $this->sendingUnicodeSms->expects($this->any())->method("getSmsModeRefClient")->willReturn("refClient");
+        $this->sendingUnicodeSms->expects($this->any())->method("getSmsModeStop")->willReturn(ApiSendingSmsMessageInterface::STOP_ALWAYS);
 
         // Set a Sent SMS message list mock.
-        $this->sentSMSMessageList = $this->getMockBuilder(SentSMSMessageListInterface::class)->getMock();
-        $this->sentSMSMessageList->expects($this->any())->method("getSMSModeOffset")->willReturn(10);
+        $this->sentSmsMessageList = $this->getMockBuilder(SentSmsMessageListInterface::class)->getMock();
+        $this->sentSmsMessageList->expects($this->any())->method("getSmsModeOffset")->willReturn(10);
 
         // Set a Transferring credits mock.
         $this->transferringCredits = $this->getMockBuilder(TransferringCreditsInterface::class)->getMock();
-        $this->transferringCredits->expects($this->any())->method("getSMSModeCreditAmount")->willReturn(212);
-        $this->transferringCredits->expects($this->any())->method("getSMSModeReference")->willReturn("reference");
-        $this->transferringCredits->expects($this->any())->method("getSMSModeTargetPseudo")->willReturn("targetPseudo");
+        $this->transferringCredits->expects($this->any())->method("getSmsModeCreditAmount")->willReturn(212);
+        $this->transferringCredits->expects($this->any())->method("getSmsModeReference")->willReturn("reference");
+        $this->transferringCredits->expects($this->any())->method("getSmsModeTargetPseudo")->willReturn("targetPseudo");
     }
 }

@@ -11,9 +11,9 @@
 
 require_once __DIR__ . "/../vendor/autoload.php";
 
-use WBW\Library\SMSMode\Model\Authentication;
-use WBW\Library\SMSMode\Provider\ApiProvider;
-use WBW\Library\SMSMode\Request\SentSMSMessageListRequest;
+use WBW\Library\SmsMode\Model\Authentication;
+use WBW\Library\SmsMode\Provider\ApiProvider;
+use WBW\Library\SmsMode\Request\SentSmsMessageListRequest;
 
 // Create the API provider.
 $provider = new ApiProvider(new Authentication());
@@ -27,13 +27,13 @@ $provider->getAuthentication()->setPass("pass");
 // $provider->getAuthentication()->setAccessToken("accessToken");
 
 // Call the API and get the response.
-$response = $provider->sentSMSMessageList(new SentSMSMessageListRequest());
+$response = $provider->sentSmsMessageList(new SentSmsMessageListRequest());
 
 // Handle response.
 echo "Code: " . $response->getCode() . "\n";
 echo "Description: " . $response->getDescription() . "\n\n";
 
-foreach ($response->getSentSMSMessages() as $current) {
+foreach ($response->getSentSmsMessages() as $current) {
 
     echo "SMS ID: " . $current->getSmsID() . "\n";
     echo "Send date: " . $current->getSendDate()->format("Y-m-d H:i") . "\n";

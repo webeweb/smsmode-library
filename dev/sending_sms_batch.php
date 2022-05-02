@@ -11,9 +11,9 @@
 
 require_once __DIR__ . "/../vendor/autoload.php";
 
-use WBW\Library\SMSMode\Model\Authentication;
-use WBW\Library\SMSMode\Provider\ApiProvider;
-use WBW\Library\SMSMode\Request\SendingSMSBatchRequest;
+use WBW\Library\SmsMode\Model\Authentication;
+use WBW\Library\SmsMode\Provider\ApiProvider;
+use WBW\Library\SmsMode\Request\SendingSmsBatchRequest;
 
 // Create the API provider.
 $provider = new ApiProvider(new Authentication());
@@ -27,11 +27,11 @@ $provider->getAuthentication()->setPass("pass");
 // $provider->getAuthentication()->setAccessToken("accessToken");
 
 // Create a Sending SMS batch request.
-$request = new SendingSMSBatchRequest();
+$request = new SendingSmsBatchRequest();
 $request->setFichier(__DIR__ . "/../tests/Fixtures/Request/SendingSMSBatchRequest.csv");
 
 // Call the API and get the response.
-$response = $provider->sendingSMSBatch($request);
+$response = $provider->sendingSmsBatch($request);
 
 // Handle the response.
 echo "Code: " . $response->getCode() . "\n";

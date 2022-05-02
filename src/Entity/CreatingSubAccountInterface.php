@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace WBW\Library\SMSMode\Entity;
+namespace WBW\Library\SmsMode\Entity;
 
 use DateTime;
 
@@ -17,105 +17,105 @@ use DateTime;
  * Creating sub-account interface.
  *
  * @author webeweb <https://github.com/webeweb>
- * @package WBW\Library\SMSMode\Entity
+ * @package WBW\Library\SmsMode\Entity
  */
-interface CreatingSubAccountInterface extends SMSModeEntityInterface {
+interface CreatingSubAccountInterface extends SmsModeEntityInterface {
 
     /**
      * Get the adresse.
      *
      * @return string|null Returns the adresse.
      */
-    public function getSMSModeAdresse(): ?string;
+    public function getSmsModeAdresse(): ?string;
 
     /**
      * Get the code postal.
      *
      * @return string|null Returns the code postal.
      */
-    public function getSMSModeCodePostal(): ?string;
+    public function getSmsModeCodePostal(): ?string;
 
     /**
      * Get the date.
      *
      * @return DateTime|null Returns the date.
      */
-    public function getSMSModeDate(): ?Datetime;
+    public function getSmsModeDate(): ?Datetime;
 
     /**
      * Get the email.
      *
      * @return string|null Returns the email.
      */
-    public function getSMSModeEmail(): ?string;
+    public function getSmsModeEmail(): ?string;
 
     /**
      * Get the fax.
      *
      * @return string|null Returns the fax.
      */
-    public function getSMSModeFax(): ?string;
+    public function getSmsModeFax(): ?string;
 
     /**
      * Get the mobile.
      *
      * @return string|null Returns the mobile.
      */
-    public function getSMSModeMobile(): ?string;
+    public function getSmsModeMobile(): ?string;
 
     /**
      * Get the new pass.
      *
      * @return string|null Returns the new pass.
      */
-    public function getSMSModeNewPass(): ?string;
+    public function getSmsModeNewPass(): ?string;
 
     /**
      * Get the new pseudo.
      *
      * @return string|null Returns the new pseudo.
      */
-    public function getSMSModeNewPseudo(): ?string;
+    public function getSmsModeNewPseudo(): ?string;
 
     /**
      * Get the nom.
      *
      * @return string|null Returns the nom.
      */
-    public function getSMSModeNom(): ?string;
+    public function getSmsModeNom(): ?string;
 
     /**
      * Get the prenom.
      *
      * @return string|null Returns the prenom.
      */
-    public function getSMSModePrenom(): ?string;
+    public function getSmsModePrenom(): ?string;
 
     /**
      * Get the reference.
      *
      * @return string|null Returns the reference.
      */
-    public function getSMSModeReference(): ?string;
+    public function getSmsModeReference(): ?string;
 
     /**
      * Get the societe.
      *
      * @return string|null Returns the societe.
      */
-    public function getSMSModeSociete(): ?string;
+    public function getSmsModeSociete(): ?string;
 
     /**
      * Get the telephone.
      *
      * @return string|null Returns the telephone.
      */
-    public function getSMSModeTelephone(): ?string;
+    public function getSmsModeTelephone(): ?string;
 
     /**
      * Get the ville.
      *
      * @return string|null Returns the ville.
      */
-    public function getSMSModeVille(): ?string;
+    public function getSmsModeVille(): ?string;
 }

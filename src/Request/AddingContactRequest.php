@@ -9,21 +9,21 @@
  * file that was distributed with this source code.
  */
 
-namespace WBW\Library\SMSMode\Request;
+namespace WBW\Library\SmsMode\Request;
 
 use UnexpectedValueException;
-use WBW\Library\SMSMode\Model\Attribute\StringMobileTrait;
-use WBW\Library\SMSMode\Model\Attribute\StringNomTrait;
-use WBW\Library\SMSMode\Model\Attribute\StringPrenomTrait;
-use WBW\Library\SMSMode\Model\Attribute\StringSocieteTrait;
-use WBW\Library\SMSMode\Serializer\NumeroSerializer;
+use WBW\Library\SmsMode\Model\Attribute\StringMobileTrait;
+use WBW\Library\SmsMode\Model\Attribute\StringNomTrait;
+use WBW\Library\SmsMode\Model\Attribute\StringPrenomTrait;
+use WBW\Library\SmsMode\Model\Attribute\StringSocieteTrait;
+use WBW\Library\SmsMode\Serializer\NumeroSerializer;
 use WBW\Library\Traits\DateTimes\DateTimeDateTrait;
 
 /**
  * Adding contact request.
  *
  * @author webeweb <https://github.com/webeweb>
- * @package WBW\Library\SMSMode\Request
+ * @package WBW\Library\SmsMode\Request
  */
 class AddingContactRequest extends AbstractRequest {
 

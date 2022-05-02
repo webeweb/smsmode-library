@@ -11,9 +11,9 @@
 
 require_once __DIR__ . "/../vendor/autoload.php";
 
-use WBW\Library\SMSMode\Model\Authentication;
-use WBW\Library\SMSMode\Provider\ApiProvider;
-use WBW\Library\SMSMode\Request\DeletingSMSRequest;
+use WBW\Library\SmsMode\Model\Authentication;
+use WBW\Library\SmsMode\Provider\ApiProvider;
+use WBW\Library\SmsMode\Request\DeletingSmsRequest;
 
 // Create the API provider.
 $provider = new ApiProvider(new Authentication());
@@ -27,11 +27,11 @@ $provider->getAuthentication()->setPass("pass");
 // $provider->getAuthentication()->setAccessToken("accessToken");
 
 // Create a Deleting SMS request.
-$request = new DeletingSMSRequest();
+$request = new DeletingSmsRequest();
 $request->setSmsID("smsID");
 
 // Call the API and get the response.
-$response = $provider->deletingSMS($request);
+$response = $provider->deletingSms($request);
 
 // Handle the response.
 echo "Code: " . $response->getCode() . "\n";

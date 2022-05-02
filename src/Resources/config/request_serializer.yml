@@ -1,5 +1,5 @@
 # src/Resources/config/request_serializer.yml
-WBW\Library\SMSMode\Request\AddingContactRequest:
+WBW\Library\SmsMode\Request\AddingContactRequest:
     nom:
         method:    "getNom"
         mandatory: true
@@ -24,12 +24,12 @@ WBW\Library\SMSMode\Request\AddingContactRequest:
         mandatory: false
         formatter: "formatDate"
 
-WBW\Library\SMSMode\Request\CheckingSMSMessageStatusRequest:
+WBW\Library\SmsMode\Request\CheckingSmsMessageStatusRequest:
     smsID:
         method:    "getSmsID"
         mandatory: true
 
-WBW\Library\SMSMode\Request\CreatingSubAccountRequest:
+WBW\Library\SmsMode\Request\CreatingSubAccountRequest:
     newPseudo:
         method:    "getNewPseudo"
         mandatory: true
@@ -74,7 +74,7 @@ WBW\Library\SMSMode\Request\CreatingSubAccountRequest:
         mandatory: false
         formatter: "formatDate"
 
-WBW\Library\SMSMode\Request\DeletingSMSRequest:
+WBW\Library\SmsMode\Request\DeletingSmsRequest:
     smsID:
         method:    "getSmsID"
         mandatory: true
@@ -85,17 +85,17 @@ WBW\Library\SMSMode\Request\DeletingSMSRequest:
         mandatory: true
         excludeIf: "smsID"
 
-WBW\Library\SMSMode\Request\DeletingSubAccountRequest:
+WBW\Library\SmsMode\Request\DeletingSubAccountRequest:
     pseudoToDelete:
         method:    "getPseudoToDelete"
         mandatory: true
 
-WBW\Library\SMSMode\Request\DeliveryReportRequest:
+WBW\Library\SmsMode\Request\DeliveryReportRequest:
     smsID:
         method:    "getSmsID"
         mandatory: true
 
-WBW\Library\SMSMode\Request\RetrievingSMSReplyRequest:
+WBW\Library\SmsMode\Request\RetrievingSmsReplyRequest:
     start:
         method:     "getStart"
         mandatory:  false
@@ -115,7 +115,7 @@ WBW\Library\SMSMode\Request\RetrievingSMSReplyRequest:
         formatter:  "formatDateTime"
         complement: "startDate"
 
-WBW\Library\SMSMode\Request\SendingSMSBatchRequest:
+WBW\Library\SmsMode\Request\SendingSmsBatchRequest:
     fichier:
         method:    "getFichier"
         mandatory: true
@@ -139,7 +139,7 @@ WBW\Library\SMSMode\Request\SendingSMSBatchRequest:
         method:    "getNotificationUrl"
         mandatory: false
 
-WBW\Library\SMSMode\Request\SendingSMSMessageRequest:
+WBW\Library\SmsMode\Request\SendingSmsMessageRequest:
     message:
         method:    "getMessage"
         mandatory: true
@@ -179,7 +179,7 @@ WBW\Library\SMSMode\Request\SendingSMSMessageRequest:
         method:    "getStop"
         mandatory: false
 
-WBW\Library\SMSMode\Request\SendingTextToSpeechSMSRequest:
+WBW\Library\SmsMode\Request\SendingTextToSpeechSmsRequest:
     message:
         method:    "getMessage"
         mandatory: true
@@ -199,7 +199,7 @@ WBW\Library\SMSMode\Request\SendingTextToSpeechSMSRequest:
         method:    "getLanguage"
         mandatory: false
 
-WBW\Library\SMSMode\Request\SendingUnicodeSMSRequest:
+WBW\Library\SmsMode\Request\SendingUnicodeSmsRequest:
     message:
         method:    "getMessage"
         mandatory: true
@@ -239,12 +239,12 @@ WBW\Library\SMSMode\Request\SendingUnicodeSMSRequest:
         method:    "getStop"
         mandatory: false
 
-WBW\Library\SMSMode\Request\SentSMSMessageListRequest:
+WBW\Library\SmsMode\Request\SentSmsMessageListRequest:
     offset:
         method:    "getOffset"
         mandatory: false
 
-WBW\Library\SMSMode\Request\TransferringCreditsRequest:
+WBW\Library\SmsMode\Request\TransferringCreditsRequest:
     targetPseudo:
         method:    "getTargetPseudo"
         mandatory: true
@@ -255,7 +255,7 @@ WBW\Library\SMSMode\Request\TransferringCreditsRequest:
         method:    "getReference"
         mandatory: false
 
-WBW\Library\SMSMode\Model\Authentication:
+WBW\Library\SmsMode\Model\Authentication:
     accessToken:
         method:    "getAccessToken"
         mandatory: false

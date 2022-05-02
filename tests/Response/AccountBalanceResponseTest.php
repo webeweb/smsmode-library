@@ -9,16 +9,16 @@
  * file that was distributed with this source code.
  */
 
-namespace WBW\Library\SMSMode\Tests\Response;
+namespace WBW\Library\SmsMode\Tests\Response;
 
-use WBW\Library\SMSMode\Response\AccountBalanceResponse;
-use WBW\Library\SMSMode\Tests\AbstractTestCase;
+use WBW\Library\SmsMode\Response\AccountBalanceResponse;
+use WBW\Library\SmsMode\Tests\AbstractTestCase;
 
 /**
  * Account balance response test.
  *
  * @author webeweb <https://github.com/webeweb>
- * @package WBW\Library\SMSMode\Tests\Response
+ * @package WBW\Library\SmsMode\Tests\Response
  */
 class AccountBalanceResponseTest extends AbstractTestCase {
 

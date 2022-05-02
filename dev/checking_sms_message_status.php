@@ -11,9 +11,9 @@
 
 require_once __DIR__ . "/../vendor/autoload.php";
 
-use WBW\Library\SMSMode\Model\Authentication;
-use WBW\Library\SMSMode\Provider\ApiProvider;
-use WBW\Library\SMSMode\Request\CheckingSMSMessageStatusRequest;
+use WBW\Library\SmsMode\Model\Authentication;
+use WBW\Library\SmsMode\Provider\ApiProvider;
+use WBW\Library\SmsMode\Request\CheckingSmsMessageStatusRequest;
 
 // Create the API provider.
 $provider = new ApiProvider(new Authentication());
@@ -27,11 +27,11 @@ $provider->getAuthentication()->setPass("pass");
 // $provider->getAuthentication()->setAccessToken("accessToken");
 
 // Create a Checking SMS message status request.
-$request = new CheckingSMSMessageStatusRequest();
+$request = new CheckingSmsMessageStatusRequest();
 $request->setSmsID("smsID");
 
 // Call the API and get the response.
-$response = $provider->checkingSMSMessageStatus($request);
+$response = $provider->checkingSmsMessageStatus($request);
 
 // Handle the response.
 echo "Code: " . $response->getCode() . "\n";

@@ -9,13 +9,13 @@
  * file that was distributed with this source code.
  */
 
-namespace WBW\Library\SMSMode\Request;
+namespace WBW\Library\SmsMode\Request;
 
 /**
  * Account balance request.
  *
  * @author webeweb <https://github.com/webeweb>
- * @package WBW\Library\SMSMode\Request
+ * @package WBW\Library\SmsMode\Request
  */
 class AccountBalanceRequest extends AbstractRequest {
 

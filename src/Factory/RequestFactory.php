@@ -9,42 +9,42 @@
  * file that was distributed with this source code.
  */
 
-namespace WBW\Library\SMSMode\Factory;
+namespace WBW\Library\SmsMode\Factory;
 
-use WBW\Library\SMSMode\Entity\AddingContactInterface;
-use WBW\Library\SMSMode\Entity\CheckingSMSMessageStatusInterface;
-use WBW\Library\SMSMode\Entity\CreatingSubAccountInterface;
-use WBW\Library\SMSMode\Entity\DeletingSMSInterface;
-use WBW\Library\SMSMode\Entity\DeletingSubAccountInterface;
-use WBW\Library\SMSMode\Entity\DeliveryReportInterface;
-use WBW\Library\SMSMode\Entity\RetrievingSMSReplyInterface;
-use WBW\Library\SMSMode\Entity\SendingSMSBatchInterface;
-use WBW\Library\SMSMode\Entity\SendingSMSMessageInterface;
-use WBW\Library\SMSMode\Entity\SendingTextToSpeechSMSInterface;
-use WBW\Library\SMSMode\Entity\SendingUnicodeSMSInterface;
-use WBW\Library\SMSMode\Entity\SentSMSMessageListInterface;
-use WBW\Library\SMSMode\Entity\TransferringCreditsInterface;
-use WBW\Library\SMSMode\Request\AccountBalanceRequest;
-use WBW\Library\SMSMode\Request\AddingContactRequest;
-use WBW\Library\SMSMode\Request\CheckingSMSMessageStatusRequest;
-use WBW\Library\SMSMode\Request\CreatingAPIKeyRequest;
-use WBW\Library\SMSMode\Request\CreatingSubAccountRequest;
-use WBW\Library\SMSMode\Request\DeletingSMSRequest;
-use WBW\Library\SMSMode\Request\DeletingSubAccountRequest;
-use WBW\Library\SMSMode\Request\DeliveryReportRequest;
-use WBW\Library\SMSMode\Request\RetrievingSMSReplyRequest;
-use WBW\Library\SMSMode\Request\SendingSMSBatchRequest;
-use WBW\Library\SMSMode\Request\SendingSMSMessageRequest;
-use WBW\Library\SMSMode\Request\SendingTextToSpeechSMSRequest;
-use WBW\Library\SMSMode\Request\SendingUnicodeSMSRequest;
-use WBW\Library\SMSMode\Request\SentSMSMessageListRequest;
-use WBW\Library\SMSMode\Request\TransferringCreditsRequest;
+use WBW\Library\SmsMode\Entity\AddingContactInterface;
+use WBW\Library\SmsMode\Entity\CheckingSmsMessageStatusInterface;
+use WBW\Library\SmsMode\Entity\CreatingSubAccountInterface;
+use WBW\Library\SmsMode\Entity\DeletingSmsInterface;
+use WBW\Library\SmsMode\Entity\DeletingSubAccountInterface;
+use WBW\Library\SmsMode\Entity\DeliveryReportInterface;
+use WBW\Library\SmsMode\Entity\RetrievingSmsReplyInterface;
+use WBW\Library\SmsMode\Entity\SendingSmsBatchInterface;
+use WBW\Library\SmsMode\Entity\SendingSmsMessageInterface;
+use WBW\Library\SmsMode\Entity\SendingTextToSpeechSmsInterface;
+use WBW\Library\SmsMode\Entity\SendingUnicodeSmsInterface;
+use WBW\Library\SmsMode\Entity\SentSmsMessageListInterface;
+use WBW\Library\SmsMode\Entity\TransferringCreditsInterface;
+use WBW\Library\SmsMode\Request\AccountBalanceRequest;
+use WBW\Library\SmsMode\Request\AddingContactRequest;
+use WBW\Library\SmsMode\Request\CheckingSmsMessageStatusRequest;
+use WBW\Library\SmsMode\Request\CreatingApiKeyRequest;
+use WBW\Library\SmsMode\Request\CreatingSubAccountRequest;
+use WBW\Library\SmsMode\Request\DeletingSmsRequest;
+use WBW\Library\SmsMode\Request\DeletingSubAccountRequest;
+use WBW\Library\SmsMode\Request\DeliveryReportRequest;
+use WBW\Library\SmsMode\Request\RetrievingSmsReplyRequest;
+use WBW\Library\SmsMode\Request\SendingSmsBatchRequest;
+use WBW\Library\SmsMode\Request\SendingSmsMessageRequest;
+use WBW\Library\SmsMode\Request\SendingTextToSpeechSmsRequest;
+use WBW\Library\SmsMode\Request\SendingUnicodeSmsRequest;
+use WBW\Library\SmsMode\Request\SentSmsMessageListRequest;
+use WBW\Library\SmsMode\Request\TransferringCreditsRequest;
 
 /**
  * Request factory.
  *
  * @author webeweb <https://github.com/webeweb>
- * @package WBW\Library\SMSMode\Factory
+ * @package WBW\Library\SmsMode\Factory
  */
 class RequestFactory {
 
@@ -66,13 +66,13 @@ class RequestFactory {
     public static function newAddingContactRequest(AddingContactInterface $addingContact): AddingContactRequest {
 
         $model = new AddingContactRequest();
-        $model->setDate($addingContact->getSMSModeDate());
-        $model->setGroupes($addingContact->getSMSModeGroupes());
-        $model->setMobile($addingContact->getSMSModeMobile());
-        $model->setNom($addingContact->getSMSModeNom());
-        $model->setOther($addingContact->getSMSModeOther());
-        $model->setPrenom($addingContact->getSMSModePrenom());
-        $model->setSociete($addingContact->getSMSModeSociete());
+        $model->setDate($addingContact->getSmsModeDate());
+        $model->setGroupes($addingContact->getSmsModeGroupes());
+        $model->setMobile($addingContact->getSmsModeMobile());
+        $model->setNom($addingContact->getSmsModeNom());
+        $model->setOther($addingContact->getSmsModeOther());
+        $model->setPrenom($addingContact->getSmsModePrenom());
+        $model->setSociete($addingContact->getSmsModeSociete());
 
         return $model;
     }
@@ -80,13 +80,13 @@ class RequestFactory {
     /**
      * Creates a checking SMS message status request.
      *
-     * @param CheckingSMSMessageStatusInterface $checkingSMSMessageStatus the checking SMS message status.
-     * @return CheckingSMSMessageStatusRequest Returns the checking SMS message status request.
+     * @param CheckingSmsMessageStatusInterface $checkingSmsMessageStatus The checking SMS message status.
+     * @return CheckingSmsMessageStatusRequest Returns the checking SMS message status request.
      */
-    public static function newCheckingSMSMessageStatusRequest(CheckingSMSMessageStatusInterface $checkingSMSMessageStatus): CheckingSMSMessageStatusRequest {
+    public static function newCheckingSmsMessageStatusRequest(CheckingSmsMessageStatusInterface $checkingSmsMessageStatus): CheckingSmsMessageStatusRequest {
 
-        $model = new CheckingSMSMessageStatusRequest();
-        $model->setSmsID($checkingSMSMessageStatus->getSMSModeSmsID());
+        $model = new CheckingSmsMessageStatusRequest();
+        $model->setSmsID($checkingSmsMessageStatus->getSmsModeSmsID());
 
         return $model;
     }
@@ -94,35 +94,35 @@ class RequestFactory {
     /**
      * Creates an creating API key request.
      *
-     * @return CreatingAPIKeyRequest Returns the creating API key request.
+     * @return CreatingApiKeyRequest Returns the creating API key request.
      */
-    public static function newCreatingAPIKeyRequest(): CreatingAPIKeyRequest {
-        return new CreatingAPIKeyRequest();
+    public static function newCreatingAPIKeyRequest(): CreatingApiKeyRequest {
+        return new CreatingApiKeyRequest();
     }
 
     /**
      * Creates a creating sub-account request.
      *
-     * @param CreatingSubAccountInterface $creatingSubAccount the creating sub-account.
+     * @param CreatingSubAccountInterface $creatingSubAccount The creating sub-account.
      * @return CreatingSubAccountRequest Returns the creating sub-account request.
      */
     public static function newCreatingSubAccountRequest(CreatingSubAccountInterface $creatingSubAccount): CreatingSubAccountRequest {
 
         $model = new CreatingSubAccountRequest();
-        $model->setAdresse($creatingSubAccount->getSMSModeAdresse());
-        $model->setCodePostal($creatingSubAccount->getSMSModeCodePostal());
-        $model->setDate($creatingSubAccount->getSMSModeDate());
-        $model->setEmail($creatingSubAccount->getSMSModeEmail());
-        $model->setFax($creatingSubAccount->getSMSModeFax());
-        $model->setMobile($creatingSubAccount->getSMSModeMobile());
-        $model->setNewPass($creatingSubAccount->getSMSModeNewPass());
-        $model->setNewPseudo($creatingSubAccount->getSMSModeNewPseudo());
-        $model->setNom($creatingSubAccount->getSMSModeNom());
-        $model->setPrenom($creatingSubAccount->getSMSModePrenom());
-        $model->setReference($creatingSubAccount->getSMSModeReference());
-        $model->setSociete($creatingSubAccount->getSMSModeSociete());
-        $model->setTelephone($creatingSubAccount->getSMSModeTelephone());
-        $model->setVille($creatingSubAccount->getSMSModeVille());
+        $model->setAdresse($creatingSubAccount->getSmsModeAdresse());
+        $model->setCodePostal($creatingSubAccount->getSmsModeCodePostal());
+        $model->setDate($creatingSubAccount->getSmsModeDate());
+        $model->setEmail($creatingSubAccount->getSmsModeEmail());
+        $model->setFax($creatingSubAccount->getSmsModeFax());
+        $model->setMobile($creatingSubAccount->getSmsModeMobile());
+        $model->setNewPass($creatingSubAccount->getSmsModeNewPass());
+        $model->setNewPseudo($creatingSubAccount->getSmsModeNewPseudo());
+        $model->setNom($creatingSubAccount->getSmsModeNom());
+        $model->setPrenom($creatingSubAccount->getSmsModePrenom());
+        $model->setReference($creatingSubAccount->getSmsModeReference());
+        $model->setSociete($creatingSubAccount->getSmsModeSociete());
+        $model->setTelephone($creatingSubAccount->getSmsModeTelephone());
+        $model->setVille($creatingSubAccount->getSmsModeVille());
 
         return $model;
     }
@@ -130,14 +130,14 @@ class RequestFactory {
     /**
      * Creates a deleting SMS request.
      *
-     * @param DeletingSMSInterface $deletingSMS the deleting SMS.
-     * @return DeletingSMSRequest Returns the deleting SMS request.
+     * @param DeletingSmsInterface $deletingSms The deleting SMS.
+     * @return DeletingSmsRequest Returns the deleting SMS request.
      */
-    public static function newDeletingSMSRequest(DeletingSMSInterface $deletingSMS): DeletingSMSRequest {
+    public static function newDeletingSmsRequest(DeletingSmsInterface $deletingSms): DeletingSmsRequest {
 
-        $model = new DeletingSMSRequest();
-        $model->setNumero($deletingSMS->getSMSModeNumero());
-        $model->setSmsID($deletingSMS->getSMSModeSmsID());
+        $model = new DeletingSmsRequest();
+        $model->setNumero($deletingSms->getSmsModeNumero());
+        $model->setSmsID($deletingSms->getSmsModeSmsID());
 
         return $model;
     }
@@ -145,13 +145,13 @@ class RequestFactory {
     /**
      * Creates a deleting sub-account request.
      *
-     * @param DeletingSubAccountInterface $deletingSubAccount the deleting sub-account.
+     * @param DeletingSubAccountInterface $deletingSubAccount The deleting sub-account.
      * @return DeletingSubAccountRequest Returns the deleting sub-account status request.
      */
     public static function newDeletingSubAccountRequest(DeletingSubAccountInterface $deletingSubAccount): DeletingSubAccountRequest {
 
         $model = new DeletingSubAccountRequest();
-        $model->setPseudoToDelete($deletingSubAccount->getSMSModePseudoToDelete());
+        $model->setPseudoToDelete($deletingSubAccount->getSmsModePseudoToDelete());
 
         return $model;
     }
@@ -159,13 +159,13 @@ class RequestFactory {
     /**
      * Creates a delivery report request.
      *
-     * @param DeliveryReportInterface $deliveryReport the delivery report.
+     * @param DeliveryReportInterface $deliveryReport The delivery report.
      * @return DeliveryReportRequest Returns the delivery report request.
      */
     public static function newDeliveryReportRequest(DeliveryReportInterface $deliveryReport): DeliveryReportRequest {
 
         $model = new DeliveryReportRequest();
-        $model->setSmsID($deliveryReport->getSMSModeSmsID());
+        $model->setSmsID($deliveryReport->getSmsModeSmsID());
 
         return $model;
     }
@@ -173,16 +173,16 @@ class RequestFactory {
     /**
      * Creates a retrieving SMS reply request.
      *
-     * @param RetrievingSMSReplyInterface $retrievingSMSReply the retrieving SMS reply.
-     * @return RetrievingSMSReplyRequest Returns the retrieving SMS reply request.
+     * @param RetrievingSmsReplyInterface $retrievingSmsReply The retrieving SMS reply.
+     * @return RetrievingSmsReplyRequest Returns the retrieving SMS reply request.
      */
-    public static function newRetrievingSMSReplyRequest(RetrievingSMSReplyInterface $retrievingSMSReply): RetrievingSMSReplyRequest {
+    public static function newRetrievingSmsReplyRequest(RetrievingSmsReplyInterface $retrievingSmsReply): RetrievingSmsReplyRequest {
 
-        $model = new RetrievingSMSReplyRequest();
-        $model->setOffset($retrievingSMSReply->getSMSModeOffset());
-        $model->setEndDate($retrievingSMSReply->getSMSModeEndDate());
-        $model->setStart($retrievingSMSReply->getSMSModeStart());
-        $model->setStartDate($retrievingSMSReply->getSMSModeStartDate());
+        $model = new RetrievingSmsReplyRequest();
+        $model->setOffset($retrievingSmsReply->getSmsModeOffset());
+        $model->setEndDate($retrievingSmsReply->getSmsModeEndDate());
+        $model->setStart($retrievingSmsReply->getSmsModeStart());
+        $model->setStartDate($retrievingSmsReply->getSmsModeStartDate());
 
         return $model;
     }
@@ -190,19 +190,19 @@ class RequestFactory {
     /**
      * Creates a sending SMS batch request.
      *
-     * @param SendingSMSBatchInterface $sendingSMSBatch the sending SMS batch.
-     * @return SendingSMSBatchRequest Returns the sending SMS batch request.
+     * @param SendingSmsBatchInterface $sendingSmsBatch The sending SMS batch.
+     * @return SendingSmsBatchRequest Returns the sending SMS batch request.
      */
-    public static function newSendingSMSBatchRequest(SendingSMSBatchInterface $sendingSMSBatch): SendingSMSBatchRequest {
+    public static function newSendingSmsBatchRequest(SendingSmsBatchInterface $sendingSmsBatch): SendingSmsBatchRequest {
 
-        $model = new SendingSMSBatchRequest();
-        $model->setClasseMsg($sendingSMSBatch->getSMSModeClasseMsg());
-        $model->setDateEnvoi($sendingSMSBatch->getSMSModeDateEnvoi());
-        $model->setEmetteur($sendingSMSBatch->getSMSModeEmetteur());
-        $model->setFichier($sendingSMSBatch->getSMSModeFichier());
-        $model->setNbrMsg($sendingSMSBatch->getSMSModeNbrMsg());
-        $model->setNotificationUrl($sendingSMSBatch->getSMSModeNotificationUrl());
-        $model->setRefClient($sendingSMSBatch->getSMSModeRefClient());
+        $model = new SendingSmsBatchRequest();
+        $model->setClasseMsg($sendingSmsBatch->getSmsModeClasseMsg());
+        $model->setDateEnvoi($sendingSmsBatch->getSmsModeDateEnvoi());
+        $model->setEmetteur($sendingSmsBatch->getSmsModeEmetteur());
+        $model->setFichier($sendingSmsBatch->getSmsModeFichier());
+        $model->setNbrMsg($sendingSmsBatch->getSmsModeNbrMsg());
+        $model->setNotificationUrl($sendingSmsBatch->getSmsModeNotificationUrl());
+        $model->setRefClient($sendingSmsBatch->getSmsModeRefClient());
 
         return $model;
     }
@@ -210,25 +210,25 @@ class RequestFactory {
     /**
      * Creates a sending SMS message request.
      *
-     * @param SendingSMSMessageInterface $sendingSMSMessage the sending SMS message.
-     * @return SendingSMSMessageRequest Returns the sending SMS message request.
+     * @param SendingSmsMessageInterface $sendingSmsMessage The sending SMS message.
+     * @return SendingSmsMessageRequest Returns the sending SMS message request.
      */
-    public static function newSendingSMSMessageRequest(SendingSMSMessageInterface $sendingSMSMessage): SendingSMSMessageRequest {
+    public static function newSendingSmsMessageRequest(SendingSmsMessageInterface $sendingSmsMessage): SendingSmsMessageRequest {
 
-        $model = new SendingSMSMessageRequest();
-        $model->setClasseMsg($sendingSMSMessage->getSMSModeClasseMsg());
-        $model->setDateEnvoi($sendingSMSMessage->getSMSModeDateEnvoi());
-        $model->setEmetteur($sendingSMSMessage->getSMSModeEmetteur());
-        $model->setGroupe($sendingSMSMessage->getSMSModeGroupe());
-        $model->setMessage($sendingSMSMessage->getSMSModeMessage());
-        foreach ($sendingSMSMessage->getSMSModeNumero() as $current) {
+        $model = new SendingSmsMessageRequest();
+        $model->setClasseMsg($sendingSmsMessage->getSmsModeClasseMsg());
+        $model->setDateEnvoi($sendingSmsMessage->getSmsModeDateEnvoi());
+        $model->setEmetteur($sendingSmsMessage->getSmsModeEmetteur());
+        $model->setGroupe($sendingSmsMessage->getSmsModeGroupe());
+        $model->setMessage($sendingSmsMessage->getSmsModeMessage());
+        foreach ($sendingSmsMessage->getSmsModeNumero() as $current) {
             $model->addNumero($current);
         }
-        $model->setNbrMsg($sendingSMSMessage->getSMSModeNbrMsg());
-        $model->setNotificationUrl($sendingSMSMessage->getSMSModeNotificationUrl());
-        $model->setNotificationUrlReponse($sendingSMSMessage->getSMSModeNotificationUrlReponse());
-        $model->setRefClient($sendingSMSMessage->getSMSModeRefClient());
-        $model->setStop($sendingSMSMessage->getSMSModeStop());
+        $model->setNbrMsg($sendingSmsMessage->getSmsModeNbrMsg());
+        $model->setNotificationUrl($sendingSmsMessage->getSmsModeNotificationUrl());
+        $model->setNotificationUrlReponse($sendingSmsMessage->getSmsModeNotificationUrlReponse());
+        $model->setRefClient($sendingSmsMessage->getSmsModeRefClient());
+        $model->setStop($sendingSmsMessage->getSmsModeStop());
 
         return $model;
     }
@@ -236,19 +236,19 @@ class RequestFactory {
     /**
      * Creates a sending text-to-speech SMS request.
      *
-     * @param SendingTextToSpeechSMSInterface $sendingTextToSpeechSMS the sending text-to-speech SMS.
-     * @return SendingTextToSpeechSMSRequest Returns the sending text-to-speech SMS request.
+     * @param SendingTextToSpeechSmsInterface $sendingTextToSpeechSms The sending text-to-speech SMS.
+     * @return SendingTextToSpeechSmsRequest Returns the sending text-to-speech SMS request.
      */
-    public static function newSendingTextToSpeechSMSRequest(SendingTextToSpeechSMSInterface $sendingTextToSpeechSMS): SendingTextToSpeechSMSRequest {
+    public static function newSendingTextToSpeechSmsRequest(SendingTextToSpeechSmsInterface $sendingTextToSpeechSms): SendingTextToSpeechSmsRequest {
 
-        $model = new SendingTextToSpeechSMSRequest();
-        $model->setDateEnvoi($sendingTextToSpeechSMS->getSMSModeDateEnvoi());
-        $model->setLanguage($sendingTextToSpeechSMS->getSMSModeLanguage());
-        $model->setMessage($sendingTextToSpeechSMS->getSMSModeMessage());
-        foreach ($sendingTextToSpeechSMS->getSMSModeNumero() as $current) {
+        $model = new SendingTextToSpeechSmsRequest();
+        $model->setDateEnvoi($sendingTextToSpeechSms->getSmsModeDateEnvoi());
+        $model->setLanguage($sendingTextToSpeechSms->getSmsModeLanguage());
+        $model->setMessage($sendingTextToSpeechSms->getSmsModeMessage());
+        foreach ($sendingTextToSpeechSms->getSmsModeNumero() as $current) {
             $model->addNumero($current);
         }
-        $model->setTitle($sendingTextToSpeechSMS->getSMSModeTitle());
+        $model->setTitle($sendingTextToSpeechSms->getSmsModeTitle());
 
         return $model;
     }
@@ -256,25 +256,25 @@ class RequestFactory {
     /**
      * Creates a sending unicode SMS request.
      *
-     * @param SendingUnicodeSMSInterface $sendingUnicodeSMS the sending unicode SMS.
-     * @return SendingUnicodeSMSRequest Returns the sending unicode SMS request.
+     * @param SendingUnicodeSmsInterface $sendingUnicodeSms The sending unicode SMS.
+     * @return SendingUnicodeSmsRequest Returns the sending unicode SMS request.
      */
-    public static function newSendingUnicodeSMSRequest(SendingUnicodeSMSInterface $sendingUnicodeSMS): SendingUnicodeSMSRequest {
+    public static function newSendingUnicodeSmsRequest(SendingUnicodeSmsInterface $sendingUnicodeSms): SendingUnicodeSmsRequest {
 
-        $model = new SendingUnicodeSMSRequest();
-        $model->setClasseMsg($sendingUnicodeSMS->getSMSModeClasseMsg());
-        $model->setDateEnvoi($sendingUnicodeSMS->getSMSModeDateEnvoi());
-        $model->setEmetteur($sendingUnicodeSMS->getSMSModeEmetteur());
-        $model->setGroupe($sendingUnicodeSMS->getSMSModeGroupe());
-        $model->setMessage($sendingUnicodeSMS->getSMSModeMessage());
-        foreach ($sendingUnicodeSMS->getSMSModeNumero() as $current) {
+        $model = new SendingUnicodeSmsRequest();
+        $model->setClasseMsg($sendingUnicodeSms->getSmsModeClasseMsg());
+        $model->setDateEnvoi($sendingUnicodeSms->getSmsModeDateEnvoi());
+        $model->setEmetteur($sendingUnicodeSms->getSmsModeEmetteur());
+        $model->setGroupe($sendingUnicodeSms->getSmsModeGroupe());
+        $model->setMessage($sendingUnicodeSms->getSmsModeMessage());
+        foreach ($sendingUnicodeSms->getSmsModeNumero() as $current) {
             $model->addNumero($current);
         }
-        $model->setNbrMsg($sendingUnicodeSMS->getSMSModeNbrMsg());
-        $model->setNotificationUrl($sendingUnicodeSMS->getSMSModeNotificationUrl());
-        $model->setNotificationUrlReponse($sendingUnicodeSMS->getSMSModeNotificationUrlReponse());
-        $model->setRefClient($sendingUnicodeSMS->getSMSModeRefClient());
-        $model->setStop($sendingUnicodeSMS->getSMSModeStop());
+        $model->setNbrMsg($sendingUnicodeSms->getSmsModeNbrMsg());
+        $model->setNotificationUrl($sendingUnicodeSms->getSmsModeNotificationUrl());
+        $model->setNotificationUrlReponse($sendingUnicodeSms->getSmsModeNotificationUrlReponse());
+        $model->setRefClient($sendingUnicodeSms->getSmsModeRefClient());
+        $model->setStop($sendingUnicodeSms->getSmsModeStop());
 
         return $model;
     }
@@ -282,13 +282,13 @@ class RequestFactory {
     /**
      * Creates a sent SMS message list request.
      *
-     * @param SentSMSMessageListInterface $sentSMSMessageList the sent SMS message list.
-     * @return SentSMSMessageListRequest Returns the sent SMS message list request.
+     * @param SentSmsMessageListInterface $sentSmsMessageList The sent SMS message list.
+     * @return SentSmsMessageListRequest Returns the sent SMS message list request.
      */
-    public static function newSentSMSMessageListRequest(SentSMSMessageListInterface $sentSMSMessageList): SentSMSMessageListRequest {
+    public static function newSentSmsMessageListRequest(SentSmsMessageListInterface $sentSmsMessageList): SentSmsMessageListRequest {
 
-        $model = new SentSMSMessageListRequest();
-        $model->setOffset($sentSMSMessageList->getSMSModeOffset());
+        $model = new SentSmsMessageListRequest();
+        $model->setOffset($sentSmsMessageList->getSmsModeOffset());
 
         return $model;
     }
@@ -296,15 +296,15 @@ class RequestFactory {
     /**
      * Creates a transferring credits request.
      *
-     * @param TransferringCreditsInterface $transferringCredits the transferring credits.
+     * @param TransferringCreditsInterface $transferringCredits The transferring credits.
      * @return TransferringCreditsRequest Returns the transferring credits request.
      */
     public static function newTransferringCreditsRequest(TransferringCreditsInterface $transferringCredits): TransferringCreditsRequest {
 
         $model = new TransferringCreditsRequest();
-        $model->setCreditAmount($transferringCredits->getSMSModeCreditAmount());
-        $model->setReference($transferringCredits->getSMSModeReference());
-        $model->setTargetPseudo($transferringCredits->getSMSModeTargetPseudo());
+        $model->setCreditAmount($transferringCredits->getSmsModeCreditAmount());
+        $model->setReference($transferringCredits->getSmsModeReference());
+        $model->setTargetPseudo($transferringCredits->getSmsModeTargetPseudo());
 
         return $model;
     }

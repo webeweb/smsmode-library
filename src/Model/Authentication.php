@@ -9,15 +9,15 @@
  * file that was distributed with this source code.
  */
 
-namespace WBW\Library\SMSMode\Model;
+namespace WBW\Library\SmsMode\Model;
 
-use WBW\Library\SMSMode\Model\Attribute\StringAccessTokenTrait;
+use WBW\Library\SmsMode\Model\Attribute\StringAccessTokenTrait;
 
 /**
  * Authentication.
  *
  * @author webeweb <https://github.com/webeweb>
- * @package WBW\Library\SMSMode\Model
+ * @package WBW\Library\SmsMode\Model
  */
 class Authentication {
 

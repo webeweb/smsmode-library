@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace WBW\Library\SMSMode\Serializer;
+namespace WBW\Library\SmsMode\Serializer;
 
 use InvalidArgumentException;
 
@@ -17,7 +17,7 @@ use InvalidArgumentException;
  * Numero serializer.
  *
  * @author webeweb <https://github.com/webeweb>
- * @package WBW\Library\SMSMode\Serializer
+ * @package WBW\Library\SmsMode\Serializer
  */
 class NumeroSerializer {
 
@@ -29,7 +29,7 @@ class NumeroSerializer {
      * @throws InvalidArgumentException Throws an invalid argument exception if the numero is invalid.
      */
     public static function checkNumero(string $numero): void {
-        if (0 === preg_match("/^[0-9]+$/", $numero)) {
+        if (0 === preg_match("/^\d+$/", $numero)) {
             throw new InvalidArgumentException(sprintf('The numero "%s" is invalid', $numero));
         }
     }

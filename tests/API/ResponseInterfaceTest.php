@@ -9,16 +9,16 @@
  * file that was distributed with this source code.
  */
 
-namespace WBW\Library\SMSMode\Tests\API;
+namespace WBW\Library\SmsMode\Tests\API;
 
-use WBW\Library\SMSMode\API\ResponseInterface;
-use WBW\Library\SMSMode\Tests\AbstractTestCase;
+use WBW\Library\SmsMode\API\ResponseInterface;
+use WBW\Library\SmsMode\Tests\AbstractTestCase;
 
 /**
  * Response interface test.
  *
  * @author webeweb <https://github.com/webeweb>
- * @package WBW\Library\SMSMode\Tests\API
+ * @package WBW\Library\SmsMode\Tests\API
  */
 class ResponseInterfaceTest extends AbstractTestCase {
 

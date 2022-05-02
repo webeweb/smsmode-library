@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace WBW\Library\SMSMode\Request;
+namespace WBW\Library\SmsMode\Request;
 
 use WBW\Library\Traits\Strings\StringReferenceTrait;
 
@@ -17,7 +17,7 @@ use WBW\Library\Traits\Strings\StringReferenceTrait;
  * Transferring credits request.
  *
  * @author webeweb <https://github.com/webeweb>
- * @package WBW\Library\SMSMode\Request
+ * @package WBW\Library\SmsMode\Request
  */
 class TransferringCreditsRequest extends AbstractRequest {
 

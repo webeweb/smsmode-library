@@ -9,18 +9,18 @@
  * file that was distributed with this source code.
  */
 
-namespace WBW\Library\SMSMode\Tests\Response;
+namespace WBW\Library\SmsMode\Tests\Response;
 
-use WBW\Library\SMSMode\API\ResponseInterface;
-use WBW\Library\SMSMode\Response\AbstractResponse;
-use WBW\Library\SMSMode\Tests\AbstractTestCase;
-use WBW\Library\SMSMode\Tests\Fixtures\Response\TestResponse;
+use WBW\Library\SmsMode\API\ResponseInterface;
+use WBW\Library\SmsMode\Response\AbstractResponse;
+use WBW\Library\SmsMode\Tests\AbstractTestCase;
+use WBW\Library\SmsMode\Tests\Fixtures\Response\TestResponse;
 
 /**
  * Abstract response test.
  *
  * @author webeweb <https://github.com/webeweb>
- * @package WBW\Library\SMSMode\Tests\Response
+ * @package WBW\Library\SmsMode\Tests\Response
  */
 class AbstractResponseTest extends AbstractTestCase {
 

@@ -9,16 +9,16 @@
  * file that was distributed with this source code.
  */
 
-namespace WBW\Library\SMSMode\Tests\Model\Attribute;
+namespace WBW\Library\SmsMode\Tests\Model\Attribute;
 
-use WBW\Library\SMSMode\Tests\AbstractTestCase;
-use WBW\Library\SMSMode\Tests\Fixtures\Model\Attribute\TestStringResponseIDTrait;
+use WBW\Library\SmsMode\Tests\AbstractTestCase;
+use WBW\Library\SmsMode\Tests\Fixtures\Model\Attribute\TestStringResponseIDTrait;
 
 /**
  * String response ID trait test.
  *
  * @author webeweb <https://github.com/webeweb>
- * @package WBW\Library\SMSMode\Tests\Model\Attribute
+ * @package WBW\Library\SmsMode\Tests\Model\Attribute
  */
 class StringResponseIDTraitTest extends AbstractTestCase {
 

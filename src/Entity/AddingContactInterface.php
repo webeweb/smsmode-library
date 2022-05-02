@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace WBW\Library\SMSMode\Entity;
+namespace WBW\Library\SmsMode\Entity;
 
 use DateTime;
 
@@ -17,56 +17,56 @@ use DateTime;
  * Adding contact interface.
  *
  * @author webeweb <https://github.com/webeweb>
- * @package WBW\Library\SMSMode\Entity
+ * @package WBW\Library\SmsMode\Entity
  */
-interface AddingContactInterface extends SMSModeEntityInterface {
+interface AddingContactInterface extends SmsModeEntityInterface {
 
     /**
      * Get the date.
      *
      * @return DateTime|null Returns the date.
      */
-    public function getSMSModeDate(): ?Datetime;
+    public function getSmsModeDate(): ?Datetime;
 
     /**
      * Get the groupes.
      *
      * @return string[] Returns the groupes.
      */
-    public function getSMSModeGroupes(): array;
+    public function getSmsModeGroupes(): array;
 
     /**
      * Get the mobile.
      *
      * @return string|null Returns the mobile.
      */
-    public function getSMSModeMobile(): ?string;
+    public function getSmsModeMobile(): ?string;
 
     /**
      * Get the nom.
      *
      * @return string|null Returns the nom.
      */
-    public function getSMSModeNom(): ?string;
+    public function getSmsModeNom(): ?string;
 
     /**
      * Get the other.
      *
      * @return string|null Returns the other.
      */
-    public function getSMSModeOther(): ?string;
+    public function getSmsModeOther(): ?string;
 
     /**
      * Get the prenom.
      *
      * @return string|null Returns the prenom.
      */
-    public function getSMSModePrenom(): ?string;
+    public function getSmsModePrenom(): ?string;
 
     /**
      * Get the societe.
      *
      * @return string|null Returns the societe.
      */
-    public function getSMSModeSociete(): ?string;
+    public function getSmsModeSociete(): ?string;
 }

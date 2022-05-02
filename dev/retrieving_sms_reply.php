@@ -11,9 +11,9 @@
 
 require_once __DIR__ . "/../vendor/autoload.php";
 
-use WBW\Library\SMSMode\Model\Authentication;
-use WBW\Library\SMSMode\Provider\ApiProvider;
-use WBW\Library\SMSMode\Request\RetrievingSMSReplyRequest;
+use WBW\Library\SmsMode\Model\Authentication;
+use WBW\Library\SmsMode\Provider\ApiProvider;
+use WBW\Library\SmsMode\Request\RetrievingSmsReplyRequest;
 
 // Create the API provider.
 $provider = new ApiProvider(new Authentication());
@@ -27,7 +27,7 @@ $provider->getAuthentication()->setPass("pass");
 // $provider->getAuthentication()->setAccessToken("accessToken");
 
 // Create a Retrieving SMS reply request.
-$request = new RetrievingSMSReplyRequest();
+$request = new RetrievingSmsReplyRequest();
 $request->setStart(0);
 $request->setOffset(10);
 
@@ -36,13 +36,13 @@ $request->setOffset(10);
 // $request->setEndDate(new DateTime("2017-09-15 00:00:00"));
 
 // Call the API and get the response.
-$response = $provider->retrievingSMSReply($request);
+$response = $provider->retrievingSmsReply($request);
 
 // Handle the response.
 echo "Code: " . $response->getCode() . "\n";
 echo "Description: " . $response->getDescription() . "\n\n";
 
-foreach ($response->getSMSReplies() as $current) {
+foreach ($response->getSmsReplies() as $current) {
 
     echo "\n";
     echo "Response ID: " . $current->getResponseID() . "\n";

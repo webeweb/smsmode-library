@@ -9,19 +9,19 @@
  * file that was distributed with this source code.
  */
 
-namespace WBW\Library\SMSMode\Tests\Model\Attribute;
+namespace WBW\Library\SmsMode\Tests\Model\Attribute;
 
 use Exception;
 use InvalidArgumentException;
-use WBW\Library\SMSMode\API\SendingSMSBatchInterface;
-use WBW\Library\SMSMode\Tests\AbstractTestCase;
-use WBW\Library\SMSMode\Tests\Fixtures\Model\Attribute\TestIntegerClasseMsgTrait;
+use WBW\Library\SmsMode\API\SendingSmsBatchInterface;
+use WBW\Library\SmsMode\Tests\AbstractTestCase;
+use WBW\Library\SmsMode\Tests\Fixtures\Model\Attribute\TestIntegerClasseMsgTrait;
 
 /**
  * Integer classe msg trait test.
  *
  * @author webeweb <https://github.com/webeweb>
- * @package WBW\Library\SMSMode\Tests\Model\Attribute
+ * @package WBW\Library\SmsMode\Tests\Model\Attribute
  */
 class IntegerClasseMsgTraitTest extends AbstractTestCase {
 
@@ -35,8 +35,8 @@ class IntegerClasseMsgTraitTest extends AbstractTestCase {
         $obj = new TestIntegerClasseMsgTrait();
 
         $res = [
-            SendingSMSBatchInterface::CLASSE_MSG_SMS,
-            SendingSMSBatchInterface::CLASSE_MSG_SMS_PRO,
+            SendingSmsBatchInterface::CLASSE_MSG_SMS,
+            SendingSmsBatchInterface::CLASSE_MSG_SMS_PRO,
         ];
         $this->assertEquals($res, $obj->enumClasseMsg());
     }
@@ -50,8 +50,8 @@ class IntegerClasseMsgTraitTest extends AbstractTestCase {
 
         $obj = new TestIntegerClasseMsgTrait();
 
-        $obj->setClasseMsg(SendingSMSBatchInterface::CLASSE_MSG_SMS);
-        $this->assertEquals(SendingSMSBatchInterface::CLASSE_MSG_SMS, $obj->getClasseMsg());
+        $obj->setClasseMsg(SendingSmsBatchInterface::CLASSE_MSG_SMS);
+        $this->assertEquals(SendingSmsBatchInterface::CLASSE_MSG_SMS, $obj->getClasseMsg());
 
         $obj->setClasseMsg(null);
         $this->assertNull($obj->getClasseMsg());

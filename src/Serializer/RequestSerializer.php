@@ -9,19 +9,19 @@
  * file that was distributed with this source code.
  */
 
-namespace WBW\Library\SMSMode\Serializer;
+namespace WBW\Library\SmsMode\Serializer;
 
 use DateTime;
 use InvalidArgumentException;
 use Symfony\Component\Yaml\Yaml;
-use WBW\Library\SMSMode\API\RequestInterface;
+use WBW\Library\SmsMode\API\RequestInterface;
 use WBW\Library\Types\Helper\ArrayHelper;
 
 /**
  * Request serializer.
  *
  * @author webeweb <https://github.com/webeweb>
- * @package WBW\Library\SMSMode\Serializer
+ * @package WBW\Library\SmsMode\Serializer
  */
 class RequestSerializer {
 

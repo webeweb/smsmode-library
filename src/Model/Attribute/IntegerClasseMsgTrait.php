@@ -9,16 +9,16 @@
  * file that was distributed with this source code.
  */
 
-namespace WBW\Library\SMSMode\Model\Attribute;
+namespace WBW\Library\SmsMode\Model\Attribute;
 
 use InvalidArgumentException;
-use WBW\Library\SMSMode\API\SendingSMSBatchInterface;
+use WBW\Library\SmsMode\API\SendingSmsBatchInterface;
 
 /**
  * Integer classe msg trait.
  *
  * @author webeweb <https://github.com/webeweb>
- * @package WBW\Library\SMSMode\Model\Attribute
+ * @package WBW\Library\SmsMode\Model\Attribute
  */
 trait IntegerClasseMsgTrait {
 
@@ -36,8 +36,8 @@ trait IntegerClasseMsgTrait {
      */
     public function enumClasseMsg(): array {
         return [
-            SendingSMSBatchInterface::CLASSE_MSG_SMS,
-            SendingSMSBatchInterface::CLASSE_MSG_SMS_PRO,
+            SendingSmsBatchInterface::CLASSE_MSG_SMS,
+            SendingSmsBatchInterface::CLASSE_MSG_SMS_PRO,
         ];
     }
 

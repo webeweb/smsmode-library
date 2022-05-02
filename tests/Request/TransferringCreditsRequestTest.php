@@ -9,16 +9,16 @@
  * file that was distributed with this source code.
  */
 
-namespace WBW\Library\SMSMode\Tests\Request;
+namespace WBW\Library\SmsMode\Tests\Request;
 
-use WBW\Library\SMSMode\Request\TransferringCreditsRequest;
-use WBW\Library\SMSMode\Tests\AbstractTestCase;
+use WBW\Library\SmsMode\Request\TransferringCreditsRequest;
+use WBW\Library\SmsMode\Tests\AbstractTestCase;
 
 /**
  * Transferring credits request test.
  *
  * @author webeweb <https://github.com/webeweb>
- * @package WBW\Library\SMSMode\Tests\Request
+ * @package WBW\Library\SmsMode\Tests\Request
  */
 class TransferringCreditsRequestTest extends AbstractTestCase {
 

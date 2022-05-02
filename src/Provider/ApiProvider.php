@@ -9,49 +9,49 @@
  * file that was distributed with this source code.
  */
 
-namespace WBW\Library\SMSMode\Provider;
+namespace WBW\Library\SmsMode\Provider;
 
 use GuzzleHttp\Exception\ClientException;
 use GuzzleHttp\Exception\GuzzleException;
 use InvalidArgumentException;
 use WBW\Library\Provider\Exception\ApiException;
-use WBW\Library\SMSMode\Request\AccountBalanceRequest;
-use WBW\Library\SMSMode\Request\AddingContactRequest;
-use WBW\Library\SMSMode\Request\CheckingSMSMessageStatusRequest;
-use WBW\Library\SMSMode\Request\CreatingAPIKeyRequest;
-use WBW\Library\SMSMode\Request\CreatingSubAccountRequest;
-use WBW\Library\SMSMode\Request\DeletingSMSRequest;
-use WBW\Library\SMSMode\Request\DeletingSubAccountRequest;
-use WBW\Library\SMSMode\Request\DeliveryReportRequest;
-use WBW\Library\SMSMode\Request\RetrievingSMSReplyRequest;
-use WBW\Library\SMSMode\Request\SendingSMSBatchRequest;
-use WBW\Library\SMSMode\Request\SendingSMSMessageRequest;
-use WBW\Library\SMSMode\Request\SendingTextToSpeechSMSRequest;
-use WBW\Library\SMSMode\Request\SendingUnicodeSMSRequest;
-use WBW\Library\SMSMode\Request\SentSMSMessageListRequest;
-use WBW\Library\SMSMode\Request\TransferringCreditsRequest;
-use WBW\Library\SMSMode\Response\AccountBalanceResponse;
-use WBW\Library\SMSMode\Response\AddingContactResponse;
-use WBW\Library\SMSMode\Response\CheckingSMSMessageStatusResponse;
-use WBW\Library\SMSMode\Response\CreatingAPIKeyResponse;
-use WBW\Library\SMSMode\Response\CreatingSubAccountResponse;
-use WBW\Library\SMSMode\Response\DeletingSMSResponse;
-use WBW\Library\SMSMode\Response\DeletingSubAccountResponse;
-use WBW\Library\SMSMode\Response\DeliveryReportResponse;
-use WBW\Library\SMSMode\Response\RetrievingSMSReplyResponse;
-use WBW\Library\SMSMode\Response\SendingSMSBatchResponse;
-use WBW\Library\SMSMode\Response\SendingSMSMessageResponse;
-use WBW\Library\SMSMode\Response\SendingTextToSpeechSMSResponse;
-use WBW\Library\SMSMode\Response\SendingUnicodeSMSResponse;
-use WBW\Library\SMSMode\Response\SentSMSMessageListResponse;
-use WBW\Library\SMSMode\Response\TransferringCreditsResponse;
-use WBW\Library\SMSMode\Serializer\ResponseDeserializer;
+use WBW\Library\SmsMode\Request\AccountBalanceRequest;
+use WBW\Library\SmsMode\Request\AddingContactRequest;
+use WBW\Library\SmsMode\Request\CheckingSmsMessageStatusRequest;
+use WBW\Library\SmsMode\Request\CreatingApiKeyRequest;
+use WBW\Library\SmsMode\Request\CreatingSubAccountRequest;
+use WBW\Library\SmsMode\Request\DeletingSmsRequest;
+use WBW\Library\SmsMode\Request\DeletingSubAccountRequest;
+use WBW\Library\SmsMode\Request\DeliveryReportRequest;
+use WBW\Library\SmsMode\Request\RetrievingSmsReplyRequest;
+use WBW\Library\SmsMode\Request\SendingSmsBatchRequest;
+use WBW\Library\SmsMode\Request\SendingSmsMessageRequest;
+use WBW\Library\SmsMode\Request\SendingTextToSpeechSmsRequest;
+use WBW\Library\SmsMode\Request\SendingUnicodeSmsRequest;
+use WBW\Library\SmsMode\Request\SentSmsMessageListRequest;
+use WBW\Library\SmsMode\Request\TransferringCreditsRequest;
+use WBW\Library\SmsMode\Response\AccountBalanceResponse;
+use WBW\Library\SmsMode\Response\AddingContactResponse;
+use WBW\Library\SmsMode\Response\CheckingSmsMessageStatusResponse;
+use WBW\Library\SmsMode\Response\CreatingApiKeyResponse;
+use WBW\Library\SmsMode\Response\CreatingSubAccountResponse;
+use WBW\Library\SmsMode\Response\DeletingSmsResponse;
+use WBW\Library\SmsMode\Response\DeletingSubAccountResponse;
+use WBW\Library\SmsMode\Response\DeliveryReportResponse;
+use WBW\Library\SmsMode\Response\RetrievingSmsReplyResponse;
+use WBW\Library\SmsMode\Response\SendingSmsBatchResponse;
+use WBW\Library\SmsMode\Response\SendingSmsMessageResponse;
+use WBW\Library\SmsMode\Response\SendingTextToSpeechSmsResponse;
+use WBW\Library\SmsMode\Response\SendingUnicodeSmsResponse;
+use WBW\Library\SmsMode\Response\SentSmsMessageListResponse;
+use WBW\Library\SmsMode\Response\TransferringCreditsResponse;
+use WBW\Library\SmsMode\Serializer\ResponseDeserializer;
 
 /**
  * API provider.
  *
  * @author webeweb <https://github.com/webeweb>
- * @package WBW\Library\SMSMode\Provider
+ * @package WBW\Library\SmsMode\Provider
  */
 class ApiProvider extends AbstractProvider {
 
@@ -94,31 +94,31 @@ class ApiProvider extends AbstractProvider {
     /**
      * Checking SMS message status.
      *
-     * @param CheckingSMSMessageStatusRequest $request The checking SMS message status request.
-     * @return CheckingSMSMessageStatusResponse Returns the checking SMS message status response.
+     * @param CheckingSmsMessageStatusRequest $request The checking SMS message status request.
+     * @return CheckingSmsMessageStatusResponse Returns the checking SMS message status response.
      * @throws InvalidArgumentException Throws an invalid argument exception if a parameter is missing.
      * @throws GuzzleException Throws a Guzzle exception if an error occurs.
      * @throws ApiException Throws an API exception if an error occurs.
      */
-    public function checkingSMSMessageStatus(CheckingSMSMessageStatusRequest $request): CheckingSMSMessageStatusResponse {
+    public function checkingSmsMessageStatus(CheckingSmsMessageStatusRequest $request): CheckingSmsMessageStatusResponse {
 
         $queryData = $this->getRequestSerializer()->serialize($request);
 
         $rawResponse = $this->callApi($request, $queryData);
 
-        return ResponseDeserializer::deserializeCheckingSMSMessageStatusResponse($rawResponse);
+        return ResponseDeserializer::deserializeCheckingSmsMessageStatusResponse($rawResponse);
     }
 
     /**
      * Creating API key.
      *
-     * @param CreatingAPIKeyRequest $request The creating API key request.
-     * @return CreatingAPIKeyResponse Returns the creating API key response.
+     * @param CreatingApiKeyRequest $request The creating API key request.
+     * @return CreatingApiKeyResponse Returns the creating API key response.
      * @throws InvalidArgumentException Throws an invalid argument exception if a parameter is missing.
      * @throws GuzzleException Throws a Guzzle exception if an error occurs.
      * @throws ApiException Throws an API exception if an error occurs.
      */
-    public function creatingAPIKey(CreatingAPIKeyRequest $request): CreatingAPIKeyResponse {
+    public function creatingAPIKey(CreatingApiKeyRequest $request): CreatingApiKeyResponse {
 
         $queryData = $this->getRequestSerializer()->serialize($request);
 
@@ -159,19 +159,19 @@ class ApiProvider extends AbstractProvider {
     /**
      * Deleting SMS.
      *
-     * @param DeletingSMSRequest $request The deleting SMS request.
-     * @return DeletingSMSResponse Returns the delivery SMS message response.
+     * @param DeletingSmsRequest $request The deleting SMS request.
+     * @return DeletingSmsResponse Returns the delivery SMS message response.
      * @throws InvalidArgumentException Throws an invalid argument exception if a parameter is missing.
      * @throws GuzzleException Throws a Guzzle exception if an error occurs.
      * @throws ApiException Throws an API exception if an error occurs.
      */
-    public function deletingSMS(DeletingSMSRequest $request): DeletingSMSResponse {
+    public function deletingSms(DeletingSmsRequest $request): DeletingSmsResponse {
 
         $queryData = $this->getRequestSerializer()->serialize($request);
 
         $rawResponse = $this->callApi($request, $queryData);
 
-        return ResponseDeserializer::deserializeDeletingSMSResponse($rawResponse);
+        return ResponseDeserializer::deserializeDeletingSmsResponse($rawResponse);
     }
 
     /**
@@ -213,31 +213,31 @@ class ApiProvider extends AbstractProvider {
     /**
      * Retrieving SMS reply.
      *
-     * @param RetrievingSMSReplyRequest $request The retrieving SMS reply request.
-     * @return RetrievingSMSReplyResponse Returns the retrieving SMS reply response.
+     * @param RetrievingSmsReplyRequest $request The retrieving SMS reply request.
+     * @return RetrievingSmsReplyResponse Returns the retrieving SMS reply response.
      * @throws InvalidArgumentException Throws an invalid argument exception if a parameter is missing.
      * @throws GuzzleException Throws a Guzzle exception if an error occurs.
      * @throws ApiException Throws an API exception if an error occurs.
      */
-    public function retrievingSMSReply(RetrievingSMSReplyRequest $request): RetrievingSMSReplyResponse {
+    public function retrievingSmsReply(RetrievingSmsReplyRequest $request): RetrievingSmsReplyResponse {
 
         $queryData = $this->getRequestSerializer()->serialize($request);
 
         $rawResponse = $this->callApi($request, $queryData);
 
-        return ResponseDeserializer::deserializeRetrievingSMSReplyResponse($rawResponse);
+        return ResponseDeserializer::deserializeRetrievingSmsReplyResponse($rawResponse);
     }
 
     /**
      * Sending SMS batch.
      *
-     * @param SendingSMSBatchRequest $request The sending SMS batch request.
-     * @return SendingSMSBatchResponse Returns the sending SMS message response.
+     * @param SendingSmsBatchRequest $request The sending SMS batch request.
+     * @return SendingSmsBatchResponse Returns the sending SMS message response.
      * @throws InvalidArgumentException Throws an invalid argument exception if a parameter is missing.
      * @throws GuzzleException Throws a Guzzle exception if an error occurs.
      * @throws ApiException Throws an API exception if an error occurs.
      */
-    public function sendingSMSBatch(SendingSMSBatchRequest $request): SendingSMSBatchResponse {
+    public function sendingSmsBatch(SendingSmsBatchRequest $request): SendingSmsBatchResponse {
 
         $queryData = $this->getRequestSerializer()->serialize($request);
 
@@ -254,19 +254,19 @@ class ApiProvider extends AbstractProvider {
 
         $rawResponse = $this->callApi($request, $queryData, $postData);
 
-        return ResponseDeserializer::deserializeSendingSMSBatchResponse($rawResponse);
+        return ResponseDeserializer::deserializeSendingSmsBatchResponse($rawResponse);
     }
 
     /**
      * Sending SMS message.
      *
-     * @param SendingSMSMessageRequest $request The sending SMS message request.
-     * @return SendingSMSMessageResponse Returns the sending SMS message response.
+     * @param SendingSmsMessageRequest $request The sending SMS message request.
+     * @return SendingSmsMessageResponse Returns the sending SMS message response.
      * @throws InvalidArgumentException Throws an invalid argument exception if a parameter is missing.
      * @throws GuzzleException Throws a Guzzle exception if an error occurs.
      * @throws ApiException Throws an API exception if an error occurs.
      */
-    public function sendingSMSMessage(SendingSMSMessageRequest $request): SendingSMSMessageResponse {
+    public function sendingSmsMessage(SendingSmsMessageRequest $request): SendingSmsMessageResponse {
 
         $queryData = $this->getRequestSerializer()->serialize($request);
 
@@ -278,19 +278,19 @@ class ApiProvider extends AbstractProvider {
 
         $rawResponse = $this->callApi($request, $queryData, $postData);
 
-        return ResponseDeserializer::deserializeSendingSMSMessageResponse($rawResponse);
+        return ResponseDeserializer::deserializeSendingSmsMessageResponse($rawResponse);
     }
 
     /**
      * Sending text-to-speech SMS request.
      *
-     * @param SendingTextToSpeechSMSRequest $request The sending text-to-speech SMS request.
-     * @return SendingTextToSpeechSMSResponse Returns the sending text-to-speech response.
+     * @param SendingTextToSpeechSmsRequest $request The sending text-to-speech SMS request.
+     * @return SendingTextToSpeechSmsResponse Returns the sending text-to-speech response.
      * @throws InvalidArgumentException Throws an invalid argument exception if a parameter is missing.
      * @throws GuzzleException Throws a Guzzle exception if an error occurs.
      * @throws ApiException Throws an API exception if an error occurs.
      */
-    public function sendingTextToSpeechSMS(SendingTextToSpeechSMSRequest $request): SendingTextToSpeechSMSResponse {
+    public function sendingTextToSpeechSms(SendingTextToSpeechSmsRequest $request): SendingTextToSpeechSmsResponse {
 
         $queryData = $this->getRequestSerializer()->serialize($request);
 
@@ -302,19 +302,19 @@ class ApiProvider extends AbstractProvider {
 
         $rawResponse = $this->callApi($request, $queryData, $postData);
 
-        return ResponseDeserializer::deserializeSendingTextToSpeechSMSResponse($rawResponse);
+        return ResponseDeserializer::deserializeSendingTextToSpeechSmsResponse($rawResponse);
     }
 
     /**
      * Sending unicode SMS request.
      *
-     * @param SendingUnicodeSMSRequest $request The sending unicode SMS request.
-     * @return SendingUnicodeSMSResponse Returns the sending unicode response.
+     * @param SendingUnicodeSmsRequest $request The sending unicode SMS request.
+     * @return SendingUnicodeSmsResponse Returns the sending unicode response.
      * @throws InvalidArgumentException Throws an invalid argument exception if a parameter is missing.
      * @throws GuzzleException Throws a Guzzle exception if an error occurs.
      * @throws ApiException Throws an API exception if an error occurs.
      */
-    public function sendingUnicodeSMS(SendingUnicodeSMSRequest $request): SendingUnicodeSMSResponse {
+    public function sendingUnicodeSms(SendingUnicodeSmsRequest $request): SendingUnicodeSmsResponse {
 
         $queryData = $this->getRequestSerializer()->serialize($request);
 
@@ -326,25 +326,25 @@ class ApiProvider extends AbstractProvider {
 
         $rawResponse = $this->callApi($request, $queryData, $postData);
 
-        return ResponseDeserializer::deserializeSendingUnicodeSMSResponse($rawResponse);
+        return ResponseDeserializer::deserializeSendingUnicodeSmsResponse($rawResponse);
     }
 
     /**
      * Sent SMS message list.
      *
-     * @param SentSMSMessageListRequest $request The sent SMS message list request.
-     * @return SentSMSMessageListResponse Returns the sent SMS message list response.
+     * @param SentSmsMessageListRequest $request The sent SMS message list request.
+     * @return SentSmsMessageListResponse Returns the sent SMS message list response.
      * @throws InvalidArgumentException Throws an invalid argument exception if a parameter is missing.
      * @throws GuzzleException Throws a Guzzle exception if an error occurs.
      * @throws ApiException Throws an API exception if an error occurs.
      */
-    public function sentSMSMessageList(SentSMSMessageListRequest $request): SentSMSMessageListResponse {
+    public function sentSmsMessageList(SentSmsMessageListRequest $request): SentSmsMessageListResponse {
 
         $queryData = $this->getRequestSerializer()->serialize($request);
 
         $rawResponse = $this->callApi($request, $queryData);
 
-        return ResponseDeserializer::deserializeSentSMSMessageListResponse($rawResponse);
+        return ResponseDeserializer::deserializeSentSmsMessageListResponse($rawResponse);
     }
 
     /**

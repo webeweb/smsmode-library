@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace WBW\Library\SMSMode\Provider;
+namespace WBW\Library\SmsMode\Provider;
 
 use Exception;
 use GuzzleHttp\Client;
@@ -18,16 +18,16 @@ use InvalidArgumentException;
 use Psr\Log\LoggerInterface;
 use WBW\Library\Provider\AbstractProvider as BaseProvider;
 use WBW\Library\Provider\Exception\ApiException;
-use WBW\Library\SMSMode\Model\Authentication;
-use WBW\Library\SMSMode\Request\AbstractRequest;
-use WBW\Library\SMSMode\Serializer\RequestSerializer;
+use WBW\Library\SmsMode\Model\Authentication;
+use WBW\Library\SmsMode\Request\AbstractRequest;
+use WBW\Library\SmsMode\Serializer\RequestSerializer;
 use WBW\Library\Types\Helper\ArrayHelper;
 
 /**
  * Abstract provider.
  *
  * @author webeweb <https://github.com/webeweb>
- * @package WBW\Library\SMSMode\Provider
+ * @package WBW\Library\SmsMode\Provider
  * @abstract
  */
 abstract class AbstractProvider extends BaseProvider {

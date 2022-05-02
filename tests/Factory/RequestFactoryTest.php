@@ -9,34 +9,34 @@
  * file that was distributed with this source code.
  */
 
-namespace WBW\Library\SMSMode\Tests\Factory;
+namespace WBW\Library\SmsMode\Tests\Factory;
 
-use WBW\Library\SMSMode\API\SendingSMSBatchInterface;
-use WBW\Library\SMSMode\API\SendingSMSMessageInterface;
-use WBW\Library\SMSMode\API\SendingTextToSpeechSMSInterface;
-use WBW\Library\SMSMode\Factory\RequestFactory;
-use WBW\Library\SMSMode\Request\AccountBalanceRequest;
-use WBW\Library\SMSMode\Request\AddingContactRequest;
-use WBW\Library\SMSMode\Request\CheckingSMSMessageStatusRequest;
-use WBW\Library\SMSMode\Request\CreatingAPIKeyRequest;
-use WBW\Library\SMSMode\Request\CreatingSubAccountRequest;
-use WBW\Library\SMSMode\Request\DeletingSMSRequest;
-use WBW\Library\SMSMode\Request\DeletingSubAccountRequest;
-use WBW\Library\SMSMode\Request\DeliveryReportRequest;
-use WBW\Library\SMSMode\Request\RetrievingSMSReplyRequest;
-use WBW\Library\SMSMode\Request\SendingSMSBatchRequest;
-use WBW\Library\SMSMode\Request\SendingSMSMessageRequest;
-use WBW\Library\SMSMode\Request\SendingTextToSpeechSMSRequest;
-use WBW\Library\SMSMode\Request\SendingUnicodeSMSRequest;
-use WBW\Library\SMSMode\Request\SentSMSMessageListRequest;
-use WBW\Library\SMSMode\Request\TransferringCreditsRequest;
-use WBW\Library\SMSMode\Tests\AbstractTestCase;
+use WBW\Library\SmsMode\API\SendingSmsBatchInterface;
+use WBW\Library\SmsMode\API\SendingSmsMessageInterface;
+use WBW\Library\SmsMode\API\SendingTextToSpeechSmsInterface;
+use WBW\Library\SmsMode\Factory\RequestFactory;
+use WBW\Library\SmsMode\Request\AccountBalanceRequest;
+use WBW\Library\SmsMode\Request\AddingContactRequest;
+use WBW\Library\SmsMode\Request\CheckingSmsMessageStatusRequest;
+use WBW\Library\SmsMode\Request\CreatingApiKeyRequest;
+use WBW\Library\SmsMode\Request\CreatingSubAccountRequest;
+use WBW\Library\SmsMode\Request\DeletingSmsRequest;
+use WBW\Library\SmsMode\Request\DeletingSubAccountRequest;
+use WBW\Library\SmsMode\Request\DeliveryReportRequest;
+use WBW\Library\SmsMode\Request\RetrievingSmsReplyRequest;
+use WBW\Library\SmsMode\Request\SendingSmsBatchRequest;
+use WBW\Library\SmsMode\Request\SendingSmsMessageRequest;
+use WBW\Library\SmsMode\Request\SendingTextToSpeechSmsRequest;
+use WBW\Library\SmsMode\Request\SendingUnicodeSmsRequest;
+use WBW\Library\SmsMode\Request\SentSmsMessageListRequest;
+use WBW\Library\SmsMode\Request\TransferringCreditsRequest;
+use WBW\Library\SmsMode\Tests\AbstractTestCase;
 
 /**
  * Request factory test.
  *
  * @author webeweb <https://github.com/webeweb>
- * @package WBW\Library\SMSMode\Tests\Factory
+ * @package WBW\Library\SmsMode\Tests\Factory
  */
 class RequestFactoryTest extends AbstractTestCase {
 
@@ -70,14 +70,14 @@ class RequestFactoryTest extends AbstractTestCase {
     }
 
     /**
-     * Tests newCheckingSMSMessageStatusRequest()
+     * Tests newCheckingSmsMessageStatusRequest()
      *
      * @return void
      */
-    public function testNewCheckingSMSMessageStatusRequest(): void {
+    public function testNewCheckingSmsMessageStatusRequest(): void {
 
-        $res = RequestFactory::newCheckingSMSMessageStatusRequest($this->checkingSMSMessageStatus);
-        $this->assertInstanceOf(CheckingSMSMessageStatusRequest::class, $res);
+        $res = RequestFactory::newCheckingSmsMessageStatusRequest($this->checkingSmsMessageStatus);
+        $this->assertInstanceOf(CheckingSmsMessageStatusRequest::class, $res);
 
         $this->assertEquals("smsID", $res->getSmsID());
     }
@@ -90,7 +90,7 @@ class RequestFactoryTest extends AbstractTestCase {
     public function testNewCreatingAPIKeyRequest(): void {
 
         $res = RequestFactory::newCreatingAPIKeyRequest();
-        $this->assertInstanceOf(CreatingAPIKeyRequest::class, $res);
+        $this->assertInstanceOf(CreatingApiKeyRequest::class, $res);
     }
 
     /**
@@ -120,14 +120,14 @@ class RequestFactoryTest extends AbstractTestCase {
     }
 
     /**
-     * Tests newDeletingSMSRequest()
+     * Tests newDeletingSmsRequest()
      *
      * @return void
      */
-    public function testNewDeletingSMSRequest(): void {
+    public function testNewDeletingSmsRequest(): void {
 
-        $res = RequestFactory::newDeletingSMSRequest($this->deletingSMS);
-        $this->assertInstanceOf(DeletingSMSRequest::class, $res);
+        $res = RequestFactory::newDeletingSmsRequest($this->deletingSms);
+        $this->assertInstanceOf(DeletingSmsRequest::class, $res);
 
         $this->assertEquals("33600000000", $res->getNumero());
         $this->assertEquals("smsID", $res->getSmsID());
@@ -160,14 +160,14 @@ class RequestFactoryTest extends AbstractTestCase {
     }
 
     /**
-     * Tests newRetrievingSMSReplyRequest()
+     * Tests newRetrievingSmsReplyRequest()
      *
      * @return void
      */
-    public function testNewRetrievingSMSReplyRequest(): void {
+    public function testNewRetrievingSmsReplyRequest(): void {
 
-        $res = RequestFactory::newRetrievingSMSReplyRequest($this->retrievingSMSReply);
-        $this->assertInstanceOf(RetrievingSMSReplyRequest::class, $res);
+        $res = RequestFactory::newRetrievingSmsReplyRequest($this->retrievingSmsReply);
+        $this->assertInstanceOf(RetrievingSmsReplyRequest::class, $res);
 
         $this->assertEquals("2019-02-05 19:00:00", $res->getEndDate()->format("Y-m-d H:i:s"));
         $this->assertEquals(10, $res->getOffset());
@@ -176,16 +176,16 @@ class RequestFactoryTest extends AbstractTestCase {
     }
 
     /**
-     * Tests newSendingSMSBatchRequest()
+     * Tests newSendingSmsBatchRequest()
      *
      * @return void
      */
-    public function testNewSendingSMSBatchRequest(): void {
+    public function testNewSendingSmsBatchRequest(): void {
 
-        $res = RequestFactory::newSendingSMSBatchRequest($this->sendingSMSBatch);
-        $this->assertInstanceOf(SendingSMSBatchRequest::class, $res);
+        $res = RequestFactory::newSendingSmsBatchRequest($this->sendingSmsBatch);
+        $this->assertInstanceOf(SendingSmsBatchRequest::class, $res);
 
-        $this->assertEquals(SendingSMSBatchInterface::CLASSE_MSG_SMS, $res->getClasseMsg());
+        $this->assertEquals(SendingSmsBatchInterface::CLASSE_MSG_SMS, $res->getClasseMsg());
         $this->assertEquals("2019-02-05 18:00:00", $res->getDateEnvoi()->format("Y-m-d H:i:s"));
         $this->assertEquals("emetteur", $res->getEmetteur());
         $this->assertEquals($this->fichier, $res->getFichier());
@@ -195,16 +195,16 @@ class RequestFactoryTest extends AbstractTestCase {
     }
 
     /**
-     * Tests newSendingSMSMessageRequest()
+     * Tests newSendingSmsMessageRequest()
      *
      * @return void
      */
-    public function testNewSendingSMSMessageRequest(): void {
+    public function testNewSendingSmsMessageRequest(): void {
 
-        $res = RequestFactory::newSendingSMSMessageRequest($this->sendingSMSMessage);
-        $this->assertInstanceOf(SendingSMSMessageRequest::class, $res);
+        $res = RequestFactory::newSendingSmsMessageRequest($this->sendingSmsMessage);
+        $this->assertInstanceOf(SendingSmsMessageRequest::class, $res);
 
-        $this->assertEquals(SendingSMSBatchInterface::CLASSE_MSG_SMS, $res->getClasseMsg());
+        $this->assertEquals(SendingSmsBatchInterface::CLASSE_MSG_SMS, $res->getClasseMsg());
         $this->assertEquals("2019-02-05 18:00:00", $res->getDateEnvoi()->format("Y-m-d H:i:s"));
         $this->assertEquals("emetteur", $res->getEmetteur());
         $this->assertEquals("groupe", $res->getGroupe());
@@ -214,37 +214,37 @@ class RequestFactoryTest extends AbstractTestCase {
         $this->assertEquals("notificationUrlReponse", $res->getNotificationUrlReponse());
         $this->assertEquals(["33600000000"], $res->getNumero());
         $this->assertEquals("refClient", $res->getRefClient());
-        $this->assertEquals(SendingSMSMessageInterface::STOP_ALWAYS, $res->getStop());
+        $this->assertEquals(SendingSmsMessageInterface::STOP_ALWAYS, $res->getStop());
     }
 
     /**
-     * Tests newSendingTextToSpeechSMSRequest()
+     * Tests newSendingTextToSpeechSmsRequest()
      *
      * @return void
      */
-    public function testNewSendingTextToSpeechSMSRequest(): void {
+    public function testNewSendingTextToSpeechSmsRequest(): void {
 
-        $res = RequestFactory::newSendingTextToSpeechSMSRequest($this->sendingTextToSpeechSMS);
-        $this->assertInstanceOf(SendingTextToSpeechSMSRequest::class, $res);
+        $res = RequestFactory::newSendingTextToSpeechSmsRequest($this->sendingTextToSpeechSms);
+        $this->assertInstanceOf(SendingTextToSpeechSmsRequest::class, $res);
 
         $this->assertEquals("2019-02-05 18:00:00", $res->getDateEnvoi()->format("Y-m-d H:i:s"));
         $this->assertEquals("message", $res->getMessage());
         $this->assertEquals(["33600000000"], $res->getNumero());
-        $this->assertEquals(SendingTextToSpeechSMSInterface::LANGUAGE_FR, $res->getLanguage());
+        $this->assertEquals(SendingTextToSpeechSmsInterface::LANGUAGE_FR, $res->getLanguage());
         $this->assertEquals("title", $res->getTitle());
     }
 
     /**
-     * Tests newSendingUnicodeSMSRequest()
+     * Tests newSendingUnicodeSmsRequest()
      *
      * @return void
      */
-    public function testNewSendingUnicodeSMSRequest(): void {
+    public function testNewSendingUnicodeSmsRequest(): void {
 
-        $res = RequestFactory::newSendingUnicodeSMSRequest($this->sendingUnicodeSMS);
-        $this->assertInstanceOf(SendingUnicodeSMSRequest::class, $res);
+        $res = RequestFactory::newSendingUnicodeSmsRequest($this->sendingUnicodeSms);
+        $this->assertInstanceOf(SendingUnicodeSmsRequest::class, $res);
 
-        $this->assertEquals(SendingSMSBatchInterface::CLASSE_MSG_SMS, $res->getClasseMsg());
+        $this->assertEquals(SendingSmsBatchInterface::CLASSE_MSG_SMS, $res->getClasseMsg());
         $this->assertEquals("2019-02-05 18:00:00", $res->getDateEnvoi()->format("Y-m-d H:i:s"));
         $this->assertEquals("emetteur", $res->getEmetteur());
         $this->assertEquals("groupe", $res->getGroupe());
@@ -254,18 +254,18 @@ class RequestFactoryTest extends AbstractTestCase {
         $this->assertEquals("notificationUrlReponse", $res->getNotificationUrlReponse());
         $this->assertEquals(["33600000000"], $res->getNumero());
         $this->assertEquals("refClient", $res->getRefClient());
-        $this->assertEquals(SendingSMSMessageInterface::STOP_ALWAYS, $res->getStop());
+        $this->assertEquals(SendingSmsMessageInterface::STOP_ALWAYS, $res->getStop());
     }
 
     /**
-     * Tests newSentSMSMessageListRequest()
+     * Tests newSentSmsMessageListRequest()
      *
      * @return void
      */
-    public function testNewSentSMSMessageListRequest(): void {
+    public function testNewSentSmsMessageListRequest(): void {
 
-        $res = RequestFactory::newSentSMSMessageListRequest($this->sentSMSMessageList);
-        $this->assertInstanceOf(SentSMSMessageListRequest::class, $res);
+        $res = RequestFactory::newSentSmsMessageListRequest($this->sentSmsMessageList);
+        $this->assertInstanceOf(SentSmsMessageListRequest::class, $res);
 
         $this->assertEquals(10, $res->getOffset());
     }

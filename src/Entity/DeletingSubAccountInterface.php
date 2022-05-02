@@ -9,20 +9,20 @@
  * file that was distributed with this source code.
  */
 
-namespace WBW\Library\SMSMode\Entity;
+namespace WBW\Library\SmsMode\Entity;
 
 /**
  * Deleting sub-account interface.
  *
  * @author webeweb <https://github.com/webeweb>
- * @package WBW\Library\SMSMode\Entity
+ * @package WBW\Library\SmsMode\Entity
  */
-interface DeletingSubAccountInterface extends SMSModeEntityInterface {
+interface DeletingSubAccountInterface extends SmsModeEntityInterface {
 
     /**
      * Get the pseudo to delete.
      *
      * @return string|null Returns the pseudo to delete.
      */
-    public function getSMSModePseudoToDelete(): ?string;
+    public function getSmsModePseudoToDelete(): ?string;
 }

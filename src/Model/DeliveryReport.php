@@ -9,16 +9,16 @@
  * file that was distributed with this source code.
  */
 
-namespace WBW\Library\SMSMode\Model;
+namespace WBW\Library\SmsMode\Model;
 
-use WBW\Library\SMSMode\Model\Attribute\StringNumeroTrait;
-use WBW\Library\SMSMode\Response\AbstractResponse;
+use WBW\Library\SmsMode\Model\Attribute\StringNumeroTrait;
+use WBW\Library\SmsMode\Response\AbstractResponse;
 
 /**
  * Delivery report.
  *
  * @author webeweb <https://github.com/webeweb>
- * @package WBW\Library\SMSMode\Model
+ * @package WBW\Library\SmsMode\Model
  */
 class DeliveryReport extends AbstractResponse {
 

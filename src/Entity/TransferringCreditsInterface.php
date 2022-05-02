@@ -9,34 +9,34 @@
  * file that was distributed with this source code.
  */
 
-namespace WBW\Library\SMSMode\Entity;
+namespace WBW\Library\SmsMode\Entity;
 
 /**
  * Transferring credits interface.
  *
  * @author webeweb <https://github.com/webeweb>
- * @package WBW\Library\SMSMode\Entity
+ * @package WBW\Library\SmsMode\Entity
  */
-interface TransferringCreditsInterface extends SMSModeEntityInterface {
+interface TransferringCreditsInterface extends SmsModeEntityInterface {
 
     /**
      * Get the credit amount.
      *
      * @return int|null Returns the credit amount.
      */
-    public function getSMSModeCreditAmount(): ?int;
+    public function getSmsModeCreditAmount(): ?int;
 
     /**
      * Get the reference.
      *
      * @return string|null Returns the reference.
      */
-    public function getSMSModeReference(): ?string;
+    public function getSmsModeReference(): ?string;
 
     /**
      * Get the target pseudo.
      *
      * @return string|null Returns the target pseudo.
      */
-    public function getSMSModeTargetPseudo(): ?string;
+    public function getSmsModeTargetPseudo(): ?string;
 }

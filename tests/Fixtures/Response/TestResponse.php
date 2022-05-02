@@ -9,15 +9,15 @@
  * file that was distributed with this source code.
  */
 
-namespace WBW\Library\SMSMode\Tests\Fixtures\Response;
+namespace WBW\Library\SmsMode\Tests\Fixtures\Response;
 
-use WBW\Library\SMSMode\Response\AbstractResponse;
+use WBW\Library\SmsMode\Response\AbstractResponse;
 
 /**
  * Test response.
  *
  * @author webeweb <https://github.com/webeweb>
- * @package WBW\Library\SMSMode\Tests\Fixtures\Response
+ * @package WBW\Library\SmsMode\Tests\Fixtures\Response
  */
 class TestResponse extends AbstractResponse {
 

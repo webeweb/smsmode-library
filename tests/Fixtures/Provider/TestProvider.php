@@ -9,15 +9,15 @@
  * file that was distributed with this source code.
  */
 
-namespace WBW\Library\SMSMode\Tests\Fixtures\Provider;
+namespace WBW\Library\SmsMode\Tests\Fixtures\Provider;
 
-use WBW\Library\SMSMode\Provider\AbstractProvider;
+use WBW\Library\SmsMode\Provider\AbstractProvider;
 
 /**
  * Test provider.
  *
  * @author webeweb <https://github.com/webeweb>
- * @package WBW\Library\SMSMode\Tests\Fixtures\Provider
+ * @package WBW\Library\SmsMode\Tests\Fixtures\Provider
  */
 class TestProvider extends AbstractProvider {
 

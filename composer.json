@@ -38,12 +38,12 @@
     },
     "autoload": {
         "psr-4": {
-            "WBW\\Library\\SMSMode\\": "src/"
+            "WBW\\Library\\SmsMode\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "WBW\\Library\\SMSMode\\Tests\\": "tests/"
+            "WBW\\Library\\SmsMode\\Tests\\": "tests/"
         }
     },
     "support": {

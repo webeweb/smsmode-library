@@ -9,37 +9,37 @@
  * file that was distributed with this source code.
  */
 
-namespace WBW\Library\SMSMode\Tests\Serializer;
+namespace WBW\Library\SmsMode\Tests\Serializer;
 
 use DateTime;
 use Exception;
 use InvalidArgumentException;
-use WBW\Library\SMSMode\API\SendingSMSBatchInterface;
-use WBW\Library\SMSMode\API\SendingSMSMessageInterface;
-use WBW\Library\SMSMode\Model\Authentication;
-use WBW\Library\SMSMode\Request\AccountBalanceRequest;
-use WBW\Library\SMSMode\Request\AddingContactRequest;
-use WBW\Library\SMSMode\Request\CheckingSMSMessageStatusRequest;
-use WBW\Library\SMSMode\Request\CreatingAPIKeyRequest;
-use WBW\Library\SMSMode\Request\CreatingSubAccountRequest;
-use WBW\Library\SMSMode\Request\DeletingSMSRequest;
-use WBW\Library\SMSMode\Request\DeletingSubAccountRequest;
-use WBW\Library\SMSMode\Request\DeliveryReportRequest;
-use WBW\Library\SMSMode\Request\RetrievingSMSReplyRequest;
-use WBW\Library\SMSMode\Request\SendingSMSBatchRequest;
-use WBW\Library\SMSMode\Request\SendingSMSMessageRequest;
-use WBW\Library\SMSMode\Request\SendingTextToSpeechSMSRequest;
-use WBW\Library\SMSMode\Request\SendingUnicodeSMSRequest;
-use WBW\Library\SMSMode\Request\SentSMSMessageListRequest;
-use WBW\Library\SMSMode\Request\TransferringCreditsRequest;
-use WBW\Library\SMSMode\Serializer\RequestSerializer;
-use WBW\Library\SMSMode\Tests\AbstractTestCase;
+use WBW\Library\SmsMode\API\SendingSmsBatchInterface;
+use WBW\Library\SmsMode\API\SendingSmsMessageInterface;
+use WBW\Library\SmsMode\Model\Authentication;
+use WBW\Library\SmsMode\Request\AccountBalanceRequest;
+use WBW\Library\SmsMode\Request\AddingContactRequest;
+use WBW\Library\SmsMode\Request\CheckingSmsMessageStatusRequest;
+use WBW\Library\SmsMode\Request\CreatingApiKeyRequest;
+use WBW\Library\SmsMode\Request\CreatingSubAccountRequest;
+use WBW\Library\SmsMode\Request\DeletingSmsRequest;
+use WBW\Library\SmsMode\Request\DeletingSubAccountRequest;
+use WBW\Library\SmsMode\Request\DeliveryReportRequest;
+use WBW\Library\SmsMode\Request\RetrievingSmsReplyRequest;
+use WBW\Library\SmsMode\Request\SendingSmsBatchRequest;
+use WBW\Library\SmsMode\Request\SendingSmsMessageRequest;
+use WBW\Library\SmsMode\Request\SendingTextToSpeechSmsRequest;
+use WBW\Library\SmsMode\Request\SendingUnicodeSmsRequest;
+use WBW\Library\SmsMode\Request\SentSmsMessageListRequest;
+use WBW\Library\SmsMode\Request\TransferringCreditsRequest;
+use WBW\Library\SmsMode\Serializer\RequestSerializer;
+use WBW\Library\SmsMode\Tests\AbstractTestCase;
 
 /**
  * Object serializer test.
  *
  * @author webeweb <https://github.com/webeweb>
- * @package WBW\Library\SMSMode\Tests\Serializer
+ * @package WBW\Library\SmsMode\Tests\Serializer
  */
 class RequestSerializerTest extends AbstractTestCase {
 
@@ -208,10 +208,10 @@ class RequestSerializerTest extends AbstractTestCase {
      * @return void
      * @throws Exception Throws an exception if an error occurs.
      */
-    public function testSerializeCheckingSMSMessageStatusRequest(): void {
+    public function testSerializeCheckingSmsMessageStatusRequest(): void {
 
         // Set a Checking SMS message status mock.
-        $arg = new CheckingSMSMessageStatusRequest();
+        $arg = new CheckingSmsMessageStatusRequest();
         $arg->setSmsID("smsID");
 
         $obj = new RequestSerializer();
@@ -227,10 +227,10 @@ class RequestSerializerTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testSerializeCheckingSMSMessageStatusRequestWithoutArguments(): void {
+    public function testSerializeCheckingSmsMessageStatusRequestWithoutArguments(): void {
 
         // Set a Checking SMS message status mock.
-        $arg = new CheckingSMSMessageStatusRequest();
+        $arg = new CheckingSmsMessageStatusRequest();
 
         $obj = new RequestSerializer();
 
@@ -253,7 +253,7 @@ class RequestSerializerTest extends AbstractTestCase {
     public function testSerializeCreatingAPIKeyRequest(): void {
 
         // Set an Creating API key request mock.
-        $arg = new CreatingAPIKeyRequest();
+        $arg = new CreatingApiKeyRequest();
 
         $obj = new RequestSerializer();
 
@@ -346,10 +346,10 @@ class RequestSerializerTest extends AbstractTestCase {
      * @return void
      * @throws Exception Throws an exception if an error occurs.
      */
-    public function testSerializeDeletingSMSRequest(): void {
+    public function testSerializeDeletingSmsRequest(): void {
 
         // Set a Delete SMS request mock.
-        $arg = new DeletingSMSRequest();
+        $arg = new DeletingSmsRequest();
         $arg->setSmsID("smsID");
 
         $obj = new RequestSerializer();
@@ -373,10 +373,10 @@ class RequestSerializerTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testSerializeDeletingSMSRequestWithoutArguments(): void {
+    public function testSerializeDeletingSmsRequestWithoutArguments(): void {
 
         // Set a Delete SMS request mock.
-        $arg = new DeletingSMSRequest();
+        $arg = new DeletingSmsRequest();
 
         $obj = new RequestSerializer();
 
@@ -480,10 +480,10 @@ class RequestSerializerTest extends AbstractTestCase {
      * @return void
      * @throws Exception Throws an exception if an error occurs.
      */
-    public function testSerializeRetrievingSMSReplyRequest(): void {
+    public function testSerializeRetrievingSmsReplyRequest(): void {
 
         // Set a Retrieving SMS reply request mock.
-        $arg = new RetrievingSMSReplyRequest();
+        $arg = new RetrievingSmsReplyRequest();
 
         $obj = new RequestSerializer();
 
@@ -525,10 +525,10 @@ class RequestSerializerTest extends AbstractTestCase {
      * @return void
      * @throws Exception Throws an exception if an error occurs.
      */
-    public function testSerializeRetrievingSMSReplyRequestWithStartAndEndDate(): void {
+    public function testSerializeRetrievingSmsReplyRequestWithStartAndEndDate(): void {
 
         // Set a Retrieving SMS reply request mock.
-        $arg = new RetrievingSMSReplyRequest();
+        $arg = new RetrievingSmsReplyRequest();
 
         $obj = new RequestSerializer();
 
@@ -579,10 +579,10 @@ class RequestSerializerTest extends AbstractTestCase {
      * @return void
      * @throws Exception Throws an exception if an error occurs.
      */
-    public function testSerializeRetrievingSMSReplyRequestWithoutArguments(): void {
+    public function testSerializeRetrievingSmsReplyRequestWithoutArguments(): void {
 
         // Set a Retrieving SMS reply request mock.
-        $arg = new RetrievingSMSReplyRequest();
+        $arg = new RetrievingSmsReplyRequest();
 
         $obj = new RequestSerializer();
 
@@ -596,12 +596,12 @@ class RequestSerializerTest extends AbstractTestCase {
      * @return void
      * @throws Exception Throws an exception if an error occurs.
      */
-    public function testSerializeSendingSMSBatchRequest(): void {
+    public function testSerializeSendingSmsBatchRequest(): void {
 
         // Set a Sending SMS batch request mock.
-        $arg = new SendingSMSBatchRequest();
+        $arg = new SendingSmsBatchRequest();
 
-        $arg->setClasseMsg(SendingSMSBatchInterface::CLASSE_MSG_SMS);
+        $arg->setClasseMsg(SendingSmsBatchInterface::CLASSE_MSG_SMS);
         $arg->setDateEnvoi(new DateTime("2019-02-04 18:00:00"));
         $arg->setRefClient("refClient");
         $arg->setEmetteur("emetteur");
@@ -628,10 +628,10 @@ class RequestSerializerTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testSerializeSendingSMSBatchRequestWithoutArguments(): void {
+    public function testSerializeSendingSmsBatchRequestWithoutArguments(): void {
 
         // Set a Sending SMS batch request mock.
-        $arg = new SendingSMSBatchRequest();
+        $arg = new SendingSmsBatchRequest();
 
         $obj = new RequestSerializer();
 
@@ -651,22 +651,22 @@ class RequestSerializerTest extends AbstractTestCase {
      * @return void
      * @throws Exception Throws an exception if an error occurs.
      */
-    public function testSerializeSendingSMSMessageRequest(): void {
+    public function testSerializeSendingSmsMessageRequest(): void {
 
         // Set a Sending SMS message request mock.
-        $arg = new SendingSMSMessageRequest();
+        $arg = new SendingSmsMessageRequest();
         $arg->setMessage("Hello Mum");
         $arg->addNumero("33600000000");
         $arg->addNumero("33600000001");
 
-        $arg->setClasseMsg(SendingSMSBatchInterface::CLASSE_MSG_SMS);
+        $arg->setClasseMsg(SendingSmsBatchInterface::CLASSE_MSG_SMS);
         $arg->setDateEnvoi(new DateTime("2017-09-07 10:00:00"));
         $arg->setRefClient("refClient");
         $arg->setEmetteur("emetteur");
         $arg->setNbrMsg(1);
         $arg->setNotificationUrl("notificationUrl");
         $arg->setNotificationUrlReponse("notificationUrlReponse");
-        $arg->setStop(SendingSMSMessageInterface::STOP_ALWAYS);
+        $arg->setStop(SendingSmsMessageInterface::STOP_ALWAYS);
 
         $obj = new RequestSerializer();
 
@@ -691,14 +691,14 @@ class RequestSerializerTest extends AbstractTestCase {
      * @return void
      * @throws Exception Throws an exception if an error occurs.
      */
-    public function testSerializeSendingSMSMessageRequestWithGroupe(): void {
+    public function testSerializeSendingSmsMessageRequestWithGroupe(): void {
 
         // Set a Sending SMS message request mock.
-        $arg = new SendingSMSMessageRequest();
+        $arg = new SendingSmsMessageRequest();
         $arg->setMessage("Hello Mum");
         $arg->setGroupe("groupe");
 
-        $arg->setClasseMsg(SendingSMSBatchInterface::CLASSE_MSG_SMS);
+        $arg->setClasseMsg(SendingSmsBatchInterface::CLASSE_MSG_SMS);
         $arg->setDateEnvoi(new DateTime("2017-09-07 10:00:00"));
         $arg->setRefClient("refClient");
         $arg->setEmetteur("emetteur");
@@ -727,10 +727,10 @@ class RequestSerializerTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testSerializeSendingSMSMessageRequestWithoutArguments(): void {
+    public function testSerializeSendingSmsMessageRequestWithoutArguments(): void {
 
         // Set a Sending SMS message request mock.
-        $arg = new SendingSMSMessageRequest();
+        $arg = new SendingSmsMessageRequest();
 
         $obj = new RequestSerializer();
 
@@ -763,7 +763,7 @@ class RequestSerializerTest extends AbstractTestCase {
     public function testSerializeSendingTextToSpeechRequest(): void {
 
         // Set a Sending text-to-speech request mock.
-        $arg = new SendingTextToSpeechSMSRequest();
+        $arg = new SendingTextToSpeechSmsRequest();
         $arg->setMessage("Hello Mum");
         $arg->addNumero("33600000000");
         $arg->addNumero("33600000001");
@@ -792,7 +792,7 @@ class RequestSerializerTest extends AbstractTestCase {
     public function testSerializeSendingTextToSpeechRequestWithoutArguments(): void {
 
         // Set a Sending text-to-speech request mock.
-        $arg = new SendingTextToSpeechSMSRequest();
+        $arg = new SendingTextToSpeechSmsRequest();
 
         $obj = new RequestSerializer();
 
@@ -822,22 +822,22 @@ class RequestSerializerTest extends AbstractTestCase {
      * @return void
      * @throws Exception Throws an exception if an error occurs.
      */
-    public function testSerializeSendingUnicodeSMSRequest(): void {
+    public function testSerializeSendingUnicodeSmsRequest(): void {
 
         // Set a Sending Unicode SMS request mock.
-        $arg = new SendingUnicodeSMSRequest();
+        $arg = new SendingUnicodeSmsRequest();
         $arg->setMessage("☺");
         $arg->addNumero("33600000000");
         $arg->addNumero("33600000001");
 
-        $arg->setClasseMsg(SendingSMSBatchInterface::CLASSE_MSG_SMS);
+        $arg->setClasseMsg(SendingSmsBatchInterface::CLASSE_MSG_SMS);
         $arg->setDateEnvoi(new DateTime("2019-02-02 11:00:00"));
         $arg->setRefClient("refClient");
         $arg->setEmetteur("emetteur");
         $arg->setNbrMsg(1);
         $arg->setNotificationUrl("notificationUrl");
         $arg->setNotificationUrlReponse("notificationUrlReponse");
-        $arg->setStop(SendingSMSMessageInterface::STOP_ALWAYS);
+        $arg->setStop(SendingSmsMessageInterface::STOP_ALWAYS);
 
         $obj = new RequestSerializer();
 
@@ -862,10 +862,10 @@ class RequestSerializerTest extends AbstractTestCase {
      * @return void
      * @throws Exception Throws an exception if an error occurs.
      */
-    public function testSerializeSentSMSMessageRequest(): void {
+    public function testSerializeSentSmsMessageRequest(): void {
 
         // Set a Deleting sub-account request mock.
-        $arg = new SentSMSMessageListRequest();
+        $arg = new SentSmsMessageListRequest();
         $arg->setOffset(10);
 
         $obj = new RequestSerializer();
@@ -882,10 +882,10 @@ class RequestSerializerTest extends AbstractTestCase {
      * @return void
      * @throws Exception Throws an exception if an error occurs.
      */
-    public function testSerializeSentSMSMessageRequestWithoutArguments(): void {
+    public function testSerializeSentSmsMessageRequestWithoutArguments(): void {
 
         // Set a Deleting sub-account request mock.
-        $arg = new SentSMSMessageListRequest();
+        $arg = new SentSmsMessageListRequest();
 
         $obj = new RequestSerializer();
 

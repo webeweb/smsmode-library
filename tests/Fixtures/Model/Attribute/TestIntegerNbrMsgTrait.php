@@ -9,15 +9,15 @@
  * file that was distributed with this source code.
  */
 
-namespace WBW\Library\SMSMode\Tests\Fixtures\Model\Attribute;
+namespace WBW\Library\SmsMode\Tests\Fixtures\Model\Attribute;
 
-use WBW\Library\SMSMode\Model\Attribute\IntegerNbrMsgTrait;
+use WBW\Library\SmsMode\Model\Attribute\IntegerNbrMsgTrait;
 
 /**
  * Test integer nbr msg trait.
  *
  * @author webeweb <https://github.com/webeweb>
- * @package WBW\Library\SMSMode\Tests\Fixtures\Model\Attribute
+ * @package WBW\Library\SmsMode\Tests\Fixtures\Model\Attribute
  */
 class TestIntegerNbrMsgTrait {
 

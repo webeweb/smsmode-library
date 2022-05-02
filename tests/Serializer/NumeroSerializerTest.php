@@ -9,18 +9,18 @@
  * file that was distributed with this source code.
  */
 
-namespace WBW\Library\SMSMode\Tests\Serializer;
+namespace WBW\Library\SmsMode\Tests\Serializer;
 
 use Exception;
 use InvalidArgumentException;
-use WBW\Library\SMSMode\Serializer\NumeroSerializer;
-use WBW\Library\SMSMode\Tests\AbstractTestCase;
+use WBW\Library\SmsMode\Serializer\NumeroSerializer;
+use WBW\Library\SmsMode\Tests\AbstractTestCase;
 
 /**
  * Numero serializer test.
  *
  * @author webeweb <https://github.com/webeweb>
- * @package WBW\Library\SMSMode\Serializer
+ * @package WBW\Library\SmsMode\Serializer
  */
 class NumeroSerializerTest extends AbstractTestCase {
 

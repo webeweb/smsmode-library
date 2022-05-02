@@ -9,35 +9,35 @@
  * file that was distributed with this source code.
  */
 
-namespace WBW\Library\SMSMode\Tests\Serializer;
+namespace WBW\Library\SmsMode\Tests\Serializer;
 
-use WBW\Library\SMSMode\Model\DeliveryReport;
-use WBW\Library\SMSMode\Model\SentSMSMessage;
-use WBW\Library\SMSMode\Model\SMSReply;
-use WBW\Library\SMSMode\Response\AccountBalanceResponse;
-use WBW\Library\SMSMode\Response\AddingContactResponse;
-use WBW\Library\SMSMode\Response\CheckingSMSMessageStatusResponse;
-use WBW\Library\SMSMode\Response\CreatingAPIKeyResponse;
-use WBW\Library\SMSMode\Response\CreatingSubAccountResponse;
-use WBW\Library\SMSMode\Response\DeletingSMSResponse;
-use WBW\Library\SMSMode\Response\DeletingSubAccountResponse;
-use WBW\Library\SMSMode\Response\DeliveryReportResponse;
-use WBW\Library\SMSMode\Response\RetrievingSMSReplyResponse;
-use WBW\Library\SMSMode\Response\SendingSMSBatchResponse;
-use WBW\Library\SMSMode\Response\SendingSMSMessageResponse;
-use WBW\Library\SMSMode\Response\SendingTextToSpeechSMSResponse;
-use WBW\Library\SMSMode\Response\SendingUnicodeSMSResponse;
-use WBW\Library\SMSMode\Response\SentSMSMessageListResponse;
-use WBW\Library\SMSMode\Response\TransferringCreditsResponse;
-use WBW\Library\SMSMode\Serializer\ResponseDeserializer;
-use WBW\Library\SMSMode\Tests\AbstractTestCase;
-use WBW\Library\SMSMode\Tests\Fixtures\Serializer\TestResponseDeserializer;
+use WBW\Library\SmsMode\Model\DeliveryReport;
+use WBW\Library\SmsMode\Model\SentSmsMessage;
+use WBW\Library\SmsMode\Model\SmsReply;
+use WBW\Library\SmsMode\Response\AccountBalanceResponse;
+use WBW\Library\SmsMode\Response\AddingContactResponse;
+use WBW\Library\SmsMode\Response\CheckingSmsMessageStatusResponse;
+use WBW\Library\SmsMode\Response\CreatingApiKeyResponse;
+use WBW\Library\SmsMode\Response\CreatingSubAccountResponse;
+use WBW\Library\SmsMode\Response\DeletingSmsResponse;
+use WBW\Library\SmsMode\Response\DeletingSubAccountResponse;
+use WBW\Library\SmsMode\Response\DeliveryReportResponse;
+use WBW\Library\SmsMode\Response\RetrievingSmsReplyResponse;
+use WBW\Library\SmsMode\Response\SendingSmsBatchResponse;
+use WBW\Library\SmsMode\Response\SendingSmsMessageResponse;
+use WBW\Library\SmsMode\Response\SendingTextToSpeechSmsResponse;
+use WBW\Library\SmsMode\Response\SendingUnicodeSmsResponse;
+use WBW\Library\SmsMode\Response\SentSmsMessageListResponse;
+use WBW\Library\SmsMode\Response\TransferringCreditsResponse;
+use WBW\Library\SmsMode\Serializer\ResponseDeserializer;
+use WBW\Library\SmsMode\Tests\AbstractTestCase;
+use WBW\Library\SmsMode\Tests\Fixtures\Serializer\TestResponseDeserializer;
 
 /**
  * Object deserializer test.
  *
  * @author webeweb <https://github.com/webeweb>
- * @package WBW\Library\SMSMode\Tests\Serializer
+ * @package WBW\Library\SmsMode\Tests\Serializer
  */
 class ResponseDeserializerTest extends AbstractTestCase {
 
@@ -100,17 +100,17 @@ class ResponseDeserializerTest extends AbstractTestCase {
     }
 
     /**
-     * Tests deserializeCheckingSMSMessageStatusResponse()
+     * Tests deserializeCheckingSmsMessageStatusResponse()
      *
      * @return void
      */
-    public function testDeserializeCheckingSMSMessageStatusResponse(): void {
+    public function testDeserializeCheckingSmsMessageStatusResponse(): void {
 
         // Initialize a Raw response mock.
         $rawResponse = "0 | Sent";
 
-        $obj = ResponseDeserializer::deserializeCheckingSMSMessageStatusResponse($rawResponse);
-        $this->assertInstanceOf(CheckingSMSMessageStatusResponse::class, $obj);
+        $obj = ResponseDeserializer::deserializeCheckingSmsMessageStatusResponse($rawResponse);
+        $this->assertInstanceOf(CheckingSmsMessageStatusResponse::class, $obj);
 
         $this->assertEquals(0, $obj->getCode());
         $this->assertEquals("Sent", $obj->getDescription());
@@ -137,7 +137,7 @@ class ResponseDeserializerTest extends AbstractTestCase {
 EOT;
 
         $obj = ResponseDeserializer::deserializeCreatingAPIKeyResponse($rawResponse);
-        $this->assertInstanceOf(CreatingAPIKeyResponse::class, $obj);
+        $this->assertInstanceOf(CreatingApiKeyResponse::class, $obj);
 
         $this->assertNull($obj->getCode());
         $this->assertNull($obj->getDescription());
@@ -170,17 +170,17 @@ EOT;
     }
 
     /**
-     * Tests deserializeDeletingSMSResponse()
+     * Tests deserializeDeletingSmsResponse()
      *
      * @return void
      */
-    public function testDeserializeDeletingSMSResponse(): void {
+    public function testDeserializeDeletingSmsResponse(): void {
 
         // Initialize a Raw response mock.
         $rawResponse = "0 | SMS message deleted";
 
-        $obj = ResponseDeserializer::deserializeDeletingSMSResponse($rawResponse);
-        $this->assertInstanceOf(DeletingSMSResponse::class, $obj);
+        $obj = ResponseDeserializer::deserializeDeletingSmsResponse($rawResponse);
+        $this->assertInstanceOf(DeletingSmsResponse::class, $obj);
 
         $this->assertEquals(0, $obj->getCode());
         $this->assertEquals("SMS message deleted", $obj->getDescription());
@@ -305,7 +305,7 @@ EOT;
     public function testDeserializeResponse(): void {
 
         // Set a Sent SMS message response mock.
-        $obj = new SendingSMSMessageResponse();
+        $obj = new SendingSmsMessageResponse();
 
         // Initialize a Raw response mock.
         // $rawResponse = "0 | Sent"; /* A well formed raw response */
@@ -319,11 +319,11 @@ EOT;
     }
 
     /**
-     * Tests deserializeRetrievingSMSReplyResponse()
+     * Tests deserializeRetrievingSmsReplyResponse()
      *
      * @return void
      */
-    public function testDeserializeRetrievingSMSReplyResponse(): void {
+    public function testDeserializeRetrievingSmsReplyResponse(): void {
 
         // Initialize a Raw response mock.
         $rawResponse = <<< EOT
@@ -332,8 +332,8 @@ responseID2 | 23012019-19:00 | 33600000002 | text2 | to2 | messageID2
 responseID3 | 23012019-20:00 | 33600000003 | text3 | to3 | messageID3
 EOT;
 
-        $obj = ResponseDeserializer::deserializeRetrievingSMSReplyResponse($rawResponse);
-        $this->assertInstanceOf(RetrievingSMSReplyResponse::class, $obj);
+        $obj = ResponseDeserializer::deserializeRetrievingSmsReplyResponse($rawResponse);
+        $this->assertInstanceOf(RetrievingSmsReplyResponse::class, $obj);
 
         $this->assertNull($obj->getCode());
         $this->assertNull($obj->getDescription());
@@ -364,17 +364,17 @@ EOT;
     }
 
     /**
-     * Tests deserializeRetrievingSMSReplyResponse()
+     * Tests deserializeRetrievingSmsReplyResponse()
      *
      * @return void
      */
-    public function testDeserializeRetrievingSMSReplyResponseWithException(): void {
+    public function testDeserializeRetrievingSmsReplyResponseWithException(): void {
 
         // Initialize a Raw response mock.
         $rawResponse = "32 | Authentication error";
 
-        $obj = ResponseDeserializer::deserializeRetrievingSMSReplyResponse($rawResponse);
-        $this->assertInstanceOf(RetrievingSMSReplyResponse::class, $obj);
+        $obj = ResponseDeserializer::deserializeRetrievingSmsReplyResponse($rawResponse);
+        $this->assertInstanceOf(RetrievingSmsReplyResponse::class, $obj);
 
         $this->assertEquals(32, $obj->getCode());
         $this->assertEquals("Authentication error", $obj->getDescription());
@@ -384,18 +384,18 @@ EOT;
     }
 
     /**
-     * Tests deserializeSMSReply()
+     * Tests deserializeSmsReply()
      *
      * @return void
      */
-    public function testDeserializeSMSReply(): void {
+    public function testDeserializeSmsReply(): void {
 
         // Initialize a Raw response mock.
         // $rawResponse = "responseID | 23012019-18:00 | 33600000000 | text | to | messageID"; /* A well formed raw response */
         $rawResponse = "  responseID  |  23012019-18:00  |  33600000000  |  text  |  to  |  messageID  "; /* A bad formed raw response */
 
-        $obj = TestResponseDeserializer::deserializeSMSReply($rawResponse);
-        $this->assertInstanceOf(SMSReply::class, $obj);
+        $obj = TestResponseDeserializer::deserializeSmsReply($rawResponse);
+        $this->assertInstanceOf(SmsReply::class, $obj);
 
         $this->assertNull($obj->getCode());
         $this->assertNull($obj->getDescription());
@@ -410,18 +410,18 @@ EOT;
     }
 
     /**
-     * Tests deserializeSMSReply()
+     * Tests deserializeSmsReply()
      *
      * @return void
      */
-    public function testDeserializeSMSReplyWithoutArguments(): void {
+    public function testDeserializeSmsReplyWithoutArguments(): void {
 
         // Initialize a Raw response mock.
         // $rawResponse = "responseID | 23012019-18:00 | 33600000000 | text | to | messageID"; /* A well formed raw response */
         $rawResponse = "responseID | 23012019-18:00 | 33600000000 | text | to"; /* A bad formed raw response */
 
-        $obj = TestResponseDeserializer::deserializeSMSReply($rawResponse);
-        $this->assertInstanceOf(SMSReply::class, $obj);
+        $obj = TestResponseDeserializer::deserializeSmsReply($rawResponse);
+        $this->assertInstanceOf(SmsReply::class, $obj);
 
         $this->assertNull($obj->getCode());
         $this->assertNull($obj->getDescription());
@@ -436,17 +436,17 @@ EOT;
     }
 
     /**
-     * Tests deserializeSendingSMSBatchResponse()
+     * Tests deserializeSendingSmsBatchResponse()
      *
      * @return void
      */
-    public function testDeserializeSendingSMSBatchResponse(): void {
+    public function testDeserializeSendingSmsBatchResponse(): void {
 
         // Initialize a Raw response mock.
         $rawResponse = "0 | Accepted | campagneID";
 
-        $obj = ResponseDeserializer::deserializeSendingSMSBatchResponse($rawResponse);
-        $this->assertInstanceOf(SendingSMSBatchResponse::class, $obj);
+        $obj = ResponseDeserializer::deserializeSendingSmsBatchResponse($rawResponse);
+        $this->assertInstanceOf(SendingSmsBatchResponse::class, $obj);
 
         $this->assertEquals(0, $obj->getCode());
         $this->assertEquals("Accepted", $obj->getDescription());
@@ -456,17 +456,17 @@ EOT;
     }
 
     /**
-     * Tests deserializeSendingSMSMessageResponse()
+     * Tests deserializeSendingSmsMessageResponse()
      *
      * @return void
      */
-    public function testDeserializeSendingSMSMessageResponse(): void {
+    public function testDeserializeSendingSmsMessageResponse(): void {
 
         // Initialize a Raw response mock.
         $rawResponse = "0 | Accepted | smsID";
 
-        $obj = ResponseDeserializer::deserializeSendingSMSMessageResponse($rawResponse);
-        $this->assertInstanceOf(SendingSMSMessageResponse::class, $obj);
+        $obj = ResponseDeserializer::deserializeSendingSmsMessageResponse($rawResponse);
+        $this->assertInstanceOf(SendingSmsMessageResponse::class, $obj);
 
         $this->assertEquals(0, $obj->getCode());
         $this->assertEquals("Accepted", $obj->getDescription());
@@ -476,17 +476,17 @@ EOT;
     }
 
     /**
-     * Tests deserializeSendingTextToSpeechSMSResponse()
+     * Tests deserializeSendingTextToSpeechSmsResponse()
      *
      * @return void
      */
-    public function testDeserializeSendingTextToSpeechSMSResponse(): void {
+    public function testDeserializeSendingTextToSpeechSmsResponse(): void {
 
         // Initialize a Raw response mock.
         $rawResponse = "0 | Accepted | smsID";
 
-        $obj = ResponseDeserializer::deserializeSendingTextToSpeechSMSResponse($rawResponse);
-        $this->assertInstanceOf(SendingTextToSpeechSMSResponse::class, $obj);
+        $obj = ResponseDeserializer::deserializeSendingTextToSpeechSmsResponse($rawResponse);
+        $this->assertInstanceOf(SendingTextToSpeechSmsResponse::class, $obj);
 
         $this->assertEquals(0, $obj->getCode());
         $this->assertEquals("Accepted", $obj->getDescription());
@@ -496,17 +496,17 @@ EOT;
     }
 
     /**
-     * Tests deserializeSendingUnicodeSMSResponse()
+     * Tests deserializeSendingUnicodeSmsResponse()
      *
      * @return void
      */
-    public function testDeserializeSendingUnicodeSMSResponse(): void {
+    public function testDeserializeSendingUnicodeSmsResponse(): void {
 
         // Initialize a Raw response mock.
         $rawResponse = "0 | Accepted | smsID";
 
-        $obj = ResponseDeserializer::deserializeSendingUnicodeSMSResponse($rawResponse);
-        $this->assertInstanceOf(SendingUnicodeSMSResponse::class, $obj);
+        $obj = ResponseDeserializer::deserializeSendingUnicodeSmsResponse($rawResponse);
+        $this->assertInstanceOf(SendingUnicodeSmsResponse::class, $obj);
 
         $this->assertEquals(0, $obj->getCode());
         $this->assertEquals("Accepted", $obj->getDescription());
@@ -516,18 +516,18 @@ EOT;
     }
 
     /**
-     * Tests deserializeSentSMSMessage()
+     * Tests deserializeSentSmsMessage()
      *
      * @return void
      */
-    public function testDeserializeSentSMSMessage(): void {
+    public function testDeserializeSentSmsMessage(): void {
 
         // Initialize a Raw response mock.
         // $rawResponse = "smsID | 23012019-18:00 | message | 33600000000 | 0.1 | 1"; /* A well formed raw response */
         $rawResponse = "  smsID  |  23/01/2019 18:00  |  message  | 33600000000  |  0.1  |  1  "; /* A bad formed raw response */
 
-        $obj = TestResponseDeserializer::deserializeSentSMSMessage($rawResponse);
-        $this->assertInstanceOf(SentSMSMessage::class, $obj);
+        $obj = TestResponseDeserializer::deserializeSentSmsMessage($rawResponse);
+        $this->assertInstanceOf(SentSmsMessage::class, $obj);
 
         $this->assertNull($obj->getCode());
         $this->assertNull($obj->getDescription());
@@ -542,11 +542,11 @@ EOT;
     }
 
     /**
-     * Tests deserializeSentSMSMessageListResponse()
+     * Tests deserializeSentSmsMessageListResponse()
      *
      * @return void
      */
-    public function testDeserializeSentSMSMessageListResponse(): void {
+    public function testDeserializeSentSmsMessageListResponse(): void {
 
         // Initialize a Raw response mock.
         $rawResponse = <<< EOT
@@ -557,70 +557,70 @@ smsID2 | 23/01/2019 19:00 | message2 | 33600000002 | 0.2 | 2
 smsID3 | 23/01/2019 20:00 | message3 | 33600000003 | 0.3 | 3
 EOT;
 
-        $obj = ResponseDeserializer::deserializeSentSMSMessageListResponse($rawResponse);
-        $this->assertInstanceOf(SentSMSMessageListResponse::class, $obj);
+        $obj = ResponseDeserializer::deserializeSentSmsMessageListResponse($rawResponse);
+        $this->assertInstanceOf(SentSmsMessageListResponse::class, $obj);
 
         $this->assertNull($obj->getCode());
         $this->assertNull($obj->getDescription());
         $this->assertEquals($rawResponse, $obj->getRawResponse());
 
-        $this->assertCount(3, $obj->getSentSMSMessages());
+        $this->assertCount(3, $obj->getSentSmsMessages());
 
-        $this->assertEquals("smsID1", $obj->getSentSMSMessages()[0]->getSmsID());
-        $this->assertEquals("2019-01-23 18:00", $obj->getSentSMSMessages()[0]->getSendDate()->format("Y-m-d H:i"));
-        $this->assertEquals("message1", $obj->getSentSMSMessages()[0]->getMessage());
-        $this->assertEquals("33600000001", $obj->getSentSMSMessages()[0]->getNumero());
-        $this->assertEquals(0.1, $obj->getSentSMSMessages()[0]->getCostCredits());
-        $this->assertEquals(1, $obj->getSentSMSMessages()[0]->getRecipientCount());
+        $this->assertEquals("smsID1", $obj->getSentSmsMessages()[0]->getSmsID());
+        $this->assertEquals("2019-01-23 18:00", $obj->getSentSmsMessages()[0]->getSendDate()->format("Y-m-d H:i"));
+        $this->assertEquals("message1", $obj->getSentSmsMessages()[0]->getMessage());
+        $this->assertEquals("33600000001", $obj->getSentSmsMessages()[0]->getNumero());
+        $this->assertEquals(0.1, $obj->getSentSmsMessages()[0]->getCostCredits());
+        $this->assertEquals(1, $obj->getSentSmsMessages()[0]->getRecipientCount());
 
-        $this->assertEquals("smsID2", $obj->getSentSMSMessages()[1]->getSmsID());
-        $this->assertEquals("2019-01-23 19:00", $obj->getSentSMSMessages()[1]->getSendDate()->format("Y-m-d H:i"));
-        $this->assertEquals("message2", $obj->getSentSMSMessages()[1]->getMessage());
-        $this->assertEquals("33600000002", $obj->getSentSMSMessages()[1]->getNumero());
-        $this->assertEquals(0.2, $obj->getSentSMSMessages()[1]->getCostCredits());
-        $this->assertEquals(2, $obj->getSentSMSMessages()[1]->getRecipientCount());
+        $this->assertEquals("smsID2", $obj->getSentSmsMessages()[1]->getSmsID());
+        $this->assertEquals("2019-01-23 19:00", $obj->getSentSmsMessages()[1]->getSendDate()->format("Y-m-d H:i"));
+        $this->assertEquals("message2", $obj->getSentSmsMessages()[1]->getMessage());
+        $this->assertEquals("33600000002", $obj->getSentSmsMessages()[1]->getNumero());
+        $this->assertEquals(0.2, $obj->getSentSmsMessages()[1]->getCostCredits());
+        $this->assertEquals(2, $obj->getSentSmsMessages()[1]->getRecipientCount());
 
-        $this->assertEquals("smsID3", $obj->getSentSMSMessages()[2]->getSmsID());
-        $this->assertEquals("2019-01-23 20:00", $obj->getSentSMSMessages()[2]->getSendDate()->format("Y-m-d H:i"));
-        $this->assertEquals("message3", $obj->getSentSMSMessages()[2]->getMessage());
-        $this->assertEquals("33600000003", $obj->getSentSMSMessages()[2]->getNumero());
-        $this->assertEquals(0.3, $obj->getSentSMSMessages()[2]->getCostCredits());
-        $this->assertEquals(3, $obj->getSentSMSMessages()[2]->getRecipientCount());
+        $this->assertEquals("smsID3", $obj->getSentSmsMessages()[2]->getSmsID());
+        $this->assertEquals("2019-01-23 20:00", $obj->getSentSmsMessages()[2]->getSendDate()->format("Y-m-d H:i"));
+        $this->assertEquals("message3", $obj->getSentSmsMessages()[2]->getMessage());
+        $this->assertEquals("33600000003", $obj->getSentSmsMessages()[2]->getNumero());
+        $this->assertEquals(0.3, $obj->getSentSmsMessages()[2]->getCostCredits());
+        $this->assertEquals(3, $obj->getSentSmsMessages()[2]->getRecipientCount());
     }
 
     /**
-     * Tests deserializeSentSMSMessageListResponse()
+     * Tests deserializeSentSmsMessageListResponse()
      *
      * @return void
      */
-    public function testDeserializeSentSMSMessageListResponseWithException(): void {
+    public function testDeserializeSentSmsMessageListResponseWithException(): void {
 
         // Initialize a Raw response mock.
         $rawResponse = "32 | Authentication error";
 
-        $obj = ResponseDeserializer::deserializeSentSMSMessageListResponse($rawResponse);
-        $this->assertInstanceOf(SentSMSMessageListResponse::class, $obj);
+        $obj = ResponseDeserializer::deserializeSentSmsMessageListResponse($rawResponse);
+        $this->assertInstanceOf(SentSmsMessageListResponse::class, $obj);
 
         $this->assertEquals(32, $obj->getCode());
         $this->assertEquals("Authentication error", $obj->getDescription());
         $this->assertEquals($rawResponse, $obj->getRawResponse());
 
-        $this->assertCount(0, $obj->getSentSMSMessages());
+        $this->assertCount(0, $obj->getSentSmsMessages());
     }
 
     /**
-     * Tests deserializeSentSMSMessage()
+     * Tests deserializeSentSmsMessage()
      *
      * @return void
      */
-    public function testDeserializeSentSMSMessageWithoutArguments(): void {
+    public function testDeserializeSentSmsMessageWithoutArguments(): void {
 
         // Initialize a Raw response mock.
         // $rawResponse = "smsID | 23012019-18:00 | message | 33600000000 | 0.1 | 1"; /* A well formed raw response */
         $rawResponse = "smsID | 23012019-18:00 | message | 33600000000 | 0.1"; /* A bad formed raw response */
 
-        $obj = TestResponseDeserializer::deserializeSentSMSMessage($rawResponse);
-        $this->assertInstanceOf(SentSMSMessage::class, $obj);
+        $obj = TestResponseDeserializer::deserializeSentSmsMessage($rawResponse);
+        $this->assertInstanceOf(SentSmsMessage::class, $obj);
 
         $this->assertNull($obj->getCode());
         $this->assertNull($obj->getDescription());

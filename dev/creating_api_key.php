@@ -11,9 +11,9 @@
 
 require_once __DIR__ . "/../vendor/autoload.php";
 
-use WBW\Library\SMSMode\Model\Authentication;
-use WBW\Library\SMSMode\Provider\ApiProvider;
-use WBW\Library\SMSMode\Request\CreatingAPIKeyRequest;
+use WBW\Library\SmsMode\Model\Authentication;
+use WBW\Library\SmsMode\Provider\ApiProvider;
+use WBW\Library\SmsMode\Request\CreatingApiKeyRequest;
 
 // Create the API provider.
 $provider = new ApiProvider(new Authentication());
@@ -27,7 +27,7 @@ $provider->getAuthentication()->setPass("pass");
 // $provider->getAuthentication()->setAccessToken("accessToken");
 
 // Call the API and get the response.
-$response = $provider->creatingAPIKey(new CreatingAPIKeyRequest());
+$response = $provider->creatingAPIKey(new CreatingApiKeyRequest());
 
 // Handle the response.
 echo "Exception:" . print_r($response->getException(), true) . "\n\n";

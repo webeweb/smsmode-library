@@ -9,49 +9,49 @@
  * file that was distributed with this source code.
  */
 
-namespace WBW\Library\SMSMode\Tests\Provider;
+namespace WBW\Library\SmsMode\Tests\Provider;
 
 use Exception;
 use InvalidArgumentException;
 use Psr\Log\LoggerInterface;
-use WBW\Library\SMSMode\Model\Authentication;
-use WBW\Library\SMSMode\Provider\ApiProvider;
-use WBW\Library\SMSMode\Request\AccountBalanceRequest;
-use WBW\Library\SMSMode\Request\AddingContactRequest;
-use WBW\Library\SMSMode\Request\CheckingSMSMessageStatusRequest;
-use WBW\Library\SMSMode\Request\CreatingAPIKeyRequest;
-use WBW\Library\SMSMode\Request\CreatingSubAccountRequest;
-use WBW\Library\SMSMode\Request\DeletingSMSRequest;
-use WBW\Library\SMSMode\Request\DeletingSubAccountRequest;
-use WBW\Library\SMSMode\Request\DeliveryReportRequest;
-use WBW\Library\SMSMode\Request\RetrievingSMSReplyRequest;
-use WBW\Library\SMSMode\Request\SendingSMSBatchRequest;
-use WBW\Library\SMSMode\Request\SendingSMSMessageRequest;
-use WBW\Library\SMSMode\Request\SendingTextToSpeechSMSRequest;
-use WBW\Library\SMSMode\Request\SendingUnicodeSMSRequest;
-use WBW\Library\SMSMode\Request\SentSMSMessageListRequest;
-use WBW\Library\SMSMode\Request\TransferringCreditsRequest;
-use WBW\Library\SMSMode\Response\AccountBalanceResponse;
-use WBW\Library\SMSMode\Response\AddingContactResponse;
-use WBW\Library\SMSMode\Response\CheckingSMSMessageStatusResponse;
-use WBW\Library\SMSMode\Response\CreatingSubAccountResponse;
-use WBW\Library\SMSMode\Response\DeletingSMSResponse;
-use WBW\Library\SMSMode\Response\DeletingSubAccountResponse;
-use WBW\Library\SMSMode\Response\DeliveryReportResponse;
-use WBW\Library\SMSMode\Response\RetrievingSMSReplyResponse;
-use WBW\Library\SMSMode\Response\SendingSMSBatchResponse;
-use WBW\Library\SMSMode\Response\SendingSMSMessageResponse;
-use WBW\Library\SMSMode\Response\SendingTextToSpeechSMSResponse;
-use WBW\Library\SMSMode\Response\SendingUnicodeSMSResponse;
-use WBW\Library\SMSMode\Response\SentSMSMessageListResponse;
-use WBW\Library\SMSMode\Response\TransferringCreditsResponse;
-use WBW\Library\SMSMode\Tests\AbstractTestCase;
+use WBW\Library\SmsMode\Model\Authentication;
+use WBW\Library\SmsMode\Provider\ApiProvider;
+use WBW\Library\SmsMode\Request\AccountBalanceRequest;
+use WBW\Library\SmsMode\Request\AddingContactRequest;
+use WBW\Library\SmsMode\Request\CheckingSmsMessageStatusRequest;
+use WBW\Library\SmsMode\Request\CreatingApiKeyRequest;
+use WBW\Library\SmsMode\Request\CreatingSubAccountRequest;
+use WBW\Library\SmsMode\Request\DeletingSmsRequest;
+use WBW\Library\SmsMode\Request\DeletingSubAccountRequest;
+use WBW\Library\SmsMode\Request\DeliveryReportRequest;
+use WBW\Library\SmsMode\Request\RetrievingSmsReplyRequest;
+use WBW\Library\SmsMode\Request\SendingSmsBatchRequest;
+use WBW\Library\SmsMode\Request\SendingSmsMessageRequest;
+use WBW\Library\SmsMode\Request\SendingTextToSpeechSmsRequest;
+use WBW\Library\SmsMode\Request\SendingUnicodeSmsRequest;
+use WBW\Library\SmsMode\Request\SentSmsMessageListRequest;
+use WBW\Library\SmsMode\Request\TransferringCreditsRequest;
+use WBW\Library\SmsMode\Response\AccountBalanceResponse;
+use WBW\Library\SmsMode\Response\AddingContactResponse;
+use WBW\Library\SmsMode\Response\CheckingSmsMessageStatusResponse;
+use WBW\Library\SmsMode\Response\CreatingSubAccountResponse;
+use WBW\Library\SmsMode\Response\DeletingSmsResponse;
+use WBW\Library\SmsMode\Response\DeletingSubAccountResponse;
+use WBW\Library\SmsMode\Response\DeliveryReportResponse;
+use WBW\Library\SmsMode\Response\RetrievingSmsReplyResponse;
+use WBW\Library\SmsMode\Response\SendingSmsBatchResponse;
+use WBW\Library\SmsMode\Response\SendingSmsMessageResponse;
+use WBW\Library\SmsMode\Response\SendingTextToSpeechSmsResponse;
+use WBW\Library\SmsMode\Response\SendingUnicodeSmsResponse;
+use WBW\Library\SmsMode\Response\SentSmsMessageListResponse;
+use WBW\Library\SmsMode\Response\TransferringCreditsResponse;
+use WBW\Library\SmsMode\Tests\AbstractTestCase;
 
 /**
  * API provider test.
  *
  * @author webeweb <https://github.com/webeweb>
- * @package WBW\Library\SMSMode\Tests\Provider
+ * @package WBW\Library\SmsMode\Tests\Provider
  */
 class ApiProviderTest extends AbstractTestCase {
 
@@ -121,21 +121,21 @@ class ApiProviderTest extends AbstractTestCase {
     }
 
     /**
-     * Tests checkingSMSMessageStatus()
+     * Tests checkingSmsMessageStatus()
      *
      * @return void
      * @throws Exception Throws an exception if an error occurs.
      */
-    public function testCheckingSMSMessageStatus(): void {
+    public function testCheckingSmsMessageStatus(): void {
 
         // Set a Checking SMS message status request mock.
-        $arg = new CheckingSMSMessageStatusRequest();
+        $arg = new CheckingSmsMessageStatusRequest();
         $arg->setSmsID("smsID");
 
         $obj = new ApiProvider($this->authentication);
 
-        $res = $obj->checkingSMSMessageStatus($arg);
-        $this->assertInstanceOf(CheckingSMSMessageStatusResponse::class, $res);
+        $res = $obj->checkingSmsMessageStatus($arg);
+        $this->assertInstanceOf(CheckingSmsMessageStatusResponse::class, $res);
 
         $this->assertEquals(32, $res->getCode());
         $this->assertRegExp("/.*/", $res->getDescription());
@@ -150,7 +150,7 @@ class ApiProviderTest extends AbstractTestCase {
     public function testCreatingAPIKey(): void {
 
         // Set a Creating API key request mock.
-        $arg = new CreatingAPIKeyRequest();
+        $arg = new CreatingApiKeyRequest();
 
         $obj = new ApiProvider($this->authentication);
 
@@ -178,7 +178,7 @@ class ApiProviderTest extends AbstractTestCase {
     public function testCreatingAPIKeyWithInvalidArgumentException(): void {
 
         // Set a Creating API key request mock.
-        $arg = new CreatingAPIKeyRequest();
+        $arg = new CreatingApiKeyRequest();
 
         $obj = new ApiProvider(new Authentication());
 
@@ -215,21 +215,21 @@ class ApiProviderTest extends AbstractTestCase {
     }
 
     /**
-     * Tests deletingSMS()
+     * Tests deletingSms()
      *
      * @return void
      * @throws Exception Throws an exception if an error occurs.
      */
-    public function testDeletingSMS(): void {
+    public function testDeletingSms(): void {
 
         // Set a Deleting SMS request mock.
-        $arg = new DeletingSMSRequest();
+        $arg = new DeletingSmsRequest();
         $arg->setSmsID("smsID");
 
         $obj = new ApiProvider($this->authentication);
 
-        $res = $obj->deletingSMS($arg);
-        $this->assertInstanceOf(DeletingSMSResponse::class, $res);
+        $res = $obj->deletingSms($arg);
+        $this->assertInstanceOf(DeletingSmsResponse::class, $res);
 
         $this->assertEquals(32, $res->getCode());
         $this->assertRegExp("/.*/", $res->getDescription());
@@ -278,127 +278,127 @@ class ApiProviderTest extends AbstractTestCase {
     }
 
     /**
-     * Tests retrievingSMSReply()
+     * Tests retrievingSmsReply()
      *
      * @return void
      * @throws Exception Throws an exception if an error occurs.
      */
-    public function testRetrievingSMSReply(): void {
+    public function testRetrievingSmsReply(): void {
 
         // Set a Retrieving SMS reply request mock.
-        $arg = new RetrievingSMSReplyRequest();
+        $arg = new RetrievingSmsReplyRequest();
 
         $obj = new ApiProvider($this->authentication);
 
-        $res = $obj->retrievingSMSReply($arg);
-        $this->assertInstanceOf(RetrievingSMSReplyResponse::class, $res);
+        $res = $obj->retrievingSmsReply($arg);
+        $this->assertInstanceOf(RetrievingSmsReplyResponse::class, $res);
 
         $this->assertEquals(32, $res->getCode());
         $this->assertRegExp("/.*/", $res->getDescription());
     }
 
     /**
-     * Tests sendingSMSBatch()
+     * Tests sendingSmsBatch()
      *
      * @return void
      * @throws Exception Throws an exception if an error occurs.
      */
-    public function testSendingSMSBatch(): void {
+    public function testSendingSmsBatch(): void {
 
         // Set a Sending SMS message batch mock.
-        $arg = new SendingSMSBatchRequest();
+        $arg = new SendingSmsBatchRequest();
         $arg->setFichier($this->fichier);
 
         $obj = new ApiProvider($this->authentication);
 
-        $res = $obj->sendingSMSBatch($arg);
-        $this->assertInstanceOf(SendingSMSBatchResponse::class, $res);
+        $res = $obj->sendingSmsBatch($arg);
+        $this->assertInstanceOf(SendingSmsBatchResponse::class, $res);
 
         $this->assertEquals(32, $res->getCode());
         $this->assertRegExp("/.*/", $res->getDescription());
     }
 
     /**
-     * Tests sendingSMSMessage()
+     * Tests sendingSmsMessage()
      *
      * @return void
      * @throws Exception Throws an exception if an error occurs.
      */
-    public function testSendingSMSMessage(): void {
+    public function testSendingSmsMessage(): void {
 
         // Set a Sending SMS message request mock.
-        $arg = new SendingSMSMessageRequest();
+        $arg = new SendingSmsMessageRequest();
         $arg->setMessage("message");
         $arg->addNumero("33600000000");
 
         $obj = new ApiProvider($this->authentication);
 
-        $res = $obj->sendingSMSMessage($arg);
-        $this->assertInstanceOf(SendingSMSMessageResponse::class, $res);
+        $res = $obj->sendingSmsMessage($arg);
+        $this->assertInstanceOf(SendingSmsMessageResponse::class, $res);
 
         $this->assertEquals(32, $res->getCode());
         $this->assertRegExp("/.*/", $res->getDescription());
     }
 
     /**
-     * Tests sendingTextToSpeechSMS()
+     * Tests sendingTextToSpeechSms()
      *
      * @return void
      * @throws Exception Throws an exception if an error occurs.
      */
-    public function testSendingTextToSpeechSMS(): void {
+    public function testSendingTextToSpeechSms(): void {
 
         // Set a Sending text-to-speech SMS request mock.
-        $arg = new SendingTextToSpeechSMSRequest();
+        $arg = new SendingTextToSpeechSmsRequest();
         $arg->setMessage("message");
         $arg->addNumero("33600000000");
 
         $obj = new ApiProvider($this->authentication);
 
-        $res = $obj->sendingTextToSpeechSMS($arg);
-        $this->assertInstanceOf(SendingTextToSpeechSMSResponse::class, $res);
+        $res = $obj->sendingTextToSpeechSms($arg);
+        $this->assertInstanceOf(SendingTextToSpeechSmsResponse::class, $res);
 
         $this->assertEquals(32, $res->getCode());
         $this->assertRegExp("/.*/", $res->getDescription());
     }
 
     /**
-     * Tests sendingUnicodeSMS()
+     * Tests sendingUnicodeSms()
      *
      * @return void
      * @throws Exception Throws an exception if an error occurs.
      */
-    public function testSendingUnicodeSMS(): void {
+    public function testSendingUnicodeSms(): void {
 
         // Set a Sending unicode SMS request mock.
-        $arg = new SendingUnicodeSMSRequest();
+        $arg = new SendingUnicodeSmsRequest();
         $arg->setMessage("message");
         $arg->addNumero("33600000000");
 
         $obj = new ApiProvider($this->authentication);
 
-        $res = $obj->sendingUnicodeSMS($arg);
-        $this->assertInstanceOf(SendingUnicodeSMSResponse::class, $res);
+        $res = $obj->sendingUnicodeSms($arg);
+        $this->assertInstanceOf(SendingUnicodeSmsResponse::class, $res);
 
         $this->assertEquals(32, $res->getCode());
         $this->assertRegExp("/.*/", $res->getDescription());
     }
 
     /**
-     * Tests sentSMSMessageList()
+     * Tests sentSmsMessageList()
      *
      * @return void
      * @throws Exception Throws an exception if an error occurs.
      */
-    public function testSentSMSMessageList(): void {
+    public function testSentSmsMessageList(): void {
 
         // Set a Sent SMS message list request mock.
-        $arg = new SentSMSMessageListRequest();
+        $arg = new SentSmsMessageListRequest();
 
         $obj = new ApiProvider($this->authentication);
 
-        $res = $obj->sentSMSMessageList($arg);
-        $this->assertInstanceOf(SentSMSMessageListResponse::class, $res);
+        $res = $obj->sentSmsMessageList($arg);
+        $this->assertInstanceOf(SentSmsMessageListResponse::class, $res);
 
         $this->assertEquals(32, $res->getCode());
         $this->assertRegExp("/.*/", $res->getDescription());

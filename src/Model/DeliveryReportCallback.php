@@ -9,18 +9,18 @@
  * file that was distributed with this source code.
  */
 
-namespace WBW\Library\SMSMode\Model;
+namespace WBW\Library\SmsMode\Model;
 
-use WBW\Library\SMSMode\API\DeliveryReportCallbackInterface;
-use WBW\Library\SMSMode\Model\Attribute\DateTimeDateReceptionTrait;
-use WBW\Library\SMSMode\Model\Attribute\StringRefClientTrait;
-use WBW\Library\SMSMode\Model\Attribute\StringSmsIDTrait;
+use WBW\Library\SmsMode\API\DeliveryReportCallbackInterface;
+use WBW\Library\SmsMode\Model\Attribute\DateTimeDateReceptionTrait;
+use WBW\Library\SmsMode\Model\Attribute\StringRefClientTrait;
+use WBW\Library\SmsMode\Model\Attribute\StringSmsIDTrait;
 
 /**
  * Delivery report callback.
  *
  * @author webeweb <https://github.com/webeweb>
- * @package WBW\Library\SMSMode\Model
+ * @package WBW\Library\SmsMode\Model
  */
 class DeliveryReportCallback extends DeliveryReport implements DeliveryReportCallbackInterface {
 

@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace WBW\Library\SMSMode\Model\Attribute;
+namespace WBW\Library\SmsMode\Model\Attribute;
 
 use InvalidArgumentException;
 
@@ -17,7 +17,7 @@ use InvalidArgumentException;
  * Integer offset trait.
  *
  * @author webeweb <https://github.com/webeweb>
- * @package WBW\Library\SMSMode\Model\Attribute
+ * @package WBW\Library\SmsMode\Model\Attribute
  */
 trait IntegerOffsetTrait {
 

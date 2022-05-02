@@ -9,19 +9,19 @@
  * file that was distributed with this source code.
  */
 
-namespace WBW\Library\SMSMode\Tests\Fixtures\Serializer;
+namespace WBW\Library\SmsMode\Tests\Fixtures\Serializer;
 
-use WBW\Library\SMSMode\Model\DeliveryReport;
-use WBW\Library\SMSMode\Model\SentSMSMessage;
-use WBW\Library\SMSMode\Model\SMSReply;
-use WBW\Library\SMSMode\Response\AbstractResponse;
-use WBW\Library\SMSMode\Serializer\ResponseDeserializer;
+use WBW\Library\SmsMode\Model\DeliveryReport;
+use WBW\Library\SmsMode\Model\SentSmsMessage;
+use WBW\Library\SmsMode\Model\SmsReply;
+use WBW\Library\SmsMode\Response\AbstractResponse;
+use WBW\Library\SmsMode\Serializer\ResponseDeserializer;
 
 /**
  * Test response deserializer.
  *
  * @author webeweb <https://github.com/webeweb>
- * @package WBW\Library\SMSMode\Tests\Fixtures\Serializer
+ * @package WBW\Library\SmsMode\Tests\Fixtures\Serializer
  */
 class TestResponseDeserializer extends ResponseDeserializer {
 
@@ -42,14 +42,14 @@ class TestResponseDeserializer extends ResponseDeserializer {
     /**
      * {@inheritdoc}
      */
-    public static function deserializeSMSReply(string $rawResponse): SMSReply {
-        return parent::deserializeSMSReply($rawResponse);
+    public static function deserializeSmsReply(string $rawResponse): SmsReply {
+        return parent::deserializeSmsReply($rawResponse);
     }
 
     /**
      * {@inheritdoc}
      */
-    public static function deserializeSentSMSMessage(string $rawResponse): SentSMSMessage {
-        return parent::deserializeSentSMSMessage($rawResponse);
+    public static function deserializeSentSmsMessage(string $rawResponse): SentSmsMessage {
+        return parent::deserializeSentSmsMessage($rawResponse);
     }
 }

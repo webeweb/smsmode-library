@@ -9,19 +9,19 @@
  * file that was distributed with this source code.
  */
 
-namespace WBW\Library\SMSMode\Tests\Provider;
+namespace WBW\Library\SmsMode\Tests\Provider;
 
 use Psr\Log\LoggerInterface;
-use WBW\Library\SMSMode\Model\Authentication;
-use WBW\Library\SMSMode\Provider\AbstractProvider;
-use WBW\Library\SMSMode\Tests\AbstractTestCase;
-use WBW\Library\SMSMode\Tests\Fixtures\Provider\TestProvider;
+use WBW\Library\SmsMode\Model\Authentication;
+use WBW\Library\SmsMode\Provider\AbstractProvider;
+use WBW\Library\SmsMode\Tests\AbstractTestCase;
+use WBW\Library\SmsMode\Tests\Fixtures\Provider\TestProvider;
 
 /**
  * Abstract provider test.
  *
  * @author webeweb <https://github.com/webeweb>
- * @package WBW\Library\SMSMode\Tests\Provider
+ * @package WBW\Library\SmsMode\Tests\Provider
  */
 class AbstractProviderTest extends AbstractTestCase {
 

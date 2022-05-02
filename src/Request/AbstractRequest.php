@@ -9,15 +9,15 @@
  * file that was distributed with this source code.
  */
 
-namespace WBW\Library\SMSMode\Request;
+namespace WBW\Library\SmsMode\Request;
 
-use WBW\Library\SMSMode\API\RequestInterface;
+use WBW\Library\SmsMode\API\RequestInterface;
 
 /**
  * Abstract request.
  *
  * @author webeweb <https://github.com/webeweb>
- * @package WBW\Library\SMSMode\Request
+ * @package WBW\Library\SmsMode\Request
  */
 abstract class AbstractRequest implements RequestInterface {
 

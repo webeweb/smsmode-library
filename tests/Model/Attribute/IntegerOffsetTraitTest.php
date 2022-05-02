@@ -9,18 +9,18 @@
  * file that was distributed with this source code.
  */
 
-namespace WBW\Library\SMSMode\Tests\Model\Attribute;
+namespace WBW\Library\SmsMode\Tests\Model\Attribute;
 
 use Exception;
 use InvalidArgumentException;
-use WBW\Library\SMSMode\Tests\AbstractTestCase;
-use WBW\Library\SMSMode\Tests\Fixtures\Model\Attribute\TestIntegerOffsetTrait;
+use WBW\Library\SmsMode\Tests\AbstractTestCase;
+use WBW\Library\SmsMode\Tests\Fixtures\Model\Attribute\TestIntegerOffsetTrait;
 
 /**
  * Integer offset trait test.
  *
  * @author webeweb <https://github.com/webeweb>
- * @package WBW\Library\SMSMode\Tests\Model\Attribute
+ * @package WBW\Library\SmsMode\Tests\Model\Attribute
  */
 class IntegerOffsetTraitTest extends AbstractTestCase {
 

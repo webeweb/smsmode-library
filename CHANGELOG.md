@@ -1,6 +1,11 @@
 CHANGELOG
 =========
 
+### [3.3.0](https://github.com/webeweb/smsmode-library/tree/v3.3.0) (2022-05-02)
+
+- Replace API by Api
+- Replace SMS by Sms
+
 ### [3.2.0](https://github.com/webeweb/smsmode-library/tree/v3.2.0) (2022-03-29)
 
 - Improve code quality

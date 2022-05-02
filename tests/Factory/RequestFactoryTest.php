@@ -83,7 +83,7 @@ class RequestFactoryTest extends AbstractTestCase {
     }
 
     /**
-     * Tests newCreatingAPIKeyRequest()
+     * Tests newCreatingApiKeyRequest()
      *
      * @return void
      */

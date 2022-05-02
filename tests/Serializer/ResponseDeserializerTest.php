@@ -118,7 +118,7 @@ class ResponseDeserializerTest extends AbstractTestCase {
     }
 
     /**
-     * Tests deserializeCreatingAPIKeyResponse()
+     * Tests deserializeCreatingApiKeyResponse()
      *
      * @return void
      */

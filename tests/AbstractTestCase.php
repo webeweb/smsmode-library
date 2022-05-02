@@ -13,9 +13,9 @@ namespace WBW\Library\SmsMode\Tests;
 
 use DateTime;
 use PHPUnit\Framework\TestCase;
-use WBW\Library\SmsMode\API\SendingSmsBatchInterface as ApiSendingSmsBatchInterface;
-use WBW\Library\SmsMode\API\SendingSmsMessageInterface as ApiSendingSmsMessageInterface;
-use WBW\Library\SmsMode\API\SendingTextToSpeechSmsInterface as ApiSendingTextToSpeechSmsInterface;
+use WBW\Library\SmsMode\Api\SendingSmsBatchInterface as ApiSendingSmsBatchInterface;
+use WBW\Library\SmsMode\Api\SendingSmsMessageInterface as ApiSendingSmsMessageInterface;
+use WBW\Library\SmsMode\Api\SendingTextToSpeechSmsInterface as ApiSendingTextToSpeechSmsInterface;
 use WBW\Library\SmsMode\Entity\AddingContactInterface;
 use WBW\Library\SmsMode\Entity\CheckingSmsMessageStatusInterface;
 use WBW\Library\SmsMode\Entity\CreatingSubAccountInterface;

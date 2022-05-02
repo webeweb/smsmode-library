@@ -11,9 +11,9 @@
 
 namespace WBW\Library\SmsMode\Tests\Factory;
 
-use WBW\Library\SmsMode\API\SendingSmsBatchInterface;
-use WBW\Library\SmsMode\API\SendingSmsMessageInterface;
-use WBW\Library\SmsMode\API\SendingTextToSpeechSmsInterface;
+use WBW\Library\SmsMode\Api\SendingSmsBatchInterface;
+use WBW\Library\SmsMode\Api\SendingSmsMessageInterface;
+use WBW\Library\SmsMode\Api\SendingTextToSpeechSmsInterface;
 use WBW\Library\SmsMode\Factory\RequestFactory;
 use WBW\Library\SmsMode\Request\AccountBalanceRequest;
 use WBW\Library\SmsMode\Request\AddingContactRequest;

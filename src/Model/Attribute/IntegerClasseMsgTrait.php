@@ -12,7 +12,7 @@
 namespace WBW\Library\SmsMode\Model\Attribute;
 
 use InvalidArgumentException;
-use WBW\Library\SmsMode\API\SendingSmsBatchInterface;
+use WBW\Library\SmsMode\Api\SendingSmsBatchInterface;
 
 /**
  * Integer classe msg trait.

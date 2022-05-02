@@ -9,13 +9,13 @@
  * file that was distributed with this source code.
  */
 
-namespace WBW\Library\SmsMode\API;
+namespace WBW\Library\SmsMode\Api;
 
 /**
  * Sending text-to-speech SMS interface.
  *
  * @author webeweb <https://github.com/webeweb>
- * @package WBW\Library\SmsMode\API
+ * @package WBW\Library\SmsMode\Api
  */
 interface SendingTextToSpeechSmsInterface {
 

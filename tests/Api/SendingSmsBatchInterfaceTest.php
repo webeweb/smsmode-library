@@ -9,18 +9,18 @@
  * file that was distributed with this source code.
  */
 
-namespace WBW\Library\SmsMode\Tests\API;
+namespace WBW\Library\SmsMode\Tests\Api;
 
-use WBW\Library\SmsMode\API\SendingSmsMessageInterface;
+use WBW\Library\SmsMode\Api\SendingSmsBatchInterface;
 use WBW\Library\SmsMode\Tests\AbstractTestCase;
 
 /**
- * Sending SMS message interface test.
+ * Sending SMS batch interface test.
  *
  * @author webeweb <https://github.com/webeweb>
- * @package WBW\Library\SmsMode\Tests\API
+ * @package WBW\Library\SmsMode\Tests\Api
  */
-class SendingSmsMessageInterfaceTest extends AbstractTestCase {
+class SendingSmsBatchInterfaceTest extends AbstractTestCase {
 
     /**
      * Tests __construct()
@@ -29,7 +29,7 @@ class SendingSmsMessageInterfaceTest extends AbstractTestCase {
      */
     public function test__construct(): void {
 
-        $this->assertEquals(2, SendingSmsMessageInterface::STOP_ALWAYS);
-        $this->assertEquals(1, SendingSmsMessageInterface::STOP_ONLY);
+        $this->assertEquals(4, SendingSmsBatchInterface::CLASSE_MSG_SMS);
+        $this->assertEquals(2, SendingSmsBatchInterface::CLASSE_MSG_SMS_PRO);
     }
 }

@@ -11,7 +11,7 @@
 
 namespace WBW\Library\SmsMode\Tests\Response;
 
-use WBW\Library\SmsMode\API\ResponseInterface;
+use WBW\Library\SmsMode\Api\ResponseInterface;
 use WBW\Library\SmsMode\Response\AbstractResponse;
 use WBW\Library\SmsMode\Tests\AbstractTestCase;
 use WBW\Library\SmsMode\Tests\Fixtures\Response\TestResponse;

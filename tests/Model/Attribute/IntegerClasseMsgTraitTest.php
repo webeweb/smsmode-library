@@ -13,7 +13,7 @@ namespace WBW\Library\SmsMode\Tests\Model\Attribute;
 
 use Exception;
 use InvalidArgumentException;
-use WBW\Library\SmsMode\API\SendingSmsBatchInterface;
+use WBW\Library\SmsMode\Api\SendingSmsBatchInterface;
 use WBW\Library\SmsMode\Tests\AbstractTestCase;
 use WBW\Library\SmsMode\Tests\Fixtures\Model\Attribute\TestIntegerClasseMsgTrait;
 

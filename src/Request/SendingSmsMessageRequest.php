@@ -13,7 +13,7 @@ namespace WBW\Library\SmsMode\Request;
 
 use InvalidArgumentException;
 use UnexpectedValueException;
-use WBW\Library\SmsMode\API\SendingSmsMessageInterface;
+use WBW\Library\SmsMode\Api\SendingSmsMessageInterface;
 use WBW\Library\SmsMode\Model\Attribute\DateTimeDateEnvoiTrait;
 use WBW\Library\SmsMode\Model\Attribute\IntegerClasseMsgTrait;
 use WBW\Library\SmsMode\Model\Attribute\IntegerNbrMsgTrait;

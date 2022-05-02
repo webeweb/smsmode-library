@@ -13,7 +13,7 @@ namespace WBW\Library\SmsMode\Tests\Request;
 
 use Exception;
 use InvalidArgumentException;
-use WBW\Library\SmsMode\API\SendingTextToSpeechSmsInterface;
+use WBW\Library\SmsMode\Api\SendingTextToSpeechSmsInterface;
 use WBW\Library\SmsMode\Request\SendingTextToSpeechSmsRequest;
 use WBW\Library\SmsMode\Tests\AbstractTestCase;
 

@@ -9,13 +9,13 @@
  * file that was distributed with this source code.
  */
 
-namespace WBW\Library\SmsMode\API;
+namespace WBW\Library\SmsMode\Api;
 
 /**
  * Request interface.
  *
  * @author webeweb <https://github.com/webeweb>
- * @package WBW\Library\SmsMode\API
+ * @package WBW\Library\SmsMode\Api
  */
 interface RequestInterface {
 

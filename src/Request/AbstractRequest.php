@@ -11,7 +11,7 @@
 
 namespace WBW\Library\SmsMode\Request;
 
-use WBW\Library\SmsMode\API\RequestInterface;
+use WBW\Library\SmsMode\Api\RequestInterface;
 
 /**
  * Abstract request.

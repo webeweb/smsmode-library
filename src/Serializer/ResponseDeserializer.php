@@ -12,7 +12,7 @@
 namespace WBW\Library\SmsMode\Serializer;
 
 use DateTime;
-use WBW\Library\SmsMode\API\ResponseInterface;
+use WBW\Library\SmsMode\Api\ResponseInterface;
 use WBW\Library\SmsMode\Model\DeliveryReport;
 use WBW\Library\SmsMode\Model\SentSmsMessage;
 use WBW\Library\SmsMode\Model\SmsReply;

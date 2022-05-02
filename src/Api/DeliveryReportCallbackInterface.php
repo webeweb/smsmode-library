@@ -9,15 +9,15 @@
  * file that was distributed with this source code.
  */
 
-namespace WBW\Library\SmsMode\API;
+namespace WBW\Library\SmsMode\Api;
 
 /**
- * SMS reply callback interface.
+ * Delivery report callback interface.
  *
  * @author webeweb <https://github.com/webeweb>
- * @package WBW\Library\SmsMode\API
+ * @package WBW\Library\SmsMode\Api
  */
-interface SmsReplyCallbackInterface {
+interface DeliveryReportCallbackInterface {
 
     /**
      * Parameter "date reception".
@@ -27,18 +27,11 @@ interface SmsReplyCallbackInterface {
     const PARAMETER_DATE_RECEPTION = "date_reception";
 
     /**
-     * Parameter "emetteur".
+     * Parameter "MCC MNC".
      *
      * @var string
      */
-    const PARAMETER_EMETTEUR = "emetteur";
-
-    /**
-     * Parameter "message".
-     *
-     * @var string
-     */
-    const PARAMETER_MESSAGE = "message";
+    const PARAMETER_MCC_MNC = "mcc_mnc";
 
     /**
      * Parameter "numero".
@@ -55,16 +48,16 @@ interface SmsReplyCallbackInterface {
     const PARAMETER_REF_CLIENT = "refClient";
 
     /**
-     * Parameter "response ID".
-     *
-     * @var string
-     */
-    const PARAMETER_RESPONSE_ID = "responseID";
-
-    /**
-     * Parameter "SMS ID".
+     * Parameter "smsID".
      *
      * @var string
      */
     const PARAMETER_SMS_ID = "smsID";
+
+    /**
+     * Parameter "statut".
+     *
+     * @var string
+     */
+    const PARAMETER_STATUT = "statut";
 }

@@ -9,16 +9,16 @@
  * file that was distributed with this source code.
  */
 
-namespace WBW\Library\SmsMode\Tests\API;
+namespace WBW\Library\SmsMode\Tests\Api;
 
-use WBW\Library\SmsMode\API\SendingTextToSpeechSmsInterface;
+use WBW\Library\SmsMode\Api\SendingTextToSpeechSmsInterface;
 use WBW\Library\SmsMode\Tests\AbstractTestCase;
 
 /**
  * Sending text-to-speech SMS interface test.
  *
  * @author webeweb <https://github.com/webeweb>
- * @package WBW\Library\SmsMode\Tests\API
+ * @package WBW\Library\SmsMode\Tests\Api
  */
 class SendingTextToSpeechSmsInterfaceTest extends AbstractTestCase {
 

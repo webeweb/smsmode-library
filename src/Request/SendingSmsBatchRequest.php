@@ -12,7 +12,7 @@
 namespace WBW\Library\SmsMode\Request;
 
 use InvalidArgumentException;
-use WBW\Library\SmsMode\API\SendingSmsBatchInterface;
+use WBW\Library\SmsMode\Api\SendingSmsBatchInterface;
 use WBW\Library\SmsMode\Model\Attribute\DateTimeDateEnvoiTrait;
 use WBW\Library\SmsMode\Model\Attribute\IntegerClasseMsgTrait;
 use WBW\Library\SmsMode\Model\Attribute\IntegerNbrMsgTrait;

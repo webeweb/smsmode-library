@@ -12,7 +12,7 @@
 namespace WBW\Library\SmsMode\Response;
 
 use WBW\Library\Provider\Response\AbstractResponse as BaseResponse;
-use WBW\Library\SmsMode\API\ResponseInterface;
+use WBW\Library\SmsMode\Api\ResponseInterface;
 use WBW\Library\Traits\Integers\IntegerCodeTrait;
 use WBW\Library\Traits\Strings\StringDescriptionTrait;
 

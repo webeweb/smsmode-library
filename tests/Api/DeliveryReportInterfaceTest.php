@@ -9,16 +9,16 @@
  * file that was distributed with this source code.
  */
 
-namespace WBW\Library\SmsMode\Tests\API;
+namespace WBW\Library\SmsMode\Tests\Api;
 
-use WBW\Library\SmsMode\API\DeliveryReportCallbackInterface;
+use WBW\Library\SmsMode\Api\DeliveryReportCallbackInterface;
 use WBW\Library\SmsMode\Tests\AbstractTestCase;
 
 /**
  * Delivery report interface test.
  *
  * @author webeweb <https://github.com/webeweb>
- * @package WBW\Library\SmsMode\Tests\API
+ * @package WBW\Library\SmsMode\Tests\Api
  */
 class DeliveryReportInterfaceTest extends AbstractTestCase {
 

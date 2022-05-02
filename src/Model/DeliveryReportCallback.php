@@ -11,7 +11,7 @@
 
 namespace WBW\Library\SmsMode\Model;
 
-use WBW\Library\SmsMode\API\DeliveryReportCallbackInterface;
+use WBW\Library\SmsMode\Api\DeliveryReportCallbackInterface;
 use WBW\Library\SmsMode\Model\Attribute\DateTimeDateReceptionTrait;
 use WBW\Library\SmsMode\Model\Attribute\StringRefClientTrait;
 use WBW\Library\SmsMode\Model\Attribute\StringSmsIDTrait;

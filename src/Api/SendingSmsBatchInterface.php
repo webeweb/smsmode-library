@@ -9,27 +9,27 @@
  * file that was distributed with this source code.
  */
 
-namespace WBW\Library\SmsMode\API;
+namespace WBW\Library\SmsMode\Api;
 
 /**
- * Sending SMS message interface.
+ * Sending SMS batch interface.
  *
  * @author webeweb <https://github.com/webeweb>
- * @package WBW\Library\SmsMode\API
+ * @package WBW\Library\SmsMode\Api
  */
-interface SendingSmsMessageInterface extends SendingSmsBatchInterface {
+interface SendingSmsBatchInterface {
 
     /**
-     * STOP "always".
+     * Classe msg "SMS".
      *
      * @var int
      */
-    const STOP_ALWAYS = 2;
+    const CLASSE_MSG_SMS = 4;
 
     /**
-     * STOP "only".
+     * Classe msg "SMS Pro".
      *
      * @var int
      */
-    const STOP_ONLY = 1;
+    const CLASSE_MSG_SMS_PRO = 2;
 }

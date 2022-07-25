@@ -42,14 +42,14 @@ class TestResponseDeserializer extends ResponseDeserializer {
     /**
      * {@inheritdoc}
      */
-    public static function deserializeSmsReply(string $rawResponse): SmsReply {
-        return parent::deserializeSmsReply($rawResponse);
+    public static function deserializeSentSmsMessage(string $rawResponse): SentSmsMessage {
+        return parent::deserializeSentSmsMessage($rawResponse);
     }
 
     /**
      * {@inheritdoc}
      */
-    public static function deserializeSentSmsMessage(string $rawResponse): SentSmsMessage {
-        return parent::deserializeSentSmsMessage($rawResponse);
+    public static function deserializeSmsReply(string $rawResponse): SmsReply {
+        return parent::deserializeSmsReply($rawResponse);
     }
 }

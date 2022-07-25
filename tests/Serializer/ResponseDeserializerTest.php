@@ -384,58 +384,6 @@ EOT;
     }
 
     /**
-     * Tests deserializeSmsReply()
-     *
-     * @return void
-     */
-    public function testDeserializeSmsReply(): void {
-
-        // Initialize a Raw response mock.
-        // $rawResponse = "responseID | 23012019-18:00 | 33600000000 | text | to | messageID"; /* A well formed raw response */
-        $rawResponse = "  responseID  |  23012019-18:00  |  33600000000  |  text  |  to  |  messageID  "; /* A bad formed raw response */
-
-        $obj = TestResponseDeserializer::deserializeSmsReply($rawResponse);
-        $this->assertInstanceOf(SmsReply::class, $obj);
-
-        $this->assertNull($obj->getCode());
-        $this->assertNull($obj->getDescription());
-        $this->assertEquals($rawResponse, $obj->getRawResponse());
-
-        $this->assertEquals("responseID", $obj->getResponseID());
-        $this->assertEquals("2019-01-23 18:00", $obj->getReceptionDate()->format("Y-m-d H:i"));
-        $this->assertEquals("33600000000", $obj->getFrom());
-        $this->assertEquals("text", $obj->getText());
-        $this->assertEquals("to", $obj->getTo());
-        $this->assertEquals("messageID", $obj->getMessageID());
-    }
-
-    /**
-     * Tests deserializeSmsReply()
-     *
-     * @return void
-     */
-    public function testDeserializeSmsReplyWithoutArguments(): void {
-
-        // Initialize a Raw response mock.
-        // $rawResponse = "responseID | 23012019-18:00 | 33600000000 | text | to | messageID"; /* A well formed raw response */
-        $rawResponse = "responseID | 23012019-18:00 | 33600000000 | text | to"; /* A bad formed raw response */
-
-        $obj = TestResponseDeserializer::deserializeSmsReply($rawResponse);
-        $this->assertInstanceOf(SmsReply::class, $obj);
-
-        $this->assertNull($obj->getCode());
-        $this->assertNull($obj->getDescription());
-        $this->assertEquals($rawResponse, $obj->getRawResponse());
-
-        $this->assertNull($obj->getResponseID());
-        $this->assertNull($obj->getReceptionDate());
-        $this->assertNull($obj->getFrom());
-        $this->assertNull($obj->getText());
-        $this->assertNull($obj->getTo());
-        $this->assertNull($obj->getMessageID());
-    }
-
-    /**
      * Tests deserializeSendingSmsBatchResponse()
      *
      * @return void
@@ -632,6 +580,58 @@ EOT;
         $this->assertNull($obj->getNumero());
         $this->assertNull($obj->getCostCredits());
         $this->assertNull($obj->getRecipientCount());
+    }
+
+    /**
+     * Tests deserializeSmsReply()
+     *
+     * @return void
+     */
+    public function testDeserializeSmsReply(): void {
+
+        // Initialize a Raw response mock.
+        // $rawResponse = "responseID | 23012019-18:00 | 33600000000 | text | to | messageID"; /* A well formed raw response */
+        $rawResponse = "  responseID  |  23012019-18:00  |  33600000000  |  text  |  to  |  messageID  "; /* A bad formed raw response */
+
+        $obj = TestResponseDeserializer::deserializeSmsReply($rawResponse);
+        $this->assertInstanceOf(SmsReply::class, $obj);
+
+        $this->assertNull($obj->getCode());
+        $this->assertNull($obj->getDescription());
+        $this->assertEquals($rawResponse, $obj->getRawResponse());
+
+        $this->assertEquals("responseID", $obj->getResponseID());
+        $this->assertEquals("2019-01-23 18:00", $obj->getReceptionDate()->format("Y-m-d H:i"));
+        $this->assertEquals("33600000000", $obj->getFrom());
+        $this->assertEquals("text", $obj->getText());
+        $this->assertEquals("to", $obj->getTo());
+        $this->assertEquals("messageID", $obj->getMessageID());
+    }
+
+    /**
+     * Tests deserializeSmsReply()
+     *
+     * @return void
+     */
+    public function testDeserializeSmsReplyWithoutArguments(): void {
+
+        // Initialize a Raw response mock.
+        // $rawResponse = "responseID | 23012019-18:00 | 33600000000 | text | to | messageID"; /* A well formed raw response */
+        $rawResponse = "responseID | 23012019-18:00 | 33600000000 | text | to"; /* A bad formed raw response */
+
+        $obj = TestResponseDeserializer::deserializeSmsReply($rawResponse);
+        $this->assertInstanceOf(SmsReply::class, $obj);
+
+        $this->assertNull($obj->getCode());
+        $this->assertNull($obj->getDescription());
+        $this->assertEquals($rawResponse, $obj->getRawResponse());
+
+        $this->assertNull($obj->getResponseID());
+        $this->assertNull($obj->getReceptionDate());
+        $this->assertNull($obj->getFrom());
+        $this->assertNull($obj->getText());
+        $this->assertNull($obj->getTo());
+        $this->assertNull($obj->getMessageID());
     }
 
     /**

@@ -255,36 +255,6 @@ class ResponseDeserializer {
     }
 
     /**
-     * Deserialize a SMS reply.
-     *
-     * @param string $rawResponse The raw response.
-     * @return SmsReply Returns the SMS reply.
-     */
-    protected static function deserializeSmsReply(string $rawResponse): SmsReply {
-
-        $model = new SmsReply();
-        $model->setRawResponse($rawResponse);
-
-        $responses = explode(ResponseInterface::RESPONSE_DELIMITER, trim($rawResponse));
-        if (count($responses) < 6) {
-            return $model;
-        }
-
-        $receptionDate = DateTime::createFromFormat(ResponseInterface::RESPONSE_DATETIME_FORMAT, trim($responses[1]));
-
-        $model->setResponseID(trim($responses[0]));
-        if (false !== $receptionDate) {
-            $model->setReceptionDate($receptionDate);
-        }
-        $model->setFrom(trim($responses[2]));
-        $model->setText(trim($responses[3]));
-        $model->setTo(trim($responses[4]));
-        $model->setMessageID(trim($responses[5]));
-
-        return $model;
-    }
-
-    /**
      * Deserialize a sending SMS batch response.
      *
      * @param string $rawResponse The raw response.
@@ -410,6 +380,36 @@ class ResponseDeserializer {
         foreach ($responses as $current) {
             $model->addSentSmsMessage(static::deserializeSentSmsMessage($current));
         }
+
+        return $model;
+    }
+
+    /**
+     * Deserialize a SMS reply.
+     *
+     * @param string $rawResponse The raw response.
+     * @return SmsReply Returns the SMS reply.
+     */
+    protected static function deserializeSmsReply(string $rawResponse): SmsReply {
+
+        $model = new SmsReply();
+        $model->setRawResponse($rawResponse);
+
+        $responses = explode(ResponseInterface::RESPONSE_DELIMITER, trim($rawResponse));
+        if (count($responses) < 6) {
+            return $model;
+        }
+
+        $receptionDate = DateTime::createFromFormat(ResponseInterface::RESPONSE_DATETIME_FORMAT, trim($responses[1]));
+
+        $model->setResponseID(trim($responses[0]));
+        if (false !== $receptionDate) {
+            $model->setReceptionDate($receptionDate);
+        }
+        $model->setFrom(trim($responses[2]));
+        $model->setText(trim($responses[3]));
+        $model->setTo(trim($responses[4]));
+        $model->setMessageID(trim($responses[5]));
 
         return $model;
     }

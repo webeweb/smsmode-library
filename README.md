@@ -10,7 +10,7 @@ smsmode-library
 
 Integrate sMsmode API with your projects.
 
- [![certified](https://img.shields.io/badge/certified%20by-sMsmode-yellow.svg?style=flat-square&color=fbe100)](https://www.smsmode.com/api-sms)
+ [![certified](https://img.shields.io/badge/certified%20by-sMsmode-yellow.svg?style=flat-square&color=fbe100)](https://dev.smsmode.com/)
 
 `sMsmode` provides an API that enables you to easily and automatically send SMS
 messages from your applications. This API provides the following functions:

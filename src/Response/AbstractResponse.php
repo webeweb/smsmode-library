@@ -41,6 +41,7 @@ abstract class AbstractResponse extends BaseResponse implements ResponseInterfac
      * @return array Returns the responses enumeration.
      */
     public static function enumResponses(): array {
+
         return [
             self::RESPONSE_CODE_0    => self::RESPONSE_DESCRIPTION_0,
             self::RESPONSE_CODE_1    => self::RESPONSE_DESCRIPTION_1,

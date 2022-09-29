@@ -102,6 +102,7 @@ class SendingSmsMessageRequest extends AbstractRequest implements SendingSmsMess
      * @return int[] Returns the stop enumeration.
      */
     public function enumStop(): array {
+
         return [
             self::STOP_ALWAYS,
             self::STOP_ONLY,

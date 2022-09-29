@@ -35,6 +35,7 @@ trait IntegerClasseMsgTrait {
      * @return int[] Returns the classe msg enumeration.
      */
     public function enumClasseMsg(): array {
+
         return [
             SendingSmsBatchInterface::CLASSE_MSG_SMS,
             SendingSmsBatchInterface::CLASSE_MSG_SMS_PRO,

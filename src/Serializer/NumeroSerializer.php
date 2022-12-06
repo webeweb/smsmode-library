@@ -22,7 +22,7 @@ use InvalidArgumentException;
 class NumeroSerializer {
 
     /**
-     * Check a numero.
+     * Checks a numero.
      *
      * @param string $numero The numero.
      * @return void
@@ -35,7 +35,7 @@ class NumeroSerializer {
     }
 
     /**
-     * Deserialize a numero.
+     * Deserializes a numero.
      *
      * @param string $numero The numero.
      * @return string Returns the deserialized numero.
@@ -46,7 +46,7 @@ class NumeroSerializer {
     }
 
     /**
-     * Serialize a numero.
+     * Serializes a numero.
      *
      * @param string $numero The numero.
      * @return string Returns the serialized numero.

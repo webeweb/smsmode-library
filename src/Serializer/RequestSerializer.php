@@ -229,7 +229,7 @@ class RequestSerializer {
     }
 
     /**
-     * Serialize an object.
+     * Serializes an object.
      *
      * @param object $object The object.
      * @return array Returns the serialized parameters.

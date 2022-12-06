@@ -29,7 +29,7 @@ $provider->getAuthentication()->setPass("pass");
 // Call the API and get the response.
 $response = $provider->accountBalance(new AccountBalanceRequest());
 
-// Handle response.
+// Handle the response.
 echo "Code: " . $response->getCode() . "\n";
 echo "Description: " . $response->getDescription() . "\n\n";
 

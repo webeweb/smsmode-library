@@ -160,7 +160,7 @@ $provider->getAuthentication()->setPass("pass");
 // Call the API and get the response.
 $response = $provider->accountBalance(new AccountBalanceRequest());
 
-// Handle response.
+// Handle the response.
 $response->getCode();
 $response->getDescription();
 
@@ -336,7 +336,7 @@ $provider->getAuthentication()->setPass("pass");
 // Call the API and get the response.
 $response = $provider->sentSMSMessageList(new SentSmsMessageListRequest());
 
-// Handle response.
+// Handle the response.
 $response->getCode();
 $response->getDescription();
 

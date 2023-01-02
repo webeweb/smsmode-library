@@ -12,7 +12,7 @@
 namespace WBW\Library\SmsMode\Tests\Response;
 
 use DateTime;
-use Exception;
+use Throwable;
 use WBW\Library\SmsMode\Response\CreatingApiKeyResponse;
 use WBW\Library\SmsMode\Tests\AbstractTestCase;
 
@@ -41,7 +41,7 @@ class CreatingApiKeyResponseTest extends AbstractTestCase {
      * Tests setCreationDate()
      *
      * @return void
-     * @throws Exception Throws an exception if an error occurs.
+     * @throws Throwable Throws an exception if an error occurs.
      */
     public function testSetCreationDate(): void {
 
@@ -71,7 +71,7 @@ class CreatingApiKeyResponseTest extends AbstractTestCase {
      * Tests setExpiration()
      *
      * @return void
-     * @throws Exception Throws an exception if an error occurs.
+     * @throws Throwable Throws an exception if an error occurs.
      */
     public function testSetExpiration(): void {
 

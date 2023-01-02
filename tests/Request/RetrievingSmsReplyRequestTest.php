@@ -12,7 +12,7 @@
 namespace WBW\Library\SmsMode\Tests\Request;
 
 use DateTime;
-use Exception;
+use Throwable;
 use WBW\Library\SmsMode\Request\RetrievingSmsReplyRequest;
 use WBW\Library\SmsMode\Tests\AbstractTestCase;
 
@@ -28,7 +28,7 @@ class RetrievingSmsReplyRequestTest extends AbstractTestCase {
      * Tests setEndDate()
      *
      * @return void
-     * @throws Exception Throws an exception.
+     * @throws Throwable Throws an exception.
      */
     public function testSetEndDate(): void {
 
@@ -58,7 +58,7 @@ class RetrievingSmsReplyRequestTest extends AbstractTestCase {
      * Tests setStartDate()
      *
      * @return void
-     * @throws Exception Throws an exception.
+     * @throws Throwable Throws an exception.
      */
     public function testSetStartDate(): void {
 

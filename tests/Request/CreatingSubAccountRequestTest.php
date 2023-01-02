@@ -11,7 +11,7 @@
 
 namespace WBW\Library\SmsMode\Tests\Request;
 
-use Exception;
+use Throwable;
 use WBW\Library\SmsMode\Request\CreatingSubAccountRequest;
 use WBW\Library\SmsMode\Tests\AbstractTestCase;
 
@@ -66,7 +66,7 @@ class CreatingSubAccountRequestTest extends AbstractTestCase {
      * Tests setFax()
      *
      * @return void
-     * @throws Exception Throws an exception if an error occurs.
+     * @throws Throwable Throws an exception if an error occurs.
      */
     public function testSetFax(): void {
 

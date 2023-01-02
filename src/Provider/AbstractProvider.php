@@ -11,11 +11,11 @@
 
 namespace WBW\Library\SmsMode\Provider;
 
-use Exception;
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\GuzzleException;
 use InvalidArgumentException;
 use Psr\Log\LoggerInterface;
+use Throwable;
 use WBW\Library\Provider\AbstractProvider as BaseProvider;
 use WBW\Library\Provider\Exception\ApiException;
 use WBW\Library\SmsMode\Model\Authentication;
@@ -120,7 +120,7 @@ abstract class AbstractProvider extends BaseProvider {
         } catch (InvalidArgumentException $ex) {
 
             throw $ex;
-        } catch (Exception $ex) {
+        } catch (Throwable $ex) {
 
             throw new ApiException("Call sMsmode API failed", 500, $ex);
         }

@@ -11,8 +11,8 @@
 
 namespace WBW\Library\SmsMode\Tests\Request;
 
-use Exception;
 use InvalidArgumentException;
+use Throwable;
 use WBW\Library\SmsMode\Request\SendingSmsBatchRequest;
 use WBW\Library\SmsMode\Tests\AbstractTestCase;
 
@@ -28,7 +28,7 @@ class SendingSmsBatchRequestTest extends AbstractTestCase {
      * Tests setFichier()
      *
      * @return void
-     * @throws Exception Throws an exception if an error occurs.
+     * @throws Throwable Throws an exception if an error occurs.
      */
     public function testSetFichier(): void {
 
@@ -50,7 +50,7 @@ class SendingSmsBatchRequestTest extends AbstractTestCase {
         try {
 
             $obj->setFichier("fichier");
-        } catch (Exception $ex) {
+        } catch (Throwable $ex) {
 
             $this->assertInstanceOf(InvalidArgumentException::class, $ex);
             $this->assertEquals('File "fichier" could not be found.', $ex->getMessage());

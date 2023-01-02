@@ -11,8 +11,8 @@
 
 namespace WBW\Library\SmsMode\Tests\Request;
 
-use Exception;
 use InvalidArgumentException;
+use Throwable;
 use WBW\Library\SmsMode\Api\SendingSmsMessageInterface;
 use WBW\Library\SmsMode\Request\SendingSmsMessageRequest;
 use WBW\Library\SmsMode\Tests\AbstractTestCase;
@@ -29,7 +29,7 @@ class SendingSmsMessageRequestTest extends AbstractTestCase {
      * Tests addNumero()
      *
      * @return void
-     * @throws Exception Throws an exception if an error occurs.
+     * @throws Throwable Throws an exception if an error occurs.
      */
     public function testAddNumero(): void {
 
@@ -85,7 +85,7 @@ class SendingSmsMessageRequestTest extends AbstractTestCase {
      * Tests setStop()
      *
      * @return void
-     * @throws Exception Throws an exception if an error occurs.
+     * @throws Throwable Throws an exception if an error occurs.
      */
     public function testSetStop(): void {
 
@@ -110,7 +110,7 @@ class SendingSmsMessageRequestTest extends AbstractTestCase {
         try {
 
             $obj->setStop(-1);
-        } catch (Exception $ex) {
+        } catch (Throwable $ex) {
 
             $this->assertInstanceOf(InvalidArgumentException::class, $ex);
             $this->assertEquals('The stop "-1" is invalid', $ex->getMessage());

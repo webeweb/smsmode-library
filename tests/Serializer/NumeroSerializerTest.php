@@ -11,8 +11,8 @@
 
 namespace WBW\Library\SmsMode\Tests\Serializer;
 
-use Exception;
 use InvalidArgumentException;
+use Throwable;
 use WBW\Library\SmsMode\Serializer\NumeroSerializer;
 use WBW\Library\SmsMode\Tests\AbstractTestCase;
 
@@ -28,7 +28,7 @@ class NumeroSerializerTest extends AbstractTestCase {
      * Tests checkNumero()
      *
      * @return void
-     * @throws Exception Throws an exception if an error occurs.
+     * @throws Throwable Throws an exception if an error occurs.
      */
     public function testCheckNumero(): void {
 
@@ -39,14 +39,14 @@ class NumeroSerializerTest extends AbstractTestCase {
      * Tests checkNumero()
      *
      * @return void
-     * @throws Exception Throws an exception if an error occurs.
+     * @throws Throwable Throws an exception if an error occurs.
      */
     public function testCheckNumeroWithInvalidArgumentException(): void {
 
         try {
 
             NumeroSerializer::checkNumero("exception");
-        } catch (Exception $ex) {
+        } catch (Throwable $ex) {
 
             $this->assertInstanceOf(InvalidArgumentException::class, $ex);
             $this->assertEquals('The numero "exception" is invalid', $ex->getMessage());

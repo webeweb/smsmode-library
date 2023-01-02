@@ -11,8 +11,8 @@
 
 namespace WBW\Library\SmsMode\Tests\Model\Attribute;
 
-use Exception;
 use InvalidArgumentException;
+use Throwable;
 use WBW\Library\SmsMode\Api\SendingSmsBatchInterface;
 use WBW\Library\SmsMode\Tests\AbstractTestCase;
 use WBW\Library\SmsMode\Tests\Fixtures\Model\Attribute\TestIntegerClasseMsgTrait;
@@ -69,7 +69,7 @@ class IntegerClasseMsgTraitTest extends AbstractTestCase {
         try {
 
             $obj->setClasseMsg(0);
-        } catch (Exception $ex) {
+        } catch (Throwable $ex) {
 
             $this->assertInstanceOf(InvalidArgumentException::class, $ex);
             $this->assertEquals('The classe msg "0" is invalid', $ex->getMessage());

@@ -12,7 +12,7 @@
 namespace WBW\Library\SmsMode\Tests\Model;
 
 use DateTime;
-use Exception;
+use Throwable;
 use WBW\Library\SmsMode\Model\SmsReply;
 use WBW\Library\SmsMode\Tests\AbstractTestCase;
 
@@ -41,7 +41,7 @@ class SmsReplyTest extends AbstractTestCase {
      * Tests setReceptionDate()
      *
      * @return void
-     * @throws Exception Throws an exception if an error occurs.
+     * @throws Throwable Throws an exception if an error occurs.
      */
     public function testSetReceptionDate(): void {
 

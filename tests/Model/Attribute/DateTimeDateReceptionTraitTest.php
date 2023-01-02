@@ -12,7 +12,7 @@
 namespace WBW\Library\SmsMode\Tests\Model\Attribute;
 
 use DateTime;
-use Exception;
+use Throwable;
 use WBW\Library\SmsMode\Tests\AbstractTestCase;
 use WBW\Library\SmsMode\Tests\Fixtures\Model\Attribute\TestDateTimeDateReceptionTrait;
 
@@ -28,7 +28,7 @@ class DateTimeDateReceptionTraitTest extends AbstractTestCase {
      * Tests setDateReception()
      *
      * @return void
-     * @throws Exception Throws an exception if an error occurs.
+     * @throws Throwable Throws an exception if an error occurs.
      */
     public function testSetDateReception(): void {
 

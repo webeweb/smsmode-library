@@ -11,9 +11,9 @@
 
 namespace WBW\Library\SmsMode\Tests\Provider;
 
-use Exception;
 use InvalidArgumentException;
 use Psr\Log\LoggerInterface;
+use Throwable;
 use WBW\Library\SmsMode\Model\Authentication;
 use WBW\Library\SmsMode\Provider\ApiProvider;
 use WBW\Library\SmsMode\Request\AccountBalanceRequest;
@@ -78,7 +78,7 @@ class ApiProviderTest extends AbstractTestCase {
      * Tests accountBalance()
      *
      * @return void
-     * @throws Exception Throws an exception if an error occurs.
+     * @throws Throwable Throws an exception if an error occurs.
      */
     public function testAccountBalance(): void {
 
@@ -101,7 +101,7 @@ class ApiProviderTest extends AbstractTestCase {
      * Tests addingContact()
      *
      * @return void
-     * @throws Exception Throws an exception if an error occurs.
+     * @throws Throwable Throws an exception if an error occurs.
      */
     public function testAddingContact(): void {
 
@@ -124,7 +124,7 @@ class ApiProviderTest extends AbstractTestCase {
      * Tests checkingSmsMessageStatus()
      *
      * @return void
-     * @throws Exception Throws an exception if an error occurs.
+     * @throws Throwable Throws an exception if an error occurs.
      */
     public function testCheckingSmsMessageStatus(): void {
 
@@ -145,7 +145,7 @@ class ApiProviderTest extends AbstractTestCase {
      * Tests creatingAPIKey()
      *
      * @return void
-     * @throws Exception Throws an exception if an error occurs.
+     * @throws Throwable Throws an exception if an error occurs.
      */
     public function testCreatingApiKey(): void {
 
@@ -173,7 +173,7 @@ class ApiProviderTest extends AbstractTestCase {
      * Tests creatingAPIKey()
      *
      * @return void
-     * @throws Exception Throws an exception if an error occurs.
+     * @throws Throwable Throws an exception if an error occurs.
      */
     public function testCreatingApiKeyWithInvalidArgumentException(): void {
 
@@ -185,7 +185,7 @@ class ApiProviderTest extends AbstractTestCase {
         try {
 
             $obj->creatingApiKey($arg);
-        } catch (Exception $ex) {
+        } catch (Throwable $ex) {
 
             $this->assertInstanceOf(InvalidArgumentException::class, $ex);
             $this->assertEquals('The mandatory parameter "pseudo" is missing', $ex->getMessage());
@@ -196,7 +196,7 @@ class ApiProviderTest extends AbstractTestCase {
      * Tests creatingSubAccount()
      *
      * @return void
-     * @throws Exception Throws an exception if an error occurs.
+     * @throws Throwable Throws an exception if an error occurs.
      */
     public function testCreatingSubAccount(): void {
 
@@ -218,7 +218,7 @@ class ApiProviderTest extends AbstractTestCase {
      * Tests deletingSms()
      *
      * @return void
-     * @throws Exception Throws an exception if an error occurs.
+     * @throws Throwable Throws an exception if an error occurs.
      */
     public function testDeletingSms(): void {
 
@@ -239,7 +239,7 @@ class ApiProviderTest extends AbstractTestCase {
      * Tests deletingSubAccount()
      *
      * @return void
-     * @throws Exception Throws an exception if an error occurs.
+     * @throws Throwable Throws an exception if an error occurs.
      */
     public function testDeletingSubAccount(): void {
 
@@ -260,7 +260,7 @@ class ApiProviderTest extends AbstractTestCase {
      * Tests deliveryReport()
      *
      * @return void
-     * @throws Exception Throws an exception if an error occurs.
+     * @throws Throwable Throws an exception if an error occurs.
      */
     public function testDeliveryReport(): void {
 
@@ -281,7 +281,7 @@ class ApiProviderTest extends AbstractTestCase {
      * Tests retrievingSmsReply()
      *
      * @return void
-     * @throws Exception Throws an exception if an error occurs.
+     * @throws Throwable Throws an exception if an error occurs.
      */
     public function testRetrievingSmsReply(): void {
 
@@ -301,7 +301,7 @@ class ApiProviderTest extends AbstractTestCase {
      * Tests sendingSmsBatch()
      *
      * @return void
-     * @throws Exception Throws an exception if an error occurs.
+     * @throws Throwable Throws an exception if an error occurs.
      */
     public function testSendingSmsBatch(): void {
 
@@ -322,7 +322,7 @@ class ApiProviderTest extends AbstractTestCase {
      * Tests sendingSmsMessage()
      *
      * @return void
-     * @throws Exception Throws an exception if an error occurs.
+     * @throws Throwable Throws an exception if an error occurs.
      */
     public function testSendingSmsMessage(): void {
 
@@ -344,7 +344,7 @@ class ApiProviderTest extends AbstractTestCase {
      * Tests sendingTextToSpeechSms()
      *
      * @return void
-     * @throws Exception Throws an exception if an error occurs.
+     * @throws Throwable Throws an exception if an error occurs.
      */
     public function testSendingTextToSpeechSms(): void {
 
@@ -366,7 +366,7 @@ class ApiProviderTest extends AbstractTestCase {
      * Tests sendingUnicodeSms()
      *
      * @return void
-     * @throws Exception Throws an exception if an error occurs.
+     * @throws Throwable Throws an exception if an error occurs.
      */
     public function testSendingUnicodeSms(): void {
 
@@ -388,7 +388,7 @@ class ApiProviderTest extends AbstractTestCase {
      * Tests sentSmsMessageList()
      *
      * @return void
-     * @throws Exception Throws an exception if an error occurs.
+     * @throws Throwable Throws an exception if an error occurs.
      */
     public function testSentSmsMessageList(): void {
 
@@ -408,7 +408,7 @@ class ApiProviderTest extends AbstractTestCase {
      * Tests transferringCredits()
      *
      * @return void
-     * @throws Exception Throws an exception if an error occurs.
+     * @throws Throwable Throws an exception if an error occurs.
      */
     public function testTransferringCredits(): void {
 

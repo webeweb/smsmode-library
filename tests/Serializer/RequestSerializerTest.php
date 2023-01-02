@@ -12,8 +12,8 @@
 namespace WBW\Library\SmsMode\Tests\Serializer;
 
 use DateTime;
-use Exception;
 use InvalidArgumentException;
+use Throwable;
 use WBW\Library\SmsMode\Api\SendingSmsBatchInterface;
 use WBW\Library\SmsMode\Api\SendingSmsMessageInterface;
 use WBW\Library\SmsMode\Model\Authentication;
@@ -47,7 +47,7 @@ class RequestSerializerTest extends AbstractTestCase {
      * Tests serialize()
      *
      * @return void
-     * @throws Exception Throws an exception if an error occurs.
+     * @throws Throwable Throws an exception if an error occurs.
      */
     public function testSerializeAccountBalance(): void {
 
@@ -64,7 +64,7 @@ class RequestSerializerTest extends AbstractTestCase {
      * Tests serialize()
      *
      * @return void
-     * @throws Exception Throws an exception if an error occurs.
+     * @throws Throwable Throws an exception if an error occurs.
      */
     public function testSerializeAddingContactRequest(): void {
 
@@ -108,7 +108,7 @@ class RequestSerializerTest extends AbstractTestCase {
         try {
 
             $obj->serialize($arg);
-        } catch (Exception $ex) {
+        } catch (Throwable $ex) {
 
             $this->assertInstanceOf(InvalidArgumentException::class, $ex);
             $this->assertEquals('The mandatory parameter "nom" is missing', $ex->getMessage());
@@ -118,7 +118,7 @@ class RequestSerializerTest extends AbstractTestCase {
 
             $arg->setNom("nom");
             $obj->serialize($arg);
-        } catch (Exception $ex) {
+        } catch (Throwable $ex) {
 
             $this->assertInstanceOf(InvalidArgumentException::class, $ex);
             $this->assertEquals('The mandatory parameter "mobile" is missing', $ex->getMessage());
@@ -129,7 +129,7 @@ class RequestSerializerTest extends AbstractTestCase {
      * Tests serialize()
      *
      * @return void
-     * @throws Exception Throws an exception if an error occurs.
+     * @throws Throwable Throws an exception if an error occurs.
      */
     public function testSerializeAuthentication(): void {
 
@@ -151,7 +151,7 @@ class RequestSerializerTest extends AbstractTestCase {
      * Tests serialize()
      *
      * @return void
-     * @throws Exception Throws an exception if an error occurs.
+     * @throws Throwable Throws an exception if an error occurs.
      */
     public function testSerializeAuthenticationWithToken(): void {
 
@@ -185,7 +185,7 @@ class RequestSerializerTest extends AbstractTestCase {
         try {
 
             $obj->serialize($arg);
-        } catch (Exception $ex) {
+        } catch (Throwable $ex) {
 
             $this->assertInstanceOf(InvalidArgumentException::class, $ex);
             $this->assertEquals('The mandatory parameter "pseudo" is missing', $ex->getMessage());
@@ -195,7 +195,7 @@ class RequestSerializerTest extends AbstractTestCase {
 
             $arg->setPseudo("pseudo");
             $obj->serialize($arg);
-        } catch (Exception $ex) {
+        } catch (Throwable $ex) {
 
             $this->assertInstanceOf(InvalidArgumentException::class, $ex);
             $this->assertEquals('The mandatory parameter "pass" is missing', $ex->getMessage());
@@ -206,7 +206,7 @@ class RequestSerializerTest extends AbstractTestCase {
      * Tests serialize()
      *
      * @return void
-     * @throws Exception Throws an exception if an error occurs.
+     * @throws Throwable Throws an exception if an error occurs.
      */
     public function testSerializeCheckingSmsMessageStatusRequest(): void {
 
@@ -237,7 +237,7 @@ class RequestSerializerTest extends AbstractTestCase {
         try {
 
             $obj->serialize($arg);
-        } catch (Exception $ex) {
+        } catch (Throwable $ex) {
 
             $this->assertInstanceOf(InvalidArgumentException::class, $ex);
             $this->assertEquals('The mandatory parameter "smsID" is missing', $ex->getMessage());
@@ -248,7 +248,7 @@ class RequestSerializerTest extends AbstractTestCase {
      * Tests serialize()
      *
      * @return void
-     * @throws Exception Throws an exception if an error occurs.
+     * @throws Throwable Throws an exception if an error occurs.
      */
     public function testSerializeCreatingApiKeyRequest(): void {
 
@@ -265,7 +265,7 @@ class RequestSerializerTest extends AbstractTestCase {
      * Tests serialize()
      *
      * @return void
-     * @throws Exception Throws an exception if an error occurs.
+     * @throws Throwable Throws an exception if an error occurs.
      */
     public function testSerializeCreatingSubAccount(): void {
 
@@ -323,7 +323,7 @@ class RequestSerializerTest extends AbstractTestCase {
         try {
 
             $obj->serialize($arg);
-        } catch (Exception $ex) {
+        } catch (Throwable $ex) {
 
             $this->assertInstanceOf(InvalidArgumentException::class, $ex);
             $this->assertEquals('The mandatory parameter "newPseudo" is missing', $ex->getMessage());
@@ -333,7 +333,7 @@ class RequestSerializerTest extends AbstractTestCase {
 
             $arg->setNewPseudo("newPseudo");
             $obj->serialize($arg);
-        } catch (Exception $ex) {
+        } catch (Throwable $ex) {
 
             $this->assertInstanceOf(InvalidArgumentException::class, $ex);
             $this->assertEquals('The mandatory parameter "newPass" is missing', $ex->getMessage());
@@ -344,7 +344,7 @@ class RequestSerializerTest extends AbstractTestCase {
      * Tests serialize()
      *
      * @return void
-     * @throws Exception Throws an exception if an error occurs.
+     * @throws Throwable Throws an exception if an error occurs.
      */
     public function testSerializeDeletingSmsRequest(): void {
 
@@ -383,7 +383,7 @@ class RequestSerializerTest extends AbstractTestCase {
         try {
 
             $obj->serialize($arg);
-        } catch (Exception $ex) {
+        } catch (Throwable $ex) {
 
             $this->assertInstanceOf(InvalidArgumentException::class, $ex);
             $this->assertEquals('The mandatory parameter "smsID" is missing', $ex->getMessage());
@@ -394,7 +394,7 @@ class RequestSerializerTest extends AbstractTestCase {
      * Tests serialize()
      *
      * @return void
-     * @throws Exception Throws an exception if an error occurs.
+     * @throws Throwable Throws an exception if an error occurs.
      */
     public function testSerializeDeletingSubAccountRequest(): void {
 
@@ -425,7 +425,7 @@ class RequestSerializerTest extends AbstractTestCase {
         try {
 
             $obj->serialize($arg);
-        } catch (Exception $ex) {
+        } catch (Throwable $ex) {
 
             $this->assertInstanceOf(InvalidArgumentException::class, $ex);
             $this->assertEquals('The mandatory parameter "pseudoToDelete" is missing', $ex->getMessage());
@@ -436,7 +436,7 @@ class RequestSerializerTest extends AbstractTestCase {
      * Tests serialize()
      *
      * @return void
-     * @throws Exception Throws an exception if an error occurs.
+     * @throws Throwable Throws an exception if an error occurs.
      */
     public function testSerializeDeliveryReportRequest(): void {
 
@@ -467,7 +467,7 @@ class RequestSerializerTest extends AbstractTestCase {
         try {
 
             $obj->serialize($arg);
-        } catch (Exception $ex) {
+        } catch (Throwable $ex) {
 
             $this->assertInstanceOf(InvalidArgumentException::class, $ex);
             $this->assertEquals('The mandatory parameter "smsID" is missing', $ex->getMessage());
@@ -478,7 +478,7 @@ class RequestSerializerTest extends AbstractTestCase {
      * Tests serialize()
      *
      * @return void
-     * @throws Exception Throws an exception if an error occurs.
+     * @throws Throwable Throws an exception if an error occurs.
      */
     public function testSerializeRetrievingSmsReplyRequest(): void {
 
@@ -492,7 +492,7 @@ class RequestSerializerTest extends AbstractTestCase {
             $arg->setStart(0);
             $arg->setOffset(null);
             $obj->serialize($arg);
-        } catch (Exception $ex) {
+        } catch (Throwable $ex) {
 
             $this->assertInstanceOf(InvalidArgumentException::class, $ex);
             $this->assertEquals('The optional parameter "offset" is required when "start" is provided', $ex->getMessage());
@@ -503,7 +503,7 @@ class RequestSerializerTest extends AbstractTestCase {
             $arg->setStart(null);
             $arg->setOffset(1);
             $obj->serialize($arg);
-        } catch (Exception $ex) {
+        } catch (Throwable $ex) {
 
             $this->assertInstanceOf(InvalidArgumentException::class, $ex);
             $this->assertEquals('The optional parameter "start" is required when "offset" is provided', $ex->getMessage());
@@ -523,7 +523,7 @@ class RequestSerializerTest extends AbstractTestCase {
      * Tests serialize()
      *
      * @return void
-     * @throws Exception Throws an exception if an error occurs.
+     * @throws Throwable Throws an exception if an error occurs.
      */
     public function testSerializeRetrievingSmsReplyRequestWithStartAndEndDate(): void {
 
@@ -536,7 +536,7 @@ class RequestSerializerTest extends AbstractTestCase {
 
             $arg->setStartDate(new DateTime("2017-09-14 12:00:00"));
             $obj->serialize($arg);
-        } catch (Exception $ex) {
+        } catch (Throwable $ex) {
             $this->assertInstanceOf(InvalidArgumentException::class, $ex);
             $this->assertEquals('The optional parameter "endDate" is required when "startDate" is provided', $ex->getMessage());
         }
@@ -546,7 +546,7 @@ class RequestSerializerTest extends AbstractTestCase {
             $arg->setStartDate(null);
             $arg->setEndDate(new DateTime("2017-09-14 12:00:00"));
             $obj->serialize($arg);
-        } catch (Exception $ex) {
+        } catch (Throwable $ex) {
 
             $this->assertInstanceOf(InvalidArgumentException::class, $ex);
             $this->assertEquals('The optional parameter "startDate" is required when "endDate" is provided', $ex->getMessage());
@@ -557,7 +557,7 @@ class RequestSerializerTest extends AbstractTestCase {
             $arg->setStartDate(new DateTime("2017-09-14 12:00:00"));
             $arg->setEndDate(new DateTime("2017-09-14 12:00:00"));
             $obj->serialize($arg);
-        } catch (Exception $ex) {
+        } catch (Throwable $ex) {
 
             $this->assertInstanceOf(InvalidArgumentException::class, $ex);
             $this->assertEquals('The "endDate" must be greater than "startDate"', $ex->getMessage());
@@ -577,7 +577,7 @@ class RequestSerializerTest extends AbstractTestCase {
      * Tests serialize()
      *
      * @return void
-     * @throws Exception Throws an exception if an error occurs.
+     * @throws Throwable Throws an exception if an error occurs.
      */
     public function testSerializeRetrievingSmsReplyRequestWithoutArguments(): void {
 
@@ -594,7 +594,7 @@ class RequestSerializerTest extends AbstractTestCase {
      * Tests serialize()
      *
      * @return void
-     * @throws Exception Throws an exception if an error occurs.
+     * @throws Throwable Throws an exception if an error occurs.
      */
     public function testSerializeSendingSmsBatchRequest(): void {
 
@@ -638,7 +638,7 @@ class RequestSerializerTest extends AbstractTestCase {
         try {
 
             $obj->serialize($arg);
-        } catch (Exception $ex) {
+        } catch (Throwable $ex) {
 
             $this->assertInstanceOf(InvalidArgumentException::class, $ex);
             $this->assertEquals('The mandatory parameter "fichier" is missing', $ex->getMessage());
@@ -649,7 +649,7 @@ class RequestSerializerTest extends AbstractTestCase {
      * Tests serialize()
      *
      * @return void
-     * @throws Exception Throws an exception if an error occurs.
+     * @throws Throwable Throws an exception if an error occurs.
      */
     public function testSerializeSendingSmsMessageRequest(): void {
 
@@ -689,7 +689,7 @@ class RequestSerializerTest extends AbstractTestCase {
      * Tests serialize()
      *
      * @return void
-     * @throws Exception Throws an exception if an error occurs.
+     * @throws Throwable Throws an exception if an error occurs.
      */
     public function testSerializeSendingSmsMessageRequestWithGroupe(): void {
 
@@ -737,7 +737,7 @@ class RequestSerializerTest extends AbstractTestCase {
         try {
 
             $obj->serialize($arg);
-        } catch (Exception $ex) {
+        } catch (Throwable $ex) {
 
             $this->assertInstanceOf(InvalidArgumentException::class, $ex);
             $this->assertEquals('The mandatory parameter "message" is missing', $ex->getMessage());
@@ -747,7 +747,7 @@ class RequestSerializerTest extends AbstractTestCase {
 
             $arg->setMessage("message");
             $obj->serialize($arg);
-        } catch (Exception $ex) {
+        } catch (Throwable $ex) {
 
             $this->assertInstanceOf(InvalidArgumentException::class, $ex);
             $this->assertEquals('The mandatory parameter "numero" is missing', $ex->getMessage());
@@ -758,7 +758,7 @@ class RequestSerializerTest extends AbstractTestCase {
      * Tests serialize()
      *
      * @return void
-     * @throws Exception Throws an exception if an error occurs.
+     * @throws Throwable Throws an exception if an error occurs.
      */
     public function testSerializeSendingTextToSpeechRequest(): void {
 
@@ -799,7 +799,7 @@ class RequestSerializerTest extends AbstractTestCase {
         try {
 
             $obj->serialize($arg);
-        } catch (Exception $ex) {
+        } catch (Throwable $ex) {
 
             $this->assertInstanceOf(InvalidArgumentException::class, $ex);
             $this->assertEquals('The mandatory parameter "message" is missing', $ex->getMessage());
@@ -809,7 +809,7 @@ class RequestSerializerTest extends AbstractTestCase {
 
             $arg->setMessage("message");
             $obj->serialize($arg);
-        } catch (Exception $ex) {
+        } catch (Throwable $ex) {
 
             $this->assertInstanceOf(InvalidArgumentException::class, $ex);
             $this->assertEquals('The mandatory parameter "numero" is missing', $ex->getMessage());
@@ -820,7 +820,7 @@ class RequestSerializerTest extends AbstractTestCase {
      * Tests serialize()
      *
      * @return void
-     * @throws Exception Throws an exception if an error occurs.
+     * @throws Throwable Throws an exception if an error occurs.
      */
     public function testSerializeSendingUnicodeSmsRequest(): void {
 
@@ -860,7 +860,7 @@ class RequestSerializerTest extends AbstractTestCase {
      * Tests serialize()
      *
      * @return void
-     * @throws Exception Throws an exception if an error occurs.
+     * @throws Throwable Throws an exception if an error occurs.
      */
     public function testSerializeSentSmsMessageRequest(): void {
 
@@ -880,7 +880,7 @@ class RequestSerializerTest extends AbstractTestCase {
      * Tests serialize()
      *
      * @return void
-     * @throws Exception Throws an exception if an error occurs.
+     * @throws Throwable Throws an exception if an error occurs.
      */
     public function testSerializeSentSmsMessageRequestWithoutArguments(): void {
 
@@ -897,7 +897,7 @@ class RequestSerializerTest extends AbstractTestCase {
      * Test the serialize() method.
      *
      * @return void
-     * @throws Exception Throws an exception if an error occurs.
+     * @throws Throwable Throws an exception if an error occurs.
      */
     public function testSerializeTransferringCreditsRequest(): void {
 
@@ -922,7 +922,7 @@ class RequestSerializerTest extends AbstractTestCase {
      * Test the serialize() method.
      *
      * @return void
-     * @throws Exception Throws an exception if an error occurs.
+     * @throws Throwable Throws an exception if an error occurs.
      */
     public function testSerializeTransferringCreditsRequestWithoutArguments(): void {
 
@@ -934,7 +934,7 @@ class RequestSerializerTest extends AbstractTestCase {
         try {
 
             $obj->serialize($arg);
-        } catch (Exception $ex) {
+        } catch (Throwable $ex) {
 
             $this->assertInstanceOf(InvalidArgumentException::class, $ex);
             $this->assertEquals('The mandatory parameter "targetPseudo" is missing', $ex->getMessage());
@@ -944,7 +944,7 @@ class RequestSerializerTest extends AbstractTestCase {
 
             $arg->setTargetPseudo("targetPseudo");
             $obj->serialize($arg);
-        } catch (Exception $ex) {
+        } catch (Throwable $ex) {
 
             $this->assertInstanceOf(InvalidArgumentException::class, $ex);
             $this->assertEquals('The mandatory parameter "creditAmount" is missing', $ex->getMessage());

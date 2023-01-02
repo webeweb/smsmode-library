@@ -3,6 +3,7 @@ CHANGELOG
 
 ### [4.3.0](https://github.com/webeweb/smsmode-library/tree/v4.3.0) (2023-01-02)
 
+- Improve code quality
 - Improve PHPDoc
 - Update LICENSE
 

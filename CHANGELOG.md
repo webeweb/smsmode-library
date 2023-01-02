@@ -1,6 +1,11 @@
 CHANGELOG
 =========
 
+### [4.3.0](https://github.com/webeweb/smsmode-library/tree/v4.3.0) (2023-01-02)
+
+- Improve PHPDoc
+- Update LICENSE
+
 ### [4.2.0](https://github.com/webeweb/smsmode-library/tree/v4.2.0) (2022-12-20)
 
 - Add PHP 8.2 support

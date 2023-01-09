@@ -1,7 +1,7 @@
 smsmode-library
 ===============
 
-[![Build Status](https://img.shields.io/github/workflow/status/webeweb/smsmode-library/build?style=flat-square)](https://github.com/webeweb/smsmode-library/actions)
+[![Build Status](https://img.shields.io/github/actions/workflow/status/webeweb/smsmode-library/build.yml?style=flat-square)](https://github.com/webeweb/smsmode-library/actions)
 [![Coverage Status](https://img.shields.io/coveralls/github/webeweb/smsmode-library/master.svg?style=flat-square)](https://coveralls.io/github/webeweb/smsmode-library?branch=master)
 [![Scrutinizer Code Quality](https://img.shields.io/scrutinizer/quality/g/webeweb/smsmode-library/master.svg?style=flat-square)](https://scrutinizer-ci.com/g/webeweb/smsmode-library/?branch=master)
 [![Latest Stable Version](https://img.shields.io/packagist/v/webeweb/smsmode-library.svg?style=flat-square)](https://packagist.org/packages/webeweb/smsmode-library)

@@ -11,7 +11,7 @@
 
 namespace WBW\Library\SmsMode\Response;
 
-use WBW\Library\SmsMode\Model\Attribute\StringSmsIDTrait;
+use WBW\Library\SmsMode\Traits\Strings\StringSmsIDTrait;
 
 /**
  * Sending SMS message response.

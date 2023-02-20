@@ -12,11 +12,11 @@
 namespace WBW\Library\SmsMode\Request;
 
 use UnexpectedValueException;
-use WBW\Library\SmsMode\Model\Attribute\StringMobileTrait;
-use WBW\Library\SmsMode\Model\Attribute\StringNomTrait;
-use WBW\Library\SmsMode\Model\Attribute\StringPrenomTrait;
-use WBW\Library\SmsMode\Model\Attribute\StringSocieteTrait;
 use WBW\Library\SmsMode\Serializer\NumeroSerializer;
+use WBW\Library\SmsMode\Traits\Strings\StringMobileTrait;
+use WBW\Library\SmsMode\Traits\Strings\StringNomTrait;
+use WBW\Library\SmsMode\Traits\Strings\StringPrenomTrait;
+use WBW\Library\SmsMode\Traits\Strings\StringSocieteTrait;
 use WBW\Library\Traits\DateTimes\DateTimeDateTrait;
 use WBW\Library\Traits\Strings\StringEmailTrait;
 use WBW\Library\Traits\Strings\StringReferenceTrait;

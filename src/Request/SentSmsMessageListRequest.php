@@ -11,7 +11,7 @@
 
 namespace WBW\Library\SmsMode\Request;
 
-use WBW\Library\SmsMode\Model\Attribute\IntegerOffsetTrait;
+use WBW\Library\SmsMode\Traits\Integers\IntegerOffsetTrait;
 
 /**
  * Sent SMS message list request.

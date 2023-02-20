@@ -12,9 +12,9 @@
 namespace WBW\Library\SmsMode\Model;
 
 use WBW\Library\SmsMode\Api\DeliveryReportCallbackInterface;
-use WBW\Library\SmsMode\Model\Attribute\DateTimeDateReceptionTrait;
-use WBW\Library\SmsMode\Model\Attribute\StringRefClientTrait;
-use WBW\Library\SmsMode\Model\Attribute\StringSmsIDTrait;
+use WBW\Library\SmsMode\Traits\DateTimes\DateTimeDateReceptionTrait;
+use WBW\Library\SmsMode\Traits\Strings\StringRefClientTrait;
+use WBW\Library\SmsMode\Traits\Strings\StringSmsIDTrait;
 
 /**
  * Delivery report callback.

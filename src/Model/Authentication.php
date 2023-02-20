@@ -11,7 +11,7 @@
 
 namespace WBW\Library\SmsMode\Model;
 
-use WBW\Library\SmsMode\Model\Attribute\StringAccessTokenTrait;
+use WBW\Library\SmsMode\Traits\Strings\StringAccessTokenTrait;
 
 /**
  * Authentication.

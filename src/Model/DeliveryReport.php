@@ -11,8 +11,8 @@
 
 namespace WBW\Library\SmsMode\Model;
 
-use WBW\Library\SmsMode\Model\Attribute\StringNumeroTrait;
 use WBW\Library\SmsMode\Response\AbstractResponse;
+use WBW\Library\SmsMode\Traits\Strings\StringNumeroTrait;
 
 /**
  * Delivery report.

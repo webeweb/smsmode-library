@@ -12,9 +12,9 @@
 namespace WBW\Library\SmsMode\Model;
 
 use DateTime;
-use WBW\Library\SmsMode\Model\Attribute\StringNumeroTrait;
-use WBW\Library\SmsMode\Model\Attribute\StringSmsIDTrait;
 use WBW\Library\SmsMode\Response\AbstractResponse;
+use WBW\Library\SmsMode\Traits\Strings\StringNumeroTrait;
+use WBW\Library\SmsMode\Traits\Strings\StringSmsIDTrait;
 use WBW\Library\Traits\Strings\StringMessageTrait;
 
 /**

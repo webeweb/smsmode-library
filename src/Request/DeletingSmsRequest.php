@@ -12,9 +12,9 @@
 namespace WBW\Library\SmsMode\Request;
 
 use UnexpectedValueException;
-use WBW\Library\SmsMode\Model\Attribute\StringNumeroTrait;
-use WBW\Library\SmsMode\Model\Attribute\StringSmsIDTrait;
 use WBW\Library\SmsMode\Serializer\NumeroSerializer;
+use WBW\Library\SmsMode\Traits\Strings\StringNumeroTrait;
+use WBW\Library\SmsMode\Traits\Strings\StringSmsIDTrait;
 
 /**
  * Deleting SMS request.

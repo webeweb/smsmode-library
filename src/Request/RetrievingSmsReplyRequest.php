@@ -12,7 +12,7 @@
 namespace WBW\Library\SmsMode\Request;
 
 use DateTime;
-use WBW\Library\SmsMode\Model\Attribute\IntegerOffsetTrait;
+use WBW\Library\SmsMode\Traits\Integers\IntegerOffsetTrait;
 
 /**
  * Retrieving SMS reply request.

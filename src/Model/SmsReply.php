@@ -12,8 +12,8 @@
 namespace WBW\Library\SmsMode\Model;
 
 use DateTime;
-use WBW\Library\SmsMode\Model\Attribute\StringResponseIDTrait;
 use WBW\Library\SmsMode\Response\AbstractResponse;
+use WBW\Library\SmsMode\Traits\Strings\StringResponseIDTrait;
 use WBW\Library\Traits\Strings\StringFromTrait;
 use WBW\Library\Traits\Strings\StringTextTrait;
 use WBW\Library\Traits\Strings\StringToTrait;

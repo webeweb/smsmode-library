@@ -14,13 +14,13 @@ namespace WBW\Library\SmsMode\Request;
 use InvalidArgumentException;
 use UnexpectedValueException;
 use WBW\Library\SmsMode\Api\SendingSmsMessageInterface;
-use WBW\Library\SmsMode\Model\Attribute\DateTimeDateEnvoiTrait;
-use WBW\Library\SmsMode\Model\Attribute\IntegerClasseMsgTrait;
-use WBW\Library\SmsMode\Model\Attribute\IntegerNbrMsgTrait;
-use WBW\Library\SmsMode\Model\Attribute\StringEmetteurTrait;
-use WBW\Library\SmsMode\Model\Attribute\StringNotificationUrlTrait;
-use WBW\Library\SmsMode\Model\Attribute\StringRefClientTrait;
 use WBW\Library\SmsMode\Serializer\NumeroSerializer;
+use WBW\Library\SmsMode\Traits\DateTimes\DateTimeDateEnvoiTrait;
+use WBW\Library\SmsMode\Traits\Integers\IntegerClasseMsgTrait;
+use WBW\Library\SmsMode\Traits\Integers\IntegerNbrMsgTrait;
+use WBW\Library\SmsMode\Traits\Strings\StringEmetteurTrait;
+use WBW\Library\SmsMode\Traits\Strings\StringNotificationUrlTrait;
+use WBW\Library\SmsMode\Traits\Strings\StringRefClientTrait;
 use WBW\Library\Traits\Strings\StringMessageTrait;
 
 /**

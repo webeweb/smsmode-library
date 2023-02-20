@@ -14,8 +14,8 @@ namespace WBW\Library\SmsMode\Request;
 use InvalidArgumentException;
 use UnexpectedValueException;
 use WBW\Library\SmsMode\Api\SendingTextToSpeechSmsInterface;
-use WBW\Library\SmsMode\Model\Attribute\DateTimeDateEnvoiTrait;
 use WBW\Library\SmsMode\Serializer\NumeroSerializer;
+use WBW\Library\SmsMode\Traits\DateTimes\DateTimeDateEnvoiTrait;
 use WBW\Library\Traits\Strings\StringMessageTrait;
 
 /**

@@ -12,13 +12,13 @@
 namespace WBW\Library\SmsMode\Model;
 
 use WBW\Library\SmsMode\Api\SmsReplyCallbackInterface;
-use WBW\Library\SmsMode\Model\Attribute\DateTimeDateReceptionTrait;
-use WBW\Library\SmsMode\Model\Attribute\StringEmetteurTrait;
-use WBW\Library\SmsMode\Model\Attribute\StringNumeroTrait;
-use WBW\Library\SmsMode\Model\Attribute\StringRefClientTrait;
-use WBW\Library\SmsMode\Model\Attribute\StringResponseIDTrait;
-use WBW\Library\SmsMode\Model\Attribute\StringSmsIDTrait;
 use WBW\Library\SmsMode\Response\AbstractResponse;
+use WBW\Library\SmsMode\Traits\DateTimes\DateTimeDateReceptionTrait;
+use WBW\Library\SmsMode\Traits\Strings\StringEmetteurTrait;
+use WBW\Library\SmsMode\Traits\Strings\StringNumeroTrait;
+use WBW\Library\SmsMode\Traits\Strings\StringRefClientTrait;
+use WBW\Library\SmsMode\Traits\Strings\StringResponseIDTrait;
+use WBW\Library\SmsMode\Traits\Strings\StringSmsIDTrait;
 use WBW\Library\Traits\Strings\StringMessageTrait;
 
 /**

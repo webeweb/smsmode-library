@@ -12,7 +12,7 @@
 namespace WBW\Library\SmsMode\Response;
 
 use DateTime;
-use WBW\Library\SmsMode\Model\Attribute\StringAccessTokenTrait;
+use WBW\Library\SmsMode\Traits\Strings\StringAccessTokenTrait;
 use WBW\Library\Traits\Strings\StringIdTrait;
 
 /**

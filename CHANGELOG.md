@@ -1,6 +1,10 @@
 CHANGELOG
 =========
 
+### [4.4.0](https://github.com/webeweb/smsmode-library/tree/v4.4.0) (2023-02-20)
+
+- Reorganize internal traits
+
 ### [4.3.0](https://github.com/webeweb/smsmode-library/tree/v4.3.0) (2023-01-02)
 
 - Improve code quality

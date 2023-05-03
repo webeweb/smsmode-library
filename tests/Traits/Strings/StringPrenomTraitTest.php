@@ -23,7 +23,7 @@ use WBW\Library\SmsMode\Tests\Fixtures\Traits\Strings\TestStringPrenomTrait;
 class StringPrenomTraitTest extends AbstractTestCase {
 
     /**
-     * Tests setPrenom()
+     * Test setPrenom()
      *
      * @return void
      */

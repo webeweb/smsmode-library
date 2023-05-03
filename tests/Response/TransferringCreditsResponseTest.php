@@ -23,7 +23,7 @@ use WBW\Library\SmsMode\Tests\AbstractTestCase;
 class TransferringCreditsResponseTest extends AbstractTestCase {
 
     /**
-     * Tests __construct()
+     * Test __construct()
      *
      * @return void
      */

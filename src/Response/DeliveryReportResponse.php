@@ -58,7 +58,7 @@ class DeliveryReportResponse extends AbstractResponse {
     }
 
     /**
-     * Determines if this delivery report response has a delivery report.
+     * Determine if this delivery report response has a delivery report.
      *
      * @return bool Returns true in case of success, false otherwise.
      */

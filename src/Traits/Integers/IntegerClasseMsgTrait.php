@@ -30,7 +30,7 @@ trait IntegerClasseMsgTrait {
     private $classeMsg;
 
     /**
-     * Enumerates the classe msg.
+     * Enumerate the classe msg.
      *
      * @return int[] Returns the classe msg enumeration.
      */

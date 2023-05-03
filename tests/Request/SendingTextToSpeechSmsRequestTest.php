@@ -26,7 +26,7 @@ use WBW\Library\SmsMode\Tests\AbstractTestCase;
 class SendingTextToSpeechSmsRequestTest extends AbstractTestCase {
 
     /**
-     * Tests addNumero()
+     * Test addNumero()
      *
      * @return void
      * @throws Throwable Throws an exception if an error occurs.
@@ -40,7 +40,7 @@ class SendingTextToSpeechSmsRequestTest extends AbstractTestCase {
     }
 
     /**
-     * Tests enumLanguage()
+     * Test enumLanguage()
      *
      * @return void
      */
@@ -58,7 +58,7 @@ class SendingTextToSpeechSmsRequestTest extends AbstractTestCase {
     }
 
     /**
-     * Tests setLanguage()
+     * Test setLanguage()
      *
      * @return void
      * @throws Throwable Throws an exception if an error occurs.
@@ -75,7 +75,7 @@ class SendingTextToSpeechSmsRequestTest extends AbstractTestCase {
     }
 
     /**
-     * Tests setLanguage()
+     * Test setLanguage()
      *
      * @return void
      */
@@ -94,7 +94,7 @@ class SendingTextToSpeechSmsRequestTest extends AbstractTestCase {
     }
 
     /**
-     * Tests setTitle()
+     * Test setTitle()
      *
      * @return void
      */
@@ -107,7 +107,7 @@ class SendingTextToSpeechSmsRequestTest extends AbstractTestCase {
     }
 
     /**
-     * Tests __construct()
+     * Test __construct()
      *
      * @return void
      */

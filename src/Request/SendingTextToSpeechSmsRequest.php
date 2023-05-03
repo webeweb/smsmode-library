@@ -80,7 +80,7 @@ class SendingTextToSpeechSmsRequest extends AbstractRequest implements SendingTe
     }
 
     /**
-     * Enumerates the language.
+     * Enumerate the language.
      *
      * @return string[] Returns the language enumeration.
      */

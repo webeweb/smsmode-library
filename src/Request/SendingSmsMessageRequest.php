@@ -97,7 +97,7 @@ class SendingSmsMessageRequest extends AbstractRequest implements SendingSmsMess
     }
 
     /**
-     * Enumerates the stop.
+     * Enumerate the stop.
      *
      * @return int[] Returns the stop enumeration.
      */

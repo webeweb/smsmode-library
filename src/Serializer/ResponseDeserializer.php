@@ -43,7 +43,7 @@ use WBW\Library\Types\Helper\ArrayHelper;
 class ResponseDeserializer {
 
     /**
-     * Deserializes an account balance response.
+     * Deserialize an account balance response.
      *
      * @param string $rawResponse The response.
      * @return AccountBalanceResponse Returns the account balance response.
@@ -65,7 +65,7 @@ class ResponseDeserializer {
     }
 
     /**
-     * Deserializes an adding contact response.
+     * Deserialize an adding contact response.
      *
      * @param string $rawResponse The raw response.
      * @return AddingContactResponse Returns the adding contact response.
@@ -79,7 +79,7 @@ class ResponseDeserializer {
     }
 
     /**
-     * Deserializes a checking SMS message status response.
+     * Deserialize a checking SMS message status response.
      *
      * @param string $rawResponse The raw response.
      * @return CheckingSmsMessageStatusResponse Returns the checking SMS message status response.
@@ -93,7 +93,7 @@ class ResponseDeserializer {
     }
 
     /**
-     * Deserializes a creating API key response.
+     * Deserialize a creating API key response.
      *
      * @param string $rawResponse The raw response.
      * @return CreatingApiKeyResponse Returns the creating API key response.
@@ -123,7 +123,7 @@ class ResponseDeserializer {
     }
 
     /**
-     * Deserializes a creating sub-account response.
+     * Deserialize a creating sub-account response.
      *
      * @param string $rawResponse The raw response.
      * @return CreatingSubAccountResponse Returns the creating sub-account response.
@@ -137,7 +137,7 @@ class ResponseDeserializer {
     }
 
     /**
-     * Deserializes a deleting SMS response.
+     * Deserialize a deleting SMS response.
      *
      * @param string $rawResponse The raw response.
      * @return DeletingSmsResponse Returns the deleting SMS response.
@@ -151,7 +151,7 @@ class ResponseDeserializer {
     }
 
     /**
-     * Deserializes a deleting su-account response.
+     * Deserialize a deleting su-account response.
      *
      * @param string $rawResponse The raw response.
      * @return DeletingSubAccountResponse Returns the deleting sub-account response.
@@ -165,7 +165,7 @@ class ResponseDeserializer {
     }
 
     /**
-     * Deserializes a delivery report.
+     * Deserialize a delivery report.
      *
      * @param string $rawResponse The raw response.
      * @return DeliveryReport Returns the delivery report.
@@ -187,7 +187,7 @@ class ResponseDeserializer {
     }
 
     /**
-     * Deserializes a delivery report response.
+     * Deserialize a delivery report response.
      *
      * @param string $rawResponse The raw response.
      * @return DeliveryReportResponse Returns the delivery report response.
@@ -211,7 +211,7 @@ class ResponseDeserializer {
     }
 
     /**
-     * Deserializes a response.
+     * Deserialize a response.
      *
      * @param AbstractResponse $model The response.
      * @param string $rawResponse The raw response.
@@ -231,7 +231,7 @@ class ResponseDeserializer {
     }
 
     /**
-     * Deserializes a retrieving SMS reply response.
+     * Deserialize a retrieving SMS reply response.
      *
      * @param string $rawResponse The raw response.
      * @return RetrievingSmsReplyResponse Returns the retrieving SMS reply response.
@@ -255,7 +255,7 @@ class ResponseDeserializer {
     }
 
     /**
-     * Deserializes a sending SMS batch response.
+     * Deserialize a sending SMS batch response.
      *
      * @param string $rawResponse The raw response.
      * @return SendingSmsBatchResponse Returns the sending SMS batch response.
@@ -274,7 +274,7 @@ class ResponseDeserializer {
     }
 
     /**
-     * Deserializes a sending SMS message response.
+     * Deserialize a sending SMS message response.
      *
      * @param string $rawResponse The raw response.
      * @return SendingSmsMessageResponse Returns the sending SMS message response.
@@ -293,7 +293,7 @@ class ResponseDeserializer {
     }
 
     /**
-     * Deserializes a sending text-to-speech SMS response.
+     * Deserialize a sending text-to-speech SMS response.
      *
      * @param string $rawResponse The raw response.
      * @return SendingTextToSpeechSmsResponse Returns the sending text-to-speech SMS response.
@@ -312,7 +312,7 @@ class ResponseDeserializer {
     }
 
     /**
-     * Deserializes a sending unicode SMS response.
+     * Deserialize a sending unicode SMS response.
      *
      * @param string $rawResponse The raw response.
      * @return SendingUnicodeSmsResponse Returns the sending unicode SMS response.
@@ -331,7 +331,7 @@ class ResponseDeserializer {
     }
 
     /**
-     * Deserializes a sent SMS message.
+     * Deserialize a sent SMS message.
      *
      * @param string $rawResponse The raw response.
      * @return SentSmsMessage Returns the sent SMS message.
@@ -361,7 +361,7 @@ class ResponseDeserializer {
     }
 
     /**
-     * Deserializes a sent SMS message list response.
+     * Deserialize a sent SMS message list response.
      *
      * @param string $rawResponse The raw response.
      * @return SentSmsMessageListResponse Returns the sent SMS message list response.
@@ -385,7 +385,7 @@ class ResponseDeserializer {
     }
 
     /**
-     * Deserializes a SMS reply.
+     * Deserialize a SMS reply.
      *
      * @param string $rawResponse The raw response.
      * @return SmsReply Returns the SMS reply.
@@ -415,7 +415,7 @@ class ResponseDeserializer {
     }
 
     /**
-     * Deserializes a transferring credits response.
+     * Deserialize a transferring credits response.
      *
      * @param string $rawResponse The raw response.
      * @return TransferringCreditsResponse Returns the transferring credits response.

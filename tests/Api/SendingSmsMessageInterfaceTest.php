@@ -23,7 +23,7 @@ use WBW\Library\SmsMode\Tests\AbstractTestCase;
 class SendingSmsMessageInterfaceTest extends AbstractTestCase {
 
     /**
-     * Tests __construct()
+     * Test __construct()
      *
      * @return void
      */

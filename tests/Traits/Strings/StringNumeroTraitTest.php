@@ -23,7 +23,7 @@ use WBW\Library\SmsMode\Tests\Fixtures\Traits\Strings\TestStringNumeroTrait;
 class StringNumeroTraitTest extends AbstractTestCase {
 
     /**
-     * Tests setNumero()
+     * Test setNumero()
      *
      * @return void
      */

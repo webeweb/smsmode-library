@@ -23,7 +23,7 @@ use WBW\Library\SmsMode\Tests\Fixtures\Traits\Strings\TestStringNotificationUrlT
 class StringNotificationUrlTraitTest extends AbstractTestCase {
 
     /**
-     * Tests setNotificationUrl()
+     * Test setNotificationUrl()
      *
      * @return void
      */

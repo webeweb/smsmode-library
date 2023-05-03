@@ -42,7 +42,7 @@ use WBW\Library\SmsMode\Tests\Fixtures\Serializer\TestResponseDeserializer;
 class ResponseDeserializerTest extends AbstractTestCase {
 
     /**
-     * Tests deserializeAccountBalanceResponse()
+     * Test deserializeAccountBalanceResponse()
      *
      * @return void
      */
@@ -62,7 +62,7 @@ class ResponseDeserializerTest extends AbstractTestCase {
     }
 
     /**
-     * Tests deserializeAccountBalanceResponse()
+     * Test deserializeAccountBalanceResponse()
      *
      * @return void
      */
@@ -82,7 +82,7 @@ class ResponseDeserializerTest extends AbstractTestCase {
     }
 
     /**
-     * Tests deserializeAddingContactResponse()
+     * Test deserializeAddingContactResponse()
      *
      * @return void
      */
@@ -100,7 +100,7 @@ class ResponseDeserializerTest extends AbstractTestCase {
     }
 
     /**
-     * Tests deserializeCheckingSmsMessageStatusResponse()
+     * Test deserializeCheckingSmsMessageStatusResponse()
      *
      * @return void
      */
@@ -118,7 +118,7 @@ class ResponseDeserializerTest extends AbstractTestCase {
     }
 
     /**
-     * Tests deserializeCreatingApiKeyResponse()
+     * Test deserializeCreatingApiKeyResponse()
      *
      * @return void
      */
@@ -152,7 +152,7 @@ EOT;
     }
 
     /**
-     * Tests deserializeCreatingSubAccountResponse()
+     * Test deserializeCreatingSubAccountResponse()
      *
      * @return void
      */
@@ -170,7 +170,7 @@ EOT;
     }
 
     /**
-     * Tests deserializeDeletingSmsResponse()
+     * Test deserializeDeletingSmsResponse()
      *
      * @return void
      */
@@ -188,7 +188,7 @@ EOT;
     }
 
     /**
-     * Tests deserializeDeletingSubAccountResponse()
+     * Test deserializeDeletingSubAccountResponse()
      *
      * @return void
      */
@@ -206,7 +206,7 @@ EOT;
     }
 
     /**
-     * Tests deserializeDeliveryReport()
+     * Test deserializeDeliveryReport()
      *
      * @return void
      */
@@ -227,7 +227,7 @@ EOT;
     }
 
     /**
-     * Tests deserializeDeliveryReport()
+     * Test deserializeDeliveryReport()
      *
      * @return void
      */
@@ -257,7 +257,7 @@ EOT;
     }
 
     /**
-     * Tests deserializeDeliveryReport()
+     * Test deserializeDeliveryReport()
      *
      * @return void
      */
@@ -277,7 +277,7 @@ EOT;
     }
 
     /**
-     * Tests deserializeDeliveryReport()
+     * Test deserializeDeliveryReport()
      *
      * @return void
      */
@@ -298,7 +298,7 @@ EOT;
     }
 
     /**
-     * Tests deserializeResponse()
+     * Test deserializeResponse()
      *
      * @return void
      */
@@ -319,7 +319,7 @@ EOT;
     }
 
     /**
-     * Tests deserializeRetrievingSmsReplyResponse()
+     * Test deserializeRetrievingSmsReplyResponse()
      *
      * @return void
      */
@@ -364,7 +364,7 @@ EOT;
     }
 
     /**
-     * Tests deserializeRetrievingSmsReplyResponse()
+     * Test deserializeRetrievingSmsReplyResponse()
      *
      * @return void
      */
@@ -384,7 +384,7 @@ EOT;
     }
 
     /**
-     * Tests deserializeSendingSmsBatchResponse()
+     * Test deserializeSendingSmsBatchResponse()
      *
      * @return void
      */
@@ -404,7 +404,7 @@ EOT;
     }
 
     /**
-     * Tests deserializeSendingSmsMessageResponse()
+     * Test deserializeSendingSmsMessageResponse()
      *
      * @return void
      */
@@ -424,7 +424,7 @@ EOT;
     }
 
     /**
-     * Tests deserializeSendingTextToSpeechSmsResponse()
+     * Test deserializeSendingTextToSpeechSmsResponse()
      *
      * @return void
      */
@@ -444,7 +444,7 @@ EOT;
     }
 
     /**
-     * Tests deserializeSendingUnicodeSmsResponse()
+     * Test deserializeSendingUnicodeSmsResponse()
      *
      * @return void
      */
@@ -464,7 +464,7 @@ EOT;
     }
 
     /**
-     * Tests deserializeSentSmsMessage()
+     * Test deserializeSentSmsMessage()
      *
      * @return void
      */
@@ -490,7 +490,7 @@ EOT;
     }
 
     /**
-     * Tests deserializeSentSmsMessageListResponse()
+     * Test deserializeSentSmsMessageListResponse()
      *
      * @return void
      */
@@ -537,7 +537,7 @@ EOT;
     }
 
     /**
-     * Tests deserializeSentSmsMessageListResponse()
+     * Test deserializeSentSmsMessageListResponse()
      *
      * @return void
      */
@@ -557,7 +557,7 @@ EOT;
     }
 
     /**
-     * Tests deserializeSentSmsMessage()
+     * Test deserializeSentSmsMessage()
      *
      * @return void
      */
@@ -583,7 +583,7 @@ EOT;
     }
 
     /**
-     * Tests deserializeSmsReply()
+     * Test deserializeSmsReply()
      *
      * @return void
      */
@@ -609,7 +609,7 @@ EOT;
     }
 
     /**
-     * Tests deserializeSmsReply()
+     * Test deserializeSmsReply()
      *
      * @return void
      */
@@ -635,7 +635,7 @@ EOT;
     }
 
     /**
-     * Tests deserializeTransferringCreditsResponse()
+     * Test deserializeTransferringCreditsResponse()
      *
      * @return void
      */

@@ -58,7 +58,7 @@ class SentSmsMessageListResponse extends AbstractResponse {
     }
 
     /**
-     * Determines if this sent SMS message list has a sent SMS message.
+     * Determine if this sent SMS message list has a sent SMS message.
      *
      * @return bool Returns true in case of success, false otherwise.
      */

@@ -23,7 +23,7 @@ use WBW\Library\SmsMode\Tests\AbstractTestCase;
 class AccountBalanceResponseTest extends AbstractTestCase {
 
     /**
-     * Tests setAccountBalance()
+     * Test setAccountBalance()
      *
      * @return void
      */
@@ -36,7 +36,7 @@ class AccountBalanceResponseTest extends AbstractTestCase {
     }
 
     /**
-     * Tests __construct()
+     * Test __construct()
      *
      * @return void
      */

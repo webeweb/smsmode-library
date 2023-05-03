@@ -36,7 +36,7 @@ abstract class AbstractResponse extends BaseResponse implements ResponseInterfac
     }
 
     /**
-     * Enumerates the responses.
+     * Enumerate the responses.
      *
      * @return array Returns the responses enumeration.
      */

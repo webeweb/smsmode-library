@@ -23,7 +23,7 @@ use WBW\Library\SmsMode\Tests\Fixtures\Traits\Strings\TestStringAccessTokenTrait
 class StringAccessTokenTraitTest extends AbstractTestCase {
 
     /**
-     * Tests setAccessToken()
+     * Test setAccessToken()
      *
      * @return void
      */

@@ -44,7 +44,7 @@ class RequestSerializer {
     }
 
     /**
-     * Checks a complement value.
+     * Check a complement value.
      *
      * @param object $object The object.
      * @param array $configuration The configuration.
@@ -62,7 +62,7 @@ class RequestSerializer {
     }
 
     /**
-     * Checks a mandatory value.
+     * Check a mandatory value.
      *
      * @param object $object The object.
      * @param array $configuration The configuration.
@@ -171,7 +171,7 @@ class RequestSerializer {
     }
 
     /**
-     * Determines if the value break.
+     * Determine if the value break.
      *
      * @param array $configuration The configuration.
      * @return bool Returns true in case of success, false otherwise.
@@ -181,7 +181,7 @@ class RequestSerializer {
     }
 
     /**
-     * Determines if a value is mandatory.
+     * Determine if a value is mandatory.
      *
      * @param object $object The object.
      * @param array $configuration The configuration.
@@ -201,7 +201,7 @@ class RequestSerializer {
     }
 
     /**
-     * Determines if a value is null.
+     * Determine if a value is null.
      *
      * @param mixed $value The value.
      * @return bool Returns true in case of success, false otherwise.
@@ -217,7 +217,7 @@ class RequestSerializer {
     }
 
     /**
-     * Determines if an object value is null.
+     * Determine if an object value is null.
      *
      * @param object $object The object.
      * @param string $getter The getter.
@@ -229,7 +229,7 @@ class RequestSerializer {
     }
 
     /**
-     * Serializes an object.
+     * Serialize an object.
      *
      * @param object $object The object.
      * @return array Returns the serialized parameters.

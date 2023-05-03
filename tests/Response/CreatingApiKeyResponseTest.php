@@ -25,7 +25,7 @@ use WBW\Library\SmsMode\Tests\AbstractTestCase;
 class CreatingApiKeyResponseTest extends AbstractTestCase {
 
     /**
-     * Tests setAccount()
+     * Test setAccount()
      *
      * @return void
      */
@@ -38,7 +38,7 @@ class CreatingApiKeyResponseTest extends AbstractTestCase {
     }
 
     /**
-     * Tests setCreationDate()
+     * Test setCreationDate()
      *
      * @return void
      * @throws Throwable Throws an exception if an error occurs.
@@ -55,7 +55,7 @@ class CreatingApiKeyResponseTest extends AbstractTestCase {
     }
 
     /**
-     * Tests setException()
+     * Test setException()
      *
      * @return void
      */
@@ -68,7 +68,7 @@ class CreatingApiKeyResponseTest extends AbstractTestCase {
     }
 
     /**
-     * Tests setExpiration()
+     * Test setExpiration()
      *
      * @return void
      * @throws Throwable Throws an exception if an error occurs.
@@ -85,7 +85,7 @@ class CreatingApiKeyResponseTest extends AbstractTestCase {
     }
 
     /**
-     * Tests setState()
+     * Test setState()
      *
      * @return void
      */
@@ -98,7 +98,7 @@ class CreatingApiKeyResponseTest extends AbstractTestCase {
     }
 
     /**
-     * Tests __construct()
+     * Test __construct()
      *
      * @return void
      */

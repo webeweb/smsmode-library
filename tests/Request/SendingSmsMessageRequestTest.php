@@ -26,7 +26,7 @@ use WBW\Library\SmsMode\Tests\AbstractTestCase;
 class SendingSmsMessageRequestTest extends AbstractTestCase {
 
     /**
-     * Tests addNumero()
+     * Test addNumero()
      *
      * @return void
      * @throws Throwable Throws an exception if an error occurs.
@@ -40,7 +40,7 @@ class SendingSmsMessageRequestTest extends AbstractTestCase {
     }
 
     /**
-     * Tests enumStop()
+     * Test enumStop()
      *
      * @return void
      */
@@ -56,7 +56,7 @@ class SendingSmsMessageRequestTest extends AbstractTestCase {
     }
 
     /**
-     * Tests setGroupe()
+     * Test setGroupe()
      *
      * @return void
      */
@@ -69,7 +69,7 @@ class SendingSmsMessageRequestTest extends AbstractTestCase {
     }
 
     /**
-     * Tests setNotificationUrlReponse()
+     * Test setNotificationUrlReponse()
      *
      * @return void
      */
@@ -82,7 +82,7 @@ class SendingSmsMessageRequestTest extends AbstractTestCase {
     }
 
     /**
-     * Tests setStop()
+     * Test setStop()
      *
      * @return void
      * @throws Throwable Throws an exception if an error occurs.
@@ -99,7 +99,7 @@ class SendingSmsMessageRequestTest extends AbstractTestCase {
     }
 
     /**
-     * Tests setStop()
+     * Test setStop()
      *
      * @return void
      */
@@ -118,7 +118,7 @@ class SendingSmsMessageRequestTest extends AbstractTestCase {
     }
 
     /**
-     * Tests __construct()
+     * Test __construct()
      *
      * @return void
      */

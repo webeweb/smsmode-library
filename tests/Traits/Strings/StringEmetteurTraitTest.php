@@ -23,7 +23,7 @@ use WBW\Library\SmsMode\Tests\Fixtures\Traits\Strings\TestStringEmetteurTrait;
 class StringEmetteurTraitTest extends AbstractTestCase {
 
     /**
-     * Tests setEmetteur()
+     * Test setEmetteur()
      *
      * @return void
      */

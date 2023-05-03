@@ -49,7 +49,7 @@ use WBW\Library\SmsMode\Request\TransferringCreditsRequest;
 class RequestFactory {
 
     /**
-     * Creates an account balance request.
+     * Create an account balance request.
      *
      * @return AccountBalanceRequest Returns the account balance request.
      */
@@ -58,7 +58,7 @@ class RequestFactory {
     }
 
     /**
-     * Creates an adding contact request.
+     * Create an adding contact request.
      *
      * @param AddingContactInterface $addingContact The adding contact.
      * @return AddingContactRequest Returns the adding contact request.
@@ -78,7 +78,7 @@ class RequestFactory {
     }
 
     /**
-     * Creates a checking SMS message status request.
+     * Create a checking SMS message status request.
      *
      * @param CheckingSmsMessageStatusInterface $checkingSmsMessageStatus The checking SMS message status.
      * @return CheckingSmsMessageStatusRequest Returns the checking SMS message status request.
@@ -92,7 +92,7 @@ class RequestFactory {
     }
 
     /**
-     * Creates an creating API key request.
+     * Create an creating API key request.
      *
      * @return CreatingApiKeyRequest Returns the creating API key request.
      */
@@ -101,7 +101,7 @@ class RequestFactory {
     }
 
     /**
-     * Creates a creating sub-account request.
+     * Create a creating sub-account request.
      *
      * @param CreatingSubAccountInterface $creatingSubAccount The creating sub-account.
      * @return CreatingSubAccountRequest Returns the creating sub-account request.
@@ -128,7 +128,7 @@ class RequestFactory {
     }
 
     /**
-     * Creates a deleting SMS request.
+     * Create a deleting SMS request.
      *
      * @param DeletingSmsInterface $deletingSms The deleting SMS.
      * @return DeletingSmsRequest Returns the deleting SMS request.
@@ -143,7 +143,7 @@ class RequestFactory {
     }
 
     /**
-     * Creates a deleting sub-account request.
+     * Create a deleting sub-account request.
      *
      * @param DeletingSubAccountInterface $deletingSubAccount The deleting sub-account.
      * @return DeletingSubAccountRequest Returns the deleting sub-account status request.
@@ -157,7 +157,7 @@ class RequestFactory {
     }
 
     /**
-     * Creates a delivery report request.
+     * Create a delivery report request.
      *
      * @param DeliveryReportInterface $deliveryReport The delivery report.
      * @return DeliveryReportRequest Returns the delivery report request.
@@ -171,7 +171,7 @@ class RequestFactory {
     }
 
     /**
-     * Creates a retrieving SMS reply request.
+     * Create a retrieving SMS reply request.
      *
      * @param RetrievingSmsReplyInterface $retrievingSmsReply The retrieving SMS reply.
      * @return RetrievingSmsReplyRequest Returns the retrieving SMS reply request.
@@ -188,7 +188,7 @@ class RequestFactory {
     }
 
     /**
-     * Creates a sending SMS batch request.
+     * Create a sending SMS batch request.
      *
      * @param SendingSmsBatchInterface $sendingSmsBatch The sending SMS batch.
      * @return SendingSmsBatchRequest Returns the sending SMS batch request.
@@ -208,7 +208,7 @@ class RequestFactory {
     }
 
     /**
-     * Creates a sending SMS message request.
+     * Create a sending SMS message request.
      *
      * @param SendingSmsMessageInterface $sendingSmsMessage The sending SMS message.
      * @return SendingSmsMessageRequest Returns the sending SMS message request.
@@ -234,7 +234,7 @@ class RequestFactory {
     }
 
     /**
-     * Creates a sending text-to-speech SMS request.
+     * Create a sending text-to-speech SMS request.
      *
      * @param SendingTextToSpeechSmsInterface $sendingTextToSpeechSms The sending text-to-speech SMS.
      * @return SendingTextToSpeechSmsRequest Returns the sending text-to-speech SMS request.
@@ -254,7 +254,7 @@ class RequestFactory {
     }
 
     /**
-     * Creates a sending unicode SMS request.
+     * Create a sending unicode SMS request.
      *
      * @param SendingUnicodeSmsInterface $sendingUnicodeSms The sending unicode SMS.
      * @return SendingUnicodeSmsRequest Returns the sending unicode SMS request.
@@ -280,7 +280,7 @@ class RequestFactory {
     }
 
     /**
-     * Creates a sent SMS message list request.
+     * Create a sent SMS message list request.
      *
      * @param SentSmsMessageListInterface $sentSmsMessageList The sent SMS message list.
      * @return SentSmsMessageListRequest Returns the sent SMS message list request.
@@ -294,7 +294,7 @@ class RequestFactory {
     }
 
     /**
-     * Creates a transferring credits request.
+     * Create a transferring credits request.
      *
      * @param TransferringCreditsInterface $transferringCredits The transferring credits.
      * @return TransferringCreditsRequest Returns the transferring credits request.

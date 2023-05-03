@@ -24,7 +24,7 @@ use WBW\Library\SmsMode\Tests\AbstractTestCase;
 class RetrievingSmsReplyResponseTest extends AbstractTestCase {
 
     /**
-     * Tests addSmsReply()
+     * Test addSmsReply()
      *
      * @return void
      */
@@ -40,7 +40,7 @@ class RetrievingSmsReplyResponseTest extends AbstractTestCase {
     }
 
     /**
-     * Tests hasSmsReply()
+     * Test hasSmsReply()
      *
      * @return void
      */
@@ -56,7 +56,7 @@ class RetrievingSmsReplyResponseTest extends AbstractTestCase {
     }
 
     /**
-     * Tests __construct()
+     * Test __construct()
      *
      * @return void
      */

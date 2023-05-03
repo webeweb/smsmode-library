@@ -25,7 +25,7 @@ use WBW\Library\SmsMode\Tests\Fixtures\Traits\DateTimes\TestDateTimeDateEnvoiTra
 class DateTimeDateEnvoiTraitTest extends AbstractTestCase {
 
     /**
-     * Tests setDateEnvoi()
+     * Test setDateEnvoi()
      *
      * @return void
      * @throws Throwable Throws an exception if an error occurs.

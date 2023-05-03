@@ -23,7 +23,7 @@ use WBW\Library\SmsMode\Tests\AbstractTestCase;
 class TransferringCreditsRequestTest extends AbstractTestCase {
 
     /**
-     * Tests setCreditAmount()
+     * Test setCreditAmount()
      *
      * @return void
      */
@@ -36,7 +36,7 @@ class TransferringCreditsRequestTest extends AbstractTestCase {
     }
 
     /**
-     * Tests setTargetPseudo()
+     * Test setTargetPseudo()
      *
      * @return void
      */
@@ -49,7 +49,7 @@ class TransferringCreditsRequestTest extends AbstractTestCase {
     }
 
     /**
-     * Tests __construct()
+     * Test __construct()
      *
      * @return void
      */

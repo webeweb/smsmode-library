@@ -25,7 +25,7 @@ use WBW\Library\SmsMode\Tests\Fixtures\Response\TestResponse;
 class AbstractResponseTest extends AbstractTestCase {
 
     /**
-     * Tests enumResponses()
+     * Test enumResponses()
      *
      * @return void
      */
@@ -114,7 +114,7 @@ class AbstractResponseTest extends AbstractTestCase {
     }
 
     /**
-     * Tests __construct()
+     * Test __construct()
      *
      * @return void
      */

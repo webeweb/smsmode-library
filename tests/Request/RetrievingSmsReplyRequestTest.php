@@ -25,7 +25,7 @@ use WBW\Library\SmsMode\Tests\AbstractTestCase;
 class RetrievingSmsReplyRequestTest extends AbstractTestCase {
 
     /**
-     * Tests setEndDate()
+     * Test setEndDate()
      *
      * @return void
      * @throws Throwable Throws an exception.
@@ -42,7 +42,7 @@ class RetrievingSmsReplyRequestTest extends AbstractTestCase {
     }
 
     /**
-     * Tests setStart()
+     * Test setStart()
      *
      * @return void
      */
@@ -55,7 +55,7 @@ class RetrievingSmsReplyRequestTest extends AbstractTestCase {
     }
 
     /**
-     * Tests setStartDate()
+     * Test setStartDate()
      *
      * @return void
      * @throws Throwable Throws an exception.
@@ -72,7 +72,7 @@ class RetrievingSmsReplyRequestTest extends AbstractTestCase {
     }
 
     /**
-     * Tests __construct()
+     * Test __construct()
      *
      * @return void
      */

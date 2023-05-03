@@ -23,7 +23,7 @@ use WBW\Library\SmsMode\Tests\Fixtures\Traits\Strings\TestStringMobileTrait;
 class StringMobileTraitTest extends AbstractTestCase {
 
     /**
-     * Tests setMobile()
+     * Test setMobile()
      *
      * @return void
      */

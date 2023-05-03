@@ -58,7 +58,7 @@ class RetrievingSmsReplyResponse extends AbstractResponse {
     }
 
     /**
-     * Determines if this retrieving SMS reply response has a SMS reply.
+     * Determine if this retrieving SMS reply response has a SMS reply.
      *
      * @return bool Returns true in cas of success, false otherwise.
      */

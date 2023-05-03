@@ -25,7 +25,7 @@ use WBW\Library\SmsMode\Tests\Fixtures\Traits\Integers\TestIntegerOffsetTrait;
 class IntegerOffsetTraitTest extends AbstractTestCase {
 
     /**
-     * Tests setOffset()
+     * Test setOffset()
      *
      * @return void
      */
@@ -38,7 +38,7 @@ class IntegerOffsetTraitTest extends AbstractTestCase {
     }
 
     /**
-     * Tests setOffset()
+     * Test setOffset()
      *
      * @return void
      */

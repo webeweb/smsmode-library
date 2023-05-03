@@ -24,7 +24,7 @@ use WBW\Library\SmsMode\Tests\AbstractTestCase;
 class SentSmsMessageListResponseTest extends AbstractTestCase {
 
     /**
-     * Tests addSentSmsMessage()
+     * Test addSentSmsMessage()
      *
      * @return void
      */
@@ -40,7 +40,7 @@ class SentSmsMessageListResponseTest extends AbstractTestCase {
     }
 
     /**
-     * Tests hasSentSmsMessage()
+     * Test hasSentSmsMessage()
      *
      * @return void
      */
@@ -56,7 +56,7 @@ class SentSmsMessageListResponseTest extends AbstractTestCase {
     }
 
     /**
-     * Tests __construct()
+     * Test __construct()
      *
      * @return void
      */

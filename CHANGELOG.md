@@ -1,6 +1,11 @@
 CHANGELOG
 =========
 
+### [4.5.0](https://github.com/webeweb/smsmode-library/tree/v4.5.0) (2023-06-03)
+
+- Improve PHPDoc
+- Update dependencies
+
 ### [4.4.0](https://github.com/webeweb/smsmode-library/tree/v4.4.0) (2023-02-20)
 
 - Reorganize internal traits

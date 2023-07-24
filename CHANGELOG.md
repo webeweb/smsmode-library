@@ -1,6 +1,10 @@
 CHANGELOG
 =========
 
+### master
+
+- Improve PHPDoc
+
 ### [4.5.0](https://github.com/webeweb/smsmode-library/tree/v4.5.0) (2023-06-03)
 
 - Improve PHPDoc

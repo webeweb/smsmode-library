@@ -54,7 +54,7 @@ class TransferringCreditsRequest extends AbstractRequest {
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function getResourcePath(): string {
         return self::TRANSFERRING_CREDITS_RESOURCE_PATH;

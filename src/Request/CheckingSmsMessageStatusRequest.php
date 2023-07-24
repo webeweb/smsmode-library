@@ -31,7 +31,7 @@ class CheckingSmsMessageStatusRequest extends AbstractRequest {
     const CHECKING_SMS_MESSAGE_STATUS_RESOURCE_PATH = "/http/1.6/smsStatus.do";
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function getResourcePath(): string {
         return self::CHECKING_SMS_MESSAGE_STATUS_RESOURCE_PATH;

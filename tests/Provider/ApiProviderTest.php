@@ -63,7 +63,7 @@ class ApiProviderTest extends AbstractTestCase {
     private $authentication;
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     protected function setUp(): void {
         parent::setUp();

@@ -62,7 +62,7 @@ class RetrievingSmsReplyRequest extends AbstractRequest {
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function getResourcePath(): string {
         return self::RETRIEVING_SMS_REPLY_RESOURCE_PATH;

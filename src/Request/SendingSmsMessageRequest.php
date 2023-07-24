@@ -137,7 +137,7 @@ class SendingSmsMessageRequest extends AbstractRequest implements SendingSmsMess
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function getResourcePath(): string {
         return self::SENDING_SMS_MESSAGE_RESOURCE_PATH;

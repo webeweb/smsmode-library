@@ -26,28 +26,28 @@ use WBW\Library\SmsMode\Serializer\ResponseDeserializer;
 class TestResponseDeserializer extends ResponseDeserializer {
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public static function deserializeDeliveryReport(string $rawResponse): DeliveryReport {
         return parent::deserializeDeliveryReport($rawResponse);
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public static function deserializeResponse(AbstractResponse $model, string $rawResponse): void {
         parent::deserializeResponse($model, $rawResponse);
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public static function deserializeSentSmsMessage(string $rawResponse): SentSmsMessage {
         return parent::deserializeSentSmsMessage($rawResponse);
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public static function deserializeSmsReply(string $rawResponse): SmsReply {
         return parent::deserializeSmsReply($rawResponse);

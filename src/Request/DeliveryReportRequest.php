@@ -31,7 +31,7 @@ class DeliveryReportRequest extends AbstractRequest {
     const DELIVERY_REPORT_RESOURCE_PATH = "/http/1.6/compteRendu.do";
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function getResourcePath(): string {
         return self::DELIVERY_REPORT_RESOURCE_PATH;

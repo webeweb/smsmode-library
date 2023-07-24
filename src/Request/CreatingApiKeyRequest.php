@@ -27,7 +27,7 @@ class CreatingApiKeyRequest extends AbstractRequest {
     const CREATING_API_KEY_RESOURCE_PATH = "/http/2.0/createAuthorisation.do";
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function getResourcePath(): string {
         return self::CREATING_API_KEY_RESOURCE_PATH;

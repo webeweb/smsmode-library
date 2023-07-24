@@ -43,7 +43,7 @@ class DeletingSubAccountRequest extends AbstractRequest {
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function getResourcePath(): string {
         return self::DELETING_SUB_ACCOUNT_RESOURCE_PATH;

@@ -27,7 +27,7 @@ class AccountBalanceRequest extends AbstractRequest {
     const ACCOUNT_BALANCE_RESOURCE_PATH = "/http/1.6/credit.do";
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function getResourcePath(): string {
         return self::ACCOUNT_BALANCE_RESOURCE_PATH;

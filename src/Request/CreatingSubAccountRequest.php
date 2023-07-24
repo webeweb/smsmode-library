@@ -139,7 +139,7 @@ class CreatingSubAccountRequest extends AbstractRequest {
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function getResourcePath(): string {
         return self::CREATING_SUB_ACCOUNT_RESOURCE_PATH;

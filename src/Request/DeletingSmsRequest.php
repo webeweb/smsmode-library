@@ -35,7 +35,7 @@ class DeletingSmsRequest extends AbstractRequest {
     const DELETING_SMS_RESOURCE_PATH = "/http/1.6/deleteSMS.do";
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function getResourcePath(): string {
         return self::DELETING_SMS_RESOURCE_PATH;

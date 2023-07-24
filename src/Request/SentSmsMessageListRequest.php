@@ -31,7 +31,7 @@ class SentSmsMessageListRequest extends AbstractRequest {
     const SENT_SMS_MESSAGE_LIST_RESOURCE_PATH = "/http/1.6/smsList.do";
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function getResourcePath(): string {
         return self::SENT_SMS_MESSAGE_LIST_RESOURCE_PATH;

@@ -113,7 +113,7 @@ class SendingTextToSpeechSmsRequest extends AbstractRequest implements SendingTe
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function getResourcePath(): string {
         return self::SENDING_TEXT_TO_SPEECH_SMS_RESOURCE_PATH;

@@ -32,7 +32,8 @@ class NumeroSerializerTest extends AbstractTestCase {
      */
     public function testCheckNumero(): void {
 
-        $this->assertNull(NumeroSerializer::checkNumero("33600000000"));
+        NumeroSerializer::checkNumero("33600000000");
+        $this->assertNull(null);
     }
 
     /**

@@ -28,7 +28,7 @@ class RequestSerializer {
     /**
      * Configuration.
      *
-     * @var array
+     * @var array<string,mixed>
      */
     private $configuration;
 
@@ -47,7 +47,7 @@ class RequestSerializer {
      * Check a complement value.
      *
      * @param object $object The object.
-     * @param array $configuration The configuration.
+     * @param array<string,mixed> $configuration The configuration.
      * @param string $attribute The attribute.
      * @return void
      * @throws InvalidArgumentException Throws an invalid argument exception if the complement value is missing.
@@ -65,7 +65,7 @@ class RequestSerializer {
      * Check a mandatory value.
      *
      * @param object $object The object.
-     * @param array $configuration The configuration.
+     * @param array<string,mixed> $configuration The configuration.
      * @param string $attribute The attribute.
      * @return void
      * @throws InvalidArgumentException Throws an invalid argument exception if the mandatory parameter is missing.
@@ -83,7 +83,7 @@ class RequestSerializer {
     /**
      * Format an array.
      *
-     * @param array $value The array.
+     * @param mixed[] $value The array.
      * @return string Returns the formatted array.
      */
     protected function formatArray(array $value): string {
@@ -135,7 +135,7 @@ class RequestSerializer {
      * Format a value.
      *
      * @param mixed $object The object.
-     * @param array $configuration The configuration.
+     * @param array<string,mixed> $configuration The configuration.
      * @return string Returns the formatted value.
      */
     protected function formatValue($object, array $configuration): string {
@@ -153,7 +153,7 @@ class RequestSerializer {
     /**
      * Get the configuration.
      *
-     * @return array Returns the configuration.
+     * @return array<string,mixed> Returns the configuration.
      */
     public function getConfiguration(): array {
         return $this->configuration;
@@ -173,7 +173,7 @@ class RequestSerializer {
     /**
      * Determine if the value break.
      *
-     * @param array $configuration The configuration.
+     * @param array<string,mixed> $configuration The configuration.
      * @return bool Returns true in case of success, false otherwise.
      */
     protected function isBreakValue(array $configuration): bool {
@@ -184,7 +184,7 @@ class RequestSerializer {
      * Determine if a value is mandatory.
      *
      * @param object $object The object.
-     * @param array $configuration The configuration.
+     * @param array<string,mixed> $configuration The configuration.
      * @param string $attribute The attribute.
      * @return bool Returns true in case of success, false otherwise.
      */
@@ -232,7 +232,7 @@ class RequestSerializer {
      * Serialize an object.
      *
      * @param object $object The object.
-     * @return array Returns the serialized parameters.
+     * @return array<string,mixed> Returns the serialized parameters.
      * @throws InvalidArgumentException Throws an invalid argument exception if a mandatory parameter is missing.
      */
     public function serialize($object): array {
@@ -274,7 +274,7 @@ class RequestSerializer {
     /**
      * Set the configuration.
      *
-     * @param array $configuration The configuration.
+     * @param array<string,mixed> $configuration The configuration.
      * @return RequestSerializer Returns this object serializer.
      */
     protected function setConfiguration(array $configuration): RequestSerializer {

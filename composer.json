@@ -1,22 +1,23 @@
 {
     "name": "webeweb/smsmode-library",
-    "type": "library",
     "description": "Integrate sMsmode API with your projects",
-    "keywords": [
-        "API",
-        "library",
-        "sMsmode",
-        "SMS",
-        "webeweb"
-    ],
-    "homepage": "https://github.com/webeweb/smsmode-library",
     "license": "MIT",
+    "type": "library",
+    "keywords": [
+        "webeweb",
+        "library",
+        "sMsmode"
+    ],
     "authors": [
         {
             "name": "webeweb",
             "homepage": "https://github.com/webeweb"
         }
     ],
+    "homepage": "https://github.com/webeweb/smsmode-library",
+    "support": {
+        "issues": "https://github.com/webeweb/smsmode-library/issues"
+    },
     "require": {
         "php": "^7.1|^8.0",
         "ext-iconv": "*",
@@ -26,15 +27,10 @@
         "webeweb/core-library": "^8.0"
     },
     "require-dev": {
+        "phpstan/extension-installer": "^1.1",
+        "phpstan/phpstan": "^1.4",
+        "phpstan/phpstan-phpunit": "^1.0",
         "phpunit/phpunit": "^7.0|^9.0"
-    },
-    "config": {
-        "sort-packages": true
-    },
-    "extra": {
-        "branch-alias": {
-            "dev-master": "4.x-dev"
-        }
     },
     "autoload": {
         "psr-4": {
@@ -46,7 +42,15 @@
             "WBW\\Library\\SmsMode\\Tests\\": "tests/"
         }
     },
-    "support": {
-        "issues": "https://github.com/webeweb/smsmode-library/issues"
+    "config": {
+        "allow-plugins": {
+            "phpstan/extension-installer": true
+        },
+        "sort-packages": true
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "4.x-dev"
+        }
     }
 }

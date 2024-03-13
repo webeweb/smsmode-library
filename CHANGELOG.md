@@ -3,7 +3,10 @@ CHANGELOG
 
 ### master
 
+- Add PHP 8.3
+- Improve code quality
 - Improve PHPDoc
+- Update dependencies
 
 ### [4.5.0](https://github.com/webeweb/smsmode-library/tree/v4.5.0) (2023-06-03)
 

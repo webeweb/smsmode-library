@@ -38,7 +38,7 @@ abstract class AbstractResponse extends BaseResponse implements ResponseInterfac
     /**
      * Enumerate the responses.
      *
-     * @return array Returns the responses enumeration.
+     * @return array<int,string> Returns the responses enumeration.
      */
     public static function enumResponses(): array {
 

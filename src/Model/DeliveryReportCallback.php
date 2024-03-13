@@ -50,7 +50,7 @@ class DeliveryReportCallback extends DeliveryReport implements DeliveryReportCal
      * @return int|null Returns the status.
      */
     public function getStatus(): ?int {
-        return parent::getCode();
+        return $this->getCode();
     }
 
     /**
@@ -71,6 +71,8 @@ class DeliveryReportCallback extends DeliveryReport implements DeliveryReportCal
      * @return DeliveryReportCallback Returns this delivery report callback.
      */
     public function setStatus(?int $status): DeliveryReportCallback {
-        return parent::setCode($status);
+
+        /** @var DeliveryReportCallback */
+        return $this->setCode($status);
     }
 }

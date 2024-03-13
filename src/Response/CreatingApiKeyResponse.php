@@ -43,7 +43,7 @@ class CreatingApiKeyResponse extends AbstractResponse {
     /**
      * Exception.
      *
-     * @var array
+     * @var array<string,mixed>|null
      */
     private $exception;
 
@@ -82,7 +82,7 @@ class CreatingApiKeyResponse extends AbstractResponse {
     /**
      * Get the exception.
      *
-     * @return array|null Returns the exception.
+     * @return array<string,mixed>|null Returns the exception.
      */
     public function getException(): ?array {
         return $this->exception;
@@ -131,7 +131,7 @@ class CreatingApiKeyResponse extends AbstractResponse {
     /**
      * Set the exception.
      *
-     * @param array $exception The exception.
+     * @param array<string,mixed> $exception The exception.
      * @return CreatingApiKeyResponse Returns this creating API key.
      */
     public function setException(array $exception): CreatingApiKeyResponse {

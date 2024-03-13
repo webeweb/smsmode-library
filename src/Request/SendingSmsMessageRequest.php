@@ -63,7 +63,7 @@ class SendingSmsMessageRequest extends AbstractRequest implements SendingSmsMess
     /**
      * Numero.
      *
-     * @var array
+     * @var string[]
      */
     private $numero;
 

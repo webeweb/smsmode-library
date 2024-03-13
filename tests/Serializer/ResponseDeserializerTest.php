@@ -48,7 +48,7 @@ class ResponseDeserializerTest extends AbstractTestCase {
      */
     public function testDeserializeAccountBalanceResponse(): void {
 
-        // Initialize a Raw response mock.
+        // Initialize a raw response mock.
         $rawResponse = "212.5";
 
         $obj = ResponseDeserializer::deserializeAccountBalanceResponse($rawResponse);
@@ -68,7 +68,7 @@ class ResponseDeserializerTest extends AbstractTestCase {
      */
     public function testDeserializeAccountBalanceResponseWithNegative(): void {
 
-        // Initialize a Raw response mock.
+        // Initialize a raw response mock.
         $rawResponse = "-212.5";
 
         $obj = ResponseDeserializer::deserializeAccountBalanceResponse($rawResponse);
@@ -88,7 +88,7 @@ class ResponseDeserializerTest extends AbstractTestCase {
      */
     public function testDeserializeAddingContactResponse(): void {
 
-        // Initialize a Raw response mock.
+        // Initialize a raw response mock.
         $rawResponse = "0 | Contact added";
 
         $obj = ResponseDeserializer::deserializeAddingContactResponse($rawResponse);
@@ -106,7 +106,7 @@ class ResponseDeserializerTest extends AbstractTestCase {
      */
     public function testDeserializeCheckingSmsMessageStatusResponse(): void {
 
-        // Initialize a Raw response mock.
+        // Initialize a raw response mock.
         $rawResponse = "0 | Sent";
 
         $obj = ResponseDeserializer::deserializeCheckingSmsMessageStatusResponse($rawResponse);
@@ -124,7 +124,7 @@ class ResponseDeserializerTest extends AbstractTestCase {
      */
     public function testDeserializeCreatingApiKeyResponse(): void {
 
-        // Initialize a Raw response mock.
+        // Initialize a raw response mock.
         $rawResponse = <<< EOT
 {
     "id":"id",
@@ -158,7 +158,7 @@ EOT;
      */
     public function testDeserializeCreatingSubAccountResponse(): void {
 
-        // Initialize a Raw response mock.
+        // Initialize a raw response mock.
         $rawResponse = "0 | Sub-account created";
 
         $obj = ResponseDeserializer::deserializeCreatingSubAccountResponse($rawResponse);
@@ -176,7 +176,7 @@ EOT;
      */
     public function testDeserializeDeletingSmsResponse(): void {
 
-        // Initialize a Raw response mock.
+        // Initialize a raw response mock.
         $rawResponse = "0 | SMS message deleted";
 
         $obj = ResponseDeserializer::deserializeDeletingSmsResponse($rawResponse);
@@ -194,7 +194,7 @@ EOT;
      */
     public function testDeserializeDeletingSubAccountResponse(): void {
 
-        // Initialize a Raw response mock.
+        // Initialize a raw response mock.
         $rawResponse = "0 | Sub-account deleted";
 
         $obj = ResponseDeserializer::deserializeDeletingSubAccountResponse($rawResponse);
@@ -212,7 +212,7 @@ EOT;
      */
     public function testDeserializeDeliveryReport(): void {
 
-        // Initialize a Raw response mock.
+        // Initialize a raw response mock.
         // $rawResponse = "33600000000 0"; /* A well formed raw response */
         $rawResponse = "  33600000000  0  "; /* A bad formed raw response */
 
@@ -233,7 +233,7 @@ EOT;
      */
     public function testDeserializeDeliveryReportResponse(): void {
 
-        // Initialize a Raw response mock.
+        // Initialize a raw response mock.
         // $rawResponse = "33600000001 0 | 33600000002 2 | 33600000003 11"; /* A well formed delivery report. */
         $rawResponse = "  33600000001  0  |  33600000002  2  |  33600000003  11  "; /* A bad formed delivery report */
 
@@ -263,7 +263,7 @@ EOT;
      */
     public function testDeserializeDeliveryReportResponseWithException(): void {
 
-        // Initialize a Raw response mock.
+        // Initialize a raw response mock.
         $rawResponse = "31 | Internal error";
 
         $obj = ResponseDeserializer::deserializeDeliveryReportResponse($rawResponse);
@@ -283,7 +283,7 @@ EOT;
      */
     public function testDeserializeDeliveryReportWithoutArguments(): void {
 
-        // Initialize a Raw response mock.
+        // Initialize a raw response mock.
         // $rawResponse = "33600000000 0"; /* A well formed raw response */
         $rawResponse = "33600000000"; /* A bad formed raw response */
 
@@ -307,7 +307,7 @@ EOT;
         // Set a Sent SMS message response mock.
         $obj = new SendingSmsMessageResponse();
 
-        // Initialize a Raw response mock.
+        // Initialize a raw response mock.
         // $rawResponse = "0 | Sent"; /* A well formed raw response */
         $rawResponse = "0"; /* A bad formed raw response */
 
@@ -325,7 +325,7 @@ EOT;
      */
     public function testDeserializeRetrievingSmsReplyResponse(): void {
 
-        // Initialize a Raw response mock.
+        // Initialize a raw response mock.
         $rawResponse = <<< EOT
 responseID1 | 23012019-18:00 | 33600000001 | text1 | to1 | messageID1
 responseID2 | 23012019-19:00 | 33600000002 | text2 | to2 | messageID2
@@ -370,7 +370,7 @@ EOT;
      */
     public function testDeserializeRetrievingSmsReplyResponseWithException(): void {
 
-        // Initialize a Raw response mock.
+        // Initialize a raw response mock.
         $rawResponse = "32 | Authentication error";
 
         $obj = ResponseDeserializer::deserializeRetrievingSmsReplyResponse($rawResponse);
@@ -390,7 +390,7 @@ EOT;
      */
     public function testDeserializeSendingSmsBatchResponse(): void {
 
-        // Initialize a Raw response mock.
+        // Initialize a raw response mock.
         $rawResponse = "0 | Accepted | campagneID";
 
         $obj = ResponseDeserializer::deserializeSendingSmsBatchResponse($rawResponse);
@@ -410,7 +410,7 @@ EOT;
      */
     public function testDeserializeSendingSmsMessageResponse(): void {
 
-        // Initialize a Raw response mock.
+        // Initialize a raw response mock.
         $rawResponse = "0 | Accepted | smsID";
 
         $obj = ResponseDeserializer::deserializeSendingSmsMessageResponse($rawResponse);
@@ -430,7 +430,7 @@ EOT;
      */
     public function testDeserializeSendingTextToSpeechSmsResponse(): void {
 
-        // Initialize a Raw response mock.
+        // Initialize a raw response mock.
         $rawResponse = "0 | Accepted | smsID";
 
         $obj = ResponseDeserializer::deserializeSendingTextToSpeechSmsResponse($rawResponse);
@@ -450,7 +450,7 @@ EOT;
      */
     public function testDeserializeSendingUnicodeSmsResponse(): void {
 
-        // Initialize a Raw response mock.
+        // Initialize a raw response mock.
         $rawResponse = "0 | Accepted | smsID";
 
         $obj = ResponseDeserializer::deserializeSendingUnicodeSmsResponse($rawResponse);
@@ -470,7 +470,7 @@ EOT;
      */
     public function testDeserializeSentSmsMessage(): void {
 
-        // Initialize a Raw response mock.
+        // Initialize a raw response mock.
         // $rawResponse = "smsID | 23012019-18:00 | message | 33600000000 | 0.1 | 1"; /* A well formed raw response */
         $rawResponse = "  smsID  |  23/01/2019 18:00  |  message  | 33600000000  |  0.1  |  1  "; /* A bad formed raw response */
 
@@ -496,7 +496,7 @@ EOT;
      */
     public function testDeserializeSentSmsMessageListResponse(): void {
 
-        // Initialize a Raw response mock.
+        // Initialize a raw response mock.
         $rawResponse = <<< EOT
 smsID1 | 23/01/2019 18:00 | message1 | 33600000001 | 0.1 | 1
 
@@ -543,7 +543,7 @@ EOT;
      */
     public function testDeserializeSentSmsMessageListResponseWithException(): void {
 
-        // Initialize a Raw response mock.
+        // Initialize a raw response mock.
         $rawResponse = "32 | Authentication error";
 
         $obj = ResponseDeserializer::deserializeSentSmsMessageListResponse($rawResponse);
@@ -563,7 +563,7 @@ EOT;
      */
     public function testDeserializeSentSmsMessageWithoutArguments(): void {
 
-        // Initialize a Raw response mock.
+        // Initialize a raw response mock.
         // $rawResponse = "smsID | 23012019-18:00 | message | 33600000000 | 0.1 | 1"; /* A well formed raw response */
         $rawResponse = "smsID | 23012019-18:00 | message | 33600000000 | 0.1"; /* A bad formed raw response */
 
@@ -589,7 +589,7 @@ EOT;
      */
     public function testDeserializeSmsReply(): void {
 
-        // Initialize a Raw response mock.
+        // Initialize a raw response mock.
         // $rawResponse = "responseID | 23012019-18:00 | 33600000000 | text | to | messageID"; /* A well formed raw response */
         $rawResponse = "  responseID  |  23012019-18:00  |  33600000000  |  text  |  to  |  messageID  "; /* A bad formed raw response */
 
@@ -615,7 +615,7 @@ EOT;
      */
     public function testDeserializeSmsReplyWithoutArguments(): void {
 
-        // Initialize a Raw response mock.
+        // Initialize a raw response mock.
         // $rawResponse = "responseID | 23012019-18:00 | 33600000000 | text | to | messageID"; /* A well formed raw response */
         $rawResponse = "responseID | 23012019-18:00 | 33600000000 | text | to"; /* A bad formed raw response */
 
@@ -641,7 +641,7 @@ EOT;
      */
     public function testDeserializeTransferringCreditsResponse(): void {
 
-        // Initialize a Raw response mock.
+        // Initialize a raw response mock.
         $rawResponse = "0 | Transfer done";
 
         $obj = ResponseDeserializer::deserializeTransferringCreditsResponse($rawResponse);

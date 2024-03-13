@@ -12,6 +12,7 @@
 namespace WBW\Library\SmsMode\Tests\Model;
 
 use DateTime;
+use Throwable;
 use WBW\Library\SmsMode\Model\SentSmsMessage;
 use WBW\Library\SmsMode\Tests\AbstractTestCase;
 

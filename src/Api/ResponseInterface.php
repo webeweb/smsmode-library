@@ -22,266 +22,266 @@ interface ResponseInterface {
     /**
      * Response code "0".
      *
-     * @var string
+     * @var int
      */
     const RESPONSE_CODE_0 = 0;
 
     /**
      * Response code "1".
      *
-     * @var string
+     * @var int
      */
     const RESPONSE_CODE_1 = 1;
 
     /**
      * Response code "10".
      *
-     * @var string
+     * @var int
      */
     const RESPONSE_CODE_10 = 10;
 
     /**
      * Response code "100".
      *
-     * @var string
+     * @var int
      */
     const RESPONSE_CODE_100 = 100;
 
     /**
      * Response code "101".
      *
-     * @var string
+     * @var int
      */
     const RESPONSE_CODE_101 = 101;
 
     /**
      * Response code "11".
      *
-     * @var string
+     * @var int
      */
     const RESPONSE_CODE_11 = 11;
 
     /**
      * Response code "12".
      *
-     * @var string
+     * @var int
      */
     const RESPONSE_CODE_12 = 12;
 
     /**
      * Response code "13".
      *
-     * @var string
+     * @var int
      */
     const RESPONSE_CODE_13 = 13;
 
     /**
      * Response code "14".
      *
-     * @var string
+     * @var int
      */
     const RESPONSE_CODE_14 = 14;
 
     /**
      * Response code "15".
      *
-     * @var string
+     * @var int
      */
     const RESPONSE_CODE_15 = 15;
 
     /**
      * Response code "16".
      *
-     * @var string
+     * @var int
      */
     const RESPONSE_CODE_16 = 16;
 
     /**
      * Response code "2".
      *
-     * @var string
+     * @var int
      */
     const RESPONSE_CODE_2 = 2;
 
     /**
      * Response code "21".
      *
-     * @var string
+     * @var int
      */
     const RESPONSE_CODE_21 = 21;
 
     /**
      * Response code "22".
      *
-     * @var string
+     * @var int
      */
     const RESPONSE_CODE_22 = 22;
 
     /**
      * Response code "33".
      *
-     * @var string
+     * @var int
      */
     const RESPONSE_CODE_33 = 33;
 
     /**
      * Response code "34".
      *
-     * @var string
+     * @var int
      */
     const RESPONSE_CODE_34 = 34;
 
     /**
      * Response code "35".
      *
-     * @var string
+     * @var int
      */
     const RESPONSE_CODE_35 = 35;
 
     /**
      * Response code "3501".
      *
-     * @var string
+     * @var int
      */
     const RESPONSE_CODE_3501 = 3501;
 
     /**
      * Response code "3502".
      *
-     * @var string
+     * @var int
      */
     const RESPONSE_CODE_3502 = 3502;
 
     /**
      * Response code "3503".
      *
-     * @var string
+     * @var int
      */
     const RESPONSE_CODE_3503 = 3503;
 
     /**
      * Response code "3504".
      *
-     * @var string
+     * @var int
      */
     const RESPONSE_CODE_3504 = 3504;
 
     /**
      * Response code "3521".
      *
-     * @var string
+     * @var int
      */
     const RESPONSE_CODE_3521 = 3521;
 
     /**
      * Response code "3522".
      *
-     * @var string
+     * @var int
      */
     const RESPONSE_CODE_3522 = 3522;
 
     /**
      * Response code "3523".
      *
-     * @var string
+     * @var int
      */
     const RESPONSE_CODE_3523 = 3523;
 
     /**
      * Response code "3524".
      *
-     * @var string
+     * @var int
      */
     const RESPONSE_CODE_3524 = 3524;
 
     /**
      * Response code "3525".
      *
-     * @var string
+     * @var int
      */
     const RESPONSE_CODE_3525 = 3525;
 
     /**
      * Response code "3526".
      *
-     * @var string
+     * @var int
      */
     const RESPONSE_CODE_3526 = 3526;
 
     /**
      * Response code "3527".
      *
-     * @var string
+     * @var int
      */
     const RESPONSE_CODE_3527 = 3527;
 
     /**
      * Response code "3560".
      *
-     * @var string
+     * @var int
      */
     const RESPONSE_CODE_3560 = 3560;
 
     /**
      * Response code "3599".
      *
-     * @var string
+     * @var int
      */
     const RESPONSE_CODE_3599 = 3599;
 
     /**
      * Response code "36".
      *
-     * @var string
+     * @var int
      */
     const RESPONSE_CODE_36 = 36;
 
     /**
      * Response code "37".
      *
-     * @var string
+     * @var int
      */
     const RESPONSE_CODE_37 = 37;
 
     /**
      * Response code "38".
      *
-     * @var string
+     * @var int
      */
     const RESPONSE_CODE_38 = 38;
 
     /**
      * Response code "3998".
      *
-     * @var string
+     * @var int
      */
     const RESPONSE_CODE_3998 = 3998;
 
     /**
      * Response code "3999".
      *
-     * @var string
+     * @var int
      */
     const RESPONSE_CODE_3999 = 3999;
 
     /**
      * Response code "40".
      *
-     * @var string
+     * @var int
      */
     const RESPONSE_CODE_40 = 40;
 
     /**
      * Response code "50".
      *
-     * @var string
+     * @var int
      */
     const RESPONSE_CODE_50 = 50;
 
     /**
      * Response code "999".
      *
-     * @var string
+     * @var int
      */
     const RESPONSE_CODE_999 = 999;
 

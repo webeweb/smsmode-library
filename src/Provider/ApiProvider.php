@@ -12,7 +12,6 @@
 namespace WBW\Library\SmsMode\Provider;
 
 use GuzzleHttp\Exception\ClientException;
-use GuzzleHttp\Exception\GuzzleException;
 use InvalidArgumentException;
 use WBW\Library\Provider\Exception\ApiException;
 use WBW\Library\SmsMode\Request\AccountBalanceRequest;
@@ -61,7 +60,6 @@ class ApiProvider extends AbstractProvider {
      * @param AccountBalanceRequest $request The account balance request.
      * @return AccountBalanceResponse Returns the account balance response.
      * @throws InvalidArgumentException Throws an invalid argument exception if a parameter is missing.
-     * @throws GuzzleException Throws a Guzzle exception if an error occurs.
      * @throws ApiException Throws an API exception if an error occurs.
      */
     public function accountBalance(AccountBalanceRequest $request): AccountBalanceResponse {
@@ -79,7 +77,6 @@ class ApiProvider extends AbstractProvider {
      * @param AddingContactRequest $request The adding contact request.
      * @return AddingContactResponse Returns the adding contact response.
      * @throws InvalidArgumentException Throws an invalid argument exception if a parameter is missing.
-     * @throws GuzzleException Throws a Guzzle exception if an error occurs.
      * @throws ApiException Throws an API exception if an error occurs.
      */
     public function addingContact(AddingContactRequest $request): AddingContactResponse {
@@ -97,7 +94,6 @@ class ApiProvider extends AbstractProvider {
      * @param CheckingSmsMessageStatusRequest $request The checking SMS message status request.
      * @return CheckingSmsMessageStatusResponse Returns the checking SMS message status response.
      * @throws InvalidArgumentException Throws an invalid argument exception if a parameter is missing.
-     * @throws GuzzleException Throws a Guzzle exception if an error occurs.
      * @throws ApiException Throws an API exception if an error occurs.
      */
     public function checkingSmsMessageStatus(CheckingSmsMessageStatusRequest $request): CheckingSmsMessageStatusResponse {
@@ -115,7 +111,6 @@ class ApiProvider extends AbstractProvider {
      * @param CreatingApiKeyRequest $request The creating API key request.
      * @return CreatingApiKeyResponse Returns the creating API key response.
      * @throws InvalidArgumentException Throws an invalid argument exception if a parameter is missing.
-     * @throws GuzzleException Throws a Guzzle exception if an error occurs.
      * @throws ApiException Throws an API exception if an error occurs.
      */
     public function creatingApiKey(CreatingApiKeyRequest $request): CreatingApiKeyResponse {
@@ -144,7 +139,6 @@ class ApiProvider extends AbstractProvider {
      * @param CreatingSubAccountRequest $request The creating sub-account request.
      * @return CreatingSubAccountResponse Returns the creating sub-account response.
      * @throws InvalidArgumentException Throws an invalid argument exception if a parameter is missing.
-     * @throws GuzzleException Throws a Guzzle exception if an error occurs.
      * @throws ApiException Throws an API exception if an error occurs.
      */
     public function creatingSubAccount(CreatingSubAccountRequest $request): CreatingSubAccountResponse {
@@ -162,7 +156,6 @@ class ApiProvider extends AbstractProvider {
      * @param DeletingSmsRequest $request The deleting SMS request.
      * @return DeletingSmsResponse Returns the delivery SMS message response.
      * @throws InvalidArgumentException Throws an invalid argument exception if a parameter is missing.
-     * @throws GuzzleException Throws a Guzzle exception if an error occurs.
      * @throws ApiException Throws an API exception if an error occurs.
      */
     public function deletingSms(DeletingSmsRequest $request): DeletingSmsResponse {
@@ -180,7 +173,6 @@ class ApiProvider extends AbstractProvider {
      * @param DeletingSubAccountRequest $request The deleting sub-account request.
      * @return DeletingSubAccountResponse Returns the delivery sub-account response.
      * @throws InvalidArgumentException Throws an invalid argument exception if a parameter is missing.
-     * @throws GuzzleException Throws a Guzzle exception if an error occurs.
      * @throws ApiException Throws an API exception if an error occurs.
      */
     public function deletingSubAccount(DeletingSubAccountRequest $request): DeletingSubAccountResponse {
@@ -198,7 +190,6 @@ class ApiProvider extends AbstractProvider {
      * @param DeliveryReportRequest $request The delivery report request.
      * @return DeliveryReportResponse Returns the delivery report response.
      * @throws InvalidArgumentException Throws an invalid argument exception if a parameter is missing.
-     * @throws GuzzleException Throws a Guzzle exception if an error occurs.
      * @throws ApiException Throws an API exception if an error occurs.
      */
     public function deliveryReport(DeliveryReportRequest $request): DeliveryReportResponse {
@@ -216,7 +207,6 @@ class ApiProvider extends AbstractProvider {
      * @param RetrievingSmsReplyRequest $request The retrieving SMS reply request.
      * @return RetrievingSmsReplyResponse Returns the retrieving SMS reply response.
      * @throws InvalidArgumentException Throws an invalid argument exception if a parameter is missing.
-     * @throws GuzzleException Throws a Guzzle exception if an error occurs.
      * @throws ApiException Throws an API exception if an error occurs.
      */
     public function retrievingSmsReply(RetrievingSmsReplyRequest $request): RetrievingSmsReplyResponse {
@@ -234,7 +224,6 @@ class ApiProvider extends AbstractProvider {
      * @param SendingSmsBatchRequest $request The sending SMS batch request.
      * @return SendingSmsBatchResponse Returns the sending SMS message response.
      * @throws InvalidArgumentException Throws an invalid argument exception if a parameter is missing.
-     * @throws GuzzleException Throws a Guzzle exception if an error occurs.
      * @throws ApiException Throws an API exception if an error occurs.
      */
     public function sendingSmsBatch(SendingSmsBatchRequest $request): SendingSmsBatchResponse {
@@ -263,7 +252,6 @@ class ApiProvider extends AbstractProvider {
      * @param SendingSmsMessageRequest $request The sending SMS message request.
      * @return SendingSmsMessageResponse Returns the sending SMS message response.
      * @throws InvalidArgumentException Throws an invalid argument exception if a parameter is missing.
-     * @throws GuzzleException Throws a Guzzle exception if an error occurs.
      * @throws ApiException Throws an API exception if an error occurs.
      */
     public function sendingSmsMessage(SendingSmsMessageRequest $request): SendingSmsMessageResponse {
@@ -287,7 +275,6 @@ class ApiProvider extends AbstractProvider {
      * @param SendingTextToSpeechSmsRequest $request The sending text-to-speech SMS request.
      * @return SendingTextToSpeechSmsResponse Returns the sending text-to-speech response.
      * @throws InvalidArgumentException Throws an invalid argument exception if a parameter is missing.
-     * @throws GuzzleException Throws a Guzzle exception if an error occurs.
      * @throws ApiException Throws an API exception if an error occurs.
      */
     public function sendingTextToSpeechSms(SendingTextToSpeechSmsRequest $request): SendingTextToSpeechSmsResponse {
@@ -311,7 +298,6 @@ class ApiProvider extends AbstractProvider {
      * @param SendingUnicodeSmsRequest $request The sending unicode SMS request.
      * @return SendingUnicodeSmsResponse Returns the sending unicode response.
      * @throws InvalidArgumentException Throws an invalid argument exception if a parameter is missing.
-     * @throws GuzzleException Throws a Guzzle exception if an error occurs.
      * @throws ApiException Throws an API exception if an error occurs.
      */
     public function sendingUnicodeSms(SendingUnicodeSmsRequest $request): SendingUnicodeSmsResponse {
@@ -335,7 +321,6 @@ class ApiProvider extends AbstractProvider {
      * @param SentSmsMessageListRequest $request The sent SMS message list request.
      * @return SentSmsMessageListResponse Returns the sent SMS message list response.
      * @throws InvalidArgumentException Throws an invalid argument exception if a parameter is missing.
-     * @throws GuzzleException Throws a Guzzle exception if an error occurs.
      * @throws ApiException Throws an API exception if an error occurs.
      */
     public function sentSmsMessageList(SentSmsMessageListRequest $request): SentSmsMessageListResponse {
@@ -353,7 +338,6 @@ class ApiProvider extends AbstractProvider {
      * @param TransferringCreditsRequest $request The transferring credits request.
      * @return TransferringCreditsResponse Returns the transferring credits response.
      * @throws InvalidArgumentException Throws an invalid argument exception if a parameter is missing.
-     * @throws GuzzleException Throws a Guzzle exception if an error occurs.
      * @throws ApiException Throws an API exception if an error occurs.
      */
     public function transferringCredits(TransferringCreditsRequest $request): TransferringCreditsResponse {

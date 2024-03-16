@@ -1,6 +1,10 @@
 CHANGELOG
 =========
 
+### [4.7.0](https://github.com/webeweb/smsmode-library/tree/v4.7.0) (2024-03-16)
+
+- Add declare(strict_types = 1)
+
 ### [4.6.0](https://github.com/webeweb/smsmode-library/tree/v4.6.0) (2024-03-14)
 
 - Add PHP 8.3

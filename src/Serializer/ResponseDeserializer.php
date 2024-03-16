@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types = 1);
+
 /*
  * This file is part of the smsmode-library package.
  *
@@ -109,8 +111,8 @@ class ResponseDeserializer {
             $model->setException($decodedResponse);
         }
 
-        $creationDate = DateTime::createFromFormat(ResponseInterface::RESPONSE_DATE_FORMAT, ArrayHelper::get($decodedResponse, "creationDate"));
-        $expiration   = DateTime::createFromFormat(ResponseInterface::RESPONSE_DATE_FORMAT, ArrayHelper::get($decodedResponse, "expiration"));
+        $creationDate = DateTime::createFromFormat(ResponseInterface::RESPONSE_DATE_FORMAT, ArrayHelper::get($decodedResponse, "creationDate", ""));
+        $expiration   = DateTime::createFromFormat(ResponseInterface::RESPONSE_DATE_FORMAT, ArrayHelper::get($decodedResponse, "expiration", ""));
 
         $model->setId(ArrayHelper::get($decodedResponse, "id"));
         $model->setAccessToken(ArrayHelper::get($decodedResponse, "accessToken"));

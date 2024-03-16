@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types = 1);
+
 /*
  * This file is part of the smsmode-library package.
  *
@@ -144,7 +146,7 @@ class RequestSerializer {
         $value     = $this->getObjectValue($object, $configuration["method"]);
 
         if (null === $formatter) {
-            return $value;
+            return (string) $value;
         }
 
         return $this->$formatter($value);

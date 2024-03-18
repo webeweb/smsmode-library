@@ -1,6 +1,10 @@
 CHANGELOG
 =========
 
+### [4.8.0](https://github.com/webeweb/smsmode-library/tree/v4.8.0) (2024-03-18)
+
+- Improve constants visibility
+
 ### [4.7.0](https://github.com/webeweb/smsmode-library/tree/v4.7.0) (2024-03-16)
 
 - Add declare(strict_types = 1)

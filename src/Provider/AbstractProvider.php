@@ -38,7 +38,7 @@ abstract class AbstractProvider extends BaseProvider {
      *
      * @var string
      */
-    const ENDPOINT_PATH = "https://api.smsmode.com";
+    public const ENDPOINT_PATH = "https://api.smsmode.com";
 
     /**
      * Authentication.

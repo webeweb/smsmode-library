@@ -26,7 +26,7 @@ class DeletingSubAccountRequest extends AbstractRequest {
      *
      * @var string
      */
-    const DELETING_SUB_ACCOUNT_RESOURCE_PATH = "/http/1.6/deleteSubAccount.do";
+    public const DELETING_SUB_ACCOUNT_RESOURCE_PATH = "/http/1.6/deleteSubAccount.do";
 
     /**
      * Pseudo to delete.

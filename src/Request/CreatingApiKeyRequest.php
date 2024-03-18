@@ -26,7 +26,7 @@ class CreatingApiKeyRequest extends AbstractRequest {
      *
      * @var string
      */
-    const CREATING_API_KEY_RESOURCE_PATH = "/http/2.0/createAuthorisation.do";
+    public const CREATING_API_KEY_RESOURCE_PATH = "/http/2.0/createAuthorisation.do";
 
     /**
      * {@inheritDoc}

@@ -34,7 +34,7 @@ class DeletingSmsRequest extends AbstractRequest {
      *
      * @var string
      */
-    const DELETING_SMS_RESOURCE_PATH = "/http/1.6/deleteSMS.do";
+    public const DELETING_SMS_RESOURCE_PATH = "/http/1.6/deleteSMS.do";
 
     /**
      * {@inheritDoc}

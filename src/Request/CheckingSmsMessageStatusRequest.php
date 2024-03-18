@@ -30,7 +30,7 @@ class CheckingSmsMessageStatusRequest extends AbstractRequest {
      *
      * @var string
      */
-    const CHECKING_SMS_MESSAGE_STATUS_RESOURCE_PATH = "/http/1.6/smsStatus.do";
+    public const CHECKING_SMS_MESSAGE_STATUS_RESOURCE_PATH = "/http/1.6/smsStatus.do";
 
     /**
      * {@inheritDoc}

@@ -31,7 +31,7 @@ class RetrievingSmsReplyRequest extends AbstractRequest {
      *
      * @var string
      */
-    const RETRIEVING_SMS_REPLY_RESOURCE_PATH = "/http/1.6/responseList.do";
+    public const RETRIEVING_SMS_REPLY_RESOURCE_PATH = "/http/1.6/responseList.do";
 
     /**
      * End date.

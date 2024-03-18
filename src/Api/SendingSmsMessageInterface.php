@@ -26,12 +26,12 @@ interface SendingSmsMessageInterface extends SendingSmsBatchInterface {
      *
      * @var int
      */
-    const STOP_ALWAYS = 2;
+    public const STOP_ALWAYS = 2;
 
     /**
      * STOP "only".
      *
      * @var int
      */
-    const STOP_ONLY = 1;
+    public const STOP_ONLY = 1;
 }

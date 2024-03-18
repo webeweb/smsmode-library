@@ -26,40 +26,40 @@ interface DeliveryReportCallbackInterface {
      *
      * @var string
      */
-    const PARAMETER_DATE_RECEPTION = "date_reception";
+    public const PARAMETER_DATE_RECEPTION = "date_reception";
 
     /**
      * Parameter "MCC MNC".
      *
      * @var string
      */
-    const PARAMETER_MCC_MNC = "mcc_mnc";
+    public const PARAMETER_MCC_MNC = "mcc_mnc";
 
     /**
      * Parameter "numero".
      *
      * @var string
      */
-    const PARAMETER_NUMERO = "numero";
+    public const PARAMETER_NUMERO = "numero";
 
     /**
      * Parameter "ref client".
      *
      * @var string
      */
-    const PARAMETER_REF_CLIENT = "refClient";
+    public const PARAMETER_REF_CLIENT = "refClient";
 
     /**
      * Parameter "smsID".
      *
      * @var string
      */
-    const PARAMETER_SMS_ID = "smsID";
+    public const PARAMETER_SMS_ID = "smsID";
 
     /**
      * Parameter "statut".
      *
      * @var string
      */
-    const PARAMETER_STATUT = "statut";
+    public const PARAMETER_STATUT = "statut";
 }

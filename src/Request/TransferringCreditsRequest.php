@@ -30,7 +30,7 @@ class TransferringCreditsRequest extends AbstractRequest {
      *
      * @var string
      */
-    const TRANSFERRING_CREDITS_RESOURCE_PATH = "/http/1.6/creditTransfert.do";
+    public const TRANSFERRING_CREDITS_RESOURCE_PATH = "/http/1.6/creditTransfert.do";
 
     /**
      * Credit amount.

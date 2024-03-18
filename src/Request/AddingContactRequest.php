@@ -40,7 +40,7 @@ class AddingContactRequest extends AbstractRequest {
      *
      * @var string
      */
-    const ADDING_CONTACT_RESOURCE_PATH = "/http/1.6/addContact.do";
+    public const ADDING_CONTACT_RESOURCE_PATH = "/http/1.6/addContact.do";
 
     /**
      * Groupes.

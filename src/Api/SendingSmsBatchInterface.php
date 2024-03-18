@@ -26,12 +26,12 @@ interface SendingSmsBatchInterface {
      *
      * @var int
      */
-    const CLASSE_MSG_SMS = 4;
+    public const CLASSE_MSG_SMS = 4;
 
     /**
      * Classe msg "SMS Pro".
      *
      * @var int
      */
-    const CLASSE_MSG_SMS_PRO = 2;
+    public const CLASSE_MSG_SMS_PRO = 2;
 }

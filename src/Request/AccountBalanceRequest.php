@@ -26,7 +26,7 @@ class AccountBalanceRequest extends AbstractRequest {
      *
      * @var string
      */
-    const ACCOUNT_BALANCE_RESOURCE_PATH = "/http/1.6/credit.do";
+    public const ACCOUNT_BALANCE_RESOURCE_PATH = "/http/1.6/credit.do";
 
     /**
      * {@inheritDoc}

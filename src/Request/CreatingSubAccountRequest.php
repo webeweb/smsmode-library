@@ -44,7 +44,7 @@ class CreatingSubAccountRequest extends AbstractRequest {
      *
      * @avr string
      */
-    const CREATING_SUB_ACCOUNT_RESOURCE_PATH = "/http/1.6/createSubAccount.do";
+    public const CREATING_SUB_ACCOUNT_RESOURCE_PATH = "/http/1.6/createSubAccount.do";
 
     /**
      * Adresse.

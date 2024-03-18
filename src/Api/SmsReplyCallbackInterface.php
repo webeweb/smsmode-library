@@ -26,47 +26,47 @@ interface SmsReplyCallbackInterface {
      *
      * @var string
      */
-    const PARAMETER_DATE_RECEPTION = "date_reception";
+    public const PARAMETER_DATE_RECEPTION = "date_reception";
 
     /**
      * Parameter "emetteur".
      *
      * @var string
      */
-    const PARAMETER_EMETTEUR = "emetteur";
+    public const PARAMETER_EMETTEUR = "emetteur";
 
     /**
      * Parameter "message".
      *
      * @var string
      */
-    const PARAMETER_MESSAGE = "message";
+    public const PARAMETER_MESSAGE = "message";
 
     /**
      * Parameter "numero".
      *
      * @var string
      */
-    const PARAMETER_NUMERO = "numero";
+    public const PARAMETER_NUMERO = "numero";
 
     /**
      * Parameter "ref client".
      *
      * @var string
      */
-    const PARAMETER_REF_CLIENT = "refClient";
+    public const PARAMETER_REF_CLIENT = "refClient";
 
     /**
      * Parameter "response ID".
      *
      * @var string
      */
-    const PARAMETER_RESPONSE_ID = "responseID";
+    public const PARAMETER_RESPONSE_ID = "responseID";
 
     /**
      * Parameter "SMS ID".
      *
      * @var string
      */
-    const PARAMETER_SMS_ID = "smsID";
+    public const PARAMETER_SMS_ID = "smsID";
 }

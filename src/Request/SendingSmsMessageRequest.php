@@ -46,7 +46,7 @@ class SendingSmsMessageRequest extends AbstractRequest implements SendingSmsMess
      *
      * @var string
      */
-    const SENDING_SMS_MESSAGE_RESOURCE_PATH = "/http/1.6/sendSMS.do";
+    public const SENDING_SMS_MESSAGE_RESOURCE_PATH = "/http/1.6/sendSMS.do";
 
     /**
      * Groupe.

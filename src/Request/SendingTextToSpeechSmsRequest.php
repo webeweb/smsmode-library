@@ -36,7 +36,7 @@ class SendingTextToSpeechSmsRequest extends AbstractRequest implements SendingTe
      *
      * @var string
      */
-    const SENDING_TEXT_TO_SPEECH_SMS_RESOURCE_PATH = "/http/1.6/sendVoiceMessage.do";
+    public const SENDING_TEXT_TO_SPEECH_SMS_RESOURCE_PATH = "/http/1.6/sendVoiceMessage.do";
 
     /**
      * Language.

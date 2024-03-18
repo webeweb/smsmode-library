@@ -30,7 +30,7 @@ class DeliveryReportRequest extends AbstractRequest {
      *
      * @var string
      */
-    const DELIVERY_REPORT_RESOURCE_PATH = "/http/1.6/compteRendu.do";
+    public const DELIVERY_REPORT_RESOURCE_PATH = "/http/1.6/compteRendu.do";
 
     /**
      * {@inheritDoc}

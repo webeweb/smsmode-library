@@ -26,26 +26,26 @@ interface SendingTextToSpeechSmsInterface {
      *
      * @var string
      */
-    const LANGUAGE_DE = "de-DE";
+    public const LANGUAGE_DE = "de-DE";
 
     /**
      * Language "en-GB".
      *
      * @var string
      */
-    const LANGUAGE_EN = "en-GB";
+    public const LANGUAGE_EN = "en-GB";
 
     /**
      * Language "es-ES".
      *
      * @var string
      */
-    const LANGUAGE_ES = "es-ES";
+    public const LANGUAGE_ES = "es-ES";
 
     /**
      * Language "fr-FR".
      *
      * @var string
      */
-    const LANGUAGE_FR = "fr-FR";
+    public const LANGUAGE_FR = "fr-FR";
 }

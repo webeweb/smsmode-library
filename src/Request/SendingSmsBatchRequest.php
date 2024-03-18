@@ -42,7 +42,7 @@ class SendingSmsBatchRequest extends AbstractRequest implements SendingSmsBatchI
      *
      * @var string
      */
-    const SENDING_SMS_BATCH_RESOURCE_PATH = "/http/1.6/sendSMSBatch.do";
+    public const SENDING_SMS_BATCH_RESOURCE_PATH = "/http/1.6/sendSMSBatch.do";
 
     /**
      * Fichier.

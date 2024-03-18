@@ -26,12 +26,12 @@ interface RequestInterface {
      *
      * @var string
      */
-    const REQUEST_DATETIME_FORMAT = "dmY-H:i";
+    public const REQUEST_DATETIME_FORMAT = "dmY-H:i";
 
     /**
      * Request date format.
      *
      * @var string
      */
-    const REQUEST_DATE_FORMAT = "dmY";
+    public const REQUEST_DATE_FORMAT = "dmY";
 }

@@ -30,7 +30,7 @@ class SentSmsMessageListRequest extends AbstractRequest {
      *
      * @var string
      */
-    const SENT_SMS_MESSAGE_LIST_RESOURCE_PATH = "/http/1.6/smsList.do";
+    public const SENT_SMS_MESSAGE_LIST_RESOURCE_PATH = "/http/1.6/smsList.do";
 
     /**
      * {@inheritDoc}

@@ -39,7 +39,7 @@ jobs:
                 run:  php phpmetrics.phar --git --junit=build/logs/junit.xml --report-html=build/logs/ src/
 
             -   name: "Upload artifact"
-                uses: actions/upload-artifact@v3
+                uses: actions/upload-artifact@v4
                 with:
                     name: "metrics"
                     path: |

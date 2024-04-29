@@ -1,6 +1,10 @@
 CHANGELOG
 =========
 
+### [4.9.0](https://github.com/webeweb/smsmode-library/tree/v4.9.0) (2024-04-29)
+
+- Update dependencies
+
 ### [4.8.0](https://github.com/webeweb/smsmode-library/tree/v4.8.0) (2024-03-18)
 
 - Improve constants visibility

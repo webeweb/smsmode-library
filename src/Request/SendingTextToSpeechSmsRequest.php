@@ -15,10 +15,10 @@ namespace WBW\Library\SmsMode\Request;
 
 use InvalidArgumentException;
 use UnexpectedValueException;
+use WBW\Library\Common\Traits\Strings\StringMessageTrait;
 use WBW\Library\SmsMode\Api\SendingTextToSpeechSmsInterface;
 use WBW\Library\SmsMode\Serializer\NumeroSerializer;
 use WBW\Library\SmsMode\Traits\DateTimes\DateTimeDateEnvoiTrait;
-use WBW\Library\Traits\Strings\StringMessageTrait;
 
 /**
  * Sending text-to-speech SMS request.

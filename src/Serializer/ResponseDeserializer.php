@@ -14,6 +14,7 @@ declare(strict_types = 1);
 namespace WBW\Library\SmsMode\Serializer;
 
 use DateTime;
+use WBW\Library\Common\Helper\ArrayHelper;
 use WBW\Library\SmsMode\Api\ResponseInterface;
 use WBW\Library\SmsMode\Model\DeliveryReport;
 use WBW\Library\SmsMode\Model\SentSmsMessage;
@@ -34,7 +35,6 @@ use WBW\Library\SmsMode\Response\SendingTextToSpeechSmsResponse;
 use WBW\Library\SmsMode\Response\SendingUnicodeSmsResponse;
 use WBW\Library\SmsMode\Response\SentSmsMessageListResponse;
 use WBW\Library\SmsMode\Response\TransferringCreditsResponse;
-use WBW\Library\Types\Helper\ArrayHelper;
 
 /**
  * Response deserializer.

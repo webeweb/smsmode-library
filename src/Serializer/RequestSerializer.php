@@ -16,8 +16,8 @@ namespace WBW\Library\SmsMode\Serializer;
 use DateTime;
 use InvalidArgumentException;
 use Symfony\Component\Yaml\Yaml;
+use WBW\Library\Common\Helper\ArrayHelper;
 use WBW\Library\SmsMode\Api\RequestInterface;
-use WBW\Library\Types\Helper\ArrayHelper;
 
 /**
  * Request serializer.

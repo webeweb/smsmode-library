@@ -14,12 +14,12 @@ declare(strict_types = 1);
 namespace WBW\Library\SmsMode\Request;
 
 use UnexpectedValueException;
+use WBW\Library\Common\Traits\DateTimes\DateTimeDateTrait;
 use WBW\Library\SmsMode\Serializer\NumeroSerializer;
 use WBW\Library\SmsMode\Traits\Strings\StringMobileTrait;
 use WBW\Library\SmsMode\Traits\Strings\StringNomTrait;
 use WBW\Library\SmsMode\Traits\Strings\StringPrenomTrait;
 use WBW\Library\SmsMode\Traits\Strings\StringSocieteTrait;
-use WBW\Library\Traits\DateTimes\DateTimeDateTrait;
 
 /**
  * Adding contact request.

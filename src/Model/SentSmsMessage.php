@@ -14,10 +14,10 @@ declare(strict_types = 1);
 namespace WBW\Library\SmsMode\Model;
 
 use DateTime;
+use WBW\Library\Common\Traits\Strings\StringMessageTrait;
 use WBW\Library\SmsMode\Response\AbstractResponse;
 use WBW\Library\SmsMode\Traits\Strings\StringNumeroTrait;
 use WBW\Library\SmsMode\Traits\Strings\StringSmsIDTrait;
-use WBW\Library\Traits\Strings\StringMessageTrait;
 
 /**
  * Sent SMS message.

@@ -13,10 +13,10 @@ declare(strict_types = 1);
 
 namespace WBW\Library\SmsMode\Response;
 
-use WBW\Library\Provider\Response\AbstractResponse as BaseResponse;
+use WBW\Library\Common\Provider\AbstractResponse as BaseResponse;
+use WBW\Library\Common\Traits\Integers\IntegerCodeTrait;
+use WBW\Library\Common\Traits\Strings\StringDescriptionTrait;
 use WBW\Library\SmsMode\Api\ResponseInterface;
-use WBW\Library\Traits\Integers\IntegerCodeTrait;
-use WBW\Library\Traits\Strings\StringDescriptionTrait;
 
 /**
  * Abstract response.

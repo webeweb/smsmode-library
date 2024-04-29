@@ -14,8 +14,8 @@ declare(strict_types = 1);
 namespace WBW\Library\SmsMode\Response;
 
 use DateTime;
+use WBW\Library\Common\Traits\Strings\StringIdTrait;
 use WBW\Library\SmsMode\Traits\Strings\StringAccessTokenTrait;
-use WBW\Library\Traits\Strings\StringIdTrait;
 
 /**
  * Creating API key response.

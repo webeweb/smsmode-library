@@ -13,7 +13,7 @@ declare(strict_types = 1);
 
 namespace WBW\Library\SmsMode\Request;
 
-use WBW\Library\Traits\Strings\StringReferenceTrait;
+use WBW\Library\Common\Traits\Strings\StringReferenceTrait;
 
 /**
  * Transferring credits request.

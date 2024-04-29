@@ -17,12 +17,12 @@ use GuzzleHttp\Client;
 use InvalidArgumentException;
 use Psr\Log\LoggerInterface;
 use Throwable;
-use WBW\Library\Provider\AbstractProvider as BaseProvider;
-use WBW\Library\Provider\Exception\ApiException;
+use WBW\Library\Common\Helper\ArrayHelper;
+use WBW\Library\Common\Provider\AbstractProvider as BaseProvider;
+use WBW\Library\Common\Provider\ProviderException;
 use WBW\Library\SmsMode\Model\Authentication;
 use WBW\Library\SmsMode\Request\AbstractRequest;
 use WBW\Library\SmsMode\Serializer\RequestSerializer;
-use WBW\Library\Types\Helper\ArrayHelper;
 
 /**
  * Abstract provider.
@@ -93,7 +93,7 @@ abstract class AbstractProvider extends BaseProvider {
      * @param mixed[] $postData The post data.
      * @return string Returns the raw response.
      * @throws InvalidArgumentException Throws an invalid argument exception if a parameter is missing.
-     * @throws ApiException Throws an API exception if an error occurs.
+     * @throws ProviderException Throws a provider exception if an error occurs.
      */
     protected function callApi(AbstractRequest $request, array $queryData, array $postData = []): string {
 
@@ -122,7 +122,7 @@ abstract class AbstractProvider extends BaseProvider {
             throw $ex;
         } catch (Throwable $ex) {
 
-            throw new ApiException("Call sMsmode API failed", 500, $ex);
+            throw new ProviderException("Call sMsmode API failed", 500, $ex);
         }
     }
 

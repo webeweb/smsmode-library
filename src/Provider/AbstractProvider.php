@@ -118,10 +118,8 @@ abstract class AbstractProvider extends BaseProvider {
 
             return utf8_encode($response->getBody()->getContents());
         } catch (InvalidArgumentException $ex) {
-
             throw $ex;
         } catch (Throwable $ex) {
-
             throw new ProviderException("Call sMsmode API failed", 500, $ex);
         }
     }

@@ -49,7 +49,6 @@ class IntegerOffsetTraitTest extends AbstractTestCase {
         $obj = new TestIntegerOffsetTrait();
 
         try {
-
             $obj->setOffset(0);
         } catch (Throwable $ex) {
 

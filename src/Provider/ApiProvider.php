@@ -120,7 +120,6 @@ class ApiProvider extends AbstractProvider {
         $queryData = $this->getRequestSerializer()->serialize($request);
 
         try {
-
             $rawResponse = $this->callApi($request, $queryData);
         } catch (ProviderException $ex) {
 

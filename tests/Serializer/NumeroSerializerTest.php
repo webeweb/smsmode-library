@@ -47,7 +47,6 @@ class NumeroSerializerTest extends AbstractTestCase {
     public function testCheckNumeroWithInvalidArgumentException(): void {
 
         try {
-
             NumeroSerializer::checkNumero("exception");
         } catch (Throwable $ex) {
 

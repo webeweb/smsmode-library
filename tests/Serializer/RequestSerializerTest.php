@@ -108,7 +108,6 @@ class RequestSerializerTest extends AbstractTestCase {
         $obj = new RequestSerializer();
 
         try {
-
             $obj->serialize($arg);
         } catch (Throwable $ex) {
 
@@ -237,7 +236,6 @@ class RequestSerializerTest extends AbstractTestCase {
         $obj = new RequestSerializer();
 
         try {
-
             $obj->serialize($arg);
         } catch (Throwable $ex) {
 
@@ -323,7 +321,6 @@ class RequestSerializerTest extends AbstractTestCase {
         $obj = new RequestSerializer();
 
         try {
-
             $obj->serialize($arg);
         } catch (Throwable $ex) {
 
@@ -383,7 +380,6 @@ class RequestSerializerTest extends AbstractTestCase {
         $obj = new RequestSerializer();
 
         try {
-
             $obj->serialize($arg);
         } catch (Throwable $ex) {
 
@@ -425,7 +421,6 @@ class RequestSerializerTest extends AbstractTestCase {
         $obj = new RequestSerializer();
 
         try {
-
             $obj->serialize($arg);
         } catch (Throwable $ex) {
 
@@ -467,7 +462,6 @@ class RequestSerializerTest extends AbstractTestCase {
         $obj = new RequestSerializer();
 
         try {
-
             $obj->serialize($arg);
         } catch (Throwable $ex) {
 
@@ -638,7 +632,6 @@ class RequestSerializerTest extends AbstractTestCase {
         $obj = new RequestSerializer();
 
         try {
-
             $obj->serialize($arg);
         } catch (Throwable $ex) {
 
@@ -737,7 +730,6 @@ class RequestSerializerTest extends AbstractTestCase {
         $obj = new RequestSerializer();
 
         try {
-
             $obj->serialize($arg);
         } catch (Throwable $ex) {
 
@@ -799,7 +791,6 @@ class RequestSerializerTest extends AbstractTestCase {
         $obj = new RequestSerializer();
 
         try {
-
             $obj->serialize($arg);
         } catch (Throwable $ex) {
 
@@ -934,7 +925,6 @@ class RequestSerializerTest extends AbstractTestCase {
         $obj = new RequestSerializer();
 
         try {
-
             $obj->serialize($arg);
         } catch (Throwable $ex) {
 

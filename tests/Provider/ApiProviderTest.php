@@ -185,7 +185,6 @@ class ApiProviderTest extends AbstractTestCase {
         $obj = new ApiProvider(new Authentication());
 
         try {
-
             $obj->creatingApiKey($arg);
         } catch (Throwable $ex) {
 

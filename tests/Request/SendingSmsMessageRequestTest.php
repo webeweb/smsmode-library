@@ -110,7 +110,6 @@ class SendingSmsMessageRequestTest extends AbstractTestCase {
         $obj = new SendingSmsMessageRequest();
 
         try {
-
             $obj->setStop(-1);
         } catch (Throwable $ex) {
 

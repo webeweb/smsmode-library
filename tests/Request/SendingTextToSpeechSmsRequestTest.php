@@ -86,7 +86,6 @@ class SendingTextToSpeechSmsRequestTest extends AbstractTestCase {
         $obj = new SendingTextToSpeechSmsRequest();
 
         try {
-
             $obj->setLanguage("language");
         } catch (Throwable $ex) {
 

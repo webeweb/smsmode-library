@@ -49,7 +49,6 @@ class IntegerNbrMsgTraitTest extends AbstractTestCase {
         $obj = new TestIntegerNbrMsgTrait();
 
         try {
-
             $obj->setNbrMsg(0);
         } catch (Throwable $ex) {
 

@@ -50,7 +50,6 @@ class SendingSmsBatchRequestTest extends AbstractTestCase {
         $obj = new SendingSmsBatchRequest();
 
         try {
-
             $obj->setFichier("fichier");
         } catch (Throwable $ex) {
 

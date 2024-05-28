@@ -533,6 +533,7 @@ class RequestSerializerTest extends AbstractTestCase {
             $arg->setStartDate(new DateTime("2017-09-14 12:00:00"));
             $obj->serialize($arg);
         } catch (Throwable $ex) {
+
             $this->assertInstanceOf(InvalidArgumentException::class, $ex);
             $this->assertEquals('The optional parameter "endDate" is required when "startDate" is provided', $ex->getMessage());
         }

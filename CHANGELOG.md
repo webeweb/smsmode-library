@@ -1,6 +1,10 @@
 CHANGELOG
 =========
 
+### [4.9.1](https://github.com/webeweb/smsmode-library/tree/v4.9.1) (2024-05-28)
+
+- Improve code quality
+
 ### [4.9.0](https://github.com/webeweb/smsmode-library/tree/v4.9.0) (2024-04-29)
 
 - Update dependencies

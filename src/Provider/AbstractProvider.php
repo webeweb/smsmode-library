@@ -55,6 +55,13 @@ abstract class AbstractProvider extends BaseProvider {
     private $requestSerializer;
 
     /**
+     * verifyCA: Guzzle verify parameter
+     * https://docs.guzzlephp.org/en/stable/request-options.html#verify
+     * @var string|bool
+     */
+    private $verifyCA = true;
+
+    /**
      * Constructor.
      *
      * @param Authentication $authentication The authentication.
@@ -82,6 +89,7 @@ abstract class AbstractProvider extends BaseProvider {
                 "User-Agent" => "webeweb/smsmode-library",
             ],
             "synchronous" => true,
+            "verify" => $this->getVerifyCA(),
         ];
     }
 
@@ -143,6 +151,15 @@ abstract class AbstractProvider extends BaseProvider {
     }
 
     /**
+     * Get the "verify" Guzzle parameter. 
+     *
+     * @return string|bool Ca verify
+     */
+    public function getVerifyCA(): string|bool {
+        return $this->verifyCA;
+    }
+
+    /**
      * Set the authentication.
      *
      * @param Authentication $authentication The authentication.
@@ -163,4 +180,16 @@ abstract class AbstractProvider extends BaseProvider {
         $this->requestSerializer = $requestSerializer;
         return $this;
     }
+
+	/**
+	 * Set the "verify" Guzzle parameter. 
+     * https://docs.guzzlephp.org/en/stable/request-options.html#verify
+	 *
+	 * @param string|bool $verifyCA 
+	 * @return AbstractProvider Returns this provider.
+	 */
+	public function setVerifyCA( string|bool $verifyCA ): AbstractProvider {
+		$this->verifyCA = $verifyCA;
+		return $this;
+	}
 }

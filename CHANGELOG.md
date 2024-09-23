@@ -1,6 +1,11 @@
 CHANGELOG
 =========
 
+### [4.10.0](https://github.com/webeweb/smsmode-library/tree/v4.10.0) (2024-09-23)
+
+- Add verify Guzzle option support
+- Improve code quality
+
 ### [4.9.1](https://github.com/webeweb/smsmode-library/tree/v4.9.1) (2024-05-28)
 
 - Improve code quality

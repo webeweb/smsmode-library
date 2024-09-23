@@ -30,7 +30,7 @@ class AbstractProviderTest extends AbstractTestCase {
     /**
      * Authentication.
      *
-     * @var Authentication
+     * @var Authentication|null
      */
     private $authentication;
 
@@ -44,6 +44,28 @@ class AbstractProviderTest extends AbstractTestCase {
         $this->authentication = new Authentication();
         $this->authentication->setPseudo("pseudo");
         $this->authentication->setPass("pass");
+    }
+
+    /**
+     * Test setVerify()
+     *
+     * @return void
+     */
+    public function testSetVerifyCA(): void {
+
+        $obj = new TestProvider($this->authentication);
+
+        $obj->setVerify(true);
+        $this->assertTrue($obj->getVerify());
+
+        $obj->setVerify(false);
+        $this->assertFalse($obj->getVerify());
+
+        $obj->setVerify("verify");
+        $this->assertEquals("verify", $obj->getVerify());
+
+        $obj->setVerify(null);
+        $this->assertTrue($obj->getVerify());
     }
 
     /**

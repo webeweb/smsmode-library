@@ -43,16 +43,23 @@ abstract class AbstractProvider extends BaseProvider {
     /**
      * Authentication.
      *
-     * @var Authentication
+     * @var Authentication|null
      */
     private $authentication;
 
     /**
      * Request serializer.
      *
-     * @var RequestSerializer
+     * @var RequestSerializer|null
      */
     private $requestSerializer;
+
+    /**
+     * Verify CA.
+     *
+     * @var bool|string|null
+     */
+    private $verify;
 
     /**
      * Constructor.
@@ -65,6 +72,7 @@ abstract class AbstractProvider extends BaseProvider {
 
         $this->setAuthentication($authentication);
         $this->setRequestSerializer(new RequestSerializer());
+        $this->setVerify(true);
     }
 
     /**
@@ -82,6 +90,7 @@ abstract class AbstractProvider extends BaseProvider {
                 "User-Agent" => "webeweb/smsmode-library",
             ],
             "synchronous" => true,
+            "verify"      => $this->getVerify(),
         ];
     }
 
@@ -143,6 +152,15 @@ abstract class AbstractProvider extends BaseProvider {
     }
 
     /**
+     * Get the verify CA.
+     *
+     * @return bool|string|null Returns the verify CA.
+     */
+    public function getVerify() {
+        return $this->verify;
+    }
+
+    /**
      * Set the authentication.
      *
      * @param Authentication $authentication The authentication.
@@ -161,6 +179,25 @@ abstract class AbstractProvider extends BaseProvider {
      */
     protected function setRequestSerializer(RequestSerializer $requestSerializer): AbstractProvider {
         $this->requestSerializer = $requestSerializer;
+        return $this;
+    }
+
+    /**
+     * Set the verify CA.
+     *
+     * @param bool|string|null $verify The verify CA.
+     * @return AbstractProvider Returns this provider.
+     */
+    public function setVerify($verify): AbstractProvider {
+
+        if (true === is_bool($verify) || true === is_string($verify)) {
+            $this->verify = $verify;
+        }
+
+        if (true === is_null($verify)) {
+            $this->verify = true;
+        }
+
         return $this;
     }
 }

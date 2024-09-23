@@ -60,7 +60,7 @@ class ApiProviderTest extends AbstractTestCase {
     /**
      * Authentication.
      *
-     * @var Authentication
+     * @var Authentication|null
      */
     private $authentication;
 

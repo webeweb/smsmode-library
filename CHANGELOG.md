@@ -1,6 +1,10 @@
 CHANGELOG
 =========
 
+### [4.11.0](https://github.com/webeweb/smsmode-library/tree/v4.11.0) (2025-07-31)
+
+- Add PHP 8.4
+
 ### [4.10.0](https://github.com/webeweb/smsmode-library/tree/v4.10.0) (2024-09-23)
 
 - Add verify Guzzle option support

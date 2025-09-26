@@ -1,6 +1,10 @@
 CHANGELOG
 =========
 
+### [4.12.0](https://github.com/webeweb/smsmode-library/tree/v4.12.0) (2025-09-26)
+
+- Improve code quality
+
 ### [4.11.0](https://github.com/webeweb/smsmode-library/tree/v4.11.0) (2025-07-31)
 
 - Add PHP 8.4

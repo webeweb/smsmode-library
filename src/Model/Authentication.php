@@ -45,7 +45,7 @@ class Authentication {
      * @param string|null $pseudo The pseudo.
      * @param string|null $pass The pass.
      */
-    public function __construct(string $pseudo = null, string $pass = null) {
+    public function __construct(?string $pseudo = null, ?string $pass = null) {
         $this->setPass($pass);
         $this->setPseudo($pseudo);
     }

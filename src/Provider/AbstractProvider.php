@@ -67,7 +67,7 @@ abstract class AbstractProvider extends BaseProvider {
      * @param Authentication $authentication The authentication.
      * @param LoggerInterface|null $logger The logger.
      */
-    public function __construct(Authentication $authentication, LoggerInterface $logger = null) {
+    public function __construct(Authentication $authentication, ?LoggerInterface $logger = null) {
         parent::__construct($logger);
 
         $this->setAuthentication($authentication);

@@ -1,6 +1,11 @@
 CHANGELOG
 =========
 
+### [4.13.0](https://github.com/webeweb/smsmode-library/tree/v4.13.0) (2026-09-11)
+
+- Update dependencies
+- Update Github actions configuration
+
 ### [4.12.0](https://github.com/webeweb/smsmode-library/tree/v4.12.0) (2025-09-26)
 
 - Improve code quality
